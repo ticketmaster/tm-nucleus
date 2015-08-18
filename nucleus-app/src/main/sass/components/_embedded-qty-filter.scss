@@ -1,0 +1,15 @@
+.embedded-qty-filter {
+  background-color: $white;
+  border: $dark-border-style;
+  border-radius: $base-border-radius;
+}
+
+.embedded-qty-filter__content {
+  // setting width is a hack to get text truncation working correctly in conjunction with split-content
+  width: 1px;
+  padding: 10px 0 10px 10px;
+}
+
+.embedded-qty-filter__buttons {
+  border-left: $dark-border-style;
+}

@@ -1,0 +1,97 @@
+// standard button mixin
+@mixin btn($bgcolor: $primary-button-color, $txtcolor: $base-font-color, $hovercolor: 'undefined') {
+  padding: $button-padding;
+
+  font-size: $button-font-size;
+  font-weight: normal;
+  text-align: center;
+  color: $txtcolor;
+  white-space: nowrap;
+
+  background-color: $bgcolor;
+  border: 0;
+  border-radius: $button-border-radius;
+  box-shadow: none;
+
+  @if ($hovercolor != 'undefined') {
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: $hovercolor;
+    }
+  }
+
+  // small buttons are 30px height
+  &--small {
+    padding: $button-padding-sm;
+
+    font-size: $button-font-size-sm;
+  }
+
+}
+
+// outlined button mixin
+@mixin btn-outlined($color, $hovercolor) {
+  padding: $button-outlined-padding;
+
+  font-size: $button-font-size;
+  font-weight: normal;
+  text-align: center;
+  color: $color;
+  white-space: nowrap;
+
+  background-color: $white;
+  border: 1px solid $color;
+  border-radius: $button-border-radius;
+  box-shadow: none;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: $hovercolor;
+
+    border-color: $hovercolor;
+  }
+
+  // small buttons are 30px height
+  &--small {
+    padding: $button-outlined-padding-sm;
+
+    font-size: $button-font-size-sm;
+  }
+
+}
+
+
+
+// These are depcreated!!
+// DO NOT use these anymore
+// refer to components/_button.scss for the classes to use
+%btn-primary {
+  @include btn($primary-button-color, $white, $primary-button-hover-color);
+}
+
+%btn-secondary {
+  @include btn($secondary-button-color, $white, $secondary-button-hover-color);
+}
+
+%btn-tertiary {
+  @include btn($tertiary-button-color, $white, $tertiary-button-hover-color);
+}
+
+%btn-remove {
+  @include btn($white, $border-error-color, $white);
+  font-size: $font-size-sm;
+
+  border: 1px solid $border-error-color;
+}
+
+%btn-transparent {
+  @include btn(transparent);
+  padding: 0;
+}
+
+%btn-quaternary {
+  @include btn($bgcolor: $white, $txtcolor: $base-link-color);
+  border: $focused-border-style;
+}

@@ -1,0 +1,3 @@
+@mixin polling-overlay-indicator-animation($key-frame, $p0) {
+  animation: $key-frame 2.5s cubic-bezier($p0, 0.6, 0.25, 1) infinite;
+}

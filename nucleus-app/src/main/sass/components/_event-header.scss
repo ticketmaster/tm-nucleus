@@ -1,0 +1,40 @@
+.event-header {
+  padding: 8px;
+
+  background-color: $background-white;
+
+  &__back {
+    @include chevron($base-link-color, left, 50%, 0);
+    @include hide-text;
+
+    display: inline-block;
+    width: 1.8em;
+    height: 2.2em;
+    margin-right: 1em;
+
+    vertical-align: top;
+  }
+
+  &__datetime {
+    display: inline-block;
+    padding: 0 8px;
+    margin-right: 1em;
+
+    text-align: center;
+
+    border: $light-border-style;
+  }
+
+  &__month,
+  &__day {
+    display: block;
+  }
+
+  &__month {
+    @include bold-text();
+  }
+
+  &__event {
+    display: inline-block;
+  }
+}

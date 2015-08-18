@@ -1,0 +1,30 @@
+.ticket-list {
+  @include unstyled-list();
+
+  &__item {
+    @include clearfix();
+
+    padding: 15px 0;
+
+    border-top: $light-border-style;
+  }
+
+  &__item:first-child {
+    padding-top: 0;
+
+    border-top: 0;
+  }
+
+  &__item:last-child {
+    padding-bottom: 0;
+  }
+
+  &__list-scrollable {
+    max-height: 240px;
+    overflow: auto;
+
+    @include breakpoint($bp-md) {
+      max-height: 500px;
+    }
+  }
+}

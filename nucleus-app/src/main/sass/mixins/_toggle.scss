@@ -1,0 +1,46 @@
+// config
+$toggle-size: 20px;
+
+
+// placeholders
+%toggle {
+  @include hide-text();
+
+  display: inline-block;
+  width: $toggle-size;
+  height: $toggle-size;
+
+  background-repeat: no-repeat;
+
+  &__text {
+    @include hide-btn-text();
+  }
+}
+
+
+// mixins
+@mixin toggle($state) {
+  @extend %toggle;
+  @include svg($state);
+}
+
+@mixin toggle-btn() {
+  @extend %toggle;
+
+  transform: translateY(0%);
+  float: right;
+
+  font-size: 0;
+  line-height: 0;
+
+  border: 0;
+  background: transparent;
+
+  &.toggle-open {
+    @include toggle('icon-expand');
+  }
+
+  &.toggle-close {
+    @include toggle('icon-collapse');
+  }
+}

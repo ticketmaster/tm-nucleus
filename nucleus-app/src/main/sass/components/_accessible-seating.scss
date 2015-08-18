@@ -1,0 +1,115 @@
+.accessibility-badge {
+  @include svg(icon-ada);
+
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+
+
+.accessible-seating {
+
+  &__accessible-seating-toggle {
+    height: 41px;
+    padding: 7px 0 4px;
+  }
+
+  &__accessibility-badge {
+    margin-right: 10px;
+  }
+
+  &__accessible-seating-message {
+
+    @include breakpoint($max: $bp-md - 1) {
+      margin: 3px 0 0;
+      clear: both;
+    }
+
+    @include breakpoint($min: $bp-md) {
+      margin: -13px 0 0 43px;
+    }
+
+  }
+
+}
+
+
+.accessible-seating__accessible-seating-toggle.is-clickable {
+  @include breakpoint($bp-md) {
+    cursor: default;
+  }
+}
+
+
+.accessible-seating-header {
+  display: inline-block;
+  width: 120px;
+
+  font: 12px Arial;
+
+  transform: translateY(-75%);
+
+  @include breakpoint($min: $bp-md) {
+    font-size: 14px;
+
+    transform: translateY(-95%);
+  }
+
+}
+
+.accessible-seating-toggle {
+  display: inline-block;
+  float: right;
+
+  @include breakpoint($min: $bp-md + 1) {
+    display: none;
+  }
+
+  &__toggle {
+    background-color: $background-white;
+
+    border: 0;
+
+    @include breakpoint($max: $bp-md - 1) {
+      display: inline-block;
+
+      transform: translateY(20%);
+    }
+  }
+
+  .toggle-open {
+    @include toggle('icon-expand');
+  }
+
+  .toggle-close {
+    @include toggle('icon-collapse');
+  }
+}
+
+
+// TODO: The following block is poorly written and should NOT be emulated
+.accessible-seating-message {
+  font: 10px Arial;
+  line-height: 1.4em;
+
+  @include breakpoint($min: $bp-md) {
+    font-size: 12px;
+  }
+
+  @include breakpoint($max: $bp-md - 1, $min: $bp-sm + 36) {
+    @include slider(0, 38px);
+  }
+
+  @include breakpoint($max: $bp-sm + 35, $min: $bp-sm - 45) {
+    @include slider(0, 52px);
+  }
+
+  @include breakpoint($max: $bp-sm - 46) {
+    @include slider(0, 70px);
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+}

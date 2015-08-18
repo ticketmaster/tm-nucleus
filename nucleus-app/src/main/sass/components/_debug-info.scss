@@ -1,0 +1,36 @@
+.debug-info {
+
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+
+  padding: 20px;
+
+  &__header {
+    padding-bottom: 10px;
+
+    font-size: fontsy('lg');
+  }
+
+  &__data-table {
+    font-size: fontsy('md');
+  }
+
+  &__cell {
+    padding: 10px;
+
+    border: 1px solid $light-border-color;
+  }
+
+  &__head-cell {
+    border: 1px solid $light-border-color;
+  }
+
+  &__table-row {
+    background: $background-gray;
+
+    &--fail {
+      background: color('red', 'hood');
+    }
+  }
+}

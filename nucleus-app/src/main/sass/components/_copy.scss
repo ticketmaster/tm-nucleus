@@ -1,0 +1,24 @@
+// concrete classes
+.heading-primary {
+  @include hdg-text($hdg-primary-font-size, $hdg-primary-color);
+}
+
+
+.heading-secondary {
+  @include hdg-text($hdg-secondary-font-size, $hdg-secondary-color);
+}
+
+
+.heading-section {
+  @include hdg-text($hdg-section-font-size, $base-font-color, 0);
+}
+
+
+.alt-copy {
+  @include alt-copy();
+}
+
+
+.legal-copy {
+  @include alt-copy('xs');
+}

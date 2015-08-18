@@ -1,0 +1,39 @@
+// standard buttons are 44px height
+.button-outlined {
+  @include btn-outlined($primary-button-color, $primary-button-hover-color);
+
+  // cancel/remove button
+  &--void {
+    color: $void-button-color;
+
+    border-color: $void-button-color;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: $void-button-hover-color;
+
+      border-color: $void-button-hover-color;
+    }
+  }
+
+  // call to action buttons
+  // reserved for buttons that lead to / are part of checkout
+  &--cta {
+    color: $tertiary-button-color;
+
+    border-color: $tertiary-button-color;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: $tertiary-button-hover-color;
+
+      border-color: $tertiary-button-hover-color;
+    }
+  }
+
+  &--full {
+    width: 100%;
+  }
+}

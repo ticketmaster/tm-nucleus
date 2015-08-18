@@ -1,0 +1,21 @@
+@mixin module($pad-sm: $module-padding-sm, $pad-lg: $module-padding-lg) {
+  @include clearfix();
+
+  background-color: $module-bg-color;
+  border-radius: $module-border-radius;
+  box-shadow: $module-shadow-style;
+
+  &__content {
+    @include clearfix();
+
+    padding: $pad-sm;
+
+    @include breakpoint($bp-md) {
+      padding: $pad-lg;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

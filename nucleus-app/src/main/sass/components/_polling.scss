@@ -1,0 +1,23 @@
+.polling {
+
+  &__image {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+
+    background: url('../img/polling.png') no-repeat center center transparent;
+    background-size: 100%;
+
+    animation: spin 0.8s linear infinite;
+  }
+
+  &__header {
+    padding-top: 40px;
+    margin: auto;
+
+    font-size: $font-size-md;
+    color: $hdg-primary-color;
+    text-align: center;
+  }
+
+}

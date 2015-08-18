@@ -1,0 +1,34 @@
+.input-group {
+  position: relative;
+
+  &__label {
+    @include text-field-label();
+
+    display: block;
+  }
+
+  &__text-field {
+    @include text-field-input();
+
+    margin-bottom: $form-label-vspace;
+
+    &.filled {
+      padding: 20px 10px 6px;
+    }
+  }
+
+  ~ .input-group {
+    margin-top: $input-group-vspace;
+  }
+
+  ~ .submit-button {
+    @extend %btn-primary;
+
+    margin-top: $input-group-vspace;
+
+    @include breakpoint($max: $bp-md - 1) {
+      width: 100%;
+    }
+  }
+
+}

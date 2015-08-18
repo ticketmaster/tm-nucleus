@@ -1,0 +1,26 @@
+$slide-animation: 1s;
+
+@mixin slider($min-ht: 0, $max-ht: 8888px) {
+  max-height: $min-ht;
+  overflow: hidden;
+  transition: $slide-animation;
+
+  &.slider-open {
+    max-height: $max-ht;
+
+    transition: $slide-animation;
+  }
+}
+
+@mixin slider-ease($min-ht: 0, $max-ht: 1000px) {
+  overflow: hidden;
+  max-height: $min-ht;
+
+  @content;
+
+  &.slider-open {
+    max-height: $max-ht;
+
+    transition: max-height $slide-animation ease-in;
+  }
+}

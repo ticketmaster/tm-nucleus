@@ -1,0 +1,170 @@
+.ism {
+  position: relative;
+
+  text-align: center;
+
+  @include breakpoint($bp-ism-fixed) {
+    margin: 0 auto;
+  }
+
+  &.map {
+    @include breakpoint($bp-md) {
+      width: calc(90vh);
+    }
+  }
+
+  &__mini-map {
+    position: absolute;
+    top: 0;
+    right: 10px;
+
+    display: none;
+
+    width: 100px;
+    height: 100px;
+
+    @include breakpoint($bp-md) {
+      top: 0;
+      right: 60px;
+
+      width: 170px;
+      height: 170px;
+    }
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &__legend {
+    display: none;
+
+    @include breakpoint($bp-md) {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      z-index: z('ism-legend');
+
+      display: block;
+    }
+  }
+
+  &__nav-home {
+    display: block;
+
+    width: 40px;
+    height: 40px;
+
+    cursor: pointer;
+    background: url(map-get($svgs, 'ism-nav-home'));
+    background-size: 100%;
+
+    user-select: none;
+  }
+
+  &__nav-plus {
+    top: 40px;
+    left: 0;
+
+    width: 40px;
+    height: 40px;
+
+    cursor: pointer;
+    background: url(map-get($svgs, 'ism-nav-plus')) 0 0;
+    background-size: 100%;
+
+    user-select: none;
+  }
+
+  &__nav-minus {
+    top: 80px;
+    left: 0;
+
+    width: 40px;
+    height: 35px;
+
+    cursor: pointer;
+    background: url(map-get($svgs, 'ism-nav-minus')) 0 191px;
+    background-size: 100%;
+
+    user-select: none;
+  }
+
+  &__tooltip-module {
+    z-index: z('ism-tooltip-module'); // prolly don't need
+
+    display: inline-block;
+    padding: 5px;
+  }
+
+  &__tooltip-title {
+    @include bold-text();
+  }
+
+  &__tooltip-text {
+    font-weight: normal;
+  }
+
+  &__map {
+    margin: 0 auto;
+  }
+
+  &__map-fullscreen {
+    height: 100vh;
+  }
+
+  &__map-tooltip {
+    position: relative;
+    z-index: z('ism-map-tooltip');
+
+    display: block;
+    height: 90px;
+    padding: 5px;
+
+    background: $white;
+    border: 1px solid $tooltip-dark-border-color;
+    border-radius: 0;
+  }
+
+  // Northward tooltips
+  // Creates a small triangle extender for the tooltip
+  &__map-tooltip:after {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    z-index: z('ism-carat'); // prolly don't need
+
+    display: block;
+    width: 0;
+    margin-left: -6px;
+
+    font-size: 10px;
+    line-height: 1;
+    color: $tooltip-body-color;
+
+    pointer-events: none;
+
+    border-color: $white $transparent-color;
+    border-style: solid;
+    border-width: 10px 10px 0;
+
+    content: '';
+  }
+
+  &__map-tooltip:before {
+    position: absolute;
+    bottom: -11px;
+    left: 50%;
+    z-index: z('ism-tooltip-before');  // prolly don't need
+
+    display: block;
+    width: 0;
+    margin-left: -7px;
+
+    border-color: $tooltip-light-border-color $transparent-color;
+    border-style: solid;
+    border-width: 11px 11px 0;
+
+    content: '';
+  }
+}

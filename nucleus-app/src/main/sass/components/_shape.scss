@@ -1,0 +1,13 @@
+// scss-lint:disable ImportantRule
+// We need to use !important declarations to override ICE
+// due to their frickin' lack of configurability
+
+.shape[availability="HIGH"],
+.shape[availability="MEDIUM"],
+.shape[availability="LOW"] {
+  fill: $ism-seat-open-color !important;
+}
+
+.shape[availability="NONE"] {
+  fill: $ism-seat-sold-color !important;
+}

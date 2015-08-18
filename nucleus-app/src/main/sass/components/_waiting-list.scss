@@ -1,0 +1,22 @@
+.waiting-list {
+  position: relative;
+
+  &__form {
+    margin: auto;
+  }
+
+  &__notify-btn {
+    @extend %btn-primary;
+
+    margin: 15px 0 0 10px;
+
+    font-weight: bold;
+  }
+
+  &__text-field-input {
+    @include text-field-input();
+
+    width: 150px;
+    margin: 15px 0 0 10px;
+  }
+}

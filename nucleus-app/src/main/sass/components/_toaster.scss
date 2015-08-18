@@ -1,0 +1,14 @@
+$toaster-button-radius: 20px;
+
+.toaster {
+  @include toaster();
+
+  &--button {
+    padding: $button-padding;
+
+    color: $button-font-color;
+
+    border: 0;
+    border-radius: $toaster-button-radius;
+  }
+}

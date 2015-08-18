@@ -1,0 +1,14 @@
+@mixin icon($img) {
+  @include svg($img);
+
+  display: inline-block;
+
+  width: 20px;
+  height: 20px;
+
+  vertical-align: top;
+
+  background-position: center center;
+
+  content: '';
+}

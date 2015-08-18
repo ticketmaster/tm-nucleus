@@ -1,0 +1,20 @@
+@mixin accordion-header-icon() {
+  @include span(1 of 12 no-gutters);
+  position: relative;
+  text-align: right;
+}
+
+@mixin accordion-header-text() {
+  @include span(11 of 12 no-gutters);
+  @include responsive-font('md');
+
+  color: $base-link-color;
+
+}
+
+@mixin accordion-content() {
+  @include span(full nest);
+  @include slider-ease(0, 3000px) {
+    transition: max-height 1s cubic-bezier(0, 1.05, 0, 1);
+  }
+}

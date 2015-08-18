@@ -1,0 +1,23 @@
+@mixin text-field-label() {
+  position: absolute;
+  top: 3px;
+
+  padding: 5px 0 1px 11px;
+
+
+  @include responsive-font('xs');
+  color: $alt-copy-color;
+
+  opacity: 0;
+  transition: all 0.1s linear;
+
+  &.show {
+    top: 0;
+
+    opacity: 1;
+  }
+
+  &.focus {
+    color: $border-focused-color;
+  }
+}

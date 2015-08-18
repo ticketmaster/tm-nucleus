@@ -1,0 +1,10 @@
+@import 'base/all';
+@import 'mixins/breakpoint';
+
+.container {
+  text-align: center;
+
+  input {
+    display: inline;
+  }
+}

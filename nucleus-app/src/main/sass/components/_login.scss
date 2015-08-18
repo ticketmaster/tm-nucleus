@@ -1,0 +1,21 @@
+.login {
+  &__login-header-container {
+    @include span(full nest);
+  }
+
+  &__login-header-icon {
+    @include accordion-header-icon();
+  }
+
+  &__login-header-text {
+    @include accordion-header-text();
+  }
+
+  &__toggle {
+    @include toggle-btn();
+  }
+
+  &__login-options {
+    @include accordion-content();
+  }
+}

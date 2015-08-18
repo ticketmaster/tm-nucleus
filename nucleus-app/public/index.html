@@ -1,0 +1,1844 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, target-densitydpi=medium-dpi, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>CCP Living Styleguide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="//s2.tmol.co/tm/4ab94a4f/static/favicon-rebrand.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="//s2.tmol.co/tm/4ab94a4f/static/favicon-rebrand.ico" type="image/x-icon">
+  <link href="css/styleguide.css" rel="stylesheet" type="text/css">
+
+<body class="page styleguide">
+
+  <div class="page__frame">
+    <div class="page__content">
+      <header class="sg-header">
+        <h1 class="sg-title">Ticketmaster Style Guide</h1>
+        <p>Shiny!</p>
+      </header>
+
+      <section class="sg-section">
+        <h2 class="sg-hdg">Table of Contents</h2>
+        <ul class="sg-list">
+          <li><a href="#palette">Color Palette</a></li>
+          <li><a href="#typography">Typography</a></li>
+          <li><a href="#text-styles">Text Styles</a></li>
+          <li><a href="#breakpoints">Breakpoints</a></li>
+          <li><a href="#page-structure">Page Structure</a></li>
+          <li><a href="#spacing">Content Spacing</a></li>
+          <li><a href="#layout">Layout Patterns</a></li>
+          <li><a href="#buttons">Buttons</a></li>
+          <li><a href="#badges">Badges</a></li>
+          <li><a href="#toasters">Toasters</a></li>
+          <li><a href="#tooltips">Tooltips</a></li>
+          <li><a href="#form-elements">Form Elements</a></li>
+          <li><a href="#panels">Panels</a></li>
+          <li><a href="#datestamp">Datestamp</a></li>
+          <li><a href="#ticket-stub">Ticket Stub</a></li>
+          <li><a href="#polling">Polling</a></li>
+          <li><a href="#polling-overlay">Polling Overlay</a></li>
+          <li><a href="#property-order">CSS Property Ordering</a></li>
+        </ul>
+
+      </section>
+
+
+      <section id="palette" class="sg-section">
+
+        <h2 class="sg-hdg">Color Palette</h2>
+
+        <p>The colors in our palette are named after geographic locations, with each group of colors carrying a specific theme.
+          For example, all Blues are named after bodies of water, Greens after national parks, etc.</p>
+
+        <h3 class="sg-subhdg">Grays</h3>
+        <div class="sg-swatches">
+          <div class="sg-swatch-group">
+            <div class="sg-swatch--sierra"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">sierra</span>
+              <code class="sg-code">#414141</code>
+              <ul class="sg-list">
+                <li><code class="sg-code">$base-font-color</code></li>
+                <li><code class="sg-code">$hdg-primary-color</code></li>
+              </ul>
+            </div>
+          </div>
+          <div class="sg-swatch-group">
+            <div class="sg-swatch--mckinley"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">mckinley</span>
+              <code class="sg-code">#838383</code>
+            </div>
+          </div>
+          <div class="sg-swatch-group">
+            <div class="sg-swatch--cascade"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">cascade</span>
+              <code class="sg-code">#999999</code>
+              <ul class="sg-list">
+                <li><code class="sg-code">$alt-copy-color</code></li>
+                <li><code class="sg-code">$chevron-color</code></li>
+                <li><code class="sg-code">$dropdown-arrow-color</code></li>
+                <li><code class="sg-code">$hdg-secondary-color</code></li>
+                <li><code class="sg-code">$radio-border-color</code></li>
+                <li><code class="sg-code">$secondary-button-color</code></li>
+                <li><code class="sg-code">$badge-color</code></li>
+              </ul>
+            </div>
+          </div>
+          <div class="sg-swatch-group">
+            <div class="sg-swatch--rocky"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">rocky</span>
+              <code class="sg-code">#cccccc</code>
+              <ul class="sg-list">
+                <li><code class="sg-code">$dark-border-color</code></li>
+              </ul>
+            </div>
+          </div>
+          <div class="sg-swatch-group">
+            <div class="sg-swatch--whitney"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">whitney</span>
+              <code class="sg-code">#dddddd</code>
+            </div>
+          </div>
+          <div class="sg-swatch-group">
+            <div class="sg-swatch--appalachian"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">appalachian</span>
+              <code class="sg-code">#e6e6e6</code>
+              <ul class="sg-list">
+                <li><code class="sg-code">$light-border-color</code></li>
+              </ul>
+            </div>
+          </div>
+          <div class="sg-swatch-group">
+            <div class="sg-swatch--teton"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">teton</span>
+              <code class="sg-code">#efefef</code>
+              <ul class="sg-list">
+                <li><code class="sg-code">$background-white</code></li>
+              </ul>
+            </div>
+          </div>
+          <div class="sg-swatch-group">
+            <div class="sg-swatch--ridge"></div>
+             <div class="sg-swatch-info">
+               <span class="sg-swatch-name">ridge</span>
+               <code class="sg-code">#f7f7f7</code>
+               <ul class="sg-list">
+                 <li><code class="sg-code">$background-gray</code></li>
+               </ul>
+             </div>
+          </div>
+        </div>
+
+        <h3 class="sg-subhdg">Blues</h3>
+        <div class="sg-swatches">
+          <div class="sg-swatch-group">
+            <div class="sg-swatch--pacific"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">pacific</span>
+              <code class="sg-code">#009cde</code>
+              <ul class="sg-list">
+                <li><code class="sg-code">$base-link-color</code></li>
+                <li><code class="sg-code">$border-focused-color</code></li>
+                <li><code class="sg-code">$radio-selected-color</code></li>
+              </ul>
+            </div>
+          </div>
+          <div class="sg-swatch-group">
+            <div class="sg-swatch--tahoe"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">tahoe</span>
+              <code class="sg-code">#1085b7</code>
+            </div>
+          </div>
+          <div class="sg-swatch-group">
+            <div class="sg-swatch--monterey"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">monterey</span>
+              <code class="sg-code">#bfe6f7</code>
+            </div>
+          </div>
+          <div class="sg-swatch-group">
+            <div class="sg-swatch--havasu"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">havasu</span>
+              <code class="sg-code">#e0f6ff</code>
+            </div>
+          </div>
+          <div class="sg-swatch-group">
+            <div class="sg-swatch--mead"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">mead</span>
+              <code class="sg-code">#aadcf2</code>
+            </div>
+          </div>
+          <div class="sg-swatch-group">
+            <div class="sg-swatch--arrowhead"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">arrowhead</span>
+              <code class="sg-code">#7fcdee</code>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sg-subhdg">Reds</h3>
+        <div class="sg-swatches">
+          <div class="sg-swatch-group">
+            <div class="sg-swatch--rainier"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">rainier</span>
+              <code class="sg-code">#d00509</code>
+            </div>
+          </div>
+          <div class="sg-swatch-group">
+            <div class="sg-swatch--helen"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">helen</span>
+              <code class="sg-code">#ff0000</code>
+              <ul class="sg-list">
+                <li><code class="sg-code">$alert-color</code></li>
+                <li><code class="sg-code">$border-error-color</code></li>
+              </ul>
+            </div>
+          </div>
+          <div class="sg-swatch-group">
+            <div class="sg-swatch--hood"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">hood</span>
+              <code class="sg-code">#ffbfbf</code>
+            </div>
+          </div>
+          <div class="sg-swatch-group">
+            <div class="sg-swatch--shasta"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">shasta</span>
+              <code class="sg-code">#f2b1b1</code>
+            </div>
+          </div>
+          <div class="sg-swatch-group">
+            <div class="sg-swatch--loa"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">loa</span>
+              <code class="sg-code">#fae6e6</code>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sg-subhdg">Pinks</h3>
+        <div class="sg-swatches">
+          <div class="sg-swatch-group">
+            <div class="sg-swatch--catalina"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">catalina</span>
+              <code class="sg-code">#d0006f</code>
+              <ul class="sg-list">
+                <li><code class="sg-code">$resale-color</code></li>
+              </ul>
+            </div>
+          </div>
+          <div class="sg-swatch-group">
+            <div class="sg-swatch--coronado"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">coronado</span>
+              <code class="sg-code">#e97fb5</code>
+              <ul class="sg-list">
+                <li><code class="sg-code">$resale-disabled-color</code></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sg-subhdg">Greens</h3>
+        <div class="sg-swatches">
+          <div class="sg-swatch-group">
+            <div class="sg-swatch--yosemite"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">yosemite</span>
+              <code class="sg-code">#19ab20</code>
+              <ul class="sg-list">
+                <li><code class="sg-code">$success-color</code></li>
+                <li><code class="sg-code">$tertiary-button-color</code></li>
+              </ul>
+            </div>
+          </div>
+          <div class="sg-swatch-group">
+            <div class="sg-swatch--sequoia"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">sequoia</span>
+              <code class="sg-code">#239028</code>
+              <ul class="sg-list">
+                <li><code class="sg-code">$order-total-color</code></li>
+              </ul>
+            </div>
+          </div>
+          <div class="sg-swatch-group">
+            <div class="sg-swatch--joshua"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">joshua</span>
+              <code class="sg-code">#c5eac7</code>
+            </div>
+          </div>
+          <div class="sg-swatch-group">
+            <div class="sg-swatch--olympic"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">olympic</span>
+              <code class="sg-code">#e6fae6</code>
+            </div>
+          </div>
+          <div class="sg-swatch-group">
+            <div class="sg-swatch--zion"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">zion</span>
+              <code class="sg-code">#b8e6ba</code>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sg-subhdg">Yellows</h3>
+        <div class="sg-swatches">
+          <div class="sg-swatch-group">
+            <div class="sg-swatch--malibu"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">malibu</span>
+              <code class="sg-code">#fecb34</code>
+            </div>
+          </div>
+          <div class="sg-swatch-group">
+            <div class="sg-swatch--pismo"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">pismo</span>
+              <code class="sg-code">#ffe28c</code>
+            </div>
+          </div>
+          <div class="sg-swatch-group">
+            <div class="sg-swatch--venice"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">venice</span>
+              <code class="sg-code">#fff7de</code>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sg-subhdg">Color Function</h3>
+        <p>The above colors are stored within a SASS map called <code class="sg-code">$palette</code>. To access a color,
+          use our custom <code class="sg-code">color</code> function by passing in the color group and color name as parameters.</p>
+        <pre class="sg-sample-code">
+// scss
+$caution-color: <span class="sg-highlight-code">color('yellow', 'malibu')</span>;
+
+// output
+$caution-color: #fecb34;
+        </pre>
+        <p>Note that, in general, your variable name should be abstract and not include the name of a color (i.e.,
+          use <code class="sg-code">$alert-color</code> and not <code class="sg-code">$alert-red</code>).</p>
+        <p>All color declarations should be kept in <code class="sg-code">_palette.scss</code>. The only place you should be
+          using the <span class="sg-code">color</span> function is in this file. We do this so that all color defintions
+          are kept in a single place.</p>
+
+      </section>
+
+      <section id="typography" class="sg-section">
+
+        <h2 class="sg-hdg">Typography</h2>
+        <h3 class="sg-subhdg">Responsive fonts</h3>
+        <p>With few exceptions, font sizes on our pages should be responsive at certain breakpoints. You should assume that any font size specified by a designer should be responsive unless explicitly stated otherwise.</p>
+        <p>To simplify the process of creating responsive fonts, we have a <code class="sg-code">responsive-font()</code> mixin to generate
+          the appropriate code when passed a font size.</p>
+        <p>Note that we actually specify our font sizes in <code class="sg-code">rem</code> units.
+          <code class="sg-code">1rem</code> is equivalent to <code class="sg-code">10px</code>.</p>
+        <pre class="sg-sample-code">
+// scss
+.sample-text {
+  @include <span class="sg-highlight-code">responsive-font('md')</span>;
+}
+
+// output
+.sample-text {
+  font-size: 1.4rem;
+}
+
+@media (min-width: 45em) {
+  .sample-text {
+    font-size: 1.6rem;
+  }
+}
+        </pre>
+
+        <p>Using this mixin, our font sizes are then generated as follows (up to the specified widths).</p>
+
+        <table class="sg-table">
+          <tr>
+            <td><span class="sg-xs-font-size-responsive">Extra small copy</span></td>
+            <td><span class="alt-copy"><span class="sg-mobile-limit">10px</span>, 12px</span></td>
+            <td><code class="sg-code">@include responsive-font('xs');</code></td>
+          </tr>
+          <tr>
+            <td><span class="sg-sm-font-size-responsive">Small copy</span></td>
+            <td><span class="alt-copy"><span class="sg-mobile-limit">12px</span>, 14px</span></td>
+            <td><code class="sg-code">@include responsive-font('sm');</code></td>
+          </tr>
+          <tr>
+            <td><span class="sg-md-font-size-responsive">Medium copy</span></td>
+            <td><span class="alt-copy"><span class="sg-mobile-limit">14px</span>, 16px</span></td>
+            <td><code class="sg-code">@include responsive-font('md');</code></td>
+          </tr>
+          <tr>
+            <td><span class="sg-lg-font-size-responsive">Large copy</span></td>
+            <td><span class="alt-copy"><span class="sg-mobile-limit">18px</span>, 20px</span></td>
+            <td><code class="sg-code">@include responsive-font('lg');</code></td>
+          </tr>
+          <tr>
+            <td><span class="sg-xl-font-size-responsive">Extra large copy</span></td>
+            <td><span class="alt-copy"><span class="sg-mobile-limit">18px</span>, <span class="sg-large-mobile-limit">20px</span>, 24px</span></td>
+            <td><code class="sg-code">@include responsive-font('xl');</code></td>
+          </tr>
+        </table>
+
+        <h3 class="sg-subhdg">Non-responsive fonts</h3>
+        <p>When defining a fixed font size, use our <code class="sg-code">fontsy()</code> function.</p>
+        <p><code class="sg-code">fontsy()</code> can accept two parameters. The first is required and specifies the font size you want. The second parameter is optional and specifies the &quot;version&quot; of the font size (<code class="sg-code">base</code> or <code class="sg-code">plus</code>).</p>
+        <p>If a second parameter is not passed, it defaults to calling the <code class="sg-code">base</code> font size.</p>
+
+        <table class="sg-table">
+          <th>
+            <tr>
+              <td colspan="3"><span class="sg-table-hdg">Base</span></td>
+            </tr>
+          </th>
+          <tr>
+            <td><span class="sg-xs-font-size">Extra small copy</span></td>
+            <td><span class="alt-copy">10px</span></td>
+            <td><code class="sg-code">fontsy('xs')</code></td>
+          </tr>
+          <tr>
+            <td><span class="sg-sm-font-size">Small copy</span></td>
+            <td><span class="alt-copy">12px</span></td>
+            <td><code class="sg-code">fontsy('sm')</code></td>
+          </tr>
+          <tr>
+            <td><span class="sg-md-font-size">Medium copy</span></td>
+            <td><span class="alt-copy">14px</span></td>
+            <td><code class="sg-code">fontsy('md')</code></td>
+          </tr>
+          <tr>
+            <td><span class="sg-lg-font-size">Large copy</span></td>
+            <td><span class="alt-copy">18px</span></td>
+            <td><code class="sg-code">fontsy('lg')</code></td>
+          </tr>
+          <tr>
+            <td><span class="sg-xl-font-size">Extra large copy</span></td>
+            <td><span class="alt-copy">18px</span></td>
+            <td><code class="sg-code">fontsy('xl')</code></td>
+          </tr>
+        </table>
+
+        <table class="sg-table">
+          <th>
+            <tr>
+              <td colspan="3"><span class="sg-table-hdg">Plus</span></td>
+            </tr>
+          </th>
+          <tr>
+            <td><span class="sg-xs-font-size">Extra small copy</span></td>
+            <td><span class="alt-copy">12px</span></td>
+            <td><code class="sg-code">fontsy('xs', 'plus')</code></td>
+          </tr>
+          <tr>
+            <td><span class="sg-sm-font-size-plus">Small copy</span></td>
+            <td><span class="alt-copy">14px</span></td>
+            <td><code class="sg-code">fontsy('sm', 'plus')</code></td>
+          </tr>
+          <tr>
+            <td><span class="sg-md-font-size-plus">Medium copy</span></td>
+            <td><span class="alt-copy">16px</span></td>
+            <td><code class="sg-code">fontsy('md', 'plus')</code></td>
+          </tr>
+          <tr>
+            <td><span class="sg-lg-font-size-plus">Large copy</span></td>
+            <td><span class="alt-copy">20px</span></td>
+            <td><code class="sg-code">fontsy('lg', 'plus')</code></td>
+          </tr>
+          <tr>
+            <td><span class="sg-xl-font-size-plus">Extra large copy</span></td>
+            <td><span class="alt-copy">20px</span></td>
+            <td><code class="sg-code">fontsy('xl', 'plus')</code></td>
+          </tr>
+        </table>
+
+        <p>For the <code class="sg-code">xl</code> font-size only, there is a third option of <code class="sg-code">plus2</code>.</p>
+
+        <table class="sg-table">
+          <th>
+            <tr>
+              <td colspan="3"><span class="sg-table-hdg">Plus2</span></td>
+            </tr>
+          </th>
+          <tr>
+            <td><span class="sg-xl-font-size-plus2">Extra large copy</span></td>
+            <td><span class="alt-copy">24px</span></td>
+            <td><code class="sg-code">fontsy('xl','plus2')</code></td>
+          </tr>
+        </table>
+
+        <pre class="sg-sample-code">
+// scss
+.fontsy-example {
+  font-size: <span class="sg-highlight-code">fontsy('md','plus')</span>;
+}
+
+// output
+.fontsy-example {
+  font-size: 1.6rem;
+}
+</pre>
+
+        <h3 class="sg-subhdg">Form Input Font Size</h3>
+        <p>Because iOS zooms in on any input field whose font size is less than 16px, we set the minimum font size of input fields to <code class="sg-code">1.6rem</code> via <code class="sg-code">$min-input-font-size</code>.</p>
+        <p>Note that font sizes for input fields are fixed and not responsive.</p>
+        <pre class="sg-sample-code">
+// scss
+.input-field {
+  font-size: <span class="sg-highlight-code">$min-input-font-size</span>
+}
+
+// output
+.input-field {
+  font-size: 1.6rem;
+}
+        </pre>
+
+        <h3 class="sg-subhdg">Line Height</h3>
+        <p>Line height is standardized at <code class="sg-code">1.35</code>, which is equivalent to 135% of the font size.</p>
+
+      </section>
+
+      <section id="text-styles" class="sg-section">
+        <h2 class="sg-hdg">Text Styles</h2>
+        <table class="sg-table">
+          <tr>
+            <td><span class="heading-primary">Primary Headers</span></td>
+            <td><span class="alt-copy">18px/20px/24px, 5px bottom margin, sierra</span></td>
+            <td><code class="sg-code">.heading-primary</code></td>
+          </tr>
+          <tr>
+            <td><span class="heading-secondary">Secondary Headers</span></td>
+            <td><span class="alt-copy">18px/20px, 5px bottom margin, cascade</span></td>
+            <td><code class="sg-code">.heading-secondary</code></td>
+          </tr>
+          <tr>
+            <td><span class="sg-ex-bold">Bold text</span></td>
+            <td><span class="alt-copy">-25 tracking</span></td>
+            <td><code class="sg-code">@include bold-text()</code></td>
+          </tr>
+          <tr>
+            <td><span class="sg-ex-link"><a href="#">Link text</a></span></td>
+            <td><span class="alt-copy">#034678, underline on hover</span></td>
+          </tr>
+          <tr>
+            <td><span class="alt-copy">Alt copy</span></td>
+            <td><span class="alt-copy">12px/14px, cascade</span></td>
+            <td><code class="sg-code">.alt-copy</code></td>
+          </tr>
+          <tr>
+            <td><span class="legal-copy">Legal copy</span></td>
+            <td><span class="alt-copy">10px/12px, cascade</span></td>
+            <td><code class="sg-code">.legal-copy</code></td>
+          </tr>
+        </table>
+
+        <h3 class="sg-subhdg">Mixins for text styling</h3>
+        <p>In the case where any of the above use cases is not appropriate, there are mixins available
+          to achieve the desired appearance.</p>
+        <h4 class="sg-subhdg2">hdg-text mixin</h4>
+        <p>The <code class="sg-code">hdg-text()</code> mixin can be used to create heading text
+          that's bold with a bottom margin of 5px. It is called by passing in a font-size and color.
+          It will automatically make the font responsive via a built-in call to the
+          <code class="sg-code">responsive-font()</code> mixin.</p>
+        <pre class="sg-sample-code">
+// scss
+.some-heading {
+  <span class="sg-highlight-code">@include hdg-text('md', $black);</span>
+}
+
+// output
+.some-heading {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #000;
+}
+
+@media (min-width: 45em) {
+  .some-heading {
+    font-size: 16px;
+  }
+}
+        </pre>
+        <h4 class="sg-subhdg2">alt-copy mixin</h4>
+        <p>The <code class="sg-code">alt-copy()</code> mixin can optionally be called with
+          a font-size parameter. By default, it sets font-size to
+          <code class="sg-code">sm</code>. It will automatically make the font
+          responsive via a built-in call to the <code class="sg-code">responsive-font()</code>
+          mixin.</p>
+        <pre class="sg-sample-code">
+// scss
+.ticket-fees {
+  <span class="sg-highlight-code">@include alt-copy('md');</span>
+}
+
+// output
+.ticket-fees {
+  font-size: 14px;
+  font-weight: normal;
+  color: #999;
+}
+
+@media (min-width: 45em) {
+  .ticket-fees {
+    font-size: 16px;
+  }
+}
+        </pre>
+
+      </section>
+
+      <section id="breakpoints" class="sg-section">
+        <h2 class="sg-hdg">Breakpoints</h2>
+        <table class="sg-table">
+          <tr>
+            <td><span class="sg-mobile-bp">Mobile</span></td>
+            <td><code class="sg-code">$bp-sm</code></td>
+          </tr>
+          <tr>
+            <td><span class="sg-large-mobile-bp">Large Mobile</span></td>
+            <td><code class="sg-code">$bp-sm2</code></td>
+          </tr>
+          <tr>
+            <td><span class="sg-tablet-bp">Tablet</span></td>
+            <td><code class="sg-code">$bp-md</code></td>
+          </tr>
+          <tr>
+            <td><span class="sg-desktop-bp">Desktop</span></td>
+            <td><code class="sg-code">$bp-lg</code></td>
+          </tr>
+          <tr>
+            <td><span class="sg-max-bp">Max</span></td>
+            <td><code class="sg-code">$bp-xl</code></td>
+          </tr>
+        </table>
+
+        <h3 class="sg-subhdg">Breakpoint mixin</h3>
+        <p>You can specify media queries by using the <code class="sg-code">breakpoint()</code> mixin.</p>
+        <p>The mixin accepts two parameters, <code class="sg-code">$min</code> and
+          <code class="sg-code">$max</code> values. By default, if only one parameter is passed, it is
+          assigned to the <code class="sg-code">$min</code> value.</p>
+        <p>The mixin takes <code class="sg-code">px</code> values and converts them to <code class="sg-code">em</code> units,
+          which is the preferred way to write media queries.</p>
+        <pre class="sg-sample-code">
+// scss
+.some-block {
+  margin-top: 15px;
+
+  // $bp-md will be assigned as min-width
+  <span class="sg-highlight-code">@include breakpoint($bp-md)</span> {
+    margin-top: 40px;
+  }
+}
+
+// output
+.some-block {
+  margin-top: 15px;
+}
+
+// note the conversion to em units
+<span class="sg-highlight-code">@media (min-width: 45em)</span> {
+  .some-block {
+    margin-top: 40px;
+  }
+}
+        </pre>
+
+        <p>If you need to specify the maximum breakpoint instead, you call the mixin by explicity
+          assigning the parameter to <code class="sg-code">$max</code>.</p>
+        <pre class="sg-sample-code">
+// scss
+.another-block {
+  [...]
+
+  // here we are explicitly assigning our parameter to $max
+  <span class="sg-highlight-code">@include breakpoint($max: $bp-lg - 1)</span> {
+    padding: 25px;
+  }
+}
+
+// output
+[...]
+
+<span class="sg-highlight-code">@media (max-width: 63.6875em)</span> {
+  .another-block {
+    padding: 25px;
+  }
+}
+        </pre>
+
+        <p>Note in the above example that we actually passed in <code class="sg-code">($max: $bp-lg -
+          1)</code> because we want the styling rules to apply to anything <em>below</em> the max
+          value. (We don't want to actually include the max value as part of the declaration.)</em>
+        </p>
+
+        <p>In our example, we're saying applying these rules to anything less than the <code
+          class="sg-code">1020px</code> width.</p>
+
+        <h4 class="sg-subhdg2">Where to Use breakpoint</h4>
+        <p>In SASS, declare your breakpoints within the elements affected. Do not declare media queries as another code block separate from the original context.</p>
+
+        <pre class="sg-sample-code">
+<span class="sg-highlight-code">// DON'T do this</span>
+.class1 {
+  font-size: 12px;
+}
+.class2 {
+  padding: 50px;
+}
+
+[...]
+
+@include breakpoint($bp-md) {
+  .class1 {
+    font-size: 18px;
+  }
+  .class2 {
+    padding: 100px;
+  }
+}
+
+<span class="sg-highlight-code">// DO do this</span>
+.class1 {
+  font-size: 12px;
+
+  @include breakpoint($bp-md) {
+    font-size: 18px;
+  }
+}
+        </pre>
+
+      </section>
+
+      <section id="page-structure" class="sg-section">
+        <h2 class="sg-hdg">Page Structure</h2>
+        <p>The basic layout of our pages is as follows:</p>
+
+        <pre class="sg-sample-code">
+&lt;body class=&quot;<span class="sg-highlight-code">page edp</span>&quot;&gt;
+  &lt;div class=&quot;<span class="sg-highlight-code">page__wrapper</span>&quot;&gt;
+    &lt;div class=&quot;<span class="sg-highlight-code">page__frame</span>&quot;&gt;
+      &lt;div class=&quot;<span class="sg-highlight-code">page__content</span>&quot;&gt;
+        &lt;!-- page content here --&gt;
+        </pre>
+
+        <table class="sg-table">
+          <tr>
+            <td><code class="sg-code">.page</code></td>
+            <td>Sets base typography for page and background color</td>
+          </tr>
+          <tr>
+            <td><code class="sg-code">.page__wrapper</code></td>
+            <td>Sets background color for a particular section of the page</td>
+          </tr>
+          <tr>
+            <td><code class="sg-code">.page__frame</code></td>
+            <td>Sets max-width for your content area</td>
+          </tr>
+          <tr>
+            <td><code class="sg-code">.page__content</code></td>
+            <td>Sets default font size and other needed attributes for your content area</td>
+          </tr>
+          <tr>
+            <td><code class="sg-code">.[pagename]</code></td>
+            <td>Sets block context for any page-specific styles</td>
+          </tr>
+        </table>
+
+        <p>Note that you don't always need to use all of the classes above.
+         Only use those classes that you need to establish page structure.</p>
+        <p>For example, if you don't need set to a background color for your section of a page that's different from the
+         body background, then you don't need to use <code class="sg-code">page__wrapper</code>. Similarly, if your
+         content is supposed to span the full width of the browser at all times, then you don't need
+        <code class="sg-code">page__frame</code>.</p>
+      </section>
+
+      <section id="spacing" class="sg-section">
+        <h2 class="sg-hdg">Content Spacing</h2>
+        <p>All major page elements have standard vertical spacing that is applied as bottom margin of
+          <code class="sg-code">20px</code> on mobile and <code class="sg-code">40px</code> on tablet/desktop.</p>
+        <p>Reference the <code class="sg-code">content-spacing()</code> mixin to apply the margins to your class.</p>
+        <pre class="sg-sample-code">
+// scss
+.major-block {
+  <span class="sg-highlight-code">@include content-spacing();</span>
+}
+
+// output
+.major-block {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 45em) {
+  margin-bottom: 40px;
+}
+        </pre>
+      </section>
+
+      <section id="layout" class="sg-section">
+        <h2 class="sg-hdg">Layout Patterns</h2>
+
+        <h3 class="sg-subhdg">Modules</h3>
+        <div class="module">
+          <div class="module__content">
+            <p>This is an example of a module. Its content has <code class="sg-code">15px</code> padding in mobile and <code class="sg-code">20px</code> in tablet/desktop.</p>
+          </div>
+        </div>
+
+        <pre class="sg-sample-code">
+&lt;div class="<span class="sg-highlight-code">module</span>"&gt;
+  &lt;div class="<span class="sg-highlight-code">module__content</span>"&gt;
+    Content goes here.
+  &lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+
+        <p>Note that <code class="sg-code">module__content</code> does not have to be the immediate child of <code class="sg-code">module</code>. It can be applied at any level within a module to give it the appropriate padding.</p>
+
+        <h4 class="sg-subhdg2">Module Variants</h4>
+        <div class="module module--success">
+          <div class="module__content module__content--success-icon">This is an example of a success message module.</div>
+        </div>
+
+        <pre class="sg-sample-code">
+&lt;div class="module <span class="sg-highlight-code">module--success</span>"&gt;
+  &lt;div class="module__content <span class="sg-highlight-code">module__content--success-icon</span>"&gt;
+    Content goes here.
+  &lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+
+        <h3 class="sg-subhdg">Delimited Lists</h3>
+
+        <p>To display a list of items, use the Delimited List pattern.</p>
+
+        <div class="module">
+          <ul class="delimited-list">
+            <li class="delimited-list__item module__content">
+              Example 1
+            </li>
+            <li class="delimited-list__item module__content">
+              Second item
+            </li>
+            <li class="delimited-list__item module__content">
+              Last item in list
+            </li>
+          </ul>
+        </div>
+
+        <pre class="sg-sample-code">
+&lt;div class="module"&gt;
+  &lt;ul class="<span class="sg-highlight-code">delimited-list</span>"&gt;
+    &lt;li class="<span class="sg-highlight-code">delimited-list__item module__content</span>"&gt;
+      First item
+    &lt;/li&gt;
+    &lt;li class="<span class="sg-highlight-code">delimited-list__item module__content</span>"&gt;
+      Second item
+    &lt;/li&gt;
+    &lt;li class="<span class="sg-highlight-code">delimited-list__item module__content</span>"&gt;
+      Third item
+    &lt;/li&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+
+        <p>Need to display non-list content before the list itself? No problem.</p>
+        <p>Just make sure the non-list content is enclosed in the <code class="sg-code">module__content</code> class.</p>
+
+        <div class="module">
+          <div class="module__content">
+            <p>Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola frankfurter picanha ham. Venison biltong t-bone ground round, tri-tip pig prosciutto chuck pork chop sausage tongue. Meatball rump meatloaf turducken, jowl tongue biltong doner.</p>
+          </div>
+          <ul class="delimited-list">
+            <li class="delimited-list__item module__content">
+              Example 1
+            </li>
+            <li class="delimited-list__item module__content">
+              Second item
+            </li>
+            <li class="delimited-list__item module__content">
+              Last item in list
+            </li>
+          </ul>
+        </div>
+
+        <pre class="sg-sample-code">
+&lt;div class="module"&gt;
+  &lt;div class="<span class="sg-highlight-code">module__content</span>&gt;
+    &lt;p&gt;Some non-list content here&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;ul class="<span class="sg-highlight-code">delimited-list</span>"&gt;
+    &lt;li class="<span class="sg-highlight-code">delimited-list__item module__content</span>"&gt;
+      First item
+    &lt;/li&gt;
+    &lt;li class="<span class="sg-highlight-code">delimited-list__item module__content</span>"&gt;
+      Second item
+    &lt;/li&gt;
+    &lt;li class="<span class="sg-highlight-code">delimited-list__item module__content</span>"&gt;
+      Third item
+    &lt;/li&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+
+        <h3 class="sg-subhdg">Split Content</h3>
+        <p>This pattern dictates a block of content where one portion (or column) is primary and takes up all available width, while secondary content is only as wide as it needs to be.</p>
+        <p>The default is <code class="sg-code">10px</code> of separation between these columns.</p>
+        <p>This is best illustrated with an example.</p>
+
+        <div class="module">
+          <div class="split-content">
+            <div class="split-content__primary module__content">
+              <p>Note how content in this area takes up all available space. Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola frankfurter picanha ham.</p>
+            </div>
+            <div class="split-content__secondary module__content">
+              <button class="button">Good 'Ol Button</button>
+            </div>
+          </div>
+        </div>
+
+        <pre class="sg-sample-code">
+&lt;div class="module"&gt;
+  &lt;div class="<span class="sg-highlight-code">split-content</span>"&gt;
+    &lt;div class="<span class="sg-highlight-code">split-content__primary</span> module__content"&gt;
+      &lt;p&gt;primary content here&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="<span class="sg-highlight-code">split-content__secondary</span> module__content"&gt;
+      &lt;button class="button"&gt;Good 'Ol Button&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+
+        <p>Secondary content can be placed before or after the primary content.</p>
+
+        <div class="module">
+          <div class="split-content module__content">
+            <div class="split-content__secondary">
+              <button class="button-outlined button-outlined--void button-outlined--small">Delete</button>
+            </div>
+            <div class="split-content__primary">
+              <p>Note how content in this area takes up all available space. Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola frankfurter picanha ham.</p>
+            </div>
+            <div class="split-content__secondary">
+              <button class="button button--cta">Buy</button>
+            </div>
+          </div>
+        </div>
+
+        <pre class="sg-sample-code">
+&lt;div class="module"&gt;
+  &lt;div class="split-content module__content"&gt;
+    &lt;div class="<span class="sg-highlight-code">split-content__secondary</span>"&gt;
+      &lt;button class="button-outlined button-outlined--void button-outlined--small"&gt;Delete&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="<span class="sg-highlight-code">split-content__primary</span>"&gt;
+      &lt;p&gt;primary content here&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="<span class="sg-highlight-code">split-content__secondary</span>"&gt;
+      &lt;button class="button button--cta"&gt;Buy&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+
+        <p>In instances where you need more spacing between columns than the default <code class="sg-code">10px</code>, you can use the <code class="sg-code">split-content__primary--lg</code> and <code class="sg-code">split-content__secondary--lg</code> modifiers.</p>
+
+        <div class="module">
+          <div class="split-content module__content">
+            <div class="split-content__secondary split-content__primary--lg">
+              <button class="button-outlined button-outlined--void button-outlined--small">Delete</button>
+            </div>
+            <div class="split-content__primary split-content__primary--lg">
+              <p>Note how content in this area takes up all available space. Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola frankfurter picanha ham.</p>
+            </div>
+            <div class="split-content__secondary split-content__primary--lg">
+              <button class="button button--cta">Buy</button>
+            </div>
+          </div>
+        </div>
+
+        <pre class="sg-sample-code">
+&lt;div class="module"&gt;
+  &lt;div class="split-content module__content"&gt;
+    &lt;div class="<span class="sg-highlight-code">split-content__secondary split-content__secondary--lg</span>"&gt;
+      &lt;button class="button-outlined button-outlined--void button-outlined--small"&gt;Delete&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="<span class="sg-highlight-code">split-content__primary split-content__primary--lg</span>"&gt;
+      &lt;p&gt;primary content here&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="<span class="sg-highlight-code">split-content__secondary split-content__secondary--lg</span>"&gt;
+      &lt;button class="button button--cta"&gt;Buy&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+
+        <p>By default, content is top-aligned. To have content be middle-aligned, use the <code class="sg-code">split-content--centered</code> modifier.</p>
+
+        <div class="module">
+          <div class="split-content split-content--centered module__content">
+            <div class="split-content__secondary split-content__secondary--lg">
+              <button class="button-outlined button-outlined--void button-outlined--small">Delete</button>
+            </div>
+            <div class="split-content__primary split-content__primary--lg">
+              <p>Bacon ipsum dolor amet pariatur venison meatball, turducken dolore ball tip pork belly ribeye consequat fatback kielbasa ham hock leberkas. Quis non frankfurter fatback, doner in shankle excepteur ut. Kevin dolore short loin quis velit dolor laborum est frankfurter kielbasa voluptate. Doner boudin tempor leberkas beef ribs.</p>
+              <p>Beef sint et pariatur fatback. Adipisicing frankfurter ut in. Duis ipsum magna qui. Minim spare ribs hamburger, porchetta proident eiusmod et fugiat duis shankle deserunt dolore magna turkey.</p>
+            </div>
+            <div class="split-content__secondary split-content__secondary--lg">
+              <button class="button button--cta">Buy</button>
+            </div>
+          </div>
+        </div>
+
+        <pre class="sg-sample-code">
+&lt;div class="module"&gt;
+  &lt;div class="<span class="sg-highlight-code">split-content split-content--centered module__content</span>"&gt;
+    &lt;div class="split-content__secondary split-content__secondary--lg"&gt;
+      &lt;button class="button-outlined button-outlined--void button-outlined--small"&gt;Delete&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="split-content__primary split-content__primary--lg"&gt;
+      &lt;p&gt;primary content here&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="split-content__secondary split-content__secondary--lg"&gt;
+      &lt;button class="button button--cta"&gt;Buy&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+
+        <p>In the event that you want to mix middle and top-aligned content, you can use the <code class="sg-code">split-content__primary--top</code> or <code class="sg-code">split-content__secondary--top</code> modifiers.</p>
+        <p>Note how the delete button below is now top-aligned.</p>
+
+        <div class="module">
+          <div class="split-content split-content--centered module__content">
+            <div class="split-content__secondary split-content__secondary--lg split-content__secondary--top">
+              <button class="button-outlined button-outlined--void button-outlined--small">Delete</button>
+            </div>
+            <div class="split-content__primary split-content__primary--lg">
+              <p>Bacon ipsum dolor amet pariatur venison meatball, turducken dolore ball tip pork belly ribeye consequat fatback kielbasa ham hock leberkas. Quis non frankfurter fatback, doner in shankle excepteur ut. Kevin dolore short loin quis velit dolor laborum est frankfurter kielbasa voluptate. Doner boudin tempor leberkas beef ribs.</p>
+              <p>Beef sint et pariatur fatback. Adipisicing frankfurter ut in. Duis ipsum magna qui. Minim spare ribs hamburger, porchetta proident eiusmod et fugiat duis shankle deserunt dolore magna turkey.</p>
+            </div>
+            <div class="split-content__secondary split-content__secondary--lg">
+              <button class="button button--cta">Buy</button>
+            </div>
+          </div>
+        </div>
+
+        <pre class="sg-sample-code">
+&lt;div class="module"&gt;
+  &lt;div class="split-content split-content--centered module__content"&gt;
+    &lt;div class="split-content__secondary split-content__secondary--lg <span class="sg-highlight-code">split-content__secondary--top</span>"&gt;
+      &lt;button class="button-outlined button-outlined--void button-outlined--small"&gt;Delete&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="split-content__primary split-content__primary--lg"&gt;
+      &lt;p&gt;primary content here&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="split-content__secondary split-content__secondary--lg"&gt;
+      &lt;button class="button button--cta"&gt;Buy&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+
+        <h3 class="sg-subhdg">Module Content Variants</h3>
+        <p>Certain use cases call for a variant of module content that has no padding in mobile in order to achieve certain design goals. In these cases, add the <code class="sg-code">module__content--flush</code> variant.</p>
+
+        <div class="module">
+          <div class="module__content module__content--flush">
+            <p>This is an example of module content with the <code class="sg-code">--flush</code> modifier. It has <code class="sg-code">0</code> padding in mobile and <code class="sg-code">20px</code> in tablet/desktop.</p>
+          </div>
+        </div>
+
+        <pre class="sg-sample-code">
+&lt;div class="module"&gt;
+  &lt;div class="module__content <span class="sg-highlight-code">module__content--flush</span>"&gt;
+    Content goes here.
+  &lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+
+
+      </section>
+
+      <section id="buttons" class="sg-section">
+        <h2 class="sg-hdg">Buttons</h2>
+        <table class="sg-table">
+          <tr>
+            <td><button class="button">Primary Button</button></td>
+            <td><code class="sg-code">.button</code>, 44px height, 20px L/R padding</td>
+          </tr>
+          <tr>
+            <td><button class="button button--secondary">Secondary Button</button></td>
+            <td><code class="sg-code">.button .button--secondary</code>, 44px height, 20px L/R padding</td>
+          </tr>
+          <tr>
+            <td><button class="button button--cta">Checkout</button></td>
+            <td><code class="sg-code">.button .button--cta</code>, 44px height, 40px L/R padding</td>
+          </tr>
+          <tr>
+            <td><button class="button-outlined">Outlined Button</button></td>
+            <td><code class="sg-code">.button-outlined</code>, 44px height, 20px L/R padding</td>
+          </tr>
+          <tr>
+            <td><button class="button-outlined button-outlined--void">Outlined Void Button</button></td>
+            <td><code class="sg-code">.button-outlined .button-outlined--void</code>, 44px height, 20px L/R padding</td>
+          </tr>
+          <tr>
+            <td><button class="button-outlined button-outlined--cta">Outlined Checkout</button></td>
+            <td><code class="sg-code">.button-outlined .button-outlined--cta</code>, 44px height, 20px L/R padding</td>
+          </tr>
+          <tr>
+            <td><button class="button button--small">Small Button</button></td>
+            <td><code class="sg-code">.button .button--small</code>, 30px height, 10px L/R padding</td>
+          </tr>
+          <tr>
+            <td><button class="button-outlined button-outlined--small">Outlined Small Button</button></td>
+            <td><code class="sg-code">.button-outlined .button-outlined--small</code>, 30px height, 10px L/R padding</td>
+          </tr>
+          <tr>
+            <td><button class="button button--full">Full width button</button></td>
+            <td><code class="sg-code">.button .button--full</code>, 44px height, 100% width</td>
+          </tr>
+          <tr>
+            <td><button class="button-outlined button-outlined--full">Full width button</button></td>
+            <td><code class="sg-code">.button-outlined .button-outlined--full</code>, 44px height, 100% width</td>
+          </tr>
+          <tr>
+            <td><button class="unbutton">Unstyled button</button></td>
+            <td><code class="sg-code">.unbutton</code>, looks like regular text</td>
+          </tr>
+        </table>
+
+        <h3 class="sg-subhdg">Quantity Buttons</h3>
+        <table class="sg-table">
+          <tr>
+            <td>
+              <div class="qty-changer">
+                <div class="qty-changer__button qty-changer__button--number">2</div>
+                <button class="qty-changer__button qty-changer__button--decrease"><span class="button-qty-changer__ada-text">Decrease quantity</span></button>
+                <button class="qty-changer__button qty-changer__button--increase"><span class="button-qty-changer__ada-text">Increase quantity</span></button>
+              </div>
+            </td>
+            <td>Note that when buttons are displayed together, there is a <code class="sg-code">5px</code> gap between the buttons.</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="embedded-qty-filter sg-embedded-qty-filter">
+                <div class="split-content">
+                  <div class="split-content__primary truncate-text embedded-qty-filter__content">XX Standard Admission</div>
+                  <div class="split-content__secondary qty-changer">
+                    <div class="embedded-qty-filter__buttons">
+                      <button class="qty-changer__button qty-changer__button--decrease qty-changer__button--embedded"></button>
+                      <button class="qty-changer__button qty-changer__button--increase qty-changer__button--embedded"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>Embedded quantity filter. The item name's width is based on its container.</td>
+          </tr>
+        </table>
+
+      </section>
+
+
+      <section id="badges" class="sg-section">
+        <h2 class="sg-hdg">Badges</h2>
+        <table class="sg-table">
+          <tr>
+            <td><span class="badge">General Admission Only</span></td>
+            <td><code class="sg-code">.badge</code></td>
+          </tr>
+        </table>
+      </section>
+
+      <section id="toasters" class="sg-section">
+        <h2 class="sg-hdg">Toasters</h2>
+        <table class="sg-table">
+          <tr>
+            <td><span class="toaster">Toaster Example</span></td>
+            <td><code class="sg-code">.toaster</code></td>
+          </tr>
+          <tr>
+            <td><button class="toaster toaster--button">Toaster as a button example</button></td>
+            <td><code class="sg-code">.toaster .toaster--button</code></td>
+          </tr>
+        </table>
+      </section>
+
+      <section id="tooltips" class="sg-section">
+        <h2 class="sg-hdg">Tooltips</h2>
+        <p>Note: Tooltips will move position when near the edge of the viewport.</p>
+        <div id="tooltip-container"></div>
+      </section>
+
+      <section id="form-elements" class="sg-section">
+        <h2 class="sg-hdg">Form Elements</h2>
+
+        <h3 class="sg-subhdg">Text fields</h3>
+
+        <p>Spacing between the label and text field is controlled via <code class="sg-code">$form-label-vspace</code>.
+          Spacing between sets of <code class="sg-code">input-group</code> is controlled by <code class="sg-code">$input-group-vspace</code>.</p>
+
+        <form>
+          <div class="input-group">
+            <label for="email" class="input-group__label">Email</label>
+            <input id="email" name="email" type="text" class="input-group__text-field">
+          </div>
+          <div class="input-group">
+            <label for="password" class="input-group__label">Password</label>
+            <input id="password" name="password" type="password" class="input-group__text-field">
+          </div>
+        </form>
+
+        <pre class="sg-sample-code">
+&lt;div class="<span class="sg-highlight-code">input-group</span>"&gt;
+  &lt;label for="email" class="<span class="sg-highlight-code">input-group__label</span>"&gt;Email&lt;/label&gt;
+  &lt;input id="email" name="email" type="text" class="<span class="sg-highlight-code">input-group__text-field</span>"&gt;
+&lt;/div&gt;
+&lt;div class="input-group"&gt;
+  &lt;label for="password" class="input-group__label"&gt;Password&lt;/label&gt;
+  &lt;input id="password" name="password" type="password" class="input-group__text-field"&gt;
+&lt;/div&gt;
+        </pre>
+
+        <h3 class="sg-subhdg">Radio Buttons</h3>
+
+        <p>Radio buttons are styled by hiding the actual button and using CSS to create a visual replacement. (You can read more about the technique <a href="http://www.sitepoint.com/replacing-radio-buttons-without-replacing-radio-buttons/">here</a>.)</a></p>
+
+        <table class="sg-table">
+          <tr>
+            <td>
+              <label class="radio-label" for="example-radio">
+                <input class="radio-input" type="radio" id="example-radio" name="example-radio">
+                <span>
+                  <span class="radio-label__name">
+                    Any Section
+                    <span class="radio-label__desc">
+                      (descriptive text)
+                    </span>
+                  </span>
+                </span>
+              </label>
+            </td>
+          </tr>
+        </table>
+
+        <p>The structure of the HTML for radio buttons should be as follows:</p>
+
+        <pre class="sg-sample-code">
+&lt;label class="<span class="sg-highlight-code">radio-label</span>" for="example-radio"&gt;
+  &lt;input class="<span class="sg-highlight-code">radio-input</span>" type="radio" id="example-radio" name="example-radio"&gt;
+  &lt;span&gt;
+    &lt;span class="<span class="sg-highlight-code">radio-label__name</span>"&gt;
+      Any Section
+      &lt;span class="<span class="sg-highlight-code">radio-label__desc</span>"&gt;
+        (descriptive text)
+      &lt;/span&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+&lt;/label&gt;
+        </pre>
+
+        <h3 class="sg-subhdg">Radio Lists</h3>
+
+        <p>When showing a list of radio options, it should appears as follows:</p>
+
+        <div class="module sg__module">
+          <div class="module__content module__content--flush">
+            <ul class="radio-list">
+              <li class="radio-list__item">
+                <label class="radio-list__radio-label" for="default-section-filter">
+                  <input class="radio-input" type="radio" id="default-section-filter" name="section-filter" checked="true"/>
+                  <span>
+                    <span class="radio-label__name">
+                      Any Section
+                    </span>
+                  </span>
+                </label>
+              </li>
+              <li class="radio-list__item">
+                <label class="radio-list__radio-label" for="id-description">
+                  <input class="radio-input" type="radio" id="id-description" name="section-filter"/>
+                  <span>
+                    <span class="radio-label__name">
+                      Description
+                      <span class="radio-label__desc" data-bdd="price-filter_ticket-price-breakdown">
+                        (with fees)
+                      </span>
+                    </span>
+                  </span>
+                </label>
+              </li>
+              <li class="radio-list__item">
+                <label class="radio-list__radio-label" for="third-option">
+                  <input class="radio-input" type="radio" id="third-option" name="section-filter" />
+                  <span>
+                    <span class="radio-label__name">
+                      Another Option
+                      <span class="radio-label__desc" data-bdd="price-filter_ticket-price-breakdown">
+                        (with fees)
+                      </span>
+                    </span>
+                  </span>
+                </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <pre class="sg-sample-code">
+&lt;div class="<span class="sg-highlight-code">module</span>"&gt;
+  &lt;div class="<span class="sg-highlight-code">module__content module__content--flush</span>"&gt;
+    &lt;ul class="<span class="sg-highlight-code">radio-list</span>"&gt;
+      &lt;li class="<span class="sg-highlight-code">radio-list__item</span>"&gt;
+        &lt;label class="<span class="sg-highlight-code">radio-list__radio-label</span>" for="example-radio"&gt;
+          &lt;input class="radio-input" type="radio" id="example-radio" name="example-radio"&gt;
+          &lt;span&gt;
+            &lt;span class="radio-label__name"&gt;
+              Any Section
+              &lt;span class="radio-label__desc"&gt;
+                (descriptive text)
+              &lt;/span&gt;
+            &lt;/span&gt;
+          &lt;/span&gt;
+        &lt;/label&gt;
+      &lt;/li&gt;
+      &lt;!-- repeat as needed --&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+
+      </section>
+
+      <section id="panels" class="sg-section">
+        <h2 class="sg-hdg">Panels</h2>
+        <h3 class="sg-subhdg">Toggle Module</h3>
+
+        <p>This container uses our &quot;expandToggle&quot; javascript library to expand and collapse content.
+          Attributes in the markup indicate which buttons should switch out, as well as which
+          container to expand or collaspe. Note that the animation is CSS driven. </p>
+
+        <div class="module">
+          <div id="toggle-display" class="module__content is-clickable" data-toggle="toggle-content" data-target-btn="toggle-btn">
+            <div class="toggle-module__toggle-header">
+              <div class="toggle-header__left">
+                <span>Any Price</span>,
+                <span>Any Section</span>
+              </div>
+              <div class="toggle-header__right">
+                <button id="toggle-btn" class="toggle-module__toggle-btn is-clickable toggle-open" title="Open toggle content">
+                  <span class="toggle-module__btn-text toggle__text">Open ticket filter options</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+          <div id="toggle-content" class="toggle-module__content" aria-expanded="false">
+            <ul>
+              <li><span>First Delivery</span></li>
+              <li><span>Second Delivery</span></li>
+              <li><span>Third Delivery</span></li>
+              <li><span>Four Delivery</span></li>
+              <li><span>Five Delivery</span></li>
+              <li><span>Six Delivery</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="sg-subhdg">Panel Toggle</h3>
+
+        <p>This container is a variant of the &quot;toggle module&quot;. This container will drastically alter
+          the module view to portray expanded containers as &quot;panels&quot; that take up the entire width
+          and height in mobile view.</p>
+        <p>This component is still a work-in-progress.</p>
+
+        <div id="module-container" class="panel">
+          <div class="panel__panel-heading">
+            <h2 class="heading-primary">Panel Name</h2>
+            <button id="panel-next-panel" class="panel__panel-heading__next-panel-btn is-clickable" title="Next" data-focus="module-container" data-toggle="module-toggle" data-target-btn="module-toggle-btn">Next</button>
+          </div>
+          <div class="module">
+            <div id="panel-display" class="module__content is-clickable" data-focus="module-container" data-toggle="module-toggle" data-target-btn="module-toggle-btn">
+              <div class="panel__header-container">
+                <div class="panel__header-text">
+                  <span>eTickets FREE</span>
+                </div>
+                <div class="panel__header-icon">
+                  <button id="module-toggle-btn" class="panel__toggle is-clickable toggle-open" title="Open delivery options">
+                    <span class="toggle__text">Open delivery options</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="panel__content" id="module-toggle">
+              <ul>
+                <li><span>First Delivery</span></li>
+                <li><span>Second Delivery</span></li>
+                <li><span>Third Delivery</span></li>
+                <li><span>Four Delivery</span></li>
+                <li><span>Five Delivery</span></li>
+                <li><span>Six Delivery</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="datestamp" class="sg-section">
+        <h2 class="sg-hdg">Datestamp</h2>
+        <p>Here are the different ways to display an event's date and time.</p>
+        <p>This is encapsulated in the react component &quot;datestamp.jsx&quot;, and is being used in "edpHeader.jsx".</p>
+        <h3 class="sg-subhdg">Variants</h3>
+
+        <table class="sg-table">
+          <tr>
+            <td>
+              <div class="sg-datestamp-wrapper">
+                <div class="datestamp">
+                  <div class='datestamp__content'>
+                    <div class="datestamp__monthday">
+                      <div class="datestamp__text">
+                        <span class="datestamp__month">Jul</span>
+                        <span class="datestamp__date">20</span>
+                      </div>
+                    </div>
+                    <div class="datestamp__day-time">
+                      <div class="datestamp__dayweek">
+                        <span class="datestamp__text">Mon</span>
+                      </div>
+                      <div class="datestamp__time">
+                        <span class="datestamp__text">7:00p</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <p>Single date and time</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="sg-datestamp-wrapper">
+                <div class="datestamp">
+                  <div class='datestamp__content'>
+                    <div class="datestamp__monthday">
+                      <div class="datestamp__text">
+                        <span class="datestamp__month">Jul</span>
+                        <span class="datestamp__date">20</span>
+                      </div>
+                    </div>
+                    <div class="datestamp__day-time">
+                      <div class="datestamp__dayweek">
+                        <span class="datestamp__text">Mon</span>
+                      </div>
+                      <div class="datestamp__time">
+                        <span class="datestamp__text">7:00p</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="datestamp__year-wrapper">
+                    <div class="datestamp__year">2016</div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <p>Single date and time with year</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="sg-datestamp-wrapper">
+                <div class="datestamp">
+                  <div class='datestamp__content'>
+                    <div class="datestamp__monthday">
+                      <div class="datestamp__text">
+                        <span class="datestamp__month">Jul</span>
+                        <span class="datestamp__date">20</span>
+                      </div>
+                    </div>
+                    <div class="datestamp__day-no-time">
+                      <div class="datestamp__dayweek">
+                        <span class="datestamp__text">Mon</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <p>Single date without time</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="sg-datestamp-wrapper">
+                <div class="datestamp">
+                  <div class="datestamp__range">
+                    <div class="datestamp__multiday">
+                      <div class="datestamp__text">
+                        <span class="datestamp__month">Jul</span>
+                        <span class="datestamp__date">20 - 22</span>
+                      </div>
+                    </div>
+                    <div class="datestamp__dayweek datestamp__dayweek--range">
+                      <span class="datestamp__text">Mon - Fri</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <p>Date range in single month</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="sg-datestamp-wrapper">
+                <div class="datestamp">
+                  <div class="datestamp__range">
+                    <div class="datestamp__crossmonth">
+                      <div class="datestamp__multiday">
+                        <div class="datestamp__text">
+                          <span class="datestamp__month">Jun</span>
+                          <span class="datestamp__date">28 - 30</span>
+                        </div>
+                      </div>
+                      <div class="datestamp__multiday">
+                        <div class="datestamp__text">
+                          <span class="datestamp__month">Jul</span>
+                          <span class="datestamp__date">1, 2</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="datestamp__dayweek datestamp__dayweek--range">
+                      <span class="datestamp__text">Mon - Fri</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <p>Date range in separate months</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="sg-datestamp-wrapper">
+                <div class="datestamp">
+                  <div class="datestamp__range">
+                    <div class="datestamp__crossmonth">
+                      <div class="datestamp__multiday">
+                        <div class="datestamp__text">
+                          <span class="datestamp__month">Jun</span>
+                          <span class="datestamp__date">30</span>
+                        </div>
+                      </div>
+                      <div class="datestamp__multiday">
+                        <div class="datestamp__text">
+                          <span class="datestamp__month">Jul</span>
+                          <span class="datestamp__date">1, 2</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="datestamp__dayweek datestamp__dayweek--range">
+                      <span class="datestamp__text">Mon - Wed</span>
+                    </div>
+                  </div>
+                  <div class="datestamp__year-wrapper">
+                    <div class="datestamp__year">2016</div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <p>Date range in separate months with single date in one month and year</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="sg-datestamp-wrapper">
+                <div class="datestamp">
+                  <div class="datestamp__range">
+                      <div class="datestamp__crossmonth">
+                        <div class="datestamp__multiday">
+                          <div class="datestamp__text">
+                            <span class="datestamp__month">Jun</span>
+                            <span class="datestamp__date">30</span>
+                          </div>
+                        </div>
+                      <div class="datestamp__multiday">
+                        <div class="datestamp__text">
+                          <span class="datestamp__month">Jul</span>
+                          <span class="datestamp__date">1, 2</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="datestamp__dayweek datestamp__dayweek--range">
+                      <span class="datestamp__text">Mon - Wed</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <p>Date range in separate months with single date in one month</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="sg-datestamp-wrapper">
+                <div class="datestamp datestamp--no-dates">
+                  <div class="datestamp__multi">
+                    <div class="datestamp__text">
+                      <span class="datestamp__multi-name">Multiple</span>
+                      <span class="datestamp__dt-text">Dates & Times</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <p>Multiple dates and times</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="sg-datestamp-wrapper">
+                <div class="datestamp datestamp--no-dates">
+                  <div class="datestamp__tba">
+                    <div class="datestamp__text">
+                      <span class="datestamp__dt-text">Date & Time</span>
+                      <span class="datestamp__tba-name">TBA</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <p>Date and time TBA</p>
+            </td>
+          </tr>
+        </table>
+
+      </section>
+
+      <section id="ticket-stub" class="sg-section">
+        <h2 class="sg-hdg">Ticket Stub</h2>
+        <p>Here is how you can display a ticket stub.</p>
+
+        <div class="sg-ticket-stub">
+          <div class="ticket-stub">
+            <div class="ticket-stub__header">
+              <div class="ticket-stub__seat-info">
+                <div class="ticket-stub__seat-label">Sec</div>
+                <div class="ticket-stub__seat-text">213</div>
+              </div>
+              <div class="ticket-stub__seat-info">
+                <div class="ticket-stub__seat-label">Row</div>
+                <div class="ticket-stub__seat-text">13</div>
+              </div>
+              <div class="ticket-stub__seat-info">
+                <div class="ticket-stub__seat-label">Seat</div>
+                <div class="ticket-stub__seat-text">23</div>
+              </div>
+            </div>
+            <div class="ticket-stub__content">Ticket stub content goes here</div>
+          </div>
+        </div>
+
+      </section>
+
+
+      <section id="polling" class="sg-section">
+        <h2 class="sg-hdg">Polling</h2>
+        <div class="sg__polling">
+          <div class="polling__image"></div>
+          <h3 class="polling__header">Sit tight, we're securing your Verified Tickets...</h3>
+        </div>
+
+        <p>Polling uses css for animation:</p>
+        <pre class="sg-sample-code">
+.polling {
+
+  &__image {
+    width: 100px;
+    height: 100px;
+    background: url('../img/polling.png') no-repeat center center transparent;
+    background-size: 100%;
+    margin: auto;
+    animation:spin 0.8s linear infinite;
+  }
+
+  [...]
+}
+        </pre>
+
+        <p>Note that the animation references "spin". This reference is a custom animation defined in keyframes.scss.</p>
+
+      </section>
+
+
+      <section id="polling-overlay" class="sg-section">
+        <h2 class="sg-hdg">Polling Overlay</h2>
+        <button id="pollingOverlayDemo" class="button">Click me to demo!</button>
+        <div id="polling-overlay-panel" class="polling-overlay is-hidden">
+          <div class="polling-overlay__container">
+            <div class="polling-overlay__element-group">
+              <div class="polling-overlay__element polling-overlay__indicator-checkmark"></div>
+              <div class="polling-overlay__element polling-overlay__indicator-ticket"></div>
+              <div class="polling-overlay__element polling-overlay__indicator-trail polling-overlay__indicator-trail1"></div>
+              <div class="polling-overlay__element polling-overlay__indicator-trail polling-overlay__indicator-trail2"></div>
+              <div class="polling-overlay__element polling-overlay__indicator-trail polling-overlay__indicator-trail3"></div>
+            </div>
+            <h3 class="polling-overlay__header heading-primary">Sit tight, we're securing your Verified Tickets...</h3>
+          </div>
+        </div>
+
+        <pre class="sg-sample-code">
+&lt;div class="polling-overlay is-hidden"&gt;
+ &lt;div class="polling__container"&gt;
+   &lt;div class="polling-overlay__element-group"&gt;
+     &lt;div class="polling-overlay__element polling-overlay__indicator-checkmark"&gt;&lt/div &gt;
+     &lt;div class="polling-overlay__element polling-overlay__indicator-ticket"&gt;&lt/div &gt;
+     &lt;div class="polling-overlay__element polling-overlay__indicator-trail polling-overlay__indicator-trail1"&gt;&lt/div&gt;
+     &lt;div class="polling-overlay__element polling-overlay__indicator-trail polling-overlay__indicator-trail2"&gt;&lt/div&gt;
+     &lt;div class="polling-overlay__element polling-overlay__indicator-trail polling-overlay__indicator-trail3"&gt;&lt/div&gt;
+   &lt;/div&gt;
+   &lt;h3 class="polling-overlay__header heading-primary">Sit tight, we're securing your Verified Tickets...&lt/h3&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+
+        <p>This component works by toggling the <code class="sg-code">is-hidden</code> class in the container of the polling overlay. The usage of an in-line script is for demo purposes and the actual implementation should use the component's <code class="sg-code">isPollingOverlayHidden</code> prop found in 'pollingOverlay.jsx'.</p>
+      </section>
+
+
+      <section id="property-order" class="sg-section">
+        <h2 class="sg-hdg">CSS Property Ordering</h2>
+        <p>We currently utilize <a href="https://github.com/brigade/scss-lint/">scss-lint</a> to ensure consistency in our CSS.</p>
+        <p>One of the linters is configured to enforce a specific ordering and grouping of CSS properties. The ordering is primarily derived from Twitter's <a href="https://github.com/twitter/recess">Recess</a> project.</a></p>
+        <p>The logic is to order primarily from most to least impactful, or &quot;outside in.&quot; Within the order, properties are grouped and separated by a blank line to allow developers to quickly understand related attributes.</p>
+        <p>Here's a list of how commonly used properties should be sorted and grouped:</p>
+
+        <pre class="sg-sample-code">
+# Positioning
+position
+top
+right
+bottom
+left
+z-index
+
+# Box Model
+display
+align-content
+align-items
+align-self
+box-sizing
+flex
+justify-content
+order
+float
+width
+height
+max-width
+max-height
+min-width
+min-height
+padding
+margin
+overflow
+clear
+
+# Typography
+font-family
+font-size
+font-style
+font-weight
+line-height
+letter-spacing
+word-spacing
+color
+text-align
+text-decoration
+text-indent
+text-overflow
+text-transform
+white-space
+
+# Visual
+vertical-align
+list-style
+list-style-type
+list-style-position
+pointer-events
+cursor
+background
+border
+border-radius
+box-shadow
+
+# Functional
+content
+opacity
+filter
+visibility
+size
+zoom
+transform
+animation
+transition
+          </pre>
+
+        <p>The full list of properties can be found in scss-lint's <a href="http://git.tm.tmcs/tm/tmol-web-spring/blob/master/webapp/src/main/sass/scss-lint.yml#L100">config file</a>.</p>
+
+      </section>
+
+    </div>
+  </div>
+
+  <script src="//s2.tmol.co/tm/4ab94a4f/static/js/webpack-bundles/common.js"></script>
+  <script src="//s2.tmol.co/tm/4ab94a4f/static/js/webpack-bundles/styleguide-bundle.js"></script>
+  <script>
+    var appear = function() { document.getElementById('polling-overlay-panel').classList.remove('is-hidden')};
+    var disappear = function() { document.getElementById('polling-overlay-panel').classList.add('is-hidden')};
+
+    window.onload = function() {
+      document.getElementById('pollingOverlayDemo').onclick = function () {
+        appear();
+        setTimeout(disappear, 2200);
+      };
+    };
+  </script>
+
+</body>
+</html>

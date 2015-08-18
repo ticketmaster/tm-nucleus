@@ -1,0 +1,10 @@
+@mixin phark($sprite, $img) {
+  @include hide-text();
+
+  display: inline-block;
+  background-image: url('../img/#{$sprite}-sprite.png');
+  background-repeat: no-repeat;
+  background-position: spriterite($sprite, $img);
+
+  @content;
+}

@@ -1,0 +1,16 @@
+// Import Susy Framework
+@import '../vendors/susy/susy';
+
+$total-columns: 12;
+$gutter-width: 10px;
+
+// Susy default global settings
+$susy: (
+  gutter-position: inside-static,
+  container: 100%,
+  columns: $total-columns,
+  column-width: (120px),
+  gutters: (($gutter-width * 2)/120px)
+);
+
+@include border-box-sizing;

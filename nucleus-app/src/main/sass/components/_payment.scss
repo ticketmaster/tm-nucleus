@@ -1,0 +1,27 @@
+.payment {
+  &__payment-header-container {
+    @include span(full nest);
+  }
+
+  &__payment-header-icon {
+    @include accordion-header-icon();
+  }
+
+  &__payment-header-text {
+    @include accordion-header-text();
+  }
+
+  &__toggle {
+    @include toggle-btn();
+
+    &.toggle-open {
+      @include breakpoint($max: $bp-md - 1) {
+        @include background-image-retina('../img/arrow', png, 20px, 20px);
+      }
+    }
+  }
+
+  &__payment-options {
+    @include accordion-content();
+  }
+}

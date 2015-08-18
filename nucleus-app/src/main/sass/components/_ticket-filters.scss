@@ -1,0 +1,117 @@
+.ticket-filters {
+
+  &__filter-criteria {
+    @include span(full nest);
+  }
+
+
+  &__filter-criteria-selected {
+    @include span(11 of 12 no-gutters);
+    @include responsive-font('md');
+
+    color: $base-link-color;
+  }
+
+
+  &__chevron-icon {
+    @include span(1 of 12 no-gutters);
+    position: relative;
+
+    text-align: right;
+  }
+
+
+  &__filter-options {
+    @include span(full nest);
+    @include slider-ease(0, 3000px) {
+      transition: max-height 1s cubic-bezier(0, 1.05, 0, 1);
+    }
+  }
+
+
+  &__filter-group {
+    overflow: hidden;
+
+    @include breakpoint($bp-md) {
+      @include span(1 of 2 no-gutters);
+
+      border-top: $light-border-style;
+    }
+  }
+
+
+  &__toggle {
+    @extend %toggle;
+
+    float: right;
+
+    font-size: 0;
+    line-height: 0;
+
+    background: transparent;
+    border: 0;
+
+    transform: translateY(0%);
+
+    &.toggle-open {
+      @include toggle('icon-expand');
+    }
+
+    &.toggle-close {
+      @include toggle('icon-collapse');
+    }
+  }
+
+}
+
+
+
+.filters-options-details {
+
+  &__content {
+    @include span(full);
+
+    @include breakpoint($max: $bp-md - 1) {
+      padding-bottom: 10px;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+
+    @include breakpoint($bp-md) {
+      @include span(6 of 12);
+    }
+  }
+
+  &__header {
+    @include hdg-text('md', $base-font-color);
+
+    @include breakpoint($max: $bp-md - 1) {
+      padding: 5px 10px;
+
+      background: $background-gray;
+      border-top: $light-border-style;
+      border-bottom: $light-border-style;
+    }
+
+    @include breakpoint($bp-md) {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+
+.filter-content {
+  @include responsive-font('md');
+
+  &__ticket-price {
+    @include span(10 of 12 no-gutters);
+  }
+
+  &__ticket-fees {
+    @include alt-copy();
+
+    display: block;
+  }
+}

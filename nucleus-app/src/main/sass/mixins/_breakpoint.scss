@@ -1,0 +1,20 @@
+@mixin breakpoint($min: 0, $max: 0) {
+
+  // convert values to ems
+  $em-min: em($min);
+  $em-max: em($max);
+
+  $query: '';
+
+  @if ($min != 0 and $max != 0) {
+    $query: '(min-width: #{$em-min}) and (max-width: #{$em-max})';
+  }
+  @else if ($min != 0 and $max == 0) {
+    $query: '(min-width: #{$em-min})';
+  }
+  @else if ($min == 0 and $max != 0) {
+    $query: '(max-width: #{$em-max})';
+  }
+
+  @media #{$query} { @content; }
+}

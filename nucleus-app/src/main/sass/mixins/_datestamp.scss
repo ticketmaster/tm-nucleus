@@ -1,0 +1,9 @@
+@mixin datestamp($direction: row, $bgcolor: $white) {
+  display: flex;
+  align-items: center;
+  flex-direction: $direction;
+  flex: 1 1 auto;
+  padding: 2px 5px;
+
+  background: $bgcolor;
+}

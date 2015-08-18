@@ -1,0 +1,44 @@
+$split-content-padding-lg: $gutter-width + 5;
+
+.split-content {
+  display: flex;
+  width: 100%;
+
+  &--centered {
+    align-items: center;
+  }
+
+  &__primary {
+    flex: 1 1 100%;
+
+    .split-content__secondary + & {
+      padding-left: $gutter-width;
+    }
+
+    .split-content__secondary + &--lg {
+      padding-left: $split-content-padding-lg;
+    }
+  }
+
+  &__primary--top {
+    align-self: flex-start;
+  }
+
+  &__secondary {
+    flex: 0 0 auto;
+    padding-left: $gutter-width;
+  }
+
+  &__secondary--lg {
+    padding-left: $split-content-padding-lg;
+  }
+
+  &__secondary--top {
+    align-self: flex-start;
+  }
+
+  // we don't want left padding if it's the first item
+  > &__secondary:first-child {
+    padding-left: 0;
+  }
+}

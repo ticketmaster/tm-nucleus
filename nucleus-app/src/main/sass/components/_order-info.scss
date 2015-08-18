@@ -1,0 +1,111 @@
+.order-info {
+
+  &__heading {
+    display: flex;
+
+    @include breakpoint($min: $bp-sm) {
+      padding: 10px;
+
+      border-bottom: 1px solid $light-border-color;
+    }
+
+    @include breakpoint($min: $bp-md) {
+      padding: 20px;
+
+      border-bottom: 1px solid $light-border-color;
+    }
+
+    @include breakpoint($min: $bp-lg) {
+      display: none;
+    }
+
+  }
+
+  &__ticket-name,
+  &__ticket-seats {
+    display: block;
+  }
+
+  &__ticket-info {
+    margin: 0;
+
+    border-bottom: 1px solid $light-border-color;
+
+    @include breakpoint($min: $bp-sm) {
+      padding: 15px 0;
+      margin: 0 10px 15px;
+    }
+
+    @include breakpoint($min: $bp-md) {
+      padding: 20px 0;
+      margin: 0 20px 15px;
+    }
+
+  }
+
+  &__ticket-type {
+    @include alt-copy();
+  }
+
+  &__price-item {
+    display: flex;
+    justify-content: space-between;
+
+    @include breakpoint($min: $bp-sm) {
+      margin: 0 10px 10px;
+    }
+
+    @include breakpoint($min: $bp-md) {
+      margin: 0 20px 15px;
+    }
+  }
+
+  &__price-title {
+    font-size: fontsy('md', 'plus');
+  }
+
+  &__price-desc {
+    @include alt-copy();
+    display: block;
+  }
+
+  &__price-desc-feePrice {
+    display: inline-block;
+    min-width: 40px;
+    margin-right: 10px;
+  }
+
+  &__price-desc-feeDescription {
+    display: inline-block;
+  }
+
+  &__price-total {
+    display: flex;
+    justify-content: space-between;
+
+    @include breakpoint($min: $bp-sm) {
+      padding: 0 10px 15px;
+    }
+
+    @include breakpoint($min: $bp-md) {
+      padding: 0 20px 20px;
+    }
+  }
+
+  &__order-amt-header {
+    @include bold-text();
+    @include hdg-text('xl');
+  }
+
+  &__order-amtTotal {
+    @include hdg-text('xl');
+  }
+
+  &__order-amt {
+    @include hdg-text('xl');
+    @include breakpoint($max: $bp-lg) {
+      color: $order-total-color;
+    }
+  }
+
+}

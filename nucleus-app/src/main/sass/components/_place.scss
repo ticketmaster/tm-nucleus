@@ -1,0 +1,35 @@
+// scss-lint:disable ImportantRule
+// We need to use !important declarations to override ICE
+// due to their frickin' lack of configurability
+
+.place[status="OPEN"] {
+  fill: $ism-seat-open-color !important;
+
+  &:hover {
+    fill: $ism-seat-selected-color !important;
+    stroke: 0 !important;
+  }
+}
+
+.place[status="RESALE"] {
+  fill: $resale-color !important;
+}
+
+.place[selected="true"] {
+  fill: $ism-seat-selected-color !important;
+  fill-opacity: 1 !important;
+  stroke: 0 !important;
+}
+
+.place[selectable="true"] {
+  &:hover {
+    fill: $ism-seat-selected-color !important;
+    fill-opacity: 1 !important;
+    stroke: 0 !important;
+  }
+}
+
+.place[status="SOLD"] {
+  fill: $ism-seat-sold-color !important;
+}
+

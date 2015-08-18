@@ -1,0 +1,9 @@
+// If using on a Susy column that calls the span mixin,
+// you need to call this _after_ span to avoid conflicts
+
+@mixin use-table-cell($x-align: inherit, $y-align: inherit) {
+  float: none;
+  display: table-cell;
+  text-align: $x-align;
+  vertical-align: $y-align;
+}

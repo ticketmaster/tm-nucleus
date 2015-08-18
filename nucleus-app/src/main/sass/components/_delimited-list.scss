@@ -1,0 +1,16 @@
+.delimited-list {
+  @include unstyled-list();
+
+  &__item {
+    border-top: $light-border-style;
+  }
+
+  &__item:first-child {
+    border-top: 0;
+  }
+}
+
+
+.module__content + .delimited-list {
+  border-top: $light-border-style;
+}

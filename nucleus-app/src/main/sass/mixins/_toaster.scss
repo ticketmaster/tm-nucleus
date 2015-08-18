@@ -1,0 +1,11 @@
+$toaster-padding: 5px;
+$toaster-opacity: 0.9;
+
+@mixin toaster($radius: $base-border-radius) {
+  padding: $toaster-padding;
+  color: $white;
+  white-space: nowrap;
+  background-color: $toaster-background-color;
+  border-radius: $radius;
+  opacity: $toaster-opacity;
+}

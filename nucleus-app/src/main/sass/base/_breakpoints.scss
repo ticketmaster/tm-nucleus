@@ -1,0 +1,16 @@
+// Breakpoints for media queries
+$bp-sm: 320px;
+$bp-sm2: 360px;
+$bp-md: 720px;
+$bp-lg: 1020px;
+$bp-ism-fixed: 1300px;
+$bp-xl: 1440px;
+
+$breakpoints : (
+  'mobile': $bp-sm,
+  'large-mobile': $bp-sm2,
+  'tablet': $bp-md,
+  'desktop': $bp-lg,
+  'ism-fixed': $bp-ism-fixed,
+  'max': $bp-xl
+);

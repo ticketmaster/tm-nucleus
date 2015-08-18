@@ -1,0 +1,169 @@
+// variables
+$header-height: 40px;
+
+
+.tm-header {
+  padding: 23px 0;
+
+  @include breakpoint($max: $bp-md - 1) {
+    height: $header-height;
+    padding: 10px 0;
+  }
+
+  .label-text {
+    // see: http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+
+  &__content {
+    display: table;
+    width: 100%;
+    height: 100%;
+
+    line-height: 0;
+
+    @include breakpoint($bp-md) {
+      &.is-hidden {
+        display: table;
+      }
+    }
+  }
+
+  &__logo {
+    @include breakpoint($max: $bp-md - 1) {
+      @include span(11 of 12);
+      @include use-table-cell($y-align: middle);
+    }
+
+    @include breakpoint($bp-md) {
+      @include span(6 of 12);
+      @include use-table-cell();
+    }
+
+    @include breakpoint($bp-lg) {
+      @include span(7 of 12);
+      @include use-table-cell();
+    }
+  }
+
+  &__search-toggle {
+    @include span(1 of 12);
+    @include use-table-cell(right, middle);
+
+    @include breakpoint($bp-md) {
+      display: none;
+    }
+  }
+
+  &__search-full {
+    display: none;
+
+    @include breakpoint($bp-md) {
+      @include span(6 of 12);
+      @include use-table-cell(right, middle);
+
+      position: relative;
+    }
+
+    @include breakpoint($bp-lg) {
+      @include span(5 of 12);
+      @include use-table-cell(right, middle);
+    }
+  }
+
+}
+
+.logo {
+  width: 148px;
+
+  @include breakpoint($bp-md) {
+    width: 247px;
+  }
+
+  img {
+    height: 20px;
+
+    @include breakpoint($bp-md) {
+      height: 31px;
+    }
+  }
+}
+
+
+// ln assets
+$ln-header-height: 45px;
+$ln-red-color: #e11d39;
+
+.ln-header {
+  height: 56px;
+  padding-right: 0;
+  padding-left: 0;
+
+  background: $white;
+  border-bottom: 4px solid $ln-red-color;
+
+  &__content {
+    display: table;
+    width: 100%;
+    height: 100%;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.ln-logo {
+  display: inline-block;
+
+  @include breakpoint($bp-lg) {
+    width: 165px;
+  }
+
+  @include breakpoint($max: $bp-md - 1) {
+    img {
+      height: 35px;
+      padding: 5px 0;
+    }
+  }
+
+  img {
+    height: 42px;
+
+    @include breakpoint($bp-lg) {
+      height: 42px;
+      min-width: 165px;
+    }
+  }
+
+  a {
+    display: inline-block;
+    margin: 0.45em 0.5em 0.45em 1em;
+  }
+}
+
+.ln-links {
+  display: inline-block;
+  float: right;
+  padding-right: 10px;
+
+  font-family: 'Avenir Next', Helvetica, Arial, sans-serif;
+  font-size: 0.85em;
+
+  color: $ln-red-color;
+
+  @include breakpoint($max: $bp-md - 1) {
+    font-size: 0.75em;
+  }
+
+  a {
+    font-weight: bold;
+    line-height: 56px;
+    color: $ln-red-color;
+    text-decoration: none;
+  }
+}

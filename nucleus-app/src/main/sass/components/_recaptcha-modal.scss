@@ -1,0 +1,28 @@
+.recaptcha-modal {
+  &__container {
+    padding: 10px;
+
+    @include breakpoint($bp-md) {
+      padding: 20px;
+    }
+  }
+
+  &__title {
+    @include responsive-font('xl');
+  }
+
+  &__recaptcha {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    @include breakpoint($bp-md) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+
+  &__error-code {
+    color: $white;
+  }
+
+}

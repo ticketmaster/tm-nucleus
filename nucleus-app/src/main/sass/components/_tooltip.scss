@@ -1,0 +1,239 @@
+// tooltip variables
+$tooltip-box-shadow-color: rgba(0, 0, 0, 0.2);
+$tooltip-box-shadow-style: 0 1px 3px $tooltip-box-shadow-color;
+$tooltip-border-color: $dark-border-color;
+$tooltip-border-width: 10px;
+$tooltip-arrow-width: 13px;
+$tooltip-padding: 10px;
+$tooltip-margin: 10px;
+$tooltip-border-width-top: $tooltip-border-width $tooltip-border-width 0;
+$tooltip-border-width-right: $tooltip-border-width $tooltip-border-width 0;
+$tooltip-border-width-bottom: 0 $tooltip-border-width $tooltip-border-width;
+$tooltip-arrow-border-width: $tooltip-arrow-width $tooltip-arrow-width 0;
+$tooltip-animate-time: 0.3s;
+
+.tooltip {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  z-index: z('overlay');
+
+  display: block;
+
+  white-space: nowrap;
+
+  &.tooltip-zoom-enter,
+  &.tooltip-zoom-leave {
+    display: block;
+  }
+}
+
+
+// the classnames below are inherited from rc-tooltip --> https://github.com/react-component/tooltip
+
+// this is the default arrow styling which becomes a child component of each tooltip positioning
+.tooltip-arrow {
+  position: absolute;
+
+  z-index: z('arrow');
+
+  border-color: $transparent-color;
+  border-style: solid;
+  border-width: $tooltip-arrow-border-width;
+}
+
+.tooltip-hidden {
+  display: none;
+}
+
+.tooltip-placement-left {
+  padding: 0 $tooltip-padding;
+
+  .tooltip-arrow {
+    top: 50%;
+    right: -9px;
+
+    margin-top: -$tooltip-margin;
+
+    border-left-color: $tooltip-border-color;
+    border-width: $tooltip-border-width;
+  }
+
+  .tooltip-arrow:after {
+    position: absolute;
+    top: 50%;
+    right: -7px;
+    z-index: z('arrow');
+
+    display: block;
+    width: 0;
+    margin-top: -$tooltip-margin;
+
+    font-size: 10px;
+    line-height: 1;
+    color: $tooltip-body-color;
+
+    pointer-events: none;
+
+    border-color: $transparent-color $transparent-color $transparent-color $white;
+    border-style: solid;
+    border-width: $tooltip-border-width;
+
+    content: '';
+  }
+}
+
+.tooltip-placement-top {
+  padding: $tooltip-padding 0;
+  margin-bottom: 3px;
+
+  .tooltip-arrow {
+    bottom: 1px;
+    left: 50%;
+
+    margin-left: -$tooltip-padding;
+
+    border-top-color: $tooltip-border-color;
+    border-width: $tooltip-border-width-top;
+  }
+
+  .tooltip-arrow:after {
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    z-index: z('arrow');
+
+    display: block;
+    width: 0;
+    margin-left: -$tooltip-margin;
+
+    font-size: 10px;
+    line-height: 1;
+    color: $tooltip-body-color;
+
+    pointer-events: none;
+
+    border-color: $white $transparent-color;
+    border-style: solid;
+    border-width: $tooltip-border-width-top;
+
+    content: '';
+  }
+}
+
+.tooltip-placement-bottom {
+  padding: $tooltip-padding 0;
+  margin-top: 3px;
+
+  .tooltip-arrow {
+    top: 0;
+    left: 50%;
+
+    margin-top: 2px;
+
+    border-bottom-color: $tooltip-border-color;
+    border-width: $tooltip-border-width-bottom;
+  }
+
+  .tooltip-arrow:after {
+    position: absolute;
+    top: 3px;
+    left: 50%;
+    z-index: z('arrow');
+
+    display: block;
+    width: 0;
+    margin-left: -$tooltip-margin;
+
+    font-size: 10px;
+    line-height: 1;
+    color: $tooltip-body-color;
+
+    pointer-events: none;
+
+    border-color: $white $transparent-color;
+    border-style: solid;
+    border-width: $tooltip-border-width-bottom;
+
+    content: '';
+  }
+}
+
+.tooltip-placement-right {
+  padding: 0 $tooltip-padding;
+
+  .tooltip-arrow {
+    top: 50%;
+    left: -9px;
+
+    margin-top: -$tooltip-margin;
+
+    border-right-color: $tooltip-border-color;
+    border-width: $tooltip-border-width;
+  }
+
+  .tooltip-arrow:after {
+    position: absolute;
+    top: 50%;
+    left: -7px;
+    z-index: z('arrow');
+
+    display: block;
+    width: 0;
+    margin-top: -$tooltip-margin;
+
+    font-size: 10px;
+    line-height: 1;
+    color: $tooltip-body-color;
+
+    pointer-events: none;
+
+    border-color: $transparent-color $white $transparent-color $transparent-color;
+    border-style: solid;
+    border-width: $tooltip-border-width;
+
+    content: '';
+  }
+}
+
+.tooltip-inner {
+  @include responsive-font('sm');
+  padding: $tooltip-padding;
+
+  line-height: 1;
+  color: $tooltip-body-color;
+
+  text-align: center;
+  text-decoration: none;
+
+  pointer-events: none;
+  background: $white;
+  border: 1px solid $tooltip-border-color;
+  border-radius: $base-border-radius;
+  box-shadow: $tooltip-box-shadow-style;
+}
+
+.tooltip-zoom-enter {
+  opacity: 0;
+  animation-duration: $tooltip-animate-time;
+  animation-play-state: paused;
+  animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  animation-fill-mode: both;
+
+  &.tooltip-zoom-enter-active {
+    animation-name: rcToolTipZoomIn;
+    animation-play-state: running;
+  }
+}
+
+.tooltip-zoom-leave {
+  animation-duration: $tooltip-animate-time;
+  animation-play-state: paused;
+  animation-timing-function: cubic-bezier(0.6, -0.3, 0.74, 0.05);
+  animation-fill-mode: both;
+
+  &.tooltip-zoom-leave-active {
+    animation-name: rcToolTipZoomOut;
+    animation-play-state: running;
+  }
+}

@@ -1,0 +1,144 @@
+.datestamp {
+  @include bold-text();
+
+  display: inline-flex;
+  height: 5.5rem;
+
+  font-size: fontsy('md');
+  line-height: 1;
+  text-align: center;
+
+  transform-style: preserve-3d;
+
+  &--no-dates {
+    background: $white;
+  }
+
+  &__content {
+    display: inline-flex;
+  }
+
+  &__range {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  &__monthday {
+    @include datestamp('column');
+
+    margin-right: 1px;
+
+    line-height: 1.2;
+  }
+
+  &__month {
+    display: block;
+    margin: auto;
+  }
+
+  &__day {
+    display: block;
+  }
+
+  &__dayweek {
+    @include datestamp();
+
+    margin-bottom: 1px;
+  }
+
+  &__dayweek--range {
+    font-size: fontsy('sm');
+  }
+
+  &__dayweek--only {
+    margin: auto;
+  }
+
+  &__time {
+    @include datestamp();
+  }
+
+  &__day-time {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__day-no-time {
+    @include datestamp();
+  }
+
+  &__multiday {
+    @include datestamp();
+
+    & + & {
+      margin-left: 1px;
+    }
+  }
+
+  &__date {
+    display: block;
+    margin: auto;
+  }
+
+  &__crossmonth {
+    display: flex;
+  }
+
+  &__year-wrapper {
+    width: 1.3em;
+    padding: 5px 2px;
+    margin-left: 1px;
+
+    background-color: $datestamp-year-bg-color;
+
+    transform-style: preserve-3d;
+  }
+
+  &__year {
+    display: block;
+
+    color: $white;
+
+    transform: translate(1%, 155%) rotate(-90deg);
+  }
+
+  &__multi,
+  &__tba {
+    @include datestamp();
+
+    margin: auto;
+
+    transform-style: preserve-3d;
+  }
+
+  &__multi-name,
+  &__tba-name {
+    display: block;
+
+    white-space: nowrap;
+
+    background-color: $white;
+  }
+
+  &__tba-name {
+    padding-top: 6px;
+  }
+
+  &__multi-name {
+    padding-bottom: 7px;
+  }
+
+  &__dt-text {
+    display: block;
+
+    white-space: nowrap;
+
+    background-color: $white;
+  }
+
+  &__text {
+    margin: auto;
+
+    line-height: 1.15;
+  }
+}

@@ -1,0 +1,47 @@
+.radio-list {
+  @include unstyled-list();
+
+  @include breakpoint($bp-md) {
+    margin: 0;
+  }
+
+  &__item {
+    @include clearfix;
+
+    @include breakpoint($max: $bp-md - 1) {
+      border-bottom: $light-border-style;
+
+      &:last-child {
+        border: 0;
+      }
+    }
+
+    @include breakpoint($bp-md) {
+      margin-bottom: 25px;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+
+    &__name {
+      @include bold-text();
+
+      display: block;
+    }
+
+    &__desc {
+      display: block;
+    }
+  }
+
+
+  &__radio-label {
+    @include radio-label();
+
+    @include breakpoint($max: $bp-md - 1) {
+      padding: 15px 10px;
+    }
+  }
+
+}

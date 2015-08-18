@@ -1,0 +1,17 @@
+@mixin form-dropdown {
+  height: auto;
+  padding: 10px;
+  border: $dark-border-style;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: $white;
+
+  &:-moz-focusring {
+    color: $transparent-color;
+    text-shadow: 0 0 0 $black;
+  }
+
+  &::-ms-expand {
+    display: none;
+  }
+}

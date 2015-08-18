@@ -1,0 +1,301 @@
+// config
+$sg-hdg-color: color('blue', 'pacific');
+$sg-subhdg-color: color('pink', 'catalina');
+$sg-subhdg2-color: color('gray', 'sierra');
+$sg-highlight-yellow: $background-caution;
+$sg-highlight-red: color('red', 'rainier');
+$sg-swatch-height: 70px;
+
+@mixin code-style($sz: sm) {
+  @include responsive-font($sz);
+
+  padding: 2px 4px;
+  border: $light-border-style;
+  border-radius: 4px;
+  font-family: $monospace;
+  background-color: $background-white;
+  font-size: fontsy($sz) * 0.95;
+}
+
+
+.styleguide {
+  background-color: $white;
+}
+
+.sg-header {
+  @include span(full);
+}
+
+.sg-title {
+  @include hdg-text('xl', $base-font-color);
+}
+
+
+.sg-section {
+  @include span(full);
+  @include content-spacing();
+  @include responsive-font('md');
+
+  padding-bottom: $vertical-spacing-sm;
+
+  border-bottom: $dark-border-style;
+
+  @include breakpoint($bp-md) {
+    padding-bottom: $vertical-spacing-lg;
+  }
+
+  + .sg-section {
+    padding-top: $vertical-spacing-sm;
+
+    @include breakpoint($bp-md) {
+      padding-top: 10px;
+    }
+  }
+
+  .module {
+    margin-bottom: 1em;
+  }
+}
+
+
+.sg-hdg {
+  @include hdg-text('lg', $sg-hdg-color);
+
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+
+.sg-subhdg {
+  @include responsive-font('md');
+
+  margin: 20px 0 5px;
+
+  color: $sg-subhdg-color;
+  text-transform: uppercase;
+
+  + .sg-list {
+    margin-top: 10px;
+  }
+}
+
+
+.sg-subhdg2 {
+  @include responsive-font('sm');
+
+  margin: 20px 0 5px;
+
+  color: $sg-subhdg2-color;
+  text-transform: uppercase;
+}
+
+
+.sg-list {
+  @include unstyled-list();
+
+  line-height: 1.6;
+}
+
+
+.sg-table {
+  margin-bottom: 1em;
+
+  @include breakpoint($bp-md) {
+    display: inline-block;
+
+    vertical-align: top;
+  }
+
+  td {
+    padding: 0 10px 5px 0;
+
+    @include breakpoint($bp-md) {
+      padding-right: 25px;
+    }
+  }
+}
+
+
+.sg-table-hdg {
+  @include bold-text();
+}
+
+.sg-code {
+  @include code-style();
+}
+
+
+// sample code style
+.sg-sample-code {
+  @include code-style();
+
+  padding: 0 gutter();
+  margin: 1em 0 1.5em;
+  clear: both;
+
+  background: $background-white;
+
+  &:before {
+    @include responsive-font('sm');
+    @include bold-text();
+
+    display: block;
+    padding: 5px 10px;
+    margin: 0 -10px 1em;
+
+    color: $white;
+
+    background: $black;
+
+    content: 'Example Usage';
+  }
+}
+
+.sg-highlight-code {
+  color: $sg-highlight-red;
+}
+
+.sg-code-ref {
+  @include code-style('xs');
+
+  padding: 5px;
+
+  font-weight: normal;
+
+  background: $sg-highlight-yellow;
+}
+
+
+
+
+// swatches
+%sg-swatch {
+  width: 100%;
+  height: $sg-swatch-height;
+
+  border-radius: $base-border-radius * 2;
+}
+
+
+@each $color, $shades in $palette {
+  @each $name, $shade in $shades {
+    .sg-swatch--#{$name} {
+      @extend %sg-swatch;
+
+      background: $shade;
+    }
+  }
+}
+
+
+.sg-swatches {
+  @include clearfix();
+
+  @include breakpoint($bp-md) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.sg-swatch-group {
+  margin-bottom: 20px;
+
+  @include breakpoint($bp-md) {
+    display: inline-block;
+    width: 45%;
+    margin-right: 20px;
+  }
+
+  @include breakpoint($bp-lg) {
+    width: 22%;
+  }
+}
+
+.sg-swatch-info {
+  margin-bottom: 10px;
+
+  line-height: 1.6;
+}
+
+.sg-swatch-name {
+  display: block;
+  margin-top: 3px;
+}
+
+
+// font sizes
+@each $name, $sizes in $font-sizes {
+  .sg-#{$name}-font-size {
+    font-size: fontsy($name);
+  }
+
+  .sg-#{$name}-font-size-plus {
+    font-size: fontsy($name, 'plus');
+  }
+
+  @if ($name == 'xl') {
+    .sg-#{$name}-font-size-plus2 {
+      font-size: fontsy($name, 'plus2');
+    }
+  }
+
+  .sg-#{$name}-font-size-responsive {
+    @include responsive-font($name);
+  }
+}
+
+
+// text styles
+.sg-ex-bold {
+  @include bold-text();
+}
+
+
+// generate breakpoint classes
+@each $device, $px in $breakpoints {
+  .sg-#{$device}-bp {
+    &:before {
+      content: '#{$px} - ';
+    }
+  }
+}
+
+@each $device, $px in $breakpoints {
+  .sg-#{$device}-limit {
+    &:after {
+      content: ' (up to #{$px - 1})';
+    }
+  }
+}
+
+
+// quantity buttons
+.sg-embedded-qty-filter {
+  width: 250px;
+}
+
+
+// tooltips
+.sg-tooltip {
+  text-align: center;
+
+  + .sg-tooltip {
+    margin-top: 20px;
+  }
+}
+
+
+// datestamps
+.sg-datestamp-wrapper {
+  display: inline-block;
+  padding: 1px;
+
+  background: $base-link-color;
+}
+
+
+// ticket stub
+.sg-ticket-stub {
+  width: 230px;
+  height: 190px;
+}

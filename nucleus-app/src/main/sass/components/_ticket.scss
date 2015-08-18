@@ -1,0 +1,38 @@
+.ticket {
+  &__ticket-price {
+    display: block;
+  }
+
+  &__ticket-price-rolledup {
+    @include responsive-font('md');
+    @include alt-copy();
+
+    display: block;
+
+    font-weight: bold;
+
+    @include breakpoint($bp-md) {
+      display: inline;
+    }
+  }
+
+  &__ticket-fees {
+    @include alt-copy();
+
+    display: block;
+
+    @include breakpoint($bp-md) {
+      display: inline;
+    }
+  }
+
+  &__details-btn {
+    @extend %btn-transparent;
+    color: $base-link-color;
+  }
+
+  &__ada-text {
+    @include hide-btn-text();
+  }
+
+}
