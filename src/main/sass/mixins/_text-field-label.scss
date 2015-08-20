@@ -5,7 +5,7 @@
   padding: 5px 0 1px 11px;
 
 
-  @include responsive-font-old('xs');
+  @include responsive-font('xs');
   color: $secondary-text-color;
 
   opacity: 0;

@@ -8,7 +8,7 @@
   }
 
   &__title {
-    @include responsive-font-old('xl');
+    @include responsive-font('xl');
   }
 
   &__recaptcha {

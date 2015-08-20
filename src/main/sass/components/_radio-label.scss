@@ -3,7 +3,7 @@
 }
 
 .radio-label__name {
-  @include responsive-font-old('md');
+  @include responsive-font('md');
 
   float: left;
 }

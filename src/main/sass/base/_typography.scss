@@ -12,7 +12,6 @@ $monospace: Menlo, Consolas, 'Courier New', monospace;
 $base-font-family: $tm-sans;
 $bold-weight: 700;
 $bold-letter-spacing : -0.025em;
-$header-letter-spacing: $bold-letter-spacing;
 
 
 // Default font sizes
@@ -36,7 +35,7 @@ $line-height-factor: 0.2;
 }
 
 @function get-lh($font-size) {
-  @return strip-units($font-size + $line-height-factor);
+  @return ($font-size + $line-height-factor);
 }
 
 // base font sizes; DO NOT use these variables elsewhere
@@ -80,7 +79,7 @@ $font-sizes: (
 );
 
 @function fetch-font($size, $val: 'pint') {
-  @return map-get(map-get(responsive-font-old, $size), $val);
+  @return map-get(map-get($font-sizes, $size), $val);
 }
 
 
@@ -157,7 +156,6 @@ p {
 
 strong {
   font-weight: $bold-weight;
-  letter-spacing: $bold-letter-spacing;
 }
 
 a {

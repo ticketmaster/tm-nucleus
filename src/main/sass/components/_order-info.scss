@@ -3,7 +3,7 @@
   &__heading {
     display: flex;
 
-    @include breakpoint($min: $bp-sm) {
+    @include breakpoint($min: $bp-xs) {
       padding: 10px;
 
       border-bottom: 1px solid $border-color;
@@ -31,7 +31,7 @@
 
     border-bottom: 1px solid $border-color;
 
-    @include breakpoint($min: $bp-sm) {
+    @include breakpoint($min: $bp-xs) {
       padding: 15px 0;
       margin: 0 10px 15px;
     }
@@ -51,7 +51,7 @@
     display: flex;
     justify-content: space-between;
 
-    @include breakpoint($min: $bp-sm) {
+    @include breakpoint($min: $bp-xs) {
       margin: 0 10px 10px;
     }
 
@@ -83,7 +83,7 @@
     display: flex;
     justify-content: space-between;
 
-    @include breakpoint($min: $bp-sm) {
+    @include breakpoint($min: $bp-xs) {
       padding: 0 10px 15px;
     }
 

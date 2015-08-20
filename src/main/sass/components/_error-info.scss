@@ -1,6 +1,6 @@
 .error-info {
   @include span(full);
-  @include responsive-font-old('lg');
+  @include responsive-font('lg');
 
   padding-top: 15px;
   padding-bottom: 15px;

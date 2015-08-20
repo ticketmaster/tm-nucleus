@@ -4,7 +4,7 @@ $filter-modal-padding: 10px;
   @include module();
 
   &__title-controls {
-    @include responsive-font-old('md');
+    @include responsive-font('md');
 
     padding: $filter-modal-padding;
 
@@ -14,7 +14,7 @@ $filter-modal-padding: 10px;
   }
 
   &__title {
-    @include responsive-font-old('md');
+    @include responsive-font('md');
 
     margin: 1px;
 
@@ -33,7 +33,7 @@ $filter-modal-padding: 10px;
   }
 
   &__content-wrapper {
-    @include responsive-font-old('md');
+    @include responsive-font('md');
 
     padding: $filter-modal-padding;
 
@@ -66,7 +66,7 @@ $filter-modal-padding: 10px;
   }
 
   &__apply-btn {
-    @include responsive-font-old('md');
+    @include responsive-font('md');
 
     width: 100%;
     padding: 12px 0;

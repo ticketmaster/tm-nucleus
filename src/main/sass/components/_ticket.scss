@@ -4,7 +4,7 @@
   }
 
   &__ticket-price-rolledup {
-    @include responsive-font-old('md');
+    @include responsive-font('md');
     @include alt-copy();
 
     display: block;

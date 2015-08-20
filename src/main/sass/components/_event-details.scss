@@ -12,7 +12,7 @@
   }
 
   &__datevenue-title {
-    @include responsive-font-old('md');
+    @include responsive-font('md');
     @include bold-text();
 
     white-space: nowrap;
@@ -117,7 +117,7 @@
   }
 
   &__lineup-artist {
-    @include responsive-font-old('sm');
+    @include responsive-font('sm');
 
     display: block;
 
@@ -191,7 +191,7 @@
 
   &__heading {
     @include bold-text();
-    @include responsive-font-old('sm');
+    @include responsive-font('sm');
   }
 
   &__block + &__block {

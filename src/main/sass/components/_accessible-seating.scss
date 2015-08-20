@@ -96,15 +96,15 @@
     font-size: 12px;
   }
 
-  @include breakpoint($max: $bp-md - 1, $min: $bp-sm + 36) {
+  @include breakpoint($max: $bp-md - 1, $min: $bp-xs + 36) {
     @include slider(0, 38px);
   }
 
-  @include breakpoint($max: $bp-sm + 35, $min: $bp-sm - 45) {
+  @include breakpoint($max: $bp-xs + 35, $min: $bp-xs - 45) {
     @include slider(0, 52px);
   }
 
-  @include breakpoint($max: $bp-sm - 46) {
+  @include breakpoint($max: $bp-xs - 46) {
     @include slider(0, 70px);
   }
 

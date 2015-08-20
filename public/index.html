@@ -249,135 +249,265 @@
 // output
 .sample-text {
   font-size: 1.4rem;
+  line-height: 1.6;
 }
 
 @media (min-width: 45em) {
   .sample-text {
     font-size: 1.6rem;
+    line-height: 1.8;
   }
 }
         </pre>
 
         <p>Using this mixin, our font sizes are then generated as follows (up to the specified widths).</p>
 
+        <table class="sg-table sg-typography-table">
+          <tr>
+            <th class="sg-table-hdg sg-typography-hdg">Breakpoint</th>
+            <th class="sg-table-hdg sg-typography-hdg">X-Small</th>
+            <th class="sg-table-hdg sg-typography-hdg">Small</th>
+            <th class="sg-table-hdg sg-typography-hdg">Medium</th>
+            <th class="sg-table-hdg sg-typography-hdg">Large</th>
+            <th class="sg-table-hdg sg-typography-hdg">X-Large</th>
+            <th class="sg-table-hdg sg-typography-hdg">XX-Large</th>
+          </tr>
+          <tr>
+            <td class="sg-typography-bp">
+              Small Mobile<br />
+              &le; 374px
+            </td>
+            <td class="sg-xs-font-size">
+              10px font size<br />
+              12px line height
+            </td>
+            <td class="sg-sm-font-size">
+              12px font size<br />
+              14px line height
+            </td>
+            <td class="sg-md-font-size">
+              14px font size<br />
+              16px line height
+            </td>
+            <td class="sg-lg-font-size">
+              18px font size<br />
+              20px line height
+            </td>
+            <td class="sg-xl-font-size">
+              22px font size<br />
+              24px line height
+            </td>
+            <td class="sg-xxl-font-size">
+              26px font size<br />
+              28px line height
+            </td>
+          </tr>
+          <tr>
+            <td class="sg-typography-bp">
+              Mobile<br />
+              375px - 719px
+            </td>
+            <td class="sg-xs-font-size-quart">
+              12px font size<br />
+              14px line height
+            </td>
+            <td class="sg-sm-font-size-quart">
+              14px font size<br />
+              16px line height
+            </td>
+            <td class="sg-md-font-size-quart">
+              16px font size<br />
+              18px line height
+            </td>
+            <td class="sg-lg-font-size-quart">
+              20px font size<br />
+              22px line height
+            </td>
+            <td class="sg-xl-font-size-quart">
+              24px font size<br />
+              26px line height
+            </td>
+            <td class="sg-xxl-font-size-quart">
+              28px font size<br />
+              30px line height
+            </td>
+          </tr>
+          <tr>
+            <td class="sg-typography-bp">
+              Tablet/Desktop<br />
+              &ge; 720px
+            </td>
+            <td class="sg-xs-font-size-quart">
+              no change
+            </td>
+            <td class="sg-sm-font-size-gallon">
+              16px font size<br />
+              18px line height
+            </td>
+            <td class="sg-md-font-size-gallon">
+              18px font size<br />
+              20px line height
+            </td>
+            <td class="sg-lg-font-size-gallon">
+              22px font size<br />
+              24px line height
+            </td>
+            <td class="sg-xl-font-size-gallon">
+              26px font size<br />
+              28px line height
+            </td>
+            <td class="sg-xxl-font-size-gallon">
+              30px font size<br />
+              32px line height
+            </td>
+          </tr>
+        </table>
+        <p>And here they are displayed responsively (resize browser window to see)</p>
         <table class="sg-table">
           <tr>
             <td><span class="sg-xs-font-size-responsive">Extra small copy</span></td>
-            <td><span class="alt-copy"><span class="sg-mobile-limit">10px</span>, 12px</span></td>
             <td><code class="sg-code">@include responsive-font('xs');</code></td>
           </tr>
           <tr>
             <td><span class="sg-sm-font-size-responsive">Small copy</span></td>
-            <td><span class="alt-copy"><span class="sg-mobile-limit">12px</span>, 14px</span></td>
             <td><code class="sg-code">@include responsive-font('sm');</code></td>
           </tr>
           <tr>
             <td><span class="sg-md-font-size-responsive">Medium copy</span></td>
-            <td><span class="alt-copy"><span class="sg-mobile-limit">14px</span>, 16px</span></td>
             <td><code class="sg-code">@include responsive-font('md');</code></td>
           </tr>
           <tr>
             <td><span class="sg-lg-font-size-responsive">Large copy</span></td>
-            <td><span class="alt-copy"><span class="sg-mobile-limit">18px</span>, 20px</span></td>
             <td><code class="sg-code">@include responsive-font('lg');</code></td>
           </tr>
           <tr>
             <td><span class="sg-xl-font-size-responsive">Extra large copy</span></td>
-            <td><span class="alt-copy"><span class="sg-mobile-limit">18px</span>, <span class="sg-large-mobile-limit">20px</span>, 24px</span></td>
             <td><code class="sg-code">@include responsive-font('xl');</code></td>
+          </tr>
+          <tr>
+            <td><span class="sg-xxl-font-size-responsive">Extra-extra large copy</span></td>
+            <td><code class="sg-code">@include responsive-font('xxl');</code></td>
           </tr>
         </table>
 
         <h3 class="sg-subhdg">Non-responsive fonts</h3>
-        <p>When defining a fixed font size, use our <code class="sg-code">fontsy()</code> function.</p>
-        <p><code class="sg-code">fontsy()</code> can accept two parameters. The first is required and specifies the font size you want. The second parameter is optional and specifies the &quot;version&quot; of the font size (<code class="sg-code">base</code> or <code class="sg-code">plus</code>).</p>
-        <p>If a second parameter is not passed, it defaults to calling the <code class="sg-code">base</code> font size.</p>
+        <p>In the rare case of using a fixed font size, use our <code class="sg-code">fetch-font()</code> function.</p>
+        <p><code class="sg-code">fetch-font()</code> can accept two parameters. The first is required and specifies the font size you want. The second parameter is optional and specifies the &quot;version&quot; of the font size (<code class="sg-code">pint</code>, <code class="sg-code">quart</code> or <code class="sg-code">gallon</code>).</p>
+        <p>If a second parameter is not passed, it defaults to calling the <code class="sg-code">pint</code> size.</p>
 
         <table class="sg-table">
           <th>
             <tr>
-              <td colspan="3"><span class="sg-table-hdg">Base</span></td>
+              <td colspan="3"><span class="sg-table-hdg">Pint</span></td>
             </tr>
           </th>
           <tr>
             <td><span class="sg-xs-font-size">Extra small copy</span></td>
             <td><span class="alt-copy">10px</span></td>
-            <td><code class="sg-code">fontsy('xs')</code></td>
+            <td><code class="sg-code">fetch-font('xs')</code></td>
           </tr>
           <tr>
             <td><span class="sg-sm-font-size">Small copy</span></td>
             <td><span class="alt-copy">12px</span></td>
-            <td><code class="sg-code">fontsy('sm')</code></td>
+            <td><code class="sg-code">fetch-font('sm')</code></td>
           </tr>
           <tr>
             <td><span class="sg-md-font-size">Medium copy</span></td>
             <td><span class="alt-copy">14px</span></td>
-            <td><code class="sg-code">fontsy('md')</code></td>
+            <td><code class="sg-code">fetch-font('md')</code></td>
           </tr>
           <tr>
             <td><span class="sg-lg-font-size">Large copy</span></td>
             <td><span class="alt-copy">18px</span></td>
-            <td><code class="sg-code">fontsy('lg')</code></td>
+            <td><code class="sg-code">fetch-font('lg')</code></td>
           </tr>
           <tr>
             <td><span class="sg-xl-font-size">Extra large copy</span></td>
-            <td><span class="alt-copy">18px</span></td>
-            <td><code class="sg-code">fontsy('xl')</code></td>
+            <td><span class="alt-copy">22px</span></td>
+            <td><code class="sg-code">fetch-font('xl')</code></td>
+          </tr>
+          <tr>
+            <td><span class="sg-xxl-font-size">Extra-extra large copy</span></td>
+            <td><span class="alt-copy">26px</span></td>
+            <td><code class="sg-code">fetch-font('xxl')</code></td>
           </tr>
         </table>
 
         <table class="sg-table">
           <th>
             <tr>
-              <td colspan="3"><span class="sg-table-hdg">Plus</span></td>
+              <td colspan="3"><span class="sg-table-hdg">Quart</span></td>
             </tr>
           </th>
           <tr>
-            <td><span class="sg-xs-font-size">Extra small copy</span></td>
+            <td><span class="sg-xs-font-size-quart">Extra small copy</span></td>
             <td><span class="alt-copy">12px</span></td>
-            <td><code class="sg-code">fontsy('xs', 'plus')</code></td>
+            <td><code class="sg-code">fetch-font('xs', 'quart')</code></td>
           </tr>
           <tr>
-            <td><span class="sg-sm-font-size-plus">Small copy</span></td>
+            <td><span class="sg-sm-font-size-quart">Small copy</span></td>
             <td><span class="alt-copy">14px</span></td>
-            <td><code class="sg-code">fontsy('sm', 'plus')</code></td>
+            <td><code class="sg-code">fetch-font('sm', 'quart')</code></td>
           </tr>
           <tr>
-            <td><span class="sg-md-font-size-plus">Medium copy</span></td>
+            <td><span class="sg-md-font-size-quart">Medium copy</span></td>
             <td><span class="alt-copy">16px</span></td>
-            <td><code class="sg-code">fontsy('md', 'plus')</code></td>
+            <td><code class="sg-code">fetch-font('md', 'quart')</code></td>
           </tr>
           <tr>
-            <td><span class="sg-lg-font-size-plus">Large copy</span></td>
+            <td><span class="sg-lg-font-size-quart">Large copy</span></td>
             <td><span class="alt-copy">20px</span></td>
-            <td><code class="sg-code">fontsy('lg', 'plus')</code></td>
+            <td><code class="sg-code">fetch-font('lg', 'quart')</code></td>
           </tr>
           <tr>
-            <td><span class="sg-xl-font-size-plus">Extra large copy</span></td>
-            <td><span class="alt-copy">20px</span></td>
-            <td><code class="sg-code">fontsy('xl', 'plus')</code></td>
+            <td><span class="sg-xl-font-size-quart">Extra large copy</span></td>
+            <td><span class="alt-copy">24px</span></td>
+            <td><code class="sg-code">fetch-font('xl', 'quart')</code></td>
+          </tr>
+          <tr>
+            <td><span class="sg-xxl-font-size-quart">Extra-extra large copy</span></td>
+            <td><span class="alt-copy">28px</span></td>
+            <td><code class="sg-code">fetch-font('xxl', 'quart')</code></td>
           </tr>
         </table>
-
-        <p>For the <code class="sg-code">xl</code> font-size only, there is a third option of <code class="sg-code">plus2</code>.</p>
 
         <table class="sg-table">
           <th>
             <tr>
-              <td colspan="3"><span class="sg-table-hdg">Plus2</span></td>
+              <td colspan="3"><span class="sg-table-hdg">Gallon</span></td>
             </tr>
           </th>
           <tr>
-            <td><span class="sg-xl-font-size-plus2">Extra large copy</span></td>
-            <td><span class="alt-copy">24px</span></td>
-            <td><code class="sg-code">fontsy('xl','plus2')</code></td>
+            <td><span class="sg-sm-font-size-gallon">Small copy</span></td>
+            <td><span class="alt-copy">16px</span></td>
+            <td><code class="sg-code">fetch-font('sm', 'gallon')</code></td>
+          </tr>
+          <tr>
+            <td><span class="sg-md-font-size-gallon">Medium copy</span></td>
+            <td><span class="alt-copy">18px</span></td>
+            <td><code class="sg-code">fetch-font('md', 'gallon')</code></td>
+          </tr>
+          <tr>
+            <td><span class="sg-lg-font-size-gallon">Large copy</span></td>
+            <td><span class="alt-copy">22px</span></td>
+            <td><code class="sg-code">fetch-font('lg', 'gallon')</code></td>
+          </tr>
+          <tr>
+            <td><span class="sg-xl-font-size-gallon">Extra large copy</span></td>
+            <td><span class="alt-copy">26px</span></td>
+            <td><code class="sg-code">fetch-font('xl', 'gallon')</code></td>
+          </tr>
+          <tr>
+            <td><span class="sg-xxl-font-size-gallon">Extra-extra large copy</span></td>
+            <td><span class="alt-copy">30px</span></td>
+            <td><code class="sg-code">fetch-font('xxl', 'gallon')</code></td>
           </tr>
         </table>
 
         <pre class="sg-sample-code">
 // scss
 .fontsy-example {
-  font-size: <span class="sg-highlight-code">fontsy('md','plus')</span>;
+  font-size: <span class="sg-highlight-code">fetch-font('md', 'quart')</span>;
 }
 
 // output
@@ -502,11 +632,11 @@
         <table class="sg-table">
           <tr>
             <td><span class="sg-mobile-bp">Mobile</span></td>
-            <td><code class="sg-code">$bp-sm</code></td>
+            <td><code class="sg-code">$bp-xs</code></td>
           </tr>
           <tr>
             <td><span class="sg-large-mobile-bp">Large Mobile</span></td>
-            <td><code class="sg-code">$bp-sm2</code></td>
+            <td><code class="sg-code">$bp-sm</code></td>
           </tr>
           <tr>
             <td><span class="sg-tablet-bp">Tablet</span></td>

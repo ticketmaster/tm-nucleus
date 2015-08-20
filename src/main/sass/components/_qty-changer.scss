@@ -73,7 +73,7 @@ $qty-btn-size: 44px;
 }
 
 .qty-changer__button--number {
-  @include responsive-font-old('md');
+  @include responsive-font('md');
 
   line-height: 40px;
   color: $link-color;

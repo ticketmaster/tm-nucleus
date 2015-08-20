@@ -5,7 +5,7 @@ $badge-padding: 2px 10px;
 
 // mixin
 @mixin badge($bgcolor: $badge-bg-color, $txtcolor: $white) {
-  @include responsive-font-old('xs');
+  @include responsive-font('xs');
 
   display: inline-block;
   margin: 5px 0;

@@ -1,7 +1,7 @@
 .event {
   @include span(full nest);
   @include clearfix();
-  @include responsive-font-old('md');
+  @include responsive-font('md');
 
   padding: 0;
 
@@ -40,7 +40,7 @@
 
   &__event-details {
     @include span(full nest);
-    @include responsive-font-old('sm');
+    @include responsive-font('sm');
   }
 
   &__event-details-link {

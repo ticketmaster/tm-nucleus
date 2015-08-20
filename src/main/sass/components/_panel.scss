@@ -79,7 +79,7 @@
   }
 
   &__content-header {
-    @include responsive-font-old('md');
+    @include responsive-font('md');
 
     display: none;
 

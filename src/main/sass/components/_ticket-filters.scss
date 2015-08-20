@@ -7,7 +7,7 @@
 
   &__filter-criteria-selected {
     @include span(11 of 12 no-gutters);
-    @include responsive-font-old('md');
+    @include responsive-font('md');
 
     color: $link-color;
   }
@@ -103,7 +103,7 @@
 
 
 .filter-content {
-  @include responsive-font-old('md');
+  @include responsive-font('md');
 
   &__ticket-price {
     @include span(10 of 12 no-gutters);

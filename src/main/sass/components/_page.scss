@@ -31,7 +31,7 @@
   // use content to set default font size for content
   &__content {
     @include clearfix();
-    @include responsive-font-old('md');
+    @include responsive-font('md');
 
     @include breakpoint($bp-md) {
       @include pad(10px no-gutters);
@@ -44,7 +44,7 @@
 
   &__content-header {
     @include clearfix();
-    @include responsive-font-old('md');
+    @include responsive-font('md');
 
     position: relative;
 

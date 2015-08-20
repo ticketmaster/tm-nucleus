@@ -6,7 +6,7 @@
 
 @mixin accordion-header-text() {
   @include span(11 of 12 no-gutters);
-  @include responsive-font-old('md');
+  @include responsive-font('md');
 
   color: $link-color;
 

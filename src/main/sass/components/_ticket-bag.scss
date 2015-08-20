@@ -31,11 +31,11 @@
   }
 
   &__num-seats {
-    @include responsive-font-old('md');
+    @include responsive-font('md');
   }
 
   &__total-price {
-    @include responsive-font-old('lg');
+    @include responsive-font('lg');
   }
 
   &__ticket-list {

@@ -1,7 +1,7 @@
 // TM Color Palette
 // scss-lint:disable ColorVariable
 @function get-darker($color, $percent: 25%) {
-  @return mix(#414141, $color, $percent);
+  @return mix(#000, $color, $percent);
 }
 
 @function get-lighter($color, $percent: 75%) {
@@ -17,7 +17,7 @@
 // map hex values to names
 $palette: (
   'gray': (
-    'sierra':   #414141,
+    'sierra':   #475058,
     'cascade':  #768692,
     'rocky':    #dfe4e7,
     'ridge':    #f6f7f9

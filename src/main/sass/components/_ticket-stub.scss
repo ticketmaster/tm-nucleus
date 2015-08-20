@@ -59,19 +59,19 @@ $ticket-stub-padding: 10px;
   }
 
   &__seat-label {
-    @include responsive-font-old('sm');
+    @include responsive-font('sm');
 
     color: $secondary-text-color;
   }
 
   &__seat-text {
-    @include responsive-font-old('md');
+    @include responsive-font('md');
 
     color: $default-text-color;
   }
 
   &__content-wrapper {
-    @include responsive-font-old('md');
+    @include responsive-font('md');
 
     text-align: left;
   }
@@ -81,7 +81,7 @@ $ticket-stub-padding: 10px;
   }
 
   &__ticket-types {
-    @include responsive-font-old('md');
+    @include responsive-font('md');
 
     max-height: 180px;
     overflow-y: auto;
@@ -117,7 +117,7 @@ $ticket-stub-padding: 10px;
   }
 
   &__obstructed-view {
-    @include responsive-font-old('sm');
+    @include responsive-font('sm');
 
     &:before {
       @include svg('icon-alert');

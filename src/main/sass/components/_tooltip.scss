@@ -197,7 +197,7 @@ $tooltip-animate-time: 0.3s;
 }
 
 .tooltip-inner {
-  @include responsive-font-old('sm');
+  @include responsive-font('sm');
   padding: $tooltip-padding;
 
   line-height: 1;

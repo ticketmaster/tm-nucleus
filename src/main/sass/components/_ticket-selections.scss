@@ -95,7 +95,7 @@
   }
 
   &__ticket-type {
-    @include responsive-font-old('sm');
+    @include responsive-font('sm');
   }
 
 }

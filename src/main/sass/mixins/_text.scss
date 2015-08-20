@@ -1,14 +1,36 @@
 // mixins
 @mixin bold-text($weight: $bold-weight) {
   font-weight: $weight;
-  letter-spacing: $bold-letter-spacing;
+}
+
+
+@mixin responsive-font($size: 'md') {
+  font-size: fetch-font($size);
+  line-height: get-lh(fetch-font($size));
+
+  @include breakpoint($bp-sm) {
+    $quart: fetch-font($size, 'quart');
+
+    font-size: $quart;
+    line-height: get-lh($quart);
+  }
+
+  // there's no gallon size for XS, so skip it
+  @if ($size != 'xs') {
+    @include breakpoint($bp-md) {
+      $gallon: fetch-font($size, 'gallon');
+
+      font-size: $gallon;
+      line-height: get-lh($gallon);
+    }
+  }
 }
 
 
 @mixin responsive-font-old($size: 'md') {
   font-size: fontsy($size);
 
-  @media (min-width: em($bp-sm2)) {
+  @media (min-width: em($bp-sm)) {
     font-size: fontsy($size, 'plus');
   }
 
@@ -22,7 +44,7 @@
 
 @mixin hdg-text($size, $color: $default-text-color, $mb: 5px) {
   @include bold-text();
-  @include responsive-font-old($size);
+  @include responsive-font($size);
 
   margin-bottom: $mb;
   color: $color;
@@ -30,7 +52,7 @@
 
 
 @mixin alt-copy($size: 'sm') {
-  @include responsive-font-old($size);
+  @include responsive-font($size);
 
   font-weight: normal;
   color: $secondary-text-color;

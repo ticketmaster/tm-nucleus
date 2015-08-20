@@ -35,7 +35,7 @@ $container-half-height: 88px;
 
     transform-origin: 70px 63px;
 
-    @include breakpoint($max: $bp-sm) {
+    @include breakpoint($max: $bp-xs) {
       width: 150px;
       height: 150px;
     }

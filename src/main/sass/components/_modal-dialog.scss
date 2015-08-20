@@ -15,7 +15,7 @@
   }
 
   &__module {
-    @include responsive-font-old('sm');
+    @include responsive-font('sm');
 
     position: relative;
     z-index: z('overlay');

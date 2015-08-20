@@ -41,7 +41,7 @@
   &__item {
     border-bottom: $light-border-style;
 
-    @include breakpoint($min: $bp-sm2) {
+    @include breakpoint($bp-sm) {
       display: flex;
       justify-content: space-between;
     }

@@ -6,7 +6,7 @@ $sg-highlight-red: color('red', 'rainier');
 $sg-swatch-height: 70px;
 
 @mixin code-style($sz: sm) {
-  @include responsive-font-old($sz);
+  @include responsive-font($sz);
 
   padding: 2px 4px;
   border: $light-border-style;
@@ -33,7 +33,7 @@ $sg-swatch-height: 70px;
 .sg-section {
   @include span(full);
   @include content-spacing();
-  @include responsive-font-old('md');
+  @include responsive-font('md');
 
   padding-bottom: $vertical-spacing-sm;
 
@@ -66,7 +66,7 @@ $sg-swatch-height: 70px;
 
 
 .sg-subhdg {
-  @include responsive-font-old('md');
+  @include responsive-font('md');
 
   margin: 20px 0 5px;
 
@@ -80,7 +80,7 @@ $sg-swatch-height: 70px;
 
 
 .sg-subhdg2 {
-  @include responsive-font-old('sm');
+  @include responsive-font('sm');
 
   margin: 20px 0 5px;
 
@@ -114,9 +114,30 @@ $sg-swatch-height: 70px;
   }
 }
 
+.sg-typography-table {
+  td {
+    padding: 5px 10px;
+  }
+
+  tr:nth-child(even) {
+    background-color: $secondary-bg-color;
+  }
+}
+
 
 .sg-table-hdg {
   @include bold-text();
+
+  text-align: left;
+}
+
+.sg-typography-hdg {
+  padding: 5px 10px;
+}
+
+.sg-typography-bp {
+  white-space: nowrap;
+  vertical-align: top;
 }
 
 .sg-code {
@@ -135,7 +156,7 @@ $sg-swatch-height: 70px;
   background: $secondary-bg-color;
 
   &:before {
-    @include responsive-font-old('sm');
+    @include responsive-font('sm');
     @include bold-text();
 
     display: block;
@@ -216,7 +237,7 @@ $sg-swatch-height: 70px;
   }
 
   @include breakpoint($bp-lg) {
-    width: 22%;
+    width: 30%;
   }
 }
 
@@ -237,23 +258,32 @@ $sg-swatch-height: 70px;
 
 
 // font sizes
-@each $name, $sizes in $font-sizes-old {
+@each $name, $sizes in $font-sizes {
   .sg-#{$name}-font-size {
-    font-size: fontsy($name);
+    font-size: fetch-font($name);
+    line-height: get-lh(fetch-font($name));
+
+    vertical-align: top;
   }
 
-  .sg-#{$name}-font-size-plus {
-    font-size: fontsy($name, 'plus');
+  .sg-#{$name}-font-size-quart {
+    font-size: fetch-font($name, 'quart');
+    line-height: get-lh(fetch-font($name, 'quart'));
+
+    vertical-align: top;
   }
 
-  @if ($name == 'xl') {
-    .sg-#{$name}-font-size-plus2 {
-      font-size: fontsy($name, 'plus2');
+  @if ($name != 'xs') {
+    .sg-#{$name}-font-size-gallon {
+      font-size: fetch-font($name, 'gallon');
+      line-height: get-lh(fetch-font($name, 'gallon'));
+
+      vertical-align: top;
     }
   }
 
   .sg-#{$name}-font-size-responsive {
-    @include responsive-font-old($name);
+    @include responsive-font($name);
   }
 }
 

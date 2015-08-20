@@ -5,7 +5,7 @@
   }
 
   &__radio-label {
-    @include responsive-font-old('md');
+    @include responsive-font('md');
 
     display: block;
     padding: $module-padding-lg;
