@@ -17,7 +17,7 @@
 }
 
 .search-input--muted {
-  color: $search-placeholder-color;
+  color: $link-color;
 }
 
 .search-mini-form {
@@ -139,5 +139,5 @@
 
 .cancel-button {
   @extend %btn-transparent;
-  color: $primary-button-color;
+  color: $link-color;
 }

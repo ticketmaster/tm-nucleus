@@ -1,10 +1,10 @@
 .event-header {
   padding: 8px;
 
-  background-color: $background-white;
+  background-color: $secondary-bg-color;
 
   &__back {
-    @include chevron($base-link-color, left, 50%, 0);
+    @include chevron($link-color, left, 50%, 0);
     @include hide-text;
 
     display: inline-block;

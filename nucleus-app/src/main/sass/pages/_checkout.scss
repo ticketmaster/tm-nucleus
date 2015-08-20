@@ -1,5 +1,5 @@
 .checkout {
-  background-color: $background-white;
+  background-color: $secondary-bg-color;
 
   &__frame {
     @include breakpoint($max: $bp-lg - 1) {

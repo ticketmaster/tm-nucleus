@@ -63,10 +63,10 @@
 
     display: inline-block;
 
-    color: $base-link-color;
+    color: $link-color;
     text-decoration: none;
 
-    background-color: $background-white;
+    background-color: $default-bg-color;
     border: 0;
 
     @include breakpoint($max: $bp-md - 1) {
@@ -85,7 +85,7 @@
 
     &:active,
     &:focus {
-      color: $hover-link-color;
+      color: $link-hover-color;
     }
 
     &:active {
@@ -117,7 +117,7 @@
   }
 
   &__overlay {
-    @include overlay(45px, $overlay-light-background-color);
+    @include overlay(45px, $overlay-light-bg-color);
 
     @include breakpoint($bp-lg) {
       padding-top: 0;

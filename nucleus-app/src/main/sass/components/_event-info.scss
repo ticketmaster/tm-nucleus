@@ -103,7 +103,7 @@
   }
 
   &__heading {
-    @include hdg-text($hdg-primary-font-size, $hdg-primary-color);
+    @include hdg-text($hdg-primary-font-size, $default-text-color);
 
     display: inline-block;
     margin-bottom: 0;
@@ -115,7 +115,7 @@
     }
 
     a:hover {
-      color: $primary-button-hover-color;
+      color: $link-hover-color;
     }
   }
 
@@ -129,7 +129,7 @@
     }
 
     a:hover {
-      color: $primary-button-hover-color;
+      color: $link-hover-color;
     }
 
     &__client-copy {

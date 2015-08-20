@@ -36,7 +36,6 @@
 
   &__total-price {
     @include responsive-font('lg');
-    color: $bag-price-color;
   }
 
   &__ticket-list {

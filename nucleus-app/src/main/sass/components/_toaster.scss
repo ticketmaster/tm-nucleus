@@ -6,7 +6,7 @@ $toaster-button-radius: 20px;
   &--button {
     padding: $button-padding;
 
-    color: $button-font-color;
+    color: $toaster-text-color;
 
     border: 0;
     border-radius: $toaster-button-radius;

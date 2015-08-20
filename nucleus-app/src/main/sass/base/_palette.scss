@@ -1,155 +1,136 @@
 // TM Color Palette
 // scss-lint:disable ColorVariable
-$palette: (
-  'gray': (
-    'sierra': #414141,
-    'mckinley': #838383,
-    'cascade': #999,
-    'rocky': #ccc,
-    'whitney': #ddd,
-    'appalachian': #e6e6e6,
-    'teton': #efefef,
-    'ridge': #f7f7f7
-  ),
-  'blue': (
-    'pacific': #009cde,
-    'tahoe': #1085b7,
-    'monterey': #bfe6f7,
-    'havasu': #e0f6ff,
-    'mead': #aadcf2,
-    'arrowhead': #7fcdee
-  ),
-  'red': (
-    'rainier': #d00509,
-    'helen': #f00,
-    'hood': #ffbfbf,
-    'shasta': #f2b1b1,
-    'loa': #fae6e6
-  ),
-  'pink': (
-    'catalina': #d0006f,
-    'coronado': #e97fb5
-  ),
-  'green': (
-    'yosemite': #19ab20,
-    'sequoia': #239028,
-    'joshua': #c5eac7,
-    'olympic': #e6fae6,
-    'zion': #b8e6ba
-  ),
-  'yellow': (
-    'malibu': #fecb34,
-    'pismo': #ffe28c,
-    'venice': #fff7de
-  )
-);
+@function get-darker($color, $percent: 25%) {
+  @return mix(#414141, $color, $percent);
+}
 
+@function get-lighter($color, $percent: 75%) {
+  @return mix(#fff, $color, $percent);
+}
 
-$white: #fff;
-$black: #000;
-
-
-// Gradients
-$black-white-gradient: linear-gradient(to bottom, #4d4d4d 0%, #383838 26%, #1f1f1f 53%, #151515 67%, #121212 69%, #000 100%);
-$red-gradient: linear-gradient(to bottom, #fa2100 0%, #f9330a 2%, #f62e04 5%, #f52c03 7%, #dd2701 32%, #ac1c00 75%, #9f1a02 91%, #9c1800 93%, #9c1b03 95%, #981400 98%, #9c1e09 100%);
-$red-reverse-gradient: linear-gradient(to top, #fa2100 0%, #f9330a 2%, #f62e04 5%, #f52c03 7%, #dd2701 32%, #ac1c00 75%, #9f1a02 91%, #9c1800 93%, #9c1b03 95%, #981400 98%, #9c1e09 100%);
-$progress-gradient: linear-gradient(left, rgba($white, 0), rgba($white, 0.4));
-
+// return hex value associated with name
 @function color($name, $shade) {
   @return map-get(map-get($palette, $name), $shade);
 }
 
 
-// Brand colors
-$resale-color: color('pink', 'catalina');
+// map hex values to names
+$palette: (
+  'gray': (
+    'sierra':   #414141,
+    'cascade':  #768692,
+    'rocky':    #dfe4e7,
+    'ridge':    #f6f7f9
+  ),
+  'blue': (
+    'pacific':  #009cde,
+    'tahoe':    get-darker(#009cde),
+    'monterey': get-lighter(#009cde)
+  ),
+  'green': (
+    'yosemite': #19ab20,
+    'sequoia':  get-darker(#19ab20),
+    'joshua':   get-lighter(#19ab20)
+  ),
+  'pink': (
+    'catalina': #d0006f,
+    'coronado': get-lighter(#d0006f, 50%)
+  ),
+  'red': (
+    'helen':    #ff0000
+  )
+);
+
+// assign colors to variables
+$brand-primary:         color('blue', 'pacific');
+$brand-primary-darker:  color('blue', 'tahoe');
+$brand-primary-lighter: color('blue', 'monterey');
+$brand-cta:             color('green', 'yosemite');
+$brand-cta-darker:      color('green', 'sequoia');
+$brand-cta-lighter:     color('green', 'joshua');
+$brand-accent:          color('pink', 'catalina');
+$brand-accent-lighter:  color('pink', 'coronado');
+$brand-alert:           color('red', 'helen');
+$brand-gray:            color('gray', 'sierra');
+$brand-gray2:           color('gray', 'cascade');
+$brand-gray3:           color('gray', 'rocky');
+$brand-gray4:           color('gray', 'ridge');
+$black:                 #000;
+$white:                 #fff;
 
 
-// Background colors
-$body-bg-color: color('gray', 'teton');
-$page-content-bg-color: color('gray', 'teton');
-$footer-bg-color: $white;
-$disabled-background-color: color('gray', 'sierra');
+// gradients
+$black-white-gradient: linear-gradient(to bottom, #4d4d4d 0%, #383838 26%, #1f1f1f 53%, #151515 67%, #121212 69%, #000 100%);
+$red-gradient: linear-gradient(to bottom, #fa2100 0%, #f9330a 2%, #f62e04 5%, #f52c03 7%, #dd2701 32%, #ac1c00 75%, #9f1a02 91%, #9c1800 93%, #9c1b03 95%, #981400 98%, #9c1e09 100%);
+$red-reverse-gradient: linear-gradient(to top, #fa2100 0%, #f9330a 2%, #f62e04 5%, #f52c03 7%, #dd2701 32%, #ac1c00 75%, #9f1a02 91%, #9c1800 93%, #9c1b03 95%, #981400 98%, #9c1e09 100%);
+$progress-gradient: linear-gradient(left, rgba($white, 0), rgba($white, 0.4));
 
-$background-white: color('gray', 'teton');
-$background-gray: color('gray', 'ridge');
-$background-caution: color('yellow', 'venice');
-$toaster-background-color: color('gray', 'sierra');
-$background-success-color: color('green', 'olympic');
-$background-error-color: color('red', 'loa');
+// backgrounds
+$default-bg-color: $white;
+$secondary-bg-color: $brand-gray4;
+$toaster-bg-color: $brand-gray;
+$badge-bg-color: $brand-gray2;
+$tooltip-bg-color: rgba($black, 0.8);
+$datestamp-year-bg-color: $brand-gray3;
+
+// TODO: get rid of light, rename dark without "dark"
+$overlay-dark-bg-color: rgba($brand-gray, 0.5);
+$overlay-light-bg-color: rgba($white, 0.9);
+
+// copy
+$default-text-color: $brand-gray;
+$secondary-text-color: $brand-gray2;
+$link-color: $brand-primary;
+$link-hover-color: $brand-primary-darker;
+$alert-text-color: $brand-alert;
+$success-text-color: $brand-cta;
+$free-text-color: $brand-cta;
+$toaster-text-color: $white;
+
+// buttons
+$button-color: $brand-primary;
+$button-hover-color: $brand-primary-darker;
+$button-disabled-color: $brand-primary-lighter;
+
+$checkout-button-color: $brand-cta;
+$checkout-button-hover-color: $brand-cta-darker;
+$checkout-button-disabled-color: $brand-cta-lighter;
+
+// resale
+$resale-color: $brand-accent;
+$resale-disabled-color: $brand-accent-lighter;
+
+// borders
+$border-color: $brand-gray3;
+$border-focused-color: $brand-primary;
+$border-error-color: $brand-alert;
+$outline-color: $brand-primary-lighter;
+
+// misc
+$transparent-color: rgba($white, 0);
+$box-shadow-color: rgba($black, 0.2);
+
+
+// legacy colors
+$background-error-color: $white;
 $module-bg-color: $white;
-$overlay-light-background-color: rgba($white, 0.9);
-$overlay-dark-background-color: rgba(color('gray', 'sierra'), 0.5);
 
-
-// Utility colors
-$alert-color: color('red', 'helen');
-$success-color: color('green', 'yosemite');
-
-
-// Font colors
-$base-font-color: color('gray', 'sierra');
-$alt-copy-color: color('gray', 'cascade');
-$hdg-primary-color: color('gray', 'sierra');
-$hdg-secondary-color: color('gray', 'cascade');
-$order-total-color: color('green', 'sequoia');
-$search-placeholder-color: color('blue', 'pacific');
-$button-font-color: color('gray', 'rocky');
-$bag-price-color: color('green', 'yosemite');
-$seat-label-color: color('gray', 'cascade');
-$seat-text-color: color('gray', 'sierra');
-
-
-// Link colors
-$base-link-color: color('blue', 'pacific');
-$hover-link-color: darken($base-link-color, 15);
-
-
-// Badge colors
-$badge-color: color('gray', 'cascade');
-
-
-// Border colors
-$dark-border-color: color('gray', 'rocky');
-$light-border-color: color('gray', 'appalachian');
-$border-focused-color: color('blue', 'pacific');
-$border-error-color: color('red', 'helen');
-$border-success-color: color('green', 'zion');
-
+// *********************************
 
 // Button colors
-$primary-button-color: color('blue', 'pacific');
-$primary-button-hover-color: color('blue', 'tahoe');
-$secondary-button-color: color('gray', 'cascade');
-$secondary-button-hover-color: color('gray', 'mckinley');
-$tertiary-button-color: color('green', 'yosemite');
-$tertiary-button-hover-color: color('green', 'sequoia');
-$void-button-color: $alert-color;
-$void-button-hover-color: color('red', 'rainier');
-$alert-button-color: $alert-color;
-$toggle-button-color: color('gray', 'sierra');
-$radio-border-color: color('gray', 'cascade');
-$radio-selected-color: color('blue', 'pacific');
-
+$secondary-button-color: $brand-gray2;
+$secondary-button-hover-color: $brand-gray2;
+$void-button-color: $brand-alert;
+$void-button-hover-color: $brand-alert;
+$radio-selected-color: $brand-primary;
 
 // ISM seat colors
-$ism-seat-open-color: color('blue', 'pacific');
-$ism-seat-selected-color: color('gray', 'sierra');
-$ism-seat-sold-color: color('gray', 'cascade');
-
-
-// ISM Tooltip colors
-$tooltip-body-color: rgba($black, 0.8);
-$tooltip-dark-border-color: #7f7f7f;
-$tooltip-light-border-color: #777;
-
+$ism-seat-open-color: $brand-primary;
+$ism-seat-selected-color: $brand-gray;
+$ism-seat-sold-color: $brand-gray2;
 
 // Other colors
-$transparent-color: rgba($white, 0);
-$chevron-color: color('gray', 'cascade');
-$chevron-color-toggle-panel: color('gray', 'rocky');
-$dropdown-arrow-color: color('gray', 'cascade');
-$box-shadow-color: rgba($black, 0.2);
-$light-link-separator-color: color('gray', 'appalachian');
-$outline-color: color('blue', 'mead');
-$progress-bar-color: color('blue', 'pacific');
-$datestamp-year-bg-color: color('gray', 'rocky');
+$chevron-color: $brand-gray2;
+$chevron-toggle-panel-color: $brand-gray3;
+$dropdown-arrow-color: $brand-gray2;
+$progress-bar-color: $brand-primary;

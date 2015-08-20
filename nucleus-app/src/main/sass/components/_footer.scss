@@ -32,9 +32,7 @@ $footer-stacked-spacing: 15px;
 
     overflow: hidden;
 
-    background: $disabled-background-color;
-
-    opacity: 0.5;
+    background: $overlay-dark-bg-color;
 
     @include breakpoint($bp-md) {
       display: none;
@@ -46,10 +44,10 @@ $footer-stacked-spacing: 15px;
     @include clearfix();
 
     font-size: fontsy('sm');
-    color: $hdg-primary-color;
+    color: $default-text-color;
 
     a {
-      color: $hdg-secondary-color;
+      color: $secondary-text-color;
     }
 
     a:hover {
@@ -65,14 +63,14 @@ $footer-stacked-spacing: 15px;
     padding-top: 20px;
     padding-bottom: 20px;
 
-    border-top: 1px solid $light-border-color;
+    border-top: 1px solid $border-color;
 
     @include breakpoint($bp-md) {
       display: block;
     }
 
     a {
-      color: $hdg-secondary-color;
+      color: $secondary-text-color;
     }
 
     a:hover {
@@ -85,7 +83,7 @@ $footer-stacked-spacing: 15px;
 
     font-size: fontsy('sm');
 
-    color: $hdg-secondary-color;
+    color: $secondary-text-color;
 
     @include breakpoint($bp-lg) {
       @include span(9 of 12 first);
@@ -98,7 +96,7 @@ $footer-stacked-spacing: 15px;
     margin-top: 20px;
 
     font-size: fontsy('sm');
-    color: $hdg-secondary-color;
+    color: $secondary-text-color;
 
     @include breakpoint($bp-lg) {
       @include span(3 of 12);
@@ -124,7 +122,7 @@ $footer-stacked-spacing: 15px;
     font-size: fontsy('sm');
 
     a {
-      color: $hdg-secondary-color;
+      color: $secondary-text-color;
     }
 
     a:hover {
@@ -176,7 +174,7 @@ $footer-stacked-spacing: 15px;
 
   margin: 15px 0 0 10px;
 
-  border-bottom: 1px solid $light-border-color;
+  border-bottom: 1px solid $border-color;
 
   &__list {
     padding: 0;
@@ -198,7 +196,7 @@ $footer-stacked-spacing: 15px;
   margin: 20px 0 20px 10px;
 
   font-size: fontsy('sm');
-  color: $hdg-secondary-color;
+  color: $secondary-text-color;
 
 }
 
@@ -265,7 +263,7 @@ $footer-stacked-spacing: 15px;
     padding-bottom: 5px;
 
     font-weight: bold;
-    color: $hdg-primary-color;
+    color: $default-text-color;
     white-space: nowrap;
   }
 }
@@ -341,7 +339,7 @@ $footer-stacked-spacing: 15px;
   font-weight: bold;
 
   a {
-    color: $base-link-color;
+    color: $link-color;
   }
 
   a:hover {
@@ -361,7 +359,7 @@ $footer-stacked-spacing: 15px;
       margin-right: 5px;
       margin-left: 10px;
 
-      color: $light-link-separator-color;
+      color: $border-color;
 
       content: '//';
     }
@@ -530,7 +528,3 @@ $ln-link-color: #757575;
     }
   }
 }
-
-
-
-

@@ -20,7 +20,7 @@
 }
 
 
-@mixin hdg-text($size, $color: $base-font-color, $mb: 5px) {
+@mixin hdg-text($size, $color: $default-text-color, $mb: 5px) {
   @include bold-text();
   @include responsive-font($size);
 
@@ -33,5 +33,5 @@
   @include responsive-font($size);
 
   font-weight: normal;
-  color: $alt-copy-color;
+  color: $secondary-text-color;
 }

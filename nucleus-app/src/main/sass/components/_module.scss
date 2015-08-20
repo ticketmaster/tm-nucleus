@@ -1,12 +1,6 @@
 .module {
   @include module();
 
-  &--success {
-    background-color: $background-success-color;
-    border: 1px solid $border-success-color;
-    box-shadow: none;
-  }
-
   &--error {
     float: left;
     width: 100%;
@@ -90,7 +84,7 @@
   overflow-x: hidden;
   overflow-y: auto;
 
-  border-top: 1px solid $dark-border-color;
+  border-top: 1px solid $border-color;
 
   @include breakpoint($bp-md) {
     padding: 40px;
@@ -109,7 +103,7 @@
   padding: 15px 10px;
   overflow-y: auto;
 
-  border-top: 1px solid $dark-border-color;
+  border-top: 1px solid $border-color;
 
   @include breakpoint($bp-md) {
     padding: 20px;

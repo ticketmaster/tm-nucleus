@@ -1,16 +1,16 @@
 // concrete classes
 .heading-primary {
-  @include hdg-text($hdg-primary-font-size, $hdg-primary-color);
+  @include hdg-text($hdg-primary-font-size, $default-text-color);
 }
 
 
 .heading-secondary {
-  @include hdg-text($hdg-secondary-font-size, $hdg-secondary-color);
+  @include hdg-text($hdg-secondary-font-size, $secondary-text-color);
 }
 
 
 .heading-section {
-  @include hdg-text($hdg-section-font-size, $base-font-color, 0);
+  @include hdg-text($hdg-section-font-size, $default-text-color, 0);
 }
 
 

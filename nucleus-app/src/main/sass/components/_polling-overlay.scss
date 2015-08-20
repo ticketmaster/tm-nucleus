@@ -1,7 +1,7 @@
 $container-half-height: 88px;
 
 .polling-overlay {
-  @include overlay(45px, $overlay-light-background-color);
+  @include overlay(45px, $overlay-light-bg-color);
 
   &__container {
     position: absolute;

@@ -6,13 +6,13 @@
     @include breakpoint($min: $bp-sm) {
       padding: 10px;
 
-      border-bottom: 1px solid $light-border-color;
+      border-bottom: 1px solid $border-color;
     }
 
     @include breakpoint($min: $bp-md) {
       padding: 20px;
 
-      border-bottom: 1px solid $light-border-color;
+      border-bottom: 1px solid $border-color;
     }
 
     @include breakpoint($min: $bp-lg) {
@@ -29,7 +29,7 @@
   &__ticket-info {
     margin: 0;
 
-    border-bottom: 1px solid $light-border-color;
+    border-bottom: 1px solid $border-color;
 
     @include breakpoint($min: $bp-sm) {
       padding: 15px 0;
@@ -103,9 +103,6 @@
 
   &__order-amt {
     @include hdg-text('xl');
-    @include breakpoint($max: $bp-lg) {
-      color: $order-total-color;
-    }
   }
 
 }

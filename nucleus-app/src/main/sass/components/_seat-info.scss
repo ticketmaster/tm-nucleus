@@ -5,12 +5,12 @@
 
   &__label {
     font-size: $font-size-sm;
-    color: $seat-label-color;
+    color: $secondary-text-color;
   }
 
   &__text {
     font-size: $font-size-md;
-    color: $seat-text-color;
+    color: $default-text-color;
   }
 
   &--center {

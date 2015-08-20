@@ -2,7 +2,6 @@
 $sg-hdg-color: color('blue', 'pacific');
 $sg-subhdg-color: color('pink', 'catalina');
 $sg-subhdg2-color: color('gray', 'sierra');
-$sg-highlight-yellow: $background-caution;
 $sg-highlight-red: color('red', 'rainier');
 $sg-swatch-height: 70px;
 
@@ -13,7 +12,7 @@ $sg-swatch-height: 70px;
   border: $light-border-style;
   border-radius: 4px;
   font-family: $monospace;
-  background-color: $background-white;
+  background-color: $secondary-bg-color;
   font-size: fontsy($sz) * 0.95;
 }
 
@@ -27,7 +26,7 @@ $sg-swatch-height: 70px;
 }
 
 .sg-title {
-  @include hdg-text('xl', $base-font-color);
+  @include hdg-text('xl', $default-text-color);
 }
 
 
@@ -133,7 +132,7 @@ $sg-swatch-height: 70px;
   margin: 1em 0 1.5em;
   clear: both;
 
-  background: $background-white;
+  background: $secondary-bg-color;
 
   &:before {
     @include responsive-font('sm');
@@ -155,18 +154,6 @@ $sg-swatch-height: 70px;
   color: $sg-highlight-red;
 }
 
-.sg-code-ref {
-  @include code-style('xs');
-
-  padding: 5px;
-
-  font-weight: normal;
-
-  background: $sg-highlight-yellow;
-}
-
-
-
 
 // swatches
 %sg-swatch {
@@ -182,7 +169,29 @@ $sg-swatch-height: 70px;
     .sg-swatch--#{$name} {
       @extend %sg-swatch;
 
+      position: relative;
+
       background: $shade;
+
+      &:before {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+
+        @if ($name == 'rocky'
+          or $name == 'ridge'
+          or $name == 'monterey'
+          or $name == 'joshua'
+          or $name == 'coronado'
+        ) {
+          color: $black;
+        }
+        @else {
+          color: $white;
+        }
+
+        content: '#{$shade}';
+      }
     }
   }
 }
@@ -220,6 +229,10 @@ $sg-swatch-height: 70px;
 .sg-swatch-name {
   display: block;
   margin-top: 3px;
+}
+
+.sg-swatch-usage {
+  margin-top: 5px;
 }
 
 
@@ -290,7 +303,7 @@ $sg-swatch-height: 70px;
   display: inline-block;
   padding: 1px;
 
-  background: $base-link-color;
+  background: $link-color;
 }
 
 

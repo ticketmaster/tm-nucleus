@@ -65,7 +65,7 @@
       $slide-animation: 0.3s;
       @include slider(0, 500px);
 
-      background-color: $background-gray;
+      background-color: $secondary-bg-color;
     }
   }
 

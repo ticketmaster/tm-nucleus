@@ -17,7 +17,7 @@ $qty-btn-size: 44px;
   border-radius: $button-border-radius;
 
   &:focus {
-    border: 1px solid $base-link-color;
+    border: 1px solid $link-color;
 
     outline: none;
   }
@@ -76,7 +76,7 @@ $qty-btn-size: 44px;
   @include responsive-font('md');
 
   line-height: 40px;
-  color: $search-placeholder-color;
+  color: $link-color;
   text-align: center;
 
   vertical-align: top;

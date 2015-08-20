@@ -1,5 +1,5 @@
 // standard button mixin
-@mixin btn($bgcolor: $primary-button-color, $txtcolor: $base-font-color, $hovercolor: 'undefined') {
+@mixin btn($bgcolor: $link-color, $txtcolor: $default-text-color, $hovercolor: 'undefined') {
   padding: $button-padding;
 
   font-size: $button-font-size;
@@ -68,7 +68,7 @@
 // DO NOT use these anymore
 // refer to components/_button.scss for the classes to use
 %btn-primary {
-  @include btn($primary-button-color, $white, $primary-button-hover-color);
+  @include btn($link-color, $white, $link-hover-color);
 }
 
 %btn-secondary {
@@ -76,7 +76,7 @@
 }
 
 %btn-tertiary {
-  @include btn($tertiary-button-color, $white, $tertiary-button-hover-color);
+  @include btn($checkout-button-color, $white, $checkout-button-hover-color);
 }
 
 %btn-remove {
@@ -92,6 +92,6 @@
 }
 
 %btn-quaternary {
-  @include btn($bgcolor: $white, $txtcolor: $base-link-color);
+  @include btn($bgcolor: $white, $txtcolor: $link-color);
   border: $focused-border-style;
 }

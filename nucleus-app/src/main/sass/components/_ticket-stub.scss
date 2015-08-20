@@ -15,7 +15,7 @@ $ticket-stub-padding: 10px;
 
     padding: $ticket-stub-padding;
 
-    background: $background-gray;
+    background: $secondary-bg-color;
     border-bottom: 3px solid $border-focused-color;
   }
 
@@ -61,13 +61,13 @@ $ticket-stub-padding: 10px;
   &__seat-label {
     @include responsive-font('sm');
 
-    color: $seat-label-color;
+    color: $secondary-text-color;
   }
 
   &__seat-text {
     @include responsive-font('md');
 
-    color: $seat-text-color;
+    color: $default-text-color;
   }
 
   &__content-wrapper {
@@ -105,7 +105,7 @@ $ticket-stub-padding: 10px;
   &__face-value {
     display: block;
 
-    color: $seat-text-color;
+    color: $default-text-color;
 
     &--resale:before {
       @include icon('icon-resale-seat');

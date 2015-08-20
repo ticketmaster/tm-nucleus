@@ -1,6 +1,6 @@
 // standard buttons are 44px height
 .button {
-  @include btn($primary-button-color, $white, $primary-button-hover-color);
+  @include btn($link-color, $white, $link-hover-color);
 
   // gray button
   &--secondary {
@@ -19,12 +19,12 @@
     padding-right: $button-padding-cta;
     padding-left: $button-padding-cta;
 
-    background-color: $tertiary-button-color;
+    background-color: $checkout-button-color;
 
     &:active,
     &:focus,
     &:hover {
-      background-color: $tertiary-button-hover-color;
+      background-color: $checkout-button-hover-color;
     }
   }
 

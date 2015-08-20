@@ -6,7 +6,7 @@
     padding: $module-padding-lg;
 
     @include breakpoint($max: $bp-md) {
-      @include chevron($color: $chevron-color-toggle-panel, $top: 1.13em);
+      @include chevron($color: $chevron-toggle-panel-color, $top: 1.13em);
 
       padding: $module-padding-sm;
     }
@@ -51,7 +51,7 @@
 
       display: none;
 
-      background-color: $page-content-bg-color;
+      background-color: $secondary-bg-color;
     }
 
     &.slider-open {
@@ -107,7 +107,7 @@
 
     padding: 0;
 
-    color: $base-link-color;
+    color: $link-color;
 
     background: none;
 

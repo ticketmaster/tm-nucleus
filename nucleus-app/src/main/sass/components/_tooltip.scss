@@ -1,7 +1,7 @@
 // tooltip variables
 $tooltip-box-shadow-color: rgba(0, 0, 0, 0.2);
 $tooltip-box-shadow-style: 0 1px 3px $tooltip-box-shadow-color;
-$tooltip-border-color: $dark-border-color;
+$tooltip-border-color: $border-color;
 $tooltip-border-width: 10px;
 $tooltip-arrow-width: 13px;
 $tooltip-padding: 10px;
@@ -71,7 +71,7 @@ $tooltip-animate-time: 0.3s;
 
     font-size: 10px;
     line-height: 1;
-    color: $tooltip-body-color;
+    color: $tooltip-bg-color;
 
     pointer-events: none;
 
@@ -109,7 +109,7 @@ $tooltip-animate-time: 0.3s;
 
     font-size: 10px;
     line-height: 1;
-    color: $tooltip-body-color;
+    color: $tooltip-bg-color;
 
     pointer-events: none;
 
@@ -147,7 +147,7 @@ $tooltip-animate-time: 0.3s;
 
     font-size: 10px;
     line-height: 1;
-    color: $tooltip-body-color;
+    color: $tooltip-bg-color;
 
     pointer-events: none;
 
@@ -184,7 +184,7 @@ $tooltip-animate-time: 0.3s;
 
     font-size: 10px;
     line-height: 1;
-    color: $tooltip-body-color;
+    color: $tooltip-bg-color;
 
     pointer-events: none;
 
@@ -201,7 +201,7 @@ $tooltip-animate-time: 0.3s;
   padding: $tooltip-padding;
 
   line-height: 1;
-  color: $tooltip-body-color;
+  color: $tooltip-bg-color;
 
   text-align: center;
   text-decoration: none;

@@ -3,8 +3,8 @@
   &__datevenue {
     padding: $module-padding-sm 0;
 
-    border-top: 1px solid $dark-border-color;
-    border-bottom: 1px solid $dark-border-color;
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
 
     @include breakpoint($bp-md) {
       padding: $module-padding-lg 0;
@@ -97,7 +97,7 @@
 
     padding-top: 10px;
 
-    color: $base-link-color;
+    color: $link-color;
 
     &:hover {
       text-decoration: underline;
@@ -125,10 +125,10 @@
     padding-left: 5px;
 
     @include breakpoint($bp-md) {
-      color: $base-font-color;
+      color: $default-text-color;
 
       &:hover {
-        color: $base-font-color;
+        color: $default-text-color;
       }
     }
   }
@@ -231,7 +231,7 @@
       display: block;
       padding: 1.2em gutter()+15 1.2em gutter();
 
-      color: $base-font-color;
+      color: $default-text-color;
 
       border-bottom: $dark-border-style;
     }

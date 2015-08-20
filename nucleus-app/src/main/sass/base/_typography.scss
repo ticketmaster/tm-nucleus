@@ -1,16 +1,16 @@
 // Font Families
-$georgia: Georgia, Cambria, 'Times New Roman', Times, serif;
-$helvetica: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
-$lucida-grande: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
+@font-face {
+  font-family: 'TM Sans';
+  src: url('../TMSans-Regular.woff2') format('woff2'),
+       url('../TMSans-Regular.woff') format('woff');
+}
+
+$tm-sans: 'TM Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $monospace: Menlo, Consolas, 'Courier New', monospace;
-$verdana: Verdana, Geneva, sans-serif;
-$arial: Arial, Helvetica, Roboto, sans-serif;
 
 
 // Typography
-$sans-serif: $helvetica;
-$serif: $georgia;
-$base-font-family: $arial;
+$base-font-family: $tm-sans;
 $header-font-family: $base-font-family;
 $bold-weight: 700;
 $bold-letter-spacing : -0.025em;
@@ -61,16 +61,16 @@ $header-line-height: 1.35;
 
 html {
   font-size: $base-font-size;
-  color: $base-font-color;
+  color: $default-text-color;
 }
 
 body {
   font-family: $base-font-family;
   -webkit-font-smoothing: antialiased;
   line-height: $base-line-height;
-  color: $base-font-color;
+  color: $default-text-color;
 
-  background-color: $body-bg-color;
+  background-color: $default-bg-color;
 }
 
 h1,
@@ -96,12 +96,12 @@ strong {
 }
 
 a {
-  color: $base-link-color;
+  color: $link-color;
   text-decoration: none;
 
   &:active,
   &:hover {
-    color: $hover-link-color;
+    color: $link-hover-color;
     text-decoration: underline;
   }
 

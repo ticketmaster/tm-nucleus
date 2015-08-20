@@ -19,15 +19,15 @@
   &__cell {
     padding: 10px;
 
-    border: 1px solid $light-border-color;
+    border: 1px solid $border-color;
   }
 
   &__head-cell {
-    border: 1px solid $light-border-color;
+    border: 1px solid $border-color;
   }
 
   &__table-row {
-    background: $background-gray;
+    background: $secondary-bg-color;
 
     &--fail {
       background: color('red', 'hood');

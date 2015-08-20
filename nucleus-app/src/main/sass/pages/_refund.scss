@@ -33,7 +33,7 @@
   text-align: left;
 
   vertical-align: top;
-  border-top: 1px solid $light-border-color;
+  border-top: 1px solid $border-color;
 
   @include breakpoint($bp-md) {
     width: 120px;
@@ -47,7 +47,7 @@
   @extend %refund-table-col;
   @include bold-text();
 
-  color: $hdg-primary-color;
+  color: $default-text-color;
 
   border: 0;
 }
@@ -144,8 +144,6 @@
 .refund-total-table__total-desc {
   @include responsive-font('lg');
   @include bold-text();
-
-  color: $success-color;
 }
 
 
@@ -153,7 +151,7 @@
   width: 100%;
   padding-top: 10px;
 
-  border-top: 1px solid $light-border-color;
+  border-top: 1px solid $border-color;
 }
 
 .refund-payment-table__type-heading {
@@ -161,7 +159,7 @@
 
   padding: 10px;
 
-  color: $hdg-primary-color;
+  color: $default-text-color;
   text-align: left;
 
   @include breakpoint($bp-md) {
@@ -227,7 +225,7 @@
 }
 
 .refund__overlay {
-  @include overlay(45px, $overlay-light-background-color);
+  @include overlay(45px, $overlay-light-bg-color);
 
   @include breakpoint($bp-lg) {
     padding-top: 0;

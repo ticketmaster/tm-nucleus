@@ -6,7 +6,7 @@
 
 
   @include responsive-font('xs');
-  color: $alt-copy-color;
+  color: $secondary-text-color;
 
   opacity: 0;
   transition: all 0.1s linear;

@@ -2,11 +2,10 @@
   transform-style: preserve-3d;
 
   &--dark {
-    @include overlay(0, $overlay-dark-background-color);
+    @include overlay(0, $overlay-dark-bg-color);
   }
 
   &--light {
-    @include overlay(45px, $overlay-light-background-color);
+    @include overlay(45px, $overlay-light-bg-color);
   }
 }
-
