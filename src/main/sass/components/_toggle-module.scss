@@ -1,0 +1,52 @@
+.toggle-module {
+
+  &__toggle-header {
+    @include span(full nest);
+  }
+
+  &__content {
+    @include span(full nest);
+    @include slider-ease(0, 3000px) {
+      transition: max-height 1s cubic-bezier(0, 1.05, 0, 1);
+    }
+  }
+
+  &__toggle-btn {
+    @extend %toggle;
+
+    float: right;
+
+    font-size: 0;
+    line-height: 0;
+
+    background: transparent;
+    border: 0;
+
+    transform: translateY(0%);
+
+    &.toggle-open {
+      @include toggle('icon-expand');
+    }
+
+    &.toggle-close {
+      @include toggle('icon-collapse');
+    }
+  }
+}
+
+.toggle-header {
+  &__left {
+    @include span(11 of 12 no-gutters);
+    @include responsive-font-old('md');
+
+    color: $link-color;
+  }
+
+  &__right {
+    @include span(1 of 12 no-gutters);
+
+    position: relative;
+
+    text-align: right;
+  }
+}

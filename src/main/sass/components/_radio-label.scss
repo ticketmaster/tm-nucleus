@@ -1,0 +1,15 @@
+.radio-label {
+  @include radio-label();
+}
+
+.radio-label__name {
+  @include responsive-font-old('md');
+
+  float: left;
+}
+
+.radio-label__desc {
+  @include alt-copy();
+
+  display: block;
+}

@@ -1,0 +1,257 @@
+.event-details {
+
+  &__datevenue {
+    padding: $module-padding-sm 0;
+
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+
+    @include breakpoint($bp-md) {
+      padding: $module-padding-lg 0;
+    }
+  }
+
+  &__datevenue-title {
+    @include responsive-font-old('md');
+    @include bold-text();
+
+    white-space: nowrap;
+
+    vertical-align: top;
+  }
+
+  &__datevenue-title--date:before {
+    @include icon('icon-timer');
+
+    margin-right: 10px;
+  }
+
+  &__datevenue-title--pin:before {
+    @include icon('icon-pin');
+
+    margin-right: 8px;
+  }
+
+  &__datevenue-block {
+    padding-top: 10px;
+
+    vertical-align: top;
+  }
+
+  &__datevenue-row:first-child > &__datevenue-block {
+    padding-top: 0;
+  }
+
+  &__datevenue-info {
+    display: block;
+    padding-left: 20px;
+  }
+
+  &__lineup-content {
+    overflow-x: auto;
+
+    @include breakpoint($max: $bp-md - 1) {
+      @include bleed-content($module-padding-sm, ($module-padding-sm * 2));
+    }
+
+    @include breakpoint($bp-md) {
+      overflow-x: hidden;
+    }
+  }
+
+  &__lineup-list {
+    @include unstyled-list();
+
+    display: inline-flex;
+
+    @include breakpoint($bp-md) {
+      display: inline-block;
+
+      overflow-x: hidden;
+    }
+  }
+
+  &__lineup-item {
+    max-width: 120px;
+
+    text-align: center;
+
+    @include breakpoint($bp-md) {
+      display: inline-block;
+      max-width: 140px;
+    }
+  }
+
+  &__lineup-expand-item {
+    display: none;
+
+    @include breakpoint($bp-md) {
+      display: block;
+
+      width: 100%;
+    }
+  }
+
+  &__lineup-expand-link {
+    @extend %btn-transparent;
+
+    padding-top: 10px;
+
+    color: $link-color;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__lineup-img {
+    min-width: 120px;
+    min-height: 90px;
+
+    border: 1px solid $white;
+
+    @include breakpoint($bp-md) {
+      min-width: 140px;
+      min-height: 100px;
+    }
+  }
+
+  &__lineup-artist {
+    @include responsive-font-old('sm');
+
+    display: block;
+
+    padding-right: 5px;
+    padding-left: 5px;
+
+    @include breakpoint($bp-md) {
+      color: $default-text-color;
+
+      &:hover {
+        color: $default-text-color;
+      }
+    }
+  }
+
+}
+
+.event-details--legacy {
+  &__notes {
+    @include span(full);
+
+    margin-top: 10px;
+
+    @include breakpoint($bp-md) {
+      margin-top: 0;
+    }
+
+    @include breakpoint($bp-lg) {
+      @include span(8 first);
+    }
+  }
+
+  &__wrapper {
+    @include span(full nest);
+    @include slider(0, 1000px);
+  }
+
+  &__content {
+    @include span(full nest);
+    display: table;
+  }
+
+  &__long-details {
+    @include span(full);
+
+    @include breakpoint($bp-lg) {
+      @include span(8);
+      @include use-table-cell();
+
+      padding-right: gutter()*2;
+
+      border-right: $dark-border-style;
+    }
+  }
+
+  &__short-details {
+    @include span(full);
+
+    @include breakpoint($bp-md) {
+      margin-top: 2rem;
+    }
+
+    @include breakpoint($bp-lg) {
+      @include span(4);
+      @include use-table-cell();
+
+      padding-left: gutter()*2;
+      margin-top: 0;
+    }
+  }
+
+  &__heading {
+    @include bold-text();
+    @include responsive-font-old('sm');
+  }
+
+  &__block + &__block {
+    margin-top: 10px;
+
+    @include breakpoint($bp-md) {
+      margin-top: 20px;
+    }
+  }
+
+  &__list {
+    @include unstyled-list();
+
+    margin-top: 1rem;
+
+    @include breakpoint($max: $bp-md - 1) {
+      @include bleed-x(gutter());
+
+      background: $white;
+      border-top: $dark-border-style;
+
+      + .details-heading {
+        margin-top: 2rem;
+      }
+    }
+
+    @include breakpoint($bp-md) {
+      margin-top: 0;
+    }
+  }
+
+  &__list__link {
+    @include breakpoint($max: $bp-md - 1) {
+      @include bleed-x(gutter()*2);
+      @include chevron();
+
+      display: block;
+      padding: 1.2em gutter()+15 1.2em gutter();
+
+      color: $default-text-color;
+
+      border-bottom: $dark-border-style;
+    }
+
+    @include breakpoint($bp-md) {
+      display: inline-block;
+      padding: 1rem 0;
+    }
+
+    @include breakpoint($bp-lg) {
+      padding: 0;
+    }
+  }
+
+}
+
+.slider-open > .event-details--legacy__content {
+  margin-bottom: 10px;
+
+  @include breakpoint($bp-lg) {
+    margin-top: 10px;
+  }
+}

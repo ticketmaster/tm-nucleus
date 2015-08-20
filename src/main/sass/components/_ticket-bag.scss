@@ -1,0 +1,113 @@
+.ticket-bag {
+  position: fixed;
+
+  bottom: 0;
+
+  width: 100%;
+
+  background: $white;
+
+  @include breakpoint($bp-md) {
+    bottom: $footer-height - 0.1;
+    left: $qp-width-lg;
+
+    // gets checkout button back into view
+    padding-right: $qp-width-lg;
+  }
+
+  // temporary; this should eventually be deleted once ISM + QP both launch
+  &--full {
+    @include breakpoint($bp-md) {
+      left: 0;
+
+      padding-right: 0;
+    }
+  }
+
+  &__content {
+    padding: $ticket-bag-padding;
+
+    border-top: $light-border-style;
+  }
+
+  &__num-seats {
+    @include responsive-font-old('md');
+  }
+
+  &__total-price {
+    @include responsive-font-old('lg');
+  }
+
+  &__ticket-list {
+    padding: 0 $ticket-bag-padding;
+    margin: 0;
+    overflow-x: auto;
+
+    white-space: nowrap;
+
+    list-style: none;
+
+    border-top: $dark-border-style;
+  }
+
+  &__ticket-list-item {
+    position: relative;
+
+    display: inline-block;
+    width: 240px;
+    margin: $ticket-bag-padding $ticket-bag-padding $ticket-bag-padding 0;
+
+    white-space: normal;
+  }
+
+  &__remove-item-btn {
+    @extend %btn-transparent;
+
+    @include hide-text();
+    @include svg('icon-close');
+
+    position: absolute;
+    top: -8px;
+    right: -8px;
+
+    width: 20px;
+    height: 20px;
+
+    background-color: $white;
+
+    border-radius: 10px;
+  }
+
+  &__ticket-stub {
+    width: 240px;
+  }
+
+  &__toggle-container {
+    line-height: 0;
+  }
+
+  &__toggle {
+    @extend %toggle;
+
+    position: relative;
+
+    width: 20px;
+
+    font-size: 0;
+    line-height: 0;
+    text-align: center;
+
+    background: transparent;
+    border: 0;
+
+    transform: translateY(0%);
+
+    &.toggle-open {
+      @include toggle('icon-plus');
+    }
+
+    &.toggle-close {
+      @include toggle('icon-minus');
+    }
+  }
+}

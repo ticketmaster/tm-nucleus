@@ -1,0 +1,182 @@
+@font-face {
+  font-family: 'TM Sans';
+  src: url('../TMSans-Regular.woff2') format('woff2'),
+       url('../TMSans-Regular.woff') format('woff');
+}
+
+$tm-sans: 'TM Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$monospace: Menlo, Consolas, 'Courier New', monospace;
+
+
+// Typography
+$base-font-family: $tm-sans;
+$bold-weight: 700;
+$bold-letter-spacing : -0.025em;
+$header-letter-spacing: $bold-letter-spacing;
+
+
+// Default font sizes
+$default-font-size: 16px; // for media queries
+$base-font-size: 62.5%;   // == 10px
+$font-size-factor: 0.2;
+$line-height-factor: 0.2;
+
+
+// Functions
+@function get-quart-size($num) {
+  @return $num + $font-size-factor;
+}
+
+@function get-gallon-size($num) {
+  @return $num + ($font-size-factor * 2);
+}
+
+@function strip-units($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function get-lh($font-size) {
+  @return strip-units($font-size + $line-height-factor);
+}
+
+// base font sizes; DO NOT use these variables elsewhere
+$base-xs-font: 1rem;
+$base-sm-font: 1.2rem;
+$base-md-font: 1.4rem;
+$base-lg-font: 1.8rem;
+$base-xl-font: 2.2rem;
+$base-xxl-font: 2.6rem;
+
+$font-sizes: (
+  'xs': (
+    'pint':   $base-xs-font,
+    'quart':  get-quart-size($base-xs-font)
+  ),
+  'sm': (
+    'pint':   $base-sm-font,
+    'quart':  get-quart-size($base-sm-font),
+    'gallon': get-gallon-size($base-sm-font)
+  ),
+  'md': (
+    'pint':   $base-md-font,
+    'quart':  get-quart-size($base-md-font),
+    'gallon': get-gallon-size($base-md-font)
+  ),
+  'lg': (
+    'pint':   $base-lg-font,
+    'quart':  get-quart-size($base-lg-font),
+    'gallon': get-gallon-size($base-lg-font)
+  ),
+  'xl': (
+    'pint':   $base-xl-font,
+    'quart':  get-quart-size($base-xl-font),
+    'gallon': get-gallon-size($base-xl-font)
+  ),
+  'xxl': (
+    'pint':   $base-xxl-font,
+    'quart':  get-quart-size($base-xxl-font),
+    'gallon': get-gallon-size($base-xxl-font)
+  )
+);
+
+@function fetch-font($size, $val: 'pint') {
+  @return map-get(map-get(responsive-font-old, $size), $val);
+}
+
+
+
+
+// *****************************************************
+
+// Base font sizes
+// DO NOT use these variables!
+// Declaring font-sizes should always be via fontsy() or responsive-font-old()
+$font-size-xs : 1rem;
+$font-size-sm : 1.2rem;
+$font-size-md : 1.4rem;
+$font-size-lg : 1.8rem;
+$font-size-xl : 1.8rem;
+$font-size-plus-factor: 0.2;
+$font-size-plus-factor-xl: 0.6;
+
+
+// convert px to em
+@function em($px, $context: $default-font-size) {
+  @if ($px == 0) { @return 0; }
+  @return $px / $context * 1em;
+}
+
+
+// Headings
+$hdg-primary-font-size: xl;
+$hdg-secondary-font-size: xl;
+$hdg-section-font-size: md;
+
+
+// Other font sizes
+$body-font-size: $font-size-md;
+$button-font-size: 1.6rem;
+$button-font-size-sm: 1.4rem;
+$min-input-font-size: 1.6rem; // min required to avoid iOS zooming
+
+
+// Line height
+$base-line-height: 1.35;
+$header-line-height: 1.35;
+
+
+html {
+  font-size: $base-font-size;
+  color: $default-text-color;
+}
+
+body {
+  font-family: $base-font-family;
+  -webkit-font-smoothing: antialiased;
+  line-height: $base-line-height;
+  color: $default-text-color;
+
+  background-color: $default-bg-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+
+  line-height: $header-line-height;
+  text-rendering: optimizeLegibility; // Fix the character spacing for headings
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+strong {
+  font-weight: $bold-weight;
+  letter-spacing: $bold-letter-spacing;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:active,
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline-color: $outline-color;
+  }
+}
+
+abbr {
+  text-decoration: none;
+
+  border-bottom: 0;
+}

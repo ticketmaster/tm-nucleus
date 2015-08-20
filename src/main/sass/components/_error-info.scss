@@ -1,0 +1,25 @@
+.error-info {
+  @include span(full);
+  @include responsive-font-old('lg');
+
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  text-align: center;
+
+  background: $white;
+  border-bottom: $dark-border-style;
+
+  @include breakpoint($bp-md) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  &__heading-primary {
+    margin: 0;
+  }
+
+  > p {
+    margin: 1em 0 0;
+  }
+}

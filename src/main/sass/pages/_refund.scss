@@ -1,0 +1,246 @@
+.self-service .event-image {
+  margin-bottom: 0;
+}
+
+
+.refund {
+  @include span(full);
+
+  margin: 15px 0;
+
+  @include breakpoint($bp-md) {
+    margin: 40px 0;
+  }
+
+  @include breakpoint($bp-lg) {
+    @include span(8 of 12);
+  }
+}
+
+.refund__module {
+  @include content-spacing();
+}
+
+.refund__module-content p:last-child {
+  margin: 0;
+}
+
+%refund-table-col {
+  @include responsive-font-old('sm');
+
+  padding: 10px;
+
+  text-align: left;
+
+  vertical-align: top;
+  border-top: 1px solid $border-color;
+
+  @include breakpoint($bp-md) {
+    width: 120px;
+    padding: 20px 40px 20px 20px;
+
+    white-space: nowrap;
+  }
+}
+
+%refund-table-hdg {
+  @extend %refund-table-col;
+  @include bold-text();
+
+  color: $default-text-color;
+
+  border: 0;
+}
+
+.refund-tickets-table,
+.confirmation-tickets-table {
+  width: 100%;
+}
+
+.refund-tickets-table__sec-heading,
+.refund-tickets-table__row-heading,
+.refund-tickets-table__seat-heading,
+.refund-tickets-table__price-heading {
+  @extend %refund-table-hdg;
+}
+
+.refund-tickets-table__sec,
+.refund-tickets-table__row,
+.refund-tickets-table__seat,
+.refund-tickets-table__price {
+  @extend %refund-table-col;
+}
+
+.refund-confirmation-table__seat,
+.refund-confirmation-table__section,
+.refund-confirmation-table__row,
+.refund-confirmation-table__section-label,
+.refund-confirmation-table__row-label,
+.refund-confirmation-table__seat-label {
+  padding-right: 10px;
+
+  text-align: left;
+
+  vertical-align: top;
+
+  @include breakpoint($bp-md) {
+    white-space: nowrap;
+  }
+}
+
+.refund-confirmation-table__section-label,
+.refund-confirmation-table__row-label,
+.refund-confirmation-table__seat-label {
+  @extend %confirmation-table__ticket-label;
+}
+
+.refund-tickets-table__price-heading,
+.refund-tickets-table__price,
+.refund-confirmation-table__seat {
+  @include breakpoint($bp-md) {
+    width: 100%;
+
+    white-space: normal;
+  }
+}
+
+
+
+%refund-total-table__col {
+  width: 50%;
+
+  text-align: left;
+
+  vertical-align: top;
+
+  @include breakpoint($bp-md) {
+    width: auto;
+    padding-right: 40px;
+  }
+}
+
+.refund-total-table {
+  width: 100%;
+
+  @include breakpoint($bp-md) {
+    width: auto;
+  }
+}
+
+.refund-total-table__processing-fee-amount,
+.refund-total-table__processing-fee-desc,
+.refund-total-table__per-ticket-amount,
+.refund-total-table__per-ticket-desc,
+.refund-total-table__total-amount,
+.refund-total-table__total-desc {
+  @extend %refund-total-table__col;
+
+  @include breakpoint($bp-md) {
+    padding-right: 50px;
+  }
+}
+
+.refund-total-table__total-amount,
+.refund-total-table__total-desc {
+  @include responsive-font-old('lg');
+  @include bold-text();
+}
+
+
+.refund-payment-table {
+  width: 100%;
+  padding-top: 10px;
+
+  border-top: 1px solid $border-color;
+}
+
+.refund-payment-table__type-heading {
+  @include responsive-font-old('sm');
+
+  padding: 10px;
+
+  color: $default-text-color;
+  text-align: left;
+
+  @include breakpoint($bp-md) {
+    padding: 10px 20px;
+  }
+}
+
+.refund-payment-table__type {
+  @include responsive-font-old('sm');
+
+  padding: 0 10px 15px;
+
+  @include breakpoint($bp-md) {
+    padding: 0 20px 20px;
+  }
+}
+
+
+%confirmation-table__ticket-label {
+  @include bold-text();
+}
+
+.refund-me-button {
+  @extend %btn-primary;
+
+  width: 100%;
+  margin: 15px 0 0;
+
+  @include breakpoint($bp-md) {
+    width: auto;
+    margin: 40px 8px 40px 0;
+  }
+}
+
+.refund-back-button {
+  @extend %btn-primary;
+
+  display: inline-block;
+
+  width: 100%;
+  margin: 15px 0;
+
+  color: $white;
+
+  text-decoration: none;
+
+  @include breakpoint($bp-md) {
+    width: auto;
+    margin: 40px 8px 40px 0;
+  }
+}
+
+.refund-cancel-button {
+  @extend %btn-secondary;
+
+  width: 100%;
+  margin: 15px 0 0;
+
+  @include breakpoint($bp-md) {
+    width: auto;
+    margin: 40px 0;
+  }
+}
+
+.refund__overlay {
+  @include overlay(45px, $overlay-light-bg-color);
+
+  @include breakpoint($bp-lg) {
+    padding-top: 0;
+  }
+}
+
+.details__overlay {
+  @extend %refund__overlay;
+
+  position: relative;
+
+  padding: 100px 0;
+}
+
+.refund__polling {
+  position: relative;
+  top: 38%;
+}

@@ -1,0 +1,348 @@
+.edp {
+
+  &__main {
+    @include clearfix();
+    @include span(full nest);
+
+    margin-top: 10px;
+
+    @include breakpoint($max: $bp-md - 1) {
+      padding: 10px;
+    }
+
+    @include breakpoint($bp-md) {
+      margin-top: 20px;
+    }
+  }
+
+
+  &__main-ismqp-template {
+    @include clearfix();
+  }
+
+
+  &__main-content {
+    @include span(full);
+
+    @include breakpoint($bp-lg) {
+      @include span(8);
+    }
+  }
+
+
+  &__heading-primary {
+    display: none;
+
+    @include breakpoint($bp-md) {
+      display: block;
+    }
+  }
+
+
+  &__ticket-options,
+  &__ticket-filters,
+  &__ticket-selections,
+  &__venue-map,
+  &__accessible-seating {
+    @include content-spacing();
+  }
+
+
+  &__map {
+    height: 100vh;
+    padding-top: 10px;
+    overflow: hidden;
+  }
+
+  &__map-fullscreen {
+    height: 100vh;
+    padding-top: 0;
+    overflow: hidden;
+  }
+
+  &__ticket-selections {
+    @include span(full);
+
+    @include breakpoint($max: $bp-md - 1) {
+      margin-bottom: 0;
+    }
+
+    @include breakpoint($min: $bp-lg) {
+      @include span(4 last);
+    }
+  }
+
+
+  &__venue-map__container {
+    position: relative;
+
+    overflow: hidden;
+  }
+
+
+  &__venue-map__toaster {
+    @include toaster();
+
+    position: absolute;
+    bottom: 20px;
+    left: 40%;
+
+    display: inline-block;
+    margin: auto;
+
+    @include breakpoint($bp-lg) {
+      display: none;
+    }
+  }
+
+
+  &__accessible-seating {
+    @include span(full);
+    padding: 0 10px;
+
+    @include breakpoint($min: $bp-lg) {
+      @include span(8);
+    }
+
+    @include breakpoint($max: $bp-md - 1) {
+      border-top: $dark-border-style;
+      border-bottom: $dark-border-style;
+    }
+  }
+
+
+  &__legal-copy-mobile {
+    @include span(full);
+
+    padding-bottom: 60px;
+
+    @include breakpoint($bp-md) {
+      display: none;
+      padding-bottom: 0;
+    }
+  }
+
+
+  &__legal-copy {
+    display: none;
+
+    @include breakpoint($bp-md) {
+      display: block;
+      align-self: flex-end;
+      flex-grow: 1;
+    }
+
+    @include breakpoint($bp-lg) {
+      align-self: auto;
+      margin-top: 20px;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+
+  &__buy-button {
+    @extend %btn-tertiary;
+
+    @include breakpoint($max: $bp-md - 1) {
+      position: absolute;
+      z-index: z('edp-buy-button-mobile');  // prolly don't need
+
+      width: calc(100% - 20px);
+      padding: 12px 10px;
+
+      line-height: 1;
+
+      border-top: 2px solid $white;
+      border-bottom: 2px solid $white;
+    }
+
+    @include breakpoint($bp-md) {
+      padding: 10px 20px;
+    }
+
+    @include breakpoint($bp-lg) {
+      position: relative;
+      z-index: z('edp-buy-button-desktop');  // prolly don't need
+
+      float: none;
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+
+  &__toggle-map-button {
+    position: fixed;
+    bottom: $module-padding-sm;
+    left: 50%;
+
+    display: none;
+
+    transform: translateX(-50%);
+
+    @include breakpoint($max: $bp-md - 1) {
+      display: block;
+    }
+
+    &--with-cart {
+      bottom: em($ticket-bag-ht + $module-padding-sm);
+    }
+  }
+
+
+  &__filter-container {
+    @include responsive-font-old('md');
+
+    position: relative;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  &__filter-qty-multi {
+    padding: 10px;
+
+    text-align: left;
+  }
+
+  &__filter-qty-multi-text {
+    color: $default-text-color;
+  }
+
+  &__sort-container {
+    position: relative;
+
+    // account for the border that surrounds embedded-qty-filter
+    padding-top: 1px;
+    padding-bottom: 1px;
+  }
+
+
+  &__ticket-qty-increment-single {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    text-align: right;
+
+    border: 1px solid $dark-border-style;
+    border-radius: 3px;
+
+    user-select: none;
+  }
+
+
+  &__filter-qty-box {
+    position: relative;
+
+    flex-grow: 1;
+
+    height: 44px;
+
+    text-align: left;
+
+    background-color: $white;
+    border: 1px solid $border-color;
+    border-radius: 3px;
+
+    &--multi {
+      border: 1px solid $border-focused-color;
+    }
+  }
+
+
+  &__filter-qty-box-filter-text {
+    float: right;
+
+    color: $link-color;
+  }
+
+
+  &__ismqp {
+    @include clearfix();
+    @include responsive-font-old('md');
+
+    position: relative;
+
+    height: 100vh;
+
+    @include breakpoint($bp-md) {
+      width: 100vw;
+    }
+  }
+
+  &__filter-qty-sort {
+    position: relative;
+
+    display: inline-block;
+
+    float: right;
+
+    margin-left: 10px;
+  }
+
+  &__filter-qty-sort-btn {
+    @extend %btn-quaternary;
+
+    padding: 10px 20px;
+  }
+
+  &__filter-qty-dropdown {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 46px;
+
+    background: $white;
+
+    border: 1px solid $border-focused-color;
+
+    opacity: 0;
+  }
+
+  &__filter-box-sort-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__ism-footer {
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+
+    width: 100vw;
+    height: $footer-height;
+    padding: 5px $module-padding-lg;
+
+    font-size: fontsy('sm');
+    color: $secondary-text-color;
+
+    background: $white;
+    border-top: $light-border-style;
+
+    @include breakpoint($bp-md) {
+      position: sticky;
+    }
+
+    @include breakpoint($max: $bp-md - 1) {
+      display: none;
+    }
+  }
+}
+
+
+// TODO: this should be moved to mixins/text.scss
+.truncate-text {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

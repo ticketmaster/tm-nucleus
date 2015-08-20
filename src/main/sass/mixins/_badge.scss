@@ -1,0 +1,20 @@
+// config
+$badge-border-radius: 10px;
+$badge-padding: 2px 10px;
+
+
+// mixin
+@mixin badge($bgcolor: $badge-bg-color, $txtcolor: $white) {
+  @include responsive-font-old('xs');
+
+  display: inline-block;
+  margin: 5px 0;
+  padding: $badge-padding;
+  border-radius: $badge-border-radius;
+  border: 0;
+  font-weight: normal;
+  text-align: center;
+  box-shadow: none;
+  background-color: $bgcolor;
+  color: $txtcolor;
+}

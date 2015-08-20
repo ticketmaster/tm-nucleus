@@ -1,0 +1,37 @@
+// mixins
+@mixin bold-text($weight: $bold-weight) {
+  font-weight: $weight;
+  letter-spacing: $bold-letter-spacing;
+}
+
+
+@mixin responsive-font-old($size: 'md') {
+  font-size: fontsy($size);
+
+  @media (min-width: em($bp-sm2)) {
+    font-size: fontsy($size, 'plus');
+  }
+
+  @if ($size == 'xl') {
+    @media (min-width: em($bp-md)) {
+      font-size: fontsy($size, 'plus2');
+    }
+  }
+}
+
+
+@mixin hdg-text($size, $color: $default-text-color, $mb: 5px) {
+  @include bold-text();
+  @include responsive-font-old($size);
+
+  margin-bottom: $mb;
+  color: $color;
+}
+
+
+@mixin alt-copy($size: 'sm') {
+  @include responsive-font-old($size);
+
+  font-weight: normal;
+  color: $secondary-text-color;
+}
