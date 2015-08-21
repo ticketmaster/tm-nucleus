@@ -18,7 +18,6 @@ $bold-letter-spacing : -0.025em;
 $default-font-size: 16px; // for media queries
 $base-font-size: 62.5%;   // == 10px
 $font-size-factor: 0.2;
-$line-height-factor: 0.2;
 
 
 // Functions
@@ -35,7 +34,14 @@ $line-height-factor: 0.2;
 }
 
 @function get-lh($font-size) {
-  @return ($font-size + $line-height-factor);
+  @if ($font-size < 1.8) {
+    $lh: 1.4;
+  }
+  @else {
+    $lh: 1.2;
+  }
+
+  @return $lh;
 }
 
 // base font sizes; DO NOT use these variables elsewhere
@@ -78,8 +84,8 @@ $font-sizes: (
   )
 );
 
-@function fetch-font($size, $val: 'pint') {
-  @return map-get(map-get($font-sizes, $size), $val);
+@function fetch-font($set, $size: 'pint') {
+  @return map-get(map-get($font-sizes, $set), $size);
 }
 
 
@@ -126,16 +132,16 @@ $header-line-height: 1.35;
 
 html {
   font-size: $base-font-size;
-  color: $default-text-color;
+  color: $brand-gray;
 }
 
 body {
   font-family: $base-font-family;
   -webkit-font-smoothing: antialiased;
   line-height: $base-line-height;
-  color: $default-text-color;
+  color: $brand-gray;
 
-  background-color: $default-bg-color;
+  background-color: $white;
 }
 
 h1,
@@ -159,17 +165,17 @@ strong {
 }
 
 a {
-  color: $link-color;
+  color: $brand-primary;
   text-decoration: none;
 
   &:active,
   &:hover {
-    color: $link-hover-color;
+    color: $brand-primary-darker;
     text-decoration: underline;
   }
 
   &:focus {
-    outline-color: $outline-color;
+    outline-color: $brand-primary-lighter;
   }
 }
 

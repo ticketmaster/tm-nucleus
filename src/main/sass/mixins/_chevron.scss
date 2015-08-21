@@ -1,7 +1,7 @@
 // Mixin that creates a chevron attached to the calling element
 //  if no direction is specified, defaults to right
 
-@mixin chevron($color: $chevron-color, $direction: right, $top: 1.45em, $horizontal-offset: 100%) {
+@mixin chevron($color: $brand-gray2, $direction: right, $top: 1.45em, $horizontal-offset: 100%) {
   position: relative;
 
   &:after {

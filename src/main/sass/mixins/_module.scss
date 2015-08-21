@@ -1,7 +1,7 @@
 @mixin module($pad-sm: $module-padding-sm, $pad-lg: $module-padding-lg) {
   @include clearfix();
 
-  background-color: $module-bg-color;
+  background-color: $white;
   border-radius: $module-border-radius;
   box-shadow: $module-shadow-style;
 

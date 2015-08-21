@@ -13,7 +13,7 @@ $module-padding-sm: 15px;
 $module-padding-lg: 20px;
 $module-border-radius: $base-border-radius * 2;
 $module-shadow-style: $box-shadow-style;
-$module-bg-color: $white;
+$white: $white;
 
 
 // Ticket Bag
@@ -45,12 +45,12 @@ $button-padding-cta: 40px;
 
 
 // Border Styles
-$dark-border-style: 1px solid $border-color;
-$light-border-style : 1px solid $border-color;
-$focused-border-style: 1px solid $border-focused-color;
-$error-border-style: 1px solid $border-error-color;
-$outline-style: 3px solid $outline-color;
-$tile-list-item-selected-style: 2px solid $border-focused-color;
+$dark-border-style: 1px solid $brand-gray3;
+$light-border-style : 1px solid $brand-gray3;
+$focused-border-style: 1px solid $brand-primary;
+$error-border-style: 1px solid $brand-alert;
+$outline-style: 3px solid $brand-primary-lighter;
+$tile-list-item-selected-style: 2px solid $brand-primary;
 
 
 // Animation

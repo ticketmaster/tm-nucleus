@@ -5,9 +5,9 @@
 .shape[availability="HIGH"],
 .shape[availability="MEDIUM"],
 .shape[availability="LOW"] {
-  fill: $ism-seat-open-color !important;
+  fill: $brand-primary !important;
 }
 
 .shape[availability="NONE"] {
-  fill: $ism-seat-sold-color !important;
+  fill: $brand-gray2 !important;
 }

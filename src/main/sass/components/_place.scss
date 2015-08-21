@@ -3,33 +3,33 @@
 // due to their frickin' lack of configurability
 
 .place[status="OPEN"] {
-  fill: $ism-seat-open-color !important;
+  fill: $brand-primary !important;
 
   &:hover {
-    fill: $ism-seat-selected-color !important;
+    fill: $brand-gray !important;
     stroke: 0 !important;
   }
 }
 
 .place[status="RESALE"] {
-  fill: $resale-color !important;
+  fill: $brand-accent !important;
 }
 
 .place[selected="true"] {
-  fill: $ism-seat-selected-color !important;
+  fill: $brand-gray !important;
   fill-opacity: 1 !important;
   stroke: 0 !important;
 }
 
 .place[selectable="true"] {
   &:hover {
-    fill: $ism-seat-selected-color !important;
+    fill: $brand-gray !important;
     fill-opacity: 1 !important;
     stroke: 0 !important;
   }
 }
 
 .place[status="SOLD"] {
-  fill: $ism-seat-sold-color !important;
+  fill: $brand-gray2 !important;
 }
 

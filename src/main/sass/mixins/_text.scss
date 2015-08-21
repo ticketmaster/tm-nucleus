@@ -4,26 +4,36 @@
 }
 
 
-@mixin responsive-font($size: 'md') {
-  font-size: fetch-font($size);
-  line-height: get-lh(fetch-font($size));
+@mixin responsive-font($set: 'md') {
+  $pint: fetch-font($set);
+
+  font-size: $pint;
+  line-height: get-lh($pint);
 
   @include breakpoint($bp-sm) {
-    $quart: fetch-font($size, 'quart');
+    $quart: fetch-font($set, 'quart');
 
     font-size: $quart;
     line-height: get-lh($quart);
   }
 
   // there's no gallon size for XS, so skip it
-  @if ($size != 'xs') {
+  @if ($set != 'xs') {
     @include breakpoint($bp-md) {
-      $gallon: fetch-font($size, 'gallon');
+      $gallon: fetch-font($set, 'gallon');
 
       font-size: $gallon;
       line-height: get-lh($gallon);
     }
   }
+}
+
+
+@mixin fixed-font($set: 'md', $size: 'pint') {
+  $fz: fetch-font($set, $size);
+
+  font-size: $fz;
+  line-height: get-lh($fz);
 }
 
 
@@ -42,18 +52,18 @@
 }
 
 
-@mixin hdg-text($size, $color: $default-text-color, $mb: 5px) {
+@mixin hdg-text($set, $color: $brand-gray, $mb: 5px) {
   @include bold-text();
-  @include responsive-font($size);
+  @include responsive-font($set);
 
   margin-bottom: $mb;
   color: $color;
 }
 
 
-@mixin alt-copy($size: 'sm') {
-  @include responsive-font($size);
+@mixin alt-copy($set: 'sm') {
+  @include responsive-font($set);
 
   font-weight: normal;
-  color: $secondary-text-color;
+  color: $brand-gray2;
 }

@@ -44,10 +44,10 @@ $footer-stacked-spacing: 15px;
     @include clearfix();
 
     font-size: fontsy('sm');
-    color: $default-text-color;
+    color: $brand-gray;
 
     a {
-      color: $secondary-text-color;
+      color: $brand-gray2;
     }
 
     a:hover {
@@ -63,14 +63,14 @@ $footer-stacked-spacing: 15px;
     padding-top: 20px;
     padding-bottom: 20px;
 
-    border-top: 1px solid $border-color;
+    border-top: 1px solid $brand-gray3;
 
     @include breakpoint($bp-md) {
       display: block;
     }
 
     a {
-      color: $secondary-text-color;
+      color: $brand-gray2;
     }
 
     a:hover {
@@ -83,7 +83,7 @@ $footer-stacked-spacing: 15px;
 
     font-size: fontsy('sm');
 
-    color: $secondary-text-color;
+    color: $brand-gray2;
 
     @include breakpoint($bp-lg) {
       @include span(9 of 12 first);
@@ -96,7 +96,7 @@ $footer-stacked-spacing: 15px;
     margin-top: 20px;
 
     font-size: fontsy('sm');
-    color: $secondary-text-color;
+    color: $brand-gray2;
 
     @include breakpoint($bp-lg) {
       @include span(3 of 12);
@@ -122,7 +122,7 @@ $footer-stacked-spacing: 15px;
     font-size: fontsy('sm');
 
     a {
-      color: $secondary-text-color;
+      color: $brand-gray2;
     }
 
     a:hover {
@@ -174,7 +174,7 @@ $footer-stacked-spacing: 15px;
 
   margin: 15px 0 0 10px;
 
-  border-bottom: 1px solid $border-color;
+  border-bottom: 1px solid $brand-gray3;
 
   &__list {
     padding: 0;
@@ -196,7 +196,7 @@ $footer-stacked-spacing: 15px;
   margin: 20px 0 20px 10px;
 
   font-size: fontsy('sm');
-  color: $secondary-text-color;
+  color: $brand-gray2;
 
 }
 
@@ -263,7 +263,7 @@ $footer-stacked-spacing: 15px;
     padding-bottom: 5px;
 
     font-weight: bold;
-    color: $default-text-color;
+    color: $brand-gray;
     white-space: nowrap;
   }
 }
@@ -339,7 +339,7 @@ $footer-stacked-spacing: 15px;
   font-weight: bold;
 
   a {
-    color: $link-color;
+    color: $brand-primary;
   }
 
   a:hover {
@@ -359,7 +359,7 @@ $footer-stacked-spacing: 15px;
       margin-right: 5px;
       margin-left: 10px;
 
-      color: $border-color;
+      color: $brand-gray3;
 
       content: '//';
     }

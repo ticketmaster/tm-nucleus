@@ -63,10 +63,10 @@
 
     display: inline-block;
 
-    color: $link-color;
+    color: $brand-primary;
     text-decoration: none;
 
-    background-color: $default-bg-color;
+    background-color: $white;
     border: 0;
 
     @include breakpoint($max: $bp-md - 1) {
@@ -85,7 +85,7 @@
 
     &:active,
     &:focus {
-      color: $link-hover-color;
+      color: $brand-primary-darker;
     }
 
     &:active {

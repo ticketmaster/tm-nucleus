@@ -31,15 +31,15 @@
 }
 
 .is-text-muted {
-  color: $link-color;
+  color: $brand-primary;
 }
 
 .is-error-message {
-  color: $alert-text-color;
+  color: $brand-alert;
 }
 
 .is-success-message {
-  color: $success-text-color;
+  color: $brand-cta;
 }
 
 .is-zoomed-out {

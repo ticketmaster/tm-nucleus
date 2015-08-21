@@ -14,49 +14,52 @@
 }
 
 
+// base colors
+$brand-primary:  #009cde;
+$brand-cta:      #19ab20;
+$brand-accent:   #d0006f;
+$brand-alert:    #ff0000;
+$brand-gray2:    #768692;
+$brand-gray3:    #dfe4e7;
+$brand-gray4:    #f6f7f9;
+$black:          #000;
+$white:          #fff;
+
+
 // map hex values to names
 $palette: (
   'gray': (
-    'sierra':   #475058,
-    'cascade':  #768692,
-    'rocky':    #dfe4e7,
-    'ridge':    #f6f7f9
+    'sierra':   get-darker($brand-gray2, 40%),
+    'cascade':  $brand-gray2,
+    'rocky':    $brand-gray3,
+    'ridge':    $brand-gray4
   ),
   'blue': (
-    'pacific':  #009cde,
-    'tahoe':    get-darker(#009cde),
-    'monterey': get-lighter(#009cde)
+    'pacific':  $brand-primary,
+    'tahoe':    get-darker($brand-primary),
+    'monterey': get-lighter($brand-primary)
   ),
   'green': (
-    'yosemite': #19ab20,
-    'sequoia':  get-darker(#19ab20),
-    'joshua':   get-lighter(#19ab20)
+    'yosemite': $brand-cta,
+    'sequoia':  get-darker($brand-cta),
+    'joshua':   get-lighter($brand-cta)
   ),
   'pink': (
-    'catalina': #d0006f,
-    'coronado': get-lighter(#d0006f, 50%)
+    'catalina': $brand-accent,
+    'coronado': get-lighter($brand-accent, 50%)
   ),
   'red': (
-    'helen':    #ff0000
+    'helen':    $brand-alert
   )
 );
 
-// assign colors to variables
-$brand-primary:         color('blue', 'pacific');
+// derived colors from base
 $brand-primary-darker:  color('blue', 'tahoe');
 $brand-primary-lighter: color('blue', 'monterey');
-$brand-cta:             color('green', 'yosemite');
 $brand-cta-darker:      color('green', 'sequoia');
 $brand-cta-lighter:     color('green', 'joshua');
-$brand-accent:          color('pink', 'catalina');
 $brand-accent-lighter:  color('pink', 'coronado');
-$brand-alert:           color('red', 'helen');
 $brand-gray:            color('gray', 'sierra');
-$brand-gray2:           color('gray', 'cascade');
-$brand-gray3:           color('gray', 'rocky');
-$brand-gray4:           color('gray', 'ridge');
-$black:                 #000;
-$white:                 #fff;
 
 
 // gradients
@@ -65,72 +68,14 @@ $red-gradient: linear-gradient(to bottom, #fa2100 0%, #f9330a 2%, #f62e04 5%, #f
 $red-reverse-gradient: linear-gradient(to top, #fa2100 0%, #f9330a 2%, #f62e04 5%, #f52c03 7%, #dd2701 32%, #ac1c00 75%, #9f1a02 91%, #9c1800 93%, #9c1b03 95%, #981400 98%, #9c1e09 100%);
 $progress-gradient: linear-gradient(left, rgba($white, 0), rgba($white, 0.4));
 
+
 // backgrounds
-$default-bg-color: $white;
-$secondary-bg-color: $brand-gray4;
-$toaster-bg-color: $brand-gray;
-$badge-bg-color: $brand-gray2;
 $tooltip-bg-color: rgba($black, 0.8);
-$datestamp-year-bg-color: $brand-gray3;
 
 // TODO: get rid of light, rename dark without "dark"
 $overlay-dark-bg-color: rgba($brand-gray, 0.5);
 $overlay-light-bg-color: rgba($white, 0.9);
 
-// copy
-$default-text-color: $brand-gray;
-$secondary-text-color: $brand-gray2;
-$link-color: $brand-primary;
-$link-hover-color: $brand-primary-darker;
-$alert-text-color: $brand-alert;
-$success-text-color: $brand-cta;
-$free-text-color: $brand-cta;
-$toaster-text-color: $white;
-
-// buttons
-$button-color: $brand-primary;
-$button-hover-color: $brand-primary-darker;
-$button-disabled-color: $brand-primary-lighter;
-
-$checkout-button-color: $brand-cta;
-$checkout-button-hover-color: $brand-cta-darker;
-$checkout-button-disabled-color: $brand-cta-lighter;
-
-// resale
-$resale-color: $brand-accent;
-$resale-disabled-color: $brand-accent-lighter;
-
-// borders
-$border-color: $brand-gray3;
-$border-focused-color: $brand-primary;
-$border-error-color: $brand-alert;
-$outline-color: $brand-primary-lighter;
-
 // misc
 $transparent-color: rgba($white, 0);
 $box-shadow-color: rgba($black, 0.2);
-
-
-// legacy colors
-$background-error-color: $white;
-$module-bg-color: $white;
-
-// *********************************
-
-// Button colors
-$secondary-button-color: $brand-gray2;
-$secondary-button-hover-color: $brand-gray2;
-$void-button-color: $brand-alert;
-$void-button-hover-color: $brand-alert;
-$radio-selected-color: $brand-primary;
-
-// ISM seat colors
-$ism-seat-open-color: $brand-primary;
-$ism-seat-selected-color: $brand-gray;
-$ism-seat-sold-color: $brand-gray2;
-
-// Other colors
-$chevron-color: $brand-gray2;
-$chevron-toggle-panel-color: $brand-gray3;
-$dropdown-arrow-color: $brand-gray2;
-$progress-bar-color: $brand-primary;

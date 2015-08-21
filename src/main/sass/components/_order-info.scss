@@ -6,13 +6,13 @@
     @include breakpoint($min: $bp-xs) {
       padding: 10px;
 
-      border-bottom: 1px solid $border-color;
+      border-bottom: 1px solid $brand-gray3;
     }
 
     @include breakpoint($min: $bp-md) {
       padding: 20px;
 
-      border-bottom: 1px solid $border-color;
+      border-bottom: 1px solid $brand-gray3;
     }
 
     @include breakpoint($min: $bp-lg) {
@@ -29,7 +29,7 @@
   &__ticket-info {
     margin: 0;
 
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid $brand-gray3;
 
     @include breakpoint($min: $bp-xs) {
       padding: 15px 0;

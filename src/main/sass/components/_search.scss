@@ -8,7 +8,7 @@
   width: 100%;
   padding: 3px 30px 3px 10px;
 
-  border: 1px solid $border-focused-color;
+  border: 1px solid $brand-primary;
   border-radius: 15px;
 
   &::-ms-clear {
@@ -17,7 +17,7 @@
 }
 
 .search-input--muted {
-  color: $link-color;
+  color: $brand-primary;
 }
 
 .search-mini-form {
@@ -64,7 +64,7 @@
   position: relative;
 
   background: $white;
-  border: 1px solid $border-focused-color;
+  border: 1px solid $brand-primary;
   border-radius: 25px;
 
   @include breakpoint($bp-md) {
@@ -139,5 +139,5 @@
 
 .cancel-button {
   @extend %btn-transparent;
-  color: $link-color;
+  color: $brand-primary;
 }

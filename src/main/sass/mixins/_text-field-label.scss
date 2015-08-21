@@ -6,7 +6,7 @@
 
 
   @include responsive-font('xs');
-  color: $secondary-text-color;
+  color: $brand-gray2;
 
   opacity: 0;
   transition: all 0.1s linear;
@@ -18,6 +18,6 @@
   }
 
   &.focus {
-    color: $border-focused-color;
+    color: $brand-primary;
   }
 }

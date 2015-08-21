@@ -1,10 +1,10 @@
 // variables
-$radio-border-style: 0 0 0 1px $border-color;
+$radio-border-style: 0 0 0 1px $brand-gray3;
 $radio-size: 20px;
 
 
 // http://www.sitepoint.com/replacing-radio-buttons-without-replacing-radio-buttons/
-@mixin radio-button($chk-color: $radio-selected-color) {
+@mixin radio-button($chk-color: $brand-primary) {
   position: absolute;
   width: 1px;
   height: 1px;

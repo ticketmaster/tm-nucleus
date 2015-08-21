@@ -37,7 +37,7 @@ $filter-modal-padding: 10px;
 
     padding: $filter-modal-padding;
 
-    background-color: $secondary-bg-color;
+    background-color: $brand-gray4;
   }
 
   &__button-container {
@@ -52,7 +52,7 @@ $filter-modal-padding: 10px;
 
   &__control-btn {
     @extend %btn-transparent;
-    color: $link-color;
+    color: $brand-primary;
   }
 
   &__cancel-btn {
@@ -73,7 +73,7 @@ $filter-modal-padding: 10px;
 
     color: $white;
 
-    background-color: $link-color;
+    background-color: $brand-primary;
     border: 0;
     border-radius: 3px;
 

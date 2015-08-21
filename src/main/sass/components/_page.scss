@@ -3,21 +3,21 @@
   font-family: $base-font-family;
   -webkit-font-smoothing: antialiased;
   line-height: $base-line-height;
-  color: $default-text-color;
+  color: $brand-gray;
 
-  background-color: $default-bg-color;
+  background-color: $white;
 
   // use wrapper to set background color for a particular section of the page
   &__wrapper {
     clear: both;
 
-    background-color: $secondary-bg-color;
+    background-color: $brand-gray4;
   }
 
   &__wrapper-footer {
     clear: both;
 
-    background-color: $default-bg-color;
+    background-color: $white;
   }
 
   // use frame to set max-width and other structural styling here
@@ -51,7 +51,7 @@
     z-index: z('page-content-header');
 
     background-color: $white;
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid $brand-gray3;
 
     @include breakpoint($bp-md) {
       @include pad(10px no-gutters);
