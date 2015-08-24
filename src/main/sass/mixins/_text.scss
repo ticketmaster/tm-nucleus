@@ -4,17 +4,17 @@
 }
 
 
-@mixin responsive-font($set: 'md') {
+@mixin responsive-font($set: 'md', $lh: false) {
   $pint: fetch-font($set);
 
   font-size: $pint;
-  line-height: get-lh($pint);
+  line-height: get-lh($pint, $lh);
 
   @include breakpoint($bp-sm) {
     $quart: fetch-font($set, 'quart');
 
     font-size: $quart;
-    line-height: get-lh($quart);
+    line-height: get-lh($quart, $lh);
   }
 
   // there's no gallon size for XS, so skip it
@@ -23,32 +23,17 @@
       $gallon: fetch-font($set, 'gallon');
 
       font-size: $gallon;
-      line-height: get-lh($gallon);
+      line-height: get-lh($gallon, $lh);
     }
   }
 }
 
 
-@mixin fixed-font($set: 'md') {
+@mixin fixed-font($set: 'md', $lh: false) {
   $size: fetch-font($set, 'quart');
 
   font-size: $size;
-  line-height: get-lh($size);
-}
-
-
-@mixin responsive-font-old($size: 'md') {
-  font-size: fontsy($size);
-
-  @media (min-width: em($bp-sm)) {
-    font-size: fontsy($size, 'plus');
-  }
-
-  @if ($size == 'xl') {
-    @media (min-width: em($bp-md)) {
-      font-size: fontsy($size, 'plus2');
-    }
-  }
+  line-height: get-lh($size, $lh);
 }
 
 

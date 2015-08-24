@@ -7,13 +7,12 @@
   padding: 20px;
 
   &__header {
+    @include fixed-font('lg');
     padding-bottom: 10px;
-
-    font-size: fontsy('lg');
   }
 
   &__data-table {
-    font-size: fontsy('md');
+    @include fixed-font('md');
   }
 
   &__cell {
@@ -30,7 +29,7 @@
     background: $brand-gray4;
 
     &--fail {
-      background: color('red', 'hood');
+      background: $brand-gray3;
     }
   }
 }

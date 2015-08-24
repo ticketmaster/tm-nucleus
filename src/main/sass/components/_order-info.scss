@@ -61,7 +61,7 @@
   }
 
   &__price-title {
-    font-size: fontsy('md', 'plus');
+    @include fixed-font('md');
   }
 
   &__price-desc {

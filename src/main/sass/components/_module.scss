@@ -2,10 +2,10 @@
   @include module();
 
   &--error {
+    @include fixed-font('md');
+
     float: left;
     width: 100%;
-
-    font-size: fontsy('sm', 'plus');
 
     background-color: $white;
     border: 1px solid $brand-alert;

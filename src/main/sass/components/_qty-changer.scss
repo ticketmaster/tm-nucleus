@@ -73,9 +73,8 @@ $qty-btn-size: 44px;
 }
 
 .qty-changer__button--number {
-  @include responsive-font('md');
+  @include responsive-font('md', 40px);
 
-  line-height: 40px;
   color: $brand-primary;
   text-align: center;
 

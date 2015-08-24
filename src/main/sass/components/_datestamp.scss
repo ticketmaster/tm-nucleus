@@ -1,11 +1,10 @@
 .datestamp {
+  @include fixed-font('md', 1);
   @include bold-text();
 
   display: inline-flex;
   height: 5.5rem;
 
-  font-size: fontsy('md');
-  line-height: 1;
   text-align: center;
 
   transform-style: preserve-3d;
@@ -47,7 +46,7 @@
   }
 
   &__dayweek--range {
-    font-size: fontsy('sm');
+    @include fixed-font('sm');
   }
 
   &__dayweek--only {

@@ -42,8 +42,8 @@ $footer-stacked-spacing: 15px;
 
   &__primary {
     @include clearfix();
+    @include fixed-font('sm');
 
-    font-size: fontsy('sm');
     color: $brand-gray;
 
     a {
@@ -80,8 +80,7 @@ $footer-stacked-spacing: 15px;
 
   &__secondary-linkgroup {
     @include span(full);
-
-    font-size: fontsy('sm');
+    @include fixed-font('sm');
 
     color: $brand-gray2;
 
@@ -92,10 +91,10 @@ $footer-stacked-spacing: 15px;
 
   &__copyright {
     @include span(full);
+    @include fixed-font('sm');
 
     margin-top: 20px;
 
-    font-size: fontsy('sm');
     color: $brand-gray2;
 
     @include breakpoint($bp-lg) {
@@ -117,9 +116,9 @@ $footer-stacked-spacing: 15px;
   }
 
   &__mobile {
-    margin-top: 15px;
+    @include fixed-font('sm');
 
-    font-size: fontsy('sm');
+    margin-top: 15px;
 
     a {
       color: $brand-gray2;
@@ -193,9 +192,10 @@ $footer-stacked-spacing: 15px;
 }
 
 .footer__list-mini-copyright-text {
+  @include fixed-font('sm');
+
   margin: 20px 0 20px 10px;
 
-  font-size: fontsy('sm');
   color: $brand-gray2;
 
 }
@@ -332,11 +332,10 @@ $footer-stacked-spacing: 15px;
 
 .footer__tou {
   @include span(9 of 12);
-
+  @include fixed-font('sm');
+  @include bold-text();
+  
   margin-top: 10px;
-
-  font-size: fontsy('sm');
-  font-weight: bold;
 
   a {
     color: $brand-primary;

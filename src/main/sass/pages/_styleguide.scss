@@ -14,7 +14,7 @@ $sg-spacing: 1.5em;
   border-radius: 4px;
   font-family: $monospace;
   background-color: $brand-gray4;
-  font-size: fontsy($sz) * 0.95;
+  font-size: fetch-font($sz) * 0.95;
 }
 
 
@@ -270,7 +270,7 @@ $sg-spacing: 1.5em;
     $size: fetch-font($name, 'quart');
 
     font-size: $size;
-    line-height: get-lh($size);
+    line-height: calc-lh($size);
 
     vertical-align: top;
   }
@@ -280,7 +280,7 @@ $sg-spacing: 1.5em;
       $size: fetch-font($name, 'gallon');
 
       font-size: $size;
-      line-height: get-lh($size);
+      line-height: calc-lh($size);
 
       vertical-align: top;
     }

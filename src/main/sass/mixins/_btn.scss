@@ -81,7 +81,7 @@
 
 %btn-remove {
   @include btn($white, $brand-alert, $white);
-  font-size: $font-size-sm;
+  font-size: $base-sm-font;
 
   border: 1px solid $brand-alert;
 }

@@ -150,11 +150,12 @@
     }
 
     @include breakpoint($bp-md) {
+      @include fixed-font('lg');
+
       display: block;
       float: left;
       padding: 0;
 
-      font-size: fontsy('xl', 'plus');
       font-weight: bold;
       color: $brand-gray;
       text-align: left;

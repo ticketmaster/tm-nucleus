@@ -432,7 +432,7 @@
 </pre>
 
         <h3 class="sg-subhdg">Line Height</h3>
-        <p>Line height is based on font size like so:</p>
+        <p>By default, line-height for the page is set to <code class="sg-code">1.4</code>. When using either of the font mixins above, line-height is calculated like so:</p>
 
         <table class="sg-table">
           <tr>
@@ -444,6 +444,23 @@
             <td><code class="sg-code">1.2</code></td>
           </tr>
         </table>
+
+        <p>There may be situations where you need a specific line-height other than the above. The mixins have you covered for that, too, by allowing you to pass in a custom line-height value as an optional second parameter.</p>
+        <p>This can be useful for buttons or other situations where you want the text precisely vertically centered in a &quot;box&quot;.</p>
+
+        <pre class="sg-sample-code">
+// scss
+// note that this also works with responsive-font()
+.fixed-example {
+  @include fixed-font('lg', <span class="sg-highlight-code">5rem</span>);
+}
+
+// output
+.fixed-example {
+  font-size: 1.8rem;
+  line-height: 5rem;
+}
+</pre>
 
       </section>
 

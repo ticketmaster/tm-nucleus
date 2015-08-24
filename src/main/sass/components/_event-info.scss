@@ -120,9 +120,9 @@
   }
 
   &__webinfo-text {
-    margin-top: 11px;
+    @include fixed-font('sm');
 
-    font-size: fontsy('sm');
+    margin-top: 11px;
 
     @include breakpoint($max: $bp-md - 1) {
       display: none;

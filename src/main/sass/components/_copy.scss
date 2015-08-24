@@ -22,3 +22,11 @@
 .legal-copy {
   @include alt-copy('xs');
 }
+
+
+.truncate-text {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
