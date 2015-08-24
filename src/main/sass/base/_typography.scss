@@ -12,6 +12,8 @@ $monospace: Menlo, Consolas, 'Courier New', monospace;
 $base-font-family: $tm-sans;
 $bold-weight: 700;
 $bold-letter-spacing : -0.025em;
+$base-line-height: 1.4;
+$header-line-height: 1.2;
 
 
 // Default font sizes
@@ -46,10 +48,10 @@ $font-size-factor: 0.2;
 
 @function calc-lh($font-size) {
   @if ($font-size < 1.8) {
-    $lh: 1.4;
+    $lh: $base-line-height;
   }
   @else {
-    $lh: 1.2;
+    $lh: $header-line-height;
   }
 
   @return $lh;
@@ -122,11 +124,6 @@ $body-font-size: $base-md-font;
 $button-font-size: 1.6rem;
 $button-font-size-sm: 1.4rem;
 $min-input-font-size: 1.6rem; // min required to avoid iOS zooming
-
-
-// Line height
-$base-line-height: 1.4;
-$header-line-height: 1.2;
 
 
 html {

@@ -23,6 +23,11 @@
       $gallon: fetch-font($set, 'gallon');
 
       font-size: $gallon;
+
+      @if ($set == 'md') {
+        $lh: $base-line-height;
+      }
+
       line-height: get-lh($gallon, $lh);
     }
   }
