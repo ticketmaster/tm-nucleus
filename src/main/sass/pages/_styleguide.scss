@@ -4,6 +4,7 @@ $sg-subhdg-color: $brand-accent;
 $sg-subhdg2-color: $brand-gray;
 $sg-highlight-red: $brand-alert;
 $sg-swatch-height: 70px;
+$sg-spacing: 1.5em;
 
 @mixin code-style($sz: sm) {
   @include responsive-font($sz);
@@ -52,7 +53,7 @@ $sg-swatch-height: 70px;
   }
 
   .module {
-    margin-bottom: 1em;
+    margin-bottom: $sg-spacing;
   }
 }
 
@@ -97,7 +98,7 @@ $sg-swatch-height: 70px;
 
 
 .sg-table {
-  margin-bottom: 1em;
+  margin-bottom: $sg-spacing;
 
   @include breakpoint($bp-md) {
     display: inline-block;
@@ -150,7 +151,7 @@ $sg-swatch-height: 70px;
   @include code-style();
 
   padding: 0 gutter();
-  margin: 1em 0 1.5em;
+  margin-bottom: $sg-spacing;
   clear: both;
 
   background: $brand-gray4;
@@ -266,14 +267,20 @@ $sg-swatch-height: 70px;
   }
 
   .sg-#{$name}-font-size-quart {
-    @include fixed-font($name, 'quart');
+    $size: fetch-font($name, 'quart');
+
+    font-size: $size;
+    line-height: get-lh($size);
 
     vertical-align: top;
   }
 
   @if ($name != 'xs') {
     .sg-#{$name}-font-size-gallon {
-      @include fixed-font($name, 'gallon');
+      $size: fetch-font($name, 'gallon');
+
+      font-size: $size;
+      line-height: get-lh($size);
 
       vertical-align: top;
     }

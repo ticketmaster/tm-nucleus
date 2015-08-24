@@ -29,11 +29,11 @@
 }
 
 
-@mixin fixed-font($set: 'md', $size: 'pint') {
-  $fz: fetch-font($set, $size);
+@mixin fixed-font($set: 'md') {
+  $size: fetch-font($set, 'quart');
 
-  font-size: $fz;
-  line-height: get-lh($fz);
+  font-size: $size;
+  line-height: get-lh($size);
 }
 
 

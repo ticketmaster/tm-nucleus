@@ -38,7 +38,7 @@ $split-content-padding-lg: $gutter-width + 5;
   }
 
   // we don't want left padding if it's the first item
-  > &__secondary:first-child {
+  &__secondary:first-child {
     padding-left: 0;
   }
 }

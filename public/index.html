@@ -352,7 +352,7 @@
             </td>
           </tr>
         </table>
-        <p>And here they are displayed responsively (resize browser window to see)</p>
+        <p>And here they are displayed responsively (resize browser window to see):</p>
         <table class="sg-table">
           <tr>
             <td><span class="sg-xs-font-size-responsive">Extra small copy</span></td>
@@ -382,133 +382,57 @@
 
         <h3 class="sg-subhdg">Fixed font sizes</h3>
         <p>In the rare case of using a fixed font size, use our <code class="sg-code">fixed-font()</code> mixin.</p>
-        <p><code class="sg-code">fixed-font()</code> can accept two parameters. The first is required and specifies the font size you want. The second parameter is optional and specifies the &quot;version&quot; of the font size (<code class="sg-code">pint</code>, <code class="sg-code">quart</code> or <code class="sg-code">gallon</code>).</p>
-        <p>If a second parameter is not passed, it defaults to calling the <code class="sg-code">pint</code> size.</p>
+        <p>It defaults to the <code class="sg-code">md</code> font size. You can override this by passing in a size parameter.</p>
+        <p>Note that fixed font sizes are based on the mobile breakpoint (<code class="sg-code">375px - 719px</code>), as indicated in the previous section.</p>
 
         <table class="sg-table">
-          <th>
-            <tr>
-              <td colspan="3"><span class="sg-table-hdg">Pint</span></td>
-            </tr>
-          </th>
-          <tr>
-            <td><span class="sg-xs-font-size">Extra small copy</span></td>
-            <td><span class="alt-copy">10px</span></td>
-            <td><code class="sg-code">@include fixed-font('xs')</code></td>
-          </tr>
-          <tr>
-            <td><span class="sg-sm-font-size">Small copy</span></td>
-            <td><span class="alt-copy">12px</span></td>
-            <td><code class="sg-code">@include fixed-font('sm')</code></td>
-          </tr>
-          <tr>
-            <td><span class="sg-md-font-size">Medium copy</span></td>
-            <td><span class="alt-copy">14px</span></td>
-            <td><code class="sg-code">@include fixed-font('md')</code></td>
-          </tr>
-          <tr>
-            <td><span class="sg-lg-font-size">Large copy</span></td>
-            <td><span class="alt-copy">18px</span></td>
-            <td><code class="sg-code">@include fixed-font('lg')</code></td>
-          </tr>
-          <tr>
-            <td><span class="sg-xl-font-size">Extra large copy</span></td>
-            <td><span class="alt-copy">22px</span></td>
-            <td><code class="sg-code">@include fixed-font('xl')</code></td>
-          </tr>
-          <tr>
-            <td><span class="sg-xxl-font-size">Extra-extra large copy</span></td>
-            <td><span class="alt-copy">26px</span></td>
-            <td><code class="sg-code">@include fixed-font('xxl')</code></td>
-          </tr>
-        </table>
-
-        <table class="sg-table">
-          <th>
-            <tr>
-              <td colspan="3"><span class="sg-table-hdg">Quart</span></td>
-            </tr>
-          </th>
           <tr>
             <td><span class="sg-xs-font-size-quart">Extra small copy</span></td>
             <td><span class="alt-copy">12px</span></td>
-            <td><code class="sg-code">@include fixed-font('xs', 'quart')</code></td>
+            <td><code class="sg-code">@include fixed-font('xs')</code></td>
           </tr>
           <tr>
             <td><span class="sg-sm-font-size-quart">Small copy</span></td>
             <td><span class="alt-copy">14px</span></td>
-            <td><code class="sg-code">@include fixed-font('sm', 'quart')</code></td>
+            <td><code class="sg-code">@include fixed-font('sm')</code></td>
           </tr>
           <tr>
             <td><span class="sg-md-font-size-quart">Medium copy</span></td>
             <td><span class="alt-copy">16px</span></td>
-            <td><code class="sg-code">@include fixed-font('md', 'quart')</code></td>
+            <td><code class="sg-code">@include fixed-font('md')</code></td>
           </tr>
           <tr>
             <td><span class="sg-lg-font-size-quart">Large copy</span></td>
             <td><span class="alt-copy">20px</span></td>
-            <td><code class="sg-code">@include fixed-font('lg', 'quart')</code></td>
+            <td><code class="sg-code">@include fixed-font('lg')</code></td>
           </tr>
           <tr>
             <td><span class="sg-xl-font-size-quart">Extra large copy</span></td>
             <td><span class="alt-copy">24px</span></td>
-            <td><code class="sg-code">@include fixed-font('xl', 'quart')</code></td>
+            <td><code class="sg-code">@include fixed-font('xl')</code></td>
           </tr>
           <tr>
             <td><span class="sg-xxl-font-size-quart">Extra-extra large copy</span></td>
-            <td><span class="alt-copy">28px</span></td>
-            <td><code class="sg-code">@include fixed-font('xxl', 'quart')</code></td>
-          </tr>
-        </table>
-
-        <table class="sg-table">
-          <th>
-            <tr>
-              <td colspan="3"><span class="sg-table-hdg">Gallon</span></td>
-            </tr>
-          </th>
-          <tr>
-            <td><span class="sg-sm-font-size-gallon">Small copy</span></td>
-            <td><span class="alt-copy">16px</span></td>
-            <td><code class="sg-code">@include fixed-font('sm', 'gallon')</code></td>
-          </tr>
-          <tr>
-            <td><span class="sg-md-font-size-gallon">Medium copy</span></td>
-            <td><span class="alt-copy">18px</span></td>
-            <td><code class="sg-code">@include fixed-font('md', 'gallon')</code></td>
-          </tr>
-          <tr>
-            <td><span class="sg-lg-font-size-gallon">Large copy</span></td>
-            <td><span class="alt-copy">22px</span></td>
-            <td><code class="sg-code">@include fixed-font('lg', 'gallon')</code></td>
-          </tr>
-          <tr>
-            <td><span class="sg-xl-font-size-gallon">Extra large copy</span></td>
-            <td><span class="alt-copy">26px</span></td>
-            <td><code class="sg-code">@include fixed-font('xl', 'gallon')</code></td>
-          </tr>
-          <tr>
-            <td><span class="sg-xxl-font-size-gallon">Extra-extra large copy</span></td>
-            <td><span class="alt-copy">30px</span></td>
-            <td><code class="sg-code">@include fixed-font('xxl', 'gallon')</code></td>
+            <td><span class="alt-copy">28x</span></td>
+            <td><code class="sg-code">@include fixed-font('xxl')</code></td>
           </tr>
         </table>
 
         <pre class="sg-sample-code">
 // scss
 .fixed-example {
-  <span class="sg-highlight-code">@include fixed-font('md', 'quart')</span>;
+  <span class="sg-highlight-code">@include fixed-font('lg')</span>;
 }
 
 // output
 .fixed-example {
-  font-size: 1.6rem;
-  line-height: 1.4;
+  font-size: 1.8rem;
+  line-height: 1.2;
 }
 </pre>
 
         <h3 class="sg-subhdg">Line Height</h3>
-        <p>Line height is based on font size as indicated below:</p>
+        <p>Line height is based on font size like so:</p>
 
         <table class="sg-table">
           <tr>
