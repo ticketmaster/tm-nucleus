@@ -261,7 +261,10 @@ $sg-spacing: 1.5em;
 // font sizes
 @each $name, $sizes in $font-sizes {
   .sg-#{$name}-font-size {
-    @include fixed-font($name);
+    $size: fetch-font($name, 'pint');
+
+    font-size: $size;
+    line-height: calc-lh($size);
 
     vertical-align: top;
   }
