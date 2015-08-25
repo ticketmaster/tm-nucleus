@@ -57,13 +57,12 @@
   }
 
   &__event-details-toggle {
-    @include btn(transparent);;
+    @include unbutton();
 
     position: relative;
 
     display: inline-block;
 
-    color: $brand-primary;
     text-decoration: none;
 
     background-color: $white;
@@ -85,7 +84,7 @@
 
     &:active,
     &:focus {
-      color: $brand-primary-darker;
+      color: get-darker($brand-primary);
     }
 
     &:active {

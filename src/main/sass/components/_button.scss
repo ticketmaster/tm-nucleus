@@ -1,30 +1,14 @@
 // standard buttons are 44px height
 .button {
-  @include btn($brand-primary, $white, $brand-primary-darker);
-}
-
-.button--secondary {
-  background-color: $brand-gray2;
-
-  &:active,
-  &:focus,
-  &:hover {
-    background-color: $brand-gray2;
-  }
+  @include btn($brand-primary, $hoverstate: true);
 }
 
 // call to action buttons
 // reserved for buttons that lead to / are part of checkout
 .button--cta {
+  @include btn-color($brand-cta, $white, $hoverstate: true);
+
   font-weight: bold;
-
-  background-color: $brand-cta;
-
-  &:active,
-  &:focus,
-  &:hover {
-    background-color: $brand-cta-darker;
-  }
 }
 
 .button--full {

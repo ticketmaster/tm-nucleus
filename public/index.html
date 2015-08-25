@@ -124,30 +124,29 @@
             </div>
           </div>
           <div class="sg-swatch-group">
-            <div class="sg-swatch--tahoe"></div>
-            <div class="sg-swatch-info">
-              <span class="sg-swatch-name">tahoe</span>
-              <code class="sg-code">$brand-primary-darker</code>
-              <ul class="sg-list sg-swatch-usage">
-                <li>Hover state</li>
-              </ul>
-            </div>
-          </div>
-          <div class="sg-swatch-group">
             <div class="sg-swatch--monterey"></div>
             <div class="sg-swatch-info">
-              <span class="sg-swatch-name">monterey</span>
+              <span class="sg-swatch-name">monterey <span class="alt-copy">(pacific w/ 75% white)</span></span>
               <code class="sg-code">$brand-primary-lighter</code>
               <ul class="sg-list sg-swatch-usage">
-                <li>Disabled state</li>
                 <li>Outline color (accessibility)</li>
                 <li>Secondary copy in Event Header</li>
               </ul>
             </div>
           </div>
+          <div class="sg-swatch-group">
+            <div class="sg-swatch--havasu"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">havasu <span class="alt-copy">(pacific w/ 90% white)</span></span>
+              <code class="sg-code">$brand-primary-lighter2</code>
+              <ul class="sg-list sg-swatch-usage">
+                <li>Quick Picks hover background</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
-        <h3 class="sg-subhdg">Greens</h3>
+        <h3 class="sg-subhdg">Green</h3>
         <div class="sg-swatches">
           <div class="sg-swatch-group">
             <div class="sg-swatch--yosemite"></div>
@@ -161,29 +160,9 @@
               </ul>
             </div>
           </div>
-          <div class="sg-swatch-group">
-            <div class="sg-swatch--sequoia"></div>
-            <div class="sg-swatch-info">
-              <span class="sg-swatch-name">sequoia</span>
-              <code class="sg-code">$brand-cta-darker</code>
-              <ul class="sg-list sg-swatch-usage">
-                <li>Hover state</li>
-              </ul>
-            </div>
-          </div>
-          <div class="sg-swatch-group">
-            <div class="sg-swatch--joshua"></div>
-            <div class="sg-swatch-info">
-              <span class="sg-swatch-name">joshua</span>
-              <code class="sg-code">$brand-cta-lighter</code>
-              <ul class="sg-list sg-swatch-usage">
-                <li>Disabled state</li>
-              </ul>
-            </div>
-          </div>
         </div>
 
-        <h3 class="sg-subhdg">Pinks</h3>
+        <h3 class="sg-subhdg">Pink</h3>
         <div class="sg-swatches">
           <div class="sg-swatch-group">
             <div class="sg-swatch--catalina"></div>
@@ -196,19 +175,9 @@
               </ul>
             </div>
           </div>
-          <div class="sg-swatch-group">
-            <div class="sg-swatch--coronado"></div>
-            <div class="sg-swatch-info">
-              <span class="sg-swatch-name">coronado</span>
-              <code class="sg-code">$brand-accent-lighter</code>
-              <ul class="sg-list sg-swatch-usage">
-                <li>Resale seats on ISM outside of search</li>
-              </ul>
-            </div>
-          </div>
         </div>
 
-        <h3 class="sg-subhdg">Reds</h3>
+        <h3 class="sg-subhdg">Red</h3>
         <div class="sg-swatches">
           <div class="sg-swatch-group">
             <div class="sg-swatch--helen"></div>
@@ -678,6 +647,109 @@
 
       </section>
 
+
+      <section id="buttons" class="sg-section">
+        <h2 class="sg-hdg">Buttons</h2>
+        <table class="sg-table sg-button-table">
+          <tr>
+            <th class="sg-table-hdg">
+              Example
+            </th>
+            <th class="sg-table-hdg">
+              Classes and dimensions (mobile/desktop)
+            </th>
+          </tr>
+          <tr>
+            <td><button class="button">Primary Button</button></td>
+            <td><code class="sg-code">.button</code>, 44px/46px height, 20px/40px L/R padding</td>
+          </tr>
+          <tr>
+            <td><button disabled class="button">Primary Button</button></td>
+            <td><code class="sg-code">.button</code>, disabled state</td>
+          </tr>
+          <tr>
+            <td><button class="button button--cta">Checkout</button></td>
+            <td><code class="sg-code">.button .button--cta</code>, 44px/46px height, 20/40px L/R padding, bold</td>
+          </tr>
+          <tr>
+            <td><button disabled class="button button--cta">Checkout</button></td>
+            <td><code class="sg-code">.button .button--cta</code>, disabled state</td>
+          </tr>
+          <tr>
+            <td><button class="button button--full">Full width button</button></td>
+            <td><code class="sg-code">.button .button--full</code>, 44px/46px height, 100% width</td>
+          </tr>
+          <tr>
+            <td><button class="button-aux">Auxiliary Button</button></td>
+            <td><code class="sg-code">.button-aux</code></td>
+          </tr>
+          <tr>
+            <td><button disabled class="button-aux">Auxiliary Button</button></td>
+            <td><code class="sg-code">.button-aux</code>, disabled state</td>
+          </tr>
+          <tr>
+            <td><button class="button-aux button-aux--secondary">Secondary Auxiliary Button</button></td>
+            <td><code class="sg-code">.button-aux .button-aux--secondary</code>, 44px/46px height, 20px/40px L/R padding</td>
+          </tr>
+          <tr>
+            <td><button disabled class="button-aux button-aux--secondary">Secondary Auxiliary Button</button></td>
+            <td><code class="sg-code">.button-aux .button-aux--secondary</code>, disabled state</td>
+          </tr>
+          <tr>
+            <td><button class="button-aux button-aux--full">Full width Auxiliary Button</button></td>
+            <td><code class="sg-code">.button-aux .button-aux--full</code>, 44px/46px height, 100% width</td>
+          </tr>
+          <tr>
+            <td><button class="button-outlined">Outlined Button</button></td>
+            <td><code class="sg-code">.button-outlined</code>, 44px/46px height, 20px/40px L/R padding</td>
+          </tr>
+          <tr>
+            <td><button disabled class="button-outlined">Outlined Button</button></td>
+            <td><code class="sg-code">.button-outlined</code>, disabled state</td>
+          </tr>
+          <tr>
+            <td><button class="button-outlined button-outlined--full">Full width Outlined Button</button></td>
+            <td><code class="sg-code">.button-outlined</code>, 44px/46px height, 100% width</td>
+          </tr>
+          <tr>
+            <td><button class="unbutton">Unstyled button</button></td>
+            <td><code class="sg-code">.unbutton</code>, looks like normal link text</td>
+          </tr>
+        </table>
+
+        <h3 class="sg-subhdg">Quantity Buttons</h3>
+        <table class="sg-table sg-button-table">
+          <tr>
+            <td>
+              <div class="qty-changer">
+                <div class="qty-changer__button qty-changer__button--number">2</div>
+                <button class="qty-changer__button qty-changer__button--decrease"><span class="button-qty-changer__ada-text">Decrease quantity</span></button>
+                <button class="qty-changer__button qty-changer__button--increase"><span class="button-qty-changer__ada-text">Increase quantity</span></button>
+              </div>
+            </td>
+            <td>Note that when buttons are displayed together, there is a <code class="sg-code">5px</code> gap between the buttons.</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="embedded-qty-filter sg-embedded-qty-filter">
+                <div class="split-content">
+                  <div class="split-content__primary truncate-text embedded-qty-filter__content">XX Standard Admission</div>
+                  <div class="split-content__secondary qty-changer">
+                    <div class="embedded-qty-filter__buttons">
+                      <button class="qty-changer__button qty-changer__button--decrease qty-changer__button--embedded"></button>
+                      <button class="qty-changer__button qty-changer__button--increase qty-changer__button--embedded"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>Embedded quantity filter. The item name's width is based on its container.</td>
+          </tr>
+        </table>
+
+      </section>
+
+
       <section id="page-structure" class="sg-section">
         <h2 class="sg-hdg">Page Structure</h2>
         <p>The basic layout of our pages is as follows:</p>
@@ -1028,88 +1100,6 @@
 
 
       </section>
-
-      <section id="buttons" class="sg-section">
-        <h2 class="sg-hdg">Buttons</h2>
-        <table class="sg-table">
-          <tr>
-            <th class="sg-table-hdg">
-              Example
-            </th>
-            <th class="sg-table-hdg">
-              Classes and dimensions (mobile/desktop)
-            </th>
-          </tr>
-          <tr>
-            <td><button class="button">Primary Button</button></td>
-            <td><code class="sg-code">.button</code>, 44px/46px height, 20px/40px L/R padding</td>
-          </tr>
-          <tr>
-            <td><button class="button button--cta">Checkout</button></td>
-            <td><code class="sg-code">.button .button--cta</code>, 44px/46px height, 20/40px L/R padding, bold</td>
-          </tr>
-          <tr>
-            <td><button class="button button--full">Full width button</button></td>
-            <td><code class="sg-code">.button .button--full</code>, 44px/46px height, 100% width</td>
-          </tr>
-          <tr>
-            <td><button class="button-aux">Auxiliary Button</button></td>
-            <td><code class="sg-code">.button-aux</code></td>
-          </tr>
-          <tr>
-            <td><button class="button-aux button-aux--secondary">Secondary Auxiliary Button</button></td>
-            <td><code class="sg-code">.button-aux .button-aux--secondary</code>, 44px/46px height, 20px/40px L/R padding</td>
-          </tr>
-          <tr>
-            <td><button class="button-aux button-aux--full">Full width Auxiliary Button</button></td>
-            <td><code class="sg-code">.button-aux .button-aux--full</code>, 44px/46px height, 100% width</td>
-          </tr>
-          <tr>
-            <td><button class="button-outlined">Outlined Button</button></td>
-            <td><code class="sg-code">.button-outlined</code>, 44px/46px height, 20px/40px L/R padding</td>
-          </tr>
-          <tr>
-            <td><button class="button-outlined button-outlined--full">Full width Outlined Button</button></td>
-            <td><code class="sg-code">.button-outlined</code>, 44px/46px height, 100% width</td>
-          </tr>
-          <tr>
-            <td><button class="unbutton">Unstyled button</button></td>
-            <td><code class="sg-code">.unbutton</code>, looks like normal link text</td>
-          </tr>
-        </table>
-
-        <h3 class="sg-subhdg">Quantity Buttons</h3>
-        <table class="sg-table">
-          <tr>
-            <td>
-              <div class="qty-changer">
-                <div class="qty-changer__button qty-changer__button--number">2</div>
-                <button class="qty-changer__button qty-changer__button--decrease"><span class="button-qty-changer__ada-text">Decrease quantity</span></button>
-                <button class="qty-changer__button qty-changer__button--increase"><span class="button-qty-changer__ada-text">Increase quantity</span></button>
-              </div>
-            </td>
-            <td>Note that when buttons are displayed together, there is a <code class="sg-code">5px</code> gap between the buttons.</td>
-          </tr>
-          <tr>
-            <td>
-              <div class="embedded-qty-filter sg-embedded-qty-filter">
-                <div class="split-content">
-                  <div class="split-content__primary truncate-text embedded-qty-filter__content">XX Standard Admission</div>
-                  <div class="split-content__secondary qty-changer">
-                    <div class="embedded-qty-filter__buttons">
-                      <button class="qty-changer__button qty-changer__button--decrease qty-changer__button--embedded"></button>
-                      <button class="qty-changer__button qty-changer__button--increase qty-changer__button--embedded"></button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td>Embedded quantity filter. The item name's width is based on its container.</td>
-          </tr>
-        </table>
-
-      </section>
-
 
       <section id="badges" class="sg-section">
         <h2 class="sg-hdg">Badges</h2>

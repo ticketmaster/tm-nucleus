@@ -27,8 +27,7 @@
   }
 
   &__details-btn {
-    @include btn(transparent);;
-    color: $brand-primary;
+    @include unbutton();
   }
 
   &__ada-text {

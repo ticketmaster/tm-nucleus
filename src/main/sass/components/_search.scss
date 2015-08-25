@@ -93,7 +93,7 @@
 
 
 .search-button {
-  @include btn(transparent);;
+  @include unbutton();
 
   @include breakpoint($bp-md) {
     position: absolute;
@@ -138,6 +138,7 @@
 
 
 .cancel-button {
-  @include btn(transparent);;
+  @include unbutton();
+
   color: $brand-primary;
 }

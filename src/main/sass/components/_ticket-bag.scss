@@ -61,8 +61,7 @@
   }
 
   &__remove-item-btn {
-    @include btn(transparent);;
-
+    @include unbutton();
     @include hide-text();
     @include svg('icon-close');
 

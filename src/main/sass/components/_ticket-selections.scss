@@ -134,7 +134,7 @@
 
 
   &__subtotal {
-    @include btn($brand-cta, $white, $brand-cta-darker);;
+    @include btn($brand-cta, $hoverstate: true);
 
     @include breakpoint($max: $bp-md - 1) {
       position: absolute;

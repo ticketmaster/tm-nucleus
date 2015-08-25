@@ -32,21 +32,19 @@ $palette: (
     'sierra':   get-darker($brand-gray2, 40%),
     'cascade':  $brand-gray2,
     'rocky':    $brand-gray3,
-    'ridge':    $brand-gray4
+    'ridge':    $brand-gray4,
+    'appalachian': get-darker($brand-gray2)
   ),
   'blue': (
     'pacific':  $brand-primary,
-    'tahoe':    get-darker($brand-primary),
-    'monterey': get-lighter($brand-primary)
+    'monterey': get-lighter($brand-primary),
+    'havasu':   get-lighter($brand-primary, 90%)
   ),
   'green': (
     'yosemite': $brand-cta,
-    'sequoia':  get-darker($brand-cta),
-    'joshua':   get-lighter($brand-cta)
   ),
   'pink': (
-    'catalina': $brand-accent,
-    'coronado': get-lighter($brand-accent, 50%)
+    'catalina': $brand-accent
   ),
   'red': (
     'helen':    $brand-alert
@@ -54,12 +52,9 @@ $palette: (
 );
 
 // derived colors from base
-$brand-primary-darker:  color('blue', 'tahoe');
-$brand-primary-lighter: color('blue', 'monterey');
-$brand-cta-darker:      color('green', 'sequoia');
-$brand-cta-lighter:     color('green', 'joshua');
-$brand-accent-lighter:  color('pink', 'coronado');
-$brand-gray:            color('gray', 'sierra');
+$brand-primary-lighter:   color('blue', 'monterey');
+$brand-primary-lighter2:  color('blue', 'havasu');
+$brand-gray:              color('gray', 'sierra');
 
 
 // gradients

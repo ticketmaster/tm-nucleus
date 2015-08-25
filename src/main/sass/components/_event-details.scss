@@ -93,11 +93,9 @@
   }
 
   &__lineup-expand-link {
-    @include btn(transparent);;
+    @include unbutton();
 
     padding-top: 10px;
-
-    color: $brand-primary;
 
     &:hover {
       text-decoration: underline;

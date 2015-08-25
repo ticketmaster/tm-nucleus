@@ -1,5 +1,5 @@
 .button-outlined {
-  @include btn-outlined($brand-alert);
+  @include btn($brand-alert, $hoverstate: true, $outlined: true);
 }
 
 .button-outlined--full {

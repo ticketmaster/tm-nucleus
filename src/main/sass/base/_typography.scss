@@ -166,7 +166,7 @@ a {
 
   &:active,
   &:hover {
-    color: $brand-primary-darker;
+    color: get-darker($brand-primary);
     text-decoration: underline;
   }
 

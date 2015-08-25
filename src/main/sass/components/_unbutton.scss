@@ -1,5 +1,3 @@
 .unbutton {
-  @include btn(transparent, $brand-primary);
-
-  padding: 0;
+  @include unbutton();
 }

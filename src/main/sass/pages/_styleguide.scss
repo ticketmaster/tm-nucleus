@@ -125,6 +125,12 @@ $sg-spacing: 1.5em;
   }
 }
 
+.sg-button-table {
+  td {
+    padding: 0 20px 10px 0;
+  }
+}
+
 
 .sg-table-hdg {
   @include bold-text();
@@ -203,8 +209,7 @@ $sg-spacing: 1.5em;
         @if ($name == 'rocky'
           or $name == 'ridge'
           or $name == 'monterey'
-          or $name == 'joshua'
-          or $name == 'coronado'
+          or $name == 'havasu'
         ) {
           color: $black;
         }
@@ -250,7 +255,7 @@ $sg-spacing: 1.5em;
 
 .sg-swatch-name {
   display: block;
-  margin-top: 3px;
+  margin: 3px 0;
 }
 
 .sg-swatch-usage {

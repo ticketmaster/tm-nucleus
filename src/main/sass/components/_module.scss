@@ -23,8 +23,7 @@
   &__close {
     $modal-close-icon-size: 22px;
 
-    @include btn(transparent);;
-
+    @include unbutton();
     @include hide-text();
     @include svg('icon-close');
 

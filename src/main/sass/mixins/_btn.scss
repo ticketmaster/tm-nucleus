@@ -1,9 +1,21 @@
+// mixin to create buttons
+@mixin btn($color: $brand-primary, $txtcolor: $white, $hoverstate: false, $outlined: false) {
+  @include btn-base();
+
+  @if not $outlined {
+    @include btn-color($color, $txtcolor, $hoverstate: $hoverstate);
+  }
+  @else {
+    @include btn-outlined($color, $hoverstate: $hoverstate);
+  }
+}
+
 // shared base for buttons
 @mixin btn-base() {
   @include responsive-font('lg', 1);
 
-  min-height: 44px;
-  padding: 3px $button-padding 0;
+  min-height: $button-height;
+  padding: $button-top-offset $button-padding 0;
 
   font-weight: normal;
   text-align: center;
@@ -14,45 +26,80 @@
   box-shadow: none;
 
   @include breakpoint($bp-md) {
-    min-height: 46px;
-    padding: 3px $button-padding-lg 0;
+    min-height: $button-height-lg;
+    padding: $button-top-offset $button-padding-lg 0;
   }
 }
 
-// standard button mixin
-@mixin btn($bgcolor: $brand-primary, $txtcolor: $white, $hovercolor: false) {
-  @include btn-base();
-
+// set the button color
+@mixin btn-color($bgcolor, $txtcolor, $hoverstate: false) {
   color: $txtcolor;
 
   background-color: $bgcolor;
   border: 0;
 
-  @if $hovercolor {
+  @if $hoverstate {
     &:active,
     &:focus,
     &:hover {
-      background-color: $hovercolor;
+      background-color: get-darker($bgcolor);
     }
+  }
+
+  &[disabled] {
+    @include btn-disabled($bgcolor);
   }
 }
 
-// outlined button mixin
-@mixin btn-outlined($color, $hovercolor: false) {
-  @include btn-base();
-
+// set the outlined color
+@mixin btn-outlined($color, $hoverstate: false) {
   color: $color;
 
   background-color: $white;
   border: 1px solid $color;
 
-  @if not $hovercolor {
+  @if $hoverstate {
     &:active,
     &:focus,
     &:hover {
-      color: $hovercolor;
+      color: get-darker($color);
 
-      border-color: $hovercolor;
-    }    
+      border-color: get-darker($color);
+    }
+  }
+
+  &[disabled] {
+    @include btn-disabled($color, $outlined: true);
+  }
+}
+
+// set disabled color
+@mixin btn-disabled($color, $outlined: false) {
+  @if not $outlined {
+    background-color: get-lighter($color);
+  }
+  @else {
+    color: get-lighter($color);
+
+    border-color: get-lighter($color);
+  }
+}
+
+// unstyled button
+@mixin unbutton($txtcolor: $brand-primary) {
+  padding: 0;
+
+  font-weight: normal;
+  color: $txtcolor;
+  text-align: center;
+  white-space: nowrap;
+
+  background-color: $transparent-color;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+
+  &:hover {
+    text-decoration: underline;
   }
 }

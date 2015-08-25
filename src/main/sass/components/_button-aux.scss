@@ -1,5 +1,5 @@
 .button-aux {
-  @include btn($brand-primary, $white, $brand-primary-darker);
+  @include btn($brand-primary, $hoverstate: true);
 
   text-transform: none;
 
@@ -7,16 +7,9 @@
 }
 
 .button-aux--secondary {
-  background-color: $brand-gray2;
-
-  &:active,
-  &:focus,
-  &:hover {
-    background-color: $brand-gray2;
-  }
+  @include btn-color($brand-gray2, $white, $hoverstate: true);
 }
 
 .button-aux--full {
   width: 100%;
 }
-
