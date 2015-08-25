@@ -1,39 +1,38 @@
 // standard buttons are 44px height
 .button {
   @include btn($brand-primary, $white, $brand-primary-darker);
+}
 
-  // gray button
-  &--secondary {
+.button--secondary {
+  background-color: $brand-gray2;
+
+  &:active,
+  &:focus,
+  &:hover {
     background-color: $brand-gray2;
+  }
+}
 
-    &:active,
-    &:focus,
-    &:hover {
-      background-color: $brand-gray2;
-    }
+// call to action buttons
+// reserved for buttons that lead to / are part of checkout
+.button--cta {
+  padding: $button-padding-bold;
+
+  font-weight: bold;
+
+  background-color: $brand-cta;
+
+  @include breakpoint($bp-md) {
+    padding: $button-padding-bold-lg;
   }
 
-  // call to action buttons
-  // reserved for buttons that lead to / are part of checkout
-  &--cta {
-    padding: $button-padding-bold;
-
-    font-weight: bold;
-
-    background-color: $brand-cta;
-
-    @include breakpoint($bp-md) {
-      padding: $button-padding-bold-lg;
-    }
-
-    &:active,
-    &:focus,
-    &:hover {
-      background-color: $brand-cta-darker;
-    }
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: $brand-cta-darker;
   }
+}
 
-  &--full {
-    width: 100%;
-  }
+.button--full {
+  width: 100%;
 }
