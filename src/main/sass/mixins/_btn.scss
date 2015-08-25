@@ -1,5 +1,5 @@
 // standard button mixin
-@mixin btn($bgcolor: $brand-primary, $txtcolor: $white, $hovercolor: $brand-primary-darker) {
+@mixin btn($bgcolor: $brand-primary, $txtcolor: $white, $hovercolor: false) {
   @include responsive-font('lg', 1);
 
   padding: $button-padding;
@@ -19,10 +19,12 @@
     padding: $button-padding-lg;
   }
 
-  &:active,
-  &:focus,
-  &:hover {
-    background-color: $hovercolor;
+  @if $hovercolor {
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: $hovercolor;
+    }
   }
 
   // small buttons are 30px height
@@ -64,38 +66,4 @@
     font-size: $button-font-size-sm;
   }
 
-}
-
-
-
-// These are depcreated!!
-// DO NOT use these anymore
-// refer to components/_button.scss for the classes to use
-%btn-primary {
-  @include btn($brand-primary, $white, $brand-primary-darker);
-}
-
-%btn-secondary {
-  @include btn($brand-gray2, $white, $brand-gray2);
-}
-
-%btn-tertiary {
-  @include btn($brand-cta, $white, $brand-cta-darker);
-}
-
-%btn-remove {
-  @include btn($white, $brand-alert, $white);
-  font-size: $base-sm-font;
-
-  border: 1px solid $brand-alert;
-}
-
-%btn-transparent {
-  @include btn(transparent);
-  padding: 0;
-}
-
-%btn-quaternary {
-  @include btn($bgcolor: $white, $txtcolor: $brand-primary);
-  border: $focused-border-style;
 }

@@ -6,7 +6,7 @@
   }
 
   &__notify-btn {
-    @extend %btn-primary;
+    @include btn();
 
     margin: 15px 0 0 10px;
 

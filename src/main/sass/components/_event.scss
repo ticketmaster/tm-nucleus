@@ -57,7 +57,7 @@
   }
 
   &__event-details-toggle {
-    @extend %btn-transparent;
+    @include btn(transparent);;
 
     position: relative;
 

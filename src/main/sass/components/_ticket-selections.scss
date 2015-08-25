@@ -134,7 +134,7 @@
 
 
   &__subtotal {
-    @extend %btn-tertiary;
+    @include btn($brand-cta, $white, $brand-cta-darker);;
 
     @include breakpoint($max: $bp-md - 1) {
       position: absolute;

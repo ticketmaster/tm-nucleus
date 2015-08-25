@@ -93,7 +93,7 @@
   }
 
   &__lineup-expand-link {
-    @extend %btn-transparent;
+    @include btn(transparent);;
 
     padding-top: 10px;
 

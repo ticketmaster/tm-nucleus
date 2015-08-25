@@ -51,7 +51,7 @@ $filter-modal-padding: 10px;
   }
 
   &__control-btn {
-    @extend %btn-transparent;
+    @include btn(transparent);;
     color: $brand-primary;
   }
 

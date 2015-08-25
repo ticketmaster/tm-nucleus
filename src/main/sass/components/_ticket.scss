@@ -27,7 +27,7 @@
   }
 
   &__details-btn {
-    @extend %btn-transparent;
+    @include btn(transparent);;
     color: $brand-primary;
   }
 

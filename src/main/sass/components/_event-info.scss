@@ -89,7 +89,7 @@
   }
 
   &__icon {
-    @extend %btn-transparent;
+    @include btn(transparent);;
 
     @include hide-text();
     @include svg('icon-info');

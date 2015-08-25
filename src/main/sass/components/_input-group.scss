@@ -22,7 +22,7 @@
   }
 
   ~ .submit-button {
-    @extend %btn-primary;
+    @include btn();
 
     margin-top: $input-group-vspace;
 
