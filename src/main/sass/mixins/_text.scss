@@ -24,7 +24,7 @@
 
       font-size: $gallon;
 
-      @if ($set == 'md') {
+      @if ($set == 'md' and not $lh) {
         $lh: $base-line-height;
       }
 
