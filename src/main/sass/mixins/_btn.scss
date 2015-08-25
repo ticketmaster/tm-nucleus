@@ -1,10 +1,12 @@
 // standard button mixin
-@mixin btn($bgcolor: $brand-primary, $txtcolor: $brand-gray, $hovercolor: 'undefined') {
+@mixin btn($bgcolor: $brand-primary, $txtcolor: $white, $hovercolor: $brand-primary-darker) {
+  @include responsive-font('lg', 1);
+
   padding: $button-padding;
 
-  font-size: $button-font-size;
   font-weight: normal;
   text-align: center;
+  text-transform: uppercase;
   color: $txtcolor;
   white-space: nowrap;
 
@@ -13,12 +15,14 @@
   border-radius: $button-border-radius;
   box-shadow: none;
 
-  @if ($hovercolor != 'undefined') {
-    &:active,
-    &:focus,
-    &:hover {
-      background-color: $hovercolor;
-    }
+  @include breakpoint($bp-md) {
+    padding: $button-padding-lg;
+  }
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: $hovercolor;
   }
 
   // small buttons are 30px height

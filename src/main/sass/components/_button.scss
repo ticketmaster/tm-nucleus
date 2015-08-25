@@ -16,10 +16,15 @@
   // call to action buttons
   // reserved for buttons that lead to / are part of checkout
   &--cta {
-    padding-right: $button-padding-cta;
-    padding-left: $button-padding-cta;
+    padding: $button-padding-bold;
+
+    font-weight: bold;
 
     background-color: $brand-cta;
+
+    @include breakpoint($bp-md) {
+      padding: $button-padding-bold-lg;
+    }
 
     &:active,
     &:focus,
