@@ -1,5 +1,4 @@
-$toaster-button-radius: 20px;
-
+// TODO: deprecate .toaster--button TMOLRC-144
 .toaster {
   @include toaster();
 
@@ -9,6 +8,6 @@ $toaster-button-radius: 20px;
     color: $white;
 
     border: 0;
-    border-radius: $toaster-button-radius;
+    border-radius: $button-aux-radius;
   }
 }
