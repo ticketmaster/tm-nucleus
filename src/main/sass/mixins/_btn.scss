@@ -1,19 +1,23 @@
+@mixin btn-base() {
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  border-radius: $button-border-radius;
+  box-shadow: none;
+}
+
 // standard button mixin
 @mixin btn($bgcolor: $brand-primary, $txtcolor: $white, $hovercolor: false) {
   @include responsive-font('lg', 1);
 
   padding: $button-padding;
 
-  font-weight: normal;
-  text-align: center;
-  text-transform: uppercase;
   color: $txtcolor;
-  white-space: nowrap;
 
   background-color: $bgcolor;
   border: 0;
-  border-radius: $button-border-radius;
-  box-shadow: none;
 
   @include breakpoint($bp-md) {
     padding: $button-padding-lg;
@@ -41,16 +45,10 @@
   padding: $button-outlined-padding;
 
   font-size: $button-font-size;
-  font-weight: normal;
-  text-align: center;
   color: $color;
-  white-space: nowrap;
 
   background-color: $white;
   border: 1px solid $color;
-  border-radius: $button-border-radius;
-  box-shadow: none;
-
   &:active,
   &:focus,
   &:hover {
