@@ -20,9 +20,7 @@ gulp.task('clean', function(cb) {
 gulp.task('sass', ['clean'], function() {
   gulp.src(sassSrcFiles)
     .pipe(sourcemaps.init())
-    .pipe(sass({
-        errLogToConsole: true
-      }))
+    .pipe(sass().on('error', sass.logError))
     .pipe(postcss([
         autoprefixer({
           browsers: ['last 2 versions']
