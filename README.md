@@ -1,5 +1,7 @@
 # TM Nucleus
 
+![alt tag](nucleus.jpg)
+
 ## Getting Started
 In your terminal, enter the following:
 
