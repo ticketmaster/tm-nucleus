@@ -1,0 +1,17 @@
+.button-aux {
+  @include btn($brand-primary, $white, $brand-primary-darker);
+
+  text-transform: none;
+
+  border-radius: $button-aux-radius;
+}
+
+.button-aux--secondary {
+  background-color: $brand-gray2;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: $brand-gray2;
+  }
+}
