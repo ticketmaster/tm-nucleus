@@ -14,6 +14,7 @@ $module-padding-lg: 20px;
 $module-border-radius: $base-border-radius * 2;
 $module-shadow-style: $box-shadow-style;
 
+
 // Ticket Bag
 $ticket-bag-padding: 10px;
 
@@ -33,19 +34,19 @@ $content-vspace-legal-lg: $content-vspace-lg * 2;
 $form-label-vspace: 10px;
 $input-group-vspace: 10px;
 
+
 // Buttons
 $button-border-radius: $base-border-radius;
-$button-padding: 14px 20px 10px 20px;           // ~44px height
-$button-padding-lg: 14px 40px 10px 40px;        // ~46px height
-$button-padding-bold: 13px 20px 11px 20px;      // ~44px height
-$button-padding-bold-lg: 13px 40px 11px 40px;   // ~46px height
+$button-padding: 20px;
+$button-padding-lg: 40px;
+
+// Auxiliary Buttons
+$button-aux-radius: 25px;
+
+// deprecated
 $button-padding-sm: 6px 10px;                   // ~30px height
-$button-outlined-padding: 11px 20px 10px 20px;  // ~44px height
 $button-outlined-padding-sm: 5px 10px;          // ~30px height
 $button-padding-cta: 40px;
-
-//Buttons Aux
-$button-aux-radius: 25px;
 
 // Border Styles
 $dark-border-style: 1px solid $brand-gray3;

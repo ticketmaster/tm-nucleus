@@ -1,4 +1,10 @@
+// shared base for buttons
 @mixin btn-base() {
+  @include responsive-font('lg', 1);
+
+  min-height: 44px;
+  padding: 3px $button-padding 0;
+
   font-weight: normal;
   text-align: center;
   text-transform: uppercase;
@@ -6,22 +12,21 @@
 
   border-radius: $button-border-radius;
   box-shadow: none;
+
+  @include breakpoint($bp-md) {
+    min-height: 46px;
+    padding: 3px $button-padding-lg 0;
+  }
 }
 
 // standard button mixin
 @mixin btn($bgcolor: $brand-primary, $txtcolor: $white, $hovercolor: false) {
-  @include responsive-font('lg', 1);
-
-  padding: $button-padding;
+  @include btn-base();
 
   color: $txtcolor;
 
   background-color: $bgcolor;
   border: 0;
-
-  @include breakpoint($bp-md) {
-    padding: $button-padding-lg;
-  }
 
   @if $hovercolor {
     &:active,
@@ -30,38 +35,24 @@
       background-color: $hovercolor;
     }
   }
-
-  // small buttons are 30px height
-  &--small {
-    padding: $button-padding-sm;
-
-    font-size: $button-font-size-sm;
-  }
-
 }
 
 // outlined button mixin
-@mixin btn-outlined($color, $hovercolor) {
-  padding: $button-outlined-padding;
+@mixin btn-outlined($color, $hovercolor: false) {
+  @include btn-base();
 
-  font-size: $button-font-size;
   color: $color;
 
   background-color: $white;
   border: 1px solid $color;
-  &:active,
-  &:focus,
-  &:hover {
-    color: $hovercolor;
 
-    border-color: $hovercolor;
+  @if not $hovercolor {
+    &:active,
+    &:focus,
+    &:hover {
+      color: $hovercolor;
+
+      border-color: $hovercolor;
+    }    
   }
-
-  // small buttons are 30px height
-  &--small {
-    padding: $button-outlined-padding-sm;
-
-    font-size: $button-font-size-sm;
-  }
-
 }
