@@ -38,8 +38,8 @@ $sg-spacing: 1.5em;
 }
 
 .sg-tm-logo {
-  width: 220px;
-  height: 30px;
+  width: 200px;
+  height: 27px;
 
   fill: $white;
 
@@ -52,16 +52,42 @@ $sg-spacing: 1.5em;
 .sg-name {
   @include responsive-font('md');
 
-  padding-top: 1rem;
+  padding-top: 0.5rem;
 
   font-weight: bold;
   color: $white;
+
+  @include breakpoint($bp-md) {
+    padding-top: 1rem;
+  }
 }
 
 .sg-title {
   @include hdg-text('xl', $brand-gray);
 }
 
+.sg-nav {
+  @include span(full);
+  @include content-spacing($spacing-lg);
+
+  padding-bottom: $spacing-lg;
+
+  border-bottom: $border-style;
+
+  @include breakpoint($bp-md) {
+    @include span(3);
+
+    padding-bottom: increase-spacing($spacing-lg);
+
+    border-bottom: 0;
+  }
+}
+
+.sg-main {
+  @include breakpoint($bp-md) {
+    @include span(9);
+  }
+}
 
 .sg-section {
   @include span(full);
@@ -73,7 +99,7 @@ $sg-spacing: 1.5em;
   border-bottom: $dark-border-style;
 
   @include breakpoint($bp-md) {
-    padding-bottom: $spacing-lg * 1.5;
+    padding-bottom: increase-spacing($spacing-lg);
   }
 
   + .sg-section {
@@ -159,6 +185,23 @@ $sg-spacing: 1.5em;
   }
 }
 
+.sg-swatch-table {
+  td {
+    width: 25%;
+    padding-right: 15px;
+
+    vertical-align: top;
+  }
+
+  .sg-swatch-na {
+    @include responsive-font('sm');
+
+    text-align: center;
+
+    padding-top: 25px;
+  }
+}
+
 .sg-button-table {
   td {
     padding: 0 20px 10px 0;
@@ -218,7 +261,9 @@ $sg-spacing: 1.5em;
 
 
 // swatches
-%sg-swatch {
+.sg-swatch {
+  position: relative;
+
   width: 100%;
   height: $sg-swatch-height;
 
@@ -229,10 +274,6 @@ $sg-spacing: 1.5em;
 @each $color, $shades in $palette {
   @each $name, $shade in $shades {
     .sg-swatch--#{$name} {
-      @extend %sg-swatch;
-
-      position: relative;
-
       background: $shade;
 
       &:before {
@@ -257,6 +298,73 @@ $sg-spacing: 1.5em;
   }
 }
 
+.sg-swatch--state {
+  width: 20vw;
+
+  @include breakpoint($bp-md) {
+    width: 13vw;
+  }
+
+  @include breakpoint($bp-lg) {
+    width: 15vw;
+  }
+
+  &:before {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+  }
+}
+.sg-swatch--state.sg-swatch--pacific:before {
+  content: "pacific";
+}
+.sg-swatch--state.sg-swatch--cascade:before {
+  content: "cascade";
+}
+.sg-swatch--state.sg-swatch--yosemite:before {
+  content: "yosemite";
+}
+.sg-swatch--state.sg-swatch--helen:before {
+  content: "helen";
+}
+.sg-swatch--state.sg-swatch--catalina:before {
+  content: "catalina";
+}
+.sg-swatch--pacific-darker {
+  background: get-darker($brand-primary);
+}
+.sg-swatch--pacific-lighter {
+  background: get-lighter($brand-primary, 50%);
+}
+.sg-swatch--pacific-lighter2 {
+  background: get-lighter($brand-primary);
+}
+.sg-swatch--cascade-darker {
+  background: get-darker($brand-gray2);
+}
+.sg-swatch--cascade-lighter {
+  background: get-lighter($brand-gray2, 50%);
+}
+.sg-swatch--cascade-lighter2 {
+  background: get-lighter($brand-gray2);
+}
+.sg-swatch--yosemite-darker {
+  background: get-darker($brand-cta);
+}
+.sg-swatch--yosemite-lighter {
+  background: get-lighter($brand-cta);
+}
+.sg-swatch--helen-darker {
+  background: get-darker($brand-alert);
+}
+.sg-swatch--helen-lighter {
+  background: get-lighter($brand-alert);
+}
+.sg-swatch--catalina-lighter {
+  background: get-lighter($brand-accent, 50%);
+}
+
+
 
 .sg-swatches {
   @include clearfix();
@@ -268,7 +376,7 @@ $sg-spacing: 1.5em;
 }
 
 .sg-swatch-group {
-  margin-bottom: 20px;
+  @include content-spacing($spacing-md);
 
   @include breakpoint($bp-md) {
     display: inline-block;
@@ -294,6 +402,12 @@ $sg-spacing: 1.5em;
 
 .sg-swatch-usage {
   margin-top: 5px;
+}
+
+.sg-swatch-state-usage {
+  @include responsive-font('sm');
+
+  margin: 5px 0 0 5px;
 }
 
 

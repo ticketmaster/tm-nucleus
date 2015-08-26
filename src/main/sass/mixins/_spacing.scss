@@ -6,6 +6,26 @@
   }
 }
 
+@mixin inner-spacing($val) {
+
+}
+
+@mixin inner-spacing-all($val) {
+  padding: $val;
+
+  @include breakpoint($bp-md) {
+    padding: increase-spacing($val);
+  }
+}
+
+@mixin inner-spacing-top($val) {
+  padding-top: $val;
+
+  @include breakpoint($bp-md) {
+    padding: increase-spacing($val);
+  }
+}
+
 
 
 // set vertical spacing for major content blocks on a page
