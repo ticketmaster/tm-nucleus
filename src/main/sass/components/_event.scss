@@ -5,7 +5,7 @@
 
   padding: 0;
 
-  border-bottom: $dark-border-style;
+  border-bottom: $base-border-style;
 
   &--legacy {
     padding-top: 15px;
@@ -48,7 +48,7 @@
 
     @include breakpoint($max: $bp-md - 1) {
       @include bleed-x(gutter());
-      border-bottom: $dark-border-style;
+      border-bottom: $base-border-style;
     }
 
     @include breakpoint($bp-md) {

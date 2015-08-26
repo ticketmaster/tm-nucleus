@@ -10,7 +10,7 @@ $sg-spacing: 1.5em;
   @include responsive-font($sz);
 
   padding: 2px 4px;
-  border: $light-border-style;
+  border: $base-border-style;
   border-radius: 4px;
   font-family: $monospace;
   background-color: $brand-gray4;
@@ -72,7 +72,7 @@ $sg-spacing: 1.5em;
 
   padding-bottom: $spacing-lg;
 
-  border-bottom: $border-style;
+  border-bottom: $base-border-style;
 
   @include breakpoint($bp-md) {
     @include span(3);
@@ -96,7 +96,7 @@ $sg-spacing: 1.5em;
 
   padding-bottom: $spacing-lg;
 
-  border-bottom: $dark-border-style;
+  border-bottom: $base-border-style;
 
   @include breakpoint($bp-md) {
     padding-bottom: increase-spacing($spacing-lg);

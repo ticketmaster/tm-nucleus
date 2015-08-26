@@ -34,12 +34,12 @@
       padding-left: $gutter-width;
       margin-bottom: 0;
 
-      border-right: $dark-border-style;
+      border-right: $base-border-style;
     }
   }
 
   &__item {
-    border-bottom: $light-border-style;
+    border-bottom: $base-border-style;
 
     @include breakpoint($bp-sm) {
       display: flex;

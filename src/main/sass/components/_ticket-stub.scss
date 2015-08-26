@@ -5,7 +5,7 @@ $ticket-stub-padding: 10px;
 
   background: $white;
 
-  border: $light-border-style;
+  border: $base-border-style;
 
   &__header {
     position: relative;
@@ -88,7 +88,7 @@ $ticket-stub-padding: 10px;
   }
 
   &__notes {
-    border-top: $light-border-style;
+    border-top: $base-border-style;
   }
 
   &__ticket-types[data-multi="false"] + &__notes {

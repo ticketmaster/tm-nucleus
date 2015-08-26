@@ -13,7 +13,7 @@ $qty-btn-size: 44px;
 
   cursor: pointer;
   background-color: $white;
-  border: $dark-border-style;
+  border: $base-border-style;
   border-radius: $button-border-radius;
 
   &:focus {
@@ -34,7 +34,7 @@ $qty-btn-size: 44px;
 
 .qty-changer__button--embedded {
   border: 0;
-  border-right: $dark-border-style;
+  border-right: $base-border-style;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 
@@ -52,7 +52,7 @@ $qty-btn-size: 44px;
   }
 
   &:first-child:focus {
-    border-right: $dark-border-style;
+    border-right: $base-border-style;
   }
 
   &:last-child {
@@ -68,7 +68,7 @@ $qty-btn-size: 44px;
   &:first-child:focus.is-inactive + & {
     width: $qty-btn-size + 1;
 
-    border-left: $dark-border-style;
+    border-left: $base-border-style;
   }
 }
 

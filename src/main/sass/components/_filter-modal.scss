@@ -10,7 +10,7 @@ $filter-modal-padding: 10px;
 
     text-align: center;
 
-    border-bottom: $light-border-style;
+    border-bottom: $base-border-style;
   }
 
   &__title {
@@ -43,7 +43,7 @@ $filter-modal-padding: 10px;
   &__button-container {
     padding: $filter-modal-padding;
 
-    border-top: $light-border-style;
+    border-top: $base-border-style;
   }
 
   &__filter-title {

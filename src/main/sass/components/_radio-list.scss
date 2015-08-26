@@ -9,7 +9,7 @@
     @include clearfix;
 
     @include breakpoint($max: $bp-md - 1) {
-      border-bottom: $light-border-style;
+      border-bottom: $base-border-style;
 
       &:last-child {
         border: 0;

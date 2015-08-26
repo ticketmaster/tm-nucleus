@@ -27,7 +27,7 @@
   &__content {
     padding: $ticket-bag-padding;
 
-    border-top: $light-border-style;
+    border-top: $base-border-style;
   }
 
   &__num-seats {
@@ -47,7 +47,7 @@
 
     list-style: none;
 
-    border-top: $dark-border-style;
+    border-top: $base-border-style;
   }
 
   &__ticket-list-item {

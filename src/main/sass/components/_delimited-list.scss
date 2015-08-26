@@ -2,7 +2,7 @@
   @include unstyled-list();
 
   &__item {
-    border-top: $light-border-style;
+    border-top: $base-border-style;
   }
 
   &__item:first-child {
@@ -12,5 +12,5 @@
 
 
 .module__content + .delimited-list {
-  border-top: $light-border-style;
+  border-top: $base-border-style;
 }

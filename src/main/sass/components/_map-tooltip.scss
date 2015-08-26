@@ -5,7 +5,7 @@ $map-border-radius: $base-border-radius * 2;
   z-index: z('ism-map-tooltip');
 
   background: $white;
-  border: $dark-border-style;
+  border: $base-border-style;
   border-radius: $map-border-radius;
   box-shadow: $box-shadow-style;
 

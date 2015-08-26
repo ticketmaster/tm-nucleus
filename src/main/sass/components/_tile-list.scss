@@ -14,7 +14,7 @@
   &__item {
     margin-bottom: 15px;
 
-    border: $dark-border-style;
+    border: $base-border-style;
     border-radius: $base-border-radius;
 
     @include breakpoint($max: $bp-md) {
@@ -45,7 +45,7 @@
   &__toggle-wrapper {
     padding: 20px;
 
-    border-top: $light-border-style;
+    border-top: $base-border-style;
 
     @include breakpoint($max: $bp-md) {
       padding: 15px 8px;

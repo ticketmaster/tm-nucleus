@@ -33,7 +33,7 @@
   }
 
   &__pri-content {
-    border-top: $dark-border-style;
+    border-top: $base-border-style;
 
     @include breakpoint($max: $bp-lg - 1) {
       background-color: $white;

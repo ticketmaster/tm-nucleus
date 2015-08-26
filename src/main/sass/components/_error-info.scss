@@ -8,7 +8,7 @@
   text-align: center;
 
   background: $white;
-  border-bottom: $dark-border-style;
+  border-bottom: $base-border-style;
 
   @include breakpoint($bp-md) {
     padding-top: 20px;

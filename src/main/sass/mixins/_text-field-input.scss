@@ -1,7 +1,7 @@
 @mixin text-field-input() {
   font-size: $min-input-font-size;
   border-radius: $base-border-radius;
-  border: $dark-border-style;
+  border: $base-border-style;
   box-shadow: $inner-shadow-style;
   padding: 13px 10px;
   width: 100%;

@@ -89,7 +89,7 @@
 
     background-color: $white;
 
-    border-bottom: $dark-border-style;
+    border-bottom: $base-border-style;
 
     &.in-focus {
       @include breakpoint($max: $bp-md) {
@@ -156,7 +156,7 @@
   @include unstyled-list();
 
   &__item {
-    border-bottom: $light-border-style;
+    border-bottom: $base-border-style;
   }
 
   &__item:last-child {

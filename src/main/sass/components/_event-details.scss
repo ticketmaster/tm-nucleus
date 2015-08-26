@@ -167,7 +167,7 @@
 
       padding-right: gutter()*2;
 
-      border-right: $dark-border-style;
+      border-right: $base-border-style;
     }
   }
 
@@ -209,7 +209,7 @@
       @include bleed-x(gutter());
 
       background: $white;
-      border-top: $dark-border-style;
+      border-top: $base-border-style;
 
       + .details-heading {
         margin-top: 2rem;
@@ -231,7 +231,7 @@
 
       color: $brand-gray;
 
-      border-bottom: $dark-border-style;
+      border-bottom: $base-border-style;
     }
 
     @include breakpoint($bp-md) {
