@@ -52,7 +52,7 @@
   }
 
   &__item-name {
-    @include bold-text();
+    font-weight: bold;
 
     display: block;
 

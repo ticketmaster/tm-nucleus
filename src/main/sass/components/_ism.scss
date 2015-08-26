@@ -98,7 +98,7 @@
   }
 
   &__tooltip-title {
-    @include bold-text();
+    font-weight: bold;
   }
 
   &__tooltip-text {

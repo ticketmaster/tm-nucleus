@@ -1,9 +1,4 @@
 // mixins
-@mixin bold-text($weight: $bold-weight) {
-  font-weight: $weight;
-}
-
-
 @mixin responsive-font($set: 'md', $lh: false) {
   $pint: fetch-font($set);
 
@@ -42,18 +37,26 @@
 }
 
 
-@mixin hdg-text($set, $color: $brand-gray, $mb: 5px) {
-  @include bold-text();
+@mixin hdg-text($set, $color: $brand-gray, $mb: $header-margin) {
   @include responsive-font($set);
 
   margin-bottom: $mb;
+
+  font-weight: bold;
   color: $color;
+
+  @include breakpoint($bp-md) {
+    margin-bottom: $mb * 2;
+  }
 }
 
 
-@mixin alt-copy($set: 'sm') {
-  @include responsive-font($set);
-
-  font-weight: normal;
-  color: $brand-gray2;
+@mixin alt-copy($set: false) {
+  @if not $set {
+    font-weight: normal;
+    color: $brand-gray2;
+  }
+  @else {
+    @include responsive-font($set);
+  }  
 }

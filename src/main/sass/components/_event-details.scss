@@ -13,7 +13,7 @@
 
   &__datevenue-title {
     @include responsive-font('md');
-    @include bold-text();
+    font-weight: bold;
 
     white-space: nowrap;
 
@@ -188,7 +188,7 @@
   }
 
   &__heading {
-    @include bold-text();
+    font-weight: bold;
     @include responsive-font('sm');
   }
 

@@ -1,9 +1,9 @@
 @import 'accessible-seating';
+@import 'alt-copy';
 @import 'badge';
 @import 'button';
 @import 'button-aux';
 @import 'button-outlined';
-@import 'copy';
 @import 'datestamp';
 @import 'debug-info';
 @import 'delimited-list';
@@ -16,6 +16,9 @@
 @import 'event-header';
 @import 'footer';
 @import 'header';
+@import 'heading-primary';
+@import 'heading-secondary';
+@import 'heading-section';
 @import 'input-group';
 @import 'ism';
 @import 'login';
@@ -45,6 +48,7 @@
 @import 'ticket-stub';
 @import 'toaster';
 @import 'toggle-module';
+@import 'truncate-text';
 @import 'tooltip';
 @import 'unbutton';
 @import 'waiting-list';

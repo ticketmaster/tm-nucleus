@@ -60,7 +60,7 @@
   }
 
   &__sub-item-title {
-    @include bold-text();
+    font-weight: bold;
   }
 
   &__sub-item-desc {

@@ -102,7 +102,7 @@
   }
 
   &__heading {
-    @include hdg-text($hdg-primary-font-size, $brand-gray);
+    @include hdg-text('xxl', $brand-gray);
 
     display: inline-block;
     margin-bottom: 0;

@@ -33,15 +33,15 @@ $sg-spacing: 1.5em;
 
 .sg-section {
   @include span(full);
-  @include content-spacing();
+  @include content-spacing($spacing-lg);
   @include responsive-font('md');
 
-  padding-bottom: $vertical-spacing-sm;
+  padding-bottom: $spacing-lg;
 
   border-bottom: $dark-border-style;
 
   @include breakpoint($bp-md) {
-    padding-bottom: $vertical-spacing-lg;
+    padding-bottom: $spacing-lg * 1.5;
   }
 
   + .sg-section {
@@ -69,7 +69,7 @@ $sg-spacing: 1.5em;
 .sg-subhdg {
   @include responsive-font('md');
 
-  margin: 20px 0 5px;
+  margin-bottom: 5px;
 
   color: $sg-subhdg-color;
   text-transform: uppercase;
@@ -98,7 +98,7 @@ $sg-spacing: 1.5em;
 
 
 .sg-table {
-  margin-bottom: $sg-spacing;
+  @include content-spacing($spacing-md);
 
   @include breakpoint($bp-md) {
     display: inline-block;
@@ -118,6 +118,8 @@ $sg-spacing: 1.5em;
 .sg-typography-table {
   td {
     padding: 5px 10px;
+
+    vertical-align: top;
   }
 
   tr:nth-child(even) {
@@ -133,7 +135,7 @@ $sg-spacing: 1.5em;
 
 
 .sg-table-hdg {
-  @include bold-text();
+  font-weight: bold;
 
   text-align: left;
 }
@@ -155,16 +157,16 @@ $sg-spacing: 1.5em;
 // sample code style
 .sg-sample-code {
   @include code-style();
+  @include content-spacing($spacing-md);
 
   padding: 0 gutter();
-  margin-bottom: $sg-spacing;
   clear: both;
 
   background: $brand-gray4;
 
   &:before {
     @include responsive-font('sm');
-    @include bold-text();
+    font-weight: bold;
 
     display: block;
     padding: 5px 10px;
@@ -270,8 +272,6 @@ $sg-spacing: 1.5em;
 
     font-size: $size;
     line-height: calc-lh($size);
-
-    vertical-align: top;
   }
 
   .sg-#{$name}-font-size-quart {
@@ -279,8 +279,6 @@ $sg-spacing: 1.5em;
 
     font-size: $size;
     line-height: calc-lh($size);
-
-    vertical-align: top;
   }
 
   @if ($name != 'xs') {
@@ -289,8 +287,6 @@ $sg-spacing: 1.5em;
 
       font-size: $size;
       line-height: calc-lh($size);
-
-      vertical-align: top;
     }
   }
 
@@ -299,10 +295,13 @@ $sg-spacing: 1.5em;
   }
 }
 
+.sg-font-usage {
+  @include responsive-font('sm');
+}
 
 // text styles
 .sg-ex-bold {
-  @include bold-text();
+  font-weight: bold;
 }
 
 

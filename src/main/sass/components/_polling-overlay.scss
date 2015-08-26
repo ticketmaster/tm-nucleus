@@ -11,7 +11,7 @@ $container-half-height: 88px;
   }
 
   &__element-group {
-    @include content-spacing(-10px, -10px);
+    @include content-spacing-old(-10px, -10px);
 
     position: relative;
 

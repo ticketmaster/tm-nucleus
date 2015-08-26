@@ -14,6 +14,7 @@ $bold-weight: 700;
 $bold-letter-spacing : -0.025em;
 $base-line-height: 1.4;
 $header-line-height: 1.2;
+$header-margin: 10px;
 
 
 // Default font sizes
@@ -57,6 +58,17 @@ $font-size-factor: 0.2;
   @return $lh;
 }
 
+@function fetch-font($set, $size: 'pint') {
+  @return map-get(map-get($font-sizes, $set), $size);
+}
+
+// convert px to em
+@function em($px, $context: $default-font-size) {
+  @if ($px == 0) { @return 0; }
+  @return $px / $context * 1em;
+}
+
+
 // base font sizes; DO NOT use these variables elsewhere
 $base-xs-font: 1rem;
 $base-sm-font: 1.2rem;
@@ -97,32 +109,9 @@ $font-sizes: (
   )
 );
 
-@function fetch-font($set, $size: 'pint') {
-  @return map-get(map-get($font-sizes, $set), $size);
-}
-
-
-
-
-// *****************************************************
-
-// convert px to em
-@function em($px, $context: $default-font-size) {
-  @if ($px == 0) { @return 0; }
-  @return $px / $context * 1em;
-}
-
-
-// Headings
-$hdg-primary-font-size: xl;
-$hdg-secondary-font-size: xl;
-$hdg-section-font-size: md;
-
 
 // Other font sizes
 $body-font-size: $base-md-font;
-$button-font-size: 1.6rem;
-$button-font-size-sm: 1.4rem;
 $min-input-font-size: 1.6rem; // min required to avoid iOS zooming
 
 
@@ -153,7 +142,7 @@ h6 {
 }
 
 p {
-  margin: 0 0 1.5rem;
+  margin: 0 0 1em;
 }
 
 strong {

@@ -321,6 +321,54 @@
               30px font size
             </td>
           </tr>
+          <tr>
+            <td class="sg-typography-bp">
+              Usage
+            </td>
+            <td class="sg-font-usage">
+              <ul class="sg-list">
+                <li>Legal copy</li>
+              </ul>
+            </td>
+            <td class="sg-font-usage">
+              <ul class="sg-list">
+                <li>Tooltip copy</li>
+                <li>Labels</li>
+                <li>List items</li>
+              </ul>
+            </td>
+            <td class="sg-font-usage">
+              <ul class="sg-list">
+                <li>Body copy</li>
+                <li>Small auxiliary buttons</li>
+                <li>Event subheader</li>
+              </ul>
+            </td>
+            <td class="sg-font-usage">
+              <ul class="sg-list">
+                <li>Subheaders</li>
+                <li>Auxiliary buttons</li>
+                <li>Lightbox headers</li>
+                <li>Form fields</li>
+                <li>Tile fields</li>
+                <li>Ticket types (Filters)</li>
+              </ul>
+            </td>
+            <td class="sg-font-usage">
+              <ul class="sg-list">
+                <li>Event header</li>
+                <li>Qty (Filters)</li>
+                <li>Price (Filters)</li>
+                <li>Sec, Row, Seat (ISM tooltips)</li>
+                <li>Ticket bag</li>
+              </ul>
+            </td>
+            <td class="sg-font-usage">
+              <ul class="sg-list">
+                <li>Primary headers</li>
+              </ul>
+            </td>
+          </tr>
         </table>
         <p>And here they are displayed responsively (resize browser window to see):</p>
         <table class="sg-table">
@@ -353,7 +401,7 @@
         <h3 class="sg-subhdg">Fixed font sizes</h3>
         <p>In the rare case of using a fixed font size, use our <code class="sg-code">fixed-font()</code> mixin.</p>
         <p>It defaults to the <code class="sg-code">md</code> font size. You can override this by passing in a size parameter.</p>
-        <p>Note that fixed font sizes are based on the mobile breakpoint (<code class="sg-code">375px - 719px</code>), as indicated in the previous section.</p>
+        <p>Note that fixed font sizes are based on the mobile breakpoint sizes (<code class="sg-code">375px - 719px</code>), as indicated in the previous section.</p>
 
         <table class="sg-table">
           <tr>
@@ -438,33 +486,39 @@
         <h2 class="sg-hdg">Text Styles</h2>
         <table class="sg-table">
           <tr>
-            <td><span class="heading-primary">Primary Headers</span></td>
-            <td><span class="alt-copy">18px/20px/24px, 5px bottom margin, sierra</span></td>
+            <td><h1 class="heading-primary">Primary Header</h1></td>
+            <td><span class="alt-copy">xx-large, 10px/20px bottom margin, bold, sierra</span></td>
             <td><code class="sg-code">.heading-primary</code></td>
           </tr>
           <tr>
-            <td><span class="heading-secondary">Secondary Headers</span></td>
-            <td><span class="alt-copy">18px/20px, 5px bottom margin, cascade</span></td>
+            <td><h2 class="heading-secondary">Secondary Headers</h2></td>
+            <td><span class="alt-copy">large, 10/20px bottom margin, bold, sierra</span></td>
             <td><code class="sg-code">.heading-secondary</code></td>
           </tr>
           <tr>
-            <td><span class="sg-ex-bold">Bold text</span></td>
-            <td><span class="alt-copy">-25 tracking</span></td>
-            <td><code class="sg-code">@include bold-text()</code></td>
+            <td class="sg-lg-font-size-responsive">Large body copy</td>
+            <td><span class="alt-copy">large, sierra</span></td>
+            <td>n/a</td>
           </tr>
           <tr>
-            <td><span class="sg-ex-link"><a href="#">Link text</a></span></td>
-            <td><span class="alt-copy">#034678, underline on hover</span></td>
+            <td>Normal body copy</td>
+            <td><span class="alt-copy">medium, sierra</span></td>
+            <td>applied on <code class="sg-code">.page__content</code></td>
           </tr>
           <tr>
             <td><span class="alt-copy">Alt copy</span></td>
-            <td><span class="alt-copy">12px/14px, cascade</span></td>
+            <td><span class="alt-copy">size is based on context, cascade</span></td>
             <td><code class="sg-code">.alt-copy</code></td>
           </tr>
           <tr>
-            <td><span class="legal-copy">Legal copy</span></td>
-            <td><span class="alt-copy">10px/12px, cascade</span></td>
+            <td class="sg-xs-font-size-responsive"><span class="legal-copy">Legal copy</span></td>
+            <td><span class="alt-copy">extra small, cascade</span></td>
             <td><code class="sg-code">.legal-copy</code></td>
+          </tr>
+          <tr>
+            <td><span class="sg-ex-link"><a href="#">Link text</a></span></td>
+            <td><span class="alt-copy">underline on hover, pacific</span></td>
+            <td><code class="sg-code">&lt;a&gt;</code></td>
           </tr>
         </table>
 
@@ -473,7 +527,7 @@
           to achieve the desired appearance.</p>
         <h4 class="sg-subhdg2">hdg-text mixin</h4>
         <p>The <code class="sg-code">hdg-text()</code> mixin can be used to create heading text
-          that's bold with a bottom margin of 5px. It is called by passing in a font-size and color.
+          that's bold with a bottom margin of <code class="sg-code">10px/20px</code>. It is called by passing in a font-size and color.
           It will automatically make the font responsive via a built-in call to the
           <code class="sg-code">responsive-font()</code> mixin.</p>
         <pre class="sg-sample-code">
@@ -484,10 +538,9 @@
 
 // output
 .some-heading {
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  font-size: 14px;
   margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: bold;
   color: #000;
 }
 
@@ -499,27 +552,17 @@
         </pre>
         <h4 class="sg-subhdg2">alt-copy mixin</h4>
         <p>The <code class="sg-code">alt-copy()</code> mixin can optionally be called with
-          a font-size parameter. By default, it sets font-size to
-          <code class="sg-code">sm</code>. It will automatically make the font
-          responsive via a built-in call to the <code class="sg-code">responsive-font()</code>
-          mixin.</p>
+          a font-size parameter. By default, font size is not specified and is based on the surrounding font size.</p>
         <pre class="sg-sample-code">
 // scss
 .ticket-fees {
-  <span class="sg-highlight-code">@include alt-copy('md');</span>
+  <span class="sg-highlight-code">@include alt-copy();</span>
 }
 
 // output
 .ticket-fees {
-  font-size: 14px;
   font-weight: normal;
-  color: #999;
-}
-
-@media (min-width: 45em) {
-  .ticket-fees {
-    font-size: 16px;
-  }
+  color: #768692;
 }
         </pre>
 
@@ -713,7 +756,7 @@
           </tr>
           <tr>
             <td><button class="unbutton">Unstyled button</button></td>
-            <td><code class="sg-code">.unbutton</code>, looks like normal link text</td>
+            <td><code class="sg-code">.unbutton</code>, looks like normal link text (needed for accessibility purposes)</td>
           </tr>
         </table>
 

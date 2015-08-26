@@ -1,6 +1,6 @@
 .datestamp {
   @include fixed-font('md', 1);
-  @include bold-text();
+  font-weight: bold;
 
   display: inline-flex;
   height: 5.5rem;

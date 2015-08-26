@@ -93,7 +93,7 @@
   }
 
   &__order-amt-header {
-    @include bold-text();
+    font-weight: bold;
     @include hdg-text('xl');
   }
 

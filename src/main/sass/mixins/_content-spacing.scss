@@ -1,5 +1,15 @@
+@mixin content-spacing($val) {
+  margin-bottom: $val;
+
+  @include breakpoint($bp-md) {
+    margin-bottom: $val * 1.5;
+  }
+}
+
+
+
 // set vertical spacing for major content blocks on a page
-@mixin content-spacing($sm: $vertical-spacing-sm, $lg: $vertical-spacing-lg) {
+@mixin content-spacing-old($sm: $vertical-spacing-sm, $lg: $vertical-spacing-lg) {
   margin-bottom: $sm;
 
   @include breakpoint($bp-md) {

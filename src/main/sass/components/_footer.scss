@@ -333,7 +333,7 @@ $footer-stacked-spacing: 15px;
 .footer__tou {
   @include span(9 of 12);
   @include fixed-font('sm');
-  @include bold-text();
+  font-weight: bold;
   
   margin-top: 10px;
 

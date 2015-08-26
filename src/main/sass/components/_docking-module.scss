@@ -70,7 +70,7 @@
   }
 
   &__anchor-info {
-    @include bold-text();
+    font-weight: bold;
 
     @include breakpoint($max: $bp-lg - 1) {
       width: 50%;
