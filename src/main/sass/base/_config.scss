@@ -1,3 +1,7 @@
+@function increase-spacing($val) {
+  @return $val * $spacing-ratio;
+}
+
 // Misc
 $base-border-radius: 3px;
 $box-shadow-style: 0 2px 6px 0 $box-shadow-color;
@@ -24,6 +28,7 @@ $ticket-bag-padding: 10px;
 $spacing-lg: 30px;
 $spacing-md: 20px;
 $spacing-sm: 10px;
+$spacing-ratio: 1.5;
 
 // old stuff
 $vertical-spacing-sm: 20px;

@@ -24,6 +24,38 @@ $sg-spacing: 1.5em;
 
 .sg-header {
   @include span(full);
+  @include content-spacing($spacing-lg);
+
+  padding-top: $spacing-md;
+  padding-bottom: $spacing-sm;
+
+  background-color: $brand-primary;
+
+  @include breakpoint($bp-md) {
+    padding-top: increase-spacing($spacing-md);
+    padding-bottom: increase-spacing($spacing-sm);
+  }
+}
+
+.sg-tm-logo {
+  width: 220px;
+  height: 30px;
+
+  fill: $white;
+
+  @include breakpoint($bp-md) {
+    width: 240px;
+    height: 35px;
+  }
+}
+
+.sg-name {
+  @include responsive-font('md');
+
+  padding-top: 1rem;
+
+  font-weight: bold;
+  color: $white;
 }
 
 .sg-title {
