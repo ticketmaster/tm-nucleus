@@ -210,9 +210,11 @@ $sg-spacing: 1.5em;
 
 
 .sg-table-hdg {
-  font-weight: bold;
+  padding: 0 20px 5px 0;
 
+  font-weight: bold;
   text-align: left;
+  white-space: nowrap;
 }
 
 .sg-typography-hdg {

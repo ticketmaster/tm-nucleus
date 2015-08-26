@@ -982,14 +982,34 @@
       </section>
 
       <section id="spacing" class="sg-section">
-        <h2 class="sg-hdg">Content Spacing</h2>
-        <p>All major page elements have standard vertical spacing that is applied as bottom margin of
-          <code class="sg-code">20px</code> on mobile and <code class="sg-code">40px</code> on tablet/desktop.</p>
-        <p>Reference the <code class="sg-code">content-spacing()</code> mixin to apply the margins to your class.</p>
+        <h2 class="sg-hdg">Spacing</h2>
+        <p>Spacing between page elements is standardized on three different sets of values as follows:</p>
+        <table class="sg-table">
+          <tr>
+            <th class="sg-table-hdg">&le; 719px</th>
+            <th class="sg-table-hdg">&ge; 720px</th>
+          </tr>
+          <tr>
+            <td>10px</td>
+            <td>15px</td>
+            <td><code class="sg-code">@include content-spacing($spacing-sm)</code></td>
+          </tr>
+          <tr>
+            <td>20px</td>
+            <td>30px</td>
+            <td><code class="sg-code">@include content-spacing($spacing-md)</code></td>
+          </tr>
+          <tr>
+            <td>30px</td>
+            <td>45px</td>
+            <td><code class="sg-code">@include content-spacing($spacing-lg)</code></td>
+          </tr>
+        </table>
+        <p>Note that spacing values increase proportionately at a ratio of 1.5 from small to large screens.</p>
         <pre class="sg-sample-code">
 // scss
 .major-block {
-  <span class="sg-highlight-code">@include content-spacing();</span>
+  <span class="sg-highlight-code">@include content-spacing($spacing-md);</span>
 }
 
 // output
@@ -998,7 +1018,7 @@
 }
 
 @media (min-width: 45em) {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
         </pre>
       </section>
