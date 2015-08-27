@@ -7,7 +7,11 @@
 }
 
 @mixin inner-spacing($val) {
+  padding-top: $val;
 
+  @include breakpoint($bp-md) {
+    padding: increase-spacing($val);
+  }
 }
 
 @mixin inner-spacing-all($val) {

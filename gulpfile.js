@@ -28,7 +28,7 @@ gulp.task('sass', ['clean'], function() {
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([
         autoprefixer({
-          browsers: ['last 2 versions']
+          browsers: ['last 2 versions', 'ie >= 9']
         })
       ]))
     .pipe(sourcemaps.write())

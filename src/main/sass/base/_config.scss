@@ -2,27 +2,6 @@
   @return $val * $spacing-ratio;
 }
 
-// Misc
-$base-border-radius: 3px;
-$box-shadow-style: 0 2px 6px 0 $box-shadow-color;
-$inner-shadow-style: inset 0 1px 3px 0 $box-shadow-color;
-$event-image-size: 205px;
-$qp-width-lg: 360px;
-$ticket-bag-ht: 70px;   // approximate; needed by map/list toaster button
-$footer-height: 2.8rem;
-
-
-// Modules
-$module-padding-sm: 15px;
-$module-padding-lg: 20px;
-$module-border-radius: $base-border-radius * 2;
-$module-shadow-style: $box-shadow-style;
-
-
-// Ticket Bag
-$ticket-bag-padding: 10px;
-
-
 // Spacing
 // control spacing of major content areas on a page
 $spacing-lg: 30px;
@@ -30,20 +9,21 @@ $spacing-md: 20px;
 $spacing-sm: 10px;
 $spacing-ratio: 1.5;
 
-// old stuff
-$vertical-spacing-sm: 20px;
-$vertical-spacing-lg: 40px;
+// Borders
+$base-border-style: 1px solid $brand-gray3;
+$focused-border-style: 1px solid $brand-primary;
+$error-border-style: 1px solid $brand-alert;
+$outline-style: 3px solid $brand-primary-lighter;
+$tile-list-item-selected-style: 2px solid $brand-primary;
 
-// control spacing between sections of content
-$content-vspace-sm: $module-padding-sm;
-$content-vspace-lg: $module-padding-lg;
-$content-vspace-legal-sm: $content-vspace-sm * 2;
-$content-vspace-legal-lg: $content-vspace-lg * 2;
-
-// control spacing of form elements
-$form-label-vspace: 10px;
-$input-group-vspace: 10px;
-
+// Radius and shadows
+$base-border-radius: 3px;
+$shadow-x: 0;
+$shadow-y: 1px;
+$shadow-blur: 4px;
+$shadow-spread: 0;
+$box-shadow-style: $shadow-x $shadow-y $shadow-blur $shadow-spread $shadow-color;
+$inner-shadow-style: inset 0 1px 3px 0 $shadow-color;
 
 // Buttons
 $button-height: 44px;
@@ -56,14 +36,37 @@ $button-top-offset: 3px;
 // Auxiliary Buttons
 $button-aux-radius: 25px;
 
+// Sizes
+$tooltip-caret: 16px;
+$event-image-size: 205px;
+$qp-width-lg: 360px;
+$ticket-bag-ht: 70px;   // approximate; needed by map/list toaster button
+$footer-height: 2.8rem;
 
-// Border Styles
-$base-border-style: 1px solid $brand-gray3;
-$focused-border-style: 1px solid $brand-primary;
-$error-border-style: 1px solid $brand-alert;
-$outline-style: 3px solid $brand-primary-lighter;
-$tile-list-item-selected-style: 2px solid $brand-primary;
 
+// old stuff
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$vertical-spacing-sm: 20px;
+$vertical-spacing-lg: 40px;
+
+// Modules
+$module-padding-sm: 15px;
+$module-padding-lg: 20px;
+$module-border-radius: $base-border-radius * 2;
+$module-shadow-style: $box-shadow-style;
+
+// control spacing between sections of content
+$content-vspace-sm: $module-padding-sm;
+$content-vspace-lg: $module-padding-lg;
+$content-vspace-legal-sm: $content-vspace-sm * 2;
+$content-vspace-legal-lg: $content-vspace-lg * 2;
+
+// control spacing of form elements
+$form-label-vspace: 10px;
+$input-group-vspace: 10px;
+
+// Ticket Bag
+$ticket-bag-padding: 10px;
 
 // Animation
 $text-enter: all 0.5s ease-in;

@@ -1,0 +1,17 @@
+// Use to create drop-shadow effect for irregular shaped objects.
+// For normal box-shaped objects, use the regular box-shadow CSS3 property
+// For more info, see: http://thenewcode.com/600/Creating-a-True-Cross-Browser-Drop-Shadow-Effect-With-CSS3-/blog/600/Creating-a-True-Cross-Browser-Drop-Shadow-Effect-With-CSS-amp-SVG-SVG
+
+@mixin drop-shadow($x: $shadow-x, $y: $shadow-y, $blur: $shadow-blur, $spread: $shadow-spread, $color: $shadow-color) {
+  // IE8-9
+  -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=#{$x}, OffY=#{$y}, Color='#{$color}')";
+
+  // modern browsers
+  filter: drop-shadow($x $y $blur $color);
+  // box-shadow: $x $y $blur $spread $color;
+
+  // IE10+
+  @include target-ie() {
+    box-shadow: $x $y $blur 1px $color;
+  }
+}
