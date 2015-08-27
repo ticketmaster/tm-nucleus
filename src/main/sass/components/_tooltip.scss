@@ -21,61 +21,70 @@
     transform: rotate(45deg);
     content: '';
 
+    // IE doesn't understand CSS filter, so we need to add border to visually
+    // distinguish the caret
     @include target-ie() {
       border-right: 2px solid get-lighter($brand-gray2, 50%);
       border-bottom: 2px solid get-lighter($brand-gray2, 50%);
     }
-  }
 
-}
+    @include breakpoint($bp-md) {
+      bottom: -($tooltip-caret-lg / 2);
 
-.tooltip-b {
-  @include drop-shadow();
-
-  position: relative;
-
-  margin-top: 30px;
-
-  background-color: $white;
-  border-radius: $base-border-radius;
-
-  &:before {
-    position: absolute;
-    bottom: -($tooltip-caret + 1);
-    left: 50%;
-
-    display: block;
-    width: 0;
-    margin-left: -10px;
-
-    border-color: get-lighter($brand-gray2, 50%) $transparent-color;
-    border-style: solid;
-    border-width: ($tooltip-caret + 1) 10px 0;
-
-    content: '';
-  }
-
-  // shadow shape
-  @include target-ie() {
-  }
-
-  // caret
-  &:after {
-    position: absolute;
-    bottom: -($tooltip-caret - 1);
-    left: 50%;
-
-    display: block;
-    width: 0;
-    margin-left: -($tooltip-caret / 2);
-
-    border-color: $white $transparent-color;
-    border-style: solid;
-    border-width: $tooltip-caret ($tooltip-caret / 2) 0;
-
-    content: '';
+      height: $tooltip-caret-lg;
+      width: $tooltip-caret-lg;
+      margin-left: -($tooltip-caret-lg / 2);
+    }
   }
 }
+
+// .tooltip-b {
+//   @include drop-shadow();
+//
+//   position: relative;
+//
+//   margin-top: 30px;
+//
+//   background-color: $white;
+//   border-radius: $base-border-radius;
+//
+//   &:before {
+//     position: absolute;
+//     bottom: -($tooltip-caret + 1);
+//     left: 50%;
+//
+//     display: block;
+//     width: 0;
+//     margin-left: -10px;
+//
+//     border-color: get-lighter($brand-gray2, 50%) $transparent-color;
+//     border-style: solid;
+//     border-width: ($tooltip-caret + 1) 10px 0;
+//
+//     content: '';
+//   }
+//
+//   // shadow shape
+//   @include target-ie() {
+//   }
+//
+//   // caret
+//   &:after {
+//     position: absolute;
+//     bottom: -($tooltip-caret - 1);
+//     left: 50%;
+//
+//     display: block;
+//     width: 0;
+//     margin-left: -($tooltip-caret / 2);
+//
+//     border-color: $white $transparent-color;
+//     border-style: solid;
+//     border-width: $tooltip-caret ($tooltip-caret / 2) 0;
+//
+//     content: '';
+//   }
+// }
 
 .tooltip__content {
   @include inner-spacing($spacing-sm);

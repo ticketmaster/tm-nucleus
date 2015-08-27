@@ -3,15 +3,18 @@
 // For more info, see: http://thenewcode.com/600/Creating-a-True-Cross-Browser-Drop-Shadow-Effect-With-CSS3-/blog/600/Creating-a-True-Cross-Browser-Drop-Shadow-Effect-With-CSS-amp-SVG-SVG
 
 @mixin drop-shadow($x: $shadow-x, $y: $shadow-y, $blur: $shadow-blur, $spread: $shadow-spread, $color: $shadow-color) {
+
+  // CSS3 drop-shadow filter renders differently, so we need to halve the value
+  $modern-blur: $blur / 2;
+
   // IE8-9
   -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=#{$x}, OffY=#{$y}, Color='#{$color}')";
 
   // modern browsers
-  filter: drop-shadow($x $y $blur $color);
-  // box-shadow: $x $y $blur $spread $color;
+  filter: drop-shadow($x $y $modern-blur $color);
 
   // IE10+
   @include target-ie() {
-    box-shadow: $x $y $blur 1px $color;
+    box-shadow: $x $y $blur $spread $color;
   }
 }

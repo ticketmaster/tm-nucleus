@@ -3,7 +3,7 @@
 
   background-color: $white;
   border-radius: $module-border-radius;
-  box-shadow: $module-shadow-style;
+  box-shadow: $box-shadow-style;
 
   &__content {
     @include clearfix();
