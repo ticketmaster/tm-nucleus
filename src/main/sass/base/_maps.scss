@@ -45,10 +45,6 @@ $sprites: (
   )
 );
 
-@function spriterite($sprite, $img) {
-  @return map-get(map-get($sprites, $sprite), $img);
-}
-
 
 // z-indexes
 $z-indexes: (
@@ -70,9 +66,3 @@ $z-indexes: (
   'overlay': 9999,
   'arrow': 1
 );
-
-// there should an overlay z-index and an overlay-content z-index
-
-@function z($level) {
-  @return map-get($z-indexes, $level);
-}

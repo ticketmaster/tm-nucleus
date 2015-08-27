@@ -23,52 +23,6 @@ $base-font-size: 62.5%;   // == 10px
 $font-size-factor: 0.2;
 
 
-// Functions
-@function get-quart-size($num) {
-  @return $num + $font-size-factor;
-}
-
-@function get-gallon-size($num) {
-  @return $num + ($font-size-factor * 2);
-}
-
-@function strip-units($num) {
-  @return $num / ($num * 0 + 1);
-}
-
-@function get-lh($font, $lh) {
-  @if not $lh {
-    $val: calc-lh($font);
-  }
-  @else {
-    $val: $lh;
-  }
-
-  @return $val;
-}
-
-@function calc-lh($font-size) {
-  @if ($font-size < 1.8) {
-    $lh: $base-line-height;
-  }
-  @else {
-    $lh: $header-line-height;
-  }
-
-  @return $lh;
-}
-
-@function fetch-font($set, $size: 'pint') {
-  @return map-get(map-get($font-sizes, $set), $size);
-}
-
-// convert px to em
-@function em($px, $context: $default-font-size) {
-  @if ($px == 0) { @return 0; }
-  @return $px / $context * 1em;
-}
-
-
 // base font sizes; DO NOT use these variables elsewhere
 $base-xs-font: 1rem;
 $base-sm-font: 1.2rem;

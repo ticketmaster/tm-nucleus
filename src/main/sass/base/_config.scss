@@ -1,7 +1,3 @@
-@function increase-spacing($val) {
-  @return $val * $spacing-ratio;
-}
-
 // Spacing
 // control spacing of major content areas on a page
 $spacing-lg: 30px;

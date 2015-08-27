@@ -1,18 +1,5 @@
 // TM Color Palette
 // scss-lint:disable ColorVariable
-@function get-darker($color, $percent: 25%) {
-  @return mix(#000, $color, $percent);
-}
-
-@function get-lighter($color, $percent: 75%) {
-  @return mix(#fff, $color, $percent);
-}
-
-// return hex value associated with name
-@function color($name, $shade) {
-  @return map-get(map-get($palette, $name), $shade);
-}
-
 
 // base colors
 $brand-primary:  #009cde;
