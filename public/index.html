@@ -50,6 +50,7 @@
         <li><a href="#srs">Sec-Row-Seat</a></li>
         <li><a href="#layout">Layout Patterns</a></li>
         <li><a href="#badges">Badges</a></li>
+        <li><a href="#timer">Timer</a></li>
         <li><a href="#toasters">Toasters</a></li>
         <li><a href="#form-elements">Form Elements</a></li>
         <li><a href="#panels">Panels</a></li>
@@ -1660,6 +1661,60 @@
             <td><code class="sg-code">.toaster .toaster--button</code></td>
           </tr>
         </table>
+      </section>
+
+      <section id="tooltips" class="sg-section">
+        <h2 class="sg-hdg">Tooltips</h2>
+        <p>Note: Tooltips will move position when near the edge of the viewport.</p>
+        <div id="tooltip-container"></div>
+      </section>
+
+      <section id="timer" class="sg-section">
+          <style>
+            .timer__animate {
+                animation-duration: 35s;
+            }
+          </style>
+        <h2 class="sg-hdg">Timer</h2>
+        <div class="timer">
+          <div class="is-offscreen">Time left to complete page.</div>
+          <div class="timer__indicator">13:49</div>
+          <div class="timer__spinner timer__animate"></div>
+          <div class="timer__filler timer__animate"></div>
+          <div class="timer__bg"></div>
+          <div class="timer__mask timer__animate"></div>
+        </div>
+
+        <hr>
+
+        <p>With top/bottom 35px padding and left/right 20px</p>
+        <div class="sg-timer-wrapper">
+          <div class="timer">
+            <div class="is-offscreen">Time left to complete page.</div>
+            <div class="timer__indicator">13:49</div>
+            <div class="timer__spinner timer__animate"></div>
+            <div class="timer__filler timer__animate"></div>
+            <div class="timer__bg"></div>
+            <div class="timer__mask timer__animate"></div>
+            </div>
+        </div>
+        <pre class="sg-sample-code">
+&lt;div class="timer">
+  &lt;div class="is-offscreen">Time left to complete page.&lt;/div>
+  &lt;div class="timer__indicator">13:49&lt;/div>
+  &lt;div class="timer__spinner timer__animate">&lt;/div>
+  &lt;div class="timer__filler timer__animate">&lt;/div>
+  &lt;div class="timer__bg">&lt;/div>
+  &lt;div class="timer__mask timer__animate">&lt;/div>
+&lt;/div>
+
+&lt;style>
+  // to override default animation duration (i.e. 5s)
+  .timer__animate {
+      animation-duration: 35s;
+  }
+&lt;/style>
+        </pre>
       </section>
 
       <section id="form-elements" class="sg-section">

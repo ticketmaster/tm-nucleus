@@ -1,0 +1,15 @@
+@mixin timer-base() {
+  position: absolute;
+
+  width: 50%;
+  height: 100%;
+
+  transform-origin: 100% 50%;
+  background-color: $timer-bg-color;
+  border: $timer-border-on;
+
+  @include breakpoint($bp-lg) {
+    border-width: 6px;
+  }
+}
+
