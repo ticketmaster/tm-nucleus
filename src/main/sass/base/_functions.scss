@@ -49,7 +49,6 @@
   @else {
     $val: $lh;
   }
-
   @return $val;
 }
 
@@ -61,7 +60,6 @@
   @else {
     $lh: $header-line-height;
   }
-
   @return $lh;
 }
 
@@ -74,4 +72,26 @@
 @function em($px, $context: $default-font-size) {
   @if ($px == 0) { @return 0; }
   @return $px / $context * 1em;
+}
+
+// determine tooltip offset direction
+@function get-tooltip-offset-direction($pos) {
+  @if ($pos == 'top' or $pos == 'bottom') {
+    $offset: 'left';
+  }
+  @else {
+    $offset: 'top';
+  }
+  @return $offset;
+}
+
+// calculate tooltip offset
+@function get-tooltip-offset($pos, $size) {
+  @if ($pos == 'left') {
+    $val: 0;
+  }
+  @else {
+    $val: -($size / 2);
+  }
+  @return $val;
 }

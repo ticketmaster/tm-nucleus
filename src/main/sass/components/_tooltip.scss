@@ -1,43 +1,50 @@
 .tooltip {
   @include drop-shadow();
+  @include tooltip-position('bottom');
 
   position: relative;
 
-  background-color: $white;
+  background-color: $tooltip-color;
   border-radius: $base-border-radius;
 
   &:after {
     position: absolute;
-    bottom: -($tooltip-caret / 2);
-    left: 50%;
 
     display: block;
     height: $tooltip-caret;
     width: $tooltip-caret;
-    margin-left: -($tooltip-caret / 2);
 
-    background-color: $white;
+    background-color: $tooltip-color;
 
     transform: rotate(45deg);
     content: '';
 
-    // IE doesn't understand CSS filter, so we need to add border to visually
-    // distinguish the caret
-    @include target-ie() {
-      border-right: 2px solid get-lighter($brand-gray2, 50%);
-      border-bottom: 2px solid get-lighter($brand-gray2, 50%);
-    }
-
     @include breakpoint($bp-md) {
-      bottom: -($tooltip-caret-lg / 2);
-
       height: $tooltip-caret-lg;
       width: $tooltip-caret-lg;
-      margin-left: -($tooltip-caret-lg / 2);
     }
   }
 }
 
+.tooltip--right {
+  @include tooltip-position('right');
+}
+
+.tooltip--left {
+  @include tooltip-position('left');
+}
+
+.tooltip--top {
+  @include tooltip-position('top');
+}
+
+.tooltip__content {
+  @include inner-spacing($spacing-sm);
+  @include responsive-font('sm');
+}
+
+
+// Unused tooltip, keeping here temporarily for reference
 // .tooltip-b {
 //   @include drop-shadow();
 //
@@ -85,8 +92,3 @@
 //     content: '';
 //   }
 // }
-
-.tooltip__content {
-  @include inner-spacing($spacing-sm);
-  @include responsive-font('sm');
-}

@@ -1,0 +1,61 @@
+@mixin tooltip-position($pos) {
+  margin-#{$pos}: $tooltip-caret;
+
+  @include breakpoint($bp-md) {
+    margin-#{$pos}: $tooltip-caret-lg;
+  }
+
+  &:after {
+    $direction: get-tooltip-offset-direction($pos);
+
+    // reset positioning attributes first
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+
+    #{$pos}: get-tooltip-offset($pos, $tooltip-caret);
+
+    #{$direction}: 50%;
+
+    margin-#{$direction}: -($tooltip-caret / 2);
+
+    @include breakpoint($bp-md) {
+      #{$pos}: get-tooltip-offset($pos, $tooltip-caret-lg);
+
+      margin-#{$direction}: -($tooltip-caret-lg / 2);
+    }
+
+    // IE doesn't understand CSS filter, so we need to add border to visually
+    // distinguish the caret
+    @include target-ie() {
+      @include tooltip-caret-legacy($pos);
+    }
+  }
+}
+
+
+// for IE because it doesn't understand CSS filter
+@mixin tooltip-caret-legacy($pos) {
+  // reset border first
+  border: 0;
+
+  $caret-border-style: 2px solid get-lighter($brand-gray2, 50%);
+
+  @if ($pos == 'bottom') {
+    border-right: $caret-border-style;
+    border-bottom: $caret-border-style;
+  }
+  @elseif ($pos == 'right') {
+    border-top: $caret-border-style;
+    border-right: $caret-border-style;
+  }
+  @elseif ($pos == 'left') {
+    border-bottom: $caret-border-style;
+    border-left: $caret-border-style;
+  }
+  @else {
+    border-top: 1px solid get-lighter($brand-gray2, 50%);
+    border-left: 1px solid get-lighter($brand-gray2, 50%);
+  }
+}

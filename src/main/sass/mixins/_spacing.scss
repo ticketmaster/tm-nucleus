@@ -7,7 +7,7 @@
 }
 
 @mixin inner-spacing($val) {
-  padding-top: $val;
+  padding: $val;
 
   @include breakpoint($bp-md) {
     padding: increase-spacing($val);
