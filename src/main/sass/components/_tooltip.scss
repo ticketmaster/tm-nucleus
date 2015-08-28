@@ -38,9 +38,23 @@
   @include tooltip-position('top');
 }
 
+.tooltip--ism {
+  width: $ism-tooltip-width;
+
+  @include breakpoint($bp-md) {
+    width: $ism-tooltip-width + 20;
+  }
+}
+
 .tooltip__content {
   @include inner-spacing($spacing-sm);
   @include responsive-font('sm');
+}
+
+.tooltip__srs {
+  @include inner-spacing($bottom: $spacing-sm);
+
+  border-bottom: $base-border-style;
 }
 
 

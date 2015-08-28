@@ -8,7 +8,7 @@ $spacing-ratio: 1.5;
 $base-border-style: 1px solid $brand-gray3;
 $focused-border-style: 1px solid $brand-primary;
 $error-border-style: 1px solid $brand-alert;
-$outline-style: 3px solid $brand-primary-lighter;
+$outline-style: 3px solid $outline-color;
 $tile-list-item-selected-style: 2px solid $brand-primary;
 
 // Radius and shadows
@@ -31,9 +31,10 @@ $button-padding-lg: 40px;
 $button-aux-radius: 25px;
 
 // Sizes
-$ticket-header-min-width: 295px;
+$srs-min-width: 295px;
 $tooltip-caret: 15px;
 $tooltip-caret-lg: 20px;
+$ism-tooltip-width: 315px;
 $event-image-size: 205px;
 $qp-width-lg: 360px;
 $ticket-bag-ht: 70px;   // approximate; needed by map/list toaster button

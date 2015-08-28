@@ -36,7 +36,6 @@
   <div class="page__frame page__content">
 
     <nav class="sg-nav">
-      <h2 class="sg-subhdg">Table of Contents</h2>
       <ol class="sg-list">
         <li><a href="#palette">Color Palette</a></li>
         <li><a href="#typography">Typography</a></li>
@@ -45,10 +44,11 @@
         <li><a href="#grid">Grid</a></li>
         <li><a href="#page-structure">Page Structure</a></li>
         <li><a href="#spacing">Spacing</a></li>
-        <li><a href="#layout">Layout Patterns</a></li>
         <li><a href="#buttons">Buttons</a></li>
+        <li><a href="#lists">Lists</a></li>
         <li><a href="#tooltips">Tooltips</a></li>
-        <li><a href="#ticket-header">Ticket Stub</a></li>
+        <li><a href="#srs">Sec-Row-Seat</a></li>
+        <li><a href="#layout">Layout Patterns</a></li>
         <li><a href="#badges">Badges</a></li>
         <li><a href="#toasters">Toasters</a></li>
         <li><a href="#form-elements">Form Elements</a></li>
@@ -138,21 +138,10 @@
             </div>
           </div>
           <div class="sg-swatch-group">
-            <div class="sg-swatch sg-swatch--monterey"></div>
-            <div class="sg-swatch-info">
-              <span class="sg-swatch-name">monterey <span class="alt-copy">(pacific w/ 75% white)</span></span>
-              <code class="sg-code">$brand-primary-lighter</code>
-              <ul class="sg-list sg-swatch-usage">
-                <li>Outline color (accessibility)</li>
-                <li>Secondary copy in Event Header</li>
-              </ul>
-            </div>
-          </div>
-          <div class="sg-swatch-group">
             <div class="sg-swatch sg-swatch--havasu"></div>
             <div class="sg-swatch-info">
               <span class="sg-swatch-name">havasu <span class="alt-copy">(pacific w/ 90% white)</span></span>
-              <code class="sg-code">$brand-primary-lighter2</code>
+              <code class="sg-code">$brand-primary-lighter</code>
               <ul class="sg-list sg-swatch-usage">
                 <li>Quick Picks hover background</li>
               </ul>
@@ -263,6 +252,8 @@
               <div class="sg-swatch sg-swatch--state sg-swatch--pacific-lighter2"></div>
               <ul class="sg-list sg-swatch-state-usage">
                 <li>Disabled</li>
+                <li>Event header secondary copy</li>
+                <li>Accessibility focus</li>
               </ul>
             </td>
           </tr>
@@ -319,7 +310,7 @@
                 <li>ISM Resale seats outside of search</li>
               </ul>
             </td>
-            <td>
+            <td class="sg-swatch-na">
               n/a
             </td>
           </tr>
@@ -1076,7 +1067,7 @@
 
       </section>
 
-      <section class="sg-section">
+      <section id="lists" class="sg-section">
         <h2 class="sg-hdg">Lists</h2>
 
         <h3 class="sg-subhdg">Delimited Lists</h3>
@@ -1105,6 +1096,36 @@
       Secondy item
     &lt;/li&gt;
     &lt;li class="<span class="sg-highlight-code">delimited-list__item</span>"&gt;
+      Third item
+    &lt;/li&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+
+        <p>There are occasions when separator lines are not desirable on mobile but are needed on desktop (resize to mobile view to see the difference).</p>
+
+        <ul class="delimited-list">
+          <li class="delimited-list__item delimited-list__item--compact">
+            Example 1
+          </li>
+          <li class="delimited-list__item delimited-list__item--compact">
+            Second item
+          </li>
+          <li class="delimited-list__item delimited-list__item--compact">
+            Last item in list
+          </li>
+        </ul>
+
+        <pre class="sg-sample-code">
+&lt;div class="module"&gt;
+  &lt;ul class="delimited-list"&gt;
+    &lt;li class="delimited-list__item <span class="sg-highlight-code">delimited-list__item--compact</span>"&gt;
+      First item
+    &lt;/li&gt;
+    &lt;li class="delimited-list__item <span class="sg-highlight-code">delimited-list__item--compact</span>"&gt;
+      Secondy item
+    &lt;/li&gt;
+    &lt;li class="delimited-list__item <span class="sg-highlight-code">delimited-list__item--compact</span>"&gt;
       Third item
     &lt;/li&gt;
   &lt;/div&gt;
@@ -1148,147 +1169,90 @@
       </section>
 
 
-      <section id="ticket-header" class="sg-section">
-        <h2 class="sg-hdg">Ticket Header</h2>
+      <section id="srs" class="sg-section">
+        <h2 class="sg-hdg">Sec-Row-Seat (SRS)</h2>
 
-        <div class="srs">
-          <span class="srs__label">Sec</span>
-          <span class="srs__value">21</span>
-        </div>
+        <p>This is a visual pattern of displaying Section-Row-Seat (SRS) information, used in ISM tooltips and the checkout confirmation page.</p>
+        <p>The SRS element has a minimum width of <code class="sg-code">295px</code>, which doesn't account for any padding from its container or the page margins.</p>
 
-        <p>Standard ticket header displaying a single ticket</p>
+        <h3 class="sg-subhdg3">Standard ticket header displaying a single ticket</h3>
         <div class="sg-srs">
-          <div class="ticket-header">
-            <div class="ticket-header__srs srs">
+          <div class="srs">
+            <div class="srs__set">
               <span class="srs__label">Sec</span>
               <span class="srs__value">21</span>
             </div>
-            <div class="ticket-header__srs srs">
+            <div class="srs__set">
               <span class="srs__label">Row</span>
               <span class="srs__value">13</span>
             </div>
-            <div class="ticket-header__srs srs">
+            <div class="srs__set">
               <span class="srs__label">Seat</span>
               <span class="srs__value">23</span>
             </div>
           </div>
         </div>
 
-        <p>Non-contiguous seats</p>
+        <h3 class="sg-subhdg3">Non-contiguous seats</h3>
         <div class="sg-srs">
-          <div class="ticket-header">
-            <div class="ticket-header__srs srs">
+          <div class="srs">
+            <div class="srs__set">
               <span class="srs__label">Sec</span>
               <span class="srs__value">21</span>
               <span class="srs__value">21</span>
             </div>
-            <div class="ticket-header__srs srs">
+            <div class="srs__set">
               <span class="srs__label">Row</span>
               <span class="srs__value">13</span>
-              <span class="srs__value">14</span>
+              <span class="srs__value">13</span>
             </div>
-            <div class="ticket-header__srs srs">
+            <div class="srs__set">
               <span class="srs__label">Seat</span>
               <span class="srs__value">23</span>
-              <span class="srs__value">28</span>
+              <span class="srs__value">26</span>
             </div>
           </div>
         </div>
 
-        <p>Seat range</p>
+        <h3 class="sg-subhdg3">Seat range</h3>
         <div class="sg-srs">
-          <div class="ticket-header">
-            <div class="ticket-header__srs srs">
+          <div class="srs">
+            <div class="srs__set">
               <span class="srs__label">Sec</span>
               <span class="srs__value">21</span>
             </div>
-            <div class="ticket-header__srs srs">
+            <div class="srs__set">
               <span class="srs__label">Row</span>
               <span class="srs__value">13</span>
             </div>
-            <div class="ticket-header__srs srs">
+            <div class="srs__set">
               <span class="srs__label">Seat</span>
-              <span class="srs__value">223-225</span>
+              <span class="srs__value">123-125</span>
             </div>
           </div>
         </div>
 
-        <p>Worst case scenario</p>
+        <h3 class="sg-subhdg3">Worst case scenario</h3>
         <div class="sg-srs">
-          <div class="ticket-header">
-            <div class="ticket-header__srs srs">
+          <div class="srs">
+            <div class="srs__set">
               <span class="srs__label">Sec</span>
               <span class="srs__value">Loge12</span>
             </div>
-            <div class="ticket-header__srs srs">
+            <div class="srs__set">
               <span class="srs__label">Row</span>
-              <span class="srs__value">1234</span>
+              <span class="srs__value">1239</span>
             </div>
-            <div class="ticket-header__srs srs">
+            <div class="srs__set">
               <span class="srs__label">Seat</span>
-              <span class="srs__value">1000-1008</span>
+              <span class="srs__value">1809-1813</span>
             </div>
           </div>
         </div>
-
-        <div class="sg-srs">
-          <div class="tooltip">
-            <div class="tooltip__content">
-              <div class="ticket-stub">
-                <div class="ticket-stub__header">
-                  <div class="ticket-stub__seat-info">
-                    <div class="ticket-stub__seat-label">Sec</div>
-                    <div class="ticket-stub__seat-text">213</div>
-                  </div>
-                  <div class="ticket-stub__seat-info">
-                    <div class="ticket-stub__seat-label">Row</div>
-                    <div class="ticket-stub__seat-text">13</div>
-                  </div>
-                  <div class="ticket-stub__seat-info">
-                    <div class="ticket-stub__seat-label">Seat</div>
-                    <div class="ticket-stub__seat-text">23</div>
-                  </div>
-                </div>
-                <div class="ticket-stub__content">Ticket stub content goes here</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </section>
 
       <section id="layout" class="sg-section">
         <h2 class="sg-hdg">Layout Patterns</h2>
-
-        <h3 class="sg-subhdg">Modules</h3>
-        <div class="module">
-          <div class="module__content">
-            <p>This is an example of a module. Its content has <code class="sg-code">15px</code> padding in mobile and <code class="sg-code">20px</code> in tablet/desktop.</p>
-          </div>
-        </div>
-
-        <pre class="sg-sample-code">
-&lt;div class="<span class="sg-highlight-code">module</span>"&gt;
-  &lt;div class="<span class="sg-highlight-code">module__content</span>"&gt;
-    Content goes here.
-  &lt;/div&gt;
-&lt;/div&gt;
-          </pre>
-
-          <p>Note that <code class="sg-code">module__content</code> does not have to be the immediate child of <code class="sg-code">module</code>. It can be applied at any level within a module to give it the appropriate padding.</p>
-
-          <h4 class="sg-subhdg2">Module Variants</h4>
-          <div class="module module--success">
-            <div class="module__content module__content--success-icon">This is an example of a success message module.</div>
-          </div>
-
-          <pre class="sg-sample-code">
-&lt;div class="module <span class="sg-highlight-code">module--success</span>"&gt;
-  &lt;div class="module__content <span class="sg-highlight-code">module__content--success-icon</span>"&gt;
-    Content goes here.
-  &lt;/div&gt;
-&lt;/div&gt;
-        </pre>
 
         <h3 class="sg-subhdg">Split Content</h3>
         <p>This pattern dictates a block of content where one portion (or column) is primary and takes up all available width, while secondary content is only as wide as it needs to be.</p>
@@ -1450,24 +1414,47 @@
 &lt;/div&gt;
         </pre>
 
-        <h3 class="sg-subhdg">Module Content Variants</h3>
-        <p>Certain use cases call for a variant of module content that has no padding in mobile in order to achieve certain design goals. In these cases, add the <code class="sg-code">module__content--flush</code> variant.</p>
+        <h3 class="sg-subhdg">ISM Tooltips</h3>
+        <p>This pattern utilizes <a href="#lists">Delimited List</a>, <a href="#tooltips">Tooltips</a>, and <a href="#srs">SRS</a>.</p>
 
-        <div class="module">
-          <div class="module__content module__content--flush">
-            <p>This is an example of module content with the <code class="sg-code">--flush</code> modifier. It has <code class="sg-code">0</code> padding in mobile and <code class="sg-code">20px</code> in tablet/desktop.</p>
+        <div classs="sg-ism-tooltip">
+          <div class="tooltip tooltip--ism">
+            <div class="tooltip__content">
+              <div class="tooltip__srs srs">
+                <div class="srs__set">
+                  <span class="srs__label">Sec</span>
+                  <span class="srs__value">21</span>
+                </div>
+                <div class="srs__set">
+                  <span class="srs__label">Row</span>
+                  <span class="srs__value">13</span>
+                </div>
+                <div class="srs__set">
+                  <span class="srs__label">Seat</span>
+                  <span class="srs__value">23</span>
+                </div>
+              </div>
+              <ul class="delimited-list">
+                <li class="delimited-list__item delimited-list__item--compact">
+                  <div class="split-content split-content--centered">
+                    <div class="split-content__primary">
+                      Ticket Type
+                    </div>
+                    <div class="split-content__secondary">
+                      <button class="button button--static">Add</button>
+                    </div>
+                  </div>
+                </li>
+                <li class="delimited-list__item delimited-list__item--compact">
+                  Second item
+                </li>
+                <li class="delimited-list__item delimited-list__item--compact">
+                  Last item in list
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-
-        <pre class="sg-sample-code">
-&lt;div class="module"&gt;
-  &lt;div class="module__content <span class="sg-highlight-code">module__content--flush</span>"&gt;
-    Content goes here.
-  &lt;/div&gt;
-&lt;/div&gt;
-        </pre>
-
-
       </section>
 
       <section id="badges" class="sg-section">

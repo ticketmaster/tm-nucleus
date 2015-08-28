@@ -1,8 +1,4 @@
 // config
-$sg-hdg-color: $brand-primary;
-$sg-subhdg-color: $brand-accent;
-$sg-subhdg2-color: $brand-gray;
-$sg-highlight-red: $brand-alert;
 $sg-swatch-height: 70px;
 $sg-spacing: 1.5em;
 
@@ -69,6 +65,7 @@ $sg-spacing: 1.5em;
 .sg-nav {
   @include span(full);
   @include outer-spacing($bottom: $spacing-lg);
+  @include responsive-font('sm');
 
   padding-bottom: $spacing-lg;
 
@@ -81,11 +78,19 @@ $sg-spacing: 1.5em;
 
     border-bottom: 0;
   }
+
+  @include breakpoint($bp-lg) {
+    @include span(2);
+  }
 }
 
 .sg-main {
   @include breakpoint($bp-md) {
     @include span(9);
+  }
+
+  @include breakpoint($bp-lg) {
+    @include span(10);
   }
 }
 
@@ -121,7 +126,7 @@ $sg-spacing: 1.5em;
 
   margin-bottom: 5px;
 
-  color: $sg-subhdg-color;
+  color: $brand-accent;
   text-transform: uppercase;
 
   + .sg-list {
@@ -129,13 +134,22 @@ $sg-spacing: 1.5em;
   }
 }
 
-
 .sg-subhdg2 {
   @include responsive-font('sm');
 
   margin: 20px 0 5px;
 
-  color: $sg-subhdg2-color;
+  color: $brand-gray2;
+  text-transform: uppercase;
+}
+
+.sg-subhdg3 {
+  @include responsive-font('sm');
+
+  margin: 20px 0 10px;
+
+  font-weight: normal;
+  color: $brand-gray;
   text-transform: uppercase;
 }
 
@@ -144,6 +158,10 @@ $sg-spacing: 1.5em;
   @include unstyled-list();
 
   line-height: 1.6;
+
+  > li {
+    margin-bottom: 0.5em;
+  }
 }
 
 
@@ -250,7 +268,7 @@ $sg-spacing: 1.5em;
 }
 
 .sg-highlight-code {
-  color: $sg-highlight-red;
+  color: $brand-alert;
 }
 
 
@@ -277,7 +295,6 @@ $sg-spacing: 1.5em;
 
         @if ($name == 'rocky'
           or $name == 'ridge'
-          or $name == 'monterey'
           or $name == 'havasu'
         ) {
           color: $black;
@@ -399,7 +416,7 @@ $sg-spacing: 1.5em;
 }
 
 .sg-swatch-state-usage {
-  @include responsive-font('sm');
+  @include responsive-font('xs');
 
   margin: 5px 0 0 5px;
 }
@@ -488,12 +505,16 @@ $sg-spacing: 1.5em;
 }
 
 
-// ticket stub
+// sec-row-seat
 .sg-srs {
   @include outer-spacing($bottom: $spacing-md);
 
-  width: $ticket-header-min-width;
+  width: $srs-min-width;
 }
-.sg-ticket-stub {
+
+
+.sg-ism-tooltip {
   @include outer-spacing($bottom: $spacing-md);
+
+  width: $srs-min-width;
 }

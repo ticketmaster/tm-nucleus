@@ -1,6 +1,26 @@
 // srs = sec row seat
 .srs {
-  display: inline-block;
+  position: relative;
+
+  display: flex;
+  min-width: $srs-min-width;
+  justify-content: space-between;
+
+  white-space: nowrap;
+}
+
+.srs__set {
+  flex: 1 1 auto;
+
+  text-align: center;
+
+  &:first-child {
+    text-align: left;
+  }
+
+  &:last-child {
+    text-align: right;
+  }
 }
 
 .srs__label,

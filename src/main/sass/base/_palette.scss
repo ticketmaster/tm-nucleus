@@ -23,7 +23,6 @@ $palette: (
   ),
   'blue': (
     'pacific':  $brand-primary,
-    'monterey': get-lighter($brand-primary),
     'havasu':   get-lighter($brand-primary, 90%)
   ),
   'green': (
@@ -38,8 +37,7 @@ $palette: (
 );
 
 // derived colors from base
-$brand-primary-lighter:   color('blue', 'monterey');
-$brand-primary-lighter2:  color('blue', 'havasu');
+$brand-primary-lighter:  color('blue', 'havasu');
 $brand-gray:              color('gray', 'sierra');
 
 // gradients
@@ -51,6 +49,7 @@ $progress-gradient: linear-gradient(left, rgba($white, 0), rgba($white, 0.4));
 // misc
 $tooltip-color: $white;
 $transparent-color: rgba($white, 0);
+$outline-color: get-lighter($brand-primary);
 $shadow-color: rgba($black, 0.5);
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
