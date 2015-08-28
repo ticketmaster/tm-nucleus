@@ -1,29 +1,32 @@
+// TM Sans font
 @font-face {
   font-family: 'TM Sans';
-  src: url('../font/TMSans-Regular.woff2') format('woff2'),
-       url('../font/TMSans-Regular.woff') format('woff');
+  src: url('../font/TMSans-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'TM Sans';
+  src: url('../font/TMSans-Bold.woff') format('woff');
+  font-weight: bold;
 }
 
 $tm-sans: 'TM Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $monospace: Menlo, Consolas, 'Courier New', monospace;
 
-
-// Typography
+// Typography settings
 $base-font-family: $tm-sans;
-$bold-weight: 700;
-$bold-letter-spacing : -0.025em;
 $base-line-height: 1.4;
 $header-line-height: 1.2;
 $header-margin: 10px;
-
 
 // Default font sizes
 $default-font-size: 16px; // for media queries
 $base-font-size: 62.5%;   // == 10px
 $font-size-factor: 0.2;
 
-
-// base font sizes; DO NOT use these variables elsewhere
+// Base font sizes
+// DO NOT use these variables elsewhere
+// See styleguide for documentation on defining font-sizes
 $base-xs-font: 1rem;
 $base-sm-font: 1.2rem;
 $base-md-font: 1.4rem;
@@ -31,6 +34,11 @@ $base-lg-font: 1.8rem;
 $base-xl-font: 2.2rem;
 $base-xxl-font: 2.6rem;
 
+// Other font sizes
+$body-font-size: $base-md-font;
+$min-input-font-size: 1.6rem; // min required to avoid iOS zooming
+
+// Font sizes
 $font-sizes: (
   'xs': (
     'pint':   $base-xs-font,
@@ -64,11 +72,7 @@ $font-sizes: (
 );
 
 
-// Other font sizes
-$body-font-size: $base-md-font;
-$min-input-font-size: 1.6rem; // min required to avoid iOS zooming
-
-
+// Baseline for page
 html {
   font-size: $base-font-size;
   color: $brand-gray;
@@ -104,7 +108,7 @@ p {
 }
 
 strong {
-  font-weight: $bold-weight;
+  font-weight: bold;
 }
 
 a {

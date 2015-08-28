@@ -1,16 +1,19 @@
 .delimited-list {
   @include unstyled-list();
+}
 
-  &__item {
-    border-top: $base-border-style;
-  }
+.delimited-list__item {
+  @include inner-spacing($top: $spacing-sm, $bottom: $spacing-sm);
 
-  &__item:first-child {
+  border-top: $base-border-style;
+
+  &:first-child {
     border-top: 0;
   }
 }
 
 
+// TODO: clean outs
 .module__content + .delimited-list {
   border-top: $base-border-style;
 }

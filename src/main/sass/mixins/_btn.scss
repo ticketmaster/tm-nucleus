@@ -15,7 +15,7 @@
   @include responsive-font('lg', 1);
 
   min-height: $button-height;
-  padding: $button-top-offset $button-padding 0;
+  padding: 0 $button-padding;
 
   font-weight: normal;
   text-align: center;
@@ -27,7 +27,7 @@
 
   @include breakpoint($bp-md) {
     min-height: $button-height-lg;
-    padding: $button-top-offset $button-padding-lg 0;
+    padding: 0 $button-padding-lg;
   }
 }
 

@@ -1,5 +1,4 @@
 // Spacing
-// control spacing of major content areas on a page
 $spacing-lg: 30px;
 $spacing-md: 20px;
 $spacing-sm: 10px;
@@ -27,12 +26,12 @@ $button-height-lg: 46px;
 $button-border-radius: $base-border-radius;
 $button-padding: 20px;
 $button-padding-lg: 40px;
-$button-top-offset: 3px;
 
-// Auxiliary Buttons
+// Auxiliary buttons
 $button-aux-radius: 25px;
 
 // Sizes
+$ticket-header-min-width: 295px;
 $tooltip-caret: 15px;
 $tooltip-caret-lg: 20px;
 $event-image-size: 205px;
@@ -172,7 +171,7 @@ picture {
 }
 
 
-// disable outline of form elements on focus in Chrome
+// Disable outline of form elements on focus in Chrome
 input,
 select,
 textarea,

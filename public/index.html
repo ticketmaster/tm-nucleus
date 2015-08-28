@@ -42,17 +42,18 @@
         <li><a href="#typography">Typography</a></li>
         <li><a href="#text-styles">Text Styles</a></li>
         <li><a href="#breakpoints">Breakpoints</a></li>
+        <li><a href="#grid">Grid</a></li>
         <li><a href="#page-structure">Page Structure</a></li>
         <li><a href="#spacing">Spacing</a></li>
         <li><a href="#layout">Layout Patterns</a></li>
         <li><a href="#buttons">Buttons</a></li>
         <li><a href="#tooltips">Tooltips</a></li>
+        <li><a href="#ticket-header">Ticket Stub</a></li>
         <li><a href="#badges">Badges</a></li>
         <li><a href="#toasters">Toasters</a></li>
         <li><a href="#form-elements">Form Elements</a></li>
         <li><a href="#panels">Panels</a></li>
         <li><a href="#datestamp">Datestamp</a></li>
-        <li><a href="#ticket-stub">Ticket Stub</a></li>
         <li><a href="#polling">Polling</a></li>
         <li><a href="#polling-overlay">Polling Overlay</a></li>
         <li><a href="#property-order">CSS Property Ordering</a></li>
@@ -835,6 +836,11 @@
 
         </section>
 
+      <section id="grid" class="sg-section">
+        <h2 class="sg-hdg">Grid</h2>
+        <p>We use a <a href="http://susy.oddbird.net/">Susy</a>-based 12-column grid with <code class="sg-code">30px</code> gutters.</p>
+      </section>
+
 
       <section id="page-structure" class="sg-section">
         <h2 class="sg-hdg">Page Structure</h2>
@@ -881,42 +887,89 @@
 
       <section id="spacing" class="sg-section">
         <h2 class="sg-hdg">Spacing</h2>
-        <p>Spacing between page elements is standardized on three different sets of values as follows:</p>
+        <p>Spacing between elements on the page should be one of three possible values, as shown below:</p>
+
         <table class="sg-table">
           <tr>
-            <th class="sg-table-hdg">&le; 719px</th>
-            <th class="sg-table-hdg">&ge; 720px</th>
-          </tr>
-          <tr>
             <td>10px</td>
-            <td>15px</td>
-            <td><code class="sg-code">@include content-spacing($spacing-sm)</code></td>
+            <td><code class="sg-code">$spacing-sm</code></td>
           </tr>
           <tr>
             <td>20px</td>
-            <td>30px</td>
-            <td><code class="sg-code">@include content-spacing($spacing-md)</code></td>
+            <td><code class="sg-code">$spacing-md</code></td>
           </tr>
           <tr>
             <td>30px</td>
-            <td>45px</td>
-            <td><code class="sg-code">@include content-spacing($spacing-lg)</code></td>
+            <td><code class="sg-code">$spacing-lg</code></td>
           </tr>
         </table>
-        <p>Note that spacing values increase proportionately at a ratio of 1.5 from small to large screens.</p>
+
+        <p>In most cases, spacing should be responsive, so at the <code class="sg-code">$bp-md</code> breakpoint, the above values should then be:</p>
+
+        <table class="sg-table">
+          <tr>
+            <td>15px</td>
+            <td><code class="sg-code">increase-spacing($spacing-sm)</code></td>
+          </tr>
+          <tr>
+            <td>30px</td>
+            <td><code class="sg-code">increase-spacing($spacing-md)</code></td>
+          </tr>
+          <tr>
+            <td>45px</td>
+            <td><code class="sg-code">increase-spacing($spacing-lg)</code></td>
+          </tr>
+        </table>
+
+        <p>To make it easier to set responsive spacing, there are two mixins available:</p>
+
+        <table class="sg-table">
+          <tr>
+            <td>margin-based spacing</td>
+            <td><code class="sg-code">@include outer-spacing($x)</code></td>
+          </tr>
+          <tr>
+            <td>padding-based spacing</td>
+            <td><code class="sg-code">@include inner-spacing($y)</code></td>
+          </tr>
+        </table>
+
+        <p>Both mixins behave in the same way.</p>
+        <ol>
+          <li>If a single parameter is passed, it will apply the value equally on all four sides.</li>
+          <li>If you don't want all sides to be uniform, you can assign values to the sides you want to modify.</li>
+        </ol>
+
+        <p>This is best illustrated with some examples.</p>
+
         <pre class="sg-sample-code">
-// scss
-.major-block {
-  <span class="sg-highlight-code">@include content-spacing($spacing-md);</span>
+// set same margin on all sides
+<span class="sg-highlight-code">@include outer-spacing($spacing-md);</span>
+
+// set padding on top and bottom
+<span class="sg-highlight-code">@include inner-spacing($top: $spacing-sm, $bottom: $spacing-sm);</span>
+
+// set padding on top, right, and left
+<span class="sg-highlight-code">@include inner-spacing($top: $spacing-sm, $right: $spacing-md, $left: $spacing-md)</span>
+        </pre>
+
+        <p>When specifying spacing for any side(s), any side that you omit will be set to <code class="sg-code">0</code>.</p>
+
+        <pre class="sg-sample-code">
+// set 30px bottom margin
+.example {
+  @include outer-spacing($bottom: $spacing-lg);
 }
 
-// output
-.major-block {
-  margin-bottom: 20px;
+// output from above will be
+.example {
+  margin: 0 0 30px 0;
 }
 
-@media (min-width: 45em) {
-  margin-bottom: 30px;
+@media (min-width: 23.4375em) {
+  .example {
+    margin: 0 0 45px 0;
+  }
 }
         </pre>
       </section>
@@ -1023,9 +1076,47 @@
 
       </section>
 
+      <section class="sg-section">
+        <h2 class="sg-hdg">Lists</h2>
+
+        <h3 class="sg-subhdg">Delimited Lists</h3>
+
+        <p>The Delimited List pattern has list items separated by a border.</p>
+
+        <ul class="delimited-list">
+          <li class="delimited-list__item">
+            Example 1
+          </li>
+          <li class="delimited-list__item">
+            Second item
+          </li>
+          <li class="delimited-list__item">
+            Last item in list
+          </li>
+        </ul>
+
+        <pre class="sg-sample-code">
+&lt;div class="module"&gt;
+  &lt;ul class="<span class="sg-highlight-code">delimited-list</span>"&gt;
+    &lt;li class="<span class="sg-highlight-code">delimited-list__item</span>"&gt;
+      First item
+    &lt;/li&gt;
+    &lt;li class="<span class="sg-highlight-code">delimited-list__item</span>"&gt;
+      Secondy item
+    &lt;/li&gt;
+    &lt;li class="<span class="sg-highlight-code">delimited-list__item</span>"&gt;
+      Third item
+    &lt;/li&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+
+      </section>
+
 
       <section id="tooltips" class="sg-section">
         <h2 class="sg-hdg">Tooltips</h2>
+        <p>Tooltip caret size is 15px on mobile, 20px on tablet/desktop. Internal padding of a tooltip follows the 10px/15px spacing rule as described in <a href="#spacing">Spacing</a>.</p>
         <div class="tooltip">
           <div class="tooltip__content">
             <p>Default tooltip, with the caret on the bottom</p>
@@ -1046,8 +1137,125 @@
             <p>Tooltip with caret on top</p>
           </div>
         </div>
+
+        <pre class="sg-sample-code">
+&lt;div class="<span class="sg-highlight-code">tooltip</span>"&gt;
+  &lt;div class="<span class="sg-highlight-code">tooltip__content</span>"&gt;
+    Content goes here.
+  &lt;/div&gt;
+&lt;/div&gt;
+          </pre>
       </section>
 
+
+      <section id="ticket-header" class="sg-section">
+        <h2 class="sg-hdg">Ticket Header</h2>
+
+        <div class="srs">
+          <span class="srs__label">Sec</span>
+          <span class="srs__value">21</span>
+        </div>
+
+        <p>Standard ticket header displaying a single ticket</p>
+        <div class="sg-srs">
+          <div class="ticket-header">
+            <div class="ticket-header__srs srs">
+              <span class="srs__label">Sec</span>
+              <span class="srs__value">21</span>
+            </div>
+            <div class="ticket-header__srs srs">
+              <span class="srs__label">Row</span>
+              <span class="srs__value">13</span>
+            </div>
+            <div class="ticket-header__srs srs">
+              <span class="srs__label">Seat</span>
+              <span class="srs__value">23</span>
+            </div>
+          </div>
+        </div>
+
+        <p>Non-contiguous seats</p>
+        <div class="sg-srs">
+          <div class="ticket-header">
+            <div class="ticket-header__srs srs">
+              <span class="srs__label">Sec</span>
+              <span class="srs__value">21</span>
+              <span class="srs__value">21</span>
+            </div>
+            <div class="ticket-header__srs srs">
+              <span class="srs__label">Row</span>
+              <span class="srs__value">13</span>
+              <span class="srs__value">14</span>
+            </div>
+            <div class="ticket-header__srs srs">
+              <span class="srs__label">Seat</span>
+              <span class="srs__value">23</span>
+              <span class="srs__value">28</span>
+            </div>
+          </div>
+        </div>
+
+        <p>Seat range</p>
+        <div class="sg-srs">
+          <div class="ticket-header">
+            <div class="ticket-header__srs srs">
+              <span class="srs__label">Sec</span>
+              <span class="srs__value">21</span>
+            </div>
+            <div class="ticket-header__srs srs">
+              <span class="srs__label">Row</span>
+              <span class="srs__value">13</span>
+            </div>
+            <div class="ticket-header__srs srs">
+              <span class="srs__label">Seat</span>
+              <span class="srs__value">223-225</span>
+            </div>
+          </div>
+        </div>
+
+        <p>Worst case scenario</p>
+        <div class="sg-srs">
+          <div class="ticket-header">
+            <div class="ticket-header__srs srs">
+              <span class="srs__label">Sec</span>
+              <span class="srs__value">Loge12</span>
+            </div>
+            <div class="ticket-header__srs srs">
+              <span class="srs__label">Row</span>
+              <span class="srs__value">1234</span>
+            </div>
+            <div class="ticket-header__srs srs">
+              <span class="srs__label">Seat</span>
+              <span class="srs__value">1000-1008</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sg-srs">
+          <div class="tooltip">
+            <div class="tooltip__content">
+              <div class="ticket-stub">
+                <div class="ticket-stub__header">
+                  <div class="ticket-stub__seat-info">
+                    <div class="ticket-stub__seat-label">Sec</div>
+                    <div class="ticket-stub__seat-text">213</div>
+                  </div>
+                  <div class="ticket-stub__seat-info">
+                    <div class="ticket-stub__seat-label">Row</div>
+                    <div class="ticket-stub__seat-text">13</div>
+                  </div>
+                  <div class="ticket-stub__seat-info">
+                    <div class="ticket-stub__seat-label">Seat</div>
+                    <div class="ticket-stub__seat-text">23</div>
+                  </div>
+                </div>
+                <div class="ticket-stub__content">Ticket stub content goes here</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
 
       <section id="layout" class="sg-section">
         <h2 class="sg-hdg">Layout Patterns</h2>
@@ -1078,79 +1286,6 @@
 &lt;div class="module <span class="sg-highlight-code">module--success</span>"&gt;
   &lt;div class="module__content <span class="sg-highlight-code">module__content--success-icon</span>"&gt;
     Content goes here.
-  &lt;/div&gt;
-&lt;/div&gt;
-        </pre>
-
-        <h3 class="sg-subhdg">Delimited Lists</h3>
-
-        <p>To display a list of items, use the Delimited List pattern.</p>
-
-        <div class="module">
-          <ul class="delimited-list">
-            <li class="delimited-list__item module__content">
-              Example 1
-            </li>
-            <li class="delimited-list__item module__content">
-              Second item
-            </li>
-            <li class="delimited-list__item module__content">
-              Last item in list
-            </li>
-          </ul>
-        </div>
-
-        <pre class="sg-sample-code">
-&lt;div class="module"&gt;
-  &lt;ul class="<span class="sg-highlight-code">delimited-list</span>"&gt;
-    &lt;li class="<span class="sg-highlight-code">delimited-list__item module__content</span>"&gt;
-      First item
-    &lt;/li&gt;
-    &lt;li class="<span class="sg-highlight-code">delimited-list__item module__content</span>"&gt;
-      Second item
-    &lt;/li&gt;
-    &lt;li class="<span class="sg-highlight-code">delimited-list__item module__content</span>"&gt;
-      Third item
-    &lt;/li&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-        </pre>
-
-        <p>Need to display non-list content before the list itself? No problem.</p>
-        <p>Just make sure the non-list content is enclosed in the <code class="sg-code">module__content</code> class.</p>
-
-        <div class="module">
-          <div class="module__content">
-            <p>Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola frankfurter picanha ham. Venison biltong t-bone ground round, tri-tip pig prosciutto chuck pork chop sausage tongue. Meatball rump meatloaf turducken, jowl tongue biltong doner.</p>
-          </div>
-          <ul class="delimited-list">
-            <li class="delimited-list__item module__content">
-              Example 1
-            </li>
-            <li class="delimited-list__item module__content">
-              Second item
-            </li>
-            <li class="delimited-list__item module__content">
-              Last item in list
-            </li>
-          </ul>
-        </div>
-
-        <pre class="sg-sample-code">
-&lt;div class="module"&gt;
-  &lt;div class="<span class="sg-highlight-code">module__content</span>&gt;
-    &lt;p&gt;Some non-list content here&lt;/p&gt;
-  &lt;/div&gt;
-  &lt;ul class="<span class="sg-highlight-code">delimited-list</span>"&gt;
-    &lt;li class="<span class="sg-highlight-code">delimited-list__item module__content</span>"&gt;
-      First item
-    &lt;/li&gt;
-    &lt;li class="<span class="sg-highlight-code">delimited-list__item module__content</span>"&gt;
-      Second item
-    &lt;/li&gt;
-    &lt;li class="<span class="sg-highlight-code">delimited-list__item module__content</span>"&gt;
-      Third item
-    &lt;/li&gt;
   &lt;/div&gt;
 &lt;/div&gt;
         </pre>
@@ -1813,33 +1948,6 @@
         </table>
 
       </section>
-
-      <section id="ticket-stub" class="sg-section">
-        <h2 class="sg-hdg">Ticket Stub</h2>
-        <p>Here is how you can display a ticket stub.</p>
-
-        <div class="sg-ticket-stub">
-          <div class="ticket-stub">
-            <div class="ticket-stub__header">
-              <div class="ticket-stub__seat-info">
-                <div class="ticket-stub__seat-label">Sec</div>
-                <div class="ticket-stub__seat-text">213</div>
-              </div>
-              <div class="ticket-stub__seat-info">
-                <div class="ticket-stub__seat-label">Row</div>
-                <div class="ticket-stub__seat-text">13</div>
-              </div>
-              <div class="ticket-stub__seat-info">
-                <div class="ticket-stub__seat-label">Seat</div>
-                <div class="ticket-stub__seat-text">23</div>
-              </div>
-            </div>
-            <div class="ticket-stub__content">Ticket stub content goes here</div>
-          </div>
-        </div>
-
-      </section>
-
 
       <section id="polling" class="sg-section">
         <h2 class="sg-hdg">Polling</h2>

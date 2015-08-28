@@ -8,6 +8,8 @@
 .button--cta {
   @include btn-color($brand-cta, $white, $hoverstate: true);
 
+  padding-top: 0;
+
   font-weight: bold;
 }
 

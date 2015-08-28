@@ -28,17 +28,13 @@
     clear: both;
   }
 
-  // use content to set default font size for content
+  // use content to set default font size for text
   &__content {
     @include clearfix();
     @include responsive-font('md');
 
-    @include breakpoint($bp-md) {
-      @include pad(10px no-gutters);
-    }
-
     @include breakpoint($bp-lg) {
-      @include pad(40px no-gutters);
+      @include pad($gutter-width no-gutters);
     }
   }
 

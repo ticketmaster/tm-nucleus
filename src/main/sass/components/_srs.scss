@@ -1,0 +1,24 @@
+// srs = sec row seat
+.srs {
+  display: inline-block;
+}
+
+.srs__label,
+.srs__value {
+  display: block;
+}
+
+.srs__label {
+  @include responsive-font('sm', 1);
+
+  color: $brand-gray2;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.srs__value {
+  @include responsive-font('xl', 1);
+
+  font-weight: bold;
+  color: $brand-gray;
+}

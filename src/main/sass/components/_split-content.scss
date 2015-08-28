@@ -1,4 +1,4 @@
-$split-content-padding-lg: $gutter-width + 5;
+$split-content-padding-lg: $spacing-sm + 5;
 
 .split-content {
   display: flex;
@@ -12,7 +12,7 @@ $split-content-padding-lg: $gutter-width + 5;
     flex: 1 1 100%;
 
     .split-content__secondary + & {
-      padding-left: $gutter-width;
+      padding-left: $spacing-sm;
     }
 
     .split-content__secondary + &--lg {
@@ -26,7 +26,7 @@ $split-content-padding-lg: $gutter-width + 5;
 
   &__secondary {
     flex: 0 0 auto;
-    padding-left: $gutter-width;
+    padding-left: $spacing-sm;
   }
 
   &__secondary--lg {

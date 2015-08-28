@@ -12,7 +12,6 @@ $brand-gray4:    #f6f7f9;
 $black:          #000;
 $white:          #fff;
 
-
 // map hex values to names
 $palette: (
   'gray': (
@@ -42,7 +41,6 @@ $palette: (
 $brand-primary-lighter:   color('blue', 'monterey');
 $brand-primary-lighter2:  color('blue', 'havasu');
 $brand-gray:              color('gray', 'sierra');
-
 
 // gradients
 $black-white-gradient: linear-gradient(to bottom, #4d4d4d 0%, #383838 26%, #1f1f1f 53%, #151515 67%, #121212 69%, #000 100%);

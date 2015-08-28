@@ -1,0 +1,22 @@
+.ticket-header {
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+
+  white-space: nowrap;
+}
+
+.ticket-header__srs {
+  flex: 1 1 auto;
+
+  text-align: center;
+
+  &:first-child {
+    text-align: left;
+  }
+
+  &:last-child {
+    text-align: right;
+  }
+}

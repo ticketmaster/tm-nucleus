@@ -5,42 +5,13 @@ $ticket-stub-padding: 10px;
 
   background: $white;
 
-  border: $base-border-style;
-
   &__header {
     position: relative;
 
     display: flex;
     justify-content: space-between;
 
-    padding: $ticket-stub-padding;
-
-    background: $brand-gray4;
-    border-bottom: 3px solid $brand-primary;
-  }
-
-  &__header--resale {
-    border-bottom: 3px solid $brand-accent;
-  }
-
-  &__header:after {
-    position: absolute;
-    bottom: -8px;
-    left: 50%;
-
-    display: block;
-    width: 0;
-    margin-left: -5px;
-
-    border-color: $brand-primary $transparent-color;
-    border-style: solid;
-    border-width: 5px 5px 0;
-
-    content: '';
-  }
-
-  &__header--resale:after {
-    border-color: $brand-accent $transparent-color;
+    white-space: nowrap;
   }
 
   &__seat-info {
@@ -59,14 +30,16 @@ $ticket-stub-padding: 10px;
   }
 
   &__seat-label {
-    @include responsive-font('sm');
+    @include responsive-font('sm', 1);
 
     color: $brand-gray2;
+    text-transform: uppercase;
   }
 
   &__seat-text {
-    @include responsive-font('md');
+    @include responsive-font('xl', 1);
 
+    font-weight: bold;
     color: $brand-gray;
   }
 
@@ -77,7 +50,15 @@ $ticket-stub-padding: 10px;
   }
 
   &__content {
-    padding: $ticket-stub-padding;
+    margin-top: $spacing-sm;
+    padding-top: $spacing-sm;
+
+    border-top: $base-border-style;
+
+    @include breakpoint($bp-md) {
+      margin-top: increase-spacing($spacing-sm);
+      padding-top: increase-spacing($spacing-sm);
+    }
   }
 
   &__ticket-types {

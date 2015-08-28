@@ -9,7 +9,7 @@
   }
 
   &__section {
-    @include content-spacing($spacing-md);
+    @include outer-spacing($bottom: $spacing-md);
   }
 
   &__legal-copy {

@@ -24,7 +24,7 @@ $sg-spacing: 1.5em;
 
 .sg-header {
   @include span(full);
-  @include content-spacing($spacing-lg);
+  @include outer-spacing($bottom: $spacing-lg);
 
   padding-top: $spacing-md;
   padding-bottom: $spacing-sm;
@@ -68,7 +68,7 @@ $sg-spacing: 1.5em;
 
 .sg-nav {
   @include span(full);
-  @include content-spacing($spacing-lg);
+  @include outer-spacing($bottom: $spacing-lg);
 
   padding-bottom: $spacing-lg;
 
@@ -91,7 +91,7 @@ $sg-spacing: 1.5em;
 
 .sg-section {
   @include span(full);
-  @include content-spacing($spacing-lg);
+  @include outer-spacing($bottom: $spacing-lg);
   @include responsive-font('md');
 
   padding-bottom: $spacing-lg;
@@ -100,14 +100,6 @@ $sg-spacing: 1.5em;
 
   @include breakpoint($bp-md) {
     padding-bottom: increase-spacing($spacing-lg);
-  }
-
-  + .sg-section {
-    padding-top: $vertical-spacing-sm;
-
-    @include breakpoint($bp-md) {
-      padding-top: 10px;
-    }
   }
 
   .module {
@@ -156,7 +148,7 @@ $sg-spacing: 1.5em;
 
 
 .sg-table {
-  @include content-spacing($spacing-md);
+  @include outer-spacing($bottom: $spacing-md);
 
   @include breakpoint($bp-md) {
     display: inline-block;
@@ -234,7 +226,7 @@ $sg-spacing: 1.5em;
 // sample code style
 .sg-sample-code {
   @include code-style();
-  @include content-spacing($spacing-md);
+  @include outer-spacing($bottom: $spacing-md);
 
   padding: 0 gutter();
   clear: both;
@@ -247,7 +239,7 @@ $sg-spacing: 1.5em;
 
     display: block;
     padding: 5px 10px;
-    margin: 0 -10px 1em;
+    margin: 0 (-($gutter-width / 2)) 1em;
 
     color: $white;
 
@@ -378,7 +370,7 @@ $sg-spacing: 1.5em;
 }
 
 .sg-swatch-group {
-  @include content-spacing($spacing-md);
+  @include outer-spacing($bottom: $spacing-md);
 
   @include breakpoint($bp-md) {
     display: inline-block;
@@ -497,7 +489,11 @@ $sg-spacing: 1.5em;
 
 
 // ticket stub
+.sg-srs {
+  @include outer-spacing($bottom: $spacing-md);
+
+  width: $ticket-header-min-width;
+}
 .sg-ticket-stub {
-  width: 230px;
-  height: 190px;
+  @include outer-spacing($bottom: $spacing-md);
 }
