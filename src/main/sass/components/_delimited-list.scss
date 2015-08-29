@@ -1,5 +1,7 @@
 .delimited-list {
   @include unstyled-list();
+
+  margin-bottom: 1em;
 }
 
 .delimited-list__item {

@@ -60,6 +60,9 @@
 
 .tooltip__delimited-list {
   @include inner-spacing($right: $spacing-sm, $left: $spacing-sm);
+  @include responsive-font('sm');
+
+  margin-bottom: 0;
 }
 
 .tooltip__delimited-list + .tooltip__content {
