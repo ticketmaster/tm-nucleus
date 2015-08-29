@@ -10,7 +10,6 @@ $sg-spacing: 1.5em;
   border-radius: 4px;
   font-family: $monospace;
   background-color: $brand-gray4;
-  font-size: fetch-font($sz) * 0.95;
 }
 
 
@@ -515,6 +514,4 @@ $sg-spacing: 1.5em;
 
 .sg-ism-tooltip {
   @include outer-spacing($bottom: $spacing-md);
-
-  width: $srs-min-width;
 }

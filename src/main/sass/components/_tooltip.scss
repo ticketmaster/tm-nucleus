@@ -52,57 +52,25 @@
 }
 
 .tooltip__srs {
+  @include outer-spacing($bottom: -($spacing-sm));
   @include inner-spacing($bottom: $spacing-sm);
 
   border-bottom: $base-border-style;
 }
 
+.tooltip__delimited-list {
+  @include inner-spacing($right: $spacing-sm, $left: $spacing-sm);
+}
 
-// Unused tooltip, keeping here temporarily for reference
-// .tooltip-b {
-//   @include drop-shadow();
-//
-//   position: relative;
-//
-//   margin-top: 30px;
-//
-//   background-color: $white;
-//   border-radius: $base-border-radius;
-//
-//   &:before {
-//     position: absolute;
-//     bottom: -($tooltip-caret + 1);
-//     left: 50%;
-//
-//     display: block;
-//     width: 0;
-//     margin-left: -10px;
-//
-//     border-color: get-lighter($brand-gray2, 50%) $transparent-color;
-//     border-style: solid;
-//     border-width: ($tooltip-caret + 1) 10px 0;
-//
-//     content: '';
-//   }
-//
-//   // shadow shape
-//   @include target-ie() {
-//   }
-//
-//   // caret
-//   &:after {
-//     position: absolute;
-//     bottom: -($tooltip-caret - 1);
-//     left: 50%;
-//
-//     display: block;
-//     width: 0;
-//     margin-left: -($tooltip-caret / 2);
-//
-//     border-color: $white $transparent-color;
-//     border-style: solid;
-//     border-width: $tooltip-caret ($tooltip-caret / 2) 0;
-//
-//     content: '';
-//   }
-// }
+.tooltip__delimited-list + .tooltip__content {
+  @include outer-spacing($right: $spacing-sm, $bottom: $spacing-sm, $left: $spacing-sm);
+
+  padding-left: 0;
+  padding-right: 0;
+
+  border-top: $base-border-style;
+}
+
+.tooltip--ism__subtotal {
+  @include responsive-font('xl');
+}

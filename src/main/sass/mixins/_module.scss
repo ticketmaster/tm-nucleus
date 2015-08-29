@@ -1,4 +1,4 @@
-@mixin module($pad-sm: $module-padding-sm, $pad-lg: $module-padding-lg) {
+@mixin module($padding: $spacing-sm) {
   @include clearfix();
 
   background-color: $white;
@@ -7,12 +7,7 @@
 
   &__content {
     @include clearfix();
-
-    padding: $pad-sm;
-
-    @include breakpoint($bp-md) {
-      padding: $pad-lg;
-    }
+    @include inner-spacing($padding);
 
     p:last-child {
       margin-bottom: 0;

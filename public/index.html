@@ -22,13 +22,13 @@
 
   <header class="sg-header">
     <div class="page__frame page__content">
-      <div class="split-content split-content--centered">
-        <div class="split-content__secondary split-content__secondary--lg">
+      <div class="split-content">
+        <div class="split-content__secondary">
           <svg class="sg-tm-logo">
             <use xlink:href="#tm-logo"></use>
           </svg>
         </div>
-        <div class="split-content__primary split-content__primary--lg sg-name">Nucleus</div>
+        <div class="split-content__primary sg-name">Nucleus</div>
       </div>
     </div>
   </header>
@@ -1256,8 +1256,7 @@
 
         <h3 class="sg-subhdg">Split Content</h3>
         <p>This pattern dictates a block of content where one portion (or column) is primary and takes up all available width, while secondary content is only as wide as it needs to be.</p>
-        <p>The default is <code class="sg-code">10px</code> of separation between these columns.</p>
-        <p>This is best illustrated with an example.</p>
+        <p>The spacing between columns follows the responsive <code class="sg-code">$spacing-sm</code> values as defined in <a href="#spacing">Spacing</a>.</p>
 
         <div class="module">
           <div class="split-content">
@@ -1274,10 +1273,10 @@
 &lt;div class="module"&gt;
   &lt;div class="<span class="sg-highlight-code">split-content</span>"&gt;
     &lt;div class="<span class="sg-highlight-code">split-content__primary</span> module__content"&gt;
-      &lt;p&gt;primary content here&lt;/p&gt;
+      [...]
     &lt;/div&gt;
     &lt;div class="<span class="sg-highlight-code">split-content__secondary</span> module__content"&gt;
-      &lt;button class="button"&gt;Good 'Ol Button&lt;/button&gt;
+      [...]
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -1303,29 +1302,30 @@
 &lt;div class="module"&gt;
   &lt;div class="split-content module__content"&gt;
     &lt;div class="<span class="sg-highlight-code">split-content__secondary</span>"&gt;
-      &lt;button class="button-outlined button-outlined--void button-outlined--small"&gt;Delete&lt;/button&gt;
+      [...]
     &lt;/div&gt;
     &lt;div class="<span class="sg-highlight-code">split-content__primary</span>"&gt;
-      &lt;p&gt;primary content here&lt;/p&gt;
+      [...]
     &lt;/div&gt;
     &lt;div class="<span class="sg-highlight-code">split-content__secondary</span>"&gt;
-      &lt;button class="button button--cta"&gt;Buy&lt;/button&gt;
+      [...]
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
         </pre>
 
-        <p>In instances where you need more spacing between columns than the default <code class="sg-code">10px</code>, you can use the <code class="sg-code">split-content__primary--lg</code> and <code class="sg-code">split-content__secondary--lg</code> modifiers.</p>
+        <p>If you need content to be top-aligned, use the <code class="sg-code">split-content__primary--top</code> or <code class="sg-code">split-content__secondary--top</code> modifiers.</p>
 
         <div class="module">
           <div class="split-content module__content">
-            <div class="split-content__secondary split-content__primary--lg">
+            <div class="split-content__secondary split-content__secondary--top">
               <button class="button-outlined button-outlined--void button-outlined--small">Delete</button>
             </div>
-            <div class="split-content__primary split-content__primary--lg">
-              <p>Note how content in this area takes up all available space. Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola frankfurter picanha ham.</p>
+            <div class="split-content__primary">
+              <p>Bacon ipsum dolor amet pariatur venison meatball, turducken dolore ball tip pork belly ribeye consequat fatback kielbasa ham hock leberkas. Quis non frankfurter fatback, doner in shankle excepteur ut. Kevin dolore short loin quis velit dolor laborum est frankfurter kielbasa voluptate. Doner boudin tempor leberkas beef ribs.</p>
+              <p>Beef sint et pariatur fatback. Adipisicing frankfurter ut in. Duis ipsum magna qui. Minim spare ribs hamburger, porchetta proident eiusmod et fugiat duis shankle deserunt dolore magna turkey.</p>
             </div>
-            <div class="split-content__secondary split-content__primary--lg">
+            <div class="split-content__secondary">
               <button class="button button--cta">Buy</button>
             </div>
           </div>
@@ -1334,81 +1334,14 @@
         <pre class="sg-sample-code">
 &lt;div class="module"&gt;
   &lt;div class="split-content module__content"&gt;
-    &lt;div class="<span class="sg-highlight-code">split-content__secondary split-content__secondary--lg</span>"&gt;
-      &lt;button class="button-outlined button-outlined--void button-outlined--small"&gt;Delete&lt;/button&gt;
+    &lt;div class="split-content__secondary <span class="sg-highlight-code">split-content__secondary--top</span>"&gt;
+      [...]
     &lt;/div&gt;
-    &lt;div class="<span class="sg-highlight-code">split-content__primary split-content__primary--lg</span>"&gt;
-      &lt;p&gt;primary content here&lt;/p&gt;
+    &lt;div class="split-content__primary"&gt;
+      [...]
     &lt;/div&gt;
-    &lt;div class="<span class="sg-highlight-code">split-content__secondary split-content__secondary--lg</span>"&gt;
-      &lt;button class="button button--cta"&gt;Buy&lt;/button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-        </pre>
-
-        <p>By default, content is top-aligned. To have content be middle-aligned, use the <code class="sg-code">split-content--centered</code> modifier.</p>
-
-        <div class="module">
-          <div class="split-content split-content--centered module__content">
-            <div class="split-content__secondary split-content__secondary--lg">
-              <button class="button-outlined button-outlined--void button-outlined--small">Delete</button>
-            </div>
-            <div class="split-content__primary split-content__primary--lg">
-              <p>Bacon ipsum dolor amet pariatur venison meatball, turducken dolore ball tip pork belly ribeye consequat fatback kielbasa ham hock leberkas. Quis non frankfurter fatback, doner in shankle excepteur ut. Kevin dolore short loin quis velit dolor laborum est frankfurter kielbasa voluptate. Doner boudin tempor leberkas beef ribs.</p>
-              <p>Beef sint et pariatur fatback. Adipisicing frankfurter ut in. Duis ipsum magna qui. Minim spare ribs hamburger, porchetta proident eiusmod et fugiat duis shankle deserunt dolore magna turkey.</p>
-            </div>
-            <div class="split-content__secondary split-content__secondary--lg">
-              <button class="button button--cta">Buy</button>
-            </div>
-          </div>
-        </div>
-
-        <pre class="sg-sample-code">
-&lt;div class="module"&gt;
-  &lt;div class="<span class="sg-highlight-code">split-content split-content--centered module__content</span>"&gt;
-    &lt;div class="split-content__secondary split-content__secondary--lg"&gt;
-      &lt;button class="button-outlined button-outlined--void button-outlined--small"&gt;Delete&lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div class="split-content__primary split-content__primary--lg"&gt;
-      &lt;p&gt;primary content here&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="split-content__secondary split-content__secondary--lg"&gt;
-      &lt;button class="button button--cta"&gt;Buy&lt;/button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-        </pre>
-
-        <p>In the event that you want to mix middle and top-aligned content, you can use the <code class="sg-code">split-content__primary--top</code> or <code class="sg-code">split-content__secondary--top</code> modifiers.</p>
-        <p>Note how the delete button below is now top-aligned.</p>
-
-        <div class="module">
-          <div class="split-content split-content--centered module__content">
-            <div class="split-content__secondary split-content__secondary--lg split-content__secondary--top">
-              <button class="button-outlined button-outlined--void button-outlined--small">Delete</button>
-            </div>
-            <div class="split-content__primary split-content__primary--lg">
-              <p>Bacon ipsum dolor amet pariatur venison meatball, turducken dolore ball tip pork belly ribeye consequat fatback kielbasa ham hock leberkas. Quis non frankfurter fatback, doner in shankle excepteur ut. Kevin dolore short loin quis velit dolor laborum est frankfurter kielbasa voluptate. Doner boudin tempor leberkas beef ribs.</p>
-              <p>Beef sint et pariatur fatback. Adipisicing frankfurter ut in. Duis ipsum magna qui. Minim spare ribs hamburger, porchetta proident eiusmod et fugiat duis shankle deserunt dolore magna turkey.</p>
-            </div>
-            <div class="split-content__secondary split-content__secondary--lg">
-              <button class="button button--cta">Buy</button>
-            </div>
-          </div>
-        </div>
-
-        <pre class="sg-sample-code">
-&lt;div class="module"&gt;
-  &lt;div class="split-content split-content--centered module__content"&gt;
-    &lt;div class="split-content__secondary split-content__secondary--lg <span class="sg-highlight-code">split-content__secondary--top</span>"&gt;
-      &lt;button class="button-outlined button-outlined--void button-outlined--small"&gt;Delete&lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div class="split-content__primary split-content__primary--lg"&gt;
-      &lt;p&gt;primary content here&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="split-content__secondary split-content__secondary--lg"&gt;
-      &lt;button class="button button--cta"&gt;Buy&lt;/button&gt;
+    &lt;div class="split-content__secondary"&gt;
+      [...]
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -1417,7 +1350,8 @@
         <h3 class="sg-subhdg">ISM Tooltips</h3>
         <p>This pattern utilizes <a href="#lists">Delimited List</a>, <a href="#tooltips">Tooltips</a>, and <a href="#srs">SRS</a>.</p>
 
-        <div classs="sg-ism-tooltip">
+        <div class="sg-ism-tooltip">
+          <h4 class="sg-subhdg3">Single Ticket Type</h4>
           <div class="tooltip tooltip--ism">
             <div class="tooltip__content">
               <div class="tooltip__srs srs">
@@ -1434,24 +1368,171 @@
                   <span class="srs__value">23</span>
                 </div>
               </div>
-              <ul class="delimited-list">
-                <li class="delimited-list__item delimited-list__item--compact">
-                  <div class="split-content split-content--centered">
-                    <div class="split-content__primary">
-                      Ticket Type
-                    </div>
-                    <div class="split-content__secondary">
-                      <button class="button button--static">Add</button>
-                    </div>
+            </div>
+            <ul class="tooltip__delimited-list delimited-list">
+              <li class="delimited-list__item">
+                <div class="split-content">
+                  <div class="split-content__primary">
+                    <div>Standard Ticket</div>
+                    <div>$100.00</div>
                   </div>
-                </li>
-                <li class="delimited-list__item delimited-list__item--compact">
-                  Second item
-                </li>
-                <li class="delimited-list__item delimited-list__item--compact">
-                  Last item in list
-                </li>
-              </ul>
+                  <div class="split-content__secondary">
+                    <button class="button button--static">Add</button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+        </div>
+
+        <div class="sg-ism-tooltip">
+          <h4 class="sg-subhdg3">Multiple Ticket Type</h4>
+          <div class="tooltip tooltip--ism">
+            <div class="tooltip__content">
+              <div class="tooltip__srs srs">
+                <div class="srs__set">
+                  <span class="srs__label">Sec</span>
+                  <span class="srs__value">21</span>
+                </div>
+                <div class="srs__set">
+                  <span class="srs__label">Row</span>
+                  <span class="srs__value">13</span>
+                </div>
+                <div class="srs__set">
+                  <span class="srs__label">Seat</span>
+                  <span class="srs__value">23</span>
+                </div>
+              </div>
+            </div>
+            <ul class="tooltip__delimited-list delimited-list">
+              <li class="delimited-list__item">
+                <div class="split-content">
+                  <div class="split-content__primary">
+                    <div>Standard Ticket</div>
+                    <div>$100.00</div>
+                  </div>
+                  <div class="split-content__secondary">
+                    <button class="button button--static">Add</button>
+                  </div>
+                </div>
+              </li>
+              <li class="delimited-list__item">
+                <div class="split-content">
+                  <div class="split-content__primary">
+                    <div>Child Ticket</div>
+                    <div>$90.00</div>
+                  </div>
+                  <div class="split-content__secondary">
+                    <button class="button button--static">Add</button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sg-ism-tooltip">
+          <h4 class="sg-subhdg3">With Notes</h4>
+          <div class="tooltip tooltip--ism">
+            <div class="tooltip__content">
+              <div class="tooltip__srs srs">
+                <div class="srs__set">
+                  <span class="srs__label">Sec</span>
+                  <span class="srs__value">21</span>
+                </div>
+                <div class="srs__set">
+                  <span class="srs__label">Row</span>
+                  <span class="srs__value">13</span>
+                </div>
+                <div class="srs__set">
+                  <span class="srs__label">Seat</span>
+                  <span class="srs__value">23</span>
+                </div>
+              </div>
+            </div>
+            <ul class="tooltip__delimited-list delimited-list">
+              <li class="delimited-list__item">
+                <div class="split-content">
+                  <div class="split-content__primary">
+                    <div>Standard Ticket</div>
+                    <div>$100.00</div>
+                  </div>
+                  <div class="split-content__secondary">
+                    <button class="button button--static">Add</button>
+                  </div>
+                </div>
+              </li>
+              <li class="delimited-list__item">
+                <div class="split-content">
+                  <div class="split-content__primary">
+                    <div>Child Ticket</div>
+                    <div>$90.00</div>
+                  </div>
+                  <div class="split-content__secondary">
+                    <button class="button button--static">Add</button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="tooltip__content">
+              <span>Obstructed View</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sg-ism-tooltip">
+          <h4 class="sg-subhdg3">General Admission</h4>
+          <div class="tooltip tooltip--ism">
+            <div class="tooltip__content">
+              <div class="tooltip__srs srs">
+                <div class="srs__set">
+                  <span class="srs__label">Sec</span>
+                  <span class="srs__value">21</span>
+                </div>
+                <div class="srs__set">
+                  <span class="srs__label">Row</span>
+                  <span class="srs__value">&ndash;</span>
+                </div>
+                <div class="srs__set">
+                  <span class="srs__label">Seat</span>
+                  <span class="srs__value">&ndash;</span>
+                </div>
+              </div>
+            </div>
+            <ul class="tooltip__delimited-list delimited-list">
+              <li class="delimited-list__item">
+                <div class="split-content">
+                  <div class="split-content__primary">
+                    <div>Standard Ticket</div>
+                    <div>$100.00 ea</div>
+                  </div>
+                  <div class="split-content__secondary">
+                    qty selector
+                  </div>
+                </div>
+              </li>
+              <li class="delimited-list__item">
+                <div class="split-content">
+                  <div class="split-content__primary">
+                    <div>Child Ticket</div>
+                    <div>$90.00 ea</div>
+                  </div>
+                  <div class="split-content__secondary">
+                    qty selector
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="tooltip__content">
+              <div class="split-content">
+                <div class="split-content__primary">
+                  <div class="tooltip--ism__subtotal">
+                    $100.00
+                  </div>
+                </div>
+                <div class="split-content__secondary">
+                  <button class="button button--static">Add</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

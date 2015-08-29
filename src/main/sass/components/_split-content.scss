@@ -1,44 +1,39 @@
-$split-content-padding-lg: $spacing-sm + 5;
-
 .split-content {
   display: flex;
   width: 100%;
+  align-items: center;
+}
 
-  &--centered {
-    align-items: center;
-  }
+.split-content__primary {
+  flex: 1 1 100%;
+}
 
-  &__primary {
-    flex: 1 1 100%;
+.split-content__primary--top {
+  align-self: flex-start;
+}
 
-    .split-content__secondary + & {
-      padding-left: $spacing-sm;
-    }
+.split-content__secondary {
+  flex: 0 0 auto;
+  padding-left: $spacing-sm;
 
-    .split-content__secondary + &--lg {
-      padding-left: $split-content-padding-lg;
-    }
-  }
-
-  &__primary--top {
-    align-self: flex-start;
-  }
-
-  &__secondary {
-    flex: 0 0 auto;
-    padding-left: $spacing-sm;
-  }
-
-  &__secondary--lg {
-    padding-left: $split-content-padding-lg;
-  }
-
-  &__secondary--top {
-    align-self: flex-start;
+  @include breakpoint($bp-md) {
+    padding-left: increase-spacing($spacing-sm);
   }
 
   // we don't want left padding if it's the first item
-  &__secondary:first-child {
+  &:first-child {
     padding-left: 0;
+  }
+}
+
+.split-content__secondary--top {
+  align-self: flex-start;
+}
+
+.split-content__secondary + .split-content__primary {
+  padding-left: $spacing-sm;
+
+  @include breakpoint($bp-md) {
+    padding-left: increase-spacing($spacing-sm);
   }
 }
