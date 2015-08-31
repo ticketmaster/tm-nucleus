@@ -128,7 +128,7 @@ $sg-spacing: 1.5em;
 .sg-subhdg2 {
   @include hdg-text('sm', $brand-gray2, 5px);
 
-  margin-top: 2.5em;
+  margin-top: 2em;
 
   text-transform: uppercase;
 }
@@ -157,7 +157,7 @@ $sg-spacing: 1.5em;
 
 
 .sg-table {
-  @include outer-spacing($bottom: $spacing-md);
+  margin-bottom: 1em;
 
   @include breakpoint($bp-md) {
     display: inline-block;

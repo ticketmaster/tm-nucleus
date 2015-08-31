@@ -1037,6 +1037,42 @@
       <section id="lists" class="sg-section">
         <h2 class="sg-hdg">Lists</h2>
 
+        <p>Default list styling for lists is as follows:</p>
+
+        <table class="sg-table">
+          <tr>
+            <td class="sg-table-hdg">Unordered List</td>
+            <td class="sg-table-hdg">Ordered List</td>
+          </tr>
+          <tr>
+            <td>
+              <ul>
+                <li>list item</li>
+                <li>list item</li>
+                <li>list item</li>
+              </ul>
+            </td>
+            <td>
+              <ol>
+                <li>list item</li>
+                <li>list item</li>
+                <li>list item</li>
+              </ol>
+            </td>
+          </tr>
+        </table>
+
+        <p>If you want to disable default list style for your use case, use the <code class="sg-code">unstyled-list()</code> mixin.</p>
+
+        <pre class="sg-sample-code">
+// scss
+.your-list {
+  <span class="sg-highlight-code">@include unstyled-list();</span>
+
+  // your styles here
+}
+        </pre>
+
         <h3 class="sg-subhdg">Delimited Lists</h3>
 
         <p>The Delimited List pattern has list items separated by a border. Each list item has top and bottom padding, and the list itself has a bottom margin.</p>
