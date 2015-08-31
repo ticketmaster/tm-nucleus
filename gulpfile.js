@@ -1,3 +1,4 @@
+var _ = require('lodash');
 var del = require('del');
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
@@ -18,10 +19,10 @@ var reload = browserSync.reload;
 
 // delete previously existing compiled files
 gulp.task('clean', function(cb) {
-  del([output.css], cb);
+  del(_.values(output), cb);
 });
 
-// compile sass, applu autoprefixer, and minify
+// compile sass, apply autoprefixer, and minify
 gulp.task('sass', ['clean'], function() {
   gulp.src(src.scss)
     .pipe(plugins.sourcemaps.init())
@@ -39,7 +40,8 @@ gulp.task('sass', ['clean'], function() {
     .pipe(gulp.dest(output.css));
 });
 
-gulp.task('svg', function() {
+// minify svg and combine into sprite
+gulp.task('svg', ['clean'], function() {
   gulp.src(src.svg)
     .pipe(plugins.svgmin({
       plugins: [
@@ -54,6 +56,9 @@ gulp.task('svg', function() {
       }}))
     .pipe(gulp.dest(output.svg))
     .pipe(plugins.svgstore())
+    .pipe(plugins.rename({
+        basename: 'sprite'
+      }))
     .pipe(gulp.dest(output.svg));
 });
 
@@ -66,6 +71,7 @@ gulp.task('browser-sync', function() {
 gulp.task('watch', function() {
   gulp.watch(src.html, reload);
   gulp.watch(src.scss, ['sass']);
+  gulp.watch(src.svg, ['svg']);
 });
 
 gulp.task('default', ['sass', 'svg', 'browser-sync', 'watch']);
