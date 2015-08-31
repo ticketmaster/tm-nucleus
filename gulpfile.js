@@ -1,13 +1,7 @@
 var del = require('del');
 var gulp = require('gulp');
-var sass = require('gulp-sass');
-var postcss = require('gulp-postcss')
-var autoprefixer = require('autoprefixer-core');
-var cssmin = require('gulp-minify-css');
-var sourcemaps = require('gulp-sourcemaps');
-var rename = require('gulp-rename');
+var plugins = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
-var watch = require('gulp-watch');
 
 var src = {
   html: './public/**/*.html',
@@ -24,18 +18,16 @@ gulp.task('clean', function(cb) {
 // compile sass, applu autoprefixer, and minify
 gulp.task('sass', ['clean'], function() {
   gulp.src(src.scss)
-    .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError))
-    .pipe(postcss([
-        autoprefixer({
-          browsers: ['last 2 versions', 'ie >= 9']
-        })
-      ]))
-    .pipe(sourcemaps.write())
+    .pipe(plugins.sourcemaps.init())
+    .pipe(plugins.sass().on('error', plugins.sass.logError))
+    .pipe(plugins.autoprefixer({
+        browsers: ['last 2 versions', 'ie >= 9']
+      }))
+    .pipe(plugins.sourcemaps.write())
     .pipe(gulp.dest(cssOutputDir))
     .pipe(reload({stream: true}))
-    .pipe(cssmin())
-    .pipe(rename({
+    .pipe(plugins.minifyCss())
+    .pipe(plugins.rename({
         suffix: '.min'
       }))
     .pipe(gulp.dest(cssOutputDir));
