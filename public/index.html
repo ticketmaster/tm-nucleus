@@ -65,11 +65,32 @@
 
         <h2 class="sg-hdg">Color Palette</h2>
 
-        <p>The colors in our palette are named after geographic locations, with each group of colors carrying a specific theme.
-          For example, all Blues are named after bodies of water, Greens after national parks, etc.</p>
-
-        <h3 class="sg-subhdg">Grays</h3>
         <div class="sg-swatches">
+          <div class="sg-swatch-group">
+            <div class="sg-swatch sg-swatch--pacific"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">pacific</span>
+              <code class="sg-code">$brand-primary</code>
+              <ul class="sg-list sg-swatch-usage">
+                <li>Links</li>
+                <li>Standard buttons</li>
+                <li>Focused border</li>
+                <li>Selected radio button</li>
+                <li>Progress bar</li>
+              </ul>
+            </div>
+          </div>
+          <div class="sg-swatch-group">
+            <div class="sg-swatch sg-swatch--havasu"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">havasu <span class="alt-copy">(pacific w/ 90% white)</span></span>
+              <code class="sg-code">$brand-primary-lighter</code>
+              <ul class="sg-list sg-swatch-usage">
+                <li>Quick Picks hover background</li>
+              </ul>
+            </div>
+          </div>
+
           <div class="sg-swatch-group">
             <div class="sg-swatch sg-swatch--sierra"></div>
             <div class="sg-swatch-info">
@@ -119,38 +140,7 @@
                </ul>
              </div>
           </div>
-        </div>
 
-        <h3 class="sg-subhdg">Blues</h3>
-        <div class="sg-swatches">
-          <div class="sg-swatch-group">
-            <div class="sg-swatch sg-swatch--pacific"></div>
-            <div class="sg-swatch-info">
-              <span class="sg-swatch-name">pacific</span>
-              <code class="sg-code">$brand-primary</code>
-              <ul class="sg-list sg-swatch-usage">
-                <li>Links</li>
-                <li>Standard buttons</li>
-                <li>Focused border</li>
-                <li>Selected radio button</li>
-                <li>Progress bar</li>
-              </ul>
-            </div>
-          </div>
-          <div class="sg-swatch-group">
-            <div class="sg-swatch sg-swatch--havasu"></div>
-            <div class="sg-swatch-info">
-              <span class="sg-swatch-name">havasu <span class="alt-copy">(pacific w/ 90% white)</span></span>
-              <code class="sg-code">$brand-primary-lighter</code>
-              <ul class="sg-list sg-swatch-usage">
-                <li>Quick Picks hover background</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <h3 class="sg-subhdg">Green</h3>
-        <div class="sg-swatches">
           <div class="sg-swatch-group">
             <div class="sg-swatch sg-swatch--yosemite"></div>
             <div class="sg-swatch-info">
@@ -163,10 +153,7 @@
               </ul>
             </div>
           </div>
-        </div>
 
-        <h3 class="sg-subhdg">Pink</h3>
-        <div class="sg-swatches">
           <div class="sg-swatch-group">
             <div class="sg-swatch sg-swatch--catalina"></div>
             <div class="sg-swatch-info">
@@ -178,10 +165,7 @@
               </ul>
             </div>
           </div>
-        </div>
 
-        <h3 class="sg-subhdg">Red</h3>
-        <div class="sg-swatches">
           <div class="sg-swatch-group">
             <div class="sg-swatch sg-swatch--helen"></div>
             <div class="sg-swatch-info">
@@ -349,26 +333,6 @@
 // scss
 .sample-text {
   @include <span class="sg-highlight-code">responsive-font('md')</span>;
-}
-
-// output
-.sample-text {
-  font-size: 1.4rem;
-  line-height: 1.4;
-}
-
-@media (min-width: 23.4375em) {
-  .sample-text {
-    font-size: 1.6rem;
-    line-height: 1.4;
-  }
-}
-
-@media (min-width: 45em) {
-  .sample-text {
-    font-size: 1.8rem;
-    line-height: 1.2;
-  }
 }
         </pre>
 
@@ -591,11 +555,11 @@
 
         <table class="sg-table">
           <tr>
-            <td>Font size is &lt;18px</td>
+            <td>Font size is &quot;medium&quot; or lower</td>
             <td><code class="sg-code">1.4</code></td>
           </tr>
           <tr>
-            <td>Font size is &ge;18px</td>
+            <td>Font size is &quot;large&quot; or higher</td>
             <td><code class="sg-code">1.2</code></td>
           </tr>
         </table>
@@ -1034,8 +998,11 @@
             <td><code class="sg-code">.unbutton</code>, looks like normal link text (needed for accessibility purposes)</td>
           </tr>
         </table>
+      </section>
 
-        <h3 class="sg-subhdg">Quantity Buttons</h3>
+      <section id="qty-buttons" class="sg-section">
+        <h2 class="sg-hdg">Quantity Buttons</h2>
+
         <table class="sg-table sg-button-table">
           <tr>
             <td>
