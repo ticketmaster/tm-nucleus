@@ -166,6 +166,8 @@ $sg-spacing: 1.5em;
   }
 
   td {
+    @include responsive-font('sm');
+
     padding: 0 10px 5px 0;
 
     @include breakpoint($bp-md) {
@@ -195,8 +197,6 @@ $sg-spacing: 1.5em;
   }
 
   .sg-swatch-na {
-    @include responsive-font('sm');
-
     text-align: center;
 
     padding-top: 25px;
