@@ -5,14 +5,20 @@ var browserSync = require('browser-sync');
 
 var src = {
   html: './public/**/*.html',
-  scss: './src/main/sass/**/*.scss'
+  scss: './src/main/sass/**/*.scss',
+  svg:  './src/main/svg/**/*.svg'
 }
-var cssOutputDir = './public/css';
+
+var output = {
+  css: './public/css',
+  svg: './public/img/svg'
+}
+
 var reload = browserSync.reload;
 
 // delete previously existing compiled files
 gulp.task('clean', function(cb) {
-  del([cssOutputDir], cb);
+  del([output.css], cb);
 });
 
 // compile sass, applu autoprefixer, and minify
@@ -24,13 +30,31 @@ gulp.task('sass', ['clean'], function() {
         browsers: ['last 2 versions', 'ie >= 9']
       }))
     .pipe(plugins.sourcemaps.write())
-    .pipe(gulp.dest(cssOutputDir))
+    .pipe(gulp.dest(output.css))
     .pipe(reload({stream: true}))
     .pipe(plugins.minifyCss())
     .pipe(plugins.rename({
         suffix: '.min'
       }))
-    .pipe(gulp.dest(cssOutputDir));
+    .pipe(gulp.dest(output.css));
+});
+
+gulp.task('svg', function() {
+  gulp.src(src.svg)
+    .pipe(plugins.svgmin({
+      plugins: [
+        { removeViewBox: false },
+        { removeUselessStrokeAndFill: false },
+        { removeEmptyAttrs: false },
+        { removeTitle: false },
+        { removeDesc: true }
+      ],
+      js2svg: {
+        pretty: true
+      }}))
+    .pipe(gulp.dest(output.svg))
+    .pipe(plugins.svgstore())
+    .pipe(gulp.dest(output.svg));
 });
 
 gulp.task('browser-sync', function() {
@@ -44,4 +68,4 @@ gulp.task('watch', function() {
   gulp.watch(src.scss, ['sass']);
 });
 
-gulp.task('default', ['sass', 'browser-sync', 'watch']);
+gulp.task('default', ['sass', 'svg', 'browser-sync', 'watch']);

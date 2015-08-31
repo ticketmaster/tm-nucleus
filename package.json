@@ -25,6 +25,7 @@
     "gulp-sass": "^2.0.4",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-svgmin": "^1.2.0",
+    "gulp-svgstore": "^5.0.4",
     "gulp-watch": "^4.3.4",
     "node-sass": "^3.2.0"
   }
