@@ -3,6 +3,7 @@ var del = require('del');
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
+var scsslint = require('gulp-scss-lint');
 
 var src = {
   html: 'public/**/*.html',
@@ -17,12 +18,26 @@ var output = {
 
 var reload = browserSync.reload;
 
+scsslint({
+  config: 'scss-lint.yml',
+  reporterOutput: 'lint-report.xml'
+});
+
 // delete previously existing compiled files
 gulp.task('clean', function(cb) {
   del(_.values(output), cb);
 });
 
 // compile sass, apply autoprefixer, and minify
+gulp.task('scsslint', function() {
+  gulp.src(src.scss, [
+    'src/main/sass/vendors/**/*.scss',
+    'src/main/sass/base/_normalize.scss'
+  ])
+  .pipe(scsslint());
+});
+
+// compile sass, applu autoprefixer, and minify
 gulp.task('sass', ['clean'], function() {
   gulp.src(src.scss)
     .pipe(plugins.sourcemaps.init())
