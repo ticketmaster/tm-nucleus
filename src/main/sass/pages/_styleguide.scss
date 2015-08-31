@@ -3,7 +3,7 @@ $sg-swatch-height: 70px;
 $sg-spacing: 1.5em;
 
 @mixin code-style($sz: sm) {
-  @include responsive-font($sz);
+  @include fixed-font('sm');
 
   padding: 2px 4px;
   border: $base-border-style;
@@ -115,46 +115,38 @@ $sg-spacing: 1.5em;
 .sg-hdg {
   @include hdg-text('xxl', $brand-primary);
 
-  color: $brand-primary;
   text-transform: uppercase;
 }
 
 
 .sg-subhdg {
-  @include responsive-font('md');
+  @include hdg-text('md', $brand-accent);
 
-  margin-bottom: 5px;
-
-  color: $brand-accent;
   text-transform: uppercase;
-
-  + .sg-list {
-    margin-top: 10px;
-  }
 }
 
 .sg-subhdg2 {
-  @include responsive-font('sm');
+  @include hdg-text('sm', $brand-gray2, 5px);
 
-  margin: 20px 0 5px;
+  margin-top: 2.5em;
 
-  color: $brand-gray2;
   text-transform: uppercase;
 }
 
 .sg-subhdg3 {
-  @include responsive-font('sm');
+  @include hdg-text('sm', $brand-gray);
 
-  margin: 20px 0 10px;
+  margin-top: 2em;
 
   font-weight: normal;
-  color: $brand-gray;
   text-transform: uppercase;
 }
 
 
 .sg-list {
   @include unstyled-list();
+
+  margin-bottom: 1em;
 
   line-height: 1.6;
 
@@ -243,8 +235,8 @@ $sg-spacing: 1.5em;
 // sample code style
 .sg-sample-code {
   @include code-style();
-  @include outer-spacing($bottom: $spacing-md);
 
+  margin-bottom: 1em;
   padding: 0 gutter();
   clear: both;
 
@@ -482,6 +474,15 @@ $sg-spacing: 1.5em;
 // quantity buttons
 .sg-embedded-qty-filter {
   width: 250px;
+}
+
+
+// lists {
+.sg-list-box {
+  margin-bottom: 1em;
+
+  background-color: $white;
+  border: $base-border-style;
 }
 
 

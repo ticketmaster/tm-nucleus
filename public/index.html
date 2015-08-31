@@ -1039,7 +1039,8 @@
 
         <h3 class="sg-subhdg">Delimited Lists</h3>
 
-        <p>The Delimited List pattern has list items separated by a border.</p>
+        <p>The Delimited List pattern has list items separated by a border. Each list item has top and bottom padding, and the list itself has a bottom margin.</p>
+        <p>All spacing values follow the <code class="sg-code">$spacing-sm</code> rules as described in <a href="#spacing">Spacing</a>.</p>
 
         <ul class="delimited-list">
           <li class="delimited-list__item">
@@ -1054,21 +1055,64 @@
         </ul>
 
         <pre class="sg-sample-code">
-&lt;div class="module"&gt;
-  &lt;ul class="<span class="sg-highlight-code">delimited-list</span>"&gt;
-    &lt;li class="<span class="sg-highlight-code">delimited-list__item</span>"&gt;
+&lt;ul class="<span class="sg-highlight-code">delimited-list</span>"&gt;
+  &lt;li class="<span class="sg-highlight-code">delimited-list__item</span>"&gt;
+    First item
+  &lt;/li&gt;
+  &lt;li class="<span class="sg-highlight-code">delimited-list__item</span>"&gt;
+    Secondy item
+  &lt;/li&gt;
+  &lt;li class="<span class="sg-highlight-code">delimited-list__item</span>"&gt;
+    Third item
+  &lt;/li&gt;
+&lt;/ul&gt;
+        </pre>
+
+        <h3 class="sg-subhdg2">Embedded Delimited List</h3>
+        <p></p>
+
+        <p>If you need to embed the Delimited List pattern in a container with a border, you'll need to turn off the bottom margin and apply left and right padding. Otherwise, the list content will be flush against the left and right borders.</p>
+
+        <p>Modifying the list to work in this scenario is simple: Just add the <code class="sg-code">--embedded</code> modifier to the list and list items:</p>
+
+        <pre class="sg-sample-code">
+&lt;div class="some-box"&gt;
+  &lt;ul class="delimited-list <span class="sg-highlight-code">delimited-list--embedded</span>"&gt;
+    &lt;li class="delimited-list__item <span class="sg-highlight-code">delimited-list__item--embedded</span>"&gt;
       First item
     &lt;/li&gt;
-    &lt;li class="<span class="sg-highlight-code">delimited-list__item</span>"&gt;
+    &lt;li class="delimited-list__item <span class="sg-highlight-code">delimited-list__item--embedded</span>"&gt;
       Secondy item
     &lt;/li&gt;
-    &lt;li class="<span class="sg-highlight-code">delimited-list__item</span>"&gt;
+    &lt;li class="delimited-list__item <span class="sg-highlight-code">delimited-list__item--embedded</span>"&gt;
       Third item
     &lt;/li&gt;
-  &lt;/div&gt;
 &lt;/div&gt;
         </pre>
 
+        <p>That'll give you this:</p>
+
+        <div class="sg-list-box">
+          <ul class="delimited-list delimited-list--embedded">
+            <li class="delimited-list__item delimited-list__item--embedded">
+              <div class="sg-list-box-content">
+                Example 1
+              </div>
+            </li>
+            <li class="delimited-list__item delimited-list__item--embedded">
+              <div class="sg-list-box-content">
+                Second item
+              </div>
+            </li>
+            <li class="delimited-list__item delimited-list__item--embedded">
+              <div class="sg-list-box-content">
+                Last item in list
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <h3 class="sg-subhdg2">Compact Delimited List</h3>
         <p>There are occasions when separator lines are not desirable on mobile but are needed on desktop (resize to mobile view to see the difference).</p>
 
         <ul class="delimited-list">

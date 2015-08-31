@@ -4,6 +4,10 @@
   margin-bottom: 1em;
 }
 
+.delimited-list--embedded {
+  margin-bottom: 0;
+}
+
 .delimited-list__item {
   @include inner-spacing($top: $spacing-sm, $bottom: $spacing-sm);
 
@@ -12,6 +16,10 @@
   &:first-child {
     border-top: 0;
   }
+}
+
+.delimited-list__item--embedded {
+  @include inner-spacing($spacing-sm);
 }
 
 .delimited-list__item--compact {
