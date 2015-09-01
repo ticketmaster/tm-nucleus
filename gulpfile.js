@@ -3,7 +3,6 @@ var del = require('del');
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
-var scsslint = require('gulp-scss-lint');
 
 var src = {
   html: 'public/**/*.html',
@@ -18,46 +17,29 @@ var output = {
 
 var reload = browserSync.reload;
 
-scsslint({
-  config: 'scss-lint.yml',
-  reporterOutput: 'lint-report.xml'
-});
-
-// delete previously existing compiled files
-gulp.task('clean', function(cb) {
-  del(_.values(output), cb);
-});
-
-// compile sass, apply autoprefixer, and minify
-gulp.task('scsslint', function() {
-  gulp.src(src.scss, [
-    'src/main/sass/vendors/**/*.scss',
-    'src/main/sass/base/_normalize.scss'
-  ])
-  .pipe(scsslint());
-});
-
-// compile sass, applu autoprefixer, and minify
-gulp.task('sass', ['clean'], function() {
-  gulp.src(src.scss)
+function compileSass() {
+  return gulp.src(src.scss)
     .pipe(plugins.sourcemaps.init())
     .pipe(plugins.sass().on('error', plugins.sass.logError))
-    .pipe(plugins.autoprefixer({
-        browsers: ['last 2 versions', 'ie >= 9']
-      }))
+    .pipe(plugins.autoprefixer({ browsers: ['last 2 versions', 'ie >= 9'] }))
     .pipe(plugins.sourcemaps.write())
     .pipe(gulp.dest(output.css))
-    .pipe(reload({stream: true}))
+    .pipe(reload({ stream: true }))
     .pipe(plugins.minifyCss())
-    .pipe(plugins.rename({
-        suffix: '.min'
-      }))
+    .pipe(plugins.rename({ suffix: '.min' }))
     .pipe(gulp.dest(output.css));
-});
+}
 
-// minify svg and combine into sprite
-gulp.task('svg', ['clean'], function() {
-  gulp.src(src.svg)
+function lintSass() {
+  return gulp.src([src.scss, '!src/main/sass/vendors/**/*.scss', '!src/main/sass/base/_normalize.scss'])
+    .pipe(plugins.scssLint({
+      'config': 'scss-lint.yml',
+      'reporterOutput': 'lint-report.xml'
+    }));
+}
+
+function processSvg() {
+  return gulp.src(src.svg)
     .pipe(plugins.svgmin({
       plugins: [
         { removeViewBox: false },
@@ -75,7 +57,20 @@ gulp.task('svg', ['clean'], function() {
         basename: 'sprite'
       }))
     .pipe(gulp.dest(output.svg));
+}
+
+// delete existing compiled files
+gulp.task('clean', function(cb) {
+  del(_.values(output), cb);
 });
+
+// compile sass, apply autoprefixer, and minify
+gulp.task('sass', compileSass);
+
+gulp.task('scsslint', lintSass);
+
+// minify svg and combine into sprite
+gulp.task('svg', processSvg);
 
 gulp.task('browser-sync', function() {
   browserSync.init(null, {
@@ -85,8 +80,16 @@ gulp.task('browser-sync', function() {
 
 gulp.task('watch', function() {
   gulp.watch(src.html, reload);
-  gulp.watch(src.scss, ['sass']);
-  gulp.watch(src.svg, ['svg']);
+  gulp.watch(src.scss,
+    gulp.series('sass')
+  );
+  gulp.watch(src.svg,
+    gulp.series('svg', reload)
+  );
 });
 
-gulp.task('default', ['sass', 'svg', 'browser-sync', 'watch']);
+gulp.task('default',
+  gulp.series('clean',
+    gulp.parallel('sass', 'svg', 'browser-sync', 'watch')
+  )
+);

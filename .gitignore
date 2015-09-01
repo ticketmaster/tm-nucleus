@@ -1,5 +1,6 @@
 .DS_Store
 .idea
+lint-report.xml
 node_modules
 public/css
 public/img
