@@ -64,6 +64,14 @@ $input-group-vspace: 10px;
 // Ticket Bag
 $ticket-bag-padding: 10px;
 
+// Timer
+$timer-bg-color: $brand-primary;
+$timer-size: 60px;
+$timer-size-lg: 65px;
+$timer-border-on: 5px solid get-darker($brand-primary);
+$timer-border-off: 5px solid get-lighter($brand-primary);
+$timer-font-size: 'md';
+
 // Animation
 $text-enter: all 0.5s ease-in;
 $text-leave: all 0.5s ease-in;
@@ -130,6 +138,16 @@ $text-leave: all 0.5s ease-in;
     opacity: 0.01;
     transform: rotate(495deg);
   }
+}
+
+@keyframes timer-rota {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes timer-opa {
+  0% { opacity: 1; }
+  50%, 100% { opacity: 0; }
 }
 
 @keyframes rcToolTipZoomIn {

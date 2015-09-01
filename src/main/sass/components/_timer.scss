@@ -1,10 +1,3 @@
-$timer-bg-color: $brand-primary;
-$timer-size: 60px;
-$timer-size-lg: 65px;
-$timer-border-on: 5px solid get-darker($brand-primary);
-$timer-border-off: 5px solid get-lighter($brand-primary);
-$timer-font-size: 'md';
-
 .timer {
   background: $timer-bg-color;
   height: $timer-size;
@@ -83,14 +76,4 @@ $timer-font-size: 'md';
   @include breakpoint($bp-lg) {
     border-width: 7px;
   }
-}
-
-@keyframes timer-rota {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-@keyframes timer-opa {
-  0% { opacity: 1; }
-  50%, 100% { opacity: 0; }
 }
