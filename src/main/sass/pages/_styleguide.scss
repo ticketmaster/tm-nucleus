@@ -519,3 +519,8 @@ $sg-spacing: 1.5em;
 .sg-ism-tooltip {
   @include outer-spacing($bottom: $spacing-md);
 }
+
+.sg-timer-wrapper {
+  padding: 35px 20px;
+  background-color: $brand-primary;
+}

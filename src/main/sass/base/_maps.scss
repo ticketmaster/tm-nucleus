@@ -64,5 +64,9 @@ $z-indexes: (
   'docking-module-blur': 0,             // basically same as overlay, but needs to be higher than page-content-header
   'panel-in-focus': 10,                 // sit above content
   'overlay': 9999,
+  'timer-filler': 100,
+  'timer-spinner': 200,
+  'timer-mask': 200,
+  'timer-indicator': 220,
   'arrow': 1
 );
