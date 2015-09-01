@@ -3,7 +3,10 @@
   "version": "0.0.4",
   "private": false,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "scripts": {
+      "prepush": "gulp scsslint"
+    }
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -27,6 +30,7 @@
     "gulp-sourcemaps": "^1.5.2",
     "gulp-svgmin": "^1.2.0",
     "gulp-svgstore": "^5.0.4",
+    "husky": "^0.9.3",
     "lodash": "^3.10.1",
     "node-sass": "^3.2.0"
   }

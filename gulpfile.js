@@ -17,6 +17,7 @@ var output = {
 
 var reload = browserSync.reload;
 
+// compile sass, apply autoprefixer, and minify
 function compileSass() {
   return gulp.src(src.scss)
     .pipe(plugins.sourcemaps.init())
@@ -38,6 +39,7 @@ function lintSass() {
     }));
 }
 
+// minify svg, combine into sprite
 function processSvg() {
   return gulp.src(src.svg)
     .pipe(plugins.svgmin({
@@ -64,7 +66,6 @@ gulp.task('clean', function(cb) {
   del(_.values(output), cb);
 });
 
-// compile sass, apply autoprefixer, and minify
 gulp.task('sass', compileSass);
 
 gulp.task('scsslint', lintSass);
