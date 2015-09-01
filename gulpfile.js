@@ -4,10 +4,15 @@ var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
 
+var paths = {
+  sourcefiles: 'src/main'
+}
+
 var src = {
   html: 'public/**/*.html',
   scss: 'src/main/sass/**/*.scss',
-  svg:  'src/main/svg/**/*.svg'
+  svg:  'src/main/svg/**/*.svg',
+  normalize: 'node_modules/normalize.css/normalize.css'
 }
 
 var output = {
@@ -16,6 +21,15 @@ var output = {
 }
 
 var reload = browserSync.reload;
+
+function grabNormalize() {
+  return gulp.src(src.normalize)
+    .pipe(plugins.rename(function(path){
+      path.basename = '_' + path.basename,
+      path.extname = '.scss'
+    }))
+    .pipe(gulp.dest(paths.sourcefiles + '/sass/vendors/normalize'));
+}
 
 // compile sass, apply autoprefixer, and minify
 function compileSass() {
@@ -65,6 +79,8 @@ function processSvg() {
 gulp.task('clean', function(cb) {
   del(_.values(output), cb);
 });
+
+gulp.task('normalize', grabNormalize);
 
 gulp.task('sass', compileSass);
 
