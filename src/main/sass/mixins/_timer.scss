@@ -9,7 +9,7 @@
   border: $timer-border-on;
 
   @include breakpoint($bp-lg) {
-    border-width: 6px;
+    border-width: 7px;
   }
 }
 
