@@ -5,14 +5,14 @@ var plugins = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
 
 var src = {
-  html: './public/**/*.html',
-  scss: './src/main/sass/**/*.scss',
-  svg:  './src/main/svg/**/*.svg'
+  html: 'public/**/*.html',
+  scss: 'src/main/sass/**/*.scss',
+  svg:  'src/main/svg/**/*.svg'
 }
 
 var output = {
-  css: './public/css',
-  svg: './public/img/svg'
+  css: 'public/css',
+  svg: 'public/img/svg'
 }
 
 var reload = browserSync.reload;
