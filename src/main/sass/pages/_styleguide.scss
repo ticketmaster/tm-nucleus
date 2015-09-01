@@ -21,15 +21,24 @@ $sg-spacing: 1.5em;
   @include span(full);
   @include outer-spacing($bottom: $spacing-lg);
 
-  padding-top: $spacing-md;
+  padding-top: $spacing-sm;
   padding-bottom: $spacing-sm;
+
+  line-height: 1;
 
   background-color: $brand-primary;
 
   @include breakpoint($bp-md) {
-    padding-top: increase-spacing($spacing-md);
+    padding-top: increase-spacing($spacing-sm);
     padding-bottom: increase-spacing($spacing-sm);
   }
+}
+
+.nucleus-logo {
+  width: 70px;
+  height: 70px;
+
+  fill: $white;
 }
 
 .sg-tm-logo {
@@ -47,14 +56,8 @@ $sg-spacing: 1.5em;
 .sg-name {
   @include responsive-font('md');
 
-  padding-top: 0.5rem;
-
   font-weight: bold;
   color: $white;
-
-  @include breakpoint($bp-md) {
-    padding-top: 1rem;
-  }
 }
 
 .sg-title {
