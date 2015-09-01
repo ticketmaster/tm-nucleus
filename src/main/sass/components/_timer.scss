@@ -11,7 +11,7 @@
 }
 
 .timer__indicator {
-  @include responsive-font($timer-font-size);
+  @include responsive-font('md');
 
   color: $white;
   position: absolute;
@@ -19,7 +19,7 @@
   top: 50%;
   transform: translateY(-50%);
   width: 100%;
-  z-index: 220;
+  z-index: z('timer-indicator');
 
 }
 
@@ -29,7 +29,7 @@
   animation: timer-rota 5 + s linear infinite;
   border-radius: 100% 0 0 100% / 50% 0 0 50%;
   border-right: 0;
-  z-index: 200;
+  z-index: z('timer-spinner');
 }
 
 .timer__filler {
@@ -40,7 +40,7 @@
   border-radius: 0 100% 100% 0 / 0 50% 50% 0; 
   left: 50%;
   opacity: 0;
-  z-index: 100;
+  z-index: z('timer-filler');
 }
 
 .timer__bg {
@@ -71,7 +71,7 @@
   position: absolute;
   top: 0;
   width: 50%;
-  z-index: 201;
+  z-index: z('timer-mask');
 
   @include breakpoint($bp-lg) {
     border-width: 7px;
