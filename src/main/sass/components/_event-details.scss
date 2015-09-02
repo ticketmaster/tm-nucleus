@@ -165,7 +165,7 @@
       @include span(8);
       @include use-table-cell();
 
-      padding-right: gutter()*2;
+      padding-right: gutter() * 2;
 
       border-right: $base-border-style;
     }
@@ -182,14 +182,15 @@
       @include span(4);
       @include use-table-cell();
 
-      padding-left: gutter()*2;
+      padding-left: gutter() * 2;
       margin-top: 0;
     }
   }
 
   &__heading {
-    font-weight: bold;
     @include responsive-font('sm');
+
+    font-weight: bold;
   }
 
   &__block + &__block {
@@ -223,11 +224,11 @@
 
   &__list__link {
     @include breakpoint($max: $bp-md - 1) {
-      @include bleed-x(gutter()*2);
+      @include bleed-x(gutter() * 2);
       @include chevron();
 
       display: block;
-      padding: 1.2em gutter()+15 1.2em gutter();
+      padding: 1.2em (gutter() + 15) 1.2em gutter();
 
       color: $brand-gray;
 

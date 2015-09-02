@@ -25,13 +25,11 @@ $radio-size: 20px;
       width: $radio-size;
       height: $radio-size;
       margin-right: 10px;
-
       vertical-align: middle;
       border: 5px solid $white;
       border-radius: 1rem;
-      box-shadow: $radio-border-style;
-
       content: '';
+      box-shadow: $radio-border-style;
     }
   }
 

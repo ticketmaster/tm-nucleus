@@ -4,7 +4,7 @@ $footer-stacked-spacing: 15px;
 
 
 // placeholders
-%footer-list {
+@mixin footer-list() {
   @include clearfix();
   @include unstyled-list();
 }
@@ -152,7 +152,7 @@ $footer-stacked-spacing: 15px;
 }
 
 .footer__list-mini {
-  @extend %footer-list;
+  @include footer-list();
 
   margin-left: 10px;
 
@@ -169,7 +169,7 @@ $footer-stacked-spacing: 15px;
 }
 
 .footer__list-mini-app {
-  @extend %footer-list;
+  @include footer-list();
 
   margin: 15px 0 0 10px;
 
@@ -276,7 +276,7 @@ $footer-stacked-spacing: 15px;
 }
 
 .footer__link-list {
-  @extend %footer-list;
+  @include footer-list();
 
   display: table;
 }
@@ -333,9 +333,9 @@ $footer-stacked-spacing: 15px;
 .footer__tou {
   @include span(9 of 12);
   @include fixed-font('sm');
-  font-weight: bold;
-  
+
   margin-top: 10px;
+  font-weight: bold;
 
   a {
     color: $brand-primary;
@@ -347,7 +347,7 @@ $footer-stacked-spacing: 15px;
 }
 
 .footer__list-inline {
-  @extend %footer-list;
+  @include footer-list();
 
   display: inline;
 

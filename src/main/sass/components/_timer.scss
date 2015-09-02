@@ -1,55 +1,54 @@
 .timer {
-  background: $timer-bg-color;
-  height: $timer-size;
   position: relative;
   width: $timer-size;
+  height: $timer-size;
+  background: $timer-bg-color;
 
   @include breakpoint($bp-lg) {
-    height: $timer-size-lg;
     width: $timer-size-lg;
+    height: $timer-size-lg;
   }
 }
 
 .timer__indicator {
   @include responsive-font('md');
 
-  color: $white;
   position: absolute;
-  text-align: center;
   top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
   z-index: z('timer-indicator');
-
+  width: 100%;
+  color: $white;
+  text-align: center;
+  transform: translateY(-50%);
 }
 
 .timer__spinner {
   @include timer-base();
 
-  animation: timer-rota 5 + s linear infinite;
-  border-radius: 100% 0 0 100% / 50% 0 0 50%;
-  border-right: 0;
   z-index: z('timer-spinner');
+  border-right: 0;
+  border-radius: 100% 0 0 100% / 50% 0 0 50%;
+  animation: timer-rota 5 + s linear infinite;
 }
 
 .timer__filler {
   @include timer-base();
 
-  animation: timer-opa 5 + s steps(1, end) infinite reverse;
-  border-left: 0;
-  border-radius: 0 100% 100% 0 / 0 50% 50% 0; 
   left: 50%;
-  opacity: 0;
   z-index: z('timer-filler');
+  border-left: 0;
+  border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+  opacity: 0;
+  animation: timer-opa 5 + s steps(1, end) infinite reverse;
 }
 
 .timer__bg {
+  width: 100%;
+  height: 100%;
   background-color: $timer-bg-color;
   border: $timer-border-off;
   border-radius: 100%;
-  height: 100%;
   opacity: 1;
-  width: 100%;
 
   @include breakpoint($bp-lg) {
     border-width: 7px;
@@ -59,19 +58,18 @@
 .timer__mask {
   @include timer-base();
 
-  animation: timer-opa 5 + s steps(1, end) infinite;
-  background-color: $timer-bg-color;
-  border: $timer-border-off;
-  border-radius: 200% 0 0 200% / 100%;
-  border-right: 0;
-
-  height: 100%;
-  left: 0;
-  opacity: 1;
   position: absolute;
   top: 0;
-  width: 50%;
+  left: 0;
   z-index: z('timer-mask');
+  width: 50%;
+  height: 100%;
+  background-color: $timer-bg-color;
+  border: $timer-border-off;
+  border-right: 0;
+  border-radius: 200% 0 0 200% / 100%;
+  opacity: 1;
+  animation: timer-opa 5 + s steps(1, end) infinite;
 
   @include breakpoint($bp-lg) {
     border-width: 7px;

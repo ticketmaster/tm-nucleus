@@ -41,7 +41,7 @@
 
 
   &__toggle {
-    @extend %toggle;
+    @include toggle();
 
     float: right;
 

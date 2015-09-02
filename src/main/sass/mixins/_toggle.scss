@@ -2,8 +2,12 @@
 $toggle-size: 20px;
 
 
-// placeholders
-%toggle {
+// mixins
+@mixin toggle($state: false) {
+  @if $state {
+    @include svg($state);
+  }
+
   @include hide-text();
 
   display: inline-block;
@@ -17,15 +21,8 @@ $toggle-size: 20px;
   }
 }
 
-
-// mixins
-@mixin toggle($state) {
-  @extend %toggle;
-  @include svg($state);
-}
-
 @mixin toggle-btn() {
-  @extend %toggle;
+  @include toggle();
 
   transform: translateY(0%);
   float: right;

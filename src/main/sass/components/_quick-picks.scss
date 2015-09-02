@@ -52,9 +52,8 @@
   }
 
   &__item-name {
-    font-weight: bold;
-
     display: block;
+    font-weight: bold;
 
     @include breakpoint($max: $bp-lg) {
       width: 100%;

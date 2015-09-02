@@ -50,14 +50,13 @@ $ticket-stub-padding: 10px;
   }
 
   &__content {
-    margin-top: $spacing-sm;
     padding-top: $spacing-sm;
-
+    margin-top: $spacing-sm;
     border-top: $base-border-style;
 
     @include breakpoint($bp-md) {
-      margin-top: increase-spacing($spacing-sm);
       padding-top: increase-spacing($spacing-sm);
+      margin-top: increase-spacing($spacing-sm);
     }
   }
 

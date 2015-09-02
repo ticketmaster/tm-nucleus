@@ -11,7 +11,7 @@ $susy: (
   container: 100%,
   columns: $total-columns,
   column-width: $column-width,
-  gutters: ($gutter-width/$column-width)
+  gutters: ($gutter-width / $column-width)
 );
 
 @include border-box-sizing;

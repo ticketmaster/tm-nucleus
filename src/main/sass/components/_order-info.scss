@@ -93,8 +93,9 @@
   }
 
   &__order-amt-header {
-    font-weight: bold;
     @include hdg-text('xl');
+
+    font-weight: bold;
   }
 
   &__order-amtTotal {

@@ -86,7 +86,7 @@
   }
 
   &__toggle {
-    @extend %toggle;
+    @include toggle();
 
     position: relative;
 

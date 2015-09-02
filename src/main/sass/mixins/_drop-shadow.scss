@@ -7,7 +7,8 @@
   // CSS3 drop-shadow filter renders differently, so we need to halve the value
   $modern-blur: $blur / 2;
 
-  // IE8-9
+  // IE8-9 fallback
+  // scss-lint:disable VendorPrefix
   -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=#{$x}, OffY=#{$y}, Color='#{$color}')";
 
   // modern browsers

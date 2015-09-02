@@ -49,7 +49,7 @@ function lintSass() {
   return gulp.src([src.scss, '!src/main/sass/vendors/**/*.scss', '!src/main/sass/base/_normalize.scss'])
     .pipe(plugins.scssLint({
       'config': 'scss-lint.yml',
-      'reporterOutput': 'lint-report.xml'
+      'reporterOutput': 'lint-report.json'
     }));
 }
 

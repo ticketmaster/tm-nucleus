@@ -1,11 +1,9 @@
 // srs = sec row seat
 .srs {
   position: relative;
-
   display: flex;
-  min-width: $srs-min-width;
   justify-content: space-between;
-
+  min-width: $srs-min-width;
   white-space: nowrap;
 }
 
@@ -31,8 +29,8 @@
 .srs__label {
   @include responsive-font('sm', 1);
 
-  color: $brand-gray2;
   font-weight: normal;
+  color: $brand-gray2;
   text-transform: uppercase;
 }
 

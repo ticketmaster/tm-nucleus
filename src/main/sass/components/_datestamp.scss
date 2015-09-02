@@ -1,12 +1,10 @@
 .datestamp {
   @include fixed-font('md', 1);
-  font-weight: bold;
 
   display: inline-flex;
   height: 5.5rem;
-
+  font-weight: bold;
   text-align: center;
-
   transform-style: preserve-3d;
 
   &--no-dates {

@@ -3,25 +3,21 @@
   @include tooltip-position('bottom');
 
   position: relative;
-
   background-color: $tooltip-color;
   border-radius: $base-border-radius;
 
   &:after {
     position: absolute;
-
     display: block;
-    height: $tooltip-caret;
     width: $tooltip-caret;
-
+    height: $tooltip-caret;
     background-color: $tooltip-color;
-
-    transform: rotate(45deg);
     content: '';
+    transform: rotate(45deg);
 
     @include breakpoint($bp-md) {
-      height: $tooltip-caret-lg;
       width: $tooltip-caret-lg;
+      height: $tooltip-caret-lg;
     }
   }
 }
@@ -68,9 +64,8 @@
 .tooltip__delimited-list + .tooltip__content {
   @include outer-spacing($right: $spacing-sm, $bottom: $spacing-sm, $left: $spacing-sm);
 
-  padding-left: 0;
   padding-right: 0;
-
+  padding-left: 0;
   border-top: $base-border-style;
 }
 

@@ -1,14 +1,10 @@
-.ticket {
-
-}
-
 .ticket__type {
   display: block;
 }
 
 .ticket__price {
   @include responsive-font('md');
-  
+
   display: block;
 }
 

@@ -140,13 +140,24 @@ $text-leave: all 0.5s ease-in;
 }
 
 @keyframes timer-rota {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes timer-opa {
-  0% { opacity: 1; }
-  50%, 100% { opacity: 0; }
+  0% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes rcToolTipZoomIn {

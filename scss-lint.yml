@@ -1,4 +1,4 @@
-# For SCSS-Lint v0.38.0
+# For SCSS-Lint v0.41.0
 
 linters:
 
@@ -7,10 +7,8 @@ linters:
     space_before_bang: true
     space_after_bang: false
 
-#  Will be available in next release
-#  BemDepth:
-#    enabled: true
-#    max_elements: 2
+  BemDepth:
+    enabled: true
 
   BorderZero:
     enabled: true
@@ -42,6 +40,9 @@ linters:
     ignore_single_line_blocks: false
 
   EmptyRule:
+    enabled: true
+
+  ExtendDirective:
     enabled: true
 
   FinalNewline:
@@ -81,7 +82,7 @@ linters:
 
   MergeableSelector:
     enabled: true
-    force_nesting: true
+    force_nesting: false
 
   NameFormat:
     enabled: true
@@ -99,175 +100,7 @@ linters:
 
   PropertySortOrder:
     enabled: true
-    order:
-      # Positioning
-      - position
-      - top
-      - right
-      - bottom
-      - left
-      - z-index
-      -
-      # Box Model
-      - display
-      - align-content
-      - align-items
-      - align-self
-      - box-sizing
-      - flex
-      - flex-basis
-      - flex-direction
-      - flex-flow
-      - flex-grow
-      - flex-shrink
-      - flex-wrap
-      - justify-content
-      - order
-      - float
-      - width
-      - height
-      - max-width
-      - max-height
-      - min-width
-      - min-height
-      - padding
-      - padding-top
-      - padding-right
-      - padding-bottom
-      - padding-left
-      - margin
-      - margin-top
-      - margin-right
-      - margin-bottom
-      - margin-left
-      - margin-collapse
-      - margin-top-collapse
-      - margin-right-collapse
-      - margin-bottom-collapse
-      - margin-left-collapse
-      - overflow
-      - overflow-x
-      - overflow-y
-      - clip
-      - clear
-      -
-      # Typography
-      - font
-      - font-family
-      - font-size
-      - font-smoothing
-      - osx-font-smoothing
-      - font-style
-      - font-weight
-      - hyphens
-      - src
-      - line-height
-      - letter-spacing
-      - word-spacing
-      - color
-      - text-align
-      - text-decoration
-      - text-indent
-      - text-overflow
-      - text-rendering
-      - text-size-adjust
-      - text-shadow
-      - text-transform
-      - word-break
-      - word-wrap
-      - white-space
-      -
-      # Visual
-      - vertical-align
-      - list-style
-      - list-style-type
-      - list-style-position
-      - list-style-image
-      - pointer-events
-      - cursor
-      - background
-      - background-attachment
-      - background-color
-      - background-image
-      - background-position
-      - background-repeat
-      - background-size
-      - border
-      - border-collapse
-      - border-top
-      - border-right
-      - border-bottom
-      - border-left
-      - border-color
-      - border-image
-      - border-top-color
-      - border-right-color
-      - border-bottom-color
-      - border-left-color
-      - border-spacing
-      - border-style
-      - border-top-style
-      - border-right-style
-      - border-bottom-style
-      - border-left-style
-      - border-width
-      - border-top-width
-      - border-right-width
-      - border-bottom-width
-      - border-left-width
-      - border-radius
-      - border-top-right-radius
-      - border-bottom-right-radius
-      - border-bottom-left-radius
-      - border-top-left-radius
-      - border-radius-topright
-      - border-radius-bottomright
-      - border-radius-bottomleft
-      - border-radius-topleft
-      - box-align
-      - box-flex
-      - box-orient
-      - box-pack
-      - box-shadow
-      -
-      # Functional
-      - content
-      - quotes
-      - outline
-      - outline-offset
-      - opacity
-      - filter
-      - visibility
-      - size
-      - zoom
-      - transform
-      - table-layout
-      - animation
-      - animation-delay
-      - animation-duration
-      - animation-iteration-count
-      - animation-name
-      - animation-play-state
-      - animation-timing-function
-      - animation-fill-mode
-      - transition
-      - transition-delay
-      - transition-duration
-      - transition-property
-      - transition-timing-function
-      - background-clip
-      - backface-visibility
-      - resize
-      - appearance
-      - user-select
-      - interpolation-mode
-      - direction
-      - marks
-      - page
-      - set-link-source
-      - unicode-bidi
-      - speak
-    separate_groups: true
+    order: recess
 
   PropertySpelling:
     enabled: true
@@ -311,6 +144,12 @@ linters:
   SpaceAfterPropertyName:
     enabled: true
 
+  SpaceAfterVariableName:
+    enabled: true
+
+  SpaceAroundOperator:
+    enabled: true
+
   SpaceBeforeBrace:
     enabled: true
     style: space
@@ -325,6 +164,9 @@ linters:
     style: single_quotes
 
   TrailingSemicolon:
+    enabled: true
+
+  TrailingWhitespace:
     enabled: true
 
   TrailingZero:
@@ -343,7 +185,7 @@ linters:
     enabled: true
 
   VariableForProperty:
-    enabled: true
+    enabled: false
     properties:
       - color
 

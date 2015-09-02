@@ -200,9 +200,8 @@ $sg-spacing: 1.5em;
   }
 
   .sg-swatch-na {
-    text-align: center;
-
     padding-top: 25px;
+    text-align: center;
   }
 }
 
@@ -239,24 +238,20 @@ $sg-spacing: 1.5em;
 .sg-sample-code {
   @include code-style();
 
-  margin-bottom: 1em;
   padding: 0 gutter();
+  margin-bottom: 1em;
   clear: both;
-
   background: $brand-gray4;
 
   &:before {
     @include responsive-font('sm');
-    font-weight: bold;
 
     display: block;
     padding: 5px 10px;
     margin: 0 (-($gutter-width / 2)) 1em;
-
+    font-weight: bold;
     color: $white;
-
     background: $black;
-
     content: 'Example Usage';
   }
 }
@@ -320,51 +315,67 @@ $sg-spacing: 1.5em;
     left: 10px;
   }
 }
+
 .sg-swatch--state.sg-swatch--pacific:before {
-  content: "pacific";
+  content: 'pacific';
 }
+
 .sg-swatch--state.sg-swatch--cascade:before {
-  content: "cascade";
+  content: 'cascade';
 }
+
 .sg-swatch--state.sg-swatch--yosemite:before {
-  content: "yosemite";
+  content: 'yosemite';
 }
+
 .sg-swatch--state.sg-swatch--helen:before {
-  content: "helen";
+  content: 'helen';
 }
+
 .sg-swatch--state.sg-swatch--catalina:before {
-  content: "catalina";
+  content: 'catalina';
 }
+
 .sg-swatch--pacific-darker {
   background: get-darker($brand-primary);
 }
+
 .sg-swatch--pacific-lighter {
   background: get-lighter($brand-primary, 50%);
 }
+
 .sg-swatch--pacific-lighter2 {
   background: get-lighter($brand-primary);
 }
+
 .sg-swatch--cascade-darker {
   background: get-darker($brand-gray2);
 }
+
 .sg-swatch--cascade-lighter {
   background: get-lighter($brand-gray2, 50%);
 }
+
 .sg-swatch--cascade-lighter2 {
   background: get-lighter($brand-gray2);
 }
+
 .sg-swatch--yosemite-darker {
   background: get-darker($brand-cta);
 }
+
 .sg-swatch--yosemite-lighter {
   background: get-lighter($brand-cta);
 }
+
 .sg-swatch--helen-darker {
   background: get-darker($brand-alert);
 }
+
 .sg-swatch--helen-lighter {
   background: get-lighter($brand-alert);
 }
+
 .sg-swatch--catalina-lighter {
   background: get-lighter($brand-accent, 50%);
 }
