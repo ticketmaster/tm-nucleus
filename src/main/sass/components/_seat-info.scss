@@ -1,23 +1,22 @@
 .seat-info {
   display: inline-block;
-
   flex-grow: 1;
+}
 
-  &__label {
-    font-size: $font-size-sm;
-    color: $brand-gray2;
-  }
+.seat-info__label {
+  font-size: $font-size-sm;
+  color: $brand-gray2;
+}
 
-  &__text {
-    font-size: $font-size-md;
-    color: $brand-gray;
-  }
+.seat-info__text {
+  font-size: $font-size-md;
+  color: $brand-gray;
+}
 
-  &--center {
-    text-align: center;
-  }
+.seat-info--center {
+  text-align: center;
+}
 
-  &--right {
-    text-align: right;
-  }
+.seat-info--right {
+  text-align: right;
 }

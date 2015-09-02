@@ -1,5 +1,6 @@
 @mixin accordion-header-icon() {
   @include span(1 of 12 no-gutters);
+
   position: relative;
   text-align: right;
 }

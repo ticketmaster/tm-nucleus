@@ -1,34 +1,33 @@
 .input-group {
   position: relative;
+}
 
-  &__label {
-    @include text-field-label();
+.input-group__label {
+  @include text-field-label();
 
-    display: block;
+  display: block;
+}
+
+.input-group__text-field {
+  @include text-field-input();
+
+  margin-bottom: $form-label-vspace;
+}
+
+.input-group__text-field.filled {
+  padding: 20px 10px 6px;
+}
+
+.input-group ~ .input-group {
+  margin-top: $input-group-vspace;
+}
+
+.input-group ~ .submit-button {
+  @include btn();
+
+  margin-top: $input-group-vspace;
+
+  @include breakpoint($max: $bp-md - 1) {
+    width: 100%;
   }
-
-  &__text-field {
-    @include text-field-input();
-
-    margin-bottom: $form-label-vspace;
-
-    &.filled {
-      padding: 20px 10px 6px;
-    }
-  }
-
-  ~ .input-group {
-    margin-top: $input-group-vspace;
-  }
-
-  ~ .submit-button {
-    @include btn();
-
-    margin-top: $input-group-vspace;
-
-    @include breakpoint($max: $bp-md - 1) {
-      width: 100%;
-    }
-  }
-
 }

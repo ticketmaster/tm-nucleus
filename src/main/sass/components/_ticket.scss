@@ -9,40 +9,37 @@
 }
 
 // old stuff
-.ticket {
-  &__ticket-price {
-    display: block;
+.ticket__ticket-price {
+  display: block;
+}
+
+.ticket__ticket-price-rolledup {
+  @include responsive-font('md');
+  @include alt-copy();
+
+  display: block;
+
+  font-weight: bold;
+
+  @include breakpoint($bp-md) {
+    display: inline;
   }
+}
 
-  &__ticket-price-rolledup {
-    @include responsive-font('md');
-    @include alt-copy();
+.ticket__ticket-fees {
+  @include alt-copy();
 
-    display: block;
+  display: block;
 
-    font-weight: bold;
-
-    @include breakpoint($bp-md) {
-      display: inline;
-    }
+  @include breakpoint($bp-md) {
+    display: inline;
   }
+}
 
-  &__ticket-fees {
-    @include alt-copy();
+.ticket__details-btn {
+  @include unbutton();
+}
 
-    display: block;
-
-    @include breakpoint($bp-md) {
-      display: inline;
-    }
-  }
-
-  &__details-btn {
-    @include unbutton();
-  }
-
-  &__ada-text {
-    @include hide-btn-text();
-  }
-
+.ticket__ada-text {
+  @include hide-btn-text();
 }

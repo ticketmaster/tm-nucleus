@@ -1,30 +1,28 @@
 .ticket-list {
   @include unstyled-list();
+}
 
-  &__item {
-    @include clearfix();
+.ticket-list__item {
+  @include clearfix();
 
-    padding: 15px 0;
+  padding: 15px 0;
+  border-top: $base-border-style;
+}
 
-    border-top: $base-border-style;
-  }
+.ticket-list__item:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
 
-  &__item:first-child {
-    padding-top: 0;
+.ticket-list__item:last-child {
+  padding-bottom: 0;
+}
 
-    border-top: 0;
-  }
+.ticket-list__list-scrollable {
+  max-height: 240px;
+  overflow: auto;
 
-  &__item:last-child {
-    padding-bottom: 0;
-  }
-
-  &__list-scrollable {
-    max-height: 240px;
-    overflow: auto;
-
-    @include breakpoint($bp-md) {
-      max-height: 500px;
-    }
+  @include breakpoint($bp-md) {
+    max-height: 500px;
   }
 }

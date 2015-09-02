@@ -1,10 +1,7 @@
 .ticket-bag {
   position: fixed;
-
   bottom: 0;
-
   width: 100%;
-
   background: $white;
 
   @include breakpoint($bp-md) {
@@ -14,99 +11,85 @@
     // gets checkout button back into view
     padding-right: $qp-width-lg;
   }
+}
 
-  // temporary; this should eventually be deleted once ISM + QP both launch
-  &--full {
-    @include breakpoint($bp-md) {
-      left: 0;
-
-      padding-right: 0;
-    }
+// temporary; this should eventually be deleted once ISM + QP both launch
+.ticket-bag--full {
+  @include breakpoint($bp-md) {
+    left: 0;
+    padding-right: 0;
   }
+}
 
-  &__content {
-    padding: $ticket-bag-padding;
+.ticket-bag__content {
+  padding: $ticket-bag-padding;
+  border-top: $base-border-style;
+}
 
-    border-top: $base-border-style;
-  }
+.ticket-bag__num-seats {
+  @include responsive-font('md');
+}
 
-  &__num-seats {
-    @include responsive-font('md');
-  }
+.ticket-bag__total-price {
+  @include responsive-font('lg');
+}
 
-  &__total-price {
-    @include responsive-font('lg');
-  }
+.ticket-bag__ticket-list {
+  padding: 0 $ticket-bag-padding;
+  margin: 0;
+  overflow-x: auto;
+  white-space: nowrap;
+  list-style: none;
+  border-top: $base-border-style;
+}
 
-  &__ticket-list {
-    padding: 0 $ticket-bag-padding;
-    margin: 0;
-    overflow-x: auto;
+.ticket-bag__ticket-list-item {
+  position: relative;
+  display: inline-block;
+  width: 240px;
+  margin: $ticket-bag-padding $ticket-bag-padding $ticket-bag-padding 0;
+  white-space: normal;
+}
 
-    white-space: nowrap;
+.ticket-bag__remove-item-btn {
+  @include unbutton();
+  @include hide-text();
+  @include svg('icon-close');
 
-    list-style: none;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 20px;
+  height: 20px;
+  background-color: $white;
+  border-radius: 10px;
+}
 
-    border-top: $base-border-style;
-  }
+.ticket-bag__ticket-stub {
+  width: 240px;
+}
 
-  &__ticket-list-item {
-    position: relative;
+.ticket-bag__toggle-container {
+  line-height: 0;
+}
 
-    display: inline-block;
-    width: 240px;
-    margin: $ticket-bag-padding $ticket-bag-padding $ticket-bag-padding 0;
+.ticket-bag__toggle {
+  @include toggle();
 
-    white-space: normal;
-  }
+  position: relative;
+  width: 20px;
+  font-size: 0;
+  line-height: 0;
+  text-align: center;
+  background: transparent;
+  border: 0;
+  transform: translateY(0%);
+}
 
-  &__remove-item-btn {
-    @include unbutton();
-    @include hide-text();
-    @include svg('icon-close');
+.ticket-bag__toggle.toggle-open {
+  @include toggle('icon-plus');
+}
 
-    position: absolute;
-    top: -8px;
-    right: -8px;
-
-    width: 20px;
-    height: 20px;
-
-    background-color: $white;
-
-    border-radius: 10px;
-  }
-
-  &__ticket-stub {
-    width: 240px;
-  }
-
-  &__toggle-container {
-    line-height: 0;
-  }
-
-  &__toggle {
-    @include toggle();
-
-    position: relative;
-
-    width: 20px;
-
-    font-size: 0;
-    line-height: 0;
-    text-align: center;
-
-    background: transparent;
-    border: 0;
-
-    transform: translateY(0%);
-
-    &.toggle-open {
-      @include toggle('icon-plus');
-    }
-
-    &.toggle-close {
-      @include toggle('icon-minus');
-    }
-  }
+.ticket-bag__toggle.toggle-close {
+  @include toggle('icon-minus');
 }

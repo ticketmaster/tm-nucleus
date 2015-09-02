@@ -1,192 +1,153 @@
-.ticket-selections {
+.ticket-selections__current-selections-list {
+  @include unstyled-list();
 
-  &__current-selections-list {
-    @include unstyled-list();
+  display: table;
+  width: 100%;
 
-    display: table;
+  @include breakpoint($max: $bp-md - 1) {
+    display: none;
+  }
+}
+
+.ticket-selections__module {
+  overflow: hidden;
+
+  @include breakpoint($max: $bp-md - 1) {
+    height: 0;
+  }
+}
+
+.ticket-selections__selections-subtotal {
+  @include breakpoint($bp-lg) {
+    margin-top: 20px;
+  }
+}
+
+.ticket-selections__selections-enter {
+  position: relative;
+  left: -50%;
+  opacity: 0.01;
+  transition: $text-enter;
+}
+
+
+.ticket-selections__selections-enter-active {
+  position: relative;
+  left: 0;
+  opacity: 1;
+}
+
+.ticket-selections__selections-leave {
+  position: relative;
+  left: 0;
+  opacity: 1;
+  transition: $text-leave;
+}
+
+.ticket-selections__selections-leave-active {
+  position: relative;
+  left: -50%;
+  opacity: 0.01;
+}
+
+.current-selections-list__selection + .current-selections-list__selection {
+  padding-top: 10px;
+}
+
+.current-selections-list__selection-total {
+  width: span(5);
+
+  @include breakpoint($bp-lg) {
+    text-align: right;
+    vertical-align: top;
+  }
+}
+
+.selection__quantity {
+  display: block;
+  float: left;
+  margin-right: 10px;
+  font-weight: bold;
+  text-align: center;
+
+  @include breakpoint($bp-lg) {
+    width: 5%;
+  }
+}
+
+.selection__ticket-type {
+  @include responsive-font('sm');
+}
+
+.selections-subtotal__checkout {
+  @include clearfix();
+
+  @include breakpoint($max: $bp-md - 1) {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: z('ticket-selections-anchored');
     width: 100%;
-
-    @include breakpoint($max: $bp-md - 1) {
-      display: none;
-    }
+    height: 60px;
+    padding: 8px 10px;
+    background: $white;
+    border-top: $base-border-style;
   }
 
-  &__module {
-    overflow: hidden;
-
-    @include breakpoint($max: $bp-md - 1) {
-      height: 0;
-    }
+  @include breakpoint($bp-md) {
+    display: flex;
+    flex-direction: row-reverse;
   }
 
-  &__selections-subtotal {
-    @include breakpoint($bp-lg) {
-      margin-top: 20px;
-    }
+  @include breakpoint($bp-lg) {
+    flex-direction: column;
   }
-
-  &__selections-enter {
-    position: relative;
-    left: -50%;
-
-    opacity: 0.01;
-    transition: $text-enter;
-  }
-
-
-  &__selections-enter-active {
-    position: relative;
-    left: 0;
-
-    opacity: 1;
-  }
-
-  &__selections-leave {
-    position: relative;
-    left: 0;
-
-    opacity: 1;
-    transition: $text-leave;
-  }
-
-  &__selections-leave-active {
-    position: relative;
-    left: -50%;
-
-    opacity: 0.01;
-  }
-
 }
 
+.selections-subtotal__subtotal {
+  @include btn($brand-cta, $hoverstate: true);
 
-
-
-.current-selections-list {
-  &__selection + &__selection {
-    padding-top: 10px;
+  @include breakpoint($max: $bp-md - 1) {
+    position: absolute;
+    display: block;
+    width: calc(100% - 20px);
+    padding: 12px 10px;
+    line-height: 1;
+    border-top: 2px solid $white;
+    border-bottom: 2px solid $white;
   }
 
-  &__selection-total {
-    width: span(5);
+  @include breakpoint($bp-md) {
+    @include fixed-font('lg');
 
-    @include breakpoint($bp-lg) {
-      text-align: right;
-
-      vertical-align: top;
-    }
-  }
-
-}
-
-
-.selection {
-
-  &__quantity {
     display: block;
     float: left;
-    margin-right: 10px;
-
+    padding: 0;
     font-weight: bold;
-    text-align: center;
-
-    @include breakpoint($bp-lg) {
-      width: 5%;
-    }
+    color: $brand-gray;
+    text-align: left;
+    background: none;
   }
 
-  &__ticket-type {
-    @include responsive-font('sm');
-  }
+  @include breakpoint($bp-lg) {
+    @include clearfix;
 
+    float: none;
+    padding: 20px 0;
+  }
 }
 
-
-
-
-.selections-subtotal {
-
-  &__checkout {
-    @include clearfix();
-
-    @include breakpoint($max: $bp-md - 1) {
-      position: fixed;
-      right: 0;
-      bottom: 0;
-      z-index: z('ticket-selections-anchored');
-
-      width: 100%;
-      height: 60px;
-      padding: 8px 10px;
-
-      background: $white;
-      border-top: $base-border-style;
-    }
-
-    @include breakpoint($bp-md) {
-      display: flex;
-      flex-direction: row-reverse;
-    }
-
-    @include breakpoint($bp-lg) {
-      flex-direction: column;
-    }
+.selections-subtotal__subtotal-title {
+  @include breakpoint($bp-lg) {
+    @include span(7 of 12 first no-gutters);
   }
+}
 
+.selections-subtotal__subtotal-amount {
+  @include breakpoint($bp-lg) {
+    @include span(5 of 12 last no-gutters);
 
-  &__subtotal {
-    @include btn($brand-cta, $hoverstate: true);
-
-    @include breakpoint($max: $bp-md - 1) {
-      position: absolute;
-
-      display: block;
-      width: calc(100% - 20px);
-      padding: 12px 10px;
-
-      line-height: 1;
-
-      border-top: 2px solid $white;
-      border-bottom: 2px solid $white;
-    }
-
-    @include breakpoint($bp-md) {
-      @include fixed-font('lg');
-
-      display: block;
-      float: left;
-      padding: 0;
-
-      font-weight: bold;
-      color: $brand-gray;
-      text-align: left;
-
-      background: none;
-    }
-
-    @include breakpoint($bp-lg) {
-      @include clearfix;
-
-      float: none;
-      padding: 20px 0;
-    }
+    text-align: right;
+    vertical-align: top;
   }
-
-
-  &__subtotal-title {
-    @include breakpoint($bp-lg) {
-      @include span(7 of 12 first no-gutters);
-    }
-  }
-
-
-  &__subtotal-amount {
-    @include breakpoint($bp-lg) {
-      @include span(5 of 12 last no-gutters);
-
-      text-align: right;
-
-      vertical-align: top;
-    }
-  }
-
 }

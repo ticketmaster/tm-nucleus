@@ -1,19 +1,15 @@
 @mixin text-field-label() {
+  @include responsive-font('xs');
+
   position: absolute;
   top: 3px;
-
   padding: 5px 0 1px 11px;
-
-
-  @include responsive-font('xs');
   color: $brand-gray2;
-
   opacity: 0;
   transition: all 0.1s linear;
 
   &.show {
     top: 0;
-
     opacity: 1;
   }
 

@@ -2,122 +2,124 @@
   @include breakpoint($min: $bp-lg) {
     @include span(4 last);
   }
+}
 
-  &__heading {
-    @include breakpoint($max: $bp-lg - 1) {
-      display: none;
-    }
-  }
-
-  &__module {
-    @include breakpoint($max: $bp-lg - 1) {
-      position: fixed;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: z('overlay');
-
-      padding: auto 0;
-
-      background-color: transparent;
-      box-shadow: none;
-    }
-  }
-
-  &__content.module__content {
-    padding: 0;
-
-    @include breakpoint($max: $bp-lg - 1) {
-      padding: 0;
-    }
-  }
-
-  &__pri-content {
-    border-top: $base-border-style;
-
-    @include breakpoint($max: $bp-lg - 1) {
-      background-color: $white;
-    }
-
-    @include breakpoint($max: $bp-lg) {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    @include breakpoint($bp-md) {
-      padding: 0;
-    }
-
-    @include breakpoint($bp-xs) {
-      padding: 15px;
-    }
-  }
-
-  &__flexBox {
-    display: flex;
-    justify-content: space-between;
-
-    width: 100%;
-  }
-
-  &__sec-content {
-    @include breakpoint($max: $bp-lg - 1) {
-      $slide-animation: 0.3s;
-      @include slider(0, 500px);
-
-      background-color: $brand-gray4;
-    }
-  }
-
-  &__anchor-info {
-    font-weight: bold;
-
-    @include breakpoint($max: $bp-lg - 1) {
-      width: 50%;
-    }
-
-    @include breakpoint($bp-lg) {
-      display: none;
-    }
-  }
-
-  &__toggle-btn {
-    @include hide-text;
-
-    width: 22px;
-    margin-right: 10px;
-
-    background-image: url(map-get($svgs, 'icon-plus'));
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 20px 20px;
-
-    @include breakpoint($min: $bp-lg) {
-      display: none;
-    }
-  }
-
-  &__toggle-btn--expand {
-    background-image: url(map-get($svgs, 'icon-minus'));
-  }
-
-  &--blur {
-    @include breakpoint($max: $bp-lg - 1) {
-      z-index: z('docking-module-blur');
-
-      filter: blur(5px);
-
-      user-select: none;
-    }
-  }
-
-  &__overlay {
+.docking-module__heading {
+  @include breakpoint($max: $bp-lg - 1) {
     display: none;
   }
+}
 
-  &__overlay--show {
-    @include breakpoint($max: $bp-lg - 1) {
-      display: block;
-    }
+.docking-module__module {
+  @include breakpoint($max: $bp-lg - 1) {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: z('overlay');
+
+    padding: auto 0;
+
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+.docking-module__content.module__content {
+  padding: 0;
+
+  @include breakpoint($max: $bp-lg - 1) {
+    padding: 0;
+  }
+}
+
+.docking-module__pri-content {
+  border-top: $base-border-style;
+
+  @include breakpoint($max: $bp-lg - 1) {
+    background-color: $white;
+  }
+
+  @include breakpoint($max: $bp-lg) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include breakpoint($bp-md) {
+    padding: 0;
+  }
+
+  @include breakpoint($bp-xs) {
+    padding: 15px;
+  }
+}
+
+// TODO: fix the corresponding React usage first
+// scss-lint:disable SelectorFormat
+.docking-module__flexBox {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+// scss-lint:enable SelectorFormat
+
+.docking-module__sec-content {
+  @include breakpoint($max: $bp-lg - 1) {
+    $slide-animation: 0.3s;
+    @include slider(0, 500px);
+
+    background-color: $brand-gray4;
+  }
+}
+
+.docking-module__anchor-info {
+  font-weight: bold;
+
+  @include breakpoint($max: $bp-lg - 1) {
+    width: 50%;
+  }
+
+  @include breakpoint($bp-lg) {
+    display: none;
+  }
+}
+
+.docking-module__toggle-btn {
+  @include hide-text;
+
+  width: 22px;
+  margin-right: 10px;
+
+  background-image: url(map-get($svgs, 'icon-plus'));
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+
+  @include breakpoint($min: $bp-lg) {
+    display: none;
+  }
+}
+
+.docking-module__toggle-btn--expand {
+  background-image: url(map-get($svgs, 'icon-minus'));
+}
+
+.docking-module--blur {
+  @include breakpoint($max: $bp-lg - 1) {
+    z-index: z('docking-module-blur');
+
+    filter: blur(5px);
+
+    user-select: none;
+  }
+}
+
+.docking-module__overlay {
+  display: none;
+}
+
+.docking-module__overlay--show {
+  @include breakpoint($max: $bp-lg - 1) {
+    display: block;
   }
 }

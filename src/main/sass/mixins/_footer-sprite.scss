@@ -3,12 +3,10 @@
     display: inline-block;
     width: 18px;
     height: 18px;
-
     vertical-align: text-bottom;
     background-image: url('../img/footer-sprite.png');
     background-position: map-get(map-get($sprites, footer), $icon);
     background-repeat: no-repeat;
-
     content: '';
 
     @if $position == before {

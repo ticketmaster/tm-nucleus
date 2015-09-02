@@ -192,13 +192,22 @@ $text-leave: all 0.5s ease-in;
   }
 }
 
+@keyframes nprogress-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
 
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// Make images flexible
 img,
 picture {
   max-width: 100%;
   margin: 0;
 }
-
 
 // Disable outline of form elements on focus in Chrome
 input,
@@ -210,21 +219,17 @@ button {
   }
 }
 
-
 input,
 select,
 textarea {
   padding: 0;
-
   font-size: $min-input-font-size;
 }
-
 
 // Firefox fix to get button sizing in line with Chrome
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner {
   padding: 0;
   margin-top: -1px;
-
   border: 0;
 }

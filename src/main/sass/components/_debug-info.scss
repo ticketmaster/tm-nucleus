@@ -1,35 +1,33 @@
 .debug-info {
-
   position: fixed;
   right: 10px;
   bottom: 10px;
-
   padding: 20px;
+}
 
-  &__header {
-    @include fixed-font('lg');
-    padding-bottom: 10px;
-  }
+.debug-info__header {
+  @include fixed-font('lg');
+  padding-bottom: 10px;
+}
 
-  &__data-table {
-    @include fixed-font('md');
-  }
+.debug-info__data-table {
+  @include fixed-font('md');
+}
 
-  &__cell {
-    padding: 10px;
+.debug-info__cell {
+  padding: 10px;
 
-    border: 1px solid $brand-gray3;
-  }
+  border: 1px solid $brand-gray3;
+}
 
-  &__head-cell {
-    border: 1px solid $brand-gray3;
-  }
+.debug-info__head-cell {
+  border: 1px solid $brand-gray3;
+}
 
-  &__table-row {
-    background: $brand-gray4;
+.debug-info__table-row {
+  background: $brand-gray4;
+}
 
-    &--fail {
-      background: $brand-gray3;
-    }
-  }
+.debug-info__table-row--fail {
+  background: $brand-gray3;
 }

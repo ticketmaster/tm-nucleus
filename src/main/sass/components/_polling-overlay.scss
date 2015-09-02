@@ -2,85 +2,79 @@ $container-half-height: 88px;
 
 .polling-overlay {
   @include overlay(45px, $overlay-light-bg-color);
+}
 
-  &__container {
-    position: absolute;
-    top: calc(50% - #{$container-half-height});
-    right: 0;
-    left: 0;
-  }
+.polling-overlay__container {
+  position: absolute;
+  top: calc(50% - #{$container-half-height});
+  right: 0;
+  left: 0;
+}
 
-  &__element-group {
-    @include content-spacing-old(-10px, -10px);
+.polling-overlay__element-group {
+  @include content-spacing-old(-10px, -10px);
 
-    position: relative;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin-right: auto;
+  margin-left: auto;
+}
 
+.polling-overlay__element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 150px;
+  height: 150px;
+  background-size: 100%;
+  transform-origin: 70px 63px;
+
+  @include breakpoint($max: $bp-xs) {
     width: 150px;
     height: 150px;
-
-    margin-right: auto;
-    margin-left: auto;
   }
+}
 
-  &__element {
-    position: absolute;
-    top: 0;
-    left: 0;
+.polling-overlay__indicator-checkmark {
+  background-image: url(map-get($svgs, 'polling-checkmark'));
+}
 
-    display: block;
-    width: 150px;
-    height: 150px;
+.polling-overlay__indicator-ticket {
+  @include polling-overlay-indicator-animation(ticket-spin1, 0.05);
 
-    background-size: 100%;
+  background-image: url(map-get($svgs, 'polling-ticket'));
+}
 
-    transform-origin: 70px 63px;
+.polling-overlay__indicator-trail {
+  opacity: 0;
+}
 
-    @include breakpoint($max: $bp-xs) {
-      width: 150px;
-      height: 150px;
-    }
-  }
+.polling-overlay__indicator-trail1 {
+  @include polling-overlay-indicator-animation(ticket-spin2, 0.25);
 
-  &__indicator-checkmark {
-    background-image: url(map-get($svgs, 'polling-checkmark'));
-  }
+  background-image: url(map-get($svgs, 'polling-ticket-trail1'));
+}
 
-  &__indicator-ticket {
-    @include polling-overlay-indicator-animation(ticket-spin1, 0.05);
+.polling-overlay__indicator-trail2 {
+  @include polling-overlay-indicator-animation(ticket-spin3, 0.25);
 
-    background-image: url(map-get($svgs, 'polling-ticket'));
-  }
+  background-image: url(map-get($svgs, 'polling-ticket-trail2'));
+}
 
-  &__indicator-trail {
-    opacity: 0;
-  }
+.polling-overlay__indicator-trail3 {
+  @include polling-overlay-indicator-animation(ticket-spin4, 0.25);
 
-  &__indicator-trail1 {
-    @include polling-overlay-indicator-animation(ticket-spin2, 0.25);
+  background-image: url(map-get($svgs, 'polling-ticket-trail3'));
+}
 
-    background-image: url(map-get($svgs, 'polling-ticket-trail1'));
-  }
+.polling-overlay__header {
+  padding-right: 40px;
+  padding-left: 40px;
+  text-align: center;
+}
 
-  &__indicator-trail2 {
-    @include polling-overlay-indicator-animation(ticket-spin3, 0.25);
-
-    background-image: url(map-get($svgs, 'polling-ticket-trail2'));
-  }
-
-  &__indicator-trail3 {
-    @include polling-overlay-indicator-animation(ticket-spin4, 0.25);
-
-    background-image: url(map-get($svgs, 'polling-ticket-trail3'));
-  }
-
-  &__header {
-    padding-right: 40px;
-    padding-left: 40px;
-
-    text-align: center;
-  }
-
-  &--nowrap {
-    display: inline-block;
-  }
+.polling-overlay--nowrap {
+  display: inline-block;
 }

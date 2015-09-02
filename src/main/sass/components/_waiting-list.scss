@@ -1,22 +1,21 @@
 .waiting-list {
   position: relative;
+}
 
-  &__form {
-    margin: auto;
-  }
+.waiting-list__form {
+  margin: auto;
+}
 
-  &__notify-btn {
-    @include btn();
+.waiting-list__notify-btn {
+  @include btn();
 
-    margin: 15px 0 0 10px;
+  margin: 15px 0 0 10px;
+  font-weight: bold;
+}
 
-    font-weight: bold;
-  }
+.waiting-list__text-field-input {
+  @include text-field-input();
 
-  &__text-field-input {
-    @include text-field-input();
-
-    width: 150px;
-    margin: 15px 0 0 10px;
-  }
+  width: 150px;
+  margin: 15px 0 0 10px;
 }

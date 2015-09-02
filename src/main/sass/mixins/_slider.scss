@@ -20,7 +20,6 @@ $slide-animation: 1s;
 
   &.slider-open {
     max-height: $max-ht;
-
     transition: max-height $slide-animation ease-in;
   }
 }

@@ -10,7 +10,6 @@ $qty-btn-size: 44px;
   width: $qty-btn-size;
   height: $qty-btn-size;
   margin: 0;
-
   cursor: pointer;
   background-color: $white;
   border: $base-border-style;
@@ -18,18 +17,17 @@ $qty-btn-size: 44px;
 
   &:focus {
     border: 1px solid $brand-primary;
-
     outline: none;
   }
+}
 
-  + .qty-changer__button {
-    margin-left: 5px;
-  }
+.qty-changer__button + .qty-changer__button {
+  margin-left: 5px;
+}
 
-  + .tooltip-wrap {
-    display: inline-block;
-    margin-left: 5px;
-  }
+.qty-changer__button + .tooltip-wrap {
+  display: inline-block;
+  margin-left: 5px;
 }
 
 .qty-changer__button--embedded {
@@ -37,10 +35,6 @@ $qty-btn-size: 44px;
   border-right: $base-border-style;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
-
-  + .qty-changer__button--embedded {
-    margin-left: 0;
-  }
 
   &:focus {
     border: 0;
@@ -72,12 +66,15 @@ $qty-btn-size: 44px;
   }
 }
 
+.qty-changer__button--embedded + .qty-changer__button--embedded {
+  margin-left: 0;
+}
+
 .qty-changer__button--number {
   @include responsive-font('md', 40px);
 
   color: $brand-primary;
   text-align: center;
-
   vertical-align: top;
   border: 0;
 }

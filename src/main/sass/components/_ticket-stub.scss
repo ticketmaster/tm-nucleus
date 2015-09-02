@@ -2,117 +2,106 @@ $ticket-stub-padding: 10px;
 
 .ticket-stub {
   position: relative;
-
   background: $white;
+}
 
-  &__header {
-    position: relative;
+.ticket-stub__header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  white-space: nowrap;
+}
 
-    display: flex;
-    justify-content: space-between;
+.ticket-stub__seat-info {
+  display: inline-block;
+  flex: 1 1 auto;
+  text-align: center;
+}
 
-    white-space: nowrap;
+.ticket-stub__seat-info:first-child {
+  text-align: left;
+}
+
+.ticket-stub__seat-info:last-child {
+  text-align: right;
+}
+
+.ticket-stub__seat-label {
+  @include responsive-font('sm', 1);
+
+  color: $brand-gray2;
+  text-transform: uppercase;
+}
+
+.ticket-stub__seat-text {
+  @include responsive-font('xl', 1);
+
+  font-weight: bold;
+  color: $brand-gray;
+}
+
+.ticket-stub__content-wrapper {
+  @include responsive-font('md');
+
+  text-align: left;
+}
+
+.ticket-stub__content {
+  padding-top: $spacing-sm;
+  margin-top: $spacing-sm;
+  border-top: $base-border-style;
+
+  @include breakpoint($bp-md) {
+    padding-top: increase-spacing($spacing-sm);
+    margin-top: increase-spacing($spacing-sm);
   }
+}
 
-  &__seat-info {
+.ticket-stub__ticket-types {
+  @include responsive-font('md');
+
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.ticket-stub__notes {
+  border-top: $base-border-style;
+}
+
+.ticket-stub__ticket-types[data-multi="false"] + .ticket-stub__notes {
+  border-top: 0;
+}
+
+.ticket-stub__resale-price {
+  flex: 0 0 auto;
+  text-align: right;
+}
+
+.ticket-stub__ticket-type,
+.ticket-stub__face-value {
+  display: block;
+  color: $brand-gray;
+}
+
+.ticket-stub__ticket-type--resale:before,
+.ticket-stub__face-value--resale:before {
+  @include icon('icon-resale-seat');
+
+  margin-right: 10px;
+  background-size: contain;
+}
+
+.ticket-stub__obstructed-view {
+  @include responsive-font('sm');
+
+  &:before {
+    @include svg('icon-alert');
+
     display: inline-block;
-    flex: 1 1 auto;
-
-    text-align: center;
+    width: 20px;
+    height: 17px;
+    margin-right: $ticket-stub-padding;
+    vertical-align: middle;
+    content: '';
   }
-
-  &__seat-info:first-child {
-    text-align: left;
-  }
-
-  &__seat-info:last-child {
-    text-align: right;
-  }
-
-  &__seat-label {
-    @include responsive-font('sm', 1);
-
-    color: $brand-gray2;
-    text-transform: uppercase;
-  }
-
-  &__seat-text {
-    @include responsive-font('xl', 1);
-
-    font-weight: bold;
-    color: $brand-gray;
-  }
-
-  &__content-wrapper {
-    @include responsive-font('md');
-
-    text-align: left;
-  }
-
-  &__content {
-    padding-top: $spacing-sm;
-    margin-top: $spacing-sm;
-    border-top: $base-border-style;
-
-    @include breakpoint($bp-md) {
-      padding-top: increase-spacing($spacing-sm);
-      margin-top: increase-spacing($spacing-sm);
-    }
-  }
-
-  &__ticket-types {
-    @include responsive-font('md');
-
-    max-height: 180px;
-    overflow-y: auto;
-  }
-
-  &__notes {
-    border-top: $base-border-style;
-  }
-
-  &__ticket-types[data-multi="false"] + &__notes {
-    border-top: 0;
-  }
-
-  &__resale-price {
-    flex: 0 0 auto;
-
-    text-align: right;
-  }
-
-  &__ticket-type,
-  &__face-value {
-    display: block;
-
-    color: $brand-gray;
-
-    &--resale:before {
-      @include icon('icon-resale-seat');
-
-      margin-right: 10px;
-
-      background-size: contain;
-    }
-  }
-
-  &__obstructed-view {
-    @include responsive-font('sm');
-
-    &:before {
-      @include svg('icon-alert');
-
-      display: inline-block;
-
-      width: 20px;
-      height: 17px;
-
-      margin-right: $ticket-stub-padding;
-
-      vertical-align: middle;
-
-      content: '';
-    }
-  }
-
 }

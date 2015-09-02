@@ -4,9 +4,7 @@
 
   padding-top: 15px;
   padding-bottom: 15px;
-
   text-align: center;
-
   background: $white;
   border-bottom: $base-border-style;
 
@@ -14,12 +12,12 @@
     padding-top: 20px;
     padding-bottom: 20px;
   }
+}
 
-  &__heading-primary {
-    margin: 0;
-  }
+.error-info__heading-primary {
+  margin: 0;
+}
 
-  > p {
-    margin: 1em 0 0;
-  }
+.error-info > p {
+  margin: 1em 0 0;
 }

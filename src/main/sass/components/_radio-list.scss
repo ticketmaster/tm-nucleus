@@ -4,43 +4,41 @@
   @include breakpoint($bp-md) {
     margin: 0;
   }
+}
 
-  &__item {
-    @include clearfix;
+.radio-list__item {
+  @include clearfix;
 
-    @include breakpoint($max: $bp-md - 1) {
-      border-bottom: $base-border-style;
+  @include breakpoint($max: $bp-md - 1) {
+    border-bottom: $base-border-style;
 
-      &:last-child {
-        border: 0;
-      }
-    }
-
-    @include breakpoint($bp-md) {
-      margin-bottom: 25px;
-
-      &:last-child {
-        margin: 0;
-      }
-    }
-
-    &__name {
-      display: block;
-      font-weight: bold;
-    }
-
-    &__desc {
-      display: block;
+    &:last-child {
+      border: 0;
     }
   }
 
+  @include breakpoint($bp-md) {
+    margin-bottom: 25px;
 
-  &__radio-label {
-    @include radio-label();
-
-    @include breakpoint($max: $bp-md - 1) {
-      padding: 15px 10px;
+    &:last-child {
+      margin: 0;
     }
   }
+}
 
+.radio-list__name {
+  display: block;
+  font-weight: bold;
+}
+
+.radio-list__desc {
+  display: block;
+}
+
+.radio-list__radio-label {
+  @include radio-label();
+
+  @include breakpoint($max: $bp-md - 1) {
+    padding: 15px 10px;
+  }
 }

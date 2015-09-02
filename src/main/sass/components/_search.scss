@@ -7,7 +7,6 @@
 .search-mini-input {
   width: 100%;
   padding: 3px 30px 3px 10px;
-
   border: 1px solid $brand-primary;
   border-radius: 15px;
 
@@ -22,6 +21,7 @@
 
 .search-mini-form {
   @include span(full nest);
+
   display: table;
   margin-top: -3px;
 }
@@ -29,32 +29,27 @@
 .search-mini-field {
   @include span(100%);
   @include use-table-cell($y-align: middle);
+}
 
-  &__close-icon {
-    width: 20px;
-    height: 20px;
-    margin-top: -3px;
-    margin-left: -30px;
-
-    text-indent: -9999px;
-
-    vertical-align: middle;
-    background: url(map-get($svgs, 'icon-close')) no-repeat;
-    border: 0;
-  }
-
+.search-mini-field__close-icon {
+  width: 20px;
+  height: 20px;
+  margin-top: -3px;
+  margin-left: -30px;
+  text-indent: -9999px;
+  vertical-align: middle;
+  background: url(map-get($svgs, 'icon-close')) no-repeat;
+  border: 0;
 }
 
 .cancel {
   @include span(21%);
   @include use-table-cell(right, middle);
-  padding-left: 0;
 
+  padding-left: 0;
   color: $white;
   text-align: right;
 }
-
-
 
 .search-full {
   width: 100%;
@@ -62,7 +57,6 @@
 
 .search-full-label {
   position: relative;
-
   background: $white;
   border: 1px solid $brand-primary;
   border-radius: 25px;
@@ -99,43 +93,35 @@
     position: absolute;
     top: 3px;
     right: 14px;
-
     width: 40px;
     height: 28px;
-
     line-height: $header-line-height;
-
     border-radius: 15px;
   }
 
   @include breakpoint($bp-lg) {
     right: 14px;
-
     width: 45px;
     height: 28px;
-
     background-size: cover;
-  }
-
-  .button-text {
-    @include hide-text();
-
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-
-    background: url(map-get($svgs, 'icon-search')) no-repeat;
-    background-size: 18px 18px;
-
-    @include breakpoint($bp-md) {
-      width: 25px;
-      height: 25px;
-
-      background-size: 25px 25px;
-    }
   }
 }
 
+.search-button .button-text {
+  @include hide-text();
+
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: url(map-get($svgs, 'icon-search')) no-repeat;
+  background-size: 18px 18px;
+
+  @include breakpoint($bp-md) {
+    width: 25px;
+    height: 25px;
+    background-size: 25px 25px;
+  }
+}
 
 .cancel-button {
   @include unbutton();

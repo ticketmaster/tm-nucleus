@@ -1,40 +1,36 @@
 .event-header {
   padding: 8px;
-
   background-color: $brand-gray4;
+}
 
-  &__back {
-    @include chevron($brand-primary, left, 50%, 0);
-    @include hide-text;
+.event-header__back {
+  @include chevron($brand-primary, left, 50%, 0);
+  @include hide-text;
 
-    display: inline-block;
-    width: 1.8em;
-    height: 2.2em;
-    margin-right: 1em;
+  display: inline-block;
+  width: 1.8em;
+  height: 2.2em;
+  margin-right: 1em;
+  vertical-align: top;
+}
 
-    vertical-align: top;
-  }
+.event-header__datetime {
+  display: inline-block;
+  padding: 0 8px;
+  margin-right: 1em;
+  text-align: center;
+  border: $base-border-style;
+}
 
-  &__datetime {
-    display: inline-block;
-    padding: 0 8px;
-    margin-right: 1em;
+.event-header__month,
+.event-header__day {
+  display: block;
+}
 
-    text-align: center;
+.event-header__month {
+  font-weight: bold;
+}
 
-    border: $base-border-style;
-  }
-
-  &__month,
-  &__day {
-    display: block;
-  }
-
-  &__month {
-    font-weight: bold;
-  }
-
-  &__event {
-    display: inline-block;
-  }
+.event-header__event {
+  display: inline-block;
 }

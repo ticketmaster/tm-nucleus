@@ -1,66 +1,74 @@
-.quick-picks {
+.quick-picks__content {
+  padding: $module-padding-sm;
+}
 
-  &__content {
-    padding: $module-padding-sm;
+.quick-picks__map {
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 $spacing-sm $spacing-sm 0;
+}
+
+.quick-picks__text {
+  padding-top: 15px;
+  padding-left: 5px;
+  text-align: right;
+}
+
+.quick-picks__listings {
+  overflow: auto;
+
+  @include breakpoint($bp-md) {
+    height: calc(100vh - 360px);
+  }
+}
+
+.quick-picks__module {
+  width: 100%;
+
+  @include breakpoint($min: $bp-md) {
+    width: $qp-width-lg;
+  }
+}
+
+.quick-picks__module-left {
+  float: left;
+  width: 100%;
+  margin-bottom: 100px;
+
+  @include breakpoint($min: $bp-md) {
+    width: $qp-width-lg;
+    height: 100vh;
+
+    padding-right: $spacing-sm;
+    padding-left: $spacing-sm;
+    margin-bottom: 0;
+
+    border-right: $base-border-style;
+  }
+}
+
+.quick-picks__item {
+  border-bottom: $base-border-style;
+
+  @include breakpoint($bp-sm) {
+    display: flex;
+    justify-content: space-between;
   }
 
-  &__listings {
-    overflow: auto;
-
-    @include breakpoint($bp-md) {
-      height: calc(100vh - 360px);
-    }
-  }
-
-  &__module {
-    width: 100%;
-
-    @include breakpoint($min: $bp-md) {
-      width: $qp-width-lg;
-    }
-  }
-
-  &__module-left {
-    float: left;
-
-    width: 100%;
-    margin-bottom: 100px;
-
-    @include breakpoint($min: $bp-md) {
-      width: $qp-width-lg;
-      height: 100vh;
-
-      padding-right: $spacing-sm;
-      padding-left: $spacing-sm;
-      margin-bottom: 0;
-
-      border-right: $base-border-style;
-    }
-  }
-
-  &__item {
-    border-bottom: $base-border-style;
-
-    @include breakpoint($bp-sm) {
-      display: flex;
-      justify-content: space-between;
-    }
-  }
-
-  &__item:last-child {
+  &:last-child {
     border: 0;
   }
+}
 
-  &__item-name {
-    display: block;
-    font-weight: bold;
+.quick-picks__item-name {
+  display: block;
+  font-weight: bold;
 
-    @include breakpoint($max: $bp-lg) {
-      width: 100%;
-    }
+  @include breakpoint($max: $bp-lg) {
+    width: 100%;
   }
+}
 
-  &__item-desc {
-    display: block;
-  }
+.quick-picks__item-desc {
+  display: block;
 }

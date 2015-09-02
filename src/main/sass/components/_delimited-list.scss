@@ -25,7 +25,6 @@
 .delimited-list__item--compact {
   @include breakpoint($max: $bp-md - 1) {
     padding: ($spacing-sm / 2) 0;
-
     border: 0;
   }
 }

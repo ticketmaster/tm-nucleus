@@ -1,13 +1,11 @@
 // TODO: deprecate .toaster--button TMOLRC-144
 .toaster {
   @include toaster();
+}
 
-  &--button {
-    padding: $button-padding;
-
-    color: $white;
-
-    border: 0;
-    border-radius: $button-aux-radius;
-  }
+.toaster--button {
+  padding: $button-padding;
+  color: $white;
+  border: 0;
+  border-radius: $button-aux-radius;
 }

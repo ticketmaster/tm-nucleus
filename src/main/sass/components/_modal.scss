@@ -1,22 +1,22 @@
 .modal {
   @include module();
+}
 
-  &__content {
-    max-height: 75vh;
+.modal__content {
+  max-height: 75vh;
 
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
+  overflow-x: hidden;
+  overflow-y: auto;
+}
 
-  &__section {
-    @include outer-spacing($bottom: $spacing-md);
-  }
+.modal__section {
+  @include outer-spacing($bottom: $spacing-md);
+}
 
-  &__legal-copy {
-    margin-top: $content-vspace-legal-sm;
+.modal__legal-copy {
+  margin-top: $content-vspace-legal-sm;
 
-    @include breakpoint($bp-md) {
-      margin-top: $content-vspace-legal-lg;
-    }
+  @include breakpoint($bp-md) {
+    margin-top: $content-vspace-legal-lg;
   }
 }

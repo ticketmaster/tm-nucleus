@@ -24,7 +24,6 @@
     @include datestamp('column');
 
     margin-right: 1px;
-
     line-height: 1.2;
   }
 
@@ -85,17 +84,13 @@
     width: 1.3em;
     padding: 5px 2px;
     margin-left: 1px;
-
     background-color: $brand-gray3;
-
     transform-style: preserve-3d;
   }
 
   &__year {
     display: block;
-
     color: $white;
-
     transform: translate(1%, 155%) rotate(-90deg);
   }
 
@@ -104,16 +99,13 @@
     @include datestamp();
 
     margin: auto;
-
     transform-style: preserve-3d;
   }
 
   &__multi-name,
   &__tba-name {
     display: block;
-
     white-space: nowrap;
-
     background-color: $white;
   }
 
@@ -127,15 +119,12 @@
 
   &__dt-text {
     display: block;
-
     white-space: nowrap;
-
     background-color: $white;
   }
 
   &__text {
     margin: auto;
-
     line-height: 1.15;
   }
 }

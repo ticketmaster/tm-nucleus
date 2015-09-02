@@ -1,18 +1,17 @@
 .ticket-info {
   @include clearfix();
+}
 
-  &__description-group {
-    float: left;
-  }
+.ticket-info__description-group {
+  float: left;
+}
 
-  &__quantity-group {
-    float: right;
+.ticket-info__quantity-group {
+  float: right;
+  text-align: right;
+}
 
-    text-align: right;
-  }
-
-  &__offer-type,
-  &__offer-unit-price {
-    color: $brand-gray2;
-  }
+.ticket-info__offer-type,
+.ticket-info__offer-unit-price {
+  color: $brand-gray2;
 }

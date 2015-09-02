@@ -2,80 +2,80 @@ $filter-modal-padding: 10px;
 
 .filter-modal {
   @include module();
+}
 
-  &__title-controls {
-    @include responsive-font('md');
+.filter-modal__title-controls {
+  @include responsive-font('md');
 
-    padding: $filter-modal-padding;
+  padding: $filter-modal-padding;
 
-    text-align: center;
+  text-align: center;
 
-    border-bottom: $base-border-style;
+  border-bottom: $base-border-style;
+}
+
+.filter-modal__title {
+  @include responsive-font('md');
+
+  margin: 1px;
+
+  font-weight: normal;
+}
+
+.filter-modal__controls {
+  position: absolute;
+  top: 11px;
+
+  width: 100%;
+
+  @include breakpoint($bp-md) {
+    top: 12px;
   }
+}
 
-  &__title {
-    @include responsive-font('md');
+.filter-modal__content-wrapper {
+  @include responsive-font('md');
 
-    margin: 1px;
+  padding: $filter-modal-padding;
 
-    font-weight: normal;
-  }
+  background-color: $brand-gray4;
+}
 
-  &__controls {
-    position: absolute;
-    top: 11px;
+.filter-modal__button-container {
+  padding: $filter-modal-padding;
 
-    width: 100%;
+  border-top: $base-border-style;
+}
 
-    @include breakpoint($bp-md) {
-      top: 12px;
-    }
-  }
+.filter-modal__filter-title {
+  @include hdg-text('md');
+}
 
-  &__content-wrapper {
-    @include responsive-font('md');
+.filter-modal__control-btn {
+  @include btn-color(transparent);
+  color: $brand-primary;
+}
 
-    padding: $filter-modal-padding;
+.filter-modal__cancel-btn {
+  position: absolute;
+  left: 0;
+}
 
-    background-color: $brand-gray4;
-  }
+.filter-modal__reset-btn {
+  position: absolute;
+  right: 20px;
+}
 
-  &__button-container {
-    padding: $filter-modal-padding;
+.filter-modal__apply-btn {
+  @include responsive-font('md');
 
-    border-top: $base-border-style;
-  }
+  width: 100%;
+  padding: 12px 0;
 
-  &__filter-title {
-    @include hdg-text('md');
-  }
+  color: $white;
 
-  &__control-btn {
-    @include btn-color(transparent);
-    color: $brand-primary;
-  }
+  background-color: $brand-primary;
+  border: 0;
+  border-radius: 3px;
 
-  &__cancel-btn {
-    position: absolute;
-    left: 0;
-  }
-
-  &__reset-btn {
-    position: absolute;
-    right: 20px;
-  }
-
-  &__apply-btn {
-    @include responsive-font('md');
-
-    width: 100%;
-    padding: 12px 0;
-
-    color: $white;
-
-    background-color: $brand-primary;
-    border: 0;
-    border-radius: 3px;
-
-  }
 }

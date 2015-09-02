@@ -8,16 +8,13 @@
     position: absolute;
     top: $top;
     left: $horizontal-offset;
-
     display: inline-block;
     width: 0.9em;
     height: 0.9em;
     margin-left: -1.9em;
-
     border-color: $color;
     border-style: solid;
     border-width: 0.2em 0.2em 0 0;
-
     content: '';
 
     @if $direction == right {
@@ -29,7 +26,6 @@
     @else if $direction == left {
       right: $horizontal-offset;
       left: auto;
-
       transform: rotate(225deg);
     }
     @else if $direction == top {

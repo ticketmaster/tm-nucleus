@@ -1,74 +1,67 @@
 .module {
   @include module();
+}
 
-  &--error {
-    @include fixed-font('md');
+.module--error {
+  @include fixed-font('md');
 
-    float: left;
-    width: 100%;
+  float: left;
+  width: 100%;
+  background-color: $white;
+  border: 1px solid $brand-alert;
+  box-shadow: none;
+}
 
-    background-color: $white;
-    border: 1px solid $brand-alert;
-    box-shadow: none;
-  }
+.module__toggle {
+  @include toggle-btn();
+}
 
-  &__toggle {
-    @include toggle-btn();
-  }
+.module__accordion-content {
+  @include accordion-content();
+}
 
-  &__accordion-content {
-    @include accordion-content();
-  }
+.module__close {
+  $modal-close-icon-size: 22px;
 
-  &__close {
-    $modal-close-icon-size: 22px;
+  @include unbutton();
+  @include hide-text();
+  @include svg('icon-close');
 
-    @include unbutton();
-    @include hide-text();
-    @include svg('icon-close');
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  width: $modal-close-icon-size;
+  height: $modal-close-icon-size;
+  background-color: $white;
+  background-size: $modal-close-icon-size $modal-close-icon-size;
+  border-radius: 100%;
+}
 
-    position: absolute;
-    top: -7px;
-    right: -7px;
+.module--recaptcha {
+  box-shadow: 0;
 
-    width: $modal-close-icon-size;
-    height: $modal-close-icon-size;
-
-    background-color: $white;
-    background-size: $modal-close-icon-size $modal-close-icon-size;
-    border-radius: 100%;
-  }
-
-  &--recaptcha {
-    box-shadow: 0;
-
-    @include breakpoint($max: $bp-md - 1) {
-      margin: 0;
-
-      border-radius: 0;
-    }
+  @include breakpoint($max: $bp-md - 1) {
+    margin: 0;
+    border-radius: 0;
   }
 }
 
-
-.module__content {
-  &--flush {
-    @include breakpoint($max: $bp-md - 1) {
-      padding: 0;
-    }
+.module__content--flush {
+  @include breakpoint($max: $bp-md - 1) {
+    padding: 0;
   }
+}
 
-  &--centered {
-    text-align: center;
-  }
+.module__content--centered {
+  text-align: center;
+}
 
-  &--success-icon {
-    @include module-icon('icon-checkmark');
-  }
+.module__content--success-icon {
+  @include module-icon('icon-checkmark');
+}
 
-  &--error-icon {
-    @include module-icon('icon-error');
-  }
+.module__content--error-icon {
+  @include module-icon('icon-error');
 }
 
 .module__modal-heading {
@@ -82,18 +75,16 @@
   padding: 20px;
   overflow-x: hidden;
   overflow-y: auto;
-
   border-top: 1px solid $brand-gray3;
 
   @include breakpoint($bp-md) {
     padding: 40px;
   }
-
-  p:last-child {
-    margin-bottom: 0;
-  }
 }
 
+.module__modal-content p:last-child {
+  margin-bottom: 0;
+}
 
 .module__filter-content {
   @include clearfix();
@@ -101,18 +92,16 @@
   max-height: 65vh;
   padding: 15px 10px;
   overflow-y: auto;
-
   border-top: 1px solid $brand-gray3;
 
   @include breakpoint($bp-md) {
     padding: 20px;
   }
-
-  p:last-child {
-    margin-bottom: 0;
-  }
 }
 
+.module__filter-content p:last-child {
+  margin-bottom: 0;
+}
 
 .module__quickpicks-scrollable {
   @include breakpoint($bp-md) {
@@ -123,16 +112,14 @@
 
 
 // TODO this is bad and should be refactored
-.module__header {
-  &-container {
-    @include span(full nest);
-  }
+.module__header-container {
+  @include span(full nest);
+}
 
-  &-text {
-    @include accordion-header-text();
-  }
+.module__header-text {
+  @include accordion-header-text();
+}
 
-  &-icon {
-    @include accordion-header-icon();
-  }
+.module__header-icon {
+  @include accordion-header-icon();
 }

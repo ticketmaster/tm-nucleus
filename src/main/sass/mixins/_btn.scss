@@ -16,12 +16,10 @@
 
   min-height: $button-height;
   padding: 0 $button-padding;
-
   font-weight: normal;
   text-align: center;
   text-transform: uppercase;
   white-space: nowrap;
-
   border-radius: $button-border-radius;
   box-shadow: none;
 
@@ -34,7 +32,6 @@
 // set the button color
 @mixin btn-color($bgcolor, $txtcolor, $hoverstate: false) {
   color: $txtcolor;
-
   background-color: $bgcolor;
   border: 0;
 
@@ -54,7 +51,6 @@
 // set the outlined color
 @mixin btn-outlined($color, $hoverstate: false) {
   color: $color;
-
   background-color: $white;
   border: 1px solid $color;
 
@@ -88,12 +84,10 @@
 // unstyled button
 @mixin unbutton($txtcolor: $brand-primary) {
   padding: 0;
-
   font-weight: normal;
   color: $txtcolor;
   text-align: center;
   white-space: nowrap;
-
   background-color: $transparent-color;
   border: 0;
   border-radius: 0;

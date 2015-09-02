@@ -1,138 +1,133 @@
-.event-info {
+.event-info__header {
+  @include clearfix();
 
-  &__header {
-    @include clearfix();
+  margin-top: 5px;
+  margin-bottom: 10px;
+  text-align: left;
 
-    margin-top: 5px;
-    margin-bottom: 10px;
-
-    text-align: left;
-
-    @include breakpoint($min: $bp-md) {
-      flex-grow: 1;
-      margin: auto 0;
-    }
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
-
-  &__image {
-    width: $event-image-size;
-
-    @include breakpoint($min: $bp-md) {
-      float: left;
-      min-width: $event-image-size;
-      margin: 20px 20px 20px 10px;
-    }
-  }
-
-  &__image--legacy {
-    width: $event-image-size;
-    margin-bottom: 10px;
-
-    @include breakpoint($min: $bp-md) {
-      float: left;
-      margin-right: 20px;
-      margin-bottom: 20px;
-    }
-  }
-
-  &__datestamp {
-    float: left;
-    margin-right: 10px;
-  }
-
-  &__locale {
-    display: block;
-  }
-
-  &__locale--legacy,
-  &__date--legacy {
-    display: block;
-  }
-
-  &__date {
-    display: block;
-    height: 22px;
-
-    padding: 2px 5px;
-    margin-bottom: 1px;
-
-    font-weight: bold;
-    text-align: center;
-
-    background-color: $white;
-
-    @include breakpoint($min: $bp-md) {
-      display: inline-block;
-      height: 25px;
-
-      padding: 2px 10px;
-      margin-right: 1px;
-      margin-bottom: 5px;
-    }
-  }
-
-  &__venue-state[title] {
-    border-bottom: 0;
-  }
-
-  &__date-container {
-    flex-shrink: 0;
-  }
-
-  &__title {
-    display: flex;
-    justify-content: center;
-  }
-
-  &__icon {
-    @include unbutton();
-    @include hide-text();
-    @include svg('icon-info');
-
-    align-self: flex-end;
+  @include breakpoint($min: $bp-md) {
     flex-grow: 1;
-    width: 20px;
-    padding-right: 20px;
-    margin-bottom: 5px;
-    margin-left: 10px;
+    margin: auto 0;
   }
 
-  &__heading {
-    @include hdg-text('xxl', $brand-gray);
-
-    display: inline-block;
-    margin-bottom: 0;
-  }
-
-  &__webinfo-link {
-    @include breakpoint($min: $bp-md) {
-      display: none;
-    }
-
-    a:hover {
-      color: get-darker($brand-primary);
-    }
-  }
-
-  &__webinfo-text {
-    @include fixed-font('sm');
-
-    margin-top: 11px;
-
-    @include breakpoint($max: $bp-md - 1) {
-      display: none;
-    }
-
-    a:hover {
-      color: get-darker($brand-primary);
-    }
-
-    &__client-copy {
-      max-width: 100%;
-    }
+  &:hover {
+    cursor: pointer;
   }
 }
+
+.event-info__image {
+  width: $event-image-size;
+
+  @include breakpoint($min: $bp-md) {
+    float: left;
+    min-width: $event-image-size;
+    margin: 20px 20px 20px 10px;
+  }
+}
+
+.event-info__image--legacy {
+  width: $event-image-size;
+  margin-bottom: 10px;
+
+  @include breakpoint($min: $bp-md) {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.event-info__datestamp {
+  float: left;
+  margin-right: 10px;
+}
+
+.event-info__locale {
+  display: block;
+}
+
+.event-info__locale--legacy,
+.event-info__date--legacy {
+  display: block;
+}
+
+.event-info__date {
+  display: block;
+  height: 22px;
+  padding: 2px 5px;
+  margin-bottom: 1px;
+  font-weight: bold;
+  text-align: center;
+  background-color: $white;
+
+  @include breakpoint($min: $bp-md) {
+    display: inline-block;
+    height: 25px;
+    padding: 2px 10px;
+    margin-right: 1px;
+    margin-bottom: 5px;
+  }
+}
+
+.event-info__venue-state[title] {
+  border-bottom: 0;
+}
+
+.event-info__date-container {
+  flex-shrink: 0;
+}
+
+.event-info__title {
+  display: flex;
+  justify-content: center;
+}
+
+.event-info__icon {
+  @include unbutton();
+  @include hide-text();
+  @include svg('icon-info');
+
+  align-self: flex-end;
+  flex-grow: 1;
+  width: 20px;
+  padding-right: 20px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+
+.event-info__heading {
+  @include hdg-text('xxl', $brand-gray);
+
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.event-info__webinfo-link {
+  @include breakpoint($min: $bp-md) {
+    display: none;
+  }
+
+  a:hover {
+    color: get-darker($brand-primary);
+  }
+}
+
+.event-info__webinfo-text {
+  @include fixed-font('sm');
+
+  margin-top: 11px;
+
+  @include breakpoint($max: $bp-md - 1) {
+    display: none;
+  }
+}
+
+.event-info__webinfo-text a:hover {
+  color: get-darker($brand-primary);
+}
+
+// TODO: fix usage in React first
+// scss-lint:disable BemDepth
+.event-info__webinfo-text__client-copy {
+  max-width: 100%;
+}
+// scss-lint:enable BemDepth
