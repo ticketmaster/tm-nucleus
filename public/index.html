@@ -1716,21 +1716,18 @@
 
         <h3 class="sg-subhdg">Text fields</h3>
 
-        <p>Spacing between the label and text field is controlled via <code class="sg-code">$form-label-vspace</code>.
-          Spacing between sets of <code class="sg-code">input-group</code> is controlled by <code class="sg-code">$input-group-vspace</code>.</p>
-
         <table class="sg-table">
           <tr>
             <td>
-              <div class="float-label">
-                <input id="email" name="email" type="text" class="float-label__text-field">
-                <label for="email" class="float-label__label">Email</label>
+              <div class="input-group">
+                <input id="email" name="email" type="text" class="input-group__text-field" aria-required="true">
+                <label for="email" class="input-group__label">Email <span class="input-group__required">*</span></label>
               </div>
             </td>
             <td>
-              <div class="float-label">
-                <input id="email" name="email" type="text" class="float-label__text-field has-content" value="John Doe">
-                <label for="email" class="float-label__label">Email</label>
+              <div class="input-group">
+                <input id="email" name="email" type="text" class="input-group__text-field has-content" aria-required="true" value="Dohn Joe">
+                <label for="email" class="input-group__label">Email <span class="input-group__required">*</span></label>
               </div>
             </td>
           </tr>
@@ -2336,3 +2333,4 @@ transition
 
 </body>
 </html>
+
