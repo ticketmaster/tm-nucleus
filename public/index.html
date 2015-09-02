@@ -1719,16 +1719,23 @@
         <p>Spacing between the label and text field is controlled via <code class="sg-code">$form-label-vspace</code>.
           Spacing between sets of <code class="sg-code">input-group</code> is controlled by <code class="sg-code">$input-group-vspace</code>.</p>
 
-        <form>
-          <div class="float-label">
-            <input id="email" name="email" type="text" class="float-label__text-field">
-            <label for="email" class="float-label__label">Email</label>
-          </div>
-          <div class="input-group">
-            <input id="password" name="password" type="password" class="input-group__text-field">
-            <label for="password" class="float-label__label">Password</label>
-          </div>
-        </form>
+        <table class="sg-table">
+          <tr>
+            <td>
+              <div class="float-label">
+                <input id="email" name="email" type="text" class="float-label__text-field">
+                <label for="email" class="float-label__label">Email</label>
+              </div>
+            </td>
+            <td>
+              <div class="float-label">
+                <input id="email" name="email" type="text" class="float-label__text-field has-content" value="John Doe">
+                <label for="email" class="float-label__label">Email</label>
+              </div>
+            </td>
+          </tr>
+        </table>
+
 
         <pre class="sg-sample-code">
 &lt;div class="<span class="sg-highlight-code">input-group</span>"&gt;
