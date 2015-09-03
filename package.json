@@ -4,7 +4,7 @@
   "private": false,
   "scripts": {
     "start": "node ./bin/www",
-    "prepush": "gulp scsslint"
+    "precommit": "gulp scsslint"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -30,6 +30,7 @@
     "gulp-svgstore": "^5.0.4",
     "husky": "^0.9.3",
     "lodash": "^3.10.1",
+    "map-stream": "0.0.6",
     "node-sass": "^3.2.0"
   }
 }

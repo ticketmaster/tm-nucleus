@@ -6,124 +6,97 @@ linters:
     enabled: true
     space_before_bang: true
     space_after_bang: false
-    severity: error
 
   BemDepth:
     enabled: true
-    severity: error
 
   BorderZero:
     enabled: true
-    severity: error
 
   ColorKeyword:
     enabled: true
-    severity: error
 
   ColorVariable:
     enabled: true
-    severity: error
 
   Comment:
     enabled: true
-    severity: error
 
   DebugStatement:
     enabled: true
-    severity: error
 
   DeclarationOrder:
     enabled: true
-    severity: error
 
   DuplicateProperty:
     enabled: true
-    severity: error
 
   ElsePlacement:
     enabled: true
     style: new_line
-    severity: error
 
   EmptyLineBetweenBlocks:
     enabled: true
     ignore_single_line_blocks: false
-    severity: error
 
   EmptyRule:
     enabled: true
-    severity: error
 
   ExtendDirective:
     enabled: true
-    severity: error
 
   FinalNewline:
     enabled: true
     present: true
-    severity: error
 
   HexLength:
     enabled: true
     style: short
-    severity: error
 
   HexNotation:
     enabled: true
     style: lowercase
-    severity: error
 
   HexValidation:
     enabled: true
-    severity: error
 
   IdSelector:
     enabled: true
-    severity: error
 
   ImportantRule:
     enabled: true
-    severity: error
 
   ImportPath:
     enabled: true
     leading_underscore: false
     filename_extension: false
-    severity: error
 
   Indentation:
     enabled: true
     character: space
     width: 2
-    severity: error
 
   LeadingZero:
     enabled: true
     style: include_zero
-    severity: error
 
   MergeableSelector:
     enabled: true
     force_nesting: false
-    severity: error
 
   NameFormat:
     enabled: true
     convention: '^[a-z0-9][a-z0-9-]*(?:__[a-z0-9-]*)?$'
-    severity: error
 
   NestingDepth:
     enabled: true
     max_depth: 3
-    severity: error
 
   PlaceholderInExtend:
     enabled: true
-    severity: error
 
   Propertycount:
     enabled: false
-    severity: error
 
   PropertySortOrder:
     enabled: true
@@ -142,113 +115,88 @@ linters:
     allow_element_with_attribute: false
     allow_element_with_class: false
     allow_element_with_id: false
-    severity: error
 
   SelectorDepth:
     enabled: true
-    max_depth: 1
-    severity: error
+    max_depth: 2
 
   SelectorFormat:
     enabled: true
     convention: hyphenated_BEM
-    severity: error
 
   Shorthand:
     enabled: true
-    severity: error
 
   SingleLinePerProperty:
     enabled: true
     allow_single_line_rule_sets: false
-    severity: error
 
   SingleLinePerSelector:
     enabled: true
-    severity: error
 
   SpaceAfterComma:
     enabled: true
-    severity: error
 
   SpaceAfterPropertyColon:
     enabled: true
     style: one_space
-    severity: error
 
   SpaceAfterPropertyName:
     enabled: true
-    severity: error
 
   SpaceAfterVariableName:
     enabled: true
-    severity: error
 
   SpaceAroundOperator:
     enabled: true
-    severity: error
 
   SpaceBeforeBrace:
     enabled: true
     style: space
     allow_single_line_padding: true
-    severity: error
 
   SpaceBetweenParens:
     enabled: true
     spaces: 0
-    severity: error
 
   StringQuotes:
     enabled: true
     style: single_quotes
-    severity: error
 
   TrailingSemicolon:
     enabled: true
-    severity: error
 
   TrailingWhitespace:
     enabled: true
-    severity: error
 
   TrailingZero:
     enabled: true
-    severity: error
 
   UnnecessaryMantissa:
     enabled: true
-    severity: error
 
   UnnecessaryParentReference:
     enabled: true
-    severity: error
 
   UrlFormat:
     enabled: false
-    severity: error
 
   UrlQuotes:
     enabled: true
-    severity: error
 
   VariableForProperty:
     enabled: false
     properties:
       - color
-    severity: error
 
   VendorPrefixes:
     enabled: true
     identifier_list: base
     include: []
     exclude: []
-    severity: error
 
   ZeroUnit:
     enabled: true
-    severity: error
 
   Compass::*:
     enabled: false
-    severity: error

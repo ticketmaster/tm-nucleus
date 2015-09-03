@@ -2,6 +2,7 @@ var _ = require('lodash');
 var del = require('del');
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
+var map = require('map-stream');
 var browserSync = require('browser-sync');
 
 var paths = {
@@ -22,10 +23,17 @@ var output = {
 
 var reload = browserSync.reload;
 
+// var exitOnLintError = map(function(file, cb) {
+//   if (!file.scsslint.success) {
+//     console.error('scsslint failed');
+//     process.exit(1);
+//   }
+// });
+
 // copy normalize.css from node_modules into project and rename to .scss
 // so that it can be imported into our sass compile process
 function grabNormalize() {
-  return gulp.src(src.normalize)
+  var stream = gulp.src(src.normalize)
     .pipe(plugins.rename(function(path){
       path.basename = '_' + path.basename,
       path.extname = '.scss'
@@ -35,7 +43,7 @@ function grabNormalize() {
 
 // compile sass, apply autoprefixer, and minify
 function compileSass() {
-  return gulp.src(src.scss)
+  var stream = gulp.src(src.scss)
     .pipe(plugins.sourcemaps.init())
     .pipe(plugins.sass().on('error', plugins.sass.logError))
     .pipe(plugins.autoprefixer({ browsers: ['last 2 versions', 'ie >= 9'] }))
@@ -45,20 +53,23 @@ function compileSass() {
     .pipe(plugins.minifyCss())
     .pipe(plugins.rename({ suffix: '.min' }))
     .pipe(gulp.dest(output.css));
+  return stream;
 }
 
 // run scsslint
 function lintSass() {
-  return gulp.src([src.scss, '!src/main/sass/vendors/**/*.scss', '!src/main/sass/base/_normalize.scss'])
+  var stream = gulp.src([src.scss, '!src/main/sass/vendors/**/*.scss'])
     .pipe(plugins.scssLint({
       'config': 'scss-lint.yml',
       'reporterOutput': 'lint-report.json'
-    }));
+      }))
+    // .pipe(exitOnLintError);
+  return stream;
 }
 
 // minify svg, combine into sprite
 function processSvg() {
-  return gulp.src(src.svg)
+  var stream = gulp.src(src.svg)
     .pipe(plugins.svgmin({
       plugins: [
         { removeViewBox: false },
@@ -76,6 +87,7 @@ function processSvg() {
         basename: 'sprite'
       }))
     .pipe(gulp.dest(output.svg));
+  return stream;
 }
 
 // delete existing compiled files
