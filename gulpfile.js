@@ -2,7 +2,7 @@ var _ = require('lodash');
 var del = require('del');
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
-var map = require('map-stream');
+// var map = require('map-stream');
 var browserSync = require('browser-sync');
 
 var paths = {
@@ -125,7 +125,7 @@ gulp.task('watch', function() {
 // dev task - starts browsersync and file monitoring
 gulp.task('dev',
   gulp.series('clean',
-    gulp.parallel('sass', 'svg', 'browser-sync', 'watch')
+    gulp.parallel('sass', 'svg', 'watch', 'browser-sync')
   )
 );
 
