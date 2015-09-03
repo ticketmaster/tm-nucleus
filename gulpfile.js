@@ -22,6 +22,8 @@ var output = {
 
 var reload = browserSync.reload;
 
+// copy normalize.css from node_modules into project and rename to .scss
+// so that it can be imported into our sass compile process
 function grabNormalize() {
   return gulp.src(src.normalize)
     .pipe(plugins.rename(function(path){
@@ -45,6 +47,7 @@ function compileSass() {
     .pipe(gulp.dest(output.css));
 }
 
+// run scsslint
 function lintSass() {
   return gulp.src([src.scss, '!src/main/sass/vendors/**/*.scss', '!src/main/sass/base/_normalize.scss'])
     .pipe(plugins.scssLint({
@@ -89,12 +92,14 @@ gulp.task('scsslint', lintSass);
 // minify svg and combine into sprite
 gulp.task('svg', processSvg);
 
+// open up a browsersync window and set up proxy for nucleus app
 gulp.task('browser-sync', function() {
   browserSync.init(null, {
     proxy: 'localhost:3000'
   });
 });
 
+// monitor file changes/additions
 gulp.task('watch', function() {
   gulp.watch(src.html, reload);
   gulp.watch(src.scss,
@@ -105,8 +110,15 @@ gulp.task('watch', function() {
   );
 });
 
-gulp.task('default',
+// dev task - starts browsersync and file monitoring
+gulp.task('dev',
   gulp.series('clean',
     gulp.parallel('sass', 'svg', 'browser-sync', 'watch')
+  )
+);
+
+gulp.task('default',
+  gulp.series('clean',
+    gulp.parallel('sass', 'svg')
   )
 );

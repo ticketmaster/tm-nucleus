@@ -11,15 +11,19 @@ $ npm install
 $ npm start
 ```
 
-You can now view the app at http://localhost:3000
-
-## Development Work
-Open up another terminal and type:
+We then need to compile our files, so in another terminal enter:
 
 ```bash
 $ gulp
 ```
 
-This will automatically open up a new browser tab and point at the Express app. It will also monitor source files for any changes.
+You can now view the app at http://localhost:3000
 
-If a change is detected, it will recompile the CSS and automatically refresh the browser window with the new CSS.
+## Development Work
+Same as above, except in the second terminal you will now enter:
+
+```bash
+$ gulp dev
+```
+
+This will automatically open up a new browser tab and point at the Express app. It will also monitor source files for any changes and compile them as needed. The browser will refresh automatically for changes.
