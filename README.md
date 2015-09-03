@@ -14,16 +14,15 @@ $ npm start
 We then need to compile our files, so in another terminal enter:
 
 ```bash
-$ gulp
+$ ./node_modules/.bin/gulp
 ```
-
 You can now view the app at http://localhost:3000
 
 ## Development Work
 Same as above, except in the second terminal you will now enter:
 
 ```bash
-$ gulp dev
+$ ./node_modules/.bin/gulp dev
 ```
 
 This will automatically open up a new browser tab and point at the Express app. It will also monitor source files for any changes and compile them as needed. The browser will refresh automatically for changes.
