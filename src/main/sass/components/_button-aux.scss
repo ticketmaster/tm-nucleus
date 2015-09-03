@@ -2,8 +2,11 @@
   @include btn($brand-primary, $hoverstate: true);
 
   text-transform: none;
+  border-radius: $button-height / 2;
 
-  border-radius: $button-aux-radius;
+  @include breakpoint($bp-md) {
+    border-radius: $button-height-lg / 2;
+  };
 }
 
 .button-aux--secondary {
@@ -13,5 +16,19 @@
 .button-aux--full {
   @include breakpoint($max: $bp-md - 1) {
     width: 100%;
+  }
+}
+
+.button-aux--minor {
+  @include responsive-font('md');
+
+  min-height: $button-minor-height;
+  padding: 0 $button-minor-padding;
+  border-radius: $button-minor-height / 2;
+
+  @include breakpoint($bp-md) {
+    min-height: $button-minor-height-lg;
+    padding: 0 $button-minor-padding-lg;
+    border-radius: $button-minor-height-lg / 2;
   }
 }

@@ -59,7 +59,6 @@
     &:focus,
     &:hover {
       color: get-darker($color);
-
       border-color: get-darker($color);
     }
   }
@@ -76,7 +75,6 @@
   }
   @else {
     color: get-lighter($color);
-
     border-color: get-lighter($color);
   }
 }

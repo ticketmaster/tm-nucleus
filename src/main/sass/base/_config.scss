@@ -23,12 +23,13 @@ $inner-shadow-style: inset 0 1px 3px 0 $shadow-color;
 // Buttons
 $button-height: 44px;
 $button-height-lg: 46px;
+$button-minor-height: 30px;
+$button-minor-height-lg: 40px;
 $button-border-radius: $base-border-radius;
 $button-padding: 20px;
 $button-padding-lg: 40px;
-
-// Auxiliary buttons
-$button-aux-radius: 25px;
+$button-minor-padding: 15px;
+$button-minor-padding-lg : 20px;
 
 // Sizes
 $srs-min-width: 295px;
