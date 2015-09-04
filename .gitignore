@@ -2,5 +2,6 @@
 .idea
 lint-report.json
 node_modules
+npm-debug.log
 public/css
 public/img

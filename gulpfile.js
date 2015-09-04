@@ -13,12 +13,14 @@ var src = {
   html: 'public/**/*.html',
   scss: 'src/main/sass/**/*.scss',
   svg:  'src/main/svg/**/*.svg',
-  normalize: 'node_modules/normalize.css/normalize.css'
+  normalize: 'node_modules/normalize.css/normalize.css',
+  font: 'src/main/font/*'
 }
 
 var output = {
   css: 'public/css',
-  svg: 'public/img/svg'
+  svg: 'public/img/svg',
+  font: 'public/font'
 }
 
 var reload = browserSync.reload;
@@ -90,6 +92,12 @@ function processSvg() {
   return stream;
 }
 
+function copyFont() {
+  var stream = gulp.src(src.font)
+    .pipe(gulp.dest(output.font));
+  return stream;
+}
+
 // start up browser sync
 function startBS() {
   function syncBrowser() {
@@ -110,6 +118,10 @@ function watchFiles() {
   return monitor;
 }
 
+function createDist() {
+  gulp.src([])
+}
+
 // delete existing compiled files
 gulp.task('clean', function(cb) {
   del(_.values(output), cb);
@@ -119,14 +131,15 @@ gulp.task('normalize', grabNormalize);
 gulp.task('sass', compileSass);
 gulp.task('scsslint', lintSass);
 gulp.task('svg', processSvg);
+gulp.task('copy-font', copyFont);
 gulp.task('browser-sync', startBS());
 
 // monitor file changes/additions
 gulp.task('watch', watchFiles());
 
 // set sequence tasks
-gulp.task('dev-sequence', plugins.sequence('clean', ['sass', 'svg', 'watch', 'browser-sync']));
-gulp.task('prod-sequence', plugins.sequence('clean', ['sass', 'svg']));
+gulp.task('dev-sequence', plugins.sequence('clean', ['copy-font', 'sass', 'svg', 'watch', 'browser-sync']));
+gulp.task('prod-sequence', plugins.sequence('clean', ['copy-font', 'sass', 'svg']));
 
 // dev task - starts browsersync and file monitoring
 gulp.task('dev', ['dev-sequence']);
