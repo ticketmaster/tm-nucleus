@@ -1716,32 +1716,62 @@
 
         <h3 class="sg-subhdg">Text fields</h3>
 
+        <p>Example of an the initial state of the input text-field, with fancy (floating) label animation.</p>
+
+        <div class="sg-input-wrapper">
+          <div class="input-group">
+            <input name="email" type="text" class="input-group__text-field" aria-required="true">
+            <label for="email" class="input-group__label">Email <span class="input-group__required">*</span></label>
+          </div>
+        </div>
+
+        <pre class="sg-sample-code">
+&lt;div class="<span class="sg-highlight-code">input-group</span>"&gt;
+  &lt;input id="email" name="email" type="text" class="<span class="sg-highlight-code">input-group__text-field</span>"&gt;
+  &lt;label for="email" class="<span class="sg-highlight-code">input-group__label</span>"&gt;Email &lt;span class="<span class="sg-highlight-code">input-group__required</span>">*&lt;/span>&lt;/label&gt;
+&lt;/div&gt;
+        </pre>
+
+        <p>Filled input text-fields contains the class <code class="sg-code">has-content</code>, which floats the label</p>
+
+        <div class="sg-input-wrapper">
+          <div class="input-group">
+            <input name="email" type="text" class="input-group__text-field has-content" aria-required="true" value="Dohn Joe">
+            <label for="email" class="input-group__label">Email <span class="input-group__required">*</span></label>
+          </div>
+        </div>
+
+
+        <pre class="sg-sample-code">
+&lt;div class=&quot;input-group&quot;&gt;
+  &lt;input name=&quot;email&quot; type=&quot;text&quot; class=&quot;input-group__text-field <span class="sg-highlight-code">has-content</span>&quot; aria-required=&quot;true&quot; value=&quot;Dohn Joe&quot;&gt;
+  &lt;label for=&quot;email&quot; class=&quot;input-group__label&quot;&gt;Email &lt;span class=&quot;input-group__required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
+&lt;/div&gt;
+        </pre>
+
+        <p>Same for text-fields in an error state. Only the input field has the class <code class="sg-code">is-error-field</code></p>
+
         <table class="sg-table">
           <tr>
             <td>
               <div class="input-group">
-                <input id="email" name="email" type="text" class="input-group__text-field" aria-required="true">
+                <input name="email" type="text" class="input-group__text-field is-error-field" aria-required="true">
                 <label for="email" class="input-group__label">Email <span class="input-group__required">*</span></label>
               </div>
             </td>
             <td>
               <div class="input-group">
-                <input id="email" name="email" type="text" class="input-group__text-field has-content" aria-required="true" value="Dohn Joe">
+                <input name="email" type="text" class="input-group__text-field has-content is-error-field" aria-required="true" value="Dohn Joe">
                 <label for="email" class="input-group__label">Email <span class="input-group__required">*</span></label>
               </div>
             </td>
           </tr>
         </table>
 
-
         <pre class="sg-sample-code">
-&lt;div class="<span class="sg-highlight-code">input-group</span>"&gt;
-  &lt;label for="email" class="<span class="sg-highlight-code">input-group__label</span>"&gt;Email&lt;/label&gt;
-  &lt;input id="email" name="email" type="text" class="<span class="sg-highlight-code">input-group__text-field</span>"&gt;
-&lt;/div&gt;
 &lt;div class="input-group"&gt;
-  &lt;label for="password" class="input-group__label"&gt;Password&lt;/label&gt;
-  &lt;input id="password" name="password" type="password" class="input-group__text-field"&gt;
+  &lt;input id="email" name="email" type="text" class="input-group__text-field <span class="sg-highlight-code">is-error-field</span>"&gt;
+  &lt;label for="email" class="input-group__label"&gt;Email &lt;span class="input-group__required">*&lt;/span>&lt;/label&gt;
 &lt;/div&gt;
         </pre>
 

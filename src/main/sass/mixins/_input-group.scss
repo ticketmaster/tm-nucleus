@@ -5,7 +5,13 @@
   border-bottom: $form-border-style;
 
   &.is-error-field {
-    border: $error-border-style;
+    border-bottom: $error-border-style;
+    color: $brand-alert;
+  }
+
+  &.is-error-field + .input-group__label,
+  &.is-error-field + .input-group__label > span.input-group__required {
+    color: $brand-alert;
   }
 }
 
