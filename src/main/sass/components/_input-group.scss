@@ -31,8 +31,7 @@ $input-group-float-label-x: 30px;
     padding-left: $input-group-gutter-left;
 
     &:focus, &:active {
-      outline: none;
-      background: none;
+      @include input-group-active-focus-text-field();
     }
   }
 
@@ -49,8 +48,7 @@ $input-group-float-label-x: 30px;
     }
 
     &:focus, &:active {
-      outline: none;
-      background: none;
+      @include input-group-active-focus-text-field();
     }
   }
 
@@ -67,8 +65,7 @@ $input-group-float-label-x: 30px;
     }
 
     &:focus, &:active {
-      outline: none;
-      background: none;
+      @include input-group-active-focus-text-field();
     }
   }
 
@@ -169,6 +166,11 @@ $input-group-float-label-x: 30px;
   color: color('gray', 'cascade');
 }
 
+.input-group__text-field:active + .input-group__label,
+.input-group__text-field-cin:active + .input-group__label,
+.input-group__text-field-box:active + .input-group__label,
+.input-group__text-field.has-content:active + .input-group__label,
+.input-group__select.has-content:active + .input-group__label,
 .input-group__text-field:focus + .input-group__label,
 .input-group__text-field-cin:focus + .input-group__label,
 .input-group__text-field-box:focus + .input-group__label,

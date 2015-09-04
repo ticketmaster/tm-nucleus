@@ -23,3 +23,9 @@
   @include base-input-group();
 }
 
+
+@mixin input-group-active-focus-text-field() {
+  border-bottom-color: $brand-primary;
+  outline: none;
+  background: none;
+}
