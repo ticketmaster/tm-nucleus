@@ -1,36 +1,28 @@
 .event-header {
+  background-color: $brand-primary;
+}
+
+.event-header__info-row {
   padding: 8px;
-  background-color: $brand-gray4;
+  border-top: $base-border-style;
+
 }
 
-.event-header__back {
-  @include chevron($brand-primary, left, 50%, 0);
-  @include hide-text;
+.event-header__logo {
 
-  display: inline-block;
-  width: 1.8em;
-  height: 2.2em;
-  margin-right: 1em;
-  vertical-align: top;
 }
 
-.event-header__datetime {
-  display: inline-block;
-  padding: 0 8px;
-  margin-right: 1em;
+.event-header__main-text {
+  color: $white;
   text-align: center;
-  border: $base-border-style;
 }
 
-.event-header__month,
-.event-header__day {
-  display: block;
+.event-header__sub-text {
+  color: get-lighter($brand-primary);
+  text-align: center;
+
 }
 
-.event-header__month {
-  font-weight: bold;
-}
-
-.event-header__event {
-  display: inline-block;
+.event-header__timer {
+  float: right;
 }
