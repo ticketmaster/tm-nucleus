@@ -26,3 +26,17 @@ $ npm run dev
 ```
 
 This will automatically open up a new browser tab and point at the Express app. It will also monitor source files for any changes and compile them as needed. The browser will refresh automatically for changes.
+
+### Linting
+To lint SASS files, run the following command in the terminal:
+
+```bash
+$ npm run lint
+```
+
+### Distribution files
+To update Nucleus's distribution files (minified css, images, fonts), run the following command:
+
+```bash
+$ npm run dist
+```

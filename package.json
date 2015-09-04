@@ -4,8 +4,10 @@
   "private": false,
   "scripts": {
     "start": "node ./bin/www",
+    "lint": "gulp scsslint",
     "prod": "gulp",
-    "dev": "gulp dev"
+    "dev": "gulp dev",
+    "dist": "gulp dist"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
