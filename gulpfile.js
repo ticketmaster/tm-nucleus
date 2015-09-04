@@ -90,47 +90,46 @@ function processSvg() {
   return stream;
 }
 
+// start up browser sync
+function startBS() {
+  function syncBrowser() {
+    browserSync.init(null, {
+      proxy: 'localhost:3000'
+    });
+  }
+  return syncBrowser;
+}
+
+// monitor source files for changes
+function watchFiles() {
+  function monitor() {
+    gulp.watch(src.html, reload);
+    gulp.watch(src.scss, ['sass']);
+    gulp.watch(src.svg, ['svg'], reload);
+  }
+  return monitor;
+}
+
 // delete existing compiled files
 gulp.task('clean', function(cb) {
   del(_.values(output), cb);
 });
 
 gulp.task('normalize', grabNormalize);
-
 gulp.task('sass', compileSass);
-
 gulp.task('scsslint', lintSass);
-
-// minify svg and combine into sprite
 gulp.task('svg', processSvg);
-
-// open up a browsersync window and set up proxy for nucleus app
-gulp.task('browser-sync', function() {
-  browserSync.init(null, {
-    proxy: 'localhost:3000'
-  });
-});
+gulp.task('browser-sync', startBS());
 
 // monitor file changes/additions
-gulp.task('watch', function() {
-  gulp.watch(src.html, reload);
-  gulp.watch(src.scss,
-    gulp.series('sass')
-  );
-  gulp.watch(src.svg,
-    gulp.series('svg', reload)
-  );
-});
+gulp.task('watch', watchFiles());
+
+// set sequence tasks
+gulp.task('dev-sequence', plugins.sequence('clean', ['sass', 'svg', 'watch', 'browser-sync']));
+gulp.task('prod-sequence', plugins.sequence('clean', ['sass', 'svg']));
 
 // dev task - starts browsersync and file monitoring
-gulp.task('dev',
-  gulp.series('clean',
-    gulp.parallel('sass', 'svg', 'watch', 'browser-sync')
-  )
-);
+gulp.task('dev', ['dev-sequence']);
 
-gulp.task('default',
-  gulp.series('clean',
-    gulp.parallel('sass', 'svg')
-  )
-);
+// prod task - just process and compile source files
+gulp.task('default', ['prod-sequence']);
