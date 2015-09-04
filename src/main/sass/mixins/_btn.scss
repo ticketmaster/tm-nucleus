@@ -80,8 +80,8 @@
 }
 
 // unstyled button
-@mixin unbutton($txtcolor: $brand-primary) {
-  padding: 0;
+@mixin unbutton($txtcolor: $brand-primary, $padding: $button-padding) {
+  padding: 0 $padding;
   font-weight: normal;
   color: $txtcolor;
   text-align: center;

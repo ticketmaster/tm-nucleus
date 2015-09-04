@@ -1,0 +1,42 @@
+.qty-picker {
+  font-size: 0;
+}
+
+.qty-picker__button {
+  @include unbutton($padding: 0);
+
+  line-height: 0;
+}
+
+.qty-picker__icon {
+  width: $qty-picker-button-size;
+  height: $qty-picker-button-size;
+  fill: $brand-primary;
+
+  &:hover {
+    fill: get-darker($brand-primary);
+  }
+}
+
+.qty-picker__icon--disabled {
+  fill: get-lighter($brand-primary);
+
+  &:hover {
+    fill: get-lighter($brand-primary);
+  }
+}
+
+.qty-picker__number {
+  @include responsive-font('xl', $qty-picker-button-size);
+
+  display: inline-block;
+  width: $qty-picker-button-size;
+  height: $qty-picker-button-size;
+  color: $brand-gray;
+  text-align: center;
+  vertical-align: top;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

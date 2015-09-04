@@ -4,7 +4,7 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="40px" height="40px" viewBox="-10 -10 40 40" enable-background="new -10 -10 40 40" xml:space="preserve">
 <g>
-	<circle fill="none" cx="10" cy="10" r="20"/>
-	<polygon fill="none" points="11,11 20,11 20,9 11,9 11,0 9,0 9,9 0,9 0,11 9,11 9,20 11,20 	"/>
+	<circle fill="#000" cx="10" cy="10" r="20"/>
+	<polygon fill="#fff" points="11,11 20,11 20,9 11,9 11,0 9,0 9,9 0,9 0,11 9,11 9,20 11,20 	"/>
 </g>
 </svg>
