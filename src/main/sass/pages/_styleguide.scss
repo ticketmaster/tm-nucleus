@@ -510,15 +510,6 @@ $sg-spacing: 1.5em;
 }
 
 
-// datestamps
-.sg-datestamp-wrapper {
-  display: inline-block;
-  padding: 20px;
-
-  background: $brand-primary;
-}
-
-
 // sec-row-seat
 .sg-srs {
   @include outer-spacing($bottom: $spacing-md);
@@ -529,9 +520,4 @@ $sg-spacing: 1.5em;
 
 .sg-ism-tooltip {
   @include outer-spacing($bottom: $spacing-md);
-}
-
-.sg-timer-wrapper {
-  padding: 35px 20px;
-  background-color: $brand-primary;
 }
