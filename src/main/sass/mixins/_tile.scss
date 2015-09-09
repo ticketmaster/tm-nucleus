@@ -1,0 +1,10 @@
+@mixin tile() {
+  border-radius: $base-border-radius;
+  border: 1px solid $brand-gray2;
+
+  @include outer-spacing($spacing-md);
+
+  @include breakpoint($bp-lg) {
+    @include outer-spacing($spacing-sm);
+  }
+}
