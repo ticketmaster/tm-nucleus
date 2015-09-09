@@ -1,0 +1,26 @@
+.tile-selection {
+  @include tile();
+}
+
+.tile-selection__content {
+  @include inner-spacing($spacing-sm);
+
+  color: $brand-gray2;
+}
+
+.tile-selection__content:not(:first-child) {
+  border-top: $base-border-style;
+}
+
+.tile-selection--selected {
+  border: $tile-selected-style;
+}
+
+.tile-selection--selected__primary-heading {
+  font-weight: bold;
+  color: $brand-primary;
+}
+
+.tile-selection--selected__secondary-heading {
+  color: $brand-primary;
+}
