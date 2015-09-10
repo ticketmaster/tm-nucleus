@@ -1,33 +1,194 @@
+$input-group-gutter-left: 10px;
+$input-group-float-label-x: 30px;
+
 .input-group {
+  @include clearfix();
+
   position: relative;
-}
+  padding: 0;
 
-.input-group__label {
-  @include text-field-label();
+  &__label {
 
-  display: block;
-}
+    position: absolute;
+    z-index: 5;
+    bottom: 5px;
+    left: $input-group-gutter-left;
+    pointer-events: none;
+    transition: all 0.15s ease-out 0s;
+    color: color('gray', 'cascade');
+    font-size: responsive-font('lg');
 
-.input-group__text-field {
-  @include text-field-input();
-
-  margin-bottom: $form-label-vspace;
-}
-
-.input-group__text-field.filled {
-  padding: 20px 10px 6px;
-}
-
-.input-group ~ .input-group {
-  margin-top: $input-group-vspace;
-}
-
-.input-group ~ .submit-button {
-  @include btn();
-
-  margin-top: $input-group-vspace;
-
-  @include breakpoint($max: $bp-md - 1) {
-    width: 100%;
+    @include breakpoint($bp-md) {
+      left: $input-group-gutter-left;
+    }
   }
+
+  &__text-field {
+    @include input-group-underline();
+
+    color: color('gray', 'sierra');
+    font-size: responsive-font('lg');
+    padding-left: $input-group-gutter-left;
+
+    &:focus, &:active {
+      @include input-group-active-focus-text-field();
+    }
+  }
+
+  &__text-field-cin {
+    @include input-group-underline();
+    width: 80%;
+
+    color: color('gray', 'sierra');
+    font-size: fontsy('md', 'plus');
+
+    @include breakpoint($bp-md) {
+      @include input-group-box();
+      width: 100%;
+    }
+
+    &:focus, &:active {
+      @include input-group-active-focus-text-field();
+    }
+  }
+
+  &__text-field-box {
+    @include input-group-box();
+
+    margin-left: -10px;
+    margin-right: -10px;
+    color: color('gray', 'sierra');
+    font-size: responsive-font('lg');
+
+    @include breakpoint($bp-md) {
+      margin: 0;
+    }
+
+    &:focus, &:active {
+      @include input-group-active-focus-text-field();
+    }
+  }
+
+  &__dropdown-wrapper {
+    width: 100%;
+
+    &:after {
+       color: #999;
+       content: '';
+       pointer-events: none;
+       position: absolute;
+       right: 10px;
+       top: 10px;
+       width: 0;
+       height: 0;
+       border-left: 5px solid rgba(255,255,255,0);
+       border-right: 5px solid rgba(255,255,255,0);
+       border-top: 7px solid color('gray', 'cascade');
+
+      @include breakpoint($bp-md) {
+        top: 18px;
+        right: 10px;
+      }
+    }
+  }
+
+  &__select {
+    @include form-dropdown-simple();
+
+    width: 100%;
+    height: 23px;
+    margin-top: 18px;
+    outline: none;
+    font-size: fontsy('md', 'plus');
+    color: color('gray', 'sierra');
+    background: none;
+
+    @include breakpoint($bp-md) {
+      @include form-dropdown();
+
+      height: 44px;
+      margin-top: 0;
+      padding-top: 17px;
+      padding-bottom: 4px;
+      border-radius: $base-border-radius;
+    }
+
+    &.is-error-field {
+      margin-top: 0;
+      padding-top: 18px;
+      height: 44px;
+      border-radius: 0;
+
+      @include breakpoint($bp-md) {
+        border-radius: 5px;
+      }
+    }
+  }
+
+  &__placeholder-text {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    color: color('gray', 'rocky');
+
+    @include breakpoint($bp-md) {
+      top: 12px;
+      right: 20px;
+    }
+  }
+
+  &__tooltip {
+    position: absolute;
+    right: 7px;
+    top: -10px;
+
+    @include breakpoint($bp-md) {
+      right: -20px;
+    }
+  }
+
+  &__required {
+    color: $brand-primary;
+  }
+}
+
+
+
+/* Toggle States */
+
+.input-group__text-field.has-content + .input-group__label,
+.input-group__text-field-cin.has-content + .input-group__label,
+.input-group__text-field-box.has-content + .input-group__label,
+.input-group__select.has-content + .input-group__label {
+  @include responsive-font('xs');
+
+  bottom: $input-group-float-label-x;
+  color: color('gray', 'cascade');
+}
+
+.input-group__text-field:active + .input-group__label,
+.input-group__text-field-cin:active + .input-group__label,
+.input-group__text-field-box:active + .input-group__label,
+.input-group__text-field.has-content:active + .input-group__label,
+.input-group__select.has-content:active + .input-group__label,
+.input-group__text-field:focus + .input-group__label,
+.input-group__text-field-cin:focus + .input-group__label,
+.input-group__text-field-box:focus + .input-group__label,
+.input-group__text-field.has-content:focus + .input-group__label,
+.input-group__select.has-content:focus + .input-group__label {
+  @include responsive-font('xs');
+
+  bottom: $input-group-float-label-x;
+  color: $brand-primary;
+}
+
+.input-group__text-field:focus ~ .input-group__placeholder-text,
+.input-group__text-field-cin:focus ~ .input-group__placeholder-text,
+.input-group__text-field-box:focus ~ .input-group__placeholder-text {
+  display: none;
+}
+
+.input-group__text-field-cin.has-content ~ .input-group__placeholder-text,
+.input-group__text-field.has-content ~ .input-group__placeholder-text {
+  display: none;
 }

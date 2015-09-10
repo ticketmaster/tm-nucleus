@@ -2,7 +2,6 @@ var _ = require('lodash');
 var del = require('del');
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
-var runSequence = require('run-sequence');
 // var map = require('map-stream');
 var browserSync = require('browser-sync');
 

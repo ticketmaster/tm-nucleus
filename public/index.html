@@ -43,6 +43,7 @@
         <li><a href="#qty-picker">Quantity Picker</a></li>
         <li><a href="#lists">Lists</a></li>
         <li><a href="#tooltips">Tooltips</a></li>
+        <li><a href="#tiles">Tile Selections</a></li>
         <li><a href="#srs">Sec-Row-Seat</a></li>
         <li><a href="#layout">Layout Patterns</a></li>
         <li><a href="#badges">Badges</a></li>
@@ -1285,6 +1286,109 @@
           </pre>
       </section>
 
+      <section id="tiles" class="sg-section">
+        <h2 class="sg-hdg">Tile Selections</h2>
+
+        <h3 class="sg-subhdg3">Selected Tile:</h3>
+
+        <div class="tile-selection tile-selection--selected is-clickable">
+          <div class="split-content tile-selection__content">
+            <div class="split-content__primary tile-selection--selected__primary-heading">
+              -2350 EXP 11/15
+            </div>
+            <div class="split-content__secondary tile-selection--selected__secondary-heading">
+              <button class="button-aux button-aux--minor">Edit</button>
+            </div>
+          </div>
+          <div class="tile-selection__content">
+            Content
+          </div>
+        </div>
+
+        <h3 class="sg-subhdg3">Un-Selected Tile:</h3>
+
+        <div class="tile-selection is-clickable">
+          <div class="split-content tile-selection__content">
+            -2350 EXP 11/15
+          </div>
+        </div>
+
+        <pre class="sg-sample-code">
+&lt;div class="<span class="sg-highlight-code">tile-selection tile-selection--selected is-clickable</span>"&gt;
+  &lt;div class="split-content <span class="sg-highlight-code">tile-selection__content</span>"&gt;
+    &lt;div class="split-content__primary <span class="sg-highlight-code">tile-selection--selected__primary-heading</span>"&gt;
+      Primary Heading
+    &lt;/div&gt;
+    &lt;div class="split-content__secondary <span class="sg-highlight-code">tile-selection--selected__secondary-heading</span>"&gt;
+      Secondary Heading
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="<span class="sg-highlight-code">tile-selection__content</span>"&gt;
+      Content
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="<span class="sg-highlight-code">tile-selection is-clickable</span>"&gt;
+  &lt;div class="<span class="sg-highlight-code">tile-selection__content</span>"&gt;
+    -2350 EXP 11/15
+  &lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+
+        <h3 class="sg-subhdg3">Tile rendered as a list</h3>
+
+        <ul class="sg-unstyled-list">
+          <li class="tile-selection tile-selection--selected is-clickable">
+            <div class="split-content tile-selection__content">
+              <div class="split-content__primary tile-selection--selected__primary-heading">
+                -2350 EXP 11/15
+                -2350 EXP 11/15
+              </div>
+              <div class="split-content__secondary tile-selection--selected__secondary-heading">
+                <button class="button-aux button-aux--minor">Edit</button>
+              </div>
+            </div>
+            <div class="tile-selection__content">
+              Content
+            </div>
+          </li>
+          <li class="tile-selection is-clickable">
+            <div class="split-content tile-selection__content">
+              -2350 EXP 11/15
+            </div>
+          </li>
+          <li class="tile-selection is-clickable">
+            <div class="split-content tile-selection__content">
+              -1234 EXP 8/20
+            </div>
+          </li>
+        </ul>
+
+        <pre class="sg-sample-code">
+&lt;ul class="sg-unstyled-list"&gt;
+  &lt;li class="<span class="sg-highlight-code">tile-selection tile-selection--selected is-clickable</span>"&gt;
+    &lt;div class="split-content <span class="sg-highlight-code">tile-selection__content</span>"&gt;
+      &lt;div class="split-content__primary <span class="sg-highlight-code">tile-selection--selected__primary-heading</span>"&gt;
+        Primary Heading
+      &lt;/div&gt;
+      &lt;div class="split-content__secondary <span class="sg-highlight-code">tile-selection--selected__secondary-heading</span>"&gt;
+        Secondary Heading
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="<span class="sg-highlight-code">tile-selection__content</span>"&gt;
+        Content
+    &lt;/div&gt;
+  &lt;/li&gt;
+
+  &lt;li class="<span class="sg-highlight-code">tile-selection is-clickable</span>"&gt;
+    &lt;div class="<span class="sg-highlight-code">tile-selection__content</span>"&gt;
+      -2350 EXP 11/15
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+        </pre>
+
+      </section>
 
       <section id="srs" class="sg-section">
         <h2 class="sg-hdg">Sec-Row-Seat (SRS)</h2>
@@ -1937,28 +2041,62 @@
 
         <h3 class="sg-subhdg">Text fields</h3>
 
-        <p>Spacing between the label and text field is controlled via <code class="sg-code">$form-label-vspace</code>.
-          Spacing between sets of <code class="sg-code">input-group</code> is controlled by <code class="sg-code">$input-group-vspace</code>.</p>
+        <p>Example of an the initial state of the input text-field, with fancy (floating) label animation.</p>
 
-        <form>
+        <div class="sg-input-wrapper">
           <div class="input-group">
-            <label for="email" class="input-group__label">Email</label>
-            <input id="email" name="email" type="text" class="input-group__text-field">
+            <input name="email" type="text" class="input-group__text-field" aria-required="true">
+            <label for="email" class="input-group__label">Email <span class="input-group__required">*</span></label>
           </div>
-          <div class="input-group">
-            <label for="password" class="input-group__label">Password</label>
-            <input id="password" name="password" type="password" class="input-group__text-field">
-          </div>
-        </form>
+        </div>
 
         <pre class="sg-sample-code">
 &lt;div class="<span class="sg-highlight-code">input-group</span>"&gt;
-  &lt;label for="email" class="<span class="sg-highlight-code">input-group__label</span>"&gt;Email&lt;/label&gt;
   &lt;input id="email" name="email" type="text" class="<span class="sg-highlight-code">input-group__text-field</span>"&gt;
+  &lt;label for="email" class="<span class="sg-highlight-code">input-group__label</span>"&gt;Email &lt;span class="<span class="sg-highlight-code">input-group__required</span>">*&lt;/span>&lt;/label&gt;
 &lt;/div&gt;
+        </pre>
+
+        <p>Filled input text-fields contains the class <code class="sg-code">has-content</code>, which floats the label</p>
+
+        <div class="sg-input-wrapper">
+          <div class="input-group">
+            <input name="email" type="text" class="input-group__text-field has-content" aria-required="true" value="Dohn Joe">
+            <label for="email" class="input-group__label">Email <span class="input-group__required">*</span></label>
+          </div>
+        </div>
+
+
+        <pre class="sg-sample-code">
+&lt;div class=&quot;input-group&quot;&gt;
+  &lt;input name=&quot;email&quot; type=&quot;text&quot; class=&quot;input-group__text-field <span class="sg-highlight-code">has-content</span>&quot; aria-required=&quot;true&quot; value=&quot;Dohn Joe&quot;&gt;
+  &lt;label for=&quot;email&quot; class=&quot;input-group__label&quot;&gt;Email &lt;span class=&quot;input-group__required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
+&lt;/div&gt;
+        </pre>
+
+        <p>Same for text-fields in an error state. Only the input field has the class <code class="sg-code">is-error-field</code></p>
+
+        <table class="sg-table">
+          <tr>
+            <td>
+              <div class="input-group">
+                <input name="email" type="text" class="input-group__text-field is-error-field" aria-required="true">
+                <label for="email" class="input-group__label">Email <span class="input-group__required">*</span></label>
+              </div>
+            </td>
+            <td>
+              <div class="input-group">
+                <input name="email" type="text" class="input-group__text-field has-content is-error-field" aria-required="true" value="Dohn Joe">
+                <label for="email" class="input-group__label">Email <span class="input-group__required">*</span></label>
+              </div>
+            </td>
+          </tr>
+        </table>
+
+        <pre class="sg-sample-code">
 &lt;div class="input-group"&gt;
-  &lt;label for="password" class="input-group__label"&gt;Password&lt;/label&gt;
-  &lt;input id="password" name="password" type="password" class="input-group__text-field"&gt;
+  &lt;input id="email" name="email" type="text" class="input-group__text-field <span class="sg-highlight-code">is-error-field</span>"&gt;
+  &lt;label for="email" class="input-group__label"&gt;Email &lt;span class="input-group__required">*&lt;/span>&lt;/label&gt;
 &lt;/div&gt;
         </pre>
 
@@ -2307,3 +2445,4 @@ transition
 
 </body>
 </html>
+
