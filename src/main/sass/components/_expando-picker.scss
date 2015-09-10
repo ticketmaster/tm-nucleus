@@ -1,0 +1,21 @@
+.expando-picker {
+  font-size: 0;
+}
+
+.expando-picker__button {
+  @include unbutton($padding: 0);
+
+  line-height: 0;
+  margin-to[p: 6px;
+}
+
+.expando-picker__icon {
+  width: $expando-picker-button-width-size;
+  height: $expando-picker-button-height-size;
+  fill: $brand-gray2;
+}
+
+.expando-picker-open__icon {
+  transform: scaleY(-1);
+}
+
