@@ -1,31 +1,41 @@
-.sg-event-header {
-  position: absolute;
-  left: 0;
-  right: 0;
-}
-
 .event-header {
   @include responsive-font('md');
 
   position: relative;
   display: flex;
+  min-width: $bp-xs;
   align-items: center;
-  min-height: $event-header-height;
+  height: $event-header-height;
   background-color: $brand-primary;
   text-align: center;
   color: $white;
 }
 
 .event-header__event-info {
-  flex: 1 1 77vw;
+  flex: 1 1 $event-header-info-width;
 }
 
 .event-header__event-info--checkout {
-  flex: 1 1 57vw;
+  flex: 1 1 $event-header-info-checkout-width;
 }
 
 .event-header__title {
-  @include responsive-font('xl', 1);
+  @include responsive-font('xl');
+
+  max-width: $event-header-info-width;
+  margin: auto;
+
+  @include breakpoint($bp-md) {
+    max-width: calc(100vw - (#{$event-header-menu-container} * 2));
+  }
+}
+
+.event-header__title--checkout {
+  max-width: $event-header-info-checkout-width;
+
+  @include breakpoint($bp-md) {
+    max-width: calc(100vw - (#{$event-header-menu-container} * 2));
+  }
 }
 
 .event-header__venue-time {
@@ -35,33 +45,46 @@
 
 .event-header__venue {
   display: inline-block;
-  max-width: 30vw;
+  max-width: 35%;  // for iOS 7
+  max-width: calc(100vw - (#{$event-header-menu-container} * 2 + 40px) - #{$event-header-datestamp-width});
+  margin: auto;
   vertical-align: top;
 }
 
 .event-header__venue--apart,
 .event-header__datestamp--apart {
-  display: block;
+  @include breakpoint($max: $bp-md - 1) {
+    display: block;
+  }
 }
 
 .event-header__venue--apart {
-  max-width: calc(100% - 160px);
-  margin: auto;
+  max-width: $event-header-info-checkout-width;
+
+  @include breakpoint($bp-md) {
+    max-width: calc(100vw - (#{$timer-container-lg} * 2 + 40px) - #{$event-header-datestamp-width});
+  }
 }
 
 .event-header__venue-separator--apart {
-  display: none;
+  @include breakpoint($max: $bp-md - 1) {
+    display: none;
+  }
 }
 
 .event-header__supportive {
-  width: 42px;
+  width: $event-header-menu-container;
   flex: 0 0 auto;
   text-align: center;
   background: $brand-gray;
 }
 
 .event-header__supportive--checkout {
-  width: 80px;
+  width: $timer-container;
+
+  @include breakpoint($bp-md) {
+    width: $timer-container-lg;
+  }
 }
 
 .event-header__expand {
@@ -79,23 +102,4 @@
   @include unbutton($white, 0);
 
   width: 100%;
-}
-
-
-
-
-.event-header__main-text {
-  color: $white;
-  text-align: center;
-}
-
-.event-header__sub-text {
-  @include responsive-font('sm');
-
-  color: get-lighter($brand-primary);
-  text-align: center;
-}
-
-.event-header__timer {
-  float: right;
 }

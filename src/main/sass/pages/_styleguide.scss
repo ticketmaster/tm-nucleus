@@ -13,10 +13,6 @@ $sg-spacing: 1.5em;
 }
 
 
-.styleguide {
-  background-color: $white;
-}
-
 .sg-header {
   @include span(full);
   @include outer-spacing($bottom: $spacing-lg);
@@ -534,4 +530,12 @@ $sg-spacing: 1.5em;
 
 .sg-unstyled-list {
   @include unstyled-list();
+}
+
+.sg-event-header {
+  @include outer-spacing($bottom: $spacing-sm);
+
+  position: absolute;
+  left: 0;
+  right: 0;
 }
