@@ -537,8 +537,10 @@ $sg-spacing: 1.5em;
 }
 
 .sg-input-wrapper {
+  @include outer-spacing($bottom: $spacing-md);
+
   width: 33%;
-  padding: 10px;
+  // padding: 10px;
 }
 
 .sg-unstyled-list {
