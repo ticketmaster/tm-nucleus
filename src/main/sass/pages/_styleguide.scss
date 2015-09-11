@@ -531,11 +531,3 @@ $sg-spacing: 1.5em;
 .sg-unstyled-list {
   @include unstyled-list();
 }
-
-.sg-event-header {
-  @include outer-spacing($bottom: $spacing-sm);
-
-  position: absolute;
-  left: 0;
-  right: 0;
-}
