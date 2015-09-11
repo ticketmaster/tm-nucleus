@@ -1,0 +1,131 @@
+// Animation
+$text-enter: all 0.5s ease-in;
+$text-leave: all 0.5s ease-in;
+$form-label-animation: all 0.15s ease-out 0s;
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ticket-spin1 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ticket-spin2 {
+  0% {
+    opacity: 0.1;
+    transform: rotate(90deg);
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+
+  100% {
+    opacity: 0.1;
+    transform: rotate(405deg);
+  }
+}
+
+@keyframes ticket-spin3 {
+  0% {
+    opacity: 0.1;
+    transform: rotate(45deg);
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 0.1;
+    transform: rotate(450deg);
+  }
+}
+
+@keyframes ticket-spin4 {
+  0% {
+    opacity: 0.01;
+    transform: rotate(0deg);
+  }
+
+  50% {
+    opacity: 0.1;
+  }
+
+  100% {
+    opacity: 0.01;
+    transform: rotate(495deg);
+  }
+}
+
+@keyframes timer-rota {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes timer-opa {
+  0% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes rcToolTipZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0, 0);
+
+    transform-origin: 50% 50%;
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+
+    transform-origin: 50% 50%;
+  }
+}
+
+@keyframes rcToolTipZoomOut {
+  0% {
+    opacity: 1;
+    transform: scale(1, 1);
+
+    transform-origin: 50% 50%;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0, 0);
+
+    transform-origin: 50% 50%;
+  }
+}
+
+@keyframes nprogress-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
