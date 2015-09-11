@@ -6,15 +6,6 @@
   visibility: hidden;
 }
 
-.is-offscreen {
-  position: absolute;
-  top: auto;
-  left: -10000px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-
 .is-clickable {
   cursor: pointer;
 }
@@ -23,46 +14,12 @@
   overflow: auto;
 }
 
-.is-mobile-scrollable {
-  overflow: auto;
-
-  @include breakpoint($bp-md) {
-    overflow: hidden;
-  }
-}
-
-.is-modal-not-scrollable {
-  position: fixed;
-  width: 100%;
-  overflow-y: scroll;
-}
-
-.is-text-muted {
-  color: $brand-primary;
-}
-
 .is-error-message {
   color: $brand-alert;
 }
 
 .is-success-message {
   color: $brand-cta;
-}
-
-.is-zoomed-out {
-  max-width: 100%;
-
-  transition: all 0.25s ease;
-}
-
-.is-zoomed-in {
-  position: relative;
-  cursor: crosshair;
-  transform: scale(2);
-
-  @include breakpoint($bp-lg) {
-    transform: scale(2);
-  }
 }
 
 .is-inactive {

@@ -1,6 +1,0 @@
-@mixin bleed-content($bleed-left: auto, $bleed-right: auto) {
-  padding-right: $bleed-right;
-  padding-left: $bleed-left;
-  margin-right: -$bleed-right;
-  margin-left: -$bleed-left;
-}
