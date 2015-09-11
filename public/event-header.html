@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, target-densitydpi=medium-dpi, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TM Nucleus</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="//s2.tmol.co/tm/4ab94a4f/static/favicon-rebrand.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="//s2.tmol.co/tm/4ab94a4f/static/favicon-rebrand.ico" type="image/x-icon">
+    <link href="css/nucleus.css" rel="stylesheet" type="text/css">
+    <link href="css/styleguide.css" rel="stylesheet" type="text/css">
+    <style>
+      .page__content {
+        margin-bottom: 10px;
+        padding: 0 15px;
+      }
+      .page__content:not(:first-child) {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+
+<body>
+  <div class="page__content">
+    <h1 class="sg-hdg">Event Headers</h1>
+    <h2 class="sg-subhdg">EDP with single date and time</h2>
+    <p>Two lines with <code class="sg-code">50px</code> reserved on both sides for menu/search icons.</p>
+  </div>
+
+  <div class="event-header">
+    <div class="event-header__supportive">
+      &nbsp;
+    </div>
+    <div class="event-header__event-info">
+      <div class="event-header__title truncate-text">Kid Rock's First Kiss: Super Crazy Long Event Title</div>
+      <div class="event-header__venue-time">
+        <span class="event-header__datestamp">Mon 12/28 @ 12:45p</span><span class="event-header__venue-separator">,</span>
+        <span class="event-header__venue truncate-text">Honda Center Toyota Nissan</span>
+      </div>
+    </div>
+    <div class="event-header__supportive">
+      &nbsp;
+    </div>
+  </div>
+
+  <div class="page__content">
+    <h2 class="sg-subhdg">EDP with date range</h2>
+    <p>Same as example above except a date range is shown instead.</p>
+  </div>
+
+  <div class="event-header">
+    <div class="event-header__supportive">
+      &nbsp;
+    </div>
+    <div class="event-header__event-info">
+      <div class="event-header__title truncate-text">Kid Rock's First Kiss: Super Crazy Long Event Title</div>
+      <div class="event-header__venue-time">
+        <span class="event-header__datestamp">Mon 10/28 - Fri 10/30</span><span class="event-header__venue-separator">,</span>
+        <span class="event-header__venue truncate-text">Honda Center Toyota Nissan Kia Acura Lexus Mercedes BMW Volkswagen Ford Chrysler Dodge Mercury GMC</span>
+      </div>
+    </div>
+    <div class="event-header__supportive">
+      &nbsp;
+    </div>
+  </div>
+
+  <div class="page__content">
+    <h2 class="sg-subhdg">Checkout with single date and time</h2>
+    <p>&le; 719px: Three lines with date/time and venue having their own lines and <code class="sg-code">90px</code> reserved on both sides for the timer.</p>
+    <p>&ge; 720px: Same as EDP.</p>
+  </div>
+  <div class="event-header">
+    <div class="event-header__supportive event-header__supportive--checkout">
+      &nbsp;
+    </div>
+    <div class="event-header__event-info event-header__event-info--checkout">
+      <div class="event-header__title event-header__title--checkout truncate-text">Kid Rock's First Kiss: Super Crazy Long Event Title</div>
+      <div class="event-header__venue-time">
+        <span class="event-header__datestamp truncate-text">Mon 12/28 @ 12:45p</span><span class="event-header__venue-separator event-header__venue-separator--apart">,</span>
+        <span class="event-header__venue event-header__venue--apart truncate-text">Honda Center Toyota Nissan Kia Acura Lexus Mercedes BMW Volkswagen Ford Chrysler Dodge Mercury GMC</span>
+      </div>
+    </div>
+    <div class="event-header__supportive event-header__supportive--checkout">
+      <div class="event-header__timer timer">
+        <div class="is-offscreen">Time left to complete page.</div>
+        <div class="timer__indicator">13:49</div>
+        <div class="timer__spinner timer__animate"></div>
+        <div class="timer__filler timer__animate"></div>
+        <div class="timer__bg"></div>
+        <div class="timer__mask timer__animate"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page__content">
+    <h2 class="sg-subhdg">Checkout with date range</h2>
+    <p>Same as example above except a date range is shown instead.</p>
+  </div>
+
+  <div class="event-header">
+    <div class="event-header__supportive event-header__supportive--checkout">
+      &nbsp;
+    </div>
+    <div class="event-header__event-info event-header__event-info--checkout">
+      <div class="event-header__title event-header__title--checkout truncate-text">Kid Rock's First Kiss: Super Crazy Long Event Title</div>
+      <div class="event-header__venue-time">
+        <span class="event-header__datestamp">Mon 10/28 - Fri 10/30</span><span class="event-header__venue-separator event-header__venue-separator--apart">,</span>
+        <span class="event-header__venue event-header__venue--apart truncate-text">Honda Center Toyota Nissan Kia Acura Lexus Mercedes BMW Volkswagen Ford Chrysler Dodge Mercury GMC</span>
+      </div>
+    </div>
+    <div class="event-header__supportive event-header__supportive--checkout">
+      <div class="event-header__timer timer">
+        <div class="is-offscreen">Time left to complete page.</div>
+        <div class="timer__indicator">13:49</div>
+        <div class="timer__spinner timer__animate"></div>
+        <div class="timer__filler timer__animate"></div>
+        <div class="timer__bg"></div>
+        <div class="timer__mask timer__animate"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page__content">
+    <p><a href="index.html#event-header">Back to styleguide</a>.</p>
+  </div>
+
+</body>
+</html>

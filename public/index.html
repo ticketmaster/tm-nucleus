@@ -44,11 +44,13 @@
         <li><a href="#lists">Lists</a></li>
         <li><a href="#form-elements">Form Elements</a></li>
         <li><a href="#tiles">Tile Selections</a></li>
-        <li><a href="#datestamp">Datestamp</a></li>
         <li><a href="#tooltips">Tooltips</a></li>
         <li><a href="#srs">Sec-Row-Seat</a></li>
         <li><a href="#layout">Layout Patterns</a></li>
+        <li><a href="#datestamp">Datestamp</a></li>
         <li><a href="#timer">Timer</a></li>
+        <li><a href="#event-header">Event Header</a></li>
+        <li><a href="#ism-tooltip">ISM Tooltips</a></li>
       </ol>
     </nav>
 
@@ -1246,37 +1248,69 @@
       </section>
 
 
-      <section id="tooltips" class="sg-section">
-        <h2 class="sg-hdg">Tooltips</h2>
-        <p>Tooltip caret size is 10px on mobile, 15px on tablet/desktop. Internal padding of a tooltip follows the 10px/15px spacing rule as described in <a href="#spacing">Spacing</a>.</p>
-        <div class="tooltip">
-          <div class="tooltip__content">
-            <p>Default tooltip, with the caret on the bottom</p>
-          </div>
-        </div>
-        <div class="tooltip tooltip--right">
-          <div class="tooltip__content">
-            <p>Tooltip with caret on right</p>
-          </div>
-        </div>
-        <div class="tooltip tooltip--left">
-          <div class="tooltip__content">
-            <p>Tooltip with caret on left</p>
-          </div>
-        </div>
-        <div class="tooltip tooltip--top">
-          <div class="tooltip__content">
-            <p>Tooltip with caret on top</p>
+      <section id="form-elements" class="sg-section">
+        <h2 class="sg-hdg">Form Elements</h2>
+
+        <h3 class="sg-subhdg">Text fields</h3>
+
+        <p>Example of an the initial state of the input text-field, with fancy (floating) label animation.</p>
+
+        <div class="sg-input-wrapper">
+          <div class="input-group">
+            <input name="email" type="text" class="input-group__text-field" aria-required="true">
+            <label for="email" class="input-group__label">Email <span class="input-group__required">*</span></label>
           </div>
         </div>
 
         <pre class="sg-sample-code">
-&lt;div class="<span class="sg-highlight-code">tooltip</span>"&gt;
-  &lt;div class="<span class="sg-highlight-code">tooltip__content</span>"&gt;
-    Content goes here.
-  &lt;/div&gt;
+&lt;div class="<span class="sg-highlight-code">input-group</span>"&gt;
+  &lt;input id="email" name="email" type="text" class="<span class="sg-highlight-code">input-group__text-field</span>"&gt;
+  &lt;label for="email" class="<span class="sg-highlight-code">input-group__label</span>"&gt;Email &lt;span class="<span class="sg-highlight-code">input-group__required</span>">*&lt;/span>&lt;/label&gt;
 &lt;/div&gt;
-          </pre>
+        </pre>
+
+        <p>Filled input text-fields contains the class <code class="sg-code">has-content</code>, which floats the label</p>
+
+        <div class="sg-input-wrapper">
+          <div class="input-group">
+            <input name="email" type="text" class="input-group__text-field has-content" aria-required="true" value="Dohn Joe">
+            <label for="email" class="input-group__label">Email <span class="input-group__required">*</span></label>
+          </div>
+        </div>
+
+
+        <pre class="sg-sample-code">
+&lt;div class=&quot;input-group&quot;&gt;
+  &lt;input name=&quot;email&quot; type=&quot;text&quot; class=&quot;input-group__text-field <span class="sg-highlight-code">has-content</span>&quot; aria-required=&quot;true&quot; value=&quot;Dohn Joe&quot;&gt;
+  &lt;label for=&quot;email&quot; class=&quot;input-group__label&quot;&gt;Email &lt;span class=&quot;input-group__required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
+&lt;/div&gt;
+        </pre>
+
+        <p>Same for text-fields in an error state. Only the input field has the class <code class="sg-code">is-error-field</code></p>
+
+        <table class="sg-table">
+          <tr>
+            <td>
+              <div class="input-group">
+                <input name="email" type="text" class="input-group__text-field is-error-field" aria-required="true">
+                <label for="email" class="input-group__label">Email <span class="input-group__required">*</span></label>
+              </div>
+            </td>
+            <td>
+              <div class="input-group">
+                <input name="email" type="text" class="input-group__text-field has-content is-error-field" aria-required="true" value="Dohn Joe">
+                <label for="email" class="input-group__label">Email <span class="input-group__required">*</span></label>
+              </div>
+            </td>
+          </tr>
+        </table>
+
+        <pre class="sg-sample-code">
+&lt;div class="input-group"&gt;
+  &lt;input id="email" name="email" type="text" class="input-group__text-field <span class="sg-highlight-code">is-error-field</span>"&gt;
+  &lt;label for="email" class="input-group__label"&gt;Email &lt;span class="input-group__required">*&lt;/span>&lt;/label&gt;
+&lt;/div&gt;
+        </pre>
       </section>
 
       <section id="tiles" class="sg-section">
@@ -1381,6 +1415,39 @@
 &lt;/ul&gt;
         </pre>
 
+      </section>
+
+      <section id="tooltips" class="sg-section">
+        <h2 class="sg-hdg">Tooltips</h2>
+        <p>Tooltip caret size is 10px on mobile, 15px on tablet/desktop. Internal padding of a tooltip follows the 10px/15px spacing rule as described in <a href="#spacing">Spacing</a>.</p>
+        <div class="tooltip">
+          <div class="tooltip__content">
+            <p>Default tooltip, with the caret on the bottom</p>
+          </div>
+        </div>
+        <div class="tooltip tooltip--right">
+          <div class="tooltip__content">
+            <p>Tooltip with caret on right</p>
+          </div>
+        </div>
+        <div class="tooltip tooltip--left">
+          <div class="tooltip__content">
+            <p>Tooltip with caret on left</p>
+          </div>
+        </div>
+        <div class="tooltip tooltip--top">
+          <div class="tooltip__content">
+            <p>Tooltip with caret on top</p>
+          </div>
+        </div>
+
+        <pre class="sg-sample-code">
+&lt;div class="<span class="sg-highlight-code">tooltip</span>"&gt;
+  &lt;div class="<span class="sg-highlight-code">tooltip__content</span>"&gt;
+    Content goes here.
+  &lt;/div&gt;
+&lt;/div&gt;
+          </pre>
       </section>
 
       <section id="srs" class="sg-section">
@@ -1560,8 +1627,154 @@
   &lt;/div&gt;
 &lt;/div&gt;
         </pre>
+      </section>
 
-        <h3 class="sg-subhdg">ISM Tooltips</h3>
+      <section id="datestamp" class="sg-section">
+        <h2 class="sg-hdg">Datestamp</h2>
+        <p>Here's how we display event date/time information based on various scenarios.</p>
+
+        <h3 class="sg-subhdg">Variants</h3>
+
+        <table class="sg-table">
+          <tr>
+            <td>
+              <div class="sg-datestamp-wrapper">
+                <span class="datestamp">Mon 2/24 @ 8:00p</span>
+              </div>
+            </td>
+            <td>
+              <p>Single date and time</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="sg-datestamp-wrapper">
+                <span class="datestamp">Mon 2/24/15 @ 8:00p</span>
+              </div>
+            </td>
+            <td>
+              <p>Single date and time with year</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="sg-datestamp-wrapper">
+                <span class="datestamp">Mon 2/24</span>
+              </div>
+            </td>
+            <td>
+              <p>Single date without time</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="sg-datestamp-wrapper">
+                <span class="datestamp">Mon 6/30 - Wed 7/2</span>
+              </div>
+            </td>
+            <td>
+              <p>Date range</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="sg-datestamp-wrapper">
+                <span class="datestamp">Mon 12/30/15 - Wed 1/2/16</span>
+              </div>
+            </td>
+            <td>
+              <p>Date range with one date outside of current year</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="sg-datestamp-wrapper">
+                <span class="datestamp">Mon 3/30/16 - Wed 4/2/16</span>
+              </div>
+            </td>
+            <td>
+              <p>Date range with dates outside of current year</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="sg-datestamp-wrapper">
+                <div class="datestamp datestamp--no-dates">
+                  <div class="datestamp__multi">
+                    <div class="datestamp__text">
+                      <span class="datestamp__multi-name">Multiple</span>
+                      <span class="datestamp__dt-text">Dates & Times</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <p>Multiple dates and times</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="sg-datestamp-wrapper">
+                <div class="datestamp datestamp--no-dates">
+                  <div class="datestamp__tba">
+                    <div class="datestamp__text">
+                      <span class="datestamp__dt-text">Date &amp; Time</span>
+                      <span class="datestamp__tba-name">TBA</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <p>Date and time TBA</p>
+            </td>
+          </tr>
+        </table>
+      </section>
+
+      <section id="timer" class="sg-section">
+          <style>
+            .timer__animate {
+                animation-duration: 35s;
+            }
+          </style>
+        <h2 class="sg-hdg">Timer</h2>
+        <div class="timer">
+          <div class="is-offscreen">Time left to complete page.</div>
+          <div class="timer__indicator">13:49</div>
+          <div class="timer__spinner timer__animate"></div>
+          <div class="timer__filler timer__animate"></div>
+          <div class="timer__bg"></div>
+          <div class="timer__mask timer__animate"></div>
+        </div>
+
+        <pre class="sg-sample-code">
+&lt;div class="timer">
+  &lt;div class="is-offscreen">Time left to complete page.&lt;/div>
+  &lt;div class="timer__indicator">13:49&lt;/div>
+  &lt;div class="timer__spinner timer__animate">&lt;/div>
+  &lt;div class="timer__filler timer__animate">&lt;/div>
+  &lt;div class="timer__bg">&lt;/div>
+  &lt;div class="timer__mask timer__animate">&lt;/div>
+&lt;/div>
+
+&lt;style>
+  // to override default animation duration (i.e. 5s)
+  .timer__animate {
+      animation-duration: 35s;
+  }
+&lt;/style>
+        </pre>
+      </section>
+
+      <section id="event-header" class="sg-section">
+        <h2 class="sg-hdg">Event Headers</h2>
+        <p>Event headers are best illustrated on a <a href="event-header.html">separate page</a>.</p>
+      </section>
+
+      <section id="ism-tooltip" class="sg-section">
+        <h3 class="sg-hdg">ISM Tooltips</h3>
         <p>This pattern utilizes <a href="#lists">Delimited List</a>, <a href="#tooltips">Tooltips</a>, and <a href="#srs">SRS</a>.</p>
 
         <div class="sg-ism-tooltip">
@@ -1599,7 +1812,7 @@
         </div>
 
         <div class="sg-ism-tooltip">
-          <h4 class="sg-subhdg3">Multiple Ticket Type</h4>
+          <h2 class="sg-subhdg3">Multiple Ticket Type</h4>
           <div class="tooltip tooltip--ism">
             <div class="tooltip__content">
               <div class="tooltip__srs srs">
@@ -1841,361 +2054,8 @@
         </div>
       </section>
 
-      <section id="timer" class="sg-section">
-          <style>
-            .timer__animate {
-                animation-duration: 35s;
-            }
-          </style>
-        <h2 class="sg-hdg">Timer</h2>
-        <div class="timer">
-          <div class="is-offscreen">Time left to complete page.</div>
-          <div class="timer__indicator">13:49</div>
-          <div class="timer__spinner timer__animate"></div>
-          <div class="timer__filler timer__animate"></div>
-          <div class="timer__bg"></div>
-          <div class="timer__mask timer__animate"></div>
-        </div>
-
-        <pre class="sg-sample-code">
-&lt;div class="timer">
-  &lt;div class="is-offscreen">Time left to complete page.&lt;/div>
-  &lt;div class="timer__indicator">13:49&lt;/div>
-  &lt;div class="timer__spinner timer__animate">&lt;/div>
-  &lt;div class="timer__filler timer__animate">&lt;/div>
-  &lt;div class="timer__bg">&lt;/div>
-  &lt;div class="timer__mask timer__animate">&lt;/div>
-&lt;/div>
-
-&lt;style>
-  // to override default animation duration (i.e. 5s)
-  .timer__animate {
-      animation-duration: 35s;
-  }
-&lt;/style>
-        </pre>
-      </section>
-
-      <section id="form-elements" class="sg-section">
-        <h2 class="sg-hdg">Form Elements</h2>
-
-        <h3 class="sg-subhdg">Text fields</h3>
-
-        <p>Example of an the initial state of the input text-field, with fancy (floating) label animation.</p>
-
-        <div class="sg-input-wrapper">
-          <div class="input-group">
-            <input name="email" type="text" class="input-group__text-field" aria-required="true">
-            <label for="email" class="input-group__label">Email <span class="input-group__required">*</span></label>
-          </div>
-        </div>
-
-        <pre class="sg-sample-code">
-&lt;div class="<span class="sg-highlight-code">input-group</span>"&gt;
-  &lt;input id="email" name="email" type="text" class="<span class="sg-highlight-code">input-group__text-field</span>"&gt;
-  &lt;label for="email" class="<span class="sg-highlight-code">input-group__label</span>"&gt;Email &lt;span class="<span class="sg-highlight-code">input-group__required</span>">*&lt;/span>&lt;/label&gt;
-&lt;/div&gt;
-        </pre>
-
-        <p>Filled input text-fields contains the class <code class="sg-code">has-content</code>, which floats the label</p>
-
-        <div class="sg-input-wrapper">
-          <div class="input-group">
-            <input name="email" type="text" class="input-group__text-field has-content" aria-required="true" value="Dohn Joe">
-            <label for="email" class="input-group__label">Email <span class="input-group__required">*</span></label>
-          </div>
-        </div>
-
-
-        <pre class="sg-sample-code">
-&lt;div class=&quot;input-group&quot;&gt;
-  &lt;input name=&quot;email&quot; type=&quot;text&quot; class=&quot;input-group__text-field <span class="sg-highlight-code">has-content</span>&quot; aria-required=&quot;true&quot; value=&quot;Dohn Joe&quot;&gt;
-  &lt;label for=&quot;email&quot; class=&quot;input-group__label&quot;&gt;Email &lt;span class=&quot;input-group__required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
-&lt;/div&gt;
-        </pre>
-
-        <p>Same for text-fields in an error state. Only the input field has the class <code class="sg-code">is-error-field</code></p>
-
-        <table class="sg-table">
-          <tr>
-            <td>
-              <div class="input-group">
-                <input name="email" type="text" class="input-group__text-field is-error-field" aria-required="true">
-                <label for="email" class="input-group__label">Email <span class="input-group__required">*</span></label>
-              </div>
-            </td>
-            <td>
-              <div class="input-group">
-                <input name="email" type="text" class="input-group__text-field has-content is-error-field" aria-required="true" value="Dohn Joe">
-                <label for="email" class="input-group__label">Email <span class="input-group__required">*</span></label>
-              </div>
-            </td>
-          </tr>
-        </table>
-
-        <pre class="sg-sample-code">
-&lt;div class="input-group"&gt;
-  &lt;input id="email" name="email" type="text" class="input-group__text-field <span class="sg-highlight-code">is-error-field</span>"&gt;
-  &lt;label for="email" class="input-group__label"&gt;Email &lt;span class="input-group__required">*&lt;/span>&lt;/label&gt;
-&lt;/div&gt;
-        </pre>
-      </section>
-
-      <section id="datestamp" class="sg-section">
-        <h2 class="sg-hdg">Datestamp</h2>
-        <p>Here are the different ways to display an event's date and time.</p>
-        <p>This is encapsulated in the react component &quot;datestamp.jsx&quot;, and is being used in "edpHeader.jsx".</p>
-        <h3 class="sg-subhdg">Variants</h3>
-
-        <table class="sg-table">
-          <tr>
-            <td>
-              <div class="sg-datestamp-wrapper">
-                <div class="datestamp">
-                  <div class='datestamp__content'>
-                    <div class="datestamp__monthday">
-                      <div class="datestamp__text">
-                        <span class="datestamp__month">Jul</span>
-                        <span class="datestamp__date">20</span>
-                      </div>
-                    </div>
-                    <div class="datestamp__day-time">
-                      <div class="datestamp__dayweek">
-                        <span class="datestamp__text">Mon</span>
-                      </div>
-                      <div class="datestamp__time">
-                        <span class="datestamp__text">7:00p</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td>
-              <p>Single date and time</p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="sg-datestamp-wrapper">
-                <div class="datestamp">
-                  <div class='datestamp__content'>
-                    <div class="datestamp__monthday">
-                      <div class="datestamp__text">
-                        <span class="datestamp__month">Jul</span>
-                        <span class="datestamp__date">20</span>
-                      </div>
-                    </div>
-                    <div class="datestamp__day-time">
-                      <div class="datestamp__dayweek">
-                        <span class="datestamp__text">Mon</span>
-                      </div>
-                      <div class="datestamp__time">
-                        <span class="datestamp__text">7:00p</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="datestamp__year-wrapper">
-                    <div class="datestamp__year">2016</div>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td>
-              <p>Single date and time with year</p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="sg-datestamp-wrapper">
-                <div class="datestamp">
-                  <div class='datestamp__content'>
-                    <div class="datestamp__monthday">
-                      <div class="datestamp__text">
-                        <span class="datestamp__month">Jul</span>
-                        <span class="datestamp__date">20</span>
-                      </div>
-                    </div>
-                    <div class="datestamp__day-no-time">
-                      <div class="datestamp__dayweek">
-                        <span class="datestamp__text">Mon</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td>
-              <p>Single date without time</p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="sg-datestamp-wrapper">
-                <div class="datestamp">
-                  <div class="datestamp__range">
-                    <div class="datestamp__multiday">
-                      <div class="datestamp__text">
-                        <span class="datestamp__month">Jul</span>
-                        <span class="datestamp__date">20 - 22</span>
-                      </div>
-                    </div>
-                    <div class="datestamp__dayweek datestamp__dayweek--range">
-                      <span class="datestamp__text">Mon - Fri</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td>
-              <p>Date range in single month</p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="sg-datestamp-wrapper">
-                <div class="datestamp">
-                  <div class="datestamp__range">
-                    <div class="datestamp__crossmonth">
-                      <div class="datestamp__multiday">
-                        <div class="datestamp__text">
-                          <span class="datestamp__month">Jun</span>
-                          <span class="datestamp__date">28 - 30</span>
-                        </div>
-                      </div>
-                      <div class="datestamp__multiday">
-                        <div class="datestamp__text">
-                          <span class="datestamp__month">Jul</span>
-                          <span class="datestamp__date">1, 2</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="datestamp__dayweek datestamp__dayweek--range">
-                      <span class="datestamp__text">Mon - Fri</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td>
-              <p>Date range in separate months</p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="sg-datestamp-wrapper">
-                <div class="datestamp">
-                  <div class="datestamp__range">
-                    <div class="datestamp__crossmonth">
-                      <div class="datestamp__multiday">
-                        <div class="datestamp__text">
-                          <span class="datestamp__month">Jun</span>
-                          <span class="datestamp__date">30</span>
-                        </div>
-                      </div>
-                      <div class="datestamp__multiday">
-                        <div class="datestamp__text">
-                          <span class="datestamp__month">Jul</span>
-                          <span class="datestamp__date">1, 2</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="datestamp__dayweek datestamp__dayweek--range">
-                      <span class="datestamp__text">Mon - Wed</span>
-                    </div>
-                  </div>
-                  <div class="datestamp__year-wrapper">
-                    <div class="datestamp__year">2016</div>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td>
-              <p>Date range in separate months with single date in one month and year</p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="sg-datestamp-wrapper">
-                <div class="datestamp">
-                  <div class="datestamp__range">
-                      <div class="datestamp__crossmonth">
-                        <div class="datestamp__multiday">
-                          <div class="datestamp__text">
-                            <span class="datestamp__month">Jun</span>
-                            <span class="datestamp__date">30</span>
-                          </div>
-                        </div>
-                      <div class="datestamp__multiday">
-                        <div class="datestamp__text">
-                          <span class="datestamp__month">Jul</span>
-                          <span class="datestamp__date">1, 2</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="datestamp__dayweek datestamp__dayweek--range">
-                      <span class="datestamp__text">Mon - Wed</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td>
-              <p>Date range in separate months with single date in one month</p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="sg-datestamp-wrapper">
-                <div class="datestamp datestamp--no-dates">
-                  <div class="datestamp__multi">
-                    <div class="datestamp__text">
-                      <span class="datestamp__multi-name">Multiple</span>
-                      <span class="datestamp__dt-text">Dates & Times</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td>
-              <p>Multiple dates and times</p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="sg-datestamp-wrapper">
-                <div class="datestamp datestamp--no-dates">
-                  <div class="datestamp__tba">
-                    <div class="datestamp__text">
-                      <span class="datestamp__dt-text">Date & Time</span>
-                      <span class="datestamp__tba-name">TBA</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td>
-              <p>Date and time TBA</p>
-            </td>
-          </tr>
-        </table>
-
-      </section>
-
     </main>
   </div>
-
-  <script>
-    var appear = function() { document.getElementById('polling-overlay-panel').classList.remove('is-hidden')};
-    var disappear = function() { document.getElementById('polling-overlay-panel').classList.add('is-hidden')};
-
-    window.onload = function() {
-      document.getElementById('pollingOverlayDemo').onclick = function () {
-        appear();
-        setTimeout(disappear, 2200);
-      };
-    };
-  </script>
 
 </body>
 </html>
