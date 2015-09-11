@@ -2559,10 +2559,12 @@ transition
     var expandoPanel = document.getElementsByClassName('expando-picker__panel')[0];
         expandoExample.addEventListener('mouseover', function(){
             expandoIcon.classList.add('expando-picker__icon-open');
+            expandoPanel.style.height = '60px';
             expandoPanel.classList.add('expando-picker__panel-open');
         });
         expandoExample.addEventListener('mouseout', function() {
               expandoIcon.classList.remove('expando-picker__icon-open');
+              expandoPanel.style.height = '0';
               expandoPanel.classList.remove('expando-picker__panel-open');
           });
   </script>

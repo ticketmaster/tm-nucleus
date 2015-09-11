@@ -12,9 +12,10 @@
 .expando-picker__icon {
   width: $expando-picker-button-width-size;
   height: $expando-picker-button-height-size;
-  fill: $brand-gray2;
 
   transition: $default-panel-animation;
+
+  fill: $brand-gray2;
 }
 
 .expando-picker__icon-open {
@@ -25,15 +26,24 @@
 
 .expando-picker__panel {
   height: 0;
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+
   overflow: hidden;
+
+  opacity: 0;
 
   transition: $default-panel-animation;
 }
 
 .expando-picker__panel-open {
   height: auto;
-  padding-top: 10px;
-  padding-bottom: 10px;
 
-  transition: $default-panel-animation;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  opacity: 1;
+
+  transition: $default-panel-animation-open;
 }
