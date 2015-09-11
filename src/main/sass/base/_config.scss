@@ -36,8 +36,11 @@ $button-minor-padding-lg: 20px;
 $qty-picker-button-size: 40px;
 
 // Expando picker
-$expando-picker-button-width-size: 17px;
-$expando-picker-button-height-size: 13px;
+$expando-picker-button-width-size: 13px;
+$expando-picker-button-height-size: 8px;
+
+// animation
+$default-panel-animation: all 0.15s ease-out 0s;
 
 // Sizes
 $srs-min-width: 295px;

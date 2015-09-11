@@ -6,16 +6,34 @@
   @include unbutton($padding: 0);
 
   line-height: 0;
-  margin-to[p: 6px;
+  vertical-align: middle;
 }
 
 .expando-picker__icon {
   width: $expando-picker-button-width-size;
   height: $expando-picker-button-height-size;
   fill: $brand-gray2;
+
+  transition: $default-panel-animation;
 }
 
-.expando-picker-open__icon {
-  transform: scaleY(-1);
+.expando-picker__icon-open {
+  transform: rotate(180deg);
+
+  transition: $default-panel-animation;
 }
 
+.expando-picker__panel {
+  height: 0;
+  overflow: hidden;
+
+  transition: $default-panel-animation;
+}
+
+.expando-picker__panel-open {
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  transition: $default-panel-animation;
+}
