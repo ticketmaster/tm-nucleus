@@ -1,36 +1,108 @@
 .event-header {
-  padding: 8px;
-  background-color: $brand-gray4;
+  @include responsive-font('md');
+
+  position: relative;
+  display: flex;
+  min-width: $bp-xs;
+  align-items: center;
+  height: $event-header-height;
+  background-color: $brand-primary;
+  text-align: center;
+  color: $white;
 }
 
-.event-header__back {
-  @include chevron($brand-primary, left, 50%, 0);
-  @include hide-text;
+.event-header__event-info {
+  flex: 1 1 $event-header-info-width;
+}
 
+.event-header__event-info--checkout {
+  flex: 1 1 $event-header-info-checkout-width;
+}
+
+.event-header__title {
+  @include responsive-font('xl');
+
+  max-width: $event-header-info-width;
+  margin: auto;
+
+  @include breakpoint($bp-md) {
+    max-width: calc(100vw - (#{$event-header-menu-container} * 2));
+  }
+}
+
+.event-header__title--checkout {
+  max-width: $event-header-info-checkout-width;
+
+  @include breakpoint($bp-md) {
+    max-width: calc(100vw - (#{$event-header-menu-container} * 2));
+  }
+}
+
+.event-header__venue-time {
+  color: get-lighter($brand-primary);
+  white-space: nowrap;
+}
+
+.event-header__venue {
   display: inline-block;
-  width: 1.8em;
-  height: 2.2em;
-  margin-right: 1em;
+  max-width: 35%;  // for iOS 7
+  max-width: calc(100vw - (#{$event-header-menu-container} * 2 + 40px) - #{$event-header-datestamp-width});
+  margin: auto;
   vertical-align: top;
 }
 
-.event-header__datetime {
-  display: inline-block;
-  padding: 0 8px;
-  margin-right: 1em;
+.event-header__venue--apart,
+.event-header__datestamp--apart {
+  @include breakpoint($max: $bp-md - 1) {
+    display: block;
+  }
+}
+
+.event-header__venue--apart {
+  max-width: $event-header-info-checkout-width;
+
+  @include breakpoint($bp-md) {
+    max-width: calc(100vw - (#{$timer-container-lg} * 2 + 40px) - #{$event-header-datestamp-width});
+  }
+}
+
+.event-header__venue-separator--apart {
+  @include breakpoint($max: $bp-md - 1) {
+    display: none;
+  }
+}
+
+.event-header__supportive {
+  width: $event-header-menu-container;
+  flex: 0 0 auto;
   text-align: center;
-  border: $base-border-style;
 }
 
-.event-header__month,
-.event-header__day {
-  display: block;
+.event-header__supportive--checkout {
+  width: $timer-container;
+
+  @include breakpoint($bp-md) {
+    width: $timer-container-lg;
+  }
 }
 
-.event-header__month {
+.event-header__expand {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   font-weight: bold;
+  text-align: center;
+  color: $white;
+  line-height: 1;
 }
 
-.event-header__event {
-  display: inline-block;
+.event-header__expand-link {
+  @include unbutton($white, 0);
+
+  width: 100%;
+}
+
+.event-header__timer {
+  margin: auto;
 }

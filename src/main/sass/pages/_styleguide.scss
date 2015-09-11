@@ -13,10 +13,6 @@ $sg-spacing: 1.5em;
 }
 
 
-.styleguide {
-  background-color: $white;
-}
-
 .sg-header {
   @include span(full);
   @include outer-spacing($bottom: $spacing-lg);
@@ -510,15 +506,6 @@ $sg-spacing: 1.5em;
 }
 
 
-// datestamps
-.sg-datestamp-wrapper {
-  display: inline-block;
-  padding: 1px;
-
-  background: $brand-primary;
-}
-
-
 // sec-row-seat
 .sg-srs {
   @include outer-spacing($bottom: $spacing-md);
@@ -526,14 +513,8 @@ $sg-spacing: 1.5em;
   width: $srs-min-width;
 }
 
-
 .sg-ism-tooltip {
   @include outer-spacing($bottom: $spacing-md);
-}
-
-.sg-timer-wrapper {
-  padding: 35px 20px;
-  background-color: $brand-primary;
 }
 
 .sg-input-wrapper {

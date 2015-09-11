@@ -52,6 +52,7 @@
         <li><a href="#form-elements">Form Elements</a></li>
         <li><a href="#panels">Panels</a></li>
         <li><a href="#datestamp">Datestamp</a></li>
+        <li><a href="#event-header">Event Header</a></li>
         <li><a href="#polling">Polling</a></li>
         <li><a href="#polling-overlay">Polling Overlay</a></li>
         <li><a href="#property-order">CSS Property Ordering</a></li>
@@ -1847,6 +1848,153 @@
         </div>
       </section>
 
+      <section id="datestamp" class="sg-section">
+        <h2 class="sg-hdg">Datestamp</h2>
+        <p>Here are the different ways to display an event's date and time.</p>
+        <p>This is encapsulated in the React component &quot;datestamp.jsx&quot;, and is being used in "edpHeader.jsx".</p>
+
+        <table class="sg-table">
+          <tr>
+            <td>
+              <div class="sg-datestamp-wrapper">
+                <span class="datestamp">Mon 2/24 @ 8:00p</span>
+              </div>
+            </td>
+            <td>
+              <p>Single date and time</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="sg-datestamp-wrapper">
+                <span class="datestamp">Mon 2/24/15 @ 8:00p</span>
+              </div>
+            </td>
+            <td>
+              <p>Single date and time with year</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="sg-datestamp-wrapper">
+                <span class="datestamp">Mon 2/24</span>
+              </div>
+            </td>
+            <td>
+              <p>Single date without time</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="sg-datestamp-wrapper">
+                <span class="datestamp">Mon 6/30 - Wed 7/2</span>
+              </div>
+            </td>
+            <td>
+              <p>Date range</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="sg-datestamp-wrapper">
+                <span class="datestamp">Mon 12/30/15 - Wed 1/2/16</span>
+              </div>
+            </td>
+            <td>
+              <p>Date range with one date outside of current year</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="sg-datestamp-wrapper">
+                <span class="datestamp">Mon 3/30/16 - Wed 4/2/16</span>
+              </div>
+            </td>
+            <td>
+              <p>Date range with dates outside of current year</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="sg-datestamp-wrapper">
+                <div class="datestamp datestamp--no-dates">
+                  <div class="datestamp__multi">
+                    <div class="datestamp__text">
+                      <span class="datestamp__multi-name">Multiple</span>
+                      <span class="datestamp__dt-text">Dates & Times</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <p>Multiple dates and times</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="sg-datestamp-wrapper">
+                <div class="datestamp datestamp--no-dates">
+                  <div class="datestamp__tba">
+                    <div class="datestamp__text">
+                      <span class="datestamp__dt-text">Date & Time</span>
+                      <span class="datestamp__tba-name">TBA</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <p>Date and time TBA</p>
+            </td>
+          </tr>
+        </table>
+
+      </section>
+
+      <section id="event-header" class="sg-section">
+        <h2 class="sg-hdg">Event Headers</h2>
+        <p>Event headers are best illustrated on a <a href="event-header.html">separate page</a>.</p>
+      </section>
+
+      <section id="timer" class="sg-section">
+        <style>
+          .timer__animate {
+            animation-duration: 35s;
+          }
+        </style>
+        <h2 class="sg-hdg">Timer</h2>
+        <div class="timer">
+          <div class="is-offscreen">Time left to complete page.</div>
+          <div class="timer__indicator">13:49</div>
+          <div class="timer__spinner timer__animate"></div>
+          <div class="timer__filler timer__animate"></div>
+          <div class="timer__bg"></div>
+          <div class="timer__mask timer__animate"></div>
+        </div>
+
+        <pre class="sg-sample-code">
+&lt;div class="timer"&gt;
+  &lt;div class="is-offscreen"&gt;Time left to complete page.&lt;/div&gt;
+  &lt;div class="timer__indicator"&gt;13:49&lt;/div&gt;
+  &lt;div class="timer__spinner timer__animate"&gt;&lt;/div&gt;
+  &lt;div class="timer__filler timer__animate"&gt;&lt;/div&gt;
+  &lt;div class="timer__bg"&gt;&lt;/div&gt;
+  &lt;div class="timer__mask timer__animate"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+  // to override default animation duration (i.e. 5s)
+  .timer__animate {
+      animation-duration: 35s;
+  }
+&lt;/style>
+        </pre>
+      </section>
+
+
+<!-- Old stuff below -->
+
       <section id="badges" class="sg-section">
         <h2 class="sg-hdg">Badges</h2>
         <table class="sg-table">
@@ -1869,54 +2017,6 @@
             <td><code class="sg-code">.toaster .toaster--button</code></td>
           </tr>
         </table>
-      </section>
-
-      <section id="timer" class="sg-section">
-          <style>
-            .timer__animate {
-                animation-duration: 35s;
-            }
-          </style>
-        <h2 class="sg-hdg">Timer</h2>
-        <div class="timer">
-          <div class="is-offscreen">Time left to complete page.</div>
-          <div class="timer__indicator">13:49</div>
-          <div class="timer__spinner timer__animate"></div>
-          <div class="timer__filler timer__animate"></div>
-          <div class="timer__bg"></div>
-          <div class="timer__mask timer__animate"></div>
-        </div>
-
-        <hr>
-
-        <p>With top/bottom 35px padding and left/right 20px</p>
-        <div class="sg-timer-wrapper">
-          <div class="timer">
-            <div class="is-offscreen">Time left to complete page.</div>
-            <div class="timer__indicator">13:49</div>
-            <div class="timer__spinner timer__animate"></div>
-            <div class="timer__filler timer__animate"></div>
-            <div class="timer__bg"></div>
-            <div class="timer__mask timer__animate"></div>
-            </div>
-        </div>
-        <pre class="sg-sample-code">
-&lt;div class="timer">
-  &lt;div class="is-offscreen">Time left to complete page.&lt;/div>
-  &lt;div class="timer__indicator">13:49&lt;/div>
-  &lt;div class="timer__spinner timer__animate">&lt;/div>
-  &lt;div class="timer__filler timer__animate">&lt;/div>
-  &lt;div class="timer__bg">&lt;/div>
-  &lt;div class="timer__mask timer__animate">&lt;/div>
-&lt;/div>
-
-&lt;style>
-  // to override default animation duration (i.e. 5s)
-  .timer__animate {
-      animation-duration: 35s;
-  }
-&lt;/style>
-        </pre>
       </section>
 
       <section id="form-elements" class="sg-section">
@@ -2165,247 +2265,6 @@
             </div>
           </div>
         </div>
-      </section>
-
-      <section id="datestamp" class="sg-section">
-        <h2 class="sg-hdg">Datestamp</h2>
-        <p>Here are the different ways to display an event's date and time.</p>
-        <p>This is encapsulated in the react component &quot;datestamp.jsx&quot;, and is being used in "edpHeader.jsx".</p>
-        <h3 class="sg-subhdg">Variants</h3>
-
-        <table class="sg-table">
-          <tr>
-            <td>
-              <div class="sg-datestamp-wrapper">
-                <div class="datestamp">
-                  <div class='datestamp__content'>
-                    <div class="datestamp__monthday">
-                      <div class="datestamp__text">
-                        <span class="datestamp__month">Jul</span>
-                        <span class="datestamp__date">20</span>
-                      </div>
-                    </div>
-                    <div class="datestamp__day-time">
-                      <div class="datestamp__dayweek">
-                        <span class="datestamp__text">Mon</span>
-                      </div>
-                      <div class="datestamp__time">
-                        <span class="datestamp__text">7:00p</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td>
-              <p>Single date and time</p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="sg-datestamp-wrapper">
-                <div class="datestamp">
-                  <div class='datestamp__content'>
-                    <div class="datestamp__monthday">
-                      <div class="datestamp__text">
-                        <span class="datestamp__month">Jul</span>
-                        <span class="datestamp__date">20</span>
-                      </div>
-                    </div>
-                    <div class="datestamp__day-time">
-                      <div class="datestamp__dayweek">
-                        <span class="datestamp__text">Mon</span>
-                      </div>
-                      <div class="datestamp__time">
-                        <span class="datestamp__text">7:00p</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="datestamp__year-wrapper">
-                    <div class="datestamp__year">2016</div>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td>
-              <p>Single date and time with year</p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="sg-datestamp-wrapper">
-                <div class="datestamp">
-                  <div class='datestamp__content'>
-                    <div class="datestamp__monthday">
-                      <div class="datestamp__text">
-                        <span class="datestamp__month">Jul</span>
-                        <span class="datestamp__date">20</span>
-                      </div>
-                    </div>
-                    <div class="datestamp__day-no-time">
-                      <div class="datestamp__dayweek">
-                        <span class="datestamp__text">Mon</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td>
-              <p>Single date without time</p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="sg-datestamp-wrapper">
-                <div class="datestamp">
-                  <div class="datestamp__range">
-                    <div class="datestamp__multiday">
-                      <div class="datestamp__text">
-                        <span class="datestamp__month">Jul</span>
-                        <span class="datestamp__date">20 - 22</span>
-                      </div>
-                    </div>
-                    <div class="datestamp__dayweek datestamp__dayweek--range">
-                      <span class="datestamp__text">Mon - Fri</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td>
-              <p>Date range in single month</p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="sg-datestamp-wrapper">
-                <div class="datestamp">
-                  <div class="datestamp__range">
-                    <div class="datestamp__crossmonth">
-                      <div class="datestamp__multiday">
-                        <div class="datestamp__text">
-                          <span class="datestamp__month">Jun</span>
-                          <span class="datestamp__date">28 - 30</span>
-                        </div>
-                      </div>
-                      <div class="datestamp__multiday">
-                        <div class="datestamp__text">
-                          <span class="datestamp__month">Jul</span>
-                          <span class="datestamp__date">1, 2</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="datestamp__dayweek datestamp__dayweek--range">
-                      <span class="datestamp__text">Mon - Fri</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td>
-              <p>Date range in separate months</p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="sg-datestamp-wrapper">
-                <div class="datestamp">
-                  <div class="datestamp__range">
-                    <div class="datestamp__crossmonth">
-                      <div class="datestamp__multiday">
-                        <div class="datestamp__text">
-                          <span class="datestamp__month">Jun</span>
-                          <span class="datestamp__date">30</span>
-                        </div>
-                      </div>
-                      <div class="datestamp__multiday">
-                        <div class="datestamp__text">
-                          <span class="datestamp__month">Jul</span>
-                          <span class="datestamp__date">1, 2</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="datestamp__dayweek datestamp__dayweek--range">
-                      <span class="datestamp__text">Mon - Wed</span>
-                    </div>
-                  </div>
-                  <div class="datestamp__year-wrapper">
-                    <div class="datestamp__year">2016</div>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td>
-              <p>Date range in separate months with single date in one month and year</p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="sg-datestamp-wrapper">
-                <div class="datestamp">
-                  <div class="datestamp__range">
-                      <div class="datestamp__crossmonth">
-                        <div class="datestamp__multiday">
-                          <div class="datestamp__text">
-                            <span class="datestamp__month">Jun</span>
-                            <span class="datestamp__date">30</span>
-                          </div>
-                        </div>
-                      <div class="datestamp__multiday">
-                        <div class="datestamp__text">
-                          <span class="datestamp__month">Jul</span>
-                          <span class="datestamp__date">1, 2</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="datestamp__dayweek datestamp__dayweek--range">
-                      <span class="datestamp__text">Mon - Wed</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td>
-              <p>Date range in separate months with single date in one month</p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="sg-datestamp-wrapper">
-                <div class="datestamp datestamp--no-dates">
-                  <div class="datestamp__multi">
-                    <div class="datestamp__text">
-                      <span class="datestamp__multi-name">Multiple</span>
-                      <span class="datestamp__dt-text">Dates & Times</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td>
-              <p>Multiple dates and times</p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="sg-datestamp-wrapper">
-                <div class="datestamp datestamp--no-dates">
-                  <div class="datestamp__tba">
-                    <div class="datestamp__text">
-                      <span class="datestamp__dt-text">Date & Time</span>
-                      <span class="datestamp__tba-name">TBA</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td>
-              <p>Date and time TBA</p>
-            </td>
-          </tr>
-        </table>
-
       </section>
 
       <section id="polling" class="sg-section">

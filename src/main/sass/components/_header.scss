@@ -74,23 +74,6 @@ $header-height: 40px;
   }
 }
 
-.logo {
-  width: 148px;
-
-  @include breakpoint($bp-md) {
-    width: 247px;
-  }
-}
-
-.logo img {
-  height: 20px;
-
-  @include breakpoint($bp-md) {
-    height: 31px;
-  }
-}
-
-
 // ln assets
 $ln-header-height: 45px;
 $ln-red-color: #e11d39;

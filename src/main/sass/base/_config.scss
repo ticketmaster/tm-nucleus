@@ -39,15 +39,28 @@ $qty-picker-button-size: 40px;
 $srs-min-width: 295px;
 $tooltip-caret: 15px;
 $tooltip-caret-lg: 20px;
-$ism-tooltip-width: 315px;
-$event-image-size: 205px;
-$qp-width-lg: 360px;
-$ticket-bag-ht: 70px;   // approximate; needed by map/list toaster button
 $footer-height: 2.8rem;
+
+// form fields
 $textfield-gutter-left: 10px;
 $input-label-height: 20px;
 $input-label-bottom: 5px;
 $input-label-bottom-active: 30px;
+
+// ism/qp
+$ism-tooltip-width: 315px;
+$qp-width-lg: 360px;
+$ticket-bag-ht: 70px;   // approximate; needed by map/list toaster button
+
+// event header
+$event-image-size: 205px;
+$event-header-height: 74px;
+$event-header-menu-container: 50px;
+$event-header-info-width: 65vw;
+$event-header-info-checkout-width: 42vw;
+$event-header-datestamp-width: 160px;  // approximate; worst case scenario
+$timer-container: 90px;
+$timer-container-lg: 95px;
 
 
 // old stuff
