@@ -6,7 +6,7 @@ $spacing-ratio: 1.5;
 
 // Borders
 $base-border-style: 1px solid $brand-gray3;
-$form-border-style: 1px solid $brand-gray2;
+$textfield-border-style: 1px solid $brand-gray2;
 $focused-border-style: 1px solid $brand-primary;
 $error-border-style: 1px solid $brand-alert;
 $outline-style: 3px solid $outline-color;
@@ -40,6 +40,12 @@ $srs-min-width: 295px;
 $tooltip-caret: 15px;
 $tooltip-caret-lg: 20px;
 $footer-height: 2.8rem;
+
+// form fields
+$textfield-gutter-left: 10px;
+$input-label-height: 20px;
+$input-label-bottom: 5px;
+$input-label-bottom-active: 30px;
 
 // ism/qp
 $ism-tooltip-width: 315px;
@@ -90,6 +96,7 @@ $timer-border-off: 5px solid get-lighter($brand-primary);
 // Animation
 $text-enter: all 0.5s ease-in;
 $text-leave: all 0.5s ease-in;
+$form-label-animation: all 0.15s ease-out 0s;
 
 @keyframes spin {
   100% {

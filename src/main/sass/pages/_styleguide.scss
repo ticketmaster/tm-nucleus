@@ -513,19 +513,15 @@ $sg-spacing: 1.5em;
   width: $srs-min-width;
 }
 
-
 .sg-ism-tooltip {
   @include outer-spacing($bottom: $spacing-md);
 }
 
-.sg-timer-wrapper {
-  padding: 35px 20px;
-  background-color: $brand-primary;
-}
-
 .sg-input-wrapper {
+  @include outer-spacing($bottom: $spacing-md);
+
   width: 33%;
-  padding: 10px;
+  // padding: 10px;
 }
 
 .sg-unstyled-list {
