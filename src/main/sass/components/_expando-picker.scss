@@ -27,9 +27,6 @@
 .expando-picker__panel {
   height: 0;
 
-  padding-top: 5px;
-  padding-bottom: 5px;
-
   overflow: hidden;
 
   opacity: 0;
@@ -40,8 +37,8 @@
 .expando-picker__panel-open {
   height: auto;
 
-  padding-top: 5px;
-  padding-bottom: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 
   opacity: 1;
 

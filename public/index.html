@@ -1998,7 +1998,8 @@
     <p>This container is a variant of the &quot;toggle module&quot;. But rather than expand/collapse a
       modul level item, this will expand child content</p>
     <p class="alt-copy">Please Note: The actual open/close will be controlled via a React component. Just make sure
-    the open/close states apply the proper styles denoted here.</p>
+    the open/close states apply the proper styles denoted here. The following functionality will be the 'base' animation.
+    because the height of the content is dynamic, an external js source will handle the 'smoothing' of the animation.</p>
 
 
     <section>
@@ -2559,12 +2560,10 @@ transition
     var expandoPanel = document.getElementsByClassName('expando-picker__panel')[0];
         expandoExample.addEventListener('mouseover', function(){
             expandoIcon.classList.add('expando-picker__icon-open');
-            expandoPanel.style.height = '60px';
             expandoPanel.classList.add('expando-picker__panel-open');
         });
         expandoExample.addEventListener('mouseout', function() {
               expandoIcon.classList.remove('expando-picker__icon-open');
-              expandoPanel.style.height = '0';
               expandoPanel.classList.remove('expando-picker__panel-open');
           });
   </script>
