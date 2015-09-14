@@ -3,7 +3,7 @@ $sg-swatch-height: 70px;
 $sg-spacing: 1.5em;
 
 @mixin code-style($sz: sm) {
-  @include fixed-font('sm');
+  @include fixed-font($sz);
 
   padding: 2px 4px;
   border: $base-border-style;
@@ -229,6 +229,10 @@ $sg-spacing: 1.5em;
   @include code-style();
 }
 
+.sg-code-xs {
+  @include code-style('xs');
+}
+
 
 // sample code style
 .sg-sample-code {
@@ -297,6 +301,8 @@ $sg-spacing: 1.5em;
 .sg-swatch--state {
   width: 20vw;
 
+  margin-bottom: 5px;
+
   @include breakpoint($bp-md) {
     width: 13vw;
   }
@@ -332,48 +338,108 @@ $sg-spacing: 1.5em;
   content: 'catalina';
 }
 
-.sg-swatch--pacific-darker {
-  background: get-darker($brand-primary);
+.sg-swatch--pacific-darker25 {
+  background: $brand-primary-darker25;
+
+  &:before {
+    color: $white;
+
+    content: '#{$brand-primary-darker25}';
+  }
 }
 
-.sg-swatch--pacific-lighter {
-  background: get-lighter($brand-primary, 50%);
+.sg-swatch--pacific-lighter50 {
+  background: $brand-primary-lighter50;
+
+  &:before {
+    content: '#{$brand-primary-lighter50}';
+  }
 }
 
-.sg-swatch--pacific-lighter2 {
-  background: get-lighter($brand-primary);
+.sg-swatch--pacific-lighter75 {
+  background: $brand-primary-lighter75;
+
+  &:before {
+    content: '#{$brand-primary-lighter75}';
+  }
 }
 
-.sg-swatch--cascade-darker {
-  background: get-darker($brand-gray2);
+.sg-swatch--pacific-lighter87 {
+  background: $brand-primary-lighter87;
+
+  &:before {
+    content: '#{$brand-primary-lighter87}';
+  }
 }
 
-.sg-swatch--cascade-lighter {
-  background: get-lighter($brand-gray2, 50%);
+.sg-swatch--cascade-darker25 {
+  background: $brand-gray2-darker25;
+
+  &:before {
+    color: $white;
+
+    content: '#{$brand-gray2-darker25}';
+  }
 }
 
-.sg-swatch--cascade-lighter2 {
-  background: get-lighter($brand-gray2);
+.sg-swatch--cascade-lighter50 {
+  background: $brand-gray2-lighter50;
+
+  &:before {
+    content: '#{$brand-gray2-lighter50}';
+  }
 }
 
-.sg-swatch--yosemite-darker {
-  background: get-darker($brand-cta);
+.sg-swatch--cascade-lighter75 {
+  background: $brand-gray2-lighter75;
+
+  &:before {
+    content: '#{$brand-gray2-lighter75}';
+  }
 }
 
-.sg-swatch--yosemite-lighter {
-  background: get-lighter($brand-cta);
+.sg-swatch--yosemite-darker25 {
+  background: $brand-cta-darker25;
+
+  &:before {
+    color: $white;
+
+    content: '#{$brand-cta-darker25}';
+  }
 }
 
-.sg-swatch--helen-darker {
-  background: get-darker($brand-alert);
+.sg-swatch--yosemite-lighter75 {
+  background: $brand-cta-lighter75;
+
+  &:before {
+    content: '#{$brand-cta-lighter75}';
+  }
 }
 
-.sg-swatch--helen-lighter {
-  background: get-lighter($brand-alert);
+.sg-swatch--helen-darker25 {
+  background: $brand-alert-darker25;
+
+  &:before {
+    color: $white;
+
+    content: '#{$brand-alert-darker25}';
+  }
 }
 
-.sg-swatch--catalina-lighter {
-  background: get-lighter($brand-accent, 50%);
+.sg-swatch--helen-lighter75 {
+  background: $brand-alert-lighter75;
+
+  &:before {
+    content: '#{$brand-alert-lighter75}';
+  }
+}
+
+.sg-swatch--catalina-lighter50 {
+  background: $brand-accent-lighter50;
+
+  &:before {
+    content: '#{$brand-accent-lighter50}';
+  }
 }
 
 

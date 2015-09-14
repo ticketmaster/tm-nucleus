@@ -61,8 +61,8 @@ $timer-container-lg: 95px;
 $timer-bg-color: $brand-primary;
 $timer-size: 60px;
 $timer-size-lg: 65px;
-$timer-border-on: 5px solid get-darker($brand-primary);
-$timer-border-off: 5px solid get-lighter($brand-primary);
+$timer-border-on: 5px solid $brand-primary-darker25;
+$timer-border-off: 5px solid $brand-primary-lighter75;
 
 // Make images flexible
 img,

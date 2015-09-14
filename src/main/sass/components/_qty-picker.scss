@@ -14,15 +14,15 @@
   fill: $brand-primary;
 
   &:hover {
-    fill: get-darker($brand-primary);
+    fill: $brand-primary-darker25;
   }
 }
 
 .qty-picker__icon--disabled {
-  fill: get-lighter($brand-primary);
+  fill: $brand-primary-lighter75;
 
   &:hover {
-    fill: get-lighter($brand-primary);
+    fill: $brand-primary-lighter75;
   }
 }
 
