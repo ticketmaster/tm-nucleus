@@ -185,7 +185,7 @@ linters:
     enabled: true
 
   VariableForProperty:
-    enabled: false
+    enabled: true
     properties:
       - color
 

@@ -3,12 +3,12 @@
 
   position: relative;
   display: flex;
-  min-width: $bp-xs;
   align-items: center;
   height: $event-header-height;
-  background-color: $brand-primary;
-  text-align: center;
+  min-width: $bp-xs;
   color: $white;
+  text-align: center;
+  background-color: $brand-primary;
 }
 
 .event-header__event-info {
@@ -46,7 +46,11 @@
 .event-header__venue {
   display: inline-block;
   max-width: 35%;  // for iOS 7
+
+  // scss-lint:disable DuplicateProperty
   max-width: calc(100vw - (#{$event-header-menu-container} * 2 + 40px) - #{$event-header-datestamp-width});
+  // scss-lint:enable DuplicateProperty
+
   margin: auto;
   vertical-align: top;
 }
@@ -73,8 +77,8 @@
 }
 
 .event-header__supportive {
-  width: $event-header-menu-container;
   flex: 0 0 auto;
+  width: $event-header-menu-container;
   text-align: center;
 }
 
@@ -92,9 +96,9 @@
   left: 0;
   width: 100%;
   font-weight: bold;
-  text-align: center;
-  color: $white;
   line-height: 1;
+  color: $white;
+  text-align: center;
 }
 
 .event-header__expand-link {

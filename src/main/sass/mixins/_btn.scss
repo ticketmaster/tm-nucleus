@@ -1,3 +1,7 @@
+// scss-lint:disable VariableForProperty
+// Disable linter because we're passing in the color as a variable, so we need
+// to call the get-darker/lighter functions dynamically instead of with set vars
+
 // mixin to create buttons
 @mixin btn($color: $brand-primary, $txtcolor: $white, $hoverstate: false, $outlined: false) {
   @include btn-base();
