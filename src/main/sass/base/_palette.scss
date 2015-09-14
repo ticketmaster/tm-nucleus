@@ -1,6 +1,20 @@
 // TM Color Palette
 // scss-lint:disable ColorVariable
 
+// calculate different shades
+@function get-darker($color, $percent: 25%) {
+  @return mix($black, $color, $percent);
+}
+
+@function get-lighter($color, $percent: 75%) {
+  @return mix($white, $color, $percent);
+}
+
+// return hex value associated with name
+@function color($name, $shade) {
+  @return map-get(map-get($palette, $name), $shade);
+}
+
 // base colors
 $brand-primary:  #009cde;
 $brand-cta:      #19ab20;
@@ -37,8 +51,8 @@ $palette: (
 );
 
 // derived colors from base
-$brand-primary-lighter:  color('blue', 'havasu');
-$brand-gray:              color('gray', 'sierra');
+$brand-primary-lighter: color('blue', 'havasu');
+$brand-gray: color('gray', 'sierra');
 
 // gradients
 $black-white-gradient: linear-gradient(to bottom, #4d4d4d 0%, #383838 26%, #1f1f1f 53%, #151515 67%, #121212 69%, #000 100%);
