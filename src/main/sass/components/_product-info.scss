@@ -1,0 +1,12 @@
+.product-info__title {
+  @include responsive-font('lg');
+}
+
+.product-info__compact-title {
+  @include responsive-font('sm');
+}
+
+.product-info__desc {
+  @include responsive-font('sm');
+  @include alt-copy();
+}
