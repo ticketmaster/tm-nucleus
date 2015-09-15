@@ -47,6 +47,7 @@
         <li><a href="#tooltips">Tooltips</a></li>
         <li><a href="#srs">Sec-Row-Seat</a></li>
         <li><a href="#layout">Layout Patterns</a></li>
+        <li><a href="#product-info">Product Information</a></li>
         <li><a href="#datestamp">Datestamp</a></li>
         <li><a href="#timer">Timer</a></li>
         <li><a href="#event-header">Event Header</a></li>
@@ -1222,8 +1223,8 @@
 
       </section>
 
-
       <section id="form-elements" class="sg-section">
+
         <h2 class="sg-hdg">Form Elements</h2>
 
         <h3 class="sg-subhdg">Text fields</h3>
@@ -1252,7 +1253,6 @@
             <label for="email" class="input-group__label">Email <span class="input-group__required">*</span></label>
           </div>
         </div>
-
 
         <pre class="sg-sample-code">
 &lt;div class=&quot;input-group&quot;&gt;
@@ -1286,6 +1286,120 @@
   &lt;label for="email" class="input-group__label"&gt;Email &lt;span class="input-group__required">*&lt;/span>&lt;/label&gt;
 &lt;/div&gt;
         </pre>
+
+        <h3 class="sg-subhdg">Drop downs</h3>
+
+        <p>This is how we are going to implement select boxes. 
+           In order for the styling to happen we needed a little help from the javascript side. 
+           Note that onSelectChange() should be defined as a global form helper function. 
+           Then we can bind an onChange event to the select box and pass in the correct parameters.</p>
+
+        <script>
+        function onSelectChange(obj, labelId, defaultText) {
+          if (obj && labelId) {
+            var selectedText = (obj.selectedIndex || !defaultText) 
+                                ? obj.options[obj.selectedIndex].innerHTML 
+                                : defaultText;
+            var parentNode = document.getElementById(labelId).parentNode;
+            var requiredText = parentNode.getElementsByClassName('input-group__required')[0];
+            document.getElementById(labelId).innerHTML = selectedText;
+            requiredText.style.display = obj.selectedIndex ? 'none' : 'inline';
+          }
+        }
+        </script>
+
+        <div class="sg-input-wrapper">
+          <div class="dropdown">
+            <select id="state" class="dropdown__select" onChange="onSelectChange(this,'selected-text','State');">
+              <option class="dropdown__option" value="">Select...</option>
+              <option class="dropdown__option" value="AL">Alabama</option>
+              <option class="dropdown__option" value="AK">Alaska</option>
+              <option class="dropdown__option" value="AZ">Arizona</option>
+              <option class="dropdown__option" value="AR">Arkansas</option>
+              <option class="dropdown__option" value="CA">California</option>
+            </select>
+            <label for="state" class="input-group__label">
+              <span id="selected-text">State</span> <span class="input-group__required">*</span>
+            </label>
+            <svg class="dropdown__chevron">
+              <use xlink:href="img/sprite.svg#chevron">
+            </svg>
+          </div>
+        </div>
+
+        <pre class="sg-sample-code">
+&lt;script&gt;
+function <span class="sg-highlight-code">onSelectChange(obj, labelId, defaultText)</span> {
+  if (obj && labelId) {
+    var selectedText = (obj.selectedIndex || !defaultText) 
+                        ? obj.options[obj.selectedIndex].innerHTML 
+                        : defaultText;
+    var parentNode = document.getElementById(labelId).parentNode;
+    var requiredText = parentNode.getElementsByClassName('input-group__required')[0];
+    document.getElementById(labelId).innerHTML = selectedText;
+    requiredText.style.display = obj.selectedIndex ? 'none' : 'inline';
+  }
+}
+&lt;/script&gt;
+
+&lt;div class="<span class="sg-highlight-code">dropdown</span>"&gt;
+  &lt;select id="state" class="<span class="sg-highlight-code">dropdown__select</span>" <span class="sg-highlight-code">onChange="onSelectChange(this,'selected-text','State');"</span>&gt;
+    &lt;option class="<span class="sg-highlight-code">dropdown__option</span>" value=""&gt;Select...&lt;/option&gt;
+    &lt;option class="<span class="sg-highlight-code">dropdown__option</span>" value="AL"&gt;Alabama&lt;/option&gt;
+    &lt;option class="<span class="sg-highlight-code">dropdown__option</span>" value="AK"&gt;Alaska&lt;/option&gt;
+    &lt;option class="<span class="sg-highlight-code">dropdown__option</span>" value="AZ"&gt;Arizona&lt;/option&gt;
+    &lt;option class="<span class="sg-highlight-code">dropdown__option</span>" value="AR"&gt;Arkansas&lt;/option&gt;
+    &lt;option class="<span class="sg-highlight-code">dropdown__option</span>" value="CA"&gt;California&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;label for="state" class="input-group__label"&gt;
+    &lt;span id="<span class="sg-highlight-code">selected-text</span>"&gt;State&lt;/span&gt; &lt;span class="input-group__required"&gt;*&lt;/span&gt;
+  &lt;/label&gt;
+  &lt;svg class="<span class="sg-highlight-code">dropdown__chevron</span>"&gt;
+    &lt;use xlink:href="img/sprite.svg#chevron"&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+        </pre>
+
+        <p>This is the error state. We just apply the <code class="sg-code">is-error-field</code> class to the select element.</p>
+
+        <div class="sg-input-wrapper">
+          <div class="dropdown">
+            <select id="state-2" class="dropdown__select is-error-field" onChange="onSelectChange(this,'selected-text-2','State');">
+              <option class="dropdown__option" value="">Select...</option>
+              <option class="dropdown__option" value="AL">Alabama</option>
+              <option class="dropdown__option" value="AK">Alaska</option>
+              <option class="dropdown__option" value="AZ">Arizona</option>
+              <option class="dropdown__option" value="AR">Arkansas</option>
+              <option class="dropdown__option" value="CA">California</option>
+            </select>
+            <label for="state-2" class="input-group__label">
+              <span id="selected-text-2">State</span> <span class="input-group__required">*</span>
+            </label>
+            <svg class="dropdown__chevron">
+              <use xlink:href="img/sprite.svg#chevron">
+            </svg>
+          </div>
+        </div>
+
+        <pre class="sg-sample-code">
+&lt;div class="dropdown"&gt;
+  &lt;select id="state-2" class="dropdown__select <span class="sg-highlight-code">is-error-field</span>" onChange="onSelectChange(this,'selected-text-2','State');"&gt;
+    &lt;option class="dropdown__option" value=""&gt;Select...&lt;/option&gt;
+    &lt;option class="dropdown__option" value="AL"&gt;Alabama&lt;/option&gt;
+    &lt;option class="dropdown__option" value="AK"&gt;Alaska&lt;/option&gt;
+    &lt;option class="dropdown__option" value="AZ"&gt;Arizona&lt;/option&gt;
+    &lt;option class="dropdown__option" value="AR"&gt;Arkansas&lt;/option&gt;
+    &lt;option class="dropdown__option" value="CA"&gt;California&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;label for="state-2" class="input-group__label"&gt;
+    &lt;span id="selected-text-2"&gt;State&lt;/span&gt; &lt;span class="input-group__required"&gt;*&lt;/span&gt;
+  &lt;/label&gt;
+  &lt;svg class="dropdown__chevron"&gt;
+    &lt;use xlink:href="img/sprite.svg#chevron"&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+        </pre>
+
       </section>
 
       <section id="tiles" class="sg-section">
@@ -1602,6 +1716,49 @@
   &lt;/div&gt;
 &lt;/div&gt;
         </pre>
+      </section>
+
+      <section id="product-info" class="sg-section">
+        <h2 class="sg-hdg">Product Information</h2>
+        <p>This is a simple pattern to display product information.</p>
+        <p>The title of the product is &quot;large&quot; and <code class="sg-code">$brand-gray</code>. The description copy is &quot;small&quot; and <code class="sg-code">$brand-gray2</code>.</p>
+
+        <div class="product-info">
+          <div class="product-info__title">Standard Tickets</div>
+          <p class="product-info__desc">Description of product goes here. Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola.</p>
+        </div>
+
+        <pre class="sg-sample-code">
+&lt;div class="product-info"&gt;
+  &lt;div class="<span class="sg-highlight-code">product-info__title</span>"&gt;
+    Title of product
+  &lt;/div&gt;
+  &lt;div class="<span class="sg-highlight-code">product-info__desc</span>"&gt;
+    &lt;p&gt;Description of product goes here.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+
+        <h3 class="sg-subhdg">Compact Product Information</h3>
+        <p>There can be scenarios where the large size of product tile doesn't work. In those cases, the product title is the same size as the description (small).</p>
+
+        <div class="product-info">
+          <div class="product-info__compact-title">Standard Tickets</div>
+          <p class="product-info__desc">Description of product goes here. Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola.</p>
+        </div>
+
+        <pre class="sg-sample-code">
+&lt;div class="product-info"&gt;
+  &lt;div class="<span class="sg-highlight-code">product-info__compact-title</span>"&gt;
+    Title of product
+  &lt;/div&gt;
+  &lt;div class="<span class="sg-highlight-code">product-info__desc</span>"&gt;
+    &lt;p&gt;Description of product goes here.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+
+        <p>Note that we are <em>not</em> using a BEM modifier class here.</p>
       </section>
 
       <section id="datestamp" class="sg-section">
