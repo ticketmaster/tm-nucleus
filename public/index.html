@@ -1002,14 +1002,14 @@
 
       <section id="qty-picker" class="sg-section">
         <h2 class="sg-hdg">Quantity Picker</h2>
-        <p>The following pattern should be used any time a user is prompted to select a quantity, except for the Embedded Quantity Filter (see below).</p>
+        <p>The following pattern should be used any time a user is prompted to select a quantity.</p>
 
         <table class="sg-table sg-button-table">
           <tr>
             <td>
               <div class="qty-picker">
                 <button class="qty-picker__button">
-                  <svg class="qty-picker__icon">
+                  <svg class="qty-picker__icon qty-picker__icon--decrement">
                     <use xlink:href="img/sprite.svg#minus"></use>
                   </svg>
                 </button>
@@ -1024,18 +1024,18 @@
               </div>
             </td>
             <td>
-              <p>Standard quantity picker.</p>
+              <p>Standard quantity picker. Decrement button is <code class="sg-code">$brand-gray2</code> and increment button is <code class="sg-code">$brand-primary</code>.</p>
             </td>
           </tr>
           <tr>
             <td>
               <div class="qty-picker">
                 <button disabled class="qty-picker__button">
-                  <svg class="qty-picker__icon qty-picker__icon--disabled">
+                  <svg class="qty-picker__icon qty-picker__icon--decrement qty-picker__icon--disabled">
                     <use xlink:href="img/sprite.svg#minus"></use>
                   </svg>
                 </button>
-                <div class="qty-picker__number">
+                <div class="qty-picker__number qty-picker__number--disabled">
                   1
                 </div>
                 <button class="qty-picker__button">
@@ -1046,14 +1046,14 @@
               </div>
             </td>
             <td>
-              <p>Minimum quantity reached.</p>
+              <p>Minimum quantity reached. Decrement button and quantity are not shown.</p>
             </td>
           </tr>
           <tr>
             <td>
               <div class="qty-picker">
                 <button disabled class="qty-picker__button">
-                  <svg class="qty-picker__icon">
+                  <svg class="qty-picker__icon qty-picker__icon--decrement">
                     <use xlink:href="img/sprite.svg#minus"></use>
                   </svg>
                 </button>
@@ -1061,39 +1061,17 @@
                   50
                 </div>
                 <button disabled class="qty-picker__button">
-                  <svg class="qty-picker__icon qty-picker__icon--disabled">
+                  <svg class="qty-picker__icon qty-picker__icon--increment qty-picker__icon--disabled">
                     <use xlink:href="img/sprite.svg#plus"></use>
                   </svg>
                 </button>
               </div>
             </td>
             <td>
-              <p>Maximum quantity reached.</p>
+              <p>Maximum quantity reached. Increment button is disabled but still visible.</p>
             </td>
           </tr>
         </table>
-
-        <h3 class="sg-subhdg">Embedded Quantity Filter</h3>
-        <p>This is a legacy pattern that should only exist for the single ticket type filter on ISM. It should not be used for anything new.</p>
-        <table class="sg-table sg-button-table">
-          <tr>
-            <td>
-              <div class="embedded-qty-filter sg-embedded-qty-filter">
-                <div class="split-content">
-                  <div class="split-content__primary truncate-text embedded-qty-filter__content">XX Standard Admission</div>
-                  <div class="split-content__secondary qty-changer">
-                    <div class="embedded-qty-filter__buttons">
-                      <button class="qty-changer__button qty-changer__button--decrease qty-changer__button--embedded"></button>
-                      <button class="qty-changer__button qty-changer__button--increase qty-changer__button--embedded"></button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td>Embedded quantity filter. The item name's width is based on its container.</td>
-          </tr>
-        </table>
-
       </section>
 
       <section id="lists" class="sg-section">

@@ -1,5 +1,6 @@
 .qty-picker {
   font-size: 0;
+  white-space: nowrap;
 }
 
 .qty-picker__button {
@@ -18,12 +19,8 @@
   }
 }
 
-.qty-picker__icon--disabled {
-  fill: $brand-primary-lighter75;
-
-  &:hover {
-    fill: $brand-primary-lighter75;
-  }
+.qty-picker__icon--decrement {
+  fill: $brand-gray2;
 }
 
 .qty-picker__number {
@@ -38,5 +35,18 @@
 
   &:hover {
     text-decoration: none;
+  }
+}
+
+.qty-picker__icon--decrement.qty-picker__icon--disabled,
+.qty-picker__number--disabled {
+  visibility: hidden;
+}
+
+.qty-picker__icon--increment.qty-picker__icon--disabled {
+  fill: $brand-primary-lighter75;
+
+  &:hover {
+    fill: $brand-primary-lighter75;
   }
 }
