@@ -1,7 +1,11 @@
 @mixin heading-lined-base($color: $brand-gray2) {
-  padding: 0 15px;
+  padding: 0 10px;
   background-color: $white;
   display: inline-block;
   position: relative;
   color: $color;
+
+  @include breakpoint($bp-md) {
+    padding: 0 15px;
+  }
 }

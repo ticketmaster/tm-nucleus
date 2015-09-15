@@ -3,9 +3,16 @@
 }
 
 .perforated-frame__row {
-  padding: 0 15px;
+  @include perforated-frame-base();
+}
 
-  border-bottom: 1px solid $brand-gray3;
+.perforated-frame__row--last {
+  @include perforated-frame-base();
+  padding-bottom: 20px;
+
+  @include breakpoint($bp-md) {
+    padding-bottom: 30px;
+  }
 }
 
 .perforated-edge {

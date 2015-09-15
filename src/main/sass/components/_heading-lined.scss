@@ -1,10 +1,10 @@
 .heading-lined {
   position: relative;
-  margin: 20px 0;
+  margin: 10px 0;
   text-align: center;
 
-  @include breakpoint($bp-lg) {
-    margin: 30px 0;
+  @include breakpoint($bp-md) {
+    margin: 15px 0;
   }
 }
 
