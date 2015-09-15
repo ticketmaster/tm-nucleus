@@ -47,6 +47,7 @@
         <li><a href="#tooltips">Tooltips</a></li>
         <li><a href="#srs">Sec-Row-Seat</a></li>
         <li><a href="#layout">Layout Patterns</a></li>
+        <li><a href="#product-info">Product Information</a></li>
         <li><a href="#datestamp">Datestamp</a></li>
         <li><a href="#timer">Timer</a></li>
         <li><a href="#event-header">Event Header</a></li>
@@ -1601,6 +1602,49 @@
   &lt;/div&gt;
 &lt;/div&gt;
         </pre>
+      </section>
+
+      <section id="product-info" class="sg-section">
+        <h2 class="sg-hdg">Product Information</h2>
+        <p>This is a simple pattern to display product information.</p>
+        <p>The title of the product is &quot;large&quot; and <code class="sg-code">$brand-gray</code>. The description copy is &quot;small&quot; and <code class="sg-code">$brand-gray2</code>.</p>
+
+        <div class="product-info">
+          <div class="product-info__title">Standard Tickets</div>
+          <p class="product-info__desc">Description of product goes here. Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola.</p>
+        </div>
+
+        <pre class="sg-sample-code">
+&lt;div class="product-info"&gt;
+  &lt;div class="<span class="sg-highlight-code">product-info__title</span>"&gt;
+    Title of product
+  &lt;/div&gt;
+  &lt;div class="<span class="sg-highlight-code">product-info__desc</span>"&gt;
+    &lt;p&gt;Description of product goes here.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+
+        <h3 class="sg-subhdg">Compact Product Information</h3>
+        <p>There can be scenarios where the large size of product tile doesn't work. In those cases, the product title is the same size as the description (small).</p>
+
+        <div class="product-info">
+          <div class="product-info__compact-title">Standard Tickets</div>
+          <p class="product-info__desc">Description of product goes here. Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola.</p>
+        </div>
+
+        <pre class="sg-sample-code">
+&lt;div class="product-info"&gt;
+  &lt;div class="<span class="sg-highlight-code">product-info__compact-title</span>"&gt;
+    Title of product
+  &lt;/div&gt;
+  &lt;div class="<span class="sg-highlight-code">product-info__desc</span>"&gt;
+    &lt;p&gt;Description of product goes here.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+
+        <p>Note that we are <em>not</em> using a BEM modifier class here.</p>
       </section>
 
       <section id="datestamp" class="sg-section">
