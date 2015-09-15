@@ -1,0 +1,51 @@
+.dropdown {
+  position: relative;
+  width: 100%;
+  height: 30px;
+}
+
+.dropdown__chevron {
+  @include chevron();
+
+  position: absolute;
+  top: 8px;
+  right: 10px;
+}
+
+.dropdown__select {
+  appearance: none;
+  background: none;
+  color: transparent;
+  cursor: pointer;
+  border: 0;
+  border-radius: 0;
+  border-bottom: $textfield-border-style;
+  padding-bottom: 5px;
+  width: 100%;
+
+  &:focus {
+    outline: 0;
+    border-bottom: $focused-border-style;
+
+    ~ .dropdown__chevron {
+      @include chevron($brand-primary);
+    }
+  }
+}
+
+.dropdown__option {
+  color: $brand-gray2;
+}
+
+.dropdown__select.is-error-field {
+  border-bottom: $error-border-style;
+}
+
+.dropdown__select.is-error-field ~ .input-group__label, 
+.dropdown__select.is-error-field ~ .input-group__label .input-group__required {
+  color: $brand-alert;
+}
+
+.dropdown__select.is-error-field ~ .dropdown__chevron {
+  @include chevron($brand-alert);
+}
