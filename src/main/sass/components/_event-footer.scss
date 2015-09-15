@@ -17,6 +17,8 @@
 
   border-top: $base-border-style;
 
+  z-index: z('event-footer');
+
   &__primary-copy {
     @include fixed-font('xl');
   }
