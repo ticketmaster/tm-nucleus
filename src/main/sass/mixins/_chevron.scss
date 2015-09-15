@@ -1,0 +1,5 @@
+@mixin chevron($color: $brand-gray2, $width: 16px, $height: 10px) {
+  fill: $color;
+  width: $width;
+  height: $height;
+}
