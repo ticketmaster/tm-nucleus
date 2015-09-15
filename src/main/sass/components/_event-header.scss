@@ -68,10 +68,20 @@
   @include breakpoint($bp-md) {
     max-width: calc(100vw - (#{$timer-container-lg} * 2 + 40px) - #{$event-header-datestamp-width});
   }
+
+  @include breakpoint($bp-lg) {
+    max-width: calc(100vw - (#{$logo-container} * 2 + 160px) - #{$event-header-datestamp-width});
+  }
 }
 
 .event-header__venue-separator--apart {
   @include breakpoint($max: $bp-md - 1) {
+    display: none;
+  }
+}
+
+.event-header__logo {
+  @include breakpoint($max: $bp-lg - 1) {
     display: none;
   }
 }
@@ -85,8 +95,8 @@
 .event-header__supportive--checkout {
   width: $timer-container;
 
-  @include breakpoint($bp-md) {
-    width: $timer-container-lg;
+  @include breakpoint($bp-lg) {
+    width: $logo-container + ($gutter-width * 2);
   }
 }
 
@@ -108,5 +118,8 @@
 }
 
 .event-header__timer {
-  margin: auto;
+  @include breakpoint($bp-lg) {
+    float: right;
+    padding-right: $gutter-width;
+  }
 }
