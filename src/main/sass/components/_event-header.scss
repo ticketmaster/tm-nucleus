@@ -3,12 +3,12 @@
 
   position: relative;
   display: flex;
-  align-items: center;
   height: $event-header-height;
   min-width: $bp-xs;
   color: $white;
   text-align: center;
   background-color: $brand-primary;
+  align-items: center;
 }
 
 .event-header__event-info {
@@ -77,9 +77,9 @@
 }
 
 .event-header__supportive {
-  flex: 0 0 auto;
   width: $event-header-menu-container;
   text-align: center;
+  flex: 0 0 auto;
 }
 
 .event-header__supportive--checkout {
