@@ -1,0 +1,17 @@
+.perforated-frame {
+  box-shadow: $perforated-box-shadow-style;
+}
+
+.perforated-frame__row {
+  padding: 0 15px;
+
+  border-bottom: 1px solid $brand-gray3;
+}
+
+.perforated-edge {
+  position: relative;
+  top: -2px;
+  height: 5px;
+
+  background: transparent url(map-get($svgs, pedge)) repeat-x 0 0 scroll;
+}

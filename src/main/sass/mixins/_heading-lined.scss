@@ -1,0 +1,7 @@
+@mixin heading-lined-base($color: $brand-gray2) {
+  padding: 0 15px;
+  background-color: $white;
+  display: inline-block;
+  position: relative;
+  color: $color;
+}
