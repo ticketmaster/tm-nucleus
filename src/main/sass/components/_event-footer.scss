@@ -18,7 +18,7 @@
   border-top: $base-border-style;
 
   &__primary-copy {
-    @include fixed-font('lg');
+    @include fixed-font('xl');
   }
 
   &__alt-copy {
