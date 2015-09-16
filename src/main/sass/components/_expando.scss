@@ -15,17 +15,3 @@
   transition: $default-content-animation;
 }
 
-.expando__content {
-  height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: $default-content-animation;
-}
-
-.expando__content-open {
-  height: auto;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  opacity: 1;
-  transition: $default-content-animation-open;
-}
