@@ -1,11 +1,11 @@
-.expando__content {
+.expando-content {
   height: 0;
   overflow: hidden;
   opacity: 0;
   transition: $default-content-animation;
 }
 
-.expando__content-open {
+.expando-content-open {
   height: auto;
   margin-top: 5px;
   margin-bottom: 5px;

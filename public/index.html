@@ -2229,7 +2229,7 @@ function <span class="sg-highlight-code">onSelectChange(obj, labelId, defaultTex
                   </button>
                 </div>
                 <div class="product-info__desc">$100.00 x 2</div>
-                <div class="expando__content product-info__desc">Center Level Seating Behind Third Bench Behind Ratchet Dugout</div>
+                <div class="expando-content product-info__desc">Center Level Seating Behind Third Bench Behind Ratchet Dugout</div>
               </div>
               <div class="split-content__secondary split-content__secondary--top module__content">
                 <div class="product-info">$200.00</div>
@@ -2249,7 +2249,7 @@ all you need to do is make sure the following classes exist on your elements.
 
 
 &lt;!-- Content --&gt;
-&lt;div class=&quot;<span class="sg-highlight-code">expando__content</span>&quot;&gt;
+&lt;div class=&quot;<span class="sg-highlight-code">expando-content</span>&quot;&gt;
     Cener Level Seating Behind Third Bench Behind Ratchet Dugout&quot;/div>
 
 
@@ -2260,7 +2260,7 @@ all you need to do is make sure the following classes exist on your elements.
     &lt;use xlink:href=&quot;<span class="sg-highlight-code">img/sprite.svg#chevron</span>&quot;></use>
 
 &lt;!-- Content --&gt;
-&lt;div class=&quot;<span class="sg-highlight-code">expando__content expando__content-open</span>&quot;&gt;
+&lt;div class=&quot;<span class="sg-highlight-code">expando-content expando-content-open</span>&quot;&gt;
   Cener Level Seating Behind Third Bench Behind Ratchet Dugout&quot;/div>
 
             </pre>
@@ -2272,14 +2272,14 @@ all you need to do is make sure the following classes exist on your elements.
   <script>
     var expandoExample = document.getElementsByClassName('show-expando-example')[0];
     var expandoIcon = document.getElementsByClassName('expando__chevron')[1];
-    var expandoPanel = document.getElementsByClassName('expando__content')[0];
+    var expandoPanel = document.getElementsByClassName('expando-content')[0];
         expandoExample.addEventListener('mouseover', function(){
             expandoIcon.classList.add('expando__chevron-open');
-            expandoPanel.classList.add('expando__content-open');
+            expandoPanel.classList.add('expando-content-open');
         });
         expandoExample.addEventListener('mouseout', function() {
               expandoIcon.classList.remove('expando__chevron-open');
-              expandoPanel.classList.remove('expando__content-open');
+              expandoPanel.classList.remove('expando-content-open');
           });
   </script>
 </body>
