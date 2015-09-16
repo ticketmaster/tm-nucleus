@@ -2,6 +2,7 @@
   position: relative;
   width: $timer-size;
   height: $timer-size;
+  margin: auto;
   background: $timer-bg-color;
 
   @include breakpoint($bp-lg) {
