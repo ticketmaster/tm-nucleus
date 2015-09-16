@@ -1,0 +1,21 @@
+.event-footer {
+  @include clearfix();
+  @include span(full);
+  @include responsive-font('xl');
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  padding-top: $spacing-sm;
+  padding-bottom: $spacing-sm;
+  background: $brand-gray4;
+  border-top: $base-border-style;
+  z-index: z('event-footer');
+}
+
+.event-footer__alt-copy {
+  white-space: nowrap;
+  @include alt-copy('md');
+}
+
