@@ -1288,37 +1288,27 @@
 
         <h3 class="sg-subhdg">Drop downs</h3>
 
-        <p>This is how we are going to implement select boxes. 
-           In order for the styling to happen we needed a little help from the javascript side. 
-           Note that onSelectChange() should be defined as a global form helper function. 
-           Then we can bind an onChange event to the select box and pass in the correct parameters.</p>
+        <p>This is how we are going to implement drop downs.</p>
 
         <script>
-        function onSelectChange(obj, labelId, defaultText) {
-          if (obj && labelId) {
-            var selectedText = (obj.selectedIndex || !defaultText) 
-                                ? obj.options[obj.selectedIndex].innerHTML 
-                                : defaultText;
-            var parentNode = document.getElementById(labelId).parentNode;
-            var requiredText = parentNode.getElementsByClassName('input-group__required')[0];
-            document.getElementById(labelId).innerHTML = selectedText;
-            requiredText.style.display = obj.selectedIndex ? 'none' : 'inline';
-          }
+        // FOR DEMO ONLY
+        function onSelectChange(obj) {
+          obj.className = obj.value ? 'dropdown__select has-content' : 'dropdown__select';
         }
         </script>
 
         <div class="sg-input-wrapper">
           <div class="dropdown">
-            <select id="state" class="dropdown__select" onChange="onSelectChange(this,'selected-text','State');">
-              <option class="dropdown__option" value="">Select...</option>
-              <option class="dropdown__option" value="AL">Alabama</option>
-              <option class="dropdown__option" value="AK">Alaska</option>
-              <option class="dropdown__option" value="AZ">Arizona</option>
-              <option class="dropdown__option" value="AR">Arkansas</option>
-              <option class="dropdown__option" value="CA">California</option>
+            <select id="state" class="dropdown__select" onChange="onSelectChange(this);">
+              <option value=""></option>
+              <option value="AL">Alabama</option>
+              <option value="AK">Alaska</option>
+              <option value="AZ">Arizona</option>
+              <option value="AR">Arkansas</option>
+              <option value="CA">California</option>
             </select>
             <label for="state" class="input-group__label">
-              <span id="selected-text">State</span> <span class="input-group__required">*</span>
+              State <span class="input-group__required">*</span>
             </label>
             <svg class="dropdown__chevron">
               <use xlink:href="img/sprite.svg#chevron">
@@ -1327,31 +1317,17 @@
         </div>
 
         <pre class="sg-sample-code">
-&lt;script&gt;
-function <span class="sg-highlight-code">onSelectChange(obj, labelId, defaultText)</span> {
-  if (obj && labelId) {
-    var selectedText = (obj.selectedIndex || !defaultText) 
-                        ? obj.options[obj.selectedIndex].innerHTML 
-                        : defaultText;
-    var parentNode = document.getElementById(labelId).parentNode;
-    var requiredText = parentNode.getElementsByClassName('input-group__required')[0];
-    document.getElementById(labelId).innerHTML = selectedText;
-    requiredText.style.display = obj.selectedIndex ? 'none' : 'inline';
-  }
-}
-&lt;/script&gt;
-
 &lt;div class="<span class="sg-highlight-code">dropdown</span>"&gt;
-  &lt;select id="state" class="<span class="sg-highlight-code">dropdown__select</span>" <span class="sg-highlight-code">onChange="onSelectChange(this,'selected-text','State');"</span>&gt;
-    &lt;option class="<span class="sg-highlight-code">dropdown__option</span>" value=""&gt;Select...&lt;/option&gt;
-    &lt;option class="<span class="sg-highlight-code">dropdown__option</span>" value="AL"&gt;Alabama&lt;/option&gt;
-    &lt;option class="<span class="sg-highlight-code">dropdown__option</span>" value="AK"&gt;Alaska&lt;/option&gt;
-    &lt;option class="<span class="sg-highlight-code">dropdown__option</span>" value="AZ"&gt;Arizona&lt;/option&gt;
-    &lt;option class="<span class="sg-highlight-code">dropdown__option</span>" value="AR"&gt;Arkansas&lt;/option&gt;
-    &lt;option class="<span class="sg-highlight-code">dropdown__option</span>" value="CA"&gt;California&lt;/option&gt;
+  &lt;select id="state" class="<span class="sg-highlight-code">dropdown__select</span>"&gt;
+    &lt;option value=""&gt;&lt;/option&gt;
+    &lt;option value="AL"&gt;Alabama&lt;/option&gt;
+    &lt;option value="AK"&gt;Alaska&lt;/option&gt;
+    &lt;option value="AZ"&gt;Arizona&lt;/option&gt;
+    &lt;option value="AR"&gt;Arkansas&lt;/option&gt;
+    &lt;option value="CA"&gt;California&lt;/option&gt;
   &lt;/select&gt;
   &lt;label for="state" class="input-group__label"&gt;
-    &lt;span id="<span class="sg-highlight-code">selected-text</span>"&gt;State&lt;/span&gt; &lt;span class="input-group__required"&gt;*&lt;/span&gt;
+    State &lt;span class="input-group__required"&gt;*&lt;/span&gt;
   &lt;/label&gt;
   &lt;svg class="<span class="sg-highlight-code">dropdown__chevron</span>"&gt;
     &lt;use xlink:href="img/sprite.svg#chevron"&gt;
@@ -1359,20 +1335,20 @@ function <span class="sg-highlight-code">onSelectChange(obj, labelId, defaultTex
 &lt;/div&gt;
         </pre>
 
-        <p>This is the error state. We just apply the <code class="sg-code">is-error-field</code> class to the select element.</p>
+        <p>This is the filled state. We just apply the <code class="sg-code">has-content</code> class to the select element.</p>
 
         <div class="sg-input-wrapper">
           <div class="dropdown">
-            <select id="state-2" class="dropdown__select is-error-field" onChange="onSelectChange(this,'selected-text-2','State');">
-              <option class="dropdown__option" value="">Select...</option>
-              <option class="dropdown__option" value="AL">Alabama</option>
-              <option class="dropdown__option" value="AK">Alaska</option>
-              <option class="dropdown__option" value="AZ">Arizona</option>
-              <option class="dropdown__option" value="AR">Arkansas</option>
-              <option class="dropdown__option" value="CA">California</option>
+            <select id="state" class="dropdown__select has-content" onChange="onSelectChange(this);">
+              <option value=""></option>
+              <option value="AL">Alabama</option>
+              <option value="AK">Alaska</option>
+              <option value="AZ">Arizona</option>
+              <option value="AR">Arkansas</option>
+              <option value="CA" selected="selected">California</option>
             </select>
-            <label for="state-2" class="input-group__label">
-              <span id="selected-text-2">State</span> <span class="input-group__required">*</span>
+            <label for="state" class="input-group__label">
+              State <span class="input-group__required">*</span>
             </label>
             <svg class="dropdown__chevron">
               <use xlink:href="img/sprite.svg#chevron">
@@ -1382,16 +1358,56 @@ function <span class="sg-highlight-code">onSelectChange(obj, labelId, defaultTex
 
         <pre class="sg-sample-code">
 &lt;div class="dropdown"&gt;
-  &lt;select id="state-2" class="dropdown__select <span class="sg-highlight-code">is-error-field</span>" onChange="onSelectChange(this,'selected-text-2','State');"&gt;
-    &lt;option class="dropdown__option" value=""&gt;Select...&lt;/option&gt;
-    &lt;option class="dropdown__option" value="AL"&gt;Alabama&lt;/option&gt;
-    &lt;option class="dropdown__option" value="AK"&gt;Alaska&lt;/option&gt;
-    &lt;option class="dropdown__option" value="AZ"&gt;Arizona&lt;/option&gt;
-    &lt;option class="dropdown__option" value="AR"&gt;Arkansas&lt;/option&gt;
-    &lt;option class="dropdown__option" value="CA"&gt;California&lt;/option&gt;
+  &lt;select id="state" class="dropdown__select <span class="sg-highlight-code">has-content</span>"&gt;
+    &lt;option value=""&gt;&lt;/option&gt;
+    &lt;option value="AL"&gt;Alabama&lt;/option&gt;
+    &lt;option value="AK"&gt;Alaska&lt;/option&gt;
+    &lt;option value="AZ"&gt;Arizona&lt;/option&gt;
+    &lt;option value="AR"&gt;Arkansas&lt;/option&gt;
+    &lt;option value="CA" selected="selected"&gt;California&lt;/option&gt;
   &lt;/select&gt;
-  &lt;label for="state-2" class="input-group__label"&gt;
-    &lt;span id="selected-text-2"&gt;State&lt;/span&gt; &lt;span class="input-group__required"&gt;*&lt;/span&gt;
+  &lt;label for="state" class="input-group__label"&gt;
+    State &lt;span class="input-group__required"&gt;*&lt;/span&gt;
+  &lt;/label&gt;
+  &lt;svg class="dropdown__chevron"&gt;
+    &lt;use xlink:href="img/sprite.svg#chevron"&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+        </pre>
+
+        <p>This is the error state. We just apply the <code class="sg-code">is-error-field</code> class to the select element.</p>
+
+        <div class="sg-input-wrapper">
+          <div class="dropdown">
+            <select id="state" class="dropdown__select is-error-field" onChange="onSelectChange(this);">
+              <option value=""></option>
+              <option value="AL">Alabama</option>
+              <option value="AK">Alaska</option>
+              <option value="AZ">Arizona</option>
+              <option value="AR">Arkansas</option>
+              <option value="CA">California</option>
+            </select>
+            <label for="state" class="input-group__label">
+              State <span class="input-group__required">*</span>
+            </label>
+            <svg class="dropdown__chevron">
+              <use xlink:href="img/sprite.svg#chevron">
+            </svg>
+          </div>
+        </div>
+
+        <pre class="sg-sample-code">
+&lt;div class="dropdown"&gt;
+  &lt;select id="state" class="dropdown__select <span class="sg-highlight-code">is-error-field</span>"&gt;
+    &lt;option value=""&gt;&lt;/option&gt;
+    &lt;option value="AL"&gt;Alabama&lt;/option&gt;
+    &lt;option value="AK"&gt;Alaska&lt;/option&gt;
+    &lt;option value="AZ"&gt;Arizona&lt;/option&gt;
+    &lt;option value="AR"&gt;Arkansas&lt;/option&gt;
+    &lt;option value="CA"&gt;California&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;label for="state" class="input-group__label"&gt;
+    State &lt;span class="input-group__required"&gt;*&lt;/span&gt;
   &lt;/label&gt;
   &lt;svg class="dropdown__chevron"&gt;
     &lt;use xlink:href="img/sprite.svg#chevron"&gt;

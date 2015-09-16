@@ -100,18 +100,6 @@
   }
 }
 
-.input-group__placeholder-text {
-  position: absolute;
-  top: 15px;
-  right: 10px;
-  color: $brand-gray3;
-
-  @include breakpoint($bp-md) {
-    top: 12px;
-    right: 20px;
-  }
-}
-
 .input-group__tooltip {
   position: absolute;
   top: -10px;
@@ -129,7 +117,8 @@
 // Toggle States
 .input-group__text-field.has-content + .input-group__label,
 .input-group__text-field-cin.has-content + .input-group__label,
-.input-group__text-field-box.has-content + .input-group__label {
+.input-group__text-field-box.has-content + .input-group__label,
+.dropdown__select.has-content + .input-group__label {
   @include responsive-font('xs');
 
   bottom: $input-label-bottom-active;
@@ -143,20 +132,11 @@
 .input-group__text-field:focus + .input-group__label,
 .input-group__text-field-cin:focus + .input-group__label,
 .input-group__text-field-box:focus + .input-group__label,
-.input-group__text-field.has-content:focus + .input-group__label {
+.input-group__text-field.has-content:focus + .input-group__label,
+.dropdown__select.has-content:active + .input-group__label,
+.dropdown__select.has-content:focus + .input-group__label {
   @include responsive-font('xs');
 
   bottom: $input-label-bottom-active;
   color: $brand-primary;
-}
-
-.input-group__text-field:focus ~ .input-group__placeholder-text,
-.input-group__text-field-cin:focus ~ .input-group__placeholder-text,
-.input-group__text-field-box:focus ~ .input-group__placeholder-text {
-  display: none;
-}
-
-.input-group__text-field-cin.has-content ~ .input-group__placeholder-text,
-.input-group__text-field.has-content ~ .input-group__placeholder-text {
-  display: none;
 }
