@@ -54,6 +54,7 @@
         <li><a href="#event-header">Event Header</a></li>
         <li><a href="#event-footer">Event Footer</a></li>
         <li><a href="#ism-tooltip">ISM Tooltips</a></li>
+        <li><a href="#icons">Icons</a></li>
       </ol>
     </nav>
 
@@ -162,6 +163,17 @@
                 <li>Errors</li>
                 <li>Alerts</li>
                 <li>Void buttons</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="sg-swatch-group">
+            <div class="sg-swatch sg-swatch--malibu"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">malibu</span>
+              <code class="sg-code">$brand-warning</code>
+              <ul class="sg-list sg-swatch-usage">
+                <li>Warning</li>
               </ul>
             </div>
           </div>
@@ -1003,7 +1015,7 @@
               <div class="qty-picker">
                 <button class="qty-picker__button">
                   <svg class="qty-picker__icon qty-picker__icon--decrement">
-                    <use xlink:href="img/sprite.svg#minus"></use>
+                    <use xlink:href="img/sprite.svg#icon-minus"></use>
                   </svg>
                 </button>
                 <div class="qty-picker__number">
@@ -1011,7 +1023,7 @@
                 </div>
                 <button class="qty-picker__button">
                   <svg class="qty-picker__icon">
-                    <use xlink:href="img/sprite.svg#plus"></use>
+                    <use xlink:href="img/sprite.svg#icon-plus"></use>
                   </svg>
                 </button>
               </div>
@@ -1025,7 +1037,7 @@
               <div class="qty-picker">
                 <button disabled class="qty-picker__button">
                   <svg class="qty-picker__icon qty-picker__icon--decrement qty-picker__icon--disabled">
-                    <use xlink:href="img/sprite.svg#minus"></use>
+                    <use xlink:href="img/sprite.svg#icon-minus"></use>
                   </svg>
                 </button>
                 <div class="qty-picker__number qty-picker__number--disabled">
@@ -1033,7 +1045,7 @@
                 </div>
                 <button class="qty-picker__button">
                   <svg class="qty-picker__icon">
-                    <use xlink:href="img/sprite.svg#plus"></use>
+                    <use xlink:href="img/sprite.svg#icon-plus"></use>
                   </svg>
                 </button>
               </div>
@@ -1047,7 +1059,7 @@
               <div class="qty-picker">
                 <button disabled class="qty-picker__button">
                   <svg class="qty-picker__icon qty-picker__icon--decrement">
-                    <use xlink:href="img/sprite.svg#minus"></use>
+                    <use xlink:href="img/sprite.svg#icon-minus"></use>
                   </svg>
                 </button>
                 <div class="qty-picker__number">
@@ -1055,7 +1067,7 @@
                 </div>
                 <button disabled class="qty-picker__button">
                   <svg class="qty-picker__icon qty-picker__icon--increment qty-picker__icon--disabled">
-                    <use xlink:href="img/sprite.svg#plus"></use>
+                    <use xlink:href="img/sprite.svg#icon-plus"></use>
                   </svg>
                 </button>
               </div>
@@ -1301,7 +1313,7 @@
               State <span class="input-group__required">*</span>
             </label>
             <svg class="dropdown__chevron">
-              <use xlink:href="img/sprite.svg#chevron">
+              <use xlink:href="img/sprite.svg#icon-chevron"></use>
             </svg>
           </div>
         </div>
@@ -1320,7 +1332,7 @@
     State &lt;span class="input-group__required"&gt;*&lt;/span&gt;
   &lt;/label&gt;
   &lt;svg class="<span class="sg-highlight-code">dropdown__chevron</span>"&gt;
-    &lt;use xlink:href="img/sprite.svg#chevron"&gt;
+    &lt;use xlink:href="img/sprite.svg#icon-chevron"&gt;
   &lt;/svg&gt;
 &lt;/div&gt;
         </pre>
@@ -1341,7 +1353,7 @@
               State <span class="input-group__required">*</span>
             </label>
             <svg class="dropdown__chevron">
-              <use xlink:href="img/sprite.svg#chevron">
+              <use xlink:href="img/sprite.svg#icon-chevron">
             </svg>
           </div>
         </div>
@@ -1360,7 +1372,7 @@
     State &lt;span class="input-group__required"&gt;*&lt;/span&gt;
   &lt;/label&gt;
   &lt;svg class="dropdown__chevron"&gt;
-    &lt;use xlink:href="img/sprite.svg#chevron"&gt;
+    &lt;use xlink:href="img/sprite.svg#icon-chevron"&gt;
   &lt;/svg&gt;
 &lt;/div&gt;
         </pre>
@@ -1381,7 +1393,7 @@
               State <span class="input-group__required">*</span>
             </label>
             <svg class="dropdown__chevron">
-              <use xlink:href="img/sprite.svg#chevron">
+              <use xlink:href="img/sprite.svg#icon-chevron">
             </svg>
           </div>
         </div>
@@ -1400,7 +1412,7 @@
     State &lt;span class="input-group__required"&gt;*&lt;/span&gt;
   &lt;/label&gt;
   &lt;svg class="dropdown__chevron"&gt;
-    &lt;use xlink:href="img/sprite.svg#chevron"&gt;
+    &lt;use xlink:href="img/sprite.svg#icon-chevron"&gt;
   &lt;/svg&gt;
 &lt;/div&gt;
         </pre>
@@ -1997,10 +2009,11 @@
                 </div>
               </li>
             </ul>
+          </div>
         </div>
 
         <div class="sg-ism-tooltip">
-          <h2 class="sg-subhdg3">Multiple Ticket Type</h4>
+          <h4 class="sg-subhdg3">Multiple Ticket Type</h4>
           <div class="tooltip tooltip--ism">
             <div class="tooltip__content">
               <div class="tooltip__srs srs">
@@ -2124,7 +2137,7 @@
                     <div class="qty-picker">
                       <button class="qty-picker__button">
                         <svg class="qty-picker__icon qty-picker__icon--decrement">
-                          <use xlink:href="img/sprite.svg#minus"></use>
+                          <use xlink:href="img/sprite.svg#icon-minus"></use>
                         </svg>
                       </button>
                       <div class="qty-picker__number">
@@ -2132,7 +2145,7 @@
                       </div>
                       <button class="qty-picker__button">
                         <svg class="qty-picker__icon">
-                          <use xlink:href="img/sprite.svg#plus"></use>
+                          <use xlink:href="img/sprite.svg#icon-plus"></use>
                         </svg>
                       </button>
                     </div>
@@ -2149,7 +2162,7 @@
                     <div class="qty-picker">
                       <button class="qty-picker__button">
                         <svg class="qty-picker__icon qty-picker__icon--decrement">
-                          <use xlink:href="img/sprite.svg#minus"></use>
+                          <use xlink:href="img/sprite.svg#icon-minus"></use>
                         </svg>
                       </button>
                       <div class="qty-picker__number">
@@ -2157,7 +2170,7 @@
                       </div>
                       <button class="qty-picker__button">
                         <svg class="qty-picker__icon">
-                          <use xlink:href="img/sprite.svg#plus"></use>
+                          <use xlink:href="img/sprite.svg#icon-plus"></use>
                         </svg>
                       </button>
                     </div>
@@ -2210,7 +2223,7 @@
                     <div class="qty-picker">
                       <button class="qty-picker__button">
                         <svg class="qty-picker__icon qty-picker__icon--decrement">
-                          <use xlink:href="img/sprite.svg#minus"></use>
+                          <use xlink:href="img/sprite.svg#icon-minus"></use>
                         </svg>
                       </button>
                       <div class="qty-picker__number">
@@ -2218,7 +2231,7 @@
                       </div>
                       <button class="qty-picker__button">
                         <svg class="qty-picker__icon">
-                          <use xlink:href="img/sprite.svg#plus"></use>
+                          <use xlink:href="img/sprite.svg#icon-plus"></use>
                         </svg>
                       </button>
                     </div>
@@ -2240,6 +2253,32 @@
             </div>
           </div>
         </div>
+      </section>
+
+      <section id="icons" class="sg-section">
+        <h3 class="sg-hdg">Icons</h3>
+        <p>A collection of icons</p>
+        <table class="sg-table">
+          <tbody>
+            <tr>
+              <td>
+                <svg class="icon icon--ada">
+                  <use xlink:href="img/sprite.svg#icon-ada"></use>
+                </svg>
+              </td>
+              <td>
+                <svg class="icon icon--resale">
+                  <use xlink:href="img/sprite.svg#icon-resale"></use>
+                </svg>
+              </td>
+              <td>
+                <svg class="icon icon--warning">
+                  <use xlink:href="img/sprite.svg#icon-warning"></use>
+                </svg>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </section>
     </main>
   </div>

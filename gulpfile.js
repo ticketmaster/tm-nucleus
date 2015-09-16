@@ -14,7 +14,8 @@ var src = {
   scss: 'src/main/sass/**/*.scss',
   svg:  'src/main/svg/**/*.svg',
   normalize: 'node_modules/normalize.css/normalize.css',
-  font: 'src/main/font/*'
+  font: 'src/main/font/*',
+  icons: 'src/main/svg/icon-*.svg'
 }
 
 var compiled = {
@@ -90,7 +91,7 @@ function lintSass() {
 
 // minify svg, combine into sprite
 function processSvg() {
-  var stream = gulp.src(src.svg)
+  var stream = gulp.src([src.icons])
     .pipe(plugins.svgmin({
       plugins: [
         { removeViewBox: false },
