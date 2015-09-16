@@ -2,17 +2,12 @@
   box-shadow: $perforated-box-shadow-style;
 }
 
-.perforated-frame__row {
-  @include perforated-frame-base();
+.perforated-frame__content {
+  @include inner-spacing($spacing-sm);
 }
 
-.perforated-frame__row--last {
-  @include perforated-frame-base();
-  padding-bottom: 20px;
-
-  @include breakpoint($bp-md) {
-    padding-bottom: 30px;
-  }
+.perforated-frame__content + .perforated-frame__content {
+  border-top: $base-border-style;
 }
 
 .perforated-edge {

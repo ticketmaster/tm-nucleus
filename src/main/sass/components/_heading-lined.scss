@@ -1,26 +1,44 @@
 .heading-lined {
-  position: relative;
-  margin: 10px 0;
-  text-align: center;
+  @include outer-spacing($bottom: $spacing-sm);
+  @include inner-spacing($left: $spacing-sm, $right: $spacing-sm);
 
-  @include breakpoint($bp-md) {
-    margin: 15px 0;
+  position: relative;
+  display: table;
+  color: $brand-gray2;
+  text-align: center;
+  white-space: nowrap;
+
+  &:before,
+  &:after {
+    position: relative;
+    top: 0.63em;
+    display: table-cell;
+    width: 45%;
+    border-top: $base-border-style;
+    content: '';
+  }
+
+  &:before {
+    right: $spacing-sm;
+
+    @include breakpoint($bp-md) {
+      right: increase-spacing($spacing-sm);
+    }
+  }
+
+  &:after {
+    left: $spacing-sm;
+
+    @include breakpoint($bp-md) {
+      left: increase-spacing($spacing-sm);
+    }
   }
 }
 
-.heading-lined__line {
-  position: relative;
-  top: 12px;
-  width: 100%;
-  height: 0;
-  border-top: 1px solid $brand-gray3;
-}
-
-.heading-lined__h3 {
-  @include heading-lined-base();
+.heading-lined--primary {
   @include responsive-font('lg');
 }
 
-.heading-lined__h4 {
-  @include heading-lined-base();
+.heading-lined--secondary {
+  @include responsive-font('md');
 }

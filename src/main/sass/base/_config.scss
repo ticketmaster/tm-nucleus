@@ -21,7 +21,7 @@ $shadow-spread: 1px;
 $box-shadow-style: $shadow-x $shadow-y $shadow-blur $shadow-spread $shadow-color;
 $inner-shadow-style: inset 0 1px 3px 0 $shadow-color;
 
-// Confirmation Page Frame shadow
+// Perforated edge shadow
 $perforated-shadow-x: 0;
 $perforated-shadow-y: 1px;
 $perforated-shadow-blur: 10px;
@@ -106,8 +106,3 @@ button::-moz-focus-inner,
   margin-top: -1px;
   border: 0;
 }
-
-// svgs
-$svgs: (
-  'pedge': 'data:image/svg+xml,%3Csvg%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%22-294%20392%2011%206%22%3E%3Cstyle%3E.st0%7Bfill%3A%23FFFFFF%3B%7D%20.st1%7Bfill%3Anone%3B%7D%3C%2Fstyle%3E%3Ctitle%3ERectangle%20255%3C%2Ftitle%3E%3Cg%20id%3D%22desktop%22%3E%3Cg%20id%3D%22receipt-copy-3%22%3E%3Cg%20id%3D%22Rectangle-255%22%3E%3Cpath%20id%3D%22path-1%22%20class%3D%22st0%22%20d%3D%22M-304%20398h12.1c0-2.5%201.2-3.7%203.5-3.7%202.2%200%203.5%201.2%203.5%203.7h12v-6h-31v6z%22%2F%3E%3Cpath%20id%3D%22path-1_1_%22%20class%3D%22st1%22%20d%3D%22M-304%20398h12.1c0-2.5%201.2-3.7%203.5-3.7%202.2%200%203.5%201.2%203.5%203.7h12v-6h-31v6z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E'
-);
