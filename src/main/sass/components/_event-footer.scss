@@ -1,7 +1,6 @@
 .event-footer {
   @include clearfix();
   @include span(full);
-  @include responsive-font('xl');
 
   position: fixed;
   bottom: 0;
@@ -11,12 +10,19 @@
   height: auto;
   padding-top: $spacing-sm;
   padding-bottom: $spacing-sm;
+  white-space: nowrap;
   background: $brand-gray4;
   border-top: $base-border-style;
 }
 
-.event-footer__alt-copy {
-  @include alt-copy('md');
+.event-footer__total {
+  text-align: right;
+}
 
-  white-space: nowrap;
+.event-footer__total-amt {
+  @include responsive-font('xl');
+}
+
+.event-footer__total-desc {
+  @include alt-copy('md');
 }

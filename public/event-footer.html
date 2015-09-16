@@ -14,7 +14,7 @@
     <style>
       .page__content {
         margin-bottom: 10px;
-        padding: 0 15px;
+        padding: 0 15px 70px 15px;
       }
       .page__content:not(:first-child) {
         margin-top: 20px;
@@ -25,27 +25,31 @@
 <body>
 
 
-
-
 <div class="page__content">
   <h1 class="sg-hdg">Event Footer</h1>
-  <p><a href="index.html#event-header">Back to styleguide</a>.</p>
+  <p>By default, the event footer is fixed to the bottom of the page.</p>
+
+  <pre class="sg-sample-code">
+&lt;div class="<span class="sg-highlight-code">event-footer</span>"&gt;
+  &lt;div class="split-content"&gt;
+    &lt;div class="split-content__primary <span class="sg-highlight-code">event-footer__total</span>"&gt;
+      &lt;span class="<span class="sg-highlight-code">event-footer__total-amt</span>"&gt;$2309.50&lt;/span&gt;
+      &lt;span class="<span class="sg-highlight-code">event-footer__total-desc</span>"&gt;w/ Fees&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="split-content__secondary"&gt;
+      &lt;button class="button button--cta"&gt;Checkout&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+  </pre>
+
+  <p><a href="index.html#event-footer">Back to styleguide</a>.</p>
 
   <div class="event-footer">
     <div class="split-content">
-      <div class="split-content__primary">
-        <!-- primary content -->
-        <div class="split-content">
-          <div class="split-content__primary">
-
-          </div>
-          <div class="split-content__secondary">
-            <div>
-              $2309.50 <span class="event-footer__alt-copy">w/ Fees</span>
-            </div>
-          </div>
-        </div>
-
+      <div class="split-content__primary event-footer__total">
+        <span class="event-footer__total-amt">$2309.50</span>
+        <span class="event-footer__total-desc">w/ Fees</span>
       </div>
       <div class="split-content__secondary">
         <button class="button button--cta">Checkout</button>
@@ -54,38 +58,6 @@
   </div>
 
 </div>
-
-<div  style="padding: 0 15px 70px 0;">
-<pre class="sg-sample-code">
-&lt;div class="<span class="sg-highlight-code">event-footer</span>"&gt;
-
-  &lt;div class="split-content"&gt;
-    &lt;div class="split-content__primary"&gt;
-      &lt;!-- primary content --&gt;
-      &lt;div class="split-content"&gt;
-        &lt;div class="split-content__primary"&gt;
-
-        &lt;/div&gt;
-        &lt;div class="split-content__secondary">
-          &lt;div&gt;
-              $2309.50 &lt;div class="<span class="sg-highlight-code">event-footer__alt-copy</span>"&gt;w/ Fees&lt;/span&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;!-- secondary content --&gt;
-    &lt;div class="split-content__secondary"&gt;
-      &lt;button class="button button--cta">Checkout &lt;/button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-
-&lt;/div&gt;
-</pre>
-</div>
-
-
-
 
 </body>
 </html>
