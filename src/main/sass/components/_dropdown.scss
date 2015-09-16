@@ -45,7 +45,7 @@
   border-bottom: $error-border-style;
 }
 
-.dropdown__select.is-error-field ~ .input-group__label, 
+.dropdown__select.is-error-field ~ .input-group__label,
 .dropdown__select.is-error-field ~ .input-group__label .input-group__required {
   color: $brand-alert;
 }

@@ -51,11 +51,10 @@
 
 
 @mixin alt-copy($set: false) {
-  @if not $set {
-    font-weight: normal;
-  }
-  @else {
+  @if $set {
     @include responsive-font($set);
   }
+
+  font-weight: normal;
   color: $brand-gray2;
 }
