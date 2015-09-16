@@ -1,7 +1,7 @@
 .split-content {
   display: flex;
-  align-items: center;
   width: 100%;
+  align-items: center;
 }
 
 .split-content__primary {
@@ -13,8 +13,8 @@
 }
 
 .split-content__secondary {
-  flex: 0 0 auto;
   padding-left: $spacing-sm;
+  flex: 0 0 auto;
 
   @include breakpoint($bp-md) {
     padding-left: increase-spacing($spacing-sm);

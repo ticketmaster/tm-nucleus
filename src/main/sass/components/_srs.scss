@@ -2,15 +2,14 @@
 .srs {
   position: relative;
   display: flex;
-  justify-content: space-between;
   min-width: $srs-min-width;
   white-space: nowrap;
+  justify-content: space-between;
 }
 
 .srs__set {
-  flex: 1 1 auto;
-
   text-align: center;
+  flex: 1 1 auto;
 
   &:first-child {
     text-align: left;
