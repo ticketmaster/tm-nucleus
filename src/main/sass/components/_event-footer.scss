@@ -1,37 +1,21 @@
 .event-footer {
   @include clearfix();
   @include span(full);
-  @include fixed-font('sm');
-
+  @include responsive-font('xl');
   position: fixed;
-
   bottom: 0;
   left: 0;
   width: 100%;
   height: auto;
-
   padding-top: $spacing-sm;
   padding-bottom: $spacing-sm;
-
   background: $brand-gray4;
-
   border-top: $base-border-style;
-
   z-index: z('event-footer');
-
-  &__primary-copy {
-    @include fixed-font('xl');
-  }
-
-  &__alt-copy {
-    @include alt-copy('md');
-
-    @include breakpoint($bp-md) {
-      @include alt-copy('sm');
-    }
-  }
-
-  &__primary-spacing {
-    padding-right: $spacing-sm;
-  }
 }
+
+.event-footer__alt-copy {
+  white-space: nowrap;
+  @include alt-copy('md');
+}
+
