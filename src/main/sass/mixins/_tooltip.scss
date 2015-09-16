@@ -40,7 +40,7 @@
   // reset border first
   border: 0;
 
-  $caret-border-style: 2px solid get-lighter($brand-gray2, 50%);
+  $caret-border-style: 2px solid $brand-gray2-lighter50;
 
   @if ($pos == 'bottom') {
     border-right: $caret-border-style;
@@ -55,7 +55,7 @@
     border-left: $caret-border-style;
   }
   @else {
-    border-top: 1px solid get-lighter($brand-gray2, 50%);
-    border-left: 1px solid get-lighter($brand-gray2, 50%);
+    border-top: 1px solid $brand-gray2-lighter50;
+    border-left: 1px solid $brand-gray2-lighter50;
   }
 }

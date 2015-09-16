@@ -1,6 +1,6 @@
 {
-  "name": "nucleus-app",
-  "version": "0.0.4",
+  "name": "tm-nucleus",
+  "version": "0.0.8",
   "private": false,
   "scripts": {
     "start": "node ./bin/www",

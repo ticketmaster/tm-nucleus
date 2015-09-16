@@ -1,17 +1,3 @@
-// calculate different shades
-@function get-darker($color, $percent: 25%) {
-  @return mix($black, $color, $percent);
-}
-
-@function get-lighter($color, $percent: 75%) {
-  @return mix($white, $color, $percent);
-}
-
-// return hex value associated with name
-@function color($name, $shade) {
-  @return map-get(map-get($palette, $name), $shade);
-}
-
 // responsive spacing based on established ratio
 @function increase-spacing($val) {
   @return $val * $spacing-ratio;
@@ -27,45 +13,9 @@
   @return map-get($z-indexes, $level);
 }
 
-// return responsive font size
-@function get-quart-size($num) {
-  @return $num + $font-size-factor;
-}
-
-@function get-gallon-size($num) {
-  @return $num + ($font-size-factor * 2);
-}
-
 // turn unit values into unitless
 @function strip-units($num) {
   @return $num / ($num * 0 + 1);
-}
-
-// set default line height or custom
-@function get-lh($font, $lh) {
-  @if not $lh {
-    $val: calc-lh($font);
-  }
-  @else {
-    $val: $lh;
-  }
-  @return $val;
-}
-
-// calculate line height based on font size
-@function calc-lh($font-size) {
-  @if ($font-size < 1.8) {
-    $lh: $base-line-height;
-  }
-  @else {
-    $lh: $header-line-height;
-  }
-  @return $lh;
-}
-
-// retrieve font-size
-@function fetch-font($set, $size: 'pint') {
-  @return map-get(map-get($font-sizes, $set), $size);
 }
 
 // convert px to em

@@ -1,4 +1,0 @@
-@mixin svg($img) {
-  background-repeat: no-repeat;
-  background-image: url(map-get($svgs, $img));
-}

@@ -90,7 +90,7 @@ linters:
 
   NestingDepth:
     enabled: true
-    max_depth: 3
+    max_depth: 2
 
   PlaceholderInExtend:
     enabled: true
@@ -185,7 +185,7 @@ linters:
     enabled: true
 
   VariableForProperty:
-    enabled: false
+    enabled: true
     properties:
       - color
 

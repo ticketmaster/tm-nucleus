@@ -1,0 +1,36 @@
+@mixin base-textfield() {
+  width: 100%;
+  border: 0;
+  border-bottom: $textfield-border-style;
+
+  &.is-error-field {
+    color: $brand-alert;
+    border-bottom: $error-border-style;
+  }
+
+  &.is-error-field + .input-group__label,
+  &.is-error-field + .input-group__label > .input-group__required {
+    color: $brand-alert;
+  }
+}
+
+@mixin textfield-underline() {
+  @include base-textfield();
+
+  position: relative;
+  padding-top: $input-label-height;
+  padding-bottom: 5px;
+  background: none;
+  box-shadow: none;
+}
+
+@mixin textfield-box() {
+  @include base-textfield();
+}
+
+
+@mixin textfield-active() {
+  border-bottom-color: $brand-primary;
+  outline: none;
+  background: none;
+}

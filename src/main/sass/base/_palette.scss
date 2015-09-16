@@ -1,6 +1,20 @@
 // TM Color Palette
 // scss-lint:disable ColorVariable
 
+// calculate different shades
+@function get-darker($color, $percent: 25%) {
+  @return mix($black, $color, $percent);
+}
+
+@function get-lighter($color, $percent: 75%) {
+  @return mix($white, $color, $percent);
+}
+
+// return hex value associated with name
+@function color($name, $shade) {
+  @return map-get(map-get($palette, $name), $shade);
+}
+
 // base colors
 $brand-primary:  #009cde;
 $brand-cta:      #19ab20;
@@ -18,8 +32,7 @@ $palette: (
     'sierra':   get-darker($brand-gray2, 40%),
     'cascade':  $brand-gray2,
     'rocky':    $brand-gray3,
-    'ridge':    $brand-gray4,
-    'appalachian': get-darker($brand-gray2)
+    'ridge':    $brand-gray4
   ),
   'blue': (
     'pacific':  $brand-primary,
@@ -37,8 +50,23 @@ $palette: (
 );
 
 // derived colors from base
-$brand-primary-lighter:  color('blue', 'havasu');
-$brand-gray:              color('gray', 'sierra');
+$brand-gray: color('gray', 'sierra');
+
+// shades/derivatives
+$brand-primary-lighter50: get-lighter($brand-primary, 50%);
+$brand-primary-lighter75: get-lighter($brand-primary, 75%);
+$brand-primary-lighter87: get-lighter($brand-primary, 87.5%);
+$brand-gray2-lighter50:   get-lighter($brand-gray2, 50%);
+$brand-gray2-lighter75:   get-lighter($brand-gray2, 75%);
+$brand-cta-lighter75:     get-lighter($brand-cta, 75%);
+$brand-alert-lighter75:   get-lighter($brand-alert, 75%);
+$brand-accent-lighter50:  get-lighter($brand-accent, 50%);
+
+$brand-primary-darker25:  get-darker($brand-primary, 25%);
+$brand-gray2-darker25:    get-darker($brand-gray2, 25%);
+$brand-cta-darker25:      get-darker($brand-cta, 25%);
+$brand-alert-darker25:    get-darker($brand-alert, 25%);
+$brand-accent-darker25:   get-darker($brand-accent, 25%);
 
 // gradients
 $black-white-gradient: linear-gradient(to bottom, #4d4d4d 0%, #383838 26%, #1f1f1f 53%, #151515 67%, #121212 69%, #000 100%);
@@ -49,7 +77,7 @@ $progress-gradient: linear-gradient(left, rgba($white, 0), rgba($white, 0.4));
 // misc
 $tooltip-color: $white;
 $transparent-color: rgba($white, 0);
-$outline-color: get-lighter($brand-primary);
+$outline-color: $brand-primary-lighter75;
 $shadow-color: rgba($black, 0.5);
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
