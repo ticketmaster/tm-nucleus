@@ -1,5 +1,18 @@
 .perforated-frame {
-  box-shadow: $perforated-box-shadow-style;
+  @include drop-shadow();
+
+  position: relative;
+  background: $white;
+
+  &:after {
+    position: absolute;
+    bottom: -3px;
+    width: 100%;
+    height: 5px;
+    display: block;
+    background: transparent url(map-get($svgs, pedge)) repeat-x 0 0 scroll;
+    content: '';
+  }
 }
 
 .perforated-frame__content {
@@ -8,12 +21,4 @@
 
 .perforated-frame__content + .perforated-frame__content {
   border-top: $base-border-style;
-}
-
-.perforated-edge {
-  position: relative;
-  top: -2px;
-  height: 5px;
-
-  background: transparent url(map-get($svgs, pedge)) repeat-x 0 0 scroll;
 }
