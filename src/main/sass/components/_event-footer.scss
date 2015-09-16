@@ -1,0 +1,28 @@
+.event-footer {
+  @include clearfix();
+  @include span(full);
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: z('event-footer');
+  width: 100%;
+  height: auto;
+  padding-top: $spacing-sm;
+  padding-bottom: $spacing-sm;
+  white-space: nowrap;
+  background: $brand-gray4;
+  border-top: $base-border-style;
+}
+
+.event-footer__total {
+  text-align: right;
+}
+
+.event-footer__total-amt {
+  @include responsive-font('xl');
+}
+
+.event-footer__total-desc {
+  @include alt-copy('md');
+}
