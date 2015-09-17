@@ -13,3 +13,11 @@
 .icon--warning {
   @include icon($brand-warning);
 }
+
+.icon--container-plus {
+  @include icon($brand-gray3,$icon-container-plus-minus,$icon-container-plus-minus);
+}
+
+.icon--container-minus {
+  @include icon($brand-gray3,$icon-container-plus-minus,$icon-container-plus-minus);
+}
