@@ -58,7 +58,7 @@ function grabNormalize() {
     .pipe(gulp.dest(paths.sourcefiles + '/sass/vendors/normalize'));
 }
 
-// compile sass, apply autoprefixer, and minify
+// compile sass and apply autoprefixer
 function compileSass() {
   var stream = gulp.src(src.scss)
     .pipe(plugins.sourcemaps.init())
@@ -90,8 +90,8 @@ function lintSass() {
 }
 
 // minify svg, combine into sprite
-function processSvg() {
-  var stream = gulp.src([src.icons])
+function minifySvg() {
+  var stream = gulp.src(src.svg)
     .pipe(plugins.svgmin({
       plugins: [
         { removeViewBox: false },
@@ -103,13 +103,23 @@ function processSvg() {
       js2svg: {
         pretty: true
       }}))
-    .pipe(gulp.dest(compiled.svg))
-    .pipe(plugins.svgstore())
-    .pipe(plugins.rename({
-        basename: 'sprite'
-      }))
     .pipe(gulp.dest(compiled.svg));
   return stream;
+}
+
+function makeSvgSprite() {
+  var stream = gulp.src(src.icons)
+    .pipe(plugins.svgstore())
+    .pipe(plugins.rename({
+      basename: 'sprite'
+    }))
+    .pipe(gulp.dest(compiled.svg));
+  return stream;
+}
+
+function processSvg() {
+  minifySvg();
+  makeSvgSprite();
 }
 
 function copyFont() {
