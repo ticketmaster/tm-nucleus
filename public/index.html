@@ -19,9 +19,7 @@
     <div class="page__frame page__content">
       <div class="split-content">
         <div class="split-content__secondary">
-          <svg class="nucleus-logo">
-            <use xlink:href="img/sprite.svg#nucleus"></use>
-          </svg>
+          <object data="img/nucleus.svg" type="image/svg+xml" class="nucleus-logo"></object>
         </div>
         <div class="split-content__primary sg-name">Nucleus</div>
       </div>
@@ -47,13 +45,15 @@
         <li><a href="#tiles">Tile Selections</a></li>
         <li><a href="#tooltips">Tooltips</a></li>
         <li><a href="#srs">Sec-Row-Seat</a></li>
-        <li><a href="#layout">Layout Patterns</a></li>
+        <li><a href="#split-content">Split Content</a></li>
         <li><a href="#product-info">Product Information</a></li>
+        <li><a href="#module">Module</a></li>
         <li><a href="#datestamp">Datestamp</a></li>
         <li><a href="#timer">Timer</a></li>
         <li><a href="#event-header">Event Header</a></li>
         <li><a href="#event-footer">Event Footer</a></li>
         <li><a href="#ism-tooltip">ISM Tooltips</a></li>
+        <li><a href="#icons">Icons</a></li>
       </ol>
     </nav>
 
@@ -74,16 +74,6 @@
                 <li>Focused border</li>
                 <li>Selected radio button</li>
                 <li>Progress bar</li>
-              </ul>
-            </div>
-          </div>
-          <div class="sg-swatch-group">
-            <div class="sg-swatch sg-swatch--havasu"></div>
-            <div class="sg-swatch-info">
-              <span class="sg-swatch-name">havasu <span class="alt-copy">(pacific w/ 90% white)</span></span>
-              <code class="sg-code">$brand-primary-lighter</code>
-              <ul class="sg-list sg-swatch-usage">
-                <li>Quick Picks hover background</li>
               </ul>
             </div>
           </div>
@@ -172,6 +162,17 @@
                 <li>Errors</li>
                 <li>Alerts</li>
                 <li>Void buttons</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="sg-swatch-group">
+            <div class="sg-swatch sg-swatch--malibu"></div>
+            <div class="sg-swatch-info">
+              <span class="sg-swatch-name">malibu</span>
+              <code class="sg-code">$brand-warning</code>
+              <ul class="sg-list sg-swatch-usage">
+                <li>Warning</li>
               </ul>
             </div>
           </div>
@@ -342,6 +343,7 @@
             <th class="sg-table-hdg sg-typography-hdg">Large</th>
             <th class="sg-table-hdg sg-typography-hdg">X-Large</th>
             <th class="sg-table-hdg sg-typography-hdg">XX-Large</th>
+            <th class="sg-table-hdg sg-typography-hdg">XXX-Large</th>
           </tr>
           <tr>
             <td class="sg-typography-bp">
@@ -365,6 +367,9 @@
             </td>
             <td class="sg-xxl-font-size">
               26px font size
+            </td>
+            <td class="sg-xxxl-font-size">
+              40px font size
             </td>
           </tr>
           <tr>
@@ -390,6 +395,9 @@
             <td class="sg-xxl-font-size-quart">
               28px font size
             </td>
+            <td class="sg-xxxl-font-size">
+              42px font size
+            </td>
           </tr>
           <tr>
             <td class="sg-typography-bp">
@@ -413,6 +421,9 @@
             </td>
             <td class="sg-xxl-font-size-gallon">
               30px font size
+            </td>
+            <td class="sg-xxxl-font-size">
+              44px font size
             </td>
           </tr>
           <tr>
@@ -1013,7 +1024,7 @@
               <div class="qty-picker">
                 <button class="qty-picker__button">
                   <svg class="qty-picker__icon qty-picker__icon--decrement">
-                    <use xlink:href="img/sprite.svg#minus"></use>
+                    <use xlink:href="img/sprite.svg#icon-minus"></use>
                   </svg>
                 </button>
                 <div class="qty-picker__number">
@@ -1021,7 +1032,7 @@
                 </div>
                 <button class="qty-picker__button">
                   <svg class="qty-picker__icon">
-                    <use xlink:href="img/sprite.svg#plus"></use>
+                    <use xlink:href="img/sprite.svg#icon-plus"></use>
                   </svg>
                 </button>
               </div>
@@ -1035,7 +1046,7 @@
               <div class="qty-picker">
                 <button disabled class="qty-picker__button">
                   <svg class="qty-picker__icon qty-picker__icon--decrement qty-picker__icon--disabled">
-                    <use xlink:href="img/sprite.svg#minus"></use>
+                    <use xlink:href="img/sprite.svg#icon-minus"></use>
                   </svg>
                 </button>
                 <div class="qty-picker__number qty-picker__number--disabled">
@@ -1043,7 +1054,7 @@
                 </div>
                 <button class="qty-picker__button">
                   <svg class="qty-picker__icon">
-                    <use xlink:href="img/sprite.svg#plus"></use>
+                    <use xlink:href="img/sprite.svg#icon-plus"></use>
                   </svg>
                 </button>
               </div>
@@ -1057,7 +1068,7 @@
               <div class="qty-picker">
                 <button disabled class="qty-picker__button">
                   <svg class="qty-picker__icon qty-picker__icon--decrement">
-                    <use xlink:href="img/sprite.svg#minus"></use>
+                    <use xlink:href="img/sprite.svg#icon-minus"></use>
                   </svg>
                 </button>
                 <div class="qty-picker__number">
@@ -1065,7 +1076,7 @@
                 </div>
                 <button disabled class="qty-picker__button">
                   <svg class="qty-picker__icon qty-picker__icon--increment qty-picker__icon--disabled">
-                    <use xlink:href="img/sprite.svg#plus"></use>
+                    <use xlink:href="img/sprite.svg#icon-plus"></use>
                   </svg>
                 </button>
               </div>
@@ -1207,18 +1218,16 @@
         </ul>
 
         <pre class="sg-sample-code">
-&lt;div class="module"&gt;
-  &lt;ul class="delimited-list"&gt;
-    &lt;li class="delimited-list__item <span class="sg-highlight-code">delimited-list__item--compact</span>"&gt;
-      First item
-    &lt;/li&gt;
-    &lt;li class="delimited-list__item <span class="sg-highlight-code">delimited-list__item--compact</span>"&gt;
-      Secondy item
-    &lt;/li&gt;
-    &lt;li class="delimited-list__item <span class="sg-highlight-code">delimited-list__item--compact</span>"&gt;
-      Third item
-    &lt;/li&gt;
-  &lt;/div&gt;
+&lt;ul class="delimited-list"&gt;
+  &lt;li class="delimited-list__item <span class="sg-highlight-code">delimited-list__item--compact</span>"&gt;
+    First item
+  &lt;/li&gt;
+  &lt;li class="delimited-list__item <span class="sg-highlight-code">delimited-list__item--compact</span>"&gt;
+    Secondy item
+  &lt;/li&gt;
+  &lt;li class="delimited-list__item <span class="sg-highlight-code">delimited-list__item--compact</span>"&gt;
+    Third item
+  &lt;/li&gt;
 &lt;/div&gt;
         </pre>
 
@@ -1313,7 +1322,7 @@
               State <span class="input-group__required">*</span>
             </label>
             <svg class="dropdown__chevron">
-              <use xlink:href="img/sprite.svg#chevron">
+              <use xlink:href="img/sprite.svg#icon-chevron"></use>
             </svg>
           </div>
         </div>
@@ -1332,7 +1341,7 @@
     State &lt;span class="input-group__required"&gt;*&lt;/span&gt;
   &lt;/label&gt;
   &lt;svg class="<span class="sg-highlight-code">dropdown__chevron</span>"&gt;
-    &lt;use xlink:href="img/sprite.svg#chevron"&gt;
+    &lt;use xlink:href="img/sprite.svg#icon-chevron"&gt;
   &lt;/svg&gt;
 &lt;/div&gt;
         </pre>
@@ -1353,7 +1362,7 @@
               State <span class="input-group__required">*</span>
             </label>
             <svg class="dropdown__chevron">
-              <use xlink:href="img/sprite.svg#chevron">
+              <use xlink:href="img/sprite.svg#icon-chevron">
             </svg>
           </div>
         </div>
@@ -1372,7 +1381,7 @@
     State &lt;span class="input-group__required"&gt;*&lt;/span&gt;
   &lt;/label&gt;
   &lt;svg class="dropdown__chevron"&gt;
-    &lt;use xlink:href="img/sprite.svg#chevron"&gt;
+    &lt;use xlink:href="img/sprite.svg#icon-chevron"&gt;
   &lt;/svg&gt;
 &lt;/div&gt;
         </pre>
@@ -1393,7 +1402,7 @@
               State <span class="input-group__required">*</span>
             </label>
             <svg class="dropdown__chevron">
-              <use xlink:href="img/sprite.svg#chevron">
+              <use xlink:href="img/sprite.svg#icon-chevron">
             </svg>
           </div>
         </div>
@@ -1412,7 +1421,7 @@
     State &lt;span class="input-group__required"&gt;*&lt;/span&gt;
   &lt;/label&gt;
   &lt;svg class="dropdown__chevron"&gt;
-    &lt;use xlink:href="img/sprite.svg#chevron"&gt;
+    &lt;use xlink:href="img/sprite.svg#icon-chevron"&gt;
   &lt;/svg&gt;
 &lt;/div&gt;
         </pre>
@@ -1638,26 +1647,21 @@
         </div>
       </section>
 
-      <section id="layout" class="sg-section">
-        <h2 class="sg-hdg">Layout Patterns</h2>
-
-        <h3 class="sg-subhdg">Split Content</h3>
+      <section id="split-content" class="sg-section">
+        <h2 class="sg-hdg">Split Content</h2>
         <p>This pattern dictates a block of content where one portion (or column) is primary and takes up all available width, while secondary content is only as wide as it needs to be.</p>
         <p>The spacing between columns follows the responsive <code class="sg-code">$spacing-sm</code> values as defined in <a href="#spacing">Spacing</a>.</p>
 
-        <div class="module">
-          <div class="split-content">
-            <div class="split-content__primary module__content">
-              <p>Note how content in this area takes up all available space. Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola frankfurter picanha ham.</p>
-            </div>
-            <div class="split-content__secondary module__content">
-              <button class="button">Good 'Ol Button</button>
-            </div>
+        <div class="split-content">
+          <div class="split-content__primary">
+            <p>Note how content in this area takes up all available space. Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola frankfurter picanha ham.</p>
+          </div>
+          <div class="split-content__secondary">
+            <button class="button">Good 'Ol Button</button>
           </div>
         </div>
 
         <pre class="sg-sample-code">
-&lt;div class="module"&gt;
   &lt;div class="<span class="sg-highlight-code">split-content</span>"&gt;
     &lt;div class="<span class="sg-highlight-code">split-content__primary</span> module__content"&gt;
       [...]
@@ -1671,65 +1675,57 @@
 
         <p>Secondary content can be placed before or after the primary content.</p>
 
-        <div class="module">
-          <div class="split-content module__content">
-            <div class="split-content__secondary">
-              <button class="button-outlined button-outlined--void button-outlined--small">Delete</button>
-            </div>
-            <div class="split-content__primary">
-              <p>Note how content in this area takes up all available space. Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola frankfurter picanha ham.</p>
-            </div>
-            <div class="split-content__secondary">
-              <button class="button button--cta">Buy</button>
-            </div>
+        <div class="split-content module__content">
+          <div class="split-content__secondary">
+            <button class="button-outlined button-outlined--void button-outlined--small">Delete</button>
+          </div>
+          <div class="split-content__primary">
+            <p>Note how content in this area takes up all available space. Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola frankfurter picanha ham.</p>
+          </div>
+          <div class="split-content__secondary">
+            <button class="button button--cta">Buy</button>
           </div>
         </div>
 
         <pre class="sg-sample-code">
-&lt;div class="module"&gt;
-  &lt;div class="split-content module__content"&gt;
-    &lt;div class="<span class="sg-highlight-code">split-content__secondary</span>"&gt;
-      [...]
-    &lt;/div&gt;
-    &lt;div class="<span class="sg-highlight-code">split-content__primary</span>"&gt;
-      [...]
-    &lt;/div&gt;
-    &lt;div class="<span class="sg-highlight-code">split-content__secondary</span>"&gt;
-      [...]
-    &lt;/div&gt;
+&lt;div class="split-content module__content"&gt;
+  &lt;div class="<span class="sg-highlight-code">split-content__secondary</span>"&gt;
+    [...]
+  &lt;/div&gt;
+  &lt;div class="<span class="sg-highlight-code">split-content__primary</span>"&gt;
+    [...]
+  &lt;/div&gt;
+  &lt;div class="<span class="sg-highlight-code">split-content__secondary</span>"&gt;
+    [...]
   &lt;/div&gt;
 &lt;/div&gt;
         </pre>
 
         <p>If you need content to be top-aligned, use the <code class="sg-code">split-content__primary--top</code> or <code class="sg-code">split-content__secondary--top</code> modifiers.</p>
 
-        <div class="module">
-          <div class="split-content module__content">
-            <div class="split-content__secondary split-content__secondary--top">
-              <button class="button-outlined button-outlined--void button-outlined--small">Delete</button>
-            </div>
-            <div class="split-content__primary">
-              <p>Bacon ipsum dolor amet pariatur venison meatball, turducken dolore ball tip pork belly ribeye consequat fatback kielbasa ham hock leberkas. Quis non frankfurter fatback, doner in shankle excepteur ut. Kevin dolore short loin quis velit dolor laborum est frankfurter kielbasa voluptate. Doner boudin tempor leberkas beef ribs.</p>
-              <p>Beef sint et pariatur fatback. Adipisicing frankfurter ut in. Duis ipsum magna qui. Minim spare ribs hamburger, porchetta proident eiusmod et fugiat duis shankle deserunt dolore magna turkey.</p>
-            </div>
-            <div class="split-content__secondary">
-              <button class="button button--cta">Buy</button>
-            </div>
+        <div class="split-content module__content">
+          <div class="split-content__secondary split-content__secondary--top">
+            <button class="button-outlined button-outlined--void button-outlined--small">Delete</button>
+          </div>
+          <div class="split-content__primary">
+            <p>Bacon ipsum dolor amet pariatur venison meatball, turducken dolore ball tip pork belly ribeye consequat fatback kielbasa ham hock leberkas. Quis non frankfurter fatback, doner in shankle excepteur ut. Kevin dolore short loin quis velit dolor laborum est frankfurter kielbasa voluptate. Doner boudin tempor leberkas beef ribs.</p>
+            <p>Beef sint et pariatur fatback. Adipisicing frankfurter ut in. Duis ipsum magna qui. Minim spare ribs hamburger, porchetta proident eiusmod et fugiat duis shankle deserunt dolore magna turkey.</p>
+          </div>
+          <div class="split-content__secondary">
+            <button class="button button--cta">Buy</button>
           </div>
         </div>
 
         <pre class="sg-sample-code">
-&lt;div class="module"&gt;
-  &lt;div class="split-content module__content"&gt;
-    &lt;div class="split-content__secondary <span class="sg-highlight-code">split-content__secondary--top</span>"&gt;
-      [...]
-    &lt;/div&gt;
-    &lt;div class="split-content__primary"&gt;
-      [...]
-    &lt;/div&gt;
-    &lt;div class="split-content__secondary"&gt;
-      [...]
-    &lt;/div&gt;
+&lt;div class="split-content module__content"&gt;
+  &lt;div class="split-content__secondary <span class="sg-highlight-code">split-content__secondary--top</span>"&gt;
+    [...]
+  &lt;/div&gt;
+  &lt;div class="split-content__primary"&gt;
+    [...]
+  &lt;/div&gt;
+  &lt;div class="split-content__secondary"&gt;
+    [...]
   &lt;/div&gt;
 &lt;/div&gt;
         </pre>
@@ -1776,6 +1772,65 @@
         </pre>
 
         <p>Note that we are <em>not</em> using a BEM modifier class here.</p>
+      </section>
+
+      <section id="module" class="sg-section">
+        <h2 class="sg-hdg">Module</h2>
+        <p>Modules are containers with a drop-shadow applied.</p>
+        <div class="sg-module">
+          <div class="module">
+            <div class="module__content module__srs">
+              <div class="srs">
+                <div class="srs__set">
+                  <span class="srs__label">Sec</span>
+                  <span class="srs__value">21</span>
+                </div>
+                <div class="srs__set">
+                  <span class="srs__label">Row</span>
+                  <span class="srs__value">13</span>
+                </div>
+                <div class="srs__set">
+                  <span class="srs__label">Seat</span>
+                  <span class="srs__value">23</span>
+                </div>
+              </div>
+            </div>
+            <div class="module__content">
+              <h1 class="heading-lined heading-lined--primary">Primary Heading</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <h2 class="heading-lined heading-lined--secondary">Secondary Heading</h2>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sg-subhdg">Perforated Edge</h3>
+        <p>This is a variant of a module that has a perforated edge.</p>
+        <div class="sg-module">
+          <div class="module module--perforated">
+            <div class="module__content module__srs">
+              <div class="srs">
+                <div class="srs__set">
+                  <span class="srs__label">Sec</span>
+                  <span class="srs__value">21</span>
+                </div>
+                <div class="srs__set">
+                  <span class="srs__label">Row</span>
+                  <span class="srs__value">13</span>
+                </div>
+                <div class="srs__set">
+                  <span class="srs__label">Seat</span>
+                  <span class="srs__value">23</span>
+                </div>
+              </div>
+            </div>
+            <div class="module__content">
+              <h1 class="heading-lined heading-lined--primary">Primary Heading</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <h2 class="heading-lined heading-lined--secondary">Secondary Heading</h2>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+          </div>
       </section>
 
       <section id="datestamp" class="sg-section">
@@ -1963,10 +2018,11 @@
                 </div>
               </li>
             </ul>
+          </div>
         </div>
 
         <div class="sg-ism-tooltip">
-          <h2 class="sg-subhdg3">Multiple Ticket Type</h4>
+          <h4 class="sg-subhdg3">Multiple Ticket Type</h4>
           <div class="tooltip tooltip--ism">
             <div class="tooltip__content">
               <div class="tooltip__srs srs">
@@ -2089,8 +2145,8 @@
                   <div class="split-content__secondary">
                     <div class="qty-picker">
                       <button class="qty-picker__button">
-                        <svg class="qty-picker__icon">
-                          <use xlink:href="img/sprite.svg#minus"></use>
+                        <svg class="qty-picker__icon qty-picker__icon--decrement">
+                          <use xlink:href="img/sprite.svg#icon-minus"></use>
                         </svg>
                       </button>
                       <div class="qty-picker__number">
@@ -2098,7 +2154,7 @@
                       </div>
                       <button class="qty-picker__button">
                         <svg class="qty-picker__icon">
-                          <use xlink:href="img/sprite.svg#plus"></use>
+                          <use xlink:href="img/sprite.svg#icon-plus"></use>
                         </svg>
                       </button>
                     </div>
@@ -2114,8 +2170,8 @@
                   <div class="split-content__secondary">
                     <div class="qty-picker">
                       <button class="qty-picker__button">
-                        <svg class="qty-picker__icon">
-                          <use xlink:href="img/sprite.svg#minus"></use>
+                        <svg class="qty-picker__icon qty-picker__icon--decrement">
+                          <use xlink:href="img/sprite.svg#icon-minus"></use>
                         </svg>
                       </button>
                       <div class="qty-picker__number">
@@ -2123,7 +2179,7 @@
                       </div>
                       <button class="qty-picker__button">
                         <svg class="qty-picker__icon">
-                          <use xlink:href="img/sprite.svg#plus"></use>
+                          <use xlink:href="img/sprite.svg#icon-plus"></use>
                         </svg>
                       </button>
                     </div>
@@ -2175,8 +2231,8 @@
                   <div class="split-content__secondary">
                     <div class="qty-picker">
                       <button class="qty-picker__button">
-                        <svg class="qty-picker__icon">
-                          <use xlink:href="img/sprite.svg#minus"></use>
+                        <svg class="qty-picker__icon qty-picker__icon--decrement">
+                          <use xlink:href="img/sprite.svg#icon-minus"></use>
                         </svg>
                       </button>
                       <div class="qty-picker__number">
@@ -2184,7 +2240,7 @@
                       </div>
                       <button class="qty-picker__button">
                         <svg class="qty-picker__icon">
-                          <use xlink:href="img/sprite.svg#plus"></use>
+                          <use xlink:href="img/sprite.svg#icon-plus"></use>
                         </svg>
                       </button>
                     </div>
@@ -2207,7 +2263,6 @@
           </div>
         </div>
       </section>
-
 
       <section id="expandossub" class="sg-section">
         <h2 class="sg-hdg">Expandos</h2>
@@ -2288,7 +2343,31 @@ all you need to do is make sure the following classes exist on your elements.
             </pre>
 
       </section>
-
+      <section id="icons" class="sg-section">
+        <h3 class="sg-hdg">Icons</h3>
+        <p>A collection of icons</p>
+        <table class="sg-table">
+          <tbody>
+            <tr>
+              <td>
+                <svg class="icon icon--ada">
+                  <use xlink:href="img/sprite.svg#icon-ada"></use>
+                </svg>
+              </td>
+              <td>
+                <svg class="icon icon--resale">
+                  <use xlink:href="img/sprite.svg#icon-resale"></use>
+                </svg>
+              </td>
+              <td>
+                <svg class="icon icon--warning">
+                  <use xlink:href="img/sprite.svg#icon-warning"></use>
+                </svg>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
     </main>
   </div>
   <script>

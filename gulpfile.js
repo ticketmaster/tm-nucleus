@@ -2,62 +2,80 @@ var _ = require('lodash');
 var del = require('del');
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
-// var map = require('map-stream');
 var browserSync = require('browser-sync');
+var reload = browserSync.reload;
 
+// ----------------------------------------------
+//  Path Definitions
+// ----------------------------------------------
 var paths = {
   sourcefiles: 'src/main'
 }
 
 var src = {
+  font: 'src/main/font/*',
   html: 'public/**/*.html',
+  icons: 'src/main/svg/icon-*.svg',
+  normalize: 'node_modules/normalize.css/normalize.css',
   scss: 'src/main/sass/**/*.scss',
   svg:  'src/main/svg/**/*.svg',
-  normalize: 'node_modules/normalize.css/normalize.css',
-  font: 'src/main/font/*'
+  svg4everybody: 'node_modules/svg4everybody/dist/svg4everybody.min.js'
 }
 
 var compiled = {
   css: 'public/css',
-  svg: 'public/img',
-  font: 'public/font'
+  font: 'public/font',
+  js: 'public/js',
+  svg: 'public/img'
 }
 
 var dist = {
   css: 'dist/css',
-  svg: 'dist/img',
-  font: 'dist/font'
+  font: 'dist/font',
+  js: 'dist/js',
+  svg: 'dist/img'
 }
 
-var reload = browserSync.reload;
 
-// var exitOnLintError = map(function(file, cb) {
-//   if (!file.scsslint.success) {
-//     console.error('scsslint failed');
-//     process.exit(1);
-//   }
-// });
+// ----------------------------------------------
+//  Functions
+// ----------------------------------------------
 
-function cleanFiles(cb) {
-  del(_.values(compiled), cb);
-}
-
-function cleanDist(cb) {
-  del(_.values(dist), cb);
+// delete existing files
+function cleanFiles(dir, cb) {
+  del(_.values(dir), cb);
 }
 
 // copy normalize.css from node_modules into project and rename to .scss
 // so that it can be imported into our sass compile process
-function grabNormalize() {
+function copyNormalize() {
   var stream = gulp.src(src.normalize)
-    .pipe(plugins.rename(function(path){
+    .pipe(plugins.rename(function(path) {
       path.basename = '_' + path.basename,
       path.extname = '.scss'
     }))
     .pipe(gulp.dest(paths.sourcefiles + '/sass/vendors/normalize'));
 }
 
-// compile sass, apply autoprefixer, and minify
+// copy svg4everybody into directory
+function copySvg4Everybody(dir) {
+  gulp.src(src.svg4everybody)
+    .pipe(gulp.dest(dir));
+}
+
+// file copying functions
+function copyFont(dir) {
+  gulp.src(src.font)
+    .pipe(gulp.dest(dir));
+}
+
+function copySvg() {
+  var stream = gulp.src(compiled.svg + '/**/*')
+    .pipe(gulp.dest(dist.svg));
+  return stream
+}
+
+// compile sass and apply autoprefixer
 function compileSass() {
   var stream = gulp.src(src.scss)
     .pipe(plugins.sourcemaps.init())
@@ -69,6 +87,7 @@ function compileSass() {
   return stream;
 }
 
+// minify css from public dir and drop into dist dir
 function minifyCss() {
   var stream = gulp.src([compiled.css + '/**/*', '!' + compiled.css + '/styleguide*'])
     .pipe(plugins.minifyCss())
@@ -84,13 +103,12 @@ function lintSass() {
       'config': 'scss-lint.yml',
       'reporterOutput': 'lint-report.json'
       }))
-    // .pipe(exitOnLintError);
   return stream;
 }
 
-// minify svg, combine into sprite
-function processSvg() {
-  var stream = gulp.src(src.svg)
+// minify all svg's except icons
+function minifySvg() {
+  var stream = gulp.src([src.svg, '!' + src.icons])
     .pipe(plugins.svgmin({
       plugins: [
         { removeViewBox: false },
@@ -102,7 +120,24 @@ function processSvg() {
       js2svg: {
         pretty: true
       }}))
-    .pipe(gulp.dest(compiled.svg))
+    .pipe(gulp.dest(compiled.svg));
+  return stream;
+}
+
+// combine icon svg's into sprite
+function makeSvgSprite() {
+  var stream = gulp.src([src.icons])
+    .pipe(plugins.svgmin({
+      plugins: [
+        { removeViewBox: false },
+        { removeUselessStrokeAndFill: false },
+        { removeEmptyAttrs: false },
+        { removeTitle: false },
+        { removeDesc: true }
+      ],
+      js2svg: {
+        pretty: true
+      }}))
     .pipe(plugins.svgstore())
     .pipe(plugins.rename({
         basename: 'sprite'
@@ -111,20 +146,13 @@ function processSvg() {
   return stream;
 }
 
-function copyFont() {
-  var stream = gulp.src(src.font)
-    .pipe(gulp.dest(compiled.font))
-    .pipe(gulp.dest(dist.font));
-  return stream;
+// wrapper function for processing svg's
+function processSvg() {
+  minifySvg();
+  makeSvgSprite();
 }
 
-function copySvg() {
-  var stream = gulp.src(compiled.svg + '/**/*')
-    .pipe(gulp.dest(dist.svg));
-  return stream
-}
-
-// start up browser sync
+/// start up browser sync
 function startBS() {
   function syncBrowser() {
     browserSync.init(null, {
@@ -144,36 +172,57 @@ function watchFiles() {
   return monitor;
 }
 
+// update distribution files
 function makeDist() {
-  copyFont();
+  copyFont(dist.font);
   minifyCss();
   copySvg();
+  copySvg4Everybody(dist.js + '/vendors');
 }
 
-// delete existing compiled files
-gulp.task('clean', cleanFiles);
-gulp.task('clean-dist', cleanDist);
-gulp.task('normalize', grabNormalize);
-gulp.task('sass', compileSass);
-gulp.task('scsslint', lintSass);
-gulp.task('svg', processSvg);
-gulp.task('copy-font', copyFont);
-gulp.task('make-dist', makeDist);
-gulp.task('browser-sync', startBS());
 
-// monitor file changes/additions
+// ----------------------------------------------
+//  Task Definitions
+// ----------------------------------------------
+
+// delete existing files
+gulp.task('clean', function() {
+  cleanFiles(compiled);
+});
+
+// copying stuff
+gulp.task('copy:normalize', copyNormalize);
+
+gulp.task('copy:svg4everybody', function() {
+  copySvg4Everybody(compiled.js + '/vendors')
+});
+
+gulp.task('copy:font', function() {
+  copyFont(compiled.font);
+});
+
+// dev tasks
+gulp.task('compile:sass', compileSass);
+gulp.task('compile:svg', processSvg);
+gulp.task('minify:svg', minifySvg);
+gulp.task('minify:icons', makeSvgSprite);
+gulp.task('scsslint', lintSass);
+gulp.task('browser-sync', startBS());
 gulp.task('watch', watchFiles());
 
-// set sequence tasks
-gulp.task('dev-sequence', plugins.sequence('clean', ['copy-font', 'sass', 'svg', 'watch', 'browser-sync']));
-gulp.task('prod-sequence', plugins.sequence('clean', ['copy-font', 'sass', 'svg']));
-gulp.task('pub-sequence', plugins.sequence('clean-dist', ['make-dist']));
+// just process and compile source files
+gulp.task('build', function() {
+  cleanFiles(compiled, plugins.sequence('clean', ['copy:normalize', 'copy:font', 'compile:sass', 'compile:svg', 'copy:svg4everybody']));
+});
 
-// dev task - starts browsersync and file monitoring
-gulp.task('dev', ['dev-sequence']);
+// process, compile, and start up browsersync and watcher
+gulp.task('dev', function() {
+  cleanFiles(compiled, plugins.sequence('clean', ['copy:normalize', 'copy:font', 'compile:sass', 'compile:svg', 'copy:svg4everybody', 'watch', 'browser-sync']));
+})
 
-// distribution task - publishes required into dist directory
-gulp.task('dist', ['pub-sequence']);
+// update project distribution files
+gulp.task('dist', function() {
+  cleanFiles(dist, makeDist);
+});
 
-// prod task - just process and compile source files
-gulp.task('default', ['prod-sequence']);
+gulp.task('default', ['build']);

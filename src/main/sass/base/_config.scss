@@ -21,6 +21,14 @@ $shadow-spread: 1px;
 $box-shadow-style: $shadow-x $shadow-y $shadow-blur $shadow-spread $shadow-color;
 $inner-shadow-style: inset 0 1px 3px 0 $shadow-color;
 
+// Perforated edge shadow
+$perforated-shadow-x: 0;
+$perforated-shadow-y: 1px;
+$perforated-shadow-blur: 10px;
+$perforated-shadow-spread: 2px;
+$perforated-box-shadow-style: $perforated-shadow-x $perforated-shadow-y $perforated-shadow-blur $perforated-shadow-spread $perforated-shadow-color;
+$perforated-inner-shadow-style: inset 0 1px 1px 0 $shadow-color;
+
 // Buttons
 $button-height: 44px;
 $button-height-lg: 46px;

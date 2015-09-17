@@ -334,6 +334,10 @@ $sg-spacing: 1.5em;
   content: 'helen';
 }
 
+.sg-swatch--state.sg-swatch--malibu:before {
+  content: 'malibu';
+}
+
 .sg-swatch--state.sg-swatch--catalina:before {
   content: 'catalina';
 }
@@ -589,6 +593,15 @@ $sg-spacing: 1.5em;
   width: 33%;
   // padding: 10px;
 }
+
+.sg-module {
+  width: 100%;
+
+  @include breakpoint($bp-md) {
+    width: 350px;
+  }
+}
+
 
 .sg-unstyled-list {
   @include unstyled-list();

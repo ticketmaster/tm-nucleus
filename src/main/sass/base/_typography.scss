@@ -69,6 +69,7 @@ $base-md-font: 1.4rem;
 $base-lg-font: 1.8rem;
 $base-xl-font: 2.2rem;
 $base-xxl-font: 2.6rem;
+$base-xxxl-font: 4.0rem;
 
 // Other font sizes
 $body-font-size: $base-md-font;
@@ -104,6 +105,11 @@ $font-sizes: (
     'pint':   $base-xxl-font,
     'quart':  get-quart-size($base-xxl-font),
     'gallon': get-gallon-size($base-xxl-font)
+  ),
+  'xxxl': (
+    'pint':   $base-xxxl-font,
+    'quart':  get-quart-size($base-xxxl-font),
+    'gallon': get-gallon-size($base-xxxl-font)
   )
 );
 

@@ -1,0 +1,44 @@
+.heading-lined {
+  @include outer-spacing($bottom: $spacing-sm);
+  @include inner-spacing($left: $spacing-sm, $right: $spacing-sm);
+
+  position: relative;
+  display: table;
+  color: $brand-gray2;
+  text-align: center;
+  white-space: nowrap;
+
+  &:before,
+  &:after {
+    position: relative;
+    top: 0.63em;
+    display: table-cell;
+    width: 45%;
+    border-top: $base-border-style;
+    content: '';
+  }
+
+  &:before {
+    right: $spacing-sm;
+
+    @include breakpoint($bp-md) {
+      right: increase-spacing($spacing-sm);
+    }
+  }
+
+  &:after {
+    left: $spacing-sm;
+
+    @include breakpoint($bp-md) {
+      left: increase-spacing($spacing-sm);
+    }
+  }
+}
+
+.heading-lined--primary {
+  @include responsive-font('lg');
+}
+
+.heading-lined--secondary {
+  @include responsive-font('md');
+}

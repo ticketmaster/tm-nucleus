@@ -20,6 +20,7 @@ $brand-primary:  #009cde;
 $brand-cta:      #19ab20;
 $brand-accent:   #d0006f;
 $brand-alert:    #f00;
+$brand-warning:  #fecb34;
 $brand-gray2:    #768692;
 $brand-gray3:    #dfe4e7;
 $brand-gray4:    #f6f7f9;
@@ -46,6 +47,9 @@ $palette: (
   ),
   'red': (
     'helen':    $brand-alert
+  ),
+  'yellow': (
+    'malibu':    $brand-warning
   )
 );
 
@@ -68,22 +72,9 @@ $brand-cta-darker25:      get-darker($brand-cta, 25%);
 $brand-alert-darker25:    get-darker($brand-alert, 25%);
 $brand-accent-darker25:   get-darker($brand-accent, 25%);
 
-// gradients
-$black-white-gradient: linear-gradient(to bottom, #4d4d4d 0%, #383838 26%, #1f1f1f 53%, #151515 67%, #121212 69%, #000 100%);
-$red-gradient: linear-gradient(to bottom, #fa2100 0%, #f9330a 2%, #f62e04 5%, #f52c03 7%, #dd2701 32%, #ac1c00 75%, #9f1a02 91%, #9c1800 93%, #9c1b03 95%, #981400 98%, #9c1e09 100%);
-$red-reverse-gradient: linear-gradient(to top, #fa2100 0%, #f9330a 2%, #f62e04 5%, #f52c03 7%, #dd2701 32%, #ac1c00 75%, #9f1a02 91%, #9c1800 93%, #9c1b03 95%, #981400 98%, #9c1e09 100%);
-$progress-gradient: linear-gradient(left, rgba($white, 0), rgba($white, 0.4));
-
 // misc
 $tooltip-color: $white;
 $transparent-color: rgba($white, 0);
 $outline-color: $brand-primary-lighter75;
 $shadow-color: rgba($black, 0.5);
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-$tooltip-shadow-color: rgba($black, 0.8);
-
-// TODO: get rid of light, rename dark without "dark"
-$overlay-dark-bg-color: rgba($brand-gray, 0.5);
-$overlay-light-bg-color: rgba($white, 0.9);
+$perforated-shadow-color: rgba($black, 0.25);
