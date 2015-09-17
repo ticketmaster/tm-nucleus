@@ -46,14 +46,14 @@
         <li><a href="#tiles">Tile Selections</a></li>
         <li><a href="#tooltips">Tooltips</a></li>
         <li><a href="#srs">Sec-Row-Seat</a></li>
-        <li><a href="#layout">Layout Patterns</a></li>
+        <li><a href="#split-content">Split Content</a></li>
         <li><a href="#product-info">Product Information</a></li>
+        <li><a href="#module">Module</a></li>
         <li><a href="#datestamp">Datestamp</a></li>
         <li><a href="#timer">Timer</a></li>
         <li><a href="#event-header">Event Header</a></li>
         <li><a href="#event-footer">Event Footer</a></li>
         <li><a href="#ism-tooltip">ISM Tooltips</a></li>
-        <li><a href="#perforated-frame">Perforated Frame</a></li>
       </ol>
     </nav>
 
@@ -1197,18 +1197,16 @@
         </ul>
 
         <pre class="sg-sample-code">
-&lt;div class="module"&gt;
-  &lt;ul class="delimited-list"&gt;
-    &lt;li class="delimited-list__item <span class="sg-highlight-code">delimited-list__item--compact</span>"&gt;
-      First item
-    &lt;/li&gt;
-    &lt;li class="delimited-list__item <span class="sg-highlight-code">delimited-list__item--compact</span>"&gt;
-      Secondy item
-    &lt;/li&gt;
-    &lt;li class="delimited-list__item <span class="sg-highlight-code">delimited-list__item--compact</span>"&gt;
-      Third item
-    &lt;/li&gt;
-  &lt;/div&gt;
+&lt;ul class="delimited-list"&gt;
+  &lt;li class="delimited-list__item <span class="sg-highlight-code">delimited-list__item--compact</span>"&gt;
+    First item
+  &lt;/li&gt;
+  &lt;li class="delimited-list__item <span class="sg-highlight-code">delimited-list__item--compact</span>"&gt;
+    Secondy item
+  &lt;/li&gt;
+  &lt;li class="delimited-list__item <span class="sg-highlight-code">delimited-list__item--compact</span>"&gt;
+    Third item
+  &lt;/li&gt;
 &lt;/div&gt;
         </pre>
 
@@ -1628,26 +1626,21 @@
         </div>
       </section>
 
-      <section id="layout" class="sg-section">
-        <h2 class="sg-hdg">Layout Patterns</h2>
-
-        <h3 class="sg-subhdg">Split Content</h3>
+      <section id="split-content" class="sg-section">
+        <h2 class="sg-hdg">Split Content</h2>
         <p>This pattern dictates a block of content where one portion (or column) is primary and takes up all available width, while secondary content is only as wide as it needs to be.</p>
         <p>The spacing between columns follows the responsive <code class="sg-code">$spacing-sm</code> values as defined in <a href="#spacing">Spacing</a>.</p>
 
-        <div class="module">
-          <div class="split-content">
-            <div class="split-content__primary module__content">
-              <p>Note how content in this area takes up all available space. Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola frankfurter picanha ham.</p>
-            </div>
-            <div class="split-content__secondary module__content">
-              <button class="button">Good 'Ol Button</button>
-            </div>
+        <div class="split-content">
+          <div class="split-content__primary">
+            <p>Note how content in this area takes up all available space. Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola frankfurter picanha ham.</p>
+          </div>
+          <div class="split-content__secondary">
+            <button class="button">Good 'Ol Button</button>
           </div>
         </div>
 
         <pre class="sg-sample-code">
-&lt;div class="module"&gt;
   &lt;div class="<span class="sg-highlight-code">split-content</span>"&gt;
     &lt;div class="<span class="sg-highlight-code">split-content__primary</span> module__content"&gt;
       [...]
@@ -1661,65 +1654,57 @@
 
         <p>Secondary content can be placed before or after the primary content.</p>
 
-        <div class="module">
-          <div class="split-content module__content">
-            <div class="split-content__secondary">
-              <button class="button-outlined button-outlined--void button-outlined--small">Delete</button>
-            </div>
-            <div class="split-content__primary">
-              <p>Note how content in this area takes up all available space. Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola frankfurter picanha ham.</p>
-            </div>
-            <div class="split-content__secondary">
-              <button class="button button--cta">Buy</button>
-            </div>
+        <div class="split-content module__content">
+          <div class="split-content__secondary">
+            <button class="button-outlined button-outlined--void button-outlined--small">Delete</button>
+          </div>
+          <div class="split-content__primary">
+            <p>Note how content in this area takes up all available space. Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola frankfurter picanha ham.</p>
+          </div>
+          <div class="split-content__secondary">
+            <button class="button button--cta">Buy</button>
           </div>
         </div>
 
         <pre class="sg-sample-code">
-&lt;div class="module"&gt;
-  &lt;div class="split-content module__content"&gt;
-    &lt;div class="<span class="sg-highlight-code">split-content__secondary</span>"&gt;
-      [...]
-    &lt;/div&gt;
-    &lt;div class="<span class="sg-highlight-code">split-content__primary</span>"&gt;
-      [...]
-    &lt;/div&gt;
-    &lt;div class="<span class="sg-highlight-code">split-content__secondary</span>"&gt;
-      [...]
-    &lt;/div&gt;
+&lt;div class="split-content module__content"&gt;
+  &lt;div class="<span class="sg-highlight-code">split-content__secondary</span>"&gt;
+    [...]
+  &lt;/div&gt;
+  &lt;div class="<span class="sg-highlight-code">split-content__primary</span>"&gt;
+    [...]
+  &lt;/div&gt;
+  &lt;div class="<span class="sg-highlight-code">split-content__secondary</span>"&gt;
+    [...]
   &lt;/div&gt;
 &lt;/div&gt;
         </pre>
 
         <p>If you need content to be top-aligned, use the <code class="sg-code">split-content__primary--top</code> or <code class="sg-code">split-content__secondary--top</code> modifiers.</p>
 
-        <div class="module">
-          <div class="split-content module__content">
-            <div class="split-content__secondary split-content__secondary--top">
-              <button class="button-outlined button-outlined--void button-outlined--small">Delete</button>
-            </div>
-            <div class="split-content__primary">
-              <p>Bacon ipsum dolor amet pariatur venison meatball, turducken dolore ball tip pork belly ribeye consequat fatback kielbasa ham hock leberkas. Quis non frankfurter fatback, doner in shankle excepteur ut. Kevin dolore short loin quis velit dolor laborum est frankfurter kielbasa voluptate. Doner boudin tempor leberkas beef ribs.</p>
-              <p>Beef sint et pariatur fatback. Adipisicing frankfurter ut in. Duis ipsum magna qui. Minim spare ribs hamburger, porchetta proident eiusmod et fugiat duis shankle deserunt dolore magna turkey.</p>
-            </div>
-            <div class="split-content__secondary">
-              <button class="button button--cta">Buy</button>
-            </div>
+        <div class="split-content module__content">
+          <div class="split-content__secondary split-content__secondary--top">
+            <button class="button-outlined button-outlined--void button-outlined--small">Delete</button>
+          </div>
+          <div class="split-content__primary">
+            <p>Bacon ipsum dolor amet pariatur venison meatball, turducken dolore ball tip pork belly ribeye consequat fatback kielbasa ham hock leberkas. Quis non frankfurter fatback, doner in shankle excepteur ut. Kevin dolore short loin quis velit dolor laborum est frankfurter kielbasa voluptate. Doner boudin tempor leberkas beef ribs.</p>
+            <p>Beef sint et pariatur fatback. Adipisicing frankfurter ut in. Duis ipsum magna qui. Minim spare ribs hamburger, porchetta proident eiusmod et fugiat duis shankle deserunt dolore magna turkey.</p>
+          </div>
+          <div class="split-content__secondary">
+            <button class="button button--cta">Buy</button>
           </div>
         </div>
 
         <pre class="sg-sample-code">
-&lt;div class="module"&gt;
-  &lt;div class="split-content module__content"&gt;
-    &lt;div class="split-content__secondary <span class="sg-highlight-code">split-content__secondary--top</span>"&gt;
-      [...]
-    &lt;/div&gt;
-    &lt;div class="split-content__primary"&gt;
-      [...]
-    &lt;/div&gt;
-    &lt;div class="split-content__secondary"&gt;
-      [...]
-    &lt;/div&gt;
+&lt;div class="split-content module__content"&gt;
+  &lt;div class="split-content__secondary <span class="sg-highlight-code">split-content__secondary--top</span>"&gt;
+    [...]
+  &lt;/div&gt;
+  &lt;div class="split-content__primary"&gt;
+    [...]
+  &lt;/div&gt;
+  &lt;div class="split-content__secondary"&gt;
+    [...]
   &lt;/div&gt;
 &lt;/div&gt;
         </pre>
@@ -1766,6 +1751,65 @@
         </pre>
 
         <p>Note that we are <em>not</em> using a BEM modifier class here.</p>
+      </section>
+
+      <section id="module" class="sg-section">
+        <h2 class="sg-hdg">Module</h2>
+        <p>Modules are containers with a drop-shadow applied.</p>
+        <div class="sg-module">
+          <div class="module">
+            <div class="module__content module__srs">
+              <div class="srs">
+                <div class="srs__set">
+                  <span class="srs__label">Sec</span>
+                  <span class="srs__value">21</span>
+                </div>
+                <div class="srs__set">
+                  <span class="srs__label">Row</span>
+                  <span class="srs__value">13</span>
+                </div>
+                <div class="srs__set">
+                  <span class="srs__label">Seat</span>
+                  <span class="srs__value">23</span>
+                </div>
+              </div>
+            </div>
+            <div class="module__content">
+              <h1 class="heading-lined heading-lined--primary">Primary Heading</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <h2 class="heading-lined heading-lined--secondary">Secondary Heading</h2>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sg-subhdg">Perforated Edge</h3>
+        <p>This is a variant of a module that has a perforated edge.</p>
+        <div class="sg-module">
+          <div class="module module--perforated">
+            <div class="module__content module__srs">
+              <div class="srs">
+                <div class="srs__set">
+                  <span class="srs__label">Sec</span>
+                  <span class="srs__value">21</span>
+                </div>
+                <div class="srs__set">
+                  <span class="srs__label">Row</span>
+                  <span class="srs__value">13</span>
+                </div>
+                <div class="srs__set">
+                  <span class="srs__label">Seat</span>
+                  <span class="srs__value">23</span>
+                </div>
+              </div>
+            </div>
+            <div class="module__content">
+              <h1 class="heading-lined heading-lined--primary">Primary Heading</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <h2 class="heading-lined heading-lined--secondary">Secondary Heading</h2>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+          </div>
       </section>
 
       <section id="datestamp" class="sg-section">
@@ -2193,36 +2237,6 @@
                   <button class="button button--cta button--static">Checkout</button>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="perforated-frame" class="sg-section">
-        <h3 class="sg-hdg">Perforated Frame</h3>
-        <div class="sg-confirmation-headers-1">
-          <div class="perforated-frame">
-            <div class="perforated-frame__content">
-              <div class="srs">
-                <div class="srs__set">
-                  <span class="srs__label">Sec</span>
-                  <span class="srs__value">21</span>
-                </div>
-                <div class="srs__set">
-                  <span class="srs__label">Row</span>
-                  <span class="srs__value">13</span>
-                </div>
-                <div class="srs__set">
-                  <span class="srs__label">Seat</span>
-                  <span class="srs__value">23</span>
-                </div>
-              </div>
-            </div>
-            <div class="perforated-frame__content">
-              <h3 class="heading-lined heading-lined--primary">Primary Heading</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              <h3 class="heading-lined heading-lined--secondary">Secondary Heading</h3>
-              <p>Lorem ipsum dolor sit amet. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
           </div>
         </div>

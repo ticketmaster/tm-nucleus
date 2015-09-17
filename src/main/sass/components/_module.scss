@@ -1,9 +1,11 @@
-.perforated-frame {
+.module {
   @include drop-shadow();
 
   position: relative;
   background: $white;
+}
 
+.module--perforated {
   &:after {
     position: absolute;
     bottom: -3px;
@@ -15,10 +17,10 @@
   }
 }
 
-.perforated-frame__content {
+.module__content {
   @include inner-spacing($spacing-sm);
 }
 
-.perforated-frame__content + .perforated-frame__content {
-  border-top: $base-border-style;
+.module__srs {
+  border-bottom: $base-border-style;
 }
