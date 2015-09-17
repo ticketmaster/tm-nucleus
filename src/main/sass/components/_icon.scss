@@ -1,0 +1,15 @@
+.icon {
+  display: inline-block;
+}
+
+.icon--ada {
+  @include icon($brand-primary);
+}
+
+.icon--resale {
+  @include icon($brand-accent);
+}
+
+.icon--warning {
+  @include icon($brand-warning);
+}

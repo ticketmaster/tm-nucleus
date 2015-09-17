@@ -334,6 +334,10 @@ $sg-spacing: 1.5em;
   content: 'helen';
 }
 
+.sg-swatch--state.sg-swatch--malibu:before {
+  content: 'malibu';
+}
+
 .sg-swatch--state.sg-swatch--catalina:before {
   content: 'catalina';
 }
