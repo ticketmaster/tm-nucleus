@@ -14,7 +14,7 @@ $ npm start
 We then need to compile our files, so in another terminal enter:
 
 ```
-$ npm run prod
+$ npm run build
 ```
 You can now view the app at http://localhost:3000
 
