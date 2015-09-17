@@ -590,10 +590,10 @@ $sg-spacing: 1.5em;
   // padding: 10px;
 }
 
-.sg-confirmation-headers-1 {
+.sg-module {
   width: 100%;
 
-  @include breakpoint($bp-lg) {
+  @include breakpoint($bp-md) {
     width: 350px;
   }
 }
