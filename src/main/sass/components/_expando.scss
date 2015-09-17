@@ -1,0 +1,17 @@
+.expando__button {
+  @include unbutton($padding: 0);
+  line-height: 0;
+  vertical-align: middle;
+}
+
+.expando__chevron {
+  @include chevron($width: $expando-button-width-size, $height: $expando-button-height-size);
+  transition: $default-content-animation;
+  fill: $brand-gray2;
+}
+
+.expando__chevron-open {
+  transform: rotate(180deg);
+  transition: $default-content-animation;
+}
+

@@ -34,6 +34,7 @@
         <li><a href="#typography">Typography</a></li>
         <li><a href="#text-styles">Text Styles</a></li>
         <li><a href="#breakpoints">Breakpoints</a></li>
+        <li><a href="#expandossub">Expandos Sub Content</a></li>
         <li><a href="#grid">Grid</a></li>
         <li><a href="#page-structure">Page Structure</a></li>
         <li><a href="#spacing">Spacing</a></li>
@@ -2263,6 +2264,85 @@
         </div>
       </section>
 
+      <section id="expandossub" class="sg-section">
+        <h2 class="sg-hdg">Expandos</h2>
+        <p>This container is a variant of the &quot;toggle module&quot;. But rather than open/close a
+          module level item, this will open child content</p>
+        <p class="alt-copy">Please Note: The actual open/close will be controlled via a React component. Just make sure
+          the open/close states apply the proper styles denoted here. The following functionality will be the 'base' animation.
+          because the height of the content is dynamic, an external js source will handle the 'smoothing' of the animation.</p>
+
+
+        <section>
+          <strong class="sg-table-hdg">Sub Content Passive</strong>
+          <div class="expando">
+            <div class="split-content">
+              <div class="split-content__primary module__content">
+                <div class="product-info">2 Standard Tickets
+                  <button class="expando__button">
+                    <svg class="expando__chevron">
+                      <use xlink:href="img/sprite.svg#chevron"></use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="product-info__desc">$100.00 x 2</div>
+              </div>
+              <div class="split-content__secondary split-content__secondary--top module__content">
+                <div class="product-info">$200.00</div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section><strong class="sg-table-hdg">Sub Content Active</strong> (<span class="alt-copty">
+          <span class="show-expando-example">mouse over here to see open/close </span></span>)
+            <div class="expando">
+            <div class="split-content">
+              <div class="split-content__primary module__content">
+                <div class="product-info">2 Standard Tickets
+                  <button class="expando__button">
+                    <svg class="expando__chevron">
+                      <use xlink:href="img/sprite.svg#chevron"></use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="product-info__desc">$100.00 x 2</div>
+                <div class="expando-content product-info__desc">Center Level Seating Behind Third Bench Behind Ratchet Dugout</div>
+              </div>
+              <div class="split-content__secondary split-content__secondary--top module__content">
+                <div class="product-info">$200.00</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+            <pre class="sg-sample-code">
+Basically, we will initiate this rendering via a react component BUT regardless the implementation,
+all you need to do is make sure the following classes exist on your elements.
+
+&lt;!-- Close State --&gt;
+&lt;button class=&quot;<span class="sg-highlight-code">expando__button</span>&quot;&gt;
+  &lt;svg class=&quot;<span class="sg-highlight-code">expando__chevron</span>&quot;&gt;
+    &lt;use xlink:href=&quot;<span class="sg-highlight-code">img/sprite.svg#chevron</span>&quot;></use>
+
+
+&lt;!-- Content --&gt;
+&lt;div class=&quot;<span class="sg-highlight-code">expando-content</span>&quot;&gt;
+    Cener Level Seating Behind Third Bench Behind Ratchet Dugout&quot;/div>
+
+
+
+&lt;!-- Open State --&gt;
+&lt;button class=&quot;<span class="sg-highlight-code">expando__button</span>&quot;&gt;
+  &lt;svg class=&quot;<span class="sg-highlight-code">expando__chevron expando__chevron-open</span>&quot;&gt;
+    &lt;use xlink:href=&quot;<span class="sg-highlight-code">img/sprite.svg#chevron</span>&quot;></use>
+
+&lt;!-- Content --&gt;
+&lt;div class=&quot;<span class="sg-highlight-code">expando-content expando-content-open</span>&quot;&gt;
+  Cener Level Seating Behind Third Bench Behind Ratchet Dugout&quot;/div>
+
+            </pre>
+
+      </section>
       <section id="icons" class="sg-section">
         <h3 class="sg-hdg">Icons</h3>
         <p>A collection of icons</p>
@@ -2290,6 +2370,18 @@
       </section>
     </main>
   </div>
-
+  <script>
+    var expandoExample = document.getElementsByClassName('show-expando-example')[0];
+    var expandoIcon = document.getElementsByClassName('expando__chevron')[1];
+    var expandoPanel = document.getElementsByClassName('expando-content')[0];
+        expandoExample.addEventListener('mouseover', function(){
+            expandoIcon.classList.add('expando__chevron-open');
+            expandoPanel.classList.add('expando-content-open');
+        });
+        expandoExample.addEventListener('mouseout', function() {
+              expandoIcon.classList.remove('expando__chevron-open');
+              expandoPanel.classList.remove('expando-content-open');
+          });
+  </script>
 </body>
 </html>

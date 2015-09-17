@@ -43,6 +43,12 @@ $button-minor-padding-lg: 20px;
 // Quantity picker
 $qty-picker-button-size: 40px;
 
+
+// animation
+$default-content-animation-open: all .5s ease-out 0s;
+$default-content-animation: all .3s ease-in 0s;
+
+
 // Sizes
 $srs-min-width: 295px;
 $tooltip-caret: 15px;
@@ -50,6 +56,8 @@ $tooltip-caret-lg: 20px;
 $ism-tooltip-width: 315px;
 $chevron-width: 16px;
 $chevron-height: 10px;
+$expando-button-width-size: 13px;
+$expando-button-height-size: 8px;
 
 // Forms
 $textfield-gutter-left: 10px;
