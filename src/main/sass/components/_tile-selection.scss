@@ -16,11 +16,7 @@
   border: $tile-selected-style;
 }
 
-.tile-selection--selected__primary-heading {
+.tile-selection__selected-text {
   font-weight: bold;
-  color: $brand-primary;
-}
-
-.tile-selection--selected__secondary-heading {
   color: $brand-primary;
 }

@@ -34,7 +34,6 @@
         <li><a href="#typography">Typography</a></li>
         <li><a href="#text-styles">Text Styles</a></li>
         <li><a href="#breakpoints">Breakpoints</a></li>
-        <li><a href="#expandossub">Expandos Sub Content</a></li>
         <li><a href="#grid">Grid</a></li>
         <li><a href="#page-structure">Page Structure</a></li>
         <li><a href="#spacing">Spacing</a></li>
@@ -53,6 +52,7 @@
         <li><a href="#event-header">Event Header</a></li>
         <li><a href="#event-footer">Event Footer</a></li>
         <li><a href="#ism-tooltip">ISM Tooltips</a></li>
+        <li><a href="#expando">Expando</a></li>
         <li><a href="#icons">Icons</a></li>
       </ol>
     </nav>
@@ -1022,16 +1022,16 @@
           <tr>
             <td>
               <div class="qty-picker">
-                <button class="qty-picker__button">
-                  <svg class="qty-picker__icon qty-picker__icon--decrement">
+                <button class="qty-picker__button qty-picker__button--decrement">
+                  <svg class="icon-minus qty-picker__icon-minus">
                     <use xlink:href="img/sprite.svg#icon-minus"></use>
                   </svg>
                 </button>
                 <div class="qty-picker__number">
                   2
                 </div>
-                <button class="qty-picker__button">
-                  <svg class="qty-picker__icon">
+                <button class="qty-picker__button qty-picker__button--increment">
+                  <svg class="icon-plus qty-picker__icon-plus">
                     <use xlink:href="img/sprite.svg#icon-plus"></use>
                   </svg>
                 </button>
@@ -1044,16 +1044,16 @@
           <tr>
             <td>
               <div class="qty-picker">
-                <button disabled class="qty-picker__button">
-                  <svg class="qty-picker__icon qty-picker__icon--decrement qty-picker__icon--disabled">
+                <button disabled class="qty-picker__button qty-picker__button--decrement">
+                  <svg class="icon-minus qty-picker__icon-minus">
                     <use xlink:href="img/sprite.svg#icon-minus"></use>
                   </svg>
                 </button>
                 <div class="qty-picker__number qty-picker__number--disabled">
-                  1
+                  0
                 </div>
-                <button class="qty-picker__button">
-                  <svg class="qty-picker__icon">
+                <button class="qty-picker__button qty-picker__button--increment">
+                  <svg class="icon-plus qty-picker__icon-plus">
                     <use xlink:href="img/sprite.svg#icon-plus"></use>
                   </svg>
                 </button>
@@ -1066,16 +1066,16 @@
           <tr>
             <td>
               <div class="qty-picker">
-                <button disabled class="qty-picker__button">
-                  <svg class="qty-picker__icon qty-picker__icon--decrement">
+                <button class="qty-picker__button qty-picker__button--decrement">
+                  <svg class="icon-minus qty-picker__icon-minus">
                     <use xlink:href="img/sprite.svg#icon-minus"></use>
                   </svg>
                 </button>
                 <div class="qty-picker__number">
                   50
                 </div>
-                <button disabled class="qty-picker__button">
-                  <svg class="qty-picker__icon qty-picker__icon--increment qty-picker__icon--disabled">
+                <button disabled class="qty-picker__button qty-picker__button--increment">
+                  <svg class="icon-plus qty-picker__icon-plus">
                     <use xlink:href="img/sprite.svg#icon-plus"></use>
                   </svg>
                 </button>
@@ -1321,7 +1321,7 @@
             <label for="state" class="input-group__label">
               State <span class="input-group__required">*</span>
             </label>
-            <svg class="dropdown__chevron">
+            <svg class="icon-chevron icon-chevron dropdown__icon-chevron">
               <use xlink:href="img/sprite.svg#icon-chevron"></use>
             </svg>
           </div>
@@ -1340,7 +1340,7 @@
   &lt;label for="state" class="input-group__label"&gt;
     State &lt;span class="input-group__required"&gt;*&lt;/span&gt;
   &lt;/label&gt;
-  &lt;svg class="<span class="sg-highlight-code">dropdown__chevron</span>"&gt;
+  &lt;svg class="<span class="sg-highlight-code">icon-chevron dropdown__icon-chevron</span>"&gt;
     &lt;use xlink:href="img/sprite.svg#icon-chevron"&gt;
   &lt;/svg&gt;
 &lt;/div&gt;
@@ -1361,7 +1361,7 @@
             <label for="state" class="input-group__label">
               State <span class="input-group__required">*</span>
             </label>
-            <svg class="dropdown__chevron">
+            <svg class="icon-chevron dropdown__icon-chevron">
               <use xlink:href="img/sprite.svg#icon-chevron">
             </svg>
           </div>
@@ -1380,7 +1380,7 @@
   &lt;label for="state" class="input-group__label"&gt;
     State &lt;span class="input-group__required"&gt;*&lt;/span&gt;
   &lt;/label&gt;
-  &lt;svg class="dropdown__chevron"&gt;
+  &lt;svg class="icon-chevron dropdown__icon-chevron"&gt;
     &lt;use xlink:href="img/sprite.svg#icon-chevron"&gt;
   &lt;/svg&gt;
 &lt;/div&gt;
@@ -1401,7 +1401,7 @@
             <label for="state" class="input-group__label">
               State <span class="input-group__required">*</span>
             </label>
-            <svg class="dropdown__chevron">
+            <svg class="icon-chevron dropdown__icon-chevron">
               <use xlink:href="img/sprite.svg#icon-chevron">
             </svg>
           </div>
@@ -1420,7 +1420,7 @@
   &lt;label for="state" class="input-group__label"&gt;
     State &lt;span class="input-group__required"&gt;*&lt;/span&gt;
   &lt;/label&gt;
-  &lt;svg class="dropdown__chevron"&gt;
+  &lt;svg class="icon-chevron dropdown__icon-chevron"&gt;
     &lt;use xlink:href="img/sprite.svg#icon-chevron"&gt;
   &lt;/svg&gt;
 &lt;/div&gt;
@@ -1431,14 +1431,20 @@
       <section id="tiles" class="sg-section">
         <h2 class="sg-hdg">Tile Selections</h2>
 
-        <h3 class="sg-subhdg3">Selected Tile:</h3>
+        <h3 class="sg-subhdg3">Default Tile</h3>
+        <div class="tile-selection is-clickable">
+          <div class="split-content tile-selection__content">
+            -2350 EXP 11/15
+          </div>
+        </div>
 
+        <h3 class="sg-subhdg3">Selected Tile</h3>
         <div class="tile-selection tile-selection--selected is-clickable">
           <div class="split-content tile-selection__content">
-            <div class="split-content__primary tile-selection--selected__primary-heading">
+            <div class="split-content__primary tile-selection__selected-text">
               -2350 EXP 11/15
             </div>
-            <div class="split-content__secondary tile-selection--selected__secondary-heading">
+            <div class="split-content__secondary">
               <button class="button-aux button-aux--minor">Edit</button>
             </div>
           </div>
@@ -1447,43 +1453,34 @@
           </div>
         </div>
 
-        <h3 class="sg-subhdg3">Un-Selected Tile:</h3>
-
-        <div class="tile-selection is-clickable">
-          <div class="split-content tile-selection__content">
-            -2350 EXP 11/15
-          </div>
-        </div>
-
         <pre class="sg-sample-code">
+&lt;div class="<span class="sg-highlight-code">tile-selection is-clickable</span>"&gt;
+  &lt;div class="<span class="sg-highlight-code">tile-selection__content</span>"&gt;
+    -2350 EXP 11/15
+  &lt;/div&gt;
+&lt;/div&gt;
+
 &lt;div class="<span class="sg-highlight-code">tile-selection tile-selection--selected is-clickable</span>"&gt;
   &lt;div class="split-content <span class="sg-highlight-code">tile-selection__content</span>"&gt;
-    &lt;div class="split-content__primary <span class="sg-highlight-code">tile-selection--selected__primary-heading</span>"&gt;
-      Primary Heading
+    &lt;div class="split-content__primary <span class="sg-highlight-code">tile-selection--selected-text</span>"&gt;
+      [...]
     &lt;/div&gt;
-    &lt;div class="split-content__secondary <span class="sg-highlight-code">tile-selection--selected__secondary-heading</span>"&gt;
-      Secondary Heading
+    &lt;div class="split-content__secondary"&gt;
+      &lt;button class="button-aux button-aux--minor"&gt;Edit&lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;div class="<span class="sg-highlight-code">tile-selection__content</span>"&gt;
       Content
   &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div class="<span class="sg-highlight-code">tile-selection is-clickable</span>"&gt;
-  &lt;div class="<span class="sg-highlight-code">tile-selection__content</span>"&gt;
-    -2350 EXP 11/15
-  &lt;/div&gt;
-&lt;/div&gt;
         </pre>
 
-        <h3 class="sg-subhdg3">Tile rendered as a list</h3>
+        <p>Typically, tiles will be rendered as a list of options.</p>
 
-        <ul class="sg-unstyled-list">
+        <ul class="unstyled-list">
           <li class="tile-selection tile-selection--selected is-clickable">
             <div class="split-content tile-selection__content">
-              <div class="split-content__primary tile-selection--selected__primary-heading">
-                -2350 EXP 11/15
+              <div class="split-content__primary tile-selection__selected-text">
                 -2350 EXP 11/15
               </div>
               <div class="split-content__secondary tile-selection--selected__secondary-heading">
@@ -1506,15 +1503,17 @@
           </li>
         </ul>
 
+        <p>To do this, simply incorporate the tile classes into a list.</p>
+
         <pre class="sg-sample-code">
-&lt;ul class="sg-unstyled-list"&gt;
+&lt;ul class="unstyled-list"&gt;
   &lt;li class="<span class="sg-highlight-code">tile-selection tile-selection--selected is-clickable</span>"&gt;
     &lt;div class="split-content <span class="sg-highlight-code">tile-selection__content</span>"&gt;
-      &lt;div class="split-content__primary <span class="sg-highlight-code">tile-selection--selected__primary-heading</span>"&gt;
-        Primary Heading
+      &lt;div class="split-content__primary <span class="sg-highlight-code">tile-selection--selected-text</span>"&gt;
+        [...]
       &lt;/div&gt;
-      &lt;div class="split-content__secondary <span class="sg-highlight-code">tile-selection--selected__secondary-heading</span>"&gt;
-        Secondary Heading
+      &lt;div class="split-content__secondary"&gt;
+        &lt;button class="button-aux button-aux--minor"&gt;Edit&lt;/button&gt;
       &lt;/div&gt;
     &lt;/div&gt;
     &lt;div class="<span class="sg-highlight-code">tile-selection__content</span>"&gt;
@@ -2144,16 +2143,16 @@
                   </div>
                   <div class="split-content__secondary">
                     <div class="qty-picker">
-                      <button class="qty-picker__button">
-                        <svg class="qty-picker__icon qty-picker__icon--decrement">
+                      <button class="qty-picker__button qty-picker__button--decrement">
+                        <svg class="icon-minus qty-picker__icon-minus">
                           <use xlink:href="img/sprite.svg#icon-minus"></use>
                         </svg>
                       </button>
                       <div class="qty-picker__number">
                         2
                       </div>
-                      <button class="qty-picker__button">
-                        <svg class="qty-picker__icon">
+                      <button class="qty-picker__button qty-picker__button--increment">
+                        <svg class="icon-plus qty-picker__icon-plus">
                           <use xlink:href="img/sprite.svg#icon-plus"></use>
                         </svg>
                       </button>
@@ -2169,16 +2168,16 @@
                   </div>
                   <div class="split-content__secondary">
                     <div class="qty-picker">
-                      <button class="qty-picker__button">
-                        <svg class="qty-picker__icon qty-picker__icon--decrement">
+                      <button class="qty-picker__button qty-picker__button--decrement">
+                        <svg class="icon-minus qty-picker__icon-minus">
                           <use xlink:href="img/sprite.svg#icon-minus"></use>
                         </svg>
                       </button>
                       <div class="qty-picker__number">
                         2
                       </div>
-                      <button class="qty-picker__button">
-                        <svg class="qty-picker__icon">
+                      <button class="qty-picker__button qty-picker__button--increment">
+                        <svg class="icon-plus qty-picker__icon-plus">
                           <use xlink:href="img/sprite.svg#icon-plus"></use>
                         </svg>
                       </button>
@@ -2230,16 +2229,16 @@
                   </div>
                   <div class="split-content__secondary">
                     <div class="qty-picker">
-                      <button class="qty-picker__button">
-                        <svg class="qty-picker__icon qty-picker__icon--decrement">
+                      <button class="qty-picker__button qty-picker__button--decrement">
+                        <svg class="icon-minus qty-picker__icon-minus">
                           <use xlink:href="img/sprite.svg#icon-minus"></use>
                         </svg>
                       </button>
                       <div class="qty-picker__number">
                         2
                       </div>
-                      <button class="qty-picker__button">
-                        <svg class="qty-picker__icon">
+                      <button class="qty-picker__button qty-picker__button--increment">
+                        <svg class="icon-plus qty-picker__icon-plus">
                           <use xlink:href="img/sprite.svg#icon-plus"></use>
                         </svg>
                       </button>
@@ -2264,119 +2263,118 @@
         </div>
       </section>
 
-      <section id="expandossub" class="sg-section">
-        <h2 class="sg-hdg">Expandos</h2>
-        <p>This container is a variant of the &quot;toggle module&quot;. But rather than open/close a
-          module level item, this will open child content</p>
-        <p class="alt-copy">Please Note: The actual open/close will be controlled via a React component. Just make sure
-          the open/close states apply the proper styles denoted here. The following functionality will be the 'base' animation.
-          because the height of the content is dynamic, an external js source will handle the 'smoothing' of the animation.</p>
+      <section id="expando" class="sg-section">
+        <h2 class="sg-hdg">Expando</h2>
+        <p>An expando is essentially a button that toggles a block of content open and close.</p>
+        <p>Hover over &quot;2 Standard Tickets&quot; to see it in action.</p>
 
+        <div class="product-info">
+          <div class="product-info__title chevron-expando-example">
+            2 Standard Tickets
+            <button class="expando-button">
+              <svg class="icon-chevron expando-button__icon-chevron">
+                <use xlink:href="img/sprite.svg#icon-chevron"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="product-info__desc">
+            $100.00 x 2
+          </div>
+          <div class="expando-content product-info__desc">Center Level Seating Behind Third Bench Behind Ratchet Dugout</div>
+        </div>
 
-        <section>
-          <strong class="sg-table-hdg">Sub Content Passive</strong>
-          <div class="expando">
-            <div class="split-content">
-              <div class="split-content__primary module__content">
-                <div class="product-info">2 Standard Tickets
-                  <button class="expando__button">
-                    <svg class="expando__chevron">
-                      <use xlink:href="img/sprite.svg#icon-chevron"></use>
-                    </svg>
-                  </button>
-                </div>
-                <div class="product-info__desc">$100.00 x 2</div>
-              </div>
-              <div class="split-content__secondary split-content__secondary--top module__content">
-                <div class="product-info">$200.00</div>
-              </div>
+        <pre class="sg-sample-code">
+&lt;div class="product-info"&gt;
+  &lt;div class="product-info__title show-expando-example"&gt;
+    2 Standard Tickets
+    &lt;button class="<span class="sg-highlight-code">expando-button</span>"&gt;
+      &lt;svg class="icon-chevron <span class="sg-highlight-code">expando-button__icon-chevron</span>"&gt;
+        &lt;use xlink:href="img/sprite.svg#icon-chevron"&gt;&lt;/use&gt;
+      &lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="product-info__desc"&gt;
+    $100.00 x 2
+  &lt;/div&gt;
+  &lt;div class="<span class="sg-highlight-code">expando-content</span> product-info__desc"&gt;
+    [...]
+  &lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+
+        <p>The expanded state is activated by adding two classes.</p>
+        <pre class="sg-sample-code">
+&lt;div class="product-info"&gt;
+  &lt;div class="product-info__title show-expando-example"&gt;
+    2 Standard Tickets
+    &lt;button class="expando-button"&gt;
+      &lt;svg class="icon-chevron expando-button__icon-chevron <span class="sg-highlight-code">expando-button__icon-chevron--open</span>"&gt;
+        &lt;use xlink:href="img/sprite.svg#icon-chevron"&gt;&lt;/use&gt;
+      &lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="product-info__desc"&gt;
+    $100.00 x 2
+  &lt;/div&gt;
+  &lt;div class="expando-content <span class="sg-highlight-code">expando-content--open</span> product-info__desc"&gt;
+    [...]
+  &lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+
+        <p>This is the most basic version of the pattern. You may need to make additional styling modifications for your use cases.</p>
+
+        <h3 class="sg-subhdg">Variant</h3>
+
+        <div class="tile-selection is-clickable">
+          <div class="split-content tile-selection__content">
+            <div class="split-content__primary">
+              Some Title
+            </div>
+            <div class="split-content__secondary">
+              <button class="expando-button expando-button--container">
+                <svg class="icon-plus icon-plus--circled">
+                  <use xlink:href="img/sprite.svg#icon-plus"></use>
+                </svg>
+              </button>
             </div>
           </div>
-        </section>
-        <section><strong class="sg-table-hdg">Sub Content Active</strong> (<span class="alt-copty">
-          <span class="show-expando-example">mouse over here to see open/close </span></span>)
-            <div class="expando">
-            <div class="split-content">
-              <div class="split-content__primary module__content">
-                <div class="product-info">2 Standard Tickets
-                  <button class="expando__button">
-                    <svg class="expando__chevron">
-                      <use xlink:href="img/sprite.svg#icon-chevron"></use>
-                    </svg>
-                  </button>
-                </div>
-                <div class="product-info__desc">$100.00 x 2</div>
-                <div class="expando-content product-info__desc">Center Level Seating Behind Third Bench Behind Ratchet Dugout</div>
-              </div>
-              <div class="split-content__secondary split-content__secondary--top module__content">
-                <div class="product-info">$200.00</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-            <pre class="sg-sample-code">
-Basically, we will initiate this rendering via a react component BUT regardless the implementation,
-all you need to do is make sure the following classes exist on your elements.
-
-&lt;!-- Close State --&gt;
-&lt;button class=&quot;<span class="sg-highlight-code">expando__button</span>&quot;&gt;
-  &lt;svg class=&quot;<span class="sg-highlight-code">expando__chevron</span>&quot;&gt;
-    &lt;use xlink:href=&quot;<span class="sg-highlight-code">img/sprite.svg#icon-chevron</span>&quot;></use>
-
-
-&lt;!-- Content --&gt;
-&lt;div class=&quot;<span class="sg-highlight-code">expando-content</span>&quot;&gt;
-    Cener Level Seating Behind Third Bench Behind Ratchet Dugout&quot;/div>
-
-
-
-&lt;!-- Open State --&gt;
-&lt;button class=&quot;<span class="sg-highlight-code">expando__button</span>&quot;&gt;
-  &lt;svg class=&quot;<span class="sg-highlight-code">expando__chevron expando__chevron-open</span>&quot;&gt;
-    &lt;use xlink:href=&quot;<span class="sg-highlight-code">img/sprite.svg#icon-chevron</span>&quot;></use>
-
-&lt;!-- Content --&gt;
-&lt;div class=&quot;<span class="sg-highlight-code">expando-content expando-content-open</span>&quot;&gt;
-  Cener Level Seating Behind Third Bench Behind Ratchet Dugout&quot;/div>
-
-            </pre>
-
+        </div>
       </section>
+
       <section id="icons" class="sg-section">
         <h3 class="sg-hdg">Icons</h3>
-        <p>A collection of icons</p>
         <table class="sg-table">
           <tbody>
             <tr>
               <td>
-                <svg class="icon icon--ada">
+                <svg class="icon-ada">
                   <use xlink:href="img/sprite.svg#icon-ada"></use>
                 </svg>
               </td>
               <td>
-                <svg class="icon icon--resale">
+                <svg class="icon-chevron">
+                  <use xlink:href="img/sprite.svg#icon-chevron"></use>
+                </svg>
+              </td>
+              <td>
+                <svg class="icon-minus">
+                  <use xlink:href="img/sprite.svg#icon-minus"></use>
+                </svg>
+              </td>
+              <td>
+                <svg class="icon-plus">
+                  <use xlink:href="img/sprite.svg#icon-plus"></use>
+                </svg>
+              </td>
+              <td>
+                <svg class="icon-resale">
                   <use xlink:href="img/sprite.svg#icon-resale"></use>
                 </svg>
               </td>
               <td>
-                <svg class="icon icon--warning">
+                <svg class="icon-warning">
                   <use xlink:href="img/sprite.svg#icon-warning"></use>
-                </svg>
-              </td>
-              <td>
-                <svg class="icon icon--container-plus">
-                  <use xlink:href="img/sprite.svg#icon-container-plus"></use>
-                </svg>
-              </td>
-              <td>
-                <svg class="icon icon--container-minus">
-                  <use xlink:href="img/sprite.svg#icon-container-minus"></use>
-                </svg>
-              </td>
-              <td>
-                <svg class="icon icon--chevron">
-                  <use xlink:href="img/sprite.svg#icon-chevron"></use>
                 </svg>
               </td>
             </tr>
@@ -2386,16 +2384,16 @@ all you need to do is make sure the following classes exist on your elements.
     </main>
   </div>
   <script>
-    var expandoExample = document.getElementsByClassName('show-expando-example')[0];
-    var expandoIcon = document.getElementsByClassName('expando__chevron')[1];
+    var expandoExample = document.getElementsByClassName('chevron-expando-example')[0];
+    var expandoIcon = document.getElementsByClassName('expando-button__icon-chevron')[0];
     var expandoPanel = document.getElementsByClassName('expando-content')[0];
         expandoExample.addEventListener('mouseover', function(){
-            expandoIcon.classList.add('expando__chevron-open');
-            expandoPanel.classList.add('expando-content-open');
+            expandoIcon.classList.add('expando-button__icon-chevron--open');
+            expandoPanel.classList.add('expando-content--open');
         });
         expandoExample.addEventListener('mouseout', function() {
-              expandoIcon.classList.remove('expando__chevron-open');
-              expandoPanel.classList.remove('expando-content-open');
+              expandoIcon.classList.remove('expando-button__icon-chevron--open');
+              expandoPanel.classList.remove('expando-content--open');
           });
   </script>
 </body>

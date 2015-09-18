@@ -1,7 +1,7 @@
 @mixin base-textfield() {
   width: 100%;
   border: 0;
-  border-bottom: $textfield-border-style;
+  border-bottom: $input-border-style;
 
   &.is-error-field {
     color: $brand-alert;

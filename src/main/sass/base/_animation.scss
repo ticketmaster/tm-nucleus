@@ -2,6 +2,10 @@
 $text-enter: all 0.5s ease-in;
 $text-leave: all 0.5s ease-in;
 $form-label-animation: all 0.15s ease-out 0s;
+$expando-animation-open: all .5s ease-out 0s;
+$expando-animation: all .3s ease-in 0s;
+
+
 
 @keyframes spin {
   100% {

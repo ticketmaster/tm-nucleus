@@ -1,17 +1,22 @@
-.expando__button {
+.expando-button {
   @include unbutton($padding: 0);
+
   line-height: 0;
   vertical-align: middle;
 }
 
-.expando__chevron {
-  @include chevron($width: $expando-button-width-size, $height: $expando-button-height-size);
-  transition: $default-content-animation;
-  fill: $brand-gray2;
+.expando-button--container {
+  width: 19px;
+  height: 19px;
+  border: $input-border-style;
+  border-radius: 100%;
 }
 
-.expando__chevron-open {
+.expando-button__icon-chevron {
+  transition: $expando-animation;
+}
+
+.expando-button__icon-chevron--open {
   transform: rotate(180deg);
-  transition: $default-content-animation;
+  transition: $expando-animation;
 }
-
