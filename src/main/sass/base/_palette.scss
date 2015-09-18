@@ -36,8 +36,7 @@ $palette: (
     'ridge':    $brand-gray4
   ),
   'blue': (
-    'pacific':  $brand-primary,
-    'havasu':   get-lighter($brand-primary, 90%)
+    'pacific':  $brand-primary
   ),
   'green': (
     'yosemite': $brand-cta,
@@ -49,7 +48,7 @@ $palette: (
     'helen':    $brand-alert
   ),
   'yellow': (
-    'malibu':    $brand-warning
+    'malibu':   $brand-warning
   )
 );
 
