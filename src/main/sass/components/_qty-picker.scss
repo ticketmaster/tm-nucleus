@@ -6,21 +6,39 @@
 .qty-picker__button {
   @include unbutton($padding: 0);
 
-  line-height: 0;
-}
-
-.qty-picker__icon {
   width: $qty-picker-button-size;
   height: $qty-picker-button-size;
-  fill: $brand-primary;
+  line-height: 0;
+  background: $brand-primary;
+  border-radius: 100%;
 
   &:hover {
-    fill: $brand-primary-darker25;
+    background: $brand-primary-darker25;
   }
 }
 
-.qty-picker__icon--decrement {
-  fill: $brand-gray2;
+.qty-picker__button--decrement {
+  background: $brand-gray2;
+
+  &:hover {
+    background: $brand-gray2-darker25;
+  }
+}
+
+.qty-picker__button--decrement[disabled],
+.qty-picker__number--disabled {
+  visibility: hidden;
+}
+
+.qty-picker__button--increment[disabled] {
+  background: $brand-primary-lighter75;
+}
+
+.qty-picker__icon-minus,
+.qty-picker__icon-plus {
+  width: 18px;
+  height: 18px;
+  fill: $white;
 }
 
 .qty-picker__number {
@@ -35,18 +53,5 @@
 
   &:hover {
     text-decoration: none;
-  }
-}
-
-.qty-picker__icon--decrement.qty-picker__icon--disabled,
-.qty-picker__number--disabled {
-  visibility: hidden;
-}
-
-.qty-picker__icon--increment.qty-picker__icon--disabled {
-  fill: $brand-primary-lighter75;
-
-  &:hover {
-    fill: $brand-primary-lighter75;
   }
 }

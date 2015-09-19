@@ -1,0 +1,7 @@
+// mixin to icons
+@mixin icon($fill, $width: $base-icon-size, $height: $base-icon-size) {
+  display: inline-block;
+  width: $width;
+  height: $height;
+  fill: $fill;
+}

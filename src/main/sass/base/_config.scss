@@ -6,7 +6,7 @@ $spacing-ratio: 1.5;
 
 // Borders
 $base-border-style: 1px solid $brand-gray3;
-$textfield-border-style: 1px solid $brand-gray2;
+$input-border-style: 1px solid $brand-gray2;
 $focused-border-style: 1px solid $brand-primary;
 $error-border-style: 1px solid $brand-alert;
 $outline-style: 3px solid $outline-color;
@@ -43,22 +43,13 @@ $button-minor-padding-lg: 20px;
 // Quantity picker
 $qty-picker-button-size: 40px;
 
-
-// animation
-$default-content-animation-open: all .5s ease-out 0s;
-$default-content-animation: all .3s ease-in 0s;
-
-
 // Sizes
 $srs-min-width: 295px;
 $tooltip-caret: 15px;
 $tooltip-caret-lg: 20px;
 $ism-tooltip-width: 315px;
-$chevron-width: 16px;
-$chevron-height: 10px;
 $icon-container-plus-minus: 22px;
-$expando-button-width-size: 13px;
-$expando-button-height-size: 8px;
+$base-icon-size: 16px;
 
 // Forms
 $textfield-gutter-left: 10px;

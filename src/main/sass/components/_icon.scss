@@ -1,16 +1,29 @@
-.icon {
-  display: inline-block;
-}
-
-.icon--ada {
+.icon-ada {
   @include icon($brand-primary);
 }
 
-.icon--resale {
+.icon-chevron {
+  @include icon($brand-gray2, 13px, 8px);
+}
+
+.icon-minus {
+  @include icon($brand-gray2);
+}
+
+.icon-plus {
+  @include icon($brand-gray2);
+}
+
+.icon-plus--circled {
+  width: 9px;
+  height: 9px;
+}
+
+.icon-resale {
   @include icon($brand-accent);
 }
 
-.icon--warning {
+.icon-warning {
   @include icon($brand-warning);
 }
 
