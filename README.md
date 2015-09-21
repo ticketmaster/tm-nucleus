@@ -2,6 +2,9 @@
 
 ![alt tag](nucleus.jpg)
 
+## Changelog
+Release notes can be found in our [changelog](CHANGELOG.md).
+
 ## Getting Started
 In your terminal, enter the following from within the nucleus directory:
 
