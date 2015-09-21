@@ -1,7 +1,9 @@
-TM Nucleus changelog
+Changelog
+=========
 
-v0.1.0 (unreleased)
-New Features
+**Unreleased**
+---------
+**New Features**
 - Switch to semantic version numbering (see: http://semver.org/)
 - Add new form-label() mixin. Update .input-group__label classes to refer to
   said mixin.
