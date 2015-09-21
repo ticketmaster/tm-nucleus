@@ -28,7 +28,8 @@
   }
 }
 
-// usage examples/documentation for everything below?
+// TODO: verify this is needed
+// DO NOT USE
 .input-group__text-field-cin {
   @include responsive-font('lg');
   @include textfield-underline();
@@ -48,6 +49,8 @@
   }
 }
 
+// TODO: verify this is needed
+// DO NOT USE
 .input-group__text-field-box {
   @include responsive-font('lg');
   @include textfield-box();
@@ -119,10 +122,9 @@
 .input-group__text-field-cin.has-content + .input-group__label,
 .input-group__text-field-box.has-content + .input-group__label,
 .dropdown__select.has-content + .input-group__label {
-  @include responsive-font('xs');
+  @include form-label();
 
   bottom: $input-label-bottom-active;
-  color: $brand-gray2;
 }
 
 .input-group__text-field:active + .input-group__label,
@@ -135,8 +137,7 @@
 .input-group__text-field.has-content:focus + .input-group__label,
 .dropdown__select.has-content:active + .input-group__label,
 .dropdown__select.has-content:focus + .input-group__label {
-  @include responsive-font('xs');
+  @include form-label($brand-primary);
 
   bottom: $input-label-bottom-active;
-  color: $brand-primary;
 }

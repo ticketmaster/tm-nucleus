@@ -1,3 +1,9 @@
+@mixin form-label($color: $brand-gray2) {
+  @include responsive-font('xs');
+
+  color: $color;
+}
+
 @mixin base-textfield() {
   width: 100%;
   border: 0;
@@ -24,13 +30,14 @@
   box-shadow: none;
 }
 
-@mixin textfield-box() {
-  @include base-textfield();
-}
-
-
 @mixin textfield-active() {
   border-bottom-color: $brand-primary;
   outline: none;
   background: none;
+}
+
+// TODO: verify this is needed
+// DO NOT USE
+@mixin textfield-box() {
+  @include base-textfield();
 }
