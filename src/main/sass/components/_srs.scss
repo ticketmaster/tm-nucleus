@@ -15,7 +15,7 @@
     text-align: left;
   }
 
-  &:last-child {
+  &:last-child:not(:first-child){
     text-align: right;
   }
 }
@@ -38,4 +38,8 @@
 
   font-weight: bold;
   color: $brand-gray;
+}
+
+.srs__ga {
+  display: block;
 }
