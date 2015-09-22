@@ -11,7 +11,7 @@
 
   &.is-error-field {
     color: $brand-alert;
-    border-bottom: $error-border-style;
+    border-bottom: $alert-border-style;
   }
 
   &.is-error-field + .input-group__label,

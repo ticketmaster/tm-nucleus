@@ -5,9 +5,16 @@ Changelog
 ---------
 **New Features**
 - Switch to semantic version numbering (see: http://semver.org/)
-- Add new form-label() mixin. Update .input-group__label classes to refer to
+- Add new `form-label()` mixin. Update `.input-group__label` classes to refer to
   said mixin.
 - Add General Admission version of SRS.
 
 **Changes**
 - Rename `event-footer` to `cart`
+- Add `$overlay-color` to palette.scss
+- Add success-dialog, warning-dialog, alert-dialog, and modal-dialog
+
+**Fixes**
+- Remove `$icon-container-plus-minus` variable
+- Remove `.icon--container-plus` and `.icon--container-minus` classes
+- Add missing `@import legal-copy` to `components/_all.scss`

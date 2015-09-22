@@ -1,0 +1,15 @@
+.success-dialog {
+  border: $success-border-style;
+}
+
+.success-dialog__header {
+  background-color: $brand-cta;
+}
+
+.success-dialog__title {
+  @include dialog-title('sm');
+}
+
+.success-dialog__content {
+  @include dialog-content();
+}

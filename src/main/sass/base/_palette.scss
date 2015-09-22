@@ -74,6 +74,7 @@ $brand-accent-darker25:   get-darker($brand-accent, 25%);
 // misc
 $tooltip-color: $white;
 $transparent-color: rgba($white, 0);
+$overlay-color: rgba($black, 0.75);
 $outline-color: $brand-primary-lighter75;
 $shadow-color: rgba($black, 0.5);
 $perforated-shadow-color: rgba($black, 0.25);

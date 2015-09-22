@@ -1,0 +1,15 @@
+.alert-dialog {
+  border: $alert-border-style;
+}
+
+.alert-dialog__header {
+  background-color: $brand-alert;
+}
+
+.alert-dialog__title {
+  @include dialog-title('sm');
+}
+
+.alert-dialog__content {
+  @include dialog-content();
+}
