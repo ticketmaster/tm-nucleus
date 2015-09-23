@@ -167,7 +167,7 @@ function watchFiles() {
   function monitor() {
     gulp.watch(src.html, reload);
     gulp.watch(src.scss, ['compile:sass']);
-    gulp.watch(src.svg, ['compile:svg'], reload);
+    gulp.watch(src.svg, ['compile:svg', reload]);
   }
   return monitor;
 }
