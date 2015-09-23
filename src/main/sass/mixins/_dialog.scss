@@ -1,0 +1,15 @@
+@mixin dialog-title($size) {
+  @include responsive-font($size);
+  @include inner-spacing($spacing-sm);
+
+  font-weight: normal;
+  color: $white;
+}
+
+@mixin dialog-content($color: $brand-gray, $pad: $spacing-sm) {
+  @include responsive-font('sm');
+  @include inner-spacing($pad);
+
+  color: $color;
+  background-color: $white;
+}

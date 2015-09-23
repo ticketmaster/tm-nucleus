@@ -46,6 +46,7 @@
         <li><a href="#srs">Sec-Row-Seat</a></li>
         <li><a href="#split-content">Split Content</a></li>
         <li><a href="#product-info">Product Information</a></li>
+        <li><a href="#dialogs">Dialogs</a></li>
         <li><a href="#module">Module</a></li>
         <li><a href="#datestamp">Datestamp</a></li>
         <li><a href="#timer">Timer</a></li>
@@ -157,10 +158,7 @@
             <div class="sg-swatch sg-swatch--malibu"></div>
             <div class="sg-swatch-info">
               <span class="sg-swatch-name">malibu</span>
-              <code class="sg-code">$brand-warning</code>
-              <ul class="sg-list sg-swatch-usage">
-                <li>Warning</li>
-              </ul>
+              <code class="sg-code">$brand-caution</code>
             </div>
           </div>
 
@@ -1785,9 +1783,67 @@
         <p>Note that we are <em>not</em> using a BEM modifier class here.</p>
       </section>
 
+      <section id="dialogs" class="sg-section">
+        <h2 class="sg-hdg">Dialog</h2>
+        <p>These are not ready for use and need to be finalized with Design.</p>
+
+        <div class="sg-dialog">
+          <div class="success-dialog">
+            <div class="success-dialog__header">
+              <h1 class="success-dialog__title">Dialog title</h1>
+            </div>
+            <div class="success-dialog__content">
+              <p>Dialog content goes here.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sg-dialog">
+          <div class="caution-dialog">
+            <div class="caution-dialog__header">
+              <h1 class="caution-dialog__title">Dialog title</h1>
+            </div>
+            <div class="caution-dialog__content">
+              <p>Dialog content goes here.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sg-dialog">
+          <div class="alert-dialog">
+            <div class="alert-dialog__header">
+              <h1 class="alert-dialog__title">Dialog title</h1>
+            </div>
+            <div class="alert-dialog__content">
+              <p>Dialog content goes here.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sg-subhdg">Modal Dialog</h3>
+        <p>A modal dialog is a type of dialog that sits on an overlay above the page. It blocks the use of the page behind it.</p>
+
+        <div class="sg-dialog-modal">
+          <div class="modal-dialog">
+            <div class="modal-dialog__header">
+              <h1 class="modal-dialog__title">Modal title</h1>
+              <button class="modal-dialog__close">
+                <svg class="modal-dialog__close-indicator">
+                  <use xlink:href="img/sprite.svg#icon-plus"></use>
+                </svg>
+              </button>
+            </div>
+            <div class="modal-dialog__content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="module" class="sg-section">
         <h2 class="sg-hdg">Module</h2>
         <p>Modules are containers with a drop-shadow applied.</p>
+
         <div class="sg-module">
           <div class="module">
             <div class="module__content module__srs">
@@ -2378,8 +2434,8 @@
                 </svg>
               </td>
               <td>
-                <svg class="icon-warning">
-                  <use xlink:href="img/sprite.svg#icon-warning"></use>
+                <svg class="icon-caution">
+                  <use xlink:href="img/sprite.svg#icon-caution"></use>
                 </svg>
               </td>
             </tr>

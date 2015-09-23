@@ -1,0 +1,15 @@
+.caution-dialog {
+  border: $caution-border-style;
+}
+
+.caution-dialog__header {
+  background-color: $brand-caution;
+}
+
+.caution-dialog__title {
+  @include dialog-title('sm');
+}
+
+.caution-dialog__content {
+  @include dialog-content($brand-caution);
+}

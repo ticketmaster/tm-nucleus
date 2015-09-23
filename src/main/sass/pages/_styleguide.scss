@@ -606,3 +606,20 @@ $sg-spacing: 1.5em;
 .sg-unstyled-list {
   @include unstyled-list();
 }
+
+
+.sg-dialog {
+  width: 300px;
+  margin-bottom: 20px;
+
+  @include breakpoint($bp-md) {
+    width: 600px;
+  }
+}
+
+.sg-dialog-modal {
+  width: 600px;
+  padding: 50px;
+  margin-bottom: 20px;
+  background-color: $overlay-color;
+}

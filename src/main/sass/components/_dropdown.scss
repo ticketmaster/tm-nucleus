@@ -40,7 +40,7 @@
 }
 
 .dropdown__select.is-error-field {
-  border-bottom: $error-border-style;
+  border-bottom: $alert-border-style;
 }
 
 .dropdown__select.is-error-field ~ .input-group__label,

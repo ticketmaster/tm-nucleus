@@ -23,8 +23,8 @@
   @include icon($brand-accent);
 }
 
-.icon-warning {
-  @include icon($brand-warning);
+.icon-caution {
+  @include icon($brand-caution);
 }
 
 .icon--chevron {

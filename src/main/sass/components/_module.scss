@@ -9,9 +9,9 @@
   &:after {
     position: absolute;
     bottom: -3px;
+    display: block;
     width: 100%;
     height: 5px;
-    display: block;
     background: transparent url(map-get($svgs, pedge)) repeat-x 0 0 scroll;
     content: '';
   }

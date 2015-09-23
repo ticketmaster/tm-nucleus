@@ -15,7 +15,7 @@
     text-align: left;
   }
 
-  &:last-child:not(:first-child){
+  &:last-child:not(:first-child) {
     text-align: right;
   }
 }
