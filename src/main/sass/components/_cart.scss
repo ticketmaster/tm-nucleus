@@ -1,11 +1,11 @@
-.event-footer {
+.cart {
   @include clearfix();
   @include span(full);
 
   position: fixed;
   bottom: 0;
   left: 0;
-  z-index: z('event-footer');
+  z-index: z('cart');
   width: 100%;
   height: auto;
   padding-top: $spacing-sm;
@@ -15,14 +15,14 @@
   border-top: $base-border-style;
 }
 
-.event-footer__total {
+.cart__total {
   text-align: right;
 }
 
-.event-footer__total-amt {
+.cart__total-amt {
   @include responsive-font('xl');
 }
 
-.event-footer__total-desc {
+.cart__total-desc {
   @include alt-copy('md');
 }
