@@ -12,13 +12,13 @@
 .modal-dialog__title {
   @include dialog-title('lg');
 
-  padding-left: $modal-close-size;
   padding-right: $modal-close-size;
+  padding-left: $modal-close-size;
   text-align: center;
 
   @include breakpoint($bp-md) {
-    padding-left: $modal-close-size-lg;
     padding-right: $modal-close-size-lg;
+    padding-left: $modal-close-size-lg;
   }
 }
 
@@ -50,7 +50,7 @@
 }
 
 .modal-dialog__content {
-  @include dialog-content();
+  @include dialog-content($pad: $spacing-md);
 
   border-bottom-right-radius: $base-border-radius;
   border-bottom-left-radius: $base-border-radius;

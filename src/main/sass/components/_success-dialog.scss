@@ -11,5 +11,5 @@
 }
 
 .success-dialog__content {
-  @include dialog-content();
+  @include dialog-content($brand-cta);
 }

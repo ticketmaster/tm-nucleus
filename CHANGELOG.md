@@ -14,6 +14,9 @@ Changelog
 - Add `$overlay-color` to palette.scss
 - Add success-dialog, warning-dialog, alert-dialog, and modal-dialog
 
+**Changes**
+- Rename icon-warning to icon-caution
+
 **Fixes**
 - Remove `$icon-container-plus-minus` variable
 - Remove `.icon--container-plus` and `.icon--container-minus` classes

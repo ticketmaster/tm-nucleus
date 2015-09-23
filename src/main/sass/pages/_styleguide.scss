@@ -609,8 +609,12 @@ $sg-spacing: 1.5em;
 
 
 .sg-dialog {
-  width: 600px;
+  width: 300px;
   margin-bottom: 20px;
+
+  @include breakpoint($bp-md) {
+    width: 600px;
+  }
 }
 
 .sg-dialog-modal {

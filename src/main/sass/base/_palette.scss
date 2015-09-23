@@ -20,7 +20,7 @@ $brand-primary:  #009cde;
 $brand-cta:      #19ab20;
 $brand-accent:   #d0006f;
 $brand-alert:    #f00;
-$brand-warning:  #fecb34;
+$brand-caution:  #fecb34;
 $brand-gray2:    #768692;
 $brand-gray3:    #dfe4e7;
 $brand-gray4:    #f6f7f9;
@@ -48,7 +48,7 @@ $palette: (
     'helen':    $brand-alert
   ),
   'yellow': (
-    'malibu':   $brand-warning
+    'malibu':   $brand-caution
   )
 );
 
