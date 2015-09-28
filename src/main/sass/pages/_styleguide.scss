@@ -37,6 +37,10 @@ $sg-spacing: 1.5em;
   fill: $white;
 }
 
+.nucleus-version {
+  @include fixed-font('xs');
+}
+
 .sg-tm-logo {
   width: 200px;
   height: 27px;
