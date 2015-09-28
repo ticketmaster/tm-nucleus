@@ -1,5 +1,5 @@
 @mixin form-label($color: $brand-gray2) {
-  @include responsive-font('xs');
+  @include fixed-font('xs');
 
   color: $color;
 }

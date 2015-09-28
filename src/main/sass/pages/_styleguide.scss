@@ -491,7 +491,7 @@ $sg-spacing: 1.5em;
 }
 
 .sg-swatch-state-usage {
-  @include responsive-font('xs');
+  @include fixed-font('xs');
 
   margin: 5px 0 0 5px;
 }

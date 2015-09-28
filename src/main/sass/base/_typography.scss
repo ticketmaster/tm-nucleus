@@ -79,7 +79,8 @@ $min-input-font-size: 1.6rem; // min required to avoid iOS zooming
 $font-sizes: (
   'xs': (
     'pint':   $base-xs-font,
-    'quart':  get-quart-size($base-xs-font)
+    'quart':  $base-xs-font,
+    'gallon': $base-xs-font
   ),
   'sm': (
     'pint':   $base-sm-font,
