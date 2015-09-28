@@ -9,6 +9,8 @@ Changelog
 **Changes**
 - `responsive-font('xs')` is no longer a responsive font.
 - `xs` font size will only be used for `fixed-font` mixin.
+- Remove `spriterite` function. This was a remnant from tmol-web-spring and is
+  not used within Nucleus.
 
 **v0.1.0**
 ---------

@@ -3,11 +3,6 @@
   @return $val * $spacing-ratio;
 }
 
-// grab sprite image
-@function spriterite($sprite, $img) {
-  @return map-get(map-get($sprites, $sprite), $img);
-}
-
 // there should an overlay z-index and an overlay-content z-index
 @function z($level) {
   @return map-get($z-indexes, $level);
