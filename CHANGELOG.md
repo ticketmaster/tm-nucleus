@@ -3,9 +3,12 @@ Changelog
 
 **Unreleased**
 ---------
+**New Features**
+- Add MIT License to project.
+
 **Changes**
 - `responsive-font('xs')` is no longer a responsive font.
-- `xs` font size will only be used for `fixed-font` mixin. 
+- `xs` font size will only be used for `fixed-font` mixin.
 
 **v0.1.0**
 ---------
