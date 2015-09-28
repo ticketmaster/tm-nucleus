@@ -7,6 +7,7 @@ Changelog
 - Add MIT License to project.
 - Add `modal-dialog__footer` and `modal-dialog__button` for modals that will
   have a button at the bottom of the modal.
+- Add svg4everybody as polyfill for external SVG support in IE.
 
 **Changes**
 - `responsive-font('xs')` is no longer a responsive font.

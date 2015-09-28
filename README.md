@@ -60,5 +60,7 @@ $ gem install scss_lint
 $ npm install --global gulp
 ```
 
-### License
+**svg4everybody** - IE9-12 do not recognize externally referenced SVG files, so we use this polyfill fill the gap. The minified version of the polyfill is included with the project. For more information, see: [svg4everybody](https://github.com/jonathantneal/svg4everybody)
+
+## License
 MIT License

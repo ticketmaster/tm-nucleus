@@ -23,13 +23,11 @@
   </head>
 
 <body>
+  <div class="page__content">
+    <h1 class="sg-hdg">Cart</h1>
+    <p>By default, the Cart is fixed to the bottom of the page.</p>
 
-
-<div class="page__content">
-  <h1 class="sg-hdg">Cart</h1>
-  <p>By default, the Cart is fixed to the bottom of the page.</p>
-
-  <pre class="sg-sample-code">
+    <pre class="sg-sample-code">
 &lt;div class="<span class="sg-highlight-code">cart</span>"&gt;
   &lt;div class="split-content"&gt;
     &lt;div class="split-content__primary <span class="sg-highlight-code">cart__total</span>"&gt;
@@ -41,23 +39,25 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-  </pre>
+    </pre>
 
-  <p><a href="index.html#cart">Back to styleguide</a>.</p>
+    <p><a href="index.html#cart">Back to styleguide</a>.</p>
 
-  <div class="cart">
-    <div class="split-content">
-      <div class="split-content__primary cart__total">
-        <span class="cart__total-amt">$2309.50</span>
-        <span class="cart__total-desc">w/ Fees</span>
-      </div>
-      <div class="split-content__secondary">
-        <button class="button button--cta">Checkout</button>
+    <div class="cart">
+      <div class="split-content">
+        <div class="split-content__primary cart__total">
+          <span class="cart__total-amt">$2309.50</span>
+          <span class="cart__total-desc">w/ Fees</span>
+        </div>
+        <div class="split-content__secondary">
+          <button class="button button--cta">Checkout</button>
+        </div>
       </div>
     </div>
   </div>
 
-</div>
+  <script src="js/vendors/svg4everybody.min.js"></script>
+  <script>svg4everybody();</script>
 
 </body>
 </html>
