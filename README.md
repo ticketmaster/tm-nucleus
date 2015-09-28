@@ -59,3 +59,6 @@ $ gem install scss_lint
 ```
 $ npm install --global gulp
 ```
+
+### License
+MIT License
