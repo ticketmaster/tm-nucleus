@@ -12,19 +12,16 @@
     line-height: get-lh($quart, $lh);
   }
 
-  // there's no gallon size for XS, so skip it
-  @if ($set != 'xs') {
-    @include breakpoint($bp-md) {
-      $gallon: fetch-font($set, 'gallon');
+  @include breakpoint($bp-md) {
+    $gallon: fetch-font($set, 'gallon');
 
-      font-size: $gallon;
+    font-size: $gallon;
 
-      @if ($set == 'md' and not $lh) {
-        $lh: $base-line-height;
-      }
-
-      line-height: get-lh($gallon, $lh);
+    @if ($set == 'md' and not $lh) {
+      $lh: $base-line-height;
     }
+
+    line-height: get-lh($gallon, $lh);
   }
 }
 

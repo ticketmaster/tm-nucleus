@@ -1,6 +1,12 @@
 Changelog
 =========
 
+**Unreleased**
+---------
+**Changes**
+- `responsive-font('xs')` is no longer a responsive font.
+- `xs` font size will only be used for `fixed-font` mixin. 
+
 **v0.1.0**
 ---------
 **New Features**
