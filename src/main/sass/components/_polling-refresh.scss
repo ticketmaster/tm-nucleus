@@ -1,0 +1,24 @@
+.polling-refresh {
+  position: relative;
+  z-index: z('polling');
+  height: 20px;
+
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: z('hide');
+    width: 20px;
+    height: 20px;
+    background-color: rgba($brand-gray, 0.9);
+    content: '';
+    animation: wipe 3s infinite;
+  }
+}
+
+.polling-refresh__filled {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: z('hide');
+}

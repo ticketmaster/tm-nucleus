@@ -133,3 +133,13 @@ $expando-animation: all 0.3s ease-in 0s;
     transform: rotate(360deg);
   }
 }
+
+@keyframes wipe {
+  0% {
+    height: 100%;
+  }
+
+  100% {
+    height: 0%;
+  }
+}

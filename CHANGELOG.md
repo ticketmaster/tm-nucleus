@@ -4,7 +4,11 @@ Changelog
 **Unreleased**
 ---------
 - Add `button-outlined--static` that mirrors `button--static` for outlined
-  buttons
+
+**New Features**
+- Add new component `.polling-refresh` for polling animations on the ISM
+- Add two new SVG's for this polling animations `icon-polling-fill.svg` 
+  and `icon-polling-outline.svg`
 
 **v0.2.0**
 ---------
