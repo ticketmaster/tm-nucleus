@@ -1,7 +1,7 @@
 Changelog
 =========
 
-**Unreleased**
+**v0.2.0**
 ---------
 **New Features**
 - Add MIT License to project.
