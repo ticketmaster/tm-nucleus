@@ -5,12 +5,16 @@ Changelog
 ---------
 **New Features**
 - Add MIT License to project.
+- Add `modal-dialog__footer` and `modal-dialog__button` for modals that will
+  have a button at the bottom of the modal.
 
 **Changes**
 - `responsive-font('xs')` is no longer a responsive font.
 - `xs` font size will only be used for `fixed-font` mixin.
 - Remove `spriterite` function. This was a remnant from tmol-web-spring and is
   not used within Nucleus.
+- For modals that do not have a footer button, bottom corner radius will be
+  applied via new `modal-dialog__content--informational` modifier.
 
 **v0.1.0**
 ---------
