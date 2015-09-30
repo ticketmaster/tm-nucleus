@@ -1,6 +1,11 @@
 Changelog
 =========
 
+**Unreleased**
+---------
+- Add `button-outlined--static` that mirrors `button--static` for outlined
+  buttons
+
 **v0.2.0**
 ---------
 **New Features**

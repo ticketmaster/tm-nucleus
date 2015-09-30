@@ -2,6 +2,10 @@
   @include btn($brand-alert, $hoverstate: true, $outlined: true);
 }
 
+.button-outlined--static {
+  padding: 0 20px;
+}
+
 .button-outlined--full {
   width: 100%;
 }
