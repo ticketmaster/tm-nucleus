@@ -55,6 +55,7 @@
         <li><a href="#ism-tooltip">ISM Tooltips</a></li>
         <li><a href="#expando">Expando</a></li>
         <li><a href="#icons">Icons</a></li>
+        <li><a href="#animated-icons">Animated Icons</a></li>
       </ol>
     </nav>
 
@@ -2450,6 +2451,35 @@
             </tr>
           </tbody>
         </table>
+      </section>
+      <section id="animated-icons" class="sg-section">
+        <h3 class="sg-hdg">Animated Icons</h3>
+        <p>This animation uses white to animate it filling up.</p>
+        <p>Using the markup below should generate this animation</p>
+        <div class="sg-polling">
+          <div class="polling-refresh">
+            <svg class="icon-polling-refresh">
+              <use xlink:href="img/sprite.svg#icon-polling-outline"></use>
+            </svg>
+            <svg class="icon-polling-refresh polling-refresh__filled">
+              <use xlink:href="img/sprite.svg#icon-polling-fill"></use>
+            </svg>
+          </div>
+        </div>
+
+        <pre class="sg-sample-code">
+
+// markup
+&lt;span class="<span class="sg-highlight-code">polling-refresh</span>">
+  &lt;svg class="<span class="sg-highlight-code">icon-polling-refresh</span>">
+    &lt;use xlink:href="<span class="sg-highlight-code">img/sprite.svg#icon-polling-outline</span>"></use>
+  &lt;/svg>
+  &lt;svg class="<span class="sg-highlight-code">icon-polling-refresh polling-refresh__filled</span>">
+    &lt;use xlink:href="<span class="sg-highlight-code">img/sprite.svg#icon-polling-fill</span>"></use>
+  &lt;/svg>
+&lt;/span>
+        </pre>
+
       </section>
     </main>
   </div>
