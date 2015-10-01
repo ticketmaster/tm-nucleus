@@ -12,7 +12,7 @@
     height: 20px;
     background-color: rgba($brand-gray, 0.9);
     content: '';
-    animation: wipe 3s infinite;
+    animation: $polling-refresh-animation;
   }
 }
 

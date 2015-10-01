@@ -1,6 +1,13 @@
 Changelog
 =========
 
+**v0.3.2**
+---------
+**Bug Fixes**
+- `.polling-refresh` component animation is now set as a configurable value
+- `$polling-refresh-animation` is the new variable that defines the polling 
+   refresh animation.
+
 **v0.3.1**
 ---------
 **New Features**
