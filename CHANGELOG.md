@@ -9,6 +9,7 @@ Changelog
    refresh animation.
 
 **v0.3.1**
+---------
 **Bug Fixes**
 - Update version number in styleguide.
 
