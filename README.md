@@ -5,6 +5,25 @@
 ## Changelog
 Release notes can be found in our [changelog](CHANGELOG.md).
 
+## Dependencies
+**node** - v0.12.7. If you need to run a different version of node for other projects, check out either [nvm](https://www.npmjs.com/package/nvm) or [n](https://github.com/tj/n).
+
+**scss lint** - 0.41.0.
+
+To install:
+
+```
+$ gem install scss_lint
+```
+
+**gulp** - Gulp comes as part of the `package.json` and is accessed via the `npm run` commands above. However, if you wish to run individual gulp tasks directly from the command line, you'll need to install the cli.
+
+```
+$ npm install --global gulp
+```
+
+**svg4everybody** - IE9-12 do not recognize externally referenced SVG files, so we use this polyfill to fill the gap. The minified version of the polyfill is included with the project. For more information, see: [svg4everybody](https://github.com/jonathantneal/svg4everybody)
+
 ## Getting Started
 In your terminal, enter the following from within the nucleus directory:
 
@@ -42,25 +61,6 @@ To update Nucleus's distribution files (minified css, images, fonts), run the fo
 ```
 $ npm run dist
 ```
-
-## Dependencies
-**node v0.12.7** - If you need to run a different version of node for other projects, check out either [nvm](https://www.npmjs.com/package/nvm) or [n](https://github.com/tj/n).
-
-**scss lint** - We are currently using 0.41.0.
-
-To install:
-
-```
-$ gem install scss_lint
-```
-
-**gulp** - Gulp comes as part of the `package.json` and is accessed via the `npm run` commands above. However, if you wish to run individual gulp tasks directly from the command line, you'll need to install the cli.
-
-```
-$ npm install --global gulp
-```
-
-**svg4everybody** - IE9-12 do not recognize externally referenced SVG files, so we use this polyfill to fill the gap. The minified version of the polyfill is included with the project. For more information, see: [svg4everybody](https://github.com/jonathantneal/svg4everybody)
 
 ## License
 MIT License
