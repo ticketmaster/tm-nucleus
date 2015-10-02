@@ -7,7 +7,7 @@ Changelog
 - `polling-refresh` component animation is now set as a configurable value.
 - `$polling-refresh-animation` is the new variable that defines the polling
    refresh animation.
-- Remove 'icon--chevron'.
+- Remove `icon--chevron`.
 
 **v0.3.1**
 ---------
