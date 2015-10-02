@@ -3,6 +3,13 @@ Changelog
 
 **Unreleased**
 ---------
+**Changes**
+- `responsive-font('xs')` has been brought back.
+- `xs` font size can be used for `fixed-font` and `responsive-font` again mixin.
+- `xs` responsive font size is as follows
+  - small mobile / mobile = 10px
+  - tablet / desktop = 12px
+
 **Bug Fixes**
 - `polling-refresh` component animation is now set as a configurable value.
 - `$polling-refresh-animation` is the new variable that defines the polling

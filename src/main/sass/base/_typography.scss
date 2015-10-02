@@ -80,7 +80,7 @@ $font-sizes: (
   'xs': (
     'pint':   $base-xs-font,
     'quart':  $base-xs-font,
-    'gallon': $base-xs-font
+    'gallon': get-quart-size($base-xs-font)
   ),
   'sm': (
     'pint':   $base-sm-font,

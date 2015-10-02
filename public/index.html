@@ -337,6 +337,7 @@
         <table class="sg-table sg-typography-table">
           <tr>
             <th class="sg-table-hdg sg-typography-hdg">Breakpoint</th>
+            <th class="sg-table-hdg sg-typography-hdg">X-Small</th>
             <th class="sg-table-hdg sg-typography-hdg">Small</th>
             <th class="sg-table-hdg sg-typography-hdg">Medium</th>
             <th class="sg-table-hdg sg-typography-hdg">Large</th>
@@ -348,6 +349,9 @@
             <td class="sg-typography-bp">
               Small Mobile<br />
               &le; 374px
+            </td>
+            <td class="sg-xs-font-size">
+              10px font size
             </td>
             <td class="sg-sm-font-size">
               12px font size
@@ -373,6 +377,9 @@
               Mobile<br />
               375px - 719px
             </td>
+            <td class="sg-xs-font-size-quart">
+              no change
+            </td>
             <td class="sg-sm-font-size-quart">
               14px font size
             </td>
@@ -396,6 +403,9 @@
             <td class="sg-typography-bp">
               Tablet/Desktop<br />
               &ge; 720px
+            </td>
+            <td class="sg-xs-font-size-quart">
+              12px font size
             </td>
             <td class="sg-sm-font-size-gallon">
               16px font size
@@ -470,6 +480,10 @@
 
         <table class="sg-table">
           <tr>
+            <td><span class="sg-xs-font-size-responsive">Extra small copy</span></td>
+            <td><code class="sg-code">@include responsive-font('xs');</code></td>
+          </tr>
+          <tr>
             <td><span class="sg-sm-font-size-responsive">Small copy</span></td>
             <td><code class="sg-code">@include responsive-font('sm');</code></td>
           </tr>
@@ -493,13 +507,13 @@
 
         <h3 class="sg-subhdg">Fixed font sizes</h3>
         <p>In the rare case of using a fixed font size, use our <code class="sg-code">fixed-font()</code> mixin.</p>
-        <p>Fixed font sizes are based on the mobile breakpoint sizes (<code class="sg-code">375px - 719px</code>), as indicated in the previous section.</p>
-        <p>There is an additional <code class="sg-code">xs</code> font size available that is fixed and is not accessible as a responsive font.</p>
+        <p>It defaults to the <code class="sg-code">md</code> font size. You can override this by passing in a size parameter.</p>
+        <p>Note that fixed font sizes are based on the mobile breakpoint sizes (<code class="sg-code">375px - 719px</code>), as indicated in the previous section.</p>
 
         <table class="sg-table">
           <tr>
             <td><span class="sg-xs-font-size-quart">Extra small copy</span></td>
-            <td><span class="alt-copy">10px</span></td>
+            <td><span class="alt-copy">12px</span></td>
             <td><code class="sg-code">@include fixed-font('xs')</code></td>
           </tr>
           <tr>
