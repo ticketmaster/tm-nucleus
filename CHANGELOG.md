@@ -1,12 +1,13 @@
 Changelog
 =========
 
-**v0.3.2**
+**Unreleased**
 ---------
 **Bug Fixes**
-- `.polling-refresh` component animation is now set as a configurable value
-- `$polling-refresh-animation` is the new variable that defines the polling 
+- `polling-refresh` component animation is now set as a configurable value.
+- `$polling-refresh-animation` is the new variable that defines the polling
    refresh animation.
+- Remove 'icon--chevron'.
 
 **v0.3.1**
 ---------
@@ -18,7 +19,7 @@ Changelog
 **New Features**
 - Add `button-outlined--static` that mirrors `button--static` for outlined
   buttons.
-- Add new component `.polling-refresh` for polling animations on the ISM.
+- Add new component `polling-refresh` for polling animations on the ISM.
 - Add two new SVG's for this polling animations `icon-polling-fill.svg`
   and `icon-polling-outline.svg`.
 

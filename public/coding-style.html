@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, target-densitydpi=medium-dpi, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TM Nucleus</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="//s2.tmol.co/tm/4ab94a4f/static/favicon-rebrand.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="//s2.tmol.co/tm/4ab94a4f/static/favicon-rebrand.ico" type="image/x-icon">
+    <link href="css/nucleus.css" rel="stylesheet" type="text/css">
+    <link href="css/styleguide.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body class="page styleguide">
+
+    <header class="sg-header">
+      <div class="page__frame page__content">
+        <div class="split-content">
+          <div class="split-content__secondary">
+            <object data="img/nucleus.svg" type="image/svg+xml" class="nucleus-logo"></object>
+          </div>
+          <div class="split-content__primary sg-name">Nucleus</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="page__content">
+      <h1 class="sg-hdg">Coding Style</h1>
+      <p>This is a quick document outlining some of the SASS coding guidelines that are different from the tmol-web-spring project. A prettier version of this will come in the future. :)</p>
+      <ol>
+        <li>
+          <p>No usages of <code class="sg-code">@extend</code>.</p>
+        </li>
+        <li>
+          <p>Do not use the parent selector shorthand (<code class="sg-code">&</code>) to compose class names.</p>
+          <pre class="sg-sample-code">
+// bad
+.parent {
+  ...
+
+  &__child {
+    ...
+  }
+}
+          </pre>
+          <p>Instead, explicitly write out any class names.</p>
+          <pre class="sg-sample-code">
+// good
+.parent {
+  ...
+}
+
+.parent__child {
+  ...
+}
+          </pre>
+          <p>The one exception is for pseudo-selectors.</p>
+          <pre class="sg-sample-code">
+// this is okay
+.link {
+  ...
+
+  &:hover {
+    ...
+  }
+}
+          </pre>
+        </li>
+        <li>
+          <p>No blank lines to separate stanzas anymore. Property declaration is still enforced, however.</p>
+        </li>
+      </ol>
+      <p><a href="index.html#event-header">Back to styleguide</a>.</p>
+    </div>
+  </body>
+</html>

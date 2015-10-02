@@ -27,10 +27,6 @@
   @include icon($brand-caution);
 }
 
-.icon--chevron {
-  @include icon($brand-gray2);
-}
-
 .icon-polling-refresh {
   @include icon($white, 20px, 20px);
 }
