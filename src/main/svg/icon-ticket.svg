@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
+    <title>ticket</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="mobile" stroke="none" stroke-width="1" fill="" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="m-edp-top-picks" sketch:type="MSArtboardGroup" transform="translate(-234.000000, -292.000000)" fill="#000000">
+            <g id="listings" sketch:type="MSLayerGroup" transform="translate(15.000000, 277.000000)">
+                <g id="listing-1" sketch:type="MSShapeGroup">
+                    <g id="ticket-info" transform="translate(155.000000, 15.000000)">
+                        <g id="ticket" transform="translate(64.000000, 0.000000)">
+                            <g id="Group">
+                                <path d="M19.249,7.55 L16.973,5.273 L16.221,4.521 L15.469,5.273 C15.336,5.406 15.18,5.426 15.1,5.426 C15.02,5.425 14.864,5.406 14.731,5.273 C14.596,5.137 14.576,4.982 14.576,4.901 C14.576,4.82 14.597,4.666 14.729,4.532 L15.481,3.781 L14.729,3.028 L12.453,0.751 L11.699,0 L10.948,0.751 L8.4,3.301 L7.648,4.052 L7.55,4.15 L0.751,10.948 L0,11.699 L0.751,12.45 L3.029,14.728 L3.781,15.48 L4.532,14.728 C4.665,14.594 4.821,14.574 4.902,14.574 C4.983,14.574 5.138,14.594 5.271,14.726 C5.407,14.863 5.427,15.017 5.426,15.099 C5.426,15.181 5.406,15.333 5.273,15.467 L4.521,16.22 L5.272,16.971 L7.55,19.248 L8.301,20 L9.052,19.249 L15.852,12.45 L15.949,12.353 L16.701,11.601 L19.251,9.05 L20,8.301 L19.249,7.55 L19.249,7.55 Z M15.948,10.852 L15.525,10.426 L14.674,11.278 L15.1,11.7 L8.3,18.499 L6.023,16.223 C6.642,15.606 6.643,14.6 6.024,13.981 C6.023,13.981 6.023,13.981 6.023,13.979 L6.021,13.979 C5.403,13.36 4.397,13.362 3.78,13.979 L1.502,11.702 L8.3,4.903 L8.727,5.327 L9.577,4.477 L9.15,4.053 L11.699,1.503 L13.976,3.781 C13.357,4.399 13.355,5.403 13.976,6.023 L13.976,6.024 C13.978,6.025 13.978,6.025 13.978,6.026 C14.597,6.643 15.603,6.643 16.22,6.024 L18.496,8.301 L15.948,10.852 L15.948,10.852 Z" id="Shape"></path>
+                                <rect id="Rectangle-path" transform="translate(10.850401, 6.598810) rotate(45.024309) translate(-10.850401, -6.598810) " x="9.64841252" y="5.99731551" width="2.40397716" height="1.20298857"></rect>
+                                <rect id="Rectangle-path" transform="translate(13.401529, 9.150973) rotate(45.000000) translate(-13.401529, -9.150973) " x="12.2000401" y="8.54997851" width="2.40297696" height="1.20198847"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

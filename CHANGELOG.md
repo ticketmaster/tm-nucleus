@@ -1,6 +1,13 @@
 Changelog
 =========
 
+**Unreleased**
+---------
+**New Features**
+- Add icons: `icon-chevron--top`, `icon-chevron--right`, `icon-chevron--left`,
+  `icon-ticket`, `icon-verified`
+- Clean-up styleguide documentation
+
 **v0.4.0**
 ---------
 **Changes**

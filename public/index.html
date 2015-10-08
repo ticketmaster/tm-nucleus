@@ -48,7 +48,7 @@
         <li><a href="#product-info">Product Information</a></li>
         <li><a href="#dialogs">Dialogs</a></li>
         <li><a href="#module">Module</a></li>
-        <li><a href="#datestamp">Datestamp</a></li>
+        <li><a href="#datetime">Date/Time</a></li>
         <li><a href="#timer">Timer</a></li>
         <li><a href="#event-header">Event Header</a></li>
         <li><a href="#cart">Cart</a></li>
@@ -1925,31 +1925,39 @@
           </div>
       </section>
 
-      <section id="datestamp" class="sg-section">
-        <h2 class="sg-hdg">Datestamp</h2>
-        <p>Here's how we display event date/time information based on various scenarios.</p>
-
-        <h3 class="sg-subhdg">Variants</h3>
+      <section id="datetime" class="sg-section">
+        <h2 class="sg-hdg">Date/Time</h2>
+        <p>Date/time information is displayed based on the following scenarios.</p>
 
         <table class="sg-table">
           <tr>
             <td>
               <div class="sg-datestamp-wrapper">
-                <span class="datestamp">Mon 2/24 @ 8:00p</span>
+                <span class="datestamp">Mon 2/24 @ 8:30p</span>
               </div>
             </td>
             <td>
-              <p>Single date and time</p>
+              <p>Single date and time in the current year</p>
             </td>
           </tr>
           <tr>
             <td>
               <div class="sg-datestamp-wrapper">
-                <span class="datestamp">Mon 2/24/15 @ 8:00p</span>
+                <span class="datestamp">Mon 2/24 @ 8p</span>
               </div>
             </td>
             <td>
-              <p>Single date and time with year</p>
+              <p>Single date and time in the current year and time is on the hour</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="sg-datestamp-wrapper">
+                <span class="datestamp">Mon 2/24/16 @ 8p</span>
+              </div>
+            </td>
+            <td>
+              <p>Single date and time, not in current year</p>
             </td>
           </tr>
           <tr>
@@ -1959,7 +1967,7 @@
               </div>
             </td>
             <td>
-              <p>Single date without time</p>
+              <p>Single date without time, current year</p>
             </td>
           </tr>
           <tr>
@@ -1975,7 +1983,7 @@
           <tr>
             <td>
               <div class="sg-datestamp-wrapper">
-                <span class="datestamp">Mon 12/30/15 - Wed 1/2/16</span>
+                <span class="datestamp">Mon 12/30 - Wed 1/2/16</span>
               </div>
             </td>
             <td>
@@ -2027,6 +2035,12 @@
             </td>
           </tr>
         </table>
+
+        <p>In summary:</p>
+          <ul>
+            <li>The year is only shown if the date is outside of the current year.</li>
+            <li>If the time falls on the hour (:00), then only the hour is shown.</li>
+          </ul>
       </section>
 
       <section id="timer" class="sg-section">
@@ -2444,6 +2458,21 @@
                 </svg>
               </td>
               <td>
+                <svg class="icon-chevron icon-chevron--top">
+                  <use xlink:href="img/sprite.svg#icon-chevron"></use>
+                </svg>
+              </td>
+              <td>
+                <svg class="icon-chevron icon-chevron--right">
+                  <use xlink:href="img/sprite.svg#icon-chevron"></use>
+                </svg>
+              </td>
+              <td>
+                <svg class="icon-chevron icon-chevron--left">
+                  <use xlink:href="img/sprite.svg#icon-chevron"></use>
+                </svg>
+              </td>
+              <td>
                 <svg class="icon-minus">
                   <use xlink:href="img/sprite.svg#icon-minus"></use>
                 </svg>
@@ -2451,6 +2480,21 @@
               <td>
                 <svg class="icon-plus">
                   <use xlink:href="img/sprite.svg#icon-plus"></use>
+                </svg>
+              </td>
+              <td>
+                <svg class="icon-close">
+                  <use xlink:href="img/sprite.svg#icon-plus"></use>
+                </svg>
+              </td>
+              <td>
+                <svg class="icon-ticket">
+                  <use xlink:href="img/sprite.svg#icon-ticket"></use>
+                </svg>
+              </td>
+              <td>
+                <svg class="icon-verified">
+                  <use xlink:href="img/sprite.svg#icon-verified"></use>
                 </svg>
               </td>
               <td>
@@ -2469,8 +2513,7 @@
       </section>
       <section id="animated-icons" class="sg-section">
         <h3 class="sg-hdg">Animated Icons</h3>
-        <p>This animation uses white to animate it filling up.</p>
-        <p>Using the markup below should generate this animation</p>
+        <h4 class="sg-subhdg3">Refreshing Icon</h4>
         <div class="sg-polling">
           <div class="polling-refresh">
             <svg class="icon-polling-refresh">
@@ -2483,8 +2526,6 @@
         </div>
 
         <pre class="sg-sample-code">
-
-// markup
 &lt;span class="<span class="sg-highlight-code">polling-refresh</span>">
   &lt;svg class="<span class="sg-highlight-code">icon-polling-refresh</span>">
     &lt;use xlink:href="<span class="sg-highlight-code">img/sprite.svg#icon-polling-outline</span>"></use>
@@ -2497,8 +2538,8 @@
 
       </section>
 
-      <section class="sg-section">
-        <h2 class="sg-subhdg">Coding Style</h2>
+      <section id="coding-style" class="sg-section">
+        <h2 class="sg-hdg">Coding Style</h2>
         <p>Our coding style guidelines are outlined <a href="coding-style.html">here</a>.</p>
       </section>
     </main>
