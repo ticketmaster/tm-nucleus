@@ -1,7 +1,7 @@
 Changelog
 =========
 
-**Unreleased**
+**0.5.0**
 ---------
 **New Features**
 - Add icons: `icon-chevron--top`, `icon-chevron--right`, `icon-chevron--left`,
