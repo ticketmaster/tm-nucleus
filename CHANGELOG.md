@@ -1,6 +1,11 @@
 Changelog
 =========
 
+**0.5.1**
+---------
+**Bug Fixes**
+- Add title and description text to SVGs for accessibility purposes
+
 **0.5.0**
 ---------
 **New Features**
