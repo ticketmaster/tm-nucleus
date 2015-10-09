@@ -61,10 +61,10 @@
 .modal-dialog__footer {
   @include inner-spacing($spacing-sm);
 
+  background: $white;
   border-top: $base-border-style;
   border-bottom-right-radius: $base-border-radius;
   border-bottom-left-radius: $base-border-radius;
-  background: $white;
 }
 
 .modal-dialog__button {
