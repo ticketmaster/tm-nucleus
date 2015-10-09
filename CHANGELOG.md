@@ -1,11 +1,6 @@
 Changelog
 =========
 
-**0.5.2**
----------
-**Bug Fixes**
-- Add missing id attribute for SVG title and desc
-
 **0.5.1**
 ---------
 **Bug Fixes**
