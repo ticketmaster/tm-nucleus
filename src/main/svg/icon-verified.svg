@@ -3,8 +3,8 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="20px" height="20px" viewBox="0 140 20 20" enable-background="new 0 140 20 20" xml:space="preserve">
-	 <title>Verified icon</title>
-	 <desc>Two ticket stubs with a checkmark in front of them.</desc>
+	 <title id="title">Verified icon</title>
+	 <desc id="desc">Two ticket stubs with a checkmark in front of them.</desc>
 	 <g>
 		 <path id="tickets" fill="" d="M1.239,151.971l-0.008,0.019l0.035,0.035l2.007,2.007c0.362-0.362,0.838-0.543,1.312-0.543
 			c0.332,0,0.663,0.09,0.957,0.268c0.133-0.135,0.274-0.258,0.425-0.372c0.144-0.109,0.295-0.209,0.453-0.298

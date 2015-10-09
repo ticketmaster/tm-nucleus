@@ -3,8 +3,8 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
-	 <title>ADA Icon</title>
-	 <desc>Icon to indicate accessible seating</desc>
+	 <title id="title">ADA Icon</title>
+	 <desc id="desc">Icon to indicate accessible seating</desc>
 	 <circle fill="" cx="8" cy="8" r="8"/>
 	 <path fill="#FFFFFF" d="M9.812,8.771c0.358,0.849,0.721,1.696,1.082,2.543c0.014,0.031,0.027,0.062,0.045,0.102
 		 c0.029-0.01,0.059-0.019,0.086-0.03c0.457-0.18,0.915-0.359,1.372-0.539c0.021-0.009,0.044-0.014,0.066-0.02V10.81
