@@ -1,6 +1,12 @@
 Changelog
 =========
 
+**Unreleased**
+---------
+**Bug Fixes**
+- Revert `@mixin form-label` back to use `@include responsive-font('xs');`
+- Clean up typo for the fixed font extra small copy. Should size of 10px.
+
 **0.5.1**
 ---------
 **Bug Fixes**
