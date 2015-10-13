@@ -89,6 +89,7 @@
 .event-header__supportive {
   flex: 0 0 auto;
   width: $event-header-menu-container;
+  min-height: 1px;
   text-align: center;
 }
 

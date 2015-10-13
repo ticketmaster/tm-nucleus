@@ -3,6 +3,10 @@ Changelog
 
 **Unreleased**
 ---------
+**Changes**
+- Apply `min-height: 1px` to `event-header__supportive`. The `&nbsp;` is no
+  longer needed.
+
 **Bug Fixes**
 - Revert `@mixin form-label` back to use `@include responsive-font('xs');`
 - Clean up typo for the fixed font extra small copy. Should size of 10px.
