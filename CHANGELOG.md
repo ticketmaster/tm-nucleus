@@ -6,6 +6,8 @@ Changelog
 **Changes**
 - Apply `min-height: 1px` to `event-header__supportive`. The `&nbsp;` is no
   longer needed.
+- Dialog text is now `$brand-gray2`
+- Caution dialog is now `$brand-gray` instead of `$brand-caution`
 
 - Add a centered variant of modal dialog via new class `modal-dialog--center`
 
