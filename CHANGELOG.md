@@ -3,12 +3,19 @@ Changelog
 
 **Unreleased**
 ---------
+**New Features**
+- New `truncate-text` mixin is now available. Previous `.truncate-text` class
+  now references this mixin.
+- New `text-rotator` mixin.
+
 **Changes**
+- `event-header` has been heavily refactored due to design changes. Previous
+  versions are still supported but deprecated. Please update existing usages to
+  match new pattern.
 - Apply `min-height: 1px` to `event-header__supportive`. The `&nbsp;` is no
   longer needed.
 - Dialog text is now `$brand-gray2`
 - Caution dialog is now `$brand-gray` instead of `$brand-caution`
-
 - Add a centered variant of modal dialog via new class `modal-dialog--center`
 
 **Bug Fixes**

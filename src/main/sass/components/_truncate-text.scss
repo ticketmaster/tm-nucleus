@@ -1,6 +1,4 @@
 // need to set a width on container in order for truncation to work
 .truncate-text {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  @include truncate-text();
 }

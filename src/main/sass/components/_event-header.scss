@@ -12,29 +12,146 @@
 }
 
 .event-header__event-info {
-  flex: 1 1 $event-header-info-width;
-}
-
-.event-header__event-info--checkout {
-  flex: 1 1 $event-header-info-checkout-width;
+  flex: 1 1 100%;
 }
 
 .event-header__title {
   @include responsive-font('xl');
 
-  max-width: $event-header-info-width;
+  width: calc(100vw - (#{$event-header-menu-container} * 2) - #{$scrollbar-width});
   margin: auto;
+}
+
+.event-header__title--timer {
+  width: calc(100vw - (#{$timer-container} * 2) - #{$scrollbar-width});
 
   @include breakpoint($bp-md) {
-    max-width: calc(100vw - (#{$event-header-menu-container} * 2));
+    width: calc(100vw - (#{$timer-container-lg} * 2) - #{$scrollbar-width});
+  }
+
+  @include breakpoint($bp-lg) {
+    width: calc(100vw - (#{$logo-container} * 2) - #{$scrollbar-width});
   }
 }
 
-.event-header__title--checkout {
-  max-width: $event-header-info-checkout-width;
+.event-header__date-venue {
+  color: $brand-primary-lighter75;
+  white-space: nowrap;
+
+  @include breakpoint($max: $bp-md - 1) {
+    @include text-rotator($rotator-height);
+  }
+}
+
+.event-header__rotator {
+  @include breakpoint($max: $bp-md - 1) {
+    @include text-rotator-current();
+  }
 
   @include breakpoint($bp-md) {
-    max-width: calc(100vw - (#{$event-header-menu-container} * 2));
+    @include truncate-text();
+
+    width: calc(100vw - (#{$event-header-menu-container} * 2) - #{$scrollbar-width});
+  }
+}
+
+.event-header__rotator--timer {
+  @include breakpoint($bp-md) {
+    width: calc(100vw - (#{$timer-container-lg} * 2) - #{$scrollbar-width});
+  }
+
+  @include breakpoint($bp-lg) {
+    width: calc(100vw - (#{$logo-container} * 2) - #{$scrollbar-width});
+  }
+}
+
+.event-header__date {
+  @include breakpoint($bp-md) {
+    &:after {
+      content: ',';
+    }
+  }
+}
+
+.event-header__date,
+.event-header__venue-name {
+  @include breakpoint($max: $bp-md - 1) {
+    display: block;
+    width: calc(100vw - (#{$event-header-menu-container} * 2) - #{$scrollbar-width});
+  }
+}
+
+.event-header__date--timer,
+.event-header__venue-name--timer {
+  @include breakpoint($max: $bp-md - 1) {
+    width: calc(100vw - (#{$timer-container} * 2) - #{$scrollbar-width});
+  }
+
+  @include breakpoint($bp-lg) {
+    width: calc(100vw - (#{$logo-container} * 2) - #{$scrollbar-width});
+  }
+}
+
+.event-header__logo {
+  @include breakpoint($max: $bp-lg - 1) {
+    display: none;
+  }
+}
+
+.event-header__supportive {
+  flex: 0 0 $event-header-menu-container;
+  min-height: 1px;
+  text-align: center;
+}
+
+.event-header__supportive--timer {
+  flex: 0 0 $timer-container;
+
+  @include breakpoint($bp-lg) {
+    flex: 0 0 ($logo-container);
+  }
+}
+
+.event-header__expand {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-weight: bold;
+  line-height: 1;
+  color: $white;
+  text-align: center;
+}
+
+.event-header__expand-link {
+  @include unbutton($white, 0);
+
+  width: 100%;
+}
+
+.event-header__timer {
+  @include breakpoint($bp-lg) {
+    float: right;
+    padding-right: $gutter-width;
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Deprecated
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.event-header__event-info--checkout {
+  flex: 1 1 100%;
+}
+
+.event-header__title--checkout {
+  width: calc(100vw - (#{$timer-container} * 2) - #{$scrollbar-width});
+
+  @include breakpoint($bp-md) {
+    width: calc(100vw - (#{$timer-container-lg} * 2) - #{$scrollbar-width});
+  }
+
+  @include breakpoint($bp-lg) {
+    width: calc(100vw - (#{$logo-container} * 2) - #{$scrollbar-width});
   }
 }
 
@@ -80,47 +197,10 @@
   }
 }
 
-.event-header__logo {
-  @include breakpoint($max: $bp-lg - 1) {
-    display: none;
-  }
-}
-
-.event-header__supportive {
-  flex: 0 0 auto;
-  width: $event-header-menu-container;
-  min-height: 1px;
-  text-align: center;
-}
-
 .event-header__supportive--checkout {
-  width: $timer-container;
+  flex: 0 0 $timer-container;
 
   @include breakpoint($bp-lg) {
-    width: $logo-container + ($gutter-width * 2);
-  }
-}
-
-.event-header__expand {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  font-weight: bold;
-  line-height: 1;
-  color: $white;
-  text-align: center;
-}
-
-.event-header__expand-link {
-  @include unbutton($white, 0);
-
-  width: 100%;
-}
-
-.event-header__timer {
-  @include breakpoint($bp-lg) {
-    float: right;
-    padding-right: $gutter-width;
+    flex: 0 0 $logo-container;
   }
 }
