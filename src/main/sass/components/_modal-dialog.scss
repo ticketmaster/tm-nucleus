@@ -1,5 +1,11 @@
 .modal-dialog {
   @include drop-shadow();
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
 }
 
 .modal-dialog__header {
