@@ -1,7 +1,7 @@
 Changelog
 =========
 
-**Unreleased**
+**v0.6.0**
 ---------
 **New Features**
 - New `truncate-text` mixin is now available. Previous `.truncate-text` class
