@@ -1,11 +1,5 @@
 .modal-dialog {
   @include drop-shadow();
-
-  position: fixed;
-  top: 50%;
-  left: 50%;
-
-  transform: translate(-50%, -50%);
 }
 
 .modal-dialog__header {
@@ -75,4 +69,12 @@
 
 .modal-dialog__button {
   width: 100%;
+}
+
+.modal-dialog--center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
 }
