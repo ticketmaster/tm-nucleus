@@ -7,6 +7,8 @@ Changelog
 - Apply `min-height: 1px` to `event-header__supportive`. The `&nbsp;` is no
   longer needed.
 
+- Add a centered variant of modal dialog via new class `modal-dialog--center`
+
 **Bug Fixes**
 - Revert `@mixin form-label` back to use `@include responsive-font('xs');`
 - Clean up typo for the fixed font extra small copy. Should size of 10px.
