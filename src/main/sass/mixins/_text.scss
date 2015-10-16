@@ -55,3 +55,10 @@
   font-weight: normal;
   color: $brand-gray2;
 }
+
+
+@mixin truncate-text() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

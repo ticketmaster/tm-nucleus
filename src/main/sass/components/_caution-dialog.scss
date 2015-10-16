@@ -3,7 +3,7 @@
 }
 
 .caution-dialog__header {
-  background-color: $brand-caution;
+  background-color: $brand-gray;
 }
 
 .caution-dialog__title {
@@ -11,5 +11,5 @@
 }
 
 .caution-dialog__content {
-  @include dialog-content($brand-caution);
+  @include dialog-content();
 }

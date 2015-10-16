@@ -9,7 +9,7 @@ $base-border-style: 1px solid $brand-gray3;
 $input-border-style: 1px solid $brand-gray2;
 $focused-border-style: 1px solid $brand-primary;
 $success-border-style: 1px solid $brand-cta;
-$caution-border-style: 1px solid $brand-caution;
+$caution-border-style: 1px solid $brand-gray2;
 $alert-border-style: 1px solid $brand-alert;
 $outline-style: 3px solid $outline-color;
 $tile-selected-style: 2px solid $brand-primary;
@@ -46,6 +46,8 @@ $button-minor-padding-lg: 20px;
 $qty-picker-button-size: 40px;
 
 // Sizes
+$scrollbar-width: 20px;
+$rotator-height: 1.4em;
 $srs-min-width: 295px;
 $tooltip-caret: 15px;
 $tooltip-caret-lg: 20px;
@@ -66,12 +68,12 @@ $input-label-bottom-active: 30px;
 $event-image-size: 205px;
 $event-header-height: 74px;
 $event-header-menu-container: 50px;
-$event-header-info-width: 65vw;
-$event-header-info-checkout-width: 42vw;
-$event-header-datestamp-width: 160px;  // approximate; worst case scenario
 $timer-container: 90px;
 $timer-container-lg: 95px;
-$logo-container: 189px;
+$logo-container: 229px;
+// deprecated
+$event-header-datestamp-width: 160px;  // approximate; worst case scenario
+$event-header-info-checkout-width: 42vw;
 
 // Timer
 $timer-bg-color: $brand-primary;
