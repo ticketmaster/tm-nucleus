@@ -11,19 +11,15 @@ $polling-refresh-animation: wipe 2s infinite;
     top: 0;
   }
 
-  25% {
+  40% {
     top: 0;
   }
 
-  40% {
+  50% {
     top: -$rotator-height;
   }
 
-  60% {
-    top: -$rotator-height;
-  }
-
-  75% {
+  90% {
     top: -$rotator-height;
   }
 

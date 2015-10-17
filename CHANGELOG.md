@@ -1,6 +1,11 @@
 Changelog
 =========
 
+**Unreleased**
+---------
+**Changes**
+- Tweak text-rotation animation settings.
+
 **v0.6.0**
 ---------
 **New Features**
