@@ -1,0 +1,7 @@
+.checkbox-list {
+  @include unstyled-list();
+}
+
+.checkbox-list__item {
+  @include outer-spacing($top: $spacing-sm);
+}

@@ -2,6 +2,14 @@
   @include icon($brand-primary);
 }
 
+.icon-alert {
+  @include icon($brand-gray2);
+}
+
+.icon-check {
+  @include icon($brand-gray2);
+}
+
 .icon-chevron {
   @include icon($brand-gray2, 13px, 8px);
 }
@@ -50,11 +58,11 @@
 }
 
 .icon-polling-refresh {
-  @include icon($white, 20px, 20px);
+  @include icon($white);
 }
 
 .icon-verified {
-  @include icon($brand-gray, 20px, 20px);
+  @include icon($brand-gray);
 
   color: $brand-primary;
 }
