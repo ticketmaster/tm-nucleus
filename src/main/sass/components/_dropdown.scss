@@ -4,6 +4,8 @@
 }
 
 .dropdown__icon-chevron {
+  @include icon($brand-gray2, $dropdown-chevron-size, $dropdown-chevron-size);
+
   position: absolute;
   right: 10px;
   bottom: 15px;
@@ -12,8 +14,11 @@
 .dropdown__select {
   @include responsive-font('lg');
 
+  position: relative;
+  z-index: 1;
   width: 100%;
-  padding: 20px 0 6px 10px;
+  height: $input-height;
+  padding: 20px ($dropdown-chevron-size + 19px) 0 10px;
   color: $brand-gray;
   cursor: pointer;
   background: none;
@@ -28,14 +33,14 @@
     outline: 0;
   }
 
-  &:focus ~ .dropdown__chevron,
-  &:active ~ .dropdown__chevron {
-    @include icon($brand-primary);
-  }
-
   &:-moz-focusring {
     color: transparent;
     text-shadow: 0 0 0 $brand-gray;
+  }
+
+  &:focus ~ .dropdown__icon-chevron,
+  &:active ~ .dropdown__icon-chevron {
+    fill: $brand-primary;
   }
 }
 
@@ -48,6 +53,6 @@
   color: $brand-alert;
 }
 
-.dropdown__select.is-error-field ~ .dropdown__chevron {
-  @include icon($brand-alert);
+.dropdown__select.is-error-field ~ .dropdown__icon-chevron {
+  fill: $brand-alert;
 }
