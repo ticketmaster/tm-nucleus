@@ -28,47 +28,6 @@
   }
 }
 
-// TODO: verify this is needed
-// DO NOT USE
-.input-group__text-field-cin {
-  @include responsive-font('lg');
-  @include textfield-underline();
-
-  width: 80%;
-  color: $brand-gray;
-
-  @include breakpoint($bp-md) {
-    @include textfield-box();
-
-    width: 100%;
-  }
-
-  &:focus,
-  &:active {
-    @include textfield-active();
-  }
-}
-
-// TODO: verify this is needed
-// DO NOT USE
-.input-group__text-field-box {
-  @include responsive-font('lg');
-  @include textfield-box();
-
-  margin-right: -10px;
-  margin-left: -10px;
-  color: $brand-gray;
-
-  @include breakpoint($bp-md) {
-    margin: 0;
-  }
-
-  &:focus,
-  &:active {
-    @include textfield-active();
-  }
-}
-
 .input-group__dropdown-wrapper {
   width: 100%;
 
@@ -90,6 +49,35 @@
       right: 10px;
     }
   }
+}
+
+.input-group__checkbox {
+  display: none;
+}
+
+.input-group__checkbox-label {
+  display: inline-block;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+.input-group__checkbox-icon {
+  @include icon($white, 16px, 16px);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $base-icon-size;
+  height: $base-icon-size;
+  margin-top: 0.1em;
+  background-color: $white;
+  border: $input-border-style;
+  border-radius: $base-border-radius;
+}
+
+.input-group__checkbox:checked ~ .input-group__checkbox-label > .input-group__checkbox-icon {
+  background-color: $brand-primary;
+  border: 0;
 }
 
 .input-group.is-error-field {
@@ -140,4 +128,46 @@
   @include form-label($brand-primary);
 
   bottom: $input-label-bottom-active;
+}
+
+
+// TODO: verify this is needed
+// DO NOT USE
+.input-group__text-field-cin {
+  @include responsive-font('lg');
+  @include textfield-underline();
+
+  width: 80%;
+  color: $brand-gray;
+
+  @include breakpoint($bp-md) {
+    @include textfield-box();
+
+    width: 100%;
+  }
+
+  &:focus,
+  &:active {
+    @include textfield-active();
+  }
+}
+
+// TODO: verify this is needed
+// DO NOT USE
+.input-group__text-field-box {
+  @include responsive-font('lg');
+  @include textfield-box();
+
+  margin-right: -10px;
+  margin-left: -10px;
+  color: $brand-gray;
+
+  @include breakpoint($bp-md) {
+    margin: 0;
+  }
+
+  &:focus,
+  &:active {
+    @include textfield-active();
+  }
 }

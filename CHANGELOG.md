@@ -3,7 +3,11 @@ Changelog
 
 **Unreleased**
 ---------
+**New Features**
+- Custom checkboxes are now available.
+
 **Changes**
+- `$base-icon-size` is now 20x20 (previously 16x16).
 - Tweak text-rotation animation settings.
 
 **v0.6.0**
