@@ -1313,7 +1313,7 @@
         </script>
 
         <div class="sg-input-wrapper">
-          <div class="dropdown">
+          <div class="input-group dropdown">
             <select id="state" class="dropdown__select" onChange="onSelectChange(this);">
               <option value=""></option>
               <option value="AL">Alabama</option>
@@ -1325,14 +1325,14 @@
             <label for="state" class="input-group__label">
               State <span class="input-group__required">*</span>
             </label>
-            <svg class="icon-chevron icon-chevron dropdown__icon-chevron">
+            <svg class="dropdown__icon-chevron">
               <use xlink:href="img/sprite.svg#icon-chevron"></use>
             </svg>
           </div>
         </div>
 
         <pre class="sg-sample-code">
-&lt;div class="<span class="sg-highlight-code">dropdown</span>"&gt;
+&lt;div class="input-group <span class="sg-highlight-code">dropdown</span>"&gt;
   &lt;select id="state" class="<span class="sg-highlight-code">dropdown__select</span>"&gt;
     &lt;option value=""&gt;&lt;/option&gt;
     &lt;option value="AL"&gt;Alabama&lt;/option&gt;
@@ -1344,7 +1344,7 @@
   &lt;label for="state" class="input-group__label"&gt;
     State &lt;span class="input-group__required"&gt;*&lt;/span&gt;
   &lt;/label&gt;
-  &lt;svg class="<span class="sg-highlight-code">icon-chevron dropdown__icon-chevron</span>"&gt;
+  &lt;svg class="<span class="sg-highlight-code">dropdown__icon-chevron</span>"&gt;
     &lt;use xlink:href="img/sprite.svg#icon-chevron"&gt;
   &lt;/svg&gt;
 &lt;/div&gt;
@@ -1353,7 +1353,7 @@
         <p>This is the filled state. We just apply the <code class="sg-code">has-content</code> class to the select element.</p>
 
         <div class="sg-input-wrapper">
-          <div class="dropdown">
+          <div class="input-group dropdown">
             <select id="state" class="dropdown__select has-content" onChange="onSelectChange(this);">
               <option value=""></option>
               <option value="AL">Alabama</option>
@@ -1365,14 +1365,14 @@
             <label for="state" class="input-group__label">
               State <span class="input-group__required">*</span>
             </label>
-            <svg class="icon-chevron dropdown__icon-chevron">
+            <svg class="dropdown__icon-chevron">
               <use xlink:href="img/sprite.svg#icon-chevron">
             </svg>
           </div>
         </div>
 
         <pre class="sg-sample-code">
-&lt;div class="dropdown"&gt;
+&lt;div class="input-group dropdown"&gt;
   &lt;select id="state" class="dropdown__select <span class="sg-highlight-code">has-content</span>"&gt;
     &lt;option value=""&gt;&lt;/option&gt;
     &lt;option value="AL"&gt;Alabama&lt;/option&gt;
@@ -1384,7 +1384,7 @@
   &lt;label for="state" class="input-group__label"&gt;
     State &lt;span class="input-group__required"&gt;*&lt;/span&gt;
   &lt;/label&gt;
-  &lt;svg class="icon-chevron dropdown__icon-chevron"&gt;
+  &lt;svg class="dropdown__icon-chevron"&gt;
     &lt;use xlink:href="img/sprite.svg#icon-chevron"&gt;
   &lt;/svg&gt;
 &lt;/div&gt;
@@ -1393,7 +1393,7 @@
         <p>This is the error state. We just apply the <code class="sg-code">is-error-field</code> class to the select element.</p>
 
         <div class="sg-input-wrapper">
-          <div class="dropdown">
+          <div class="input-group dropdown">
             <select id="state" class="dropdown__select is-error-field" onChange="onSelectChange(this);">
               <option value=""></option>
               <option value="AL">Alabama</option>
@@ -1405,14 +1405,14 @@
             <label for="state" class="input-group__label">
               State <span class="input-group__required">*</span>
             </label>
-            <svg class="icon-chevron dropdown__icon-chevron">
+            <svg class="dropdown__icon-chevron">
               <use xlink:href="img/sprite.svg#icon-chevron">
             </svg>
           </div>
         </div>
 
         <pre class="sg-sample-code">
-&lt;div class="dropdown"&gt;
+&lt;div class="input-group dropdown"&gt;
   &lt;select id="state" class="dropdown__select <span class="sg-highlight-code">is-error-field</span>"&gt;
     &lt;option value=""&gt;&lt;/option&gt;
     &lt;option value="AL"&gt;Alabama&lt;/option&gt;
@@ -1424,7 +1424,7 @@
   &lt;label for="state" class="input-group__label"&gt;
     State &lt;span class="input-group__required"&gt;*&lt;/span&gt;
   &lt;/label&gt;
-  &lt;svg class="icon-chevron dropdown__icon-chevron"&gt;
+  &lt;svg class="dropdown__icon-chevron"&gt;
     &lt;use xlink:href="img/sprite.svg#icon-chevron"&gt;
   &lt;/svg&gt;
 &lt;/div&gt;

@@ -19,35 +19,14 @@
   @include responsive-font('lg');
   @include textfield-underline();
 
+  height: $input-height;
+  padding-bottom: 0;
   padding-left: $textfield-gutter-left;
   color: $brand-gray;
 
   &:focus,
   &:active {
     @include textfield-active();
-  }
-}
-
-.input-group__dropdown-wrapper {
-  width: 100%;
-
-  &:after {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 0;
-    height: 0;
-    color: $brand-gray2;
-    pointer-events: none;
-    border-top: 7px solid $brand-gray2;
-    border-right: 5px solid rgba(255, 255, 255, 0);
-    border-left: 5px solid rgba(255, 255, 255, 0);
-    content: '';
-
-    @include breakpoint($bp-md) {
-      top: 18px;
-      right: 10px;
-    }
   }
 }
 
@@ -78,8 +57,6 @@
 
 // Toggle States
 .input-group__text-field.has-content + .input-group__label,
-.input-group__text-field-cin.has-content + .input-group__label,
-.input-group__text-field-box.has-content + .input-group__label,
 .dropdown__select.has-content + .input-group__label {
   @include form-label();
 
@@ -87,58 +64,12 @@
 }
 
 .input-group__text-field:active + .input-group__label,
-.input-group__text-field-cin:active + .input-group__label,
-.input-group__text-field-box:active + .input-group__label,
 .input-group__text-field.has-content:active + .input-group__label,
 .input-group__text-field:focus + .input-group__label,
-.input-group__text-field-cin:focus + .input-group__label,
-.input-group__text-field-box:focus + .input-group__label,
 .input-group__text-field.has-content:focus + .input-group__label,
 .dropdown__select.has-content:active + .input-group__label,
 .dropdown__select.has-content:focus + .input-group__label {
   @include form-label($brand-primary);
 
   bottom: $input-label-bottom-active;
-}
-
-
-// TODO: verify this is needed
-// DO NOT USE
-.input-group__text-field-cin {
-  @include responsive-font('lg');
-  @include textfield-underline();
-
-  width: 80%;
-  color: $brand-gray;
-
-  @include breakpoint($bp-md) {
-    @include textfield-box();
-
-    width: 100%;
-  }
-
-  &:focus,
-  &:active {
-    @include textfield-active();
-  }
-}
-
-// TODO: verify this is needed
-// DO NOT USE
-.input-group__text-field-box {
-  @include responsive-font('lg');
-  @include textfield-box();
-
-  margin-right: -10px;
-  margin-left: -10px;
-  color: $brand-gray;
-
-  @include breakpoint($bp-md) {
-    margin: 0;
-  }
-
-  &:focus,
-  &:active {
-    @include textfield-active();
-  }
 }

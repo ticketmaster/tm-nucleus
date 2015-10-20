@@ -8,8 +8,17 @@ Changelog
 
 **Changes**
 - `$base-icon-size` is now 20x20 (previously 16x16).
+- Tweak `dropdown` styling in light of icon size change.
 - Tweak text-rotation animation settings.
-- `$brand-caution` hex value updated.
+- `$brand-caution` hex value update.
+- Remove `$text-enter` and `$text-leave` variables as they are unused.
+- Remove following unused classes: `.input-group__text-field-cin`,
+  `.input-group__text-field-box`, `.input-group__dropdown-wrapper`
+
+**Bug Fixes**
+- Sample code for `dropdown` updated to show that `input-group` should also
+  be applied to the same element as `dropdown`.
+- Prevent `dropdown` text from running into the chevron icon.
 
 **v0.6.0**
 ---------
