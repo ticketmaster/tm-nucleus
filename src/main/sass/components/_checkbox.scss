@@ -1,0 +1,34 @@
+.checkbox {
+  @include clearfix();
+
+  position: relative;
+}
+
+.checkbox__input {
+  display: none;
+}
+
+.checkbox__label {
+  display: inline-block;
+  padding-left: $base-icon-size + 10px;
+  cursor: pointer;
+}
+
+.checkbox__icon {
+  @include icon($white, 16px, 16px);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $base-icon-size;
+  height: $base-icon-size;
+  margin-top: 0.1em;
+  background-color: $white;
+  border: $input-border-style;
+  border-radius: $base-border-radius;
+}
+
+.checkbox__input:checked ~ .checkbox__label > .checkbox__icon {
+  background-color: $brand-primary;
+  border: 0;
+}
