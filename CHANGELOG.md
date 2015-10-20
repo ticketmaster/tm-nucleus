@@ -9,6 +9,7 @@ Changelog
 **Changes**
 - `$base-icon-size` is now 20x20 (previously 16x16).
 - Tweak text-rotation animation settings.
+- `$brand-caution` hex value updated.
 
 **v0.6.0**
 ---------
