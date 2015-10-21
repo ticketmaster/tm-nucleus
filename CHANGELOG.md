@@ -1,7 +1,7 @@
 Changelog
 =========
 
-**Unreleased**
+**v0.7.0**
 ---------
 **New Features**
 - Custom checkboxes are now available.
