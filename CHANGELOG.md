@@ -1,6 +1,11 @@
 Changelog
 =========
 
+**unreleased**
+---------
+**Bug Fixes**
+- fix modal dialog text color to sierra.
+
 **v0.7.2**
 ---------
 **Bug Fixes**
