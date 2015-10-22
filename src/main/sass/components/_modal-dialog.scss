@@ -63,7 +63,7 @@
 }
 
 .modal-dialog__content {
-  @include dialog-content($pad: $spacing-md);
+  @include dialog-content($color: $brand-gray, $pad: $spacing-md);
 }
 
 .modal-dialog__content--informational {
