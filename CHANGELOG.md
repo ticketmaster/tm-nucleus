@@ -1,6 +1,11 @@
 Changelog
 =========
 
+**v0.7.2**
+---------
+**Bug Fixes**
+- Set modal dialog widths for different breakpoints.
+
 **v0.7.1**
 ---------
 **Bug Fixes**
