@@ -1,5 +1,11 @@
 .modal-dialog {
   @include drop-shadow();
+
+  width: calc(100vw - #{$gutter-width});
+
+  @include breakpoint($bp-md) {
+    max-width: 600px;
+  }
 }
 
 .modal-dialog--center {
