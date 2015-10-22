@@ -75,5 +75,7 @@
 }
 
 .modal-dialog__button {
-  width: 100%;
+  @include breakpoint($max: $bp-md - 1) {
+    width: 100%;
+  }
 }
