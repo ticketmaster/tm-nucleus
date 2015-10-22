@@ -1,6 +1,12 @@
 Changelog
 =========
 
+**v0.7.1**
+---------
+**Bug Fixes**
+- Modal dialog footer button style should carry auxiliary style. Updated to
+  reflect this.
+
 **v0.7.0**
 ---------
 **New Features**
