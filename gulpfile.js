@@ -16,6 +16,7 @@ var src = {
   font: 'src/main/font/*',
   html: 'public/**/*.html',
   icons: 'src/main/svg/icon-*.svg',
+  img: 'src/main/img/**/*',
   normalize: 'node_modules/normalize.css/normalize.css',
   scss: 'src/main/sass/**/*.scss',
   svg:  'src/main/svg/**/*.svg',
@@ -25,15 +26,15 @@ var src = {
 var compiled = {
   css: 'public/css',
   font: 'public/font',
-  js: 'public/js',
-  svg: 'public/img'
+  img: 'public/img',
+  js: 'public/js'
 }
 
 var dist = {
   css: 'dist/css',
   font: 'dist/font',
-  js: 'dist/js',
-  svg: 'dist/img'
+  img: 'dist/img',
+  js: 'dist/js'
 }
 
 
@@ -69,9 +70,14 @@ function copyFont(dir) {
     .pipe(gulp.dest(dir));
 }
 
+function copyImg() {
+  gulp.src(src.img)
+    .pipe(gulp.dest(compiled.img));
+}
+
 function copySvg() {
-  var stream = gulp.src(compiled.svg + '/**/*')
-    .pipe(gulp.dest(dist.svg));
+  var stream = gulp.src(compiled.img + '/**/*')
+    .pipe(gulp.dest(dist.img));
   return stream
 }
 
@@ -120,7 +126,7 @@ function minifySvg() {
       js2svg: {
         pretty: true
       }}))
-    .pipe(gulp.dest(compiled.svg));
+    .pipe(gulp.dest(compiled.img));
   return stream;
 }
 
@@ -142,7 +148,7 @@ function makeSvgSprite() {
     .pipe(plugins.rename({
         basename: 'sprite'
       }))
-    .pipe(gulp.dest(compiled.svg));
+    .pipe(gulp.dest(compiled.img));
   return stream;
 }
 
@@ -201,6 +207,10 @@ gulp.task('copy:font', function() {
   copyFont(compiled.font);
 });
 
+gulp.task('copy:img', function() {
+  copyImg();
+})
+
 // dev tasks
 gulp.task('compile:sass', compileSass);
 gulp.task('compile:svg', processSvg);
@@ -212,12 +222,14 @@ gulp.task('watch', watchFiles());
 
 // just process and compile source files
 gulp.task('build', function() {
-  cleanFiles(compiled, plugins.sequence('clean', ['copy:normalize', 'copy:font', 'compile:sass', 'compile:svg', 'copy:svg4everybody']));
+  cleanFiles(compiled, plugins.sequence('clean', ['copy:normalize', 'copy:font',
+    'copy:img', 'compile:sass', 'compile:svg', 'copy:svg4everybody']));
 });
 
 // process, compile, and start up browsersync and watcher
 gulp.task('dev', function() {
-  cleanFiles(compiled, plugins.sequence('clean', ['copy:normalize', 'copy:font', 'compile:sass', 'compile:svg', 'copy:svg4everybody', 'watch', 'browser-sync']));
+  cleanFiles(compiled, plugins.sequence('clean', ['copy:normalize', 'copy:font',
+    'copy:img', 'compile:sass', 'compile:svg', 'copy:svg4everybody', 'watch', 'browser-sync']));
 })
 
 // update project distribution files

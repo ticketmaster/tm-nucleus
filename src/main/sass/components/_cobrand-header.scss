@@ -1,0 +1,73 @@
+$cobrand-color: #283866;
+
+.page-header {
+  position: relative;
+}
+
+.cobrand-header {
+  @include inner-spacing($right: $spacing-sm, $left: $spacing-sm);
+
+  z-index: z('above-page');
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // get from cobrand tool
+  background-color: $cobrand-color;
+  border-bottom: 1px solid rgba($brand-gray3, 0.25);
+
+  @include breakpoint($bp-lg) {
+    position: relative;
+    height: 0;
+    padding: 0;
+  }
+}
+
+.cobrand-header__logo {
+  @include inner-spacing($top: $spacing-sm, $bottom: $spacing-sm);
+
+  width: 150px;
+  height: $touch-size;
+  // get from cobrand tool
+  background: url('../img/sample-cobrand-logo.png') left center no-repeat;
+  background-size: contain;
+
+  @include breakpoint($bp-lg) {
+    position: absolute;
+    left: $gutter-width / 2;
+    width: 200px;
+    height: $event-header-height;
+    line-height: $event-header-height;
+  }
+}
+
+.cobrand-header__verified {
+  width: 150px;
+  height: $touch-size;
+  text-align: right;
+  // determine based on cobrand background color
+  background: url('../img/verified-dark.svg') right center no-repeat;
+  background-size: 125px;
+
+  @include breakpoint($bp-lg) {
+    position: absolute;
+    right: $gutter-width / 2;
+    width: 200px;
+    height: $event-header-height;
+    line-height: $event-header-height;
+    background-size: 175px;
+  }
+}
+
+.cobrand-header__verified--timer {
+  @include breakpoint($bp-lg - 1) {
+    display: none;
+  }
+}
+
+.cobrand-header__ada-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
