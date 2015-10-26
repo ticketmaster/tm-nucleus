@@ -1,7 +1,7 @@
 Changelog
 =========
 
-**Unreleased**
+**v0.7.3**
 ---------
 **Bug Fixes**
 - Update package.json to specifically grab `v3.3.0` of node-sass due to
