@@ -35,7 +35,7 @@
     "gulp-svgmin": "^1.2.0",
     "gulp-svgstore": "^5.0.4",
     "lodash": "^3.10.1",
-    "node-sass": "^3.2.0",
+    "node-sass": "3.3.0",
     "svg4everybody": "^2.0.0"
   }
 }

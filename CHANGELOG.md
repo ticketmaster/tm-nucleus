@@ -1,10 +1,12 @@
 Changelog
 =========
 
-**unreleased**
+**Unreleased**
 ---------
 **Bug Fixes**
-- fix modal dialog text color to sierra.
+- Update package.json to specifically grab `v3.3.0` of node-sass due to
+  compiling issue that appears to have been introduced with `v3.4.0`.
+- Fix modal dialog text color to sierra.
 
 **v0.7.2**
 ---------
