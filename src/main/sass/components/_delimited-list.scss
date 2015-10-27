@@ -18,6 +18,10 @@
   }
 }
 
+.delimited-list__item--selected {
+  background-color: $brand-primary-lighter87;
+}
+
 .delimited-list__item--embedded {
   @include inner-spacing($spacing-sm);
 }
