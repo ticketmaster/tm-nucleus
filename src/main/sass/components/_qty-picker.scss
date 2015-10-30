@@ -12,16 +12,30 @@
   background: $brand-primary;
   border-radius: 100%;
 
-  &:hover {
+  &:active {
     background: $brand-primary-darker25;
+  }
+
+  @include breakpoint($bp-lg) {
+    &:focus,
+    &:hover {
+      background: $brand-primary-darker25;
+    }
   }
 }
 
 .qty-picker__button--decrement {
   background: $brand-gray2;
 
-  &:hover {
+  &:active {
     background: $brand-gray2-darker25;
+  }
+
+  @include breakpoint($bp-lg) {
+    &:focus,
+    &:hover {
+      background: $brand-gray2-darker25;
+    }
   }
 }
 
