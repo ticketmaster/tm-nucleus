@@ -1,6 +1,12 @@
 Changelog
 =========
 
+**v0.7.4**
+---------
+- Update package.json to specifically grab `v2.0.4` of gulp-sass. Later
+  versions have updated to node-sass v3.4.0, which has compilation errors for
+  our sass.
+
 **v0.7.3**
 ---------
 **Bug Fixes**
