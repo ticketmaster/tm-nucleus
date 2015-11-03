@@ -40,10 +40,15 @@
   border: 0;
 
   @if $hoverstate {
-    &:active,
-    &:focus,
-    &:hover {
+    &:active {
       background-color: get-darker($bgcolor);
+    }
+
+    @include breakpoint($bp-lg) {
+      &:focus,
+      &:hover {
+        background: get-darker($bgcolor);
+      }
     }
   }
 
@@ -59,11 +64,17 @@
   border: 1px solid $color;
 
   @if $hoverstate {
-    &:active,
-    &:focus,
-    &:hover {
+    &:active {
       color: get-darker($color);
       border-color: get-darker($color);
+    }
+
+    @include breakpoint($bp-lg) {
+      &:focus,
+      &:hover {
+        color: get-darker($color);
+        border-color: get-darker($color);
+      }
     }
   }
 

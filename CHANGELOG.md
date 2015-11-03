@@ -1,6 +1,17 @@
 Changelog
 =========
 
+**UNRELEASED**
+---------
+**Changes**
+- Buttons on mobile / tablet no longer have a hover color. Changed to an active color. We don't
+  want the hover color to stay on these devices
+
+**New Features**
+- `qty-picker` no longer uses a `disabled` attribute. This is due to accessibility reasons
+  We can not emit events on a disabled button. We have now changed it so it is disabled via css
+- Added a selected class to delimited list. `.delimited-list__item--selected`
+
 **v0.7.4**
 ---------
 - Update package.json to specifically grab `v2.0.4` of gulp-sass. Later
