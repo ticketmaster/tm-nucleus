@@ -59,7 +59,7 @@ $cobrand-color: #283866;
 }
 
 .cobrand-header__verified--timer {
-  @include breakpoint($bp-lg - 1) {
+  @include breakpoint($bp-lg) {
     display: none;
   }
 }
