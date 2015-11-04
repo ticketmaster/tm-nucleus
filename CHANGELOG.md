@@ -1,7 +1,7 @@
 Changelog
 =========
 
-**Unreleased**
+**v0.9.0**
 ---------
 **New Features**
 - Refactor event header to match new design.
