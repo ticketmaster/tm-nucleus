@@ -110,3 +110,10 @@
     text-decoration: underline;
   }
 }
+
+// icon button
+@mixin icon-button() {
+  @include unbutton($padding: 0);
+
+  line-height: 0;
+}

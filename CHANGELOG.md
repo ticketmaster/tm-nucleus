@@ -1,6 +1,20 @@
 Changelog
 =========
 
+**Unreleased**
+---------
+**New Features**
+- Refactor event header to match new design.
+- Add support for cobranding to event header.
+- Add new responsive TM logo.
+- Add menu icon (hamburger).
+- Add more icon (three dots).
+- Add gulp task to copy /src/main/img files to /public.
+
+**Changes**
+- Update alert and checkmark icons.
+- Remove unused `.page__content-header` class.
+
 **v0.8.0**
 ---------
 **New Features**

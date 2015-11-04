@@ -46,6 +46,7 @@ $button-minor-padding-lg: 20px;
 $qty-picker-button-size: 40px;
 
 // Sizes
+$touch-size: 44px;
 $scrollbar-width: 20px;
 $rotator-height: 1.4em;
 $srs-min-width: 295px;
@@ -67,18 +68,22 @@ $input-label-bottom-active: 30px;
 $dropdown-chevron-size: 16px;
 
 // Event Header
-$event-image-size: 205px;
-$event-header-height: 74px;
-$event-header-menu-container: 50px;
+$event-header-tm-short: 35px;
+$event-header-tm-full: 165px;
+$event-header-height: 8rem;
+$timer-size: 60px;
+$timer-size-lg: 65px;
+// deprecated
 $timer-container: 90px;
 $timer-container-lg: 95px;
 $logo-container: 229px;
-// deprecated
+$event-header-menu: 20px;
+$event-header-menu-container: 50px;
 $event-header-datestamp-width: 160px;  // approximate; worst case scenario
 $event-header-info-checkout-width: 42vw;
+$event-image-size: 205px;
 
 // Timer
-$timer-bg-color: $brand-primary;
 $timer-size: 60px;
 $timer-size-lg: 65px;
 $timer-border-on: 5px solid $brand-primary-darker25;

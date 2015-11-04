@@ -35,23 +35,3 @@
     @include pad($gutter-width no-gutters);
   }
 }
-
-.page__content-header {
-  @include clearfix();
-  @include responsive-font('md');
-
-  position: relative;
-
-  z-index: z('page-content-header');
-
-  background-color: $white;
-  border-bottom: 1px solid $brand-gray3;
-
-  @include breakpoint($bp-md) {
-    @include pad(10px no-gutters);
-  }
-}
-
-.page__content-header.docking-module--blur {
-  z-index: z('docking-module-blur');
-}

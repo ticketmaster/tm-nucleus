@@ -3,7 +3,7 @@
   width: 50%;
   height: 100%;
   transform-origin: 100% 50%;
-  background-color: $timer-bg-color;
+  background-color: $brand-primary;
   border: $timer-border-on;
 
   @include breakpoint($bp-lg) {

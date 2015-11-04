@@ -3,7 +3,7 @@
   width: $timer-size;
   height: $timer-size;
   margin: auto;
-  background: $timer-bg-color;
+  background-color: $brand-primary;
 
   @include breakpoint($bp-lg) {
     width: $timer-size-lg;
@@ -46,7 +46,7 @@
 .timer__bg {
   width: 100%;
   height: 100%;
-  background-color: $timer-bg-color;
+  background-color: $brand-primary;
   border: $timer-border-off;
   border-radius: 100%;
   opacity: 1;
@@ -65,7 +65,7 @@
   z-index: z('timer-mask');
   width: 50%;
   height: 100%;
-  background-color: $timer-bg-color;
+  background-color: $brand-primary;
   border: $timer-border-off;
   border-right: 0;
   border-radius: 200% 0 0 200% / 100%;
@@ -75,4 +75,12 @@
   @include breakpoint($bp-lg) {
     border-width: 7px;
   }
+}
+
+.timer--cobranded,
+.timer__spinner--cobranded,
+.timer__filler--cobranded,
+.timer__bg--cobranded,
+.timer__mask--cobranded {
+  background-color: $cobrand-color;
 }
