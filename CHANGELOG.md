@@ -1,6 +1,14 @@
 Changelog
 =========
 
+**Unreleased**
+---------
+**New Features**
+- Add new `.ada-text` class for screen reader speific text.
+- Add new `target-device()` mixin for device targeting via media queries.
+  (Currently only supports targeting for iPad.)
+- Add box-shadow to event header
+
 **v0.9.0**
 ---------
 **New Features**

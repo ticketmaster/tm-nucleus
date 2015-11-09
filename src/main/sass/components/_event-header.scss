@@ -25,6 +25,7 @@ $event-text-cobrand: calc(100vw - (#{$supportive-cobrand} * 2) - #{$scrollbar-wi
   color: $white;
   text-align: center;
   background-color: $brand-primary;
+  box-shadow: 0 1px 0 rgba($black, 0.25);
 
   @include breakpoint($bp-md) {
     padding: 1.6rem 0;
@@ -217,23 +218,12 @@ $event-text-cobrand: calc(100vw - (#{$supportive-cobrand} * 2) - #{$scrollbar-wi
 }
 
 .event-header__tm-logo {
-  width: 35px;
-  height: 24px;
-  vertical-align: baseline;
+  width: 144px;
+  height: 20px;
   fill: $white;
 
-  @include breakpoint($max: $bp-md - 1) {
+  @include breakpoint($max: $bp-lg - 1) {
     display: none;
-  }
-
-  @include target-ie() {
-    @include breakpoint($max: $bp-lg - 1) {
-      display: none;
-    }
-  }
-
-  @include breakpoint($bp-lg) {
-    width: 165px;
   }
 }
 
@@ -241,16 +231,22 @@ $event-text-cobrand: calc(100vw - (#{$supportive-cobrand} * 2) - #{$scrollbar-wi
   @include icon-button();
 
   height: 44px;
-  margin-left: -($gutter-width / 2);
   padding-left: $gutter-width / 2;
+  margin-left: -($gutter-width / 2);
   text-align: left;
 
   @include breakpoint($max: $bp-md - 1) {
     width: 44px;
   }
 
-  @include breakpoint($bp-md) {
+  @include breakpoint($bp-lg) {
     padding-right: 5px;
+  }
+}
+
+.event-header__menu-button + .event-header__tm-link {
+  @include breakpoint($bp-lg) {
+    margin-left: 5px;
   }
 }
 
