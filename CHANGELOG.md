@@ -1,7 +1,7 @@
 Changelog
 =========
 
-**Unreleased**
+**v0.10.0**
 ---------
 **New Features**
 - Add new `.ada-text` class for screen reader speific text.
