@@ -74,3 +74,15 @@
 
   color: $brand-primary;
 }
+
+.icon-lock {
+  @include icon($brand-gray2);
+}
+
+.icon-unlock {
+  @include icon($brand-gray2);
+}
+
+.icon-lock--white {
+  @include icon($brand-gray3);
+}
