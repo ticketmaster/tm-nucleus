@@ -120,6 +120,15 @@ $event-text-cobrand: calc(100vw - (#{$supportive-cobrand} * 2) - #{$scrollbar-wi
   }
 }
 
+.event-header__date--cobranded,
+.event-header__venue-name--cobranded {
+  width: $event-text-cobrand;
+
+  @include breakpoint($bp-lg) {
+    width: $event-text-lg;
+  }  
+}
+
 .event-header__date--timer,
 .event-header__venue-name--timer {
   @include breakpoint($max: $bp-md - 1) {

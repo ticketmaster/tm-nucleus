@@ -1,6 +1,11 @@
 Changelog
 =========
 
+**Unreleased**
+---------
+**Bug Fixes**
+- Fix off-center Date/Venue information for cobranded header.
+
 **v0.11.0**
 ---------
 - Add new lock and unlock icons.
