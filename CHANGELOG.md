@@ -3,6 +3,10 @@ Changelog
 
 **Unreleased**
 ---------
+**Changes**
+- Change how cobranded header is implemented.
+- Change SVG for Ticketmaster logo.
+
 **Bug Fixes**
 - Fix off-center Date/Venue information for cobranded header.
 

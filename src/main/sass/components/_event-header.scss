@@ -36,11 +36,6 @@ $event-text-cobrand: calc(100vw - (#{$supportive-cobrand} * 2) - #{$scrollbar-wi
   padding: 10px 0;
 }
 
-.event-header--cobranded {
-  // get from cobrand tool
-  background-color: $cobrand-color;
-}
-
 .event-header__event-info {
   flex: 1 1 100%;
   cursor: pointer;
@@ -95,8 +90,8 @@ $event-text-cobrand: calc(100vw - (#{$supportive-cobrand} * 2) - #{$scrollbar-wi
   }
 }
 
-.event-header__rotator--cobranded,
-.event-header__title--cobranded {
+.event-header__title--cobranded,
+.event-header__rotator--cobranded {
   width: $event-text-cobrand;
 
   @include breakpoint($bp-lg) {
@@ -126,7 +121,7 @@ $event-text-cobrand: calc(100vw - (#{$supportive-cobrand} * 2) - #{$scrollbar-wi
 
   @include breakpoint($bp-lg) {
     width: $event-text-lg;
-  }  
+  }
 }
 
 .event-header__date--timer,
@@ -195,11 +190,6 @@ $event-text-cobrand: calc(100vw - (#{$supportive-cobrand} * 2) - #{$scrollbar-wi
   }
 }
 
-.event-header__date-venue--cobranded {
-  // determine based on cobrand background color
-  color: $white;
-}
-
 .event-header__date {
   @include breakpoint($bp-md) {
     &:after {
@@ -222,12 +212,8 @@ $event-text-cobrand: calc(100vw - (#{$supportive-cobrand} * 2) - #{$scrollbar-wi
   }
 }
 
-.event-header__tm-link--cobranded {
-  display: none;
-}
-
 .event-header__tm-logo {
-  width: 144px;
+  width: 150px;
   height: 20px;
   fill: $white;
 
@@ -257,10 +243,6 @@ $event-text-cobrand: calc(100vw - (#{$supportive-cobrand} * 2) - #{$scrollbar-wi
   @include breakpoint($bp-lg) {
     margin-left: 5px;
   }
-}
-
-.event-header__menu-button--cobranded {
-  display: none;
 }
 
 .event-header__menu-icon {
