@@ -17,6 +17,8 @@ Changelog
 **Bug Fixes**
 - Correct cobrand-header HTML example to include default Ticketmaster logo when
   brand logo is not present.
+- iOS/safari has an issue with the `drop-shadow` mixin(). Content will flicker so we need to use
+  `backface-visibility: hidden;`. Solution was from this link. http://stackoverflow.com/a/13020881
 
 **v0.13.0**
 ---------
