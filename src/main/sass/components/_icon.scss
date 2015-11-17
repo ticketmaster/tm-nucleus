@@ -76,13 +76,9 @@
 }
 
 .icon-lock {
-  @include icon($brand-gray2);
+  @include icon($brand-caution);
 }
 
 .icon-unlock {
   @include icon($brand-gray2);
-}
-
-.icon-lock--white {
-  @include icon($brand-gray3);
 }
