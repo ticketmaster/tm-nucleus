@@ -1,7 +1,7 @@
 Changelog
 =========
 
-**Unreleased**
+**v0.12.0**
 ---------
 **Changes**
 - Change how cobranded header is implemented.
