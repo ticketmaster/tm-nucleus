@@ -1,0 +1,81 @@
+
+$countdown-size: 65px;
+$countdown-half-size: $countdown-size / 2;
+$countdown-thickness: 5px;
+
+.countdown {
+  width: $countdown-size;
+  height: $countdown-size;
+}
+
+.wrapper {
+  width: $countdown-size;
+  height: $countdown-size;
+  position: absolute;
+  clip: rect(0px, $countdown-size, $countdown-size, $countdown-half-size);
+}
+
+.circle {
+  width: $countdown-size;
+  height: $countdown-size;
+  border: $countdown-thickness solid #fff;
+  border-radius: 50%;
+  position: absolute;
+  clip: rect(0px, $countdown-half-size, $countdown-size, 0px);
+}
+
+.circle-base {
+  width: $countdown-size;
+  height: $countdown-size;
+  border: $countdown-thickness solid rgba(255, 255, 255, 0.25);
+  border-radius: $countdown-half-size;
+  position: absolute;
+}
+
+
+div[data-anim~=base] {
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function:linear;
+}
+
+.wrapper[data-anim~=wrapper] {
+  animation-duration: 0.01s;
+  animation-delay: 10s;
+  animation-name: close-wrapper;
+}
+
+.circle[data-anim~=left] {
+  animation-duration: 20s;
+  animation-name: left-spin;
+}
+
+.circle[data-anim~=right] {
+  animation-duration: 10s;
+  animation-name: right-spin;
+}
+
+
+@keyframes right-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes left-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes close-wrapper {
+  to {
+    clip: rect(auto, auto, auto, auto);
+  }
+}
