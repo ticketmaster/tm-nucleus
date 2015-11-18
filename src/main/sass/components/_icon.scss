@@ -74,3 +74,11 @@
 
   color: $brand-primary;
 }
+
+.icon-lock {
+  @include icon($brand-caution);
+}
+
+.icon-unlock {
+  @include icon($brand-gray2);
+}
