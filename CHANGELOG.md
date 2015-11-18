@@ -1,6 +1,10 @@
 Changelog
 =========
 
+**v0.11.0**
+---------
+- Add new lock and unlock icons.
+
 **v0.10.0**
 ---------
 **New Features**
