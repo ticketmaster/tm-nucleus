@@ -5,10 +5,67 @@ $countdown-thickness: 5px;
 $timer-duration: 5s;
 $timer-duration-half: $timer-duration / 2;
 
+@mixin countdown-animation() {
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function:linear;
+}
+
+@mixin countdown-circle() {
+  @include countdown-animation();
+
+  position: absolute;
+  width: $countdown-size;
+  height: $countdown-size;
+  border: $countdown-thickness solid $white;
+  border-radius: 50%;
+  clip: rect(0px, $countdown-half-size, $countdown-size, 0px);
+  background: $transparent-color;
+}
+
+
 .countdown {
   width: $countdown-size;
   height: $countdown-size;
   position: relative;
+}
+
+.countdown__description {
+  position: absolute;
+  width: $countdown-size;
+  height: $countdown-size;
+  border: $countdown-thickness solid rgba($white, 0.25);
+  border-radius: $countdown-half-size;
+}
+
+.countdown__indicator {
+  @include countdown-animation();
+
+  width: $countdown-size;
+  height: $countdown-size;
+  position: absolute;
+  clip: rect(0px, $countdown-size, $countdown-size, $countdown-half-size);
+  animation-duration: 0.01s;
+  animation-delay: $timer-duration-half;
+  animation-name: close-wrapper;
+}
+
+.countdown__indicator {
+  &:before {
+    @include countdown-circle();
+
+    animation-duration: $timer-duration;
+    animation-name: left-spin;
+    content: '';
+  }
+
+  &:after {
+    @include countdown-circle();
+
+    animation-duration: $timer-duration-half;
+    animation-name: right-spin;
+    content: '';
+  }
 }
 
 .countdown__clock {
@@ -19,55 +76,6 @@ $timer-duration-half: $timer-duration / 2;
   text-align: center;
   backface-visibility: hidden;
 }
-
-.countdown__indicator {
-  width: $countdown-size;
-  height: $countdown-size;
-  position: absolute;
-  clip: rect(0px, $countdown-size, $countdown-size, $countdown-half-size);
-}
-
-.circle {
-  width: $countdown-size;
-  height: $countdown-size;
-  border: $countdown-thickness solid $white;
-  border-radius: 50%;
-  position: absolute;
-  clip: rect(0px, $countdown-half-size, $countdown-size, 0px);
-  background: $transparent-color;
-}
-
-.countdown__description {
-  width: $countdown-size;
-  height: $countdown-size;
-  border: $countdown-thickness solid rgba($white, 0.25);
-  border-radius: $countdown-half-size;
-  position: absolute;
-}
-
-
-div[data-anim~=base] {
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  animation-timing-function:linear;
-}
-
-.countdown__indicator[data-anim~=wrapper] {
-  animation-duration: 0.01s;
-  animation-delay: $timer-duration-half;
-  animation-name: close-wrapper;
-}
-
-.circle[data-anim~=left] {
-  animation-duration: $timer-duration;
-  animation-name: left-spin;
-}
-
-.circle[data-anim~=right] {
-  animation-duration: $timer-duration-half;
-  animation-name: right-spin;
-}
-
 
 @keyframes right-spin {
   from {
