@@ -2,10 +2,8 @@
   position: relative;
   width: 60px;
   height: 60px;
-
   overflow: hidden;
   background: none repeat scroll 0 0 $brand-gray4;
-
   border-radius: 50%;
 }
 
@@ -14,16 +12,11 @@
   top: 4px;
   left: 4px;
   display: block;
-
   width: 52px;
   height: 52px;
-
   background: none repeat scroll 0 0 $white;
-
   border-radius: 50%;
-
   content: '';
-
   box-shadow: 0 0 10px rgba($black, 0.1);
 }
 
@@ -47,17 +40,14 @@
 .polling-checkmark__left:after {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
-
   animation-delay: 1.25s;
   animation-name: ui-spinner-rotate-right;
 }
 
 .polling-checkmark__right:after {
   left: -100%;
-
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-
   transform-origin: 100% 50% 0;
 }
 
