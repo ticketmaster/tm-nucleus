@@ -1,14 +1,26 @@
 
-$countdown-size: 65px;
+$countdown-size: 60px;
 $countdown-half-size: $countdown-size / 2;
 $countdown-thickness: 5px;
+$timer-duration: 5s;
+$timer-duration-half: $timer-duration / 2;
 
 .countdown {
   width: $countdown-size;
   height: $countdown-size;
+  position: relative;
 }
 
-.wrapper {
+.countdown__clock {
+  @include responsive-font('md');
+  @include vertically-center();
+
+  color: $white;
+  text-align: center;
+  backface-visibility: hidden;
+}
+
+.countdown__indicator {
   width: $countdown-size;
   height: $countdown-size;
   position: absolute;
@@ -18,16 +30,17 @@ $countdown-thickness: 5px;
 .circle {
   width: $countdown-size;
   height: $countdown-size;
-  border: $countdown-thickness solid #fff;
+  border: $countdown-thickness solid $white;
   border-radius: 50%;
   position: absolute;
   clip: rect(0px, $countdown-half-size, $countdown-size, 0px);
+  background: $transparent-color;
 }
 
-.circle-base {
+.countdown__description {
   width: $countdown-size;
   height: $countdown-size;
-  border: $countdown-thickness solid rgba(255, 255, 255, 0.25);
+  border: $countdown-thickness solid rgba($white, 0.25);
   border-radius: $countdown-half-size;
   position: absolute;
 }
@@ -39,19 +52,19 @@ div[data-anim~=base] {
   animation-timing-function:linear;
 }
 
-.wrapper[data-anim~=wrapper] {
+.countdown__indicator[data-anim~=wrapper] {
   animation-duration: 0.01s;
-  animation-delay: 10s;
+  animation-delay: $timer-duration-half;
   animation-name: close-wrapper;
 }
 
 .circle[data-anim~=left] {
-  animation-duration: 20s;
+  animation-duration: $timer-duration;
   animation-name: left-spin;
 }
 
 .circle[data-anim~=right] {
-  animation-duration: 10s;
+  animation-duration: $timer-duration-half;
   animation-name: right-spin;
 }
 

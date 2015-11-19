@@ -10,96 +10,27 @@
     <link rel="icon" href="//s2.tmol.co/tm/4ab94a4f/static/favicon-rebrand.ico" type="image/x-icon">
     <link rel="shortcut icon" href="//s2.tmol.co/tm/4ab94a4f/static/favicon-rebrand.ico" type="image/x-icon">
     <link href="css/nucleus.css" rel="stylesheet" type="text/css">
-    <!-- <link href="css/styleguide.css" rel="stylesheet" type="text/css"> -->
-<style>
+    <link href="css/styleguide.css" rel="stylesheet" type="text/css">
 
-body {
-  background-color: purple;
-}
-/*
-.wrapper {
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  clip: rect(0px, 100px, 100px, 50px);
-}
+    <style>
+      body {
+        background-color: purple;
+      }
+    </style>
+  </head>
 
-.circle {
-  width: 80px;
-  height: 80px;
-  border: 10px solid white;
-  border-radius: 50px;
-  position: absolute;
-  clip: rect(0px, 50px, 100px, 0px);
-}
+  <body>
 
-.circle-base {
-  width: 80px;
-  height: 80px;
-  border: 10px solid rgba(255, 255, 255, 0.25);
-  border-radius: 50px;
-  position: absolute;
-}
+    <div class="countdown">
+      <div class="countdown__description">
+        <span class="ada-text">Time left to complete your purchase</span>
+      </div>
+      <div class="countdown__indicator" data-anim="base wrapper">
+        <div class="circle" data-anim="base left"></div>
+        <div class="circle" data-anim="base right"></div>
+      </div>
+      <div class="countdown__clock">12:34</div>
+    </div>
 
-
-div[data-anim~=base] {
-  -webkit-animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-  -webkit-animation-timing-function:linear;
-}
-
-.wrapper[data-anim~=wrapper] {
-  -webkit-animation-duration: 0.01s;
-  -webkit-animation-delay: 30s;
-  -webkit-animation-name: close-wrapper;
-}
-
-.circle[data-anim~=left] {
-  -webkit-animation-duration: 60s;
-  -webkit-animation-name: left-spin;
-}
-
-.circle[data-anim~=right] {
-  -webkit-animation-duration: 30s;
-  -webkit-animation-name: right-spin;
-}
-
-
-@-webkit-keyframes right-spin {
-  from {
-    -webkit-transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(180deg);
-  }
-}
-
-@-webkit-keyframes left-spin {
-  from {
-    -webkit-transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-@-webkit-keyframes close-wrapper {
-  to {
-    clip: rect(auto, auto, auto, auto);
-  }
-}*/
-</style>
-</head>
-
-<body>
-
-<div class="container">
-  <div class="circle-base"></div>
-  <div class="wrapper" data-anim="base wrapper">
-    <div class="circle" data-anim="base left"></div>
-    <div class="circle" data-anim="base right"></div>
-  </div>
-</div>
-
-
-</body></html>
+  </body>
+</html>
