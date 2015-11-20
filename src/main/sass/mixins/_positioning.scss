@@ -1,0 +1,5 @@
+@mixin vertically-center($pos: relative) {
+  position: $pos;
+  top: 50%;
+  transform: translateY(-50%);
+}

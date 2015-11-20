@@ -38,11 +38,10 @@
 }
 
 .cobrand-header__tm-logo {
-  position: relative;
-  top: 50%;
+  @include vertically-center();
+
   width: 90px;
   height: 12px;
-  transform: translateY(-50%);
   fill: $white;
 
   @include breakpoint($bp-lg) {
