@@ -65,6 +65,10 @@
   @include icon($brand-caution);
 }
 
+.icon-polling-checkmark {
+  @include icon($brand-primary, 60px, 60px);
+}
+
 .icon-polling-refresh {
   @include icon($white);
 }
