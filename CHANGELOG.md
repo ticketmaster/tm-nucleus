@@ -1,6 +1,11 @@
 Changelog
 =========
 
+**v0.13.0**
+---------
+**New Features**
+- Add new animated polling icon.
+
 **v0.12.0**
 ---------
 **Changes**
