@@ -71,8 +71,6 @@ $dropdown-chevron-size: 16px;
 $event-header-tm-short: 35px;
 $event-header-tm-full: 165px;
 $event-header-height: 8rem;
-$timer-size: 60px;
-$timer-size-lg: 65px;
 // deprecated
 $timer-container: 90px;
 $timer-container-lg: 95px;
@@ -84,10 +82,10 @@ $event-header-info-checkout-width: 42vw;
 $event-image-size: 205px;
 
 // Timer
-$timer-size: 60px;
-$timer-size-lg: 65px;
-$timer-border-on: 5px solid $brand-primary-darker25;
-$timer-border-off: 5px solid $brand-primary-lighter75;
+$timer-size: 55px;
+$timer-size-lg: 60px;
+$timer-border-thickness: 5px;
+$timer-opacity: 0.3;
 
 // Make images flexible
 img,

@@ -1,6 +1,20 @@
 Changelog
 =========
 
+**Unreleased**
+---------
+**New Features**
+- New `vertically-center()` mixin.
+
+**Changes**
+- Change size of timer (reduced by 5px from previous sizes).
+- Make `timer-base` mixin be able to receive a specified color for border.
+- Remove `$timer-border-on` and `$timer-border-off` variables.
+
+**Bug Fixes**
+- Correct cobrand-header HTML example to include default Ticketmaster logo when
+  brand logo is not present.
+
 **v0.13.0**
 ---------
 **New Features**

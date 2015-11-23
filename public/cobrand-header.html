@@ -26,10 +26,6 @@
       */
       .event-header,
       .cobrand-header,
-      .timer--cobranded,
-      .timer__spinner--cobranded,
-      .timer__filler--cobranded,
-      .timer__bg--cobranded,
       .timer__mask--cobranded {
         background-color: #283866;
       }
@@ -39,6 +35,7 @@
         color: #fff;
       }
 
+      .event-header__tm-logo,
       .cobrand-header__tm-logo,
       .event-header__more-icon {
         fill: #fff;
@@ -51,6 +48,19 @@
       .cobrand-header__verified {
         background-image: url('../img/verified-dark.svg');
       }
+
+      /* If brand background color is light, then add the following */
+      /*.timer__indicator {
+        color: #000;
+      }
+      .timer__spinner,
+      .timer__filler {
+        border-color: #000;
+      }
+      .timer__bg,
+      .timer__mask {
+        border-color: rgba(0, 0, 0, 0.3);
+      }*/
 
       /* If brand logo is present, then add the following */
       .cobrand-header__logo {
@@ -82,21 +92,20 @@
     <p>There are a few steps to take to enable cobranding of the event header.</p>
     <p>The first is to embed the following HTML in <code class="sg-code">&lt;style&gt;</code> tags in the head of your document:</p>
     <pre class="sg-sample-code">
-// Color values used below are for illustrative purposes only!
-
 .event-header,
 .cobrand-header {
-  background-color: #283866;
+  background-color: <span class="sg-highlight-code">[brand-bgcolor]</span>;
 }
 
 .event-header__title,
 .event-header__date-venue {
-  color: #fff;
+  color: <span class="sg-highlight-code">[brand-text-color]</span>;
 }
 
+.event-header__tm-logo,
 .cobrand-header__tm-logo,
 .event-header__more-icon {
-  fill: #fff;
+  fill: <span class="sg-highlight-code">[brand-text-color]</span>;
 }
 
 .event-header__menu-button {
@@ -105,31 +114,41 @@
 
 .cobrand-header__verified {
   // determine which logo to use based on brand background color
-  background-image: url('../img/verified-dark.svg');
+  background-image: url('path/to/verified-<span class="sg-highlight-code">[dark/light/pacific]</span>.svg');
 }
   </pre>
 
-  <p>Checkout pages will also need the following styles defined.</p>
+  <p>Checkout pages will also need the following style defined.</p>
 
   <pre class="sg-sample-code">
-.timer--cobranded,
-.timer__spinner--cobranded,
-.timer__filler--cobranded,
-.timer__bg--cobranded,
 .timer__mask--cobranded {
-  background-color: #283866;
+  background-color: <span class="sg-highlight-code">[brand-bgcolor]</span>;
 }
   </pre>
 
+  <p>Light brand background colors will need these properties:</p>
+  <pre class="sg-sample-code">
+.timer__indicator {
+  color: #000;
+}
+.timer__spinner,
+.timer__filler {
+  border-color: #000;
+}
+.timer__bg,
+.timer__mask {
+  border-color: rgba(0, 0, 0, 0.3);
+}
+  </pre>
 
   <p>Note that the above assumes that a brand color has been specified. If there is none, then the background will default to <code class="sg-code">$brand-primary</code>.</p>
-  <p>If a brand logo exists, then you will also need the following:</p>
+  <p>If a brand logo exists, then you will also need the following. (Otherwise, it will default to showing the Ticketmaster logo.)</p>
 
   <pre class="sg-sample-code">
 // For when a brand logo exists
 
 .cobrand-header__logo {
-  background-image: url('../img/sample-cobrand-logo.png');
+  background-image: <span class="sg-highlight-code">url('path/to/brand-logo.png')</span>;
 }
 
 .event-header__tm-logo,
@@ -139,7 +158,7 @@
     </pre>
 
     <p>Background color and image are returned via the branding service. Text color is dynamically calculated to be either white or black based on the background color.</p>
-    <p>Additionally, the following modifier classes need to be added:</p>
+    <p>Additionally, the following modifier classes need to be added to your HTML markup:</p>
     <pre class="sg-sample-code">
 .event-header__rotator--cobranded
 .event-header__date--cobranded
@@ -204,6 +223,9 @@
   </div>
   <div class="cobrand-header">
     <div class="cobrand-header__logo">
+      <svg class="cobrand-header__tm-logo">
+        <use xlink:href="#tm-logo"></use>
+      </svg>
       <span class="ada-text">Cobrand Name</span>
     </div>
     <div class="cobrand-header__verified cobrand-header__verified--timer">
@@ -236,9 +258,9 @@
     </div>
     <div class="event-header__supportive event-header__supportive--timer event-header__supportive--cobranded">
       <div class="event-header__timer">
-        <div class="timer timer--cobranded">
+        <div class="timer">
           <div class="is-offscreen">Time left to complete page.</div>
-          <div class="timer__indicator">13:49</div>
+          <div class="timer__indicator">00:00</div>
           <div class="timer__spinner timer__spinner--cobranded timer__animate"></div>
           <div class="timer__filler timer__filler--cobranded timer__animate"></div>
           <div class="timer__bg timer__bg--cobranded"></div>
