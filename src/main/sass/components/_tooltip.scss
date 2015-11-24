@@ -62,7 +62,7 @@
 }
 
 .tooltip__delimited-list + .tooltip__content {
-  @include outer-spacing($right: $spacing-sm, $bottom: $spacing-sm, $left: $spacing-sm);
+  @include outer-spacing($right: $spacing-sm, $left: $spacing-sm);
 
   padding-right: 0;
   padding-left: 0;
@@ -71,4 +71,9 @@
 
 .tooltip--ism__subtotal {
   @include responsive-font('xl');
+}
+
+.tooltip__legal {
+  @include inner-spacing($right: $spacing-sm, $bottom: $spacing-sm, $left: $spacing-sm);
+  @include responsive-font('xs');
 }

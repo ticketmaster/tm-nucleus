@@ -5,15 +5,20 @@ Changelog
 ---------
 **New Features**
 - New `vertically-center()` mixin.
+- Added `tooltip__legal` for legal footer treatment
 
 **Changes**
 - Change size of timer (reduced by 5px from previous sizes).
 - Make `timer-base` mixin be able to receive a specified color for border.
 - Remove `$timer-border-on` and `$timer-border-off` variables.
+- Remove `white-space: nowrap;` from `srs.scss`. Sometimes section names need to break to another line.
+- Remove bottom margin when `tooltip__content` follows a `.tooltip__delimited-list + .tooltip__content` list
 
 **Bug Fixes**
 - Correct cobrand-header HTML example to include default Ticketmaster logo when
   brand logo is not present.
+- iOS/safari has an issue with the `drop-shadow` mixin(). Content will flicker so we need to use
+  `backface-visibility: hidden;`. Solution was from this link. http://stackoverflow.com/a/13020881
 
 **v0.13.0**
 ---------
