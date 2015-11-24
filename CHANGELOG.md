@@ -1,7 +1,7 @@
 Changelog
 =========
 
-**Unreleased**
+**v0.14.0**
 ---------
 **New Features**
 - New `vertically-center()` mixin.
