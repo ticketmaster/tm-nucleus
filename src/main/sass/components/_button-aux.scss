@@ -20,7 +20,7 @@
 }
 
 .button-aux--minor {
-  @include responsive-font('md');
+  @include responsive-font('sm');
 
   min-height: $button-minor-height;
   padding: 0 $button-minor-padding;

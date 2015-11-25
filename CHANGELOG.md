@@ -1,6 +1,12 @@
 Changelog
 =========
 
+**Unreleased**
+---------
+**Changes**
+- Default button font size is now `md` instead of `lg`.
+- Font size for `button-aux--minor` is now `sm` instead of `md`.
+
 **v0.14.0**
 ---------
 **New Features**
