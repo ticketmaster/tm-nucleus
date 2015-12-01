@@ -1,20 +1,6 @@
 // TM Color Palette
 // scss-lint:disable ColorVariable
 
-// calculate different shades
-@function get-darker($color, $percent: 25%) {
-  @return mix($black, $color, $percent);
-}
-
-@function get-lighter($color, $percent: 75%) {
-  @return mix($white, $color, $percent);
-}
-
-// return hex value associated with name
-@function color($name, $shade) {
-  @return map-get(map-get($palette, $name), $shade);
-}
-
 // base colors
 $brand-primary:  #009cde;
 $brand-cta:      #19ab20;
@@ -71,10 +57,59 @@ $brand-cta-darker25:      get-darker($brand-cta, 25%);
 $brand-alert-darker25:    get-darker($brand-alert, 25%);
 $brand-accent-darker25:   get-darker($brand-accent, 25%);
 
-// misc
-$tooltip-color: $white;
+// Typography
+$text-color: $brand-gray;
+$alt-text-color: $brand-gray2;
+$link-color: $brand-primary;
+$link-hover-color: $brand-primary-darker25;
+
+// Buttons
+$primary-button-color: $brand-primary;
+$primary-aux-button-color: $brand-primary;
+$secondary-button-color: $brand-gray2;
+$cta-button-color: $brand-cta;
+
+// Qty Picker
+$qty-increment-button-color: $brand-primary;
+$qty-increment-button-hover-color: $brand-primary-darker25;
+$qty-increment-button-disabled-color: $brand-primary-lighter75;
+$qty-decrement-button-color: $brand-gray2;
+$qty-decrement-button-hover-color: $brand-gray2-darker25;
+
+// Event Header
+$header-color: $brand-primary;
+$header-text-color: $white;
+$header-secondary-text-color: $brand-primary-lighter75;
+
+// Borders
+$base-border-color: $brand-gray3;
+$input-border-color: $brand-gray2;
+$caution-dialog-color: $brand-gray2;
+$cobrand-border-color: $brand-gray3;
+
+// Utility
+$resale-color: $brand-accent;
+$success-color: $brand-cta;
+$alert-color: $brand-alert;
+$caution-color: $brand-caution;
+$label-color: $brand-gray2;
+$modal-color: $brand-primary;
 $transparent-color: rgba($white, 0);
 $overlay-color: rgba($black, 0.75);
 $outline-color: $brand-primary-lighter75;
 $shadow-color: rgba($black, 0.5);
 $perforated-shadow-color: rgba($black, 0.25);
+
+// Icons
+$icon-color: $brand-gray2;
+$ada-icon-color: $brand-primary;
+$verified-icon-ticket-color: $brand-gray;
+$verified-icon-circle-color: $brand-primary;
+$polling-circle-unfilled-color: $brand-gray4;
+
+// Misc
+$list-item-hover-color: $brand-primary-lighter87;
+$page-wrapper-bg-color: $brand-gray4;
+$caret-legacy-color: $brand-gray2-lighter50;$polling-refresh-bg-color: $brand-gray;
+$cart-bg-color: $brand-gray4;
+$tooltip-color: $white;

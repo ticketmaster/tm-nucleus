@@ -10,7 +10,7 @@
   position: absolute;
   bottom: $input-label-bottom;
   left: $textfield-gutter-left;
-  color: $brand-gray2;
+  color: $label-color;
   pointer-events: none;
   transition: $form-label-animation;
 }
@@ -22,7 +22,7 @@
   height: $input-height;
   padding-bottom: 0;
   padding-left: $textfield-gutter-left;
-  color: $brand-gray;
+  color: $text-color;
 
   &:focus,
   &:active {
@@ -52,7 +52,7 @@
 }
 
 .input-group__required {
-  color: $brand-primary;
+  color: $link-color;
 }
 
 // Toggle States
@@ -69,7 +69,7 @@
 .input-group__text-field.has-content:focus + .input-group__label,
 .dropdown__select.has-content:active + .input-group__label,
 .dropdown__select.has-content:focus + .input-group__label {
-  @include form-label($brand-primary);
+  @include form-label($label-color);
 
   bottom: $input-label-bottom-active;
 }

@@ -1,4 +1,9 @@
 // config
+$code-bg-color: $brand-gray4;
+$main-hdg-color: $brand-primary;
+$secondary-hdg-color: $brand-accent;
+$table-alt-bg-color: $brand-gray4;
+
 $sg-swatch-height: 70px;
 $sg-spacing: 1.5em;
 
@@ -9,7 +14,7 @@ $sg-spacing: 1.5em;
   border: $base-border-style;
   border-radius: 4px;
   font-family: $monospace;
-  background-color: $brand-gray4;
+  background-color: $code-bg-color;
 }
 
 
@@ -22,7 +27,7 @@ $sg-spacing: 1.5em;
 
   line-height: 1;
 
-  background-color: $brand-primary;
+  background-color: $header-color;
 
   @include breakpoint($bp-md) {
     padding-top: increase-spacing($spacing-sm);
@@ -61,7 +66,7 @@ $sg-spacing: 1.5em;
 }
 
 .sg-title {
-  @include hdg-text('xl', $brand-gray);
+  @include hdg-text('xl', $text-color);
 }
 
 .sg-nav {
@@ -116,20 +121,20 @@ $sg-spacing: 1.5em;
 
 
 .sg-hdg {
-  @include hdg-text('xxl', $brand-primary);
+  @include hdg-text('xxl', $main-hdg-color);
 
   text-transform: uppercase;
 }
 
 
 .sg-subhdg {
-  @include hdg-text('md', $brand-accent);
+  @include hdg-text('md', $secondary-hdg-color);
 
   text-transform: uppercase;
 }
 
 .sg-subhdg2 {
-  @include hdg-text('sm', $brand-gray2, 5px);
+  @include hdg-text('sm', $alt-text-color, 5px);
 
   margin-top: 2em;
 
@@ -137,7 +142,7 @@ $sg-spacing: 1.5em;
 }
 
 .sg-subhdg3 {
-  @include hdg-text('sm', $brand-gray);
+  @include hdg-text('sm', $text-color);
 
   margin-top: 2em;
 
@@ -187,7 +192,7 @@ $sg-spacing: 1.5em;
   }
 
   tr:nth-child(even) {
-    background-color: $brand-gray4;
+    background-color: $table-alt-bg-color;
   }
 }
 
@@ -245,7 +250,7 @@ $sg-spacing: 1.5em;
   padding: 0 gutter();
   margin-bottom: 1em;
   clear: both;
-  background: $brand-gray4;
+  background: $code-bg-color;
 
   &:before {
     @include responsive-font('sm');
@@ -261,7 +266,7 @@ $sg-spacing: 1.5em;
 }
 
 .sg-highlight-code {
-  color: $brand-alert;
+  color: $alert-color;
 }
 
 

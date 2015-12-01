@@ -5,7 +5,7 @@
 .tile-selection__content {
   @include inner-spacing($spacing-sm);
 
-  color: $brand-gray2;
+  color: $alt-text-color;
 }
 
 .tile-selection__content:not(:first-child) {
@@ -18,5 +18,5 @@
 
 .tile-selection__selected-text {
   font-weight: bold;
-  color: $brand-primary;
+  color: $link-color;
 }

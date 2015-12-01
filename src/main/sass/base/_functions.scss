@@ -1,3 +1,17 @@
+// calculate different shades
+@function get-darker($color, $percent: 25%) {
+  @return mix($black, $color, $percent);
+}
+
+@function get-lighter($color, $percent: 75%) {
+  @return mix($white, $color, $percent);
+}
+
+// return hex value associated with name
+@function color($name, $shade) {
+  @return map-get(map-get($palette, $name), $shade);
+}
+
 // responsive spacing based on established ratio
 @function increase-spacing($val) {
   @return $val * $spacing-ratio;

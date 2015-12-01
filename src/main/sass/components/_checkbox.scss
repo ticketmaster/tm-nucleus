@@ -29,6 +29,6 @@
 }
 
 .checkbox__input:checked ~ .checkbox__label > .checkbox__icon {
-  background-color: $brand-primary;
+  background-color: $link-color;
   border: 0;
 }

@@ -3,14 +3,14 @@
   font-family: $base-font-family;
   -webkit-font-smoothing: antialiased;
   line-height: $base-line-height;
-  color: $brand-gray;
+  color: $text-color;
   background-color: $white;
 }
 
 // use wrapper to set background color for a particular section of the page
 .page__wrapper {
   clear: both;
-  background-color: $brand-gray4;
+  background-color: $page-wrapper-bg-color;
 }
 
 .page__wrapper-footer {

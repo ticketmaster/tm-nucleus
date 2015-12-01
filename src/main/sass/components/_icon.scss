@@ -1,17 +1,17 @@
 .icon-ada {
-  @include icon($brand-primary);
+  @include icon($ada-icon-color);
 }
 
 .icon-alert {
-  @include icon($brand-gray2);
+  @include icon($icon-color);
 }
 
 .icon-check {
-  @include icon($brand-gray2);
+  @include icon($icon-color);
 }
 
 .icon-chevron {
-  @include icon($brand-gray2, 13px, 8px);
+  @include icon($icon-color, 13px, 8px);
 }
 
 .icon-chevron--top {
@@ -27,19 +27,19 @@
 }
 
 .icon-menu {
-  @include icon($brand-gray2);
+  @include icon($icon-color);
 }
 
 .icon-minus {
-  @include icon($brand-gray2);
+  @include icon($icon-color);
 }
 
 .icon-more {
-  @include icon($brand-gray2);
+  @include icon($icon-color);
 }
 
 .icon-plus {
-  @include icon($brand-gray2);
+  @include icon($icon-color);
 }
 
 .icon-plus--circled {
@@ -48,25 +48,25 @@
 }
 
 .icon-close {
-  @include icon($brand-gray2);
+  @include icon($icon-color);
 
   transform: rotate(45deg);
 }
 
 .icon-resale {
-  @include icon($brand-accent);
+  @include icon($resale-color);
 }
 
 .icon-ticket {
-  @include icon($brand-gray2);
+  @include icon($icon-color);
 }
 
 .icon-caution {
-  @include icon($brand-caution);
+  @include icon($caution-color);
 }
 
 .icon-polling-checkmark {
-  @include icon($brand-primary, 60px, 60px);
+  @include icon($link-color, 60px, 60px);
 }
 
 .icon-polling-refresh {
@@ -74,15 +74,15 @@
 }
 
 .icon-verified {
-  @include icon($brand-gray);
+  @include icon($verified-icon-ticket-color);
 
-  color: $brand-primary;
+  color: $verified-icon-circle-color;
 }
 
 .icon-lock {
-  @include icon($brand-caution);
+  @include icon($caution-color);
 }
 
 .icon-unlock {
-  @include icon($brand-gray2);
+  @include icon($icon-color);
 }

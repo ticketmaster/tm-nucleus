@@ -6,6 +6,8 @@ Changelog
 **Changes**
 - Default button font size is now `md` instead of `lg`.
 - Font size for `button-aux--minor` is now `sm` instead of `md`.
+- Apply certain colors via abstract variable names to facilitate custom client
+  colors. Introduce new `_customizable.scss` file to hold/assign abstract names.
 
 **Bug Fixes**
 - Change `timer` background color from transparent to `$brand-primary`

@@ -5,14 +5,14 @@ $spacing-sm: 10px;
 $spacing-ratio: 1.5;
 
 // Borders
-$base-border-style: 1px solid $brand-gray3;
-$input-border-style: 1px solid $brand-gray2;
-$focused-border-style: 1px solid $brand-primary;
-$success-border-style: 1px solid $brand-cta;
-$caution-border-style: 1px solid $brand-gray2;
-$alert-border-style: 1px solid $brand-alert;
+$base-border-style: 1px solid $base-border-color;
+$input-border-style: 1px solid $input-border-color;
+$focused-border-style: 1px solid $link-color;
+$success-border-style: 1px solid $success-color;
+$caution-border-style: 1px solid $caution-dialog-color;
+$alert-border-style: 1px solid $alert-color;
 $outline-style: 3px solid $outline-color;
-$tile-selected-style: 2px solid $brand-primary;
+$tile-selected-style: 2px solid $link-color;
 
 // Radius and shadows
 $base-border-radius: 3px;

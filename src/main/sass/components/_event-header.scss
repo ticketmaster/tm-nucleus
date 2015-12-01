@@ -22,9 +22,9 @@ $event-text-cobrand: calc(100vw - (#{$supportive-cobrand} * 2) - #{$scrollbar-wi
   min-width: $bp-xs;
   min-height: $event-header-height;
   padding: 1.8rem 0;
-  color: $white;
+  color: $header-text-color;
   text-align: center;
-  background-color: $brand-primary;
+  background-color: $header-color;
   box-shadow: 0 1px 0 rgba($black, 0.25);
 
   @include breakpoint($bp-md) {
@@ -55,7 +55,7 @@ $event-text-cobrand: calc(100vw - (#{$supportive-cobrand} * 2) - #{$scrollbar-wi
   width: $event-text-sm;
   margin: 0 auto;
   font-weight: normal;
-  color: $white;
+  color: $header-text-color;
 
   @include breakpoint($bp-md) {
     width: $event-text-md;
@@ -178,11 +178,11 @@ $event-text-cobrand: calc(100vw - (#{$supportive-cobrand} * 2) - #{$scrollbar-wi
 }
 
 .event-header__title-link {
-  color: $white;
+  color: $header-text-color;
 }
 
 .event-header__date-venue {
-  color: $brand-primary-lighter75;
+  color: $header-secondary-text-color;
   white-space: nowrap;
 
   @include breakpoint($max: $bp-md - 1) {
@@ -304,7 +304,7 @@ $event-text-cobrand: calc(100vw - (#{$supportive-cobrand} * 2) - #{$scrollbar-wi
 }
 
 .event-header__venue-time {
-  color: $brand-primary-lighter75;
+  color: $header-secondary-text-color;
   white-space: nowrap;
 }
 
