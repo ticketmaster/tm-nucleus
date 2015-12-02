@@ -1,7 +1,7 @@
 Changelog
 =========
 
-**Unreleased**
+**0.15.0**
 ---------
 **Changes**
 - Default button font size is now `md` instead of `lg`.
