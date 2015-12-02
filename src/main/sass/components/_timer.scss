@@ -6,7 +6,7 @@ $timer-duration: 30s;
   width: $timer-size;
   height: $timer-size;
   margin: auto;
-  background-color: $transparent-color;
+  background-color: $brand-primary;
 
   @include breakpoint($bp-lg) {
     width: $timer-size-lg;
