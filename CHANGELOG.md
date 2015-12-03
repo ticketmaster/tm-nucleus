@@ -1,6 +1,11 @@
 Changelog
 =========
 
+**Unreleased**
+---------
+**Changes**
+- Abstract color assignments to allow custom user configurations.
+
 **0.15.0**
 ---------
 **Changes**
