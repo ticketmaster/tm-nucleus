@@ -13,23 +13,23 @@
     <link href="css/styleguide.css" rel="stylesheet" type="text/css">
   </head>
 
-<body class="page styleguide">
+<body class="page sg">
 
-  <header class="sg-header">
+  <header class="sg__header">
     <div class="page__frame page__content">
       <div class="split-content">
         <div class="split-content__secondary">
-          <object data="img/nucleus.svg" type="image/svg+xml" class="nucleus-logo"></object>
+          <object data="img/nucleus.svg" type="image/svg+xml" class="sg__logo"></object>
         </div>
-        <div class="split-content__primary sg-name">Nucleus <span class="nucleus-version">v0.15.0</span></div>
+        <div class="split-content__primary sg__name">Nucleus <span class="sg__version">v0.15.0</span></div>
       </div>
     </div>
   </header>
 
   <div class="page__frame page__content">
 
-    <nav class="sg-nav">
-      <ol class="sg-list">
+    <nav class="sg__nav">
+      <ol class="sg__list">
         <li><a href="#palette">Color Palette</a></li>
         <li><a href="#typography">Typography</a></li>
         <li><a href="#text-styles">Text Styles</a></li>
@@ -61,28 +61,28 @@
       </ol>
     </nav>
 
-    <main class="sg-main">
-      <section id="intro" class="sg-section">
-        <h2 class="sg-hdg">What is Nucleus?</h2>
+    <main class="sg__main">
+      <section id="intro" class="sg__section">
+        <h2 class="sg__hdg">What is Nucleus?</h2>
         <p>Nucleus is a CSS component styleguide built on <a href="http://bradfrost.com/blog/post/atomic-web-design/">atomic design principles</a> utilizing <a href="https://css-tricks.com/bem-101/">BEM</a> syntax and <a href="http://sass-lang.com/">SASS</a> goodness. Its primary mission is to create a consistent visual and coding foundation upon which other projects can build their sites.</p>
         <p>While source files are written in .scss, we also provide compiled and minified CSS files for consumption if you choose to forgo using SASS in your build process.</p>
         <p>The project is publicly available on <a href="https://github.com/Ticketmaster/tm-nucleus">Github</a> and as an <a href="https://www.npmjs.com/package/tm-nucleus">NPM module</a>.</p>
 
-        <h3 class="sg-subhdg">Changelog</h2>
+        <h3 class="sg__subhdg">Changelog</h2>
         <p>We're working on making a prettier changelog, but for now, you can see the ugly version <a href="https://github.com/Ticketmaster/tm-nucleus/blob/master/CHANGELOG.md">here</a>.</p>
       </section>
 
-      <section id="palette" class="sg-section">
+      <section id="palette" class="sg__section">
 
-        <h2 class="sg-hdg">Color Palette</h2>
+        <h2 class="sg__hdg">Color Palette</h2>
 
-        <div class="sg-swatches">
-          <div class="sg-swatch-group">
-            <div class="sg-swatch sg-swatch--pacific"></div>
-            <div class="sg-swatch-info">
-              <span class="sg-swatch-name">pacific</span>
-              <code class="sg-code">$brand-primary</code>
-              <ul class="sg-list sg-swatch-usage">
+        <div class="sg__swatches">
+          <div class="sg__swatch-group">
+            <div class="sg__swatch sg__swatch--pacific"></div>
+            <div class="sg__swatch-info">
+              <span class="sg__swatch-name">pacific</span>
+              <code class="sg__code">$brand-primary</code>
+              <ul class="sg__list sg__swatch-usage">
                 <li>Header color</li>
                 <li>Links</li>
                 <li>Standard buttons</li>
@@ -93,35 +93,35 @@
             </div>
           </div>
 
-          <div class="sg-swatch-group">
-            <div class="sg-swatch sg-swatch--catalina"></div>
-            <div class="sg-swatch-info">
-              <span class="sg-swatch-name">catalina</span>
-              <code class="sg-code">$brand-accent</code>
-              <ul class="sg-list sg-swatch-usage">
+          <div class="sg__swatch-group">
+            <div class="sg__swatch sg__swatch--catalina"></div>
+            <div class="sg__swatch-info">
+              <span class="sg__swatch-name">catalina</span>
+              <code class="sg__code">$brand-accent</code>
+              <ul class="sg__list sg__swatch-usage">
                 <li>Resale icons</li>
                 <li>Resale seats on ISM</li>
               </ul>
             </div>
           </div>
 
-          <div class="sg-swatch-group">
-            <div class="sg-swatch sg-swatch--sierra"></div>
-            <div class="sg-swatch-info">
-              <span class="sg-swatch-name">sierra</span>
-              <code class="sg-code">$brand-gray</code>
-              <ul class="sg-list sg-swatch-usage">
+          <div class="sg__swatch-group">
+            <div class="sg__swatch sg__swatch--sierra"></div>
+            <div class="sg__swatch-info">
+              <span class="sg__swatch-name">sierra</span>
+              <code class="sg__code">$brand-gray</code>
+              <ul class="sg__list sg__swatch-usage">
                 <li>Primary copy</li>
                 <li>ISM selected seat</li>
               </ul>
             </div>
           </div>
-          <div class="sg-swatch-group">
-            <div class="sg-swatch sg-swatch--cascade"></div>
-            <div class="sg-swatch-info">
-              <span class="sg-swatch-name">cascade</span>
-              <code class="sg-code">$brand-gray2</code>
-              <ul class="sg-list sg-swatch-usage">
+          <div class="sg__swatch-group">
+            <div class="sg__swatch sg__swatch--cascade"></div>
+            <div class="sg__swatch-info">
+              <span class="sg__swatch-name">cascade</span>
+              <code class="sg__code">$brand-gray2</code>
+              <ul class="sg__list sg__swatch-usage">
                 <li>Secondary copy</li>
                 <li>Secondary buttons</li>
                 <li>Badge background</li>
@@ -131,12 +131,12 @@
               </ul>
             </div>
           </div>
-          <div class="sg-swatch-group">
-            <div class="sg-swatch sg-swatch--rocky"></div>
-            <div class="sg-swatch-info">
-              <span class="sg-swatch-name">rocky</span>
-              <code class="sg-code">$brand-gray3</code>
-              <ul class="sg-list sg-swatch-usage">
+          <div class="sg__swatch-group">
+            <div class="sg__swatch sg__swatch--rocky"></div>
+            <div class="sg__swatch-info">
+              <span class="sg__swatch-name">rocky</span>
+              <code class="sg__code">$brand-gray3</code>
+              <ul class="sg__list sg__swatch-usage">
                 <li>Divider lines</li>
                 <li>Borders</li>
                 <li>Datestamp year background</li>
@@ -144,23 +144,23 @@
               </ul>
             </div>
           </div>
-          <div class="sg-swatch-group">
-            <div class="sg-swatch sg-swatch--ridge"></div>
-             <div class="sg-swatch-info">
-               <span class="sg-swatch-name">ridge</span>
-               <code class="sg-code">$brand-gray4</code>
-               <ul class="sg-list sg-swatch-usage">
+          <div class="sg__swatch-group">
+            <div class="sg__swatch sg__swatch--ridge"></div>
+             <div class="sg__swatch-info">
+               <span class="sg__swatch-name">ridge</span>
+               <code class="sg__code">$brand-gray4</code>
+               <ul class="sg__list sg__swatch-usage">
                  <li>Background color</li>
                </ul>
              </div>
           </div>
 
-          <div class="sg-swatch-group">
-            <div class="sg-swatch sg-swatch--yosemite"></div>
-            <div class="sg-swatch-info">
-              <span class="sg-swatch-name">yosemite</span>
-              <code class="sg-code">$brand-cta</code>
-              <ul class="sg-list sg-swatch-usage">
+          <div class="sg__swatch-group">
+            <div class="sg__swatch sg__swatch--yosemite"></div>
+            <div class="sg__swatch-info">
+              <span class="sg__swatch-name">yosemite</span>
+              <code class="sg__code">$brand-cta</code>
+              <ul class="sg__list sg__swatch-usage">
                 <li>Checkout/Cart Links</li>
                 <li>Checkout/Cart Buttons</li>
                 <li>Success message</li>
@@ -168,20 +168,20 @@
             </div>
           </div>
 
-          <div class="sg-swatch-group">
-            <div class="sg-swatch sg-swatch--malibu"></div>
-            <div class="sg-swatch-info">
-              <span class="sg-swatch-name">malibu</span>
-              <code class="sg-code">$brand-caution</code>
+          <div class="sg__swatch-group">
+            <div class="sg__swatch sg__swatch--malibu"></div>
+            <div class="sg__swatch-info">
+              <span class="sg__swatch-name">malibu</span>
+              <code class="sg__code">$brand-caution</code>
             </div>
           </div>
 
-          <div class="sg-swatch-group">
-            <div class="sg-swatch sg-swatch--helen"></div>
-            <div class="sg-swatch-info">
-              <span class="sg-swatch-name">helen</span>
-              <code class="sg-code">$brand-alert</code>
-              <ul class="sg-list sg-swatch-usage">
+          <div class="sg__swatch-group">
+            <div class="sg__swatch sg__swatch--helen"></div>
+            <div class="sg__swatch-info">
+              <span class="sg__swatch-name">helen</span>
+              <code class="sg__code">$brand-alert</code>
+              <ul class="sg__list sg__swatch-usage">
                 <li>Errors</li>
                 <li>Alerts</li>
                 <li>Void buttons</li>
@@ -190,279 +190,277 @@
           </div>
         </div>
 
-        <p>Any color declarations should be using one of the variables described above (states being an exception &mdash; see below). You should never use colors outside of this palette.</p>
-
-        <h4 class="sg-subhdg">States</h4>
+        <h4 class="sg__subhdg">States</h4>
         <p>To provide visual cues for interaction, we shade our colors on hover, when disabled, etc. We derive these colors by mixing the core colors with white or black.</p>
 
-        <table class="sg-table sg-swatch-table">
+        <table class="sg__table">
           <tr>
-            <th class="sg-table-hdg">25% black</th>
-            <th class="sg-table-hdg">50% white</th>
-            <th class="sg-table-hdg">75% white</th>
-            <td class="sg-table-hdg">87.5% white</td>
+            <th class="sg__table-hdg">25% black</th>
+            <th class="sg__table-hdg">50% white</th>
+            <th class="sg__table-hdg">75% white</th>
+            <td class="sg__table-hdg">87.5% white</td>
           </tr>
           <tr>
-            <td>
-              <div class="sg-swatch sg-swatch--state sg-swatch--pacific-darker25"></div>
-              <code class="sg-code-xs">$brand-primary-darker25</code>
-              <ul class="sg-list sg-swatch-state-usage">
+            <td class="sg__table-cell">
+              <div class="sg__swatch sg__swatch--state sg__swatch--pacific-darker25"></div>
+              <code class="sg__code--xs">$brand-primary-darker25</code>
+              <ul class="sg__list sg__swatch-state-usage">
                 <li>Hover</li>
               </ul>
             </td>
-            <td>
-              <div class="sg-swatch sg-swatch--state sg-swatch--pacific-lighter50"></div>
-              <code class="sg-code-xs">$brand-primary-lighter50</code>
-              <ul class="sg-list sg-swatch-state-usage">
+            <td class="sg__table-cell">
+              <div class="sg__swatch sg__swatch--state sg__swatch--pacific-lighter50"></div>
+              <code class="sg__code--xs">$brand-primary-lighter50</code>
+              <ul class="sg__list sg__swatch-state-usage">
                 <li>ISM seats outside of search</li>
               </ul>
             </td>
-            <td>
-              <div class="sg-swatch sg-swatch--state sg-swatch--pacific-lighter75"></div>
-              <code class="sg-code-xs">$brand-primary-lighter75</code>
-              <ul class="sg-list sg-swatch-state-usage">
+            <td class="sg__table-cell">
+              <div class="sg__swatch sg__swatch--state sg__swatch--pacific-lighter75"></div>
+              <code class="sg__code--xs">$brand-primary-lighter75</code>
+              <ul class="sg__list sg__swatch-state-usage">
                 <li>Disabled</li>
                 <li>Event header secondary copy</li>
                 <li>Accessibility focus</li>
               </ul>
             </td>
-            <td>
-              <div class="sg-swatch sg-swatch--state sg-swatch--pacific-lighter87"></div>
-              <code class="sg-code-xs">$brand-primary-lighter87</code>
-              <ul class="sg-list sg-swatch-state-usage">
+            <td class="sg__table-cell">
+              <div class="sg__swatch sg__swatch--state sg__swatch--pacific-lighter87"></div>
+              <code class="sg__code--xs">$brand-primary-lighter87</code>
+              <ul class="sg__list sg__swatch-state-usage">
                 <li>Top Picks hover</li>
               </ul>
             </td>
           </tr>
           <tr>
-            <td class="sg-swatch-na">
+            <td class="sg__swatch-na">
               n/a
             </td>
-            <td>
-              <div class="sg-swatch sg-swatch--state sg-swatch--catalina-lighter50"></div>
-              <code class="sg-code-xs">$brand-accent-lighter50</code>
-              <ul class="sg-list sg-swatch-state-usage">
+            <td class="sg__table-cell">
+              <div class="sg__swatch sg__swatch--state sg__swatch--catalina-lighter50"></div>
+              <code class="sg__code--xs">$brand-accent-lighter50</code>
+              <ul class="sg__list sg__swatch-state-usage">
                 <li>ISM Resale seats outside of search</li>
               </ul>
             </td>
-            <td class="sg-swatch-na">
+            <td class="sg__swatch-na">
               n/a
             </td>
-            <td class="sg-swatch-na">
+            <td class="sg__swatch-na">
               n/a
             </td>
           </tr>
           <tr>
-            <td>
-              <div class="sg-swatch sg-swatch--state sg-swatch--cascade-darker25"></div>
-              <code class="sg-code-xs">$brand-gray2-darker25</code>
-              <ul class="sg-list sg-swatch-state-usage">
+            <td class="sg__table-cell">
+              <div class="sg__swatch sg__swatch--state sg__swatch--cascade-darker25"></div>
+              <code class="sg__code--xs">$brand-gray2-darker25</code>
+              <ul class="sg__list sg__swatch-state-usage">
                 <li>Hover</li>
               </ul>
             </td>
-            <td>
-              <div class="sg-swatch sg-swatch--state sg-swatch--cascade-lighter50"></div>
-              <code class="sg-code-xs">$brand-gray2-lighter50</code>
-              <ul class="sg-list sg-swatch-state-usage">
+            <td class="sg__table-cell">
+              <div class="sg__swatch sg__swatch--state sg__swatch--cascade-lighter50"></div>
+              <code class="sg__code--xs">$brand-gray2-lighter50</code>
+              <ul class="sg__list sg__swatch-state-usage">
                 <li>Form placeholder text</li>
                 <li>ISM sections unavailable</li>
                 <li>ISM sections outside of search</li>
               </ul>
             </td>
-            <td>
-              <div class="sg-swatch sg-swatch--state sg-swatch--cascade-lighter75"></div>
-              <code class="sg-code-xs">$brand-gray2-lighter75</code>
-              <ul class="sg-list sg-swatch-state-usage">
+            <td class="sg__table-cell">
+              <div class="sg__swatch sg__swatch--state sg__swatch--cascade-lighter75"></div>
+              <code class="sg__code--xs">$brand-gray2-lighter75</code>
+              <ul class="sg__list sg__swatch-state-usage">
                 <li>Disabled</li>
               </ul>
             </td>
-            <td class="sg-swatch-na">
+            <td class="sg__swatch-na">
               n/a
             </td>
           </tr>
           <tr>
-            <td>
-              <div class="sg-swatch sg-swatch--state sg-swatch--yosemite-darker25"></div>
-              <code class="sg-code-xs">$brand-cta-darker25</code>
-              <ul class="sg-list sg-swatch-state-usage">
+            <td class="sg__table-cell">
+              <div class="sg__swatch sg__swatch--state sg__swatch--yosemite-darker25"></div>
+              <code class="sg__code--xs">$brand-cta-darker25</code>
+              <ul class="sg__list sg__swatch-state-usage">
                 <li>Hover</li>
               </ul>
             </td>
-            <td class="sg-swatch-na">
+            <td class="sg__swatch-na">
               n/a
             </td>
-            <td>
-              <div class="sg-swatch sg-swatch--state sg-swatch--yosemite-lighter75"></div>
-              <code class="sg-code-xs">$brand-cta-lighter75</code>
-              <ul class="sg-list sg-swatch-state-usage">
+            <td class="sg__table-cell">
+              <div class="sg__swatch sg__swatch--state sg__swatch--yosemite-lighter75"></div>
+              <code class="sg__code--xs">$brand-cta-lighter75</code>
+              <ul class="sg__list sg__swatch-state-usage">
                 <li>Disabled</li>
               </ul>
             </td>
-            <td class="sg-swatch-na">
+            <td class="sg__swatch-na">
               n/a
             </td>
           </tr>
           <tr>
-            <td>
-              <div class="sg-swatch sg-swatch--state sg-swatch--helen-darker25"></div>
-              <code class="sg-code-xs">$brand-alert-darker25</code>
-              <ul class="sg-list sg-swatch-state-usage">
+            <td class="sg__table-cell">
+              <div class="sg__swatch sg__swatch--state sg__swatch--helen-darker25"></div>
+              <code class="sg__code--xs">$brand-alert-darker25</code>
+              <ul class="sg__list sg__swatch-state-usage">
                 <li>Hover</li>
               </ul>
             </td>
-            <td class="sg-swatch-na">
+            <td class="sg__swatch-na">
               n/a
             </td>
-            <td>
-              <div class="sg-swatch sg-swatch--state sg-swatch--helen-lighter75"></div>
-              <code class="sg-code-xs">$brand-alert-lighter75</code>
-              <ul class="sg-list sg-swatch-state-usage">
+            <td class="sg__table-cell">
+              <div class="sg__swatch sg__swatch--state sg__swatch--helen-lighter75"></div>
+              <code class="sg__code--xs">$brand-alert-lighter75</code>
+              <ul class="sg__list sg__swatch-state-usage">
                 <li>Disabled</li>
               </ul>
             </td>
-            <td class="sg-swatch-na">
+            <td class="sg__swatch-na">
               n/a
             </td>
           </tr>
         </table>
       </section>
 
-      <section id="typography" class="sg-section">
+      <section id="typography" class="sg__section">
 
-        <h2 class="sg-hdg">Typography</h2>
+        <h2 class="sg__hdg">Typography</h2>
         <p>Our web font is TM Sans, a custom typeface created for us by the foundry Monotype.</p>
-        <h3 class="sg-subhdg">Responsive fonts</h3>
+        <h3 class="sg__subhdg">Responsive fonts</h3>
         <p>With few exceptions, font sizes on our pages should be responsive at certain breakpoints. You should assume that any font size specified by a designer should be responsive unless explicitly stated otherwise.</p>
-        <p>To simplify the process of creating responsive fonts, we have a <code class="sg-code">responsive-font()</code> mixin to generate
+        <p>To simplify the process of creating responsive fonts, we have a <code class="sg__code">responsive-font()</code> mixin to generate
           the appropriate code when passed a font size.</p>
-        <p>Note that we actually specify our font sizes in <code class="sg-code">rem</code> units.
-          <code class="sg-code">1rem</code> is equivalent to <code class="sg-code">10px</code>.</p>
-        <pre class="sg-sample-code">
+        <p>Note that we actually specify our font sizes in <code class="sg__code">rem</code> units.
+          <code class="sg__code">1rem</code> is equivalent to <code class="sg__code">10px</code>.</p>
+        <pre class="sg__sample-code">
 // scss
 .sample-text {
-  @include <span class="sg-highlight-code">responsive-font('md')</span>;
+  @include <span class="sg__highlight-code">responsive-font('md')</span>;
 }
         </pre>
 
         <p>Using this mixin, our font sizes are then generated as follows (up to the specified widths).</p>
 
-        <table class="sg-table sg-typography-table">
+        <table class="sg__table">
           <tr>
-            <th class="sg-table-hdg sg-typography-hdg">Breakpoint</th>
-            <th class="sg-table-hdg sg-typography-hdg">X-Small</th>
-            <th class="sg-table-hdg sg-typography-hdg">Small</th>
-            <th class="sg-table-hdg sg-typography-hdg">Medium</th>
-            <th class="sg-table-hdg sg-typography-hdg">Large</th>
-            <th class="sg-table-hdg sg-typography-hdg">X-Large</th>
-            <th class="sg-table-hdg sg-typography-hdg">XX-Large</th>
-            <th class="sg-table-hdg sg-typography-hdg">XXX-Large</th>
+            <th class="sg__table-hdg sg__typography-cell">Breakpoint</th>
+            <th class="sg__table-hdg sg__typography-cell">X-Small</th>
+            <th class="sg__table-hdg sg__typography-cell">Small</th>
+            <th class="sg__table-hdg sg__typography-cell">Medium</th>
+            <th class="sg__table-hdg sg__typography-cell">Large</th>
+            <th class="sg__table-hdg sg__typography-cell">X-Large</th>
+            <th class="sg__table-hdg sg__typography-cell">XX-Large</th>
+            <th class="sg__table-hdg sg__typography-cell">XXX-Large</th>
           </tr>
-          <tr>
-            <td class="sg-typography-bp">
+          <tr class="sg__table-alternating-row">
+            <td class="sg__table-cell sg__typography-cell sg__typography-bp">
               Small Mobile<br />
               &le; 374px
             </td>
-            <td class="sg-xs-font-size">
+            <td class="sg__table-cell sg__typography-cell sg__xs-font-size">
               10px font size
             </td>
-            <td class="sg-sm-font-size">
+            <td class="sg__table-cell sg__typography-cell sg__sm-font-size">
               12px font size
             </td>
-            <td class="sg-md-font-size">
+            <td class="sg__table-cell sg__typography-cell sg__md-font-size">
               14px font size
             </td>
-            <td class="sg-lg-font-size">
+            <td class="sg__table-cell sg__typography-cell sg__lg-font-size">
               18px font size
             </td>
-            <td class="sg-xl-font-size">
+            <td class="sg__table-cell sg__typography-cell sg__xl-font-size">
               22px font size
             </td>
-            <td class="sg-xxl-font-size">
+            <td class="sg__table-cell sg__typography-cell sg__xxl-font-size">
               26px font size
             </td>
-            <td class="sg-xxxl-font-size">
+            <td class="sg__table-cell sg__typography-cell sg__xxxl-font-size">
               40px font size
             </td>
           </tr>
-          <tr>
-            <td class="sg-typography-bp">
+          <tr class="sg__table-alternating-row">
+            <td class="sg__table-cell sg__typography-cell sg__typography-bp">
               Mobile<br />
               375px - 719px
             </td>
-            <td class="sg-xs-font-size-quart">
+            <td class="sg__table-cell sg__typography-cell sg__xs-font-size-quart">
               no change
             </td>
-            <td class="sg-sm-font-size-quart">
+            <td class="sg__table-cell sg__typography-cell sg__sm-font-size-quart">
               14px font size
             </td>
-            <td class="sg-md-font-size-quart">
+            <td class="sg__table-cell sg__typography-cell sg__md-font-size-quart">
               16px font size
             </td>
-            <td class="sg-lg-font-size-quart">
+            <td class="sg__table-cell sg__typography-cell sg__lg-font-size-quart">
               20px font size
             </td>
-            <td class="sg-xl-font-size-quart">
+            <td class="sg__table-cell sg__typography-cell sg__xl-font-size-quart">
               24px font size
             </td>
-            <td class="sg-xxl-font-size-quart">
+            <td class="sg__table-cell sg__typography-cell sg__xxl-font-size-quart">
               28px font size
             </td>
-            <td class="sg-xxxl-font-size">
+            <td class="sg__table-cell sg__typography-cell sg__xxxl-font-size">
               42px font size
             </td>
           </tr>
-          <tr>
-            <td class="sg-typography-bp">
+          <tr class="sg__table-alternating-row">
+            <td class="sg__table-cell sg__typography-cell sg__typography-bp">
               Tablet/Desktop<br />
               &ge; 720px
             </td>
-            <td class="sg-xs-font-size-quart">
+            <td class="sg__table-cell sg__typography-cell sg__xs-font-size-quart">
               12px font size
             </td>
-            <td class="sg-sm-font-size-gallon">
+            <td class="sg__table-cell sg__typography-cell sg__sm-font-size-gallon">
               16px font size
             </td>
-            <td class="sg-md-font-size-gallon">
+            <td class="sg__table-cell sg__typography-cell sg__md-font-size-gallon">
               18px font size
             </td>
-            <td class="sg-lg-font-size-gallon">
+            <td class="sg__table-cell sg__typography-cell sg__lg-font-size-gallon">
               22px font size
             </td>
-            <td class="sg-xl-font-size-gallon">
+            <td class="sg__table-cell sg__typography-cell sg__xl-font-size-gallon">
               26px font size
             </td>
-            <td class="sg-xxl-font-size-gallon">
+            <td class="sg__table-cell sg__typography-cell sg__xxl-font-size-gallon">
               30px font size
             </td>
-            <td class="sg-xxxl-font-size">
+            <td class="sg__table-cell sg__typography-cell sg__xxxl-font-size">
               44px font size
             </td>
           </tr>
-          <tr>
-            <td class="sg-typography-bp">
+          <tr class="sg__table-alternating-row">
+            <td class="sg__table-cell sg__typography-cell sg__typography-bp">
               Usage
             </td>
-            <td class="sg-font-usage">
-              <ul class="sg-list">
+            <td class="sg__table-cell sg__typography-cell sg__font-usage">
+              <ul class="sg__list">
                 <li>Legal copy</li>
               </ul>
             </td>
-            <td class="sg-font-usage">
-              <ul class="sg-list">
+            <td class="sg__table-cell sg__typography-cell sg__font-usage">
+              <ul class="sg__list">
                 <li>Tooltip copy</li>
                 <li>Labels</li>
                 <li>List items</li>
               </ul>
             </td>
-            <td class="sg-font-usage">
-              <ul class="sg-list">
+            <td class="sg__table-cell sg__typography-cell sg__font-usage">
+              <ul class="sg__list">
                 <li>Body copy</li>
                 <li>Small auxiliary buttons</li>
                 <li>Event subheader</li>
               </ul>
             </td>
-            <td class="sg-font-usage">
-              <ul class="sg-list">
+            <td class="sg__table-cell sg__typography-cell sg__font-usage">
+              <ul class="sg__list">
                 <li>Subheaders</li>
                 <li>Auxiliary buttons</li>
                 <li>Lightbox headers</li>
@@ -471,8 +469,8 @@
                 <li>Ticket types (Filters)</li>
               </ul>
             </td>
-            <td class="sg-font-usage">
-              <ul class="sg-list">
+            <td class="sg__table-cell sg__typography-cell sg__font-usage">
+              <ul class="sg__list">
                 <li>Event header</li>
                 <li>Qty (Filters)</li>
                 <li>Price (Filters)</li>
@@ -480,8 +478,8 @@
                 <li>Ticket bag</li>
               </ul>
             </td>
-            <td class="sg-font-usage">
-              <ul class="sg-list">
+            <td class="sg__table-cell sg__typography-cell sg__font-usage">
+              <ul class="sg__list">
                 <li>Primary headers</li>
               </ul>
             </td>
@@ -490,75 +488,75 @@
 
         <p>And here they are displayed responsively (resize browser window to see):</p>
 
-        <table class="sg-table">
+        <table class="sg__table">
           <tr>
-            <td><span class="sg-xs-font-size-responsive">Extra small copy</span></td>
-            <td><code class="sg-code">@include responsive-font('xs');</code></td>
+            <td class="sg__table-cell"><span class="sg__xs-font-size-responsive">Extra small copy</span></td>
+            <td class="sg__table-cell"><code class="sg__code">@include responsive-font('xs');</code></td>
           </tr>
           <tr>
-            <td><span class="sg-sm-font-size-responsive">Small copy</span></td>
-            <td><code class="sg-code">@include responsive-font('sm');</code></td>
+            <td class="sg__table-cell"><span class="sg__sm-font-size-responsive">Small copy</span></td>
+            <td class="sg__table-cell"><code class="sg__code">@include responsive-font('sm');</code></td>
           </tr>
           <tr>
-            <td><span class="sg-md-font-size-responsive">Medium copy</span></td>
-            <td><code class="sg-code">@include responsive-font('md');</code></td>
+            <td class="sg__table-cell"><span class="sg__md-font-size-responsive">Medium copy</span></td>
+            <td class="sg__table-cell"><code class="sg__code">@include responsive-font('md');</code></td>
           </tr>
           <tr>
-            <td><span class="sg-lg-font-size-responsive">Large copy</span></td>
-            <td><code class="sg-code">@include responsive-font('lg');</code></td>
+            <td class="sg__table-cell"><span class="sg__lg-font-size-responsive">Large copy</span></td>
+            <td class="sg__table-cell"><code class="sg__code">@include responsive-font('lg');</code></td>
           </tr>
           <tr>
-            <td><span class="sg-xl-font-size-responsive">Extra large copy</span></td>
-            <td><code class="sg-code">@include responsive-font('xl');</code></td>
+            <td class="sg__table-cell"><span class="sg__xl-font-size-responsive">Extra large copy</span></td>
+            <td class="sg__table-cell"><code class="sg__code">@include responsive-font('xl');</code></td>
           </tr>
           <tr>
-            <td><span class="sg-xxl-font-size-responsive">Extra-extra large copy</span></td>
-            <td><code class="sg-code">@include responsive-font('xxl');</code></td>
-          </tr>
-        </table>
-
-        <h3 class="sg-subhdg">Fixed font sizes</h3>
-        <p>In the rare case of using a fixed font size, use our <code class="sg-code">fixed-font()</code> mixin.</p>
-        <p>It defaults to the <code class="sg-code">md</code> font size. You can override this by passing in a size parameter.</p>
-        <p>Note that fixed font sizes are based on the mobile breakpoint sizes (<code class="sg-code">375px - 719px</code>), as indicated in the previous section.</p>
-
-        <table class="sg-table">
-          <tr>
-            <td><span class="sg-xs-font-size-quart">Extra small copy</span></td>
-            <td><span class="alt-copy">10px</span></td>
-            <td><code class="sg-code">@include fixed-font('xs')</code></td>
-          </tr>
-          <tr>
-            <td><span class="sg-sm-font-size-quart">Small copy</span></td>
-            <td><span class="alt-copy">14px</span></td>
-            <td><code class="sg-code">@include fixed-font('sm')</code></td>
-          </tr>
-          <tr>
-            <td><span class="sg-md-font-size-quart">Medium copy</span></td>
-            <td><span class="alt-copy">16px</span></td>
-            <td><code class="sg-code">@include fixed-font('md')</code></td>
-          </tr>
-          <tr>
-            <td><span class="sg-lg-font-size-quart">Large copy</span></td>
-            <td><span class="alt-copy">20px</span></td>
-            <td><code class="sg-code">@include fixed-font('lg')</code></td>
-          </tr>
-          <tr>
-            <td><span class="sg-xl-font-size-quart">Extra large copy</span></td>
-            <td><span class="alt-copy">24px</span></td>
-            <td><code class="sg-code">@include fixed-font('xl')</code></td>
-          </tr>
-          <tr>
-            <td><span class="sg-xxl-font-size-quart">Extra-extra large copy</span></td>
-            <td><span class="alt-copy">28x</span></td>
-            <td><code class="sg-code">@include fixed-font('xxl')</code></td>
+            <td class="sg__table-cell"><span class="sg__xxl-font-size-responsive">Extra-extra large copy</span></td>
+            <td class="sg__table-cell"><code class="sg__code">@include responsive-font('xxl');</code></td>
           </tr>
         </table>
 
-        <pre class="sg-sample-code">
+        <h3 class="sg__subhdg">Fixed font sizes</h3>
+        <p>In the rare case of using a fixed font size, use our <code class="sg__code">fixed-font()</code> mixin.</p>
+        <p>It defaults to the <code class="sg__code">md</code> font size. You can override this by passing in a size parameter.</p>
+        <p>Note that fixed font sizes are based on the mobile breakpoint sizes (<code class="sg__code">375px - 719px</code>), as indicated in the previous section.</p>
+
+        <table class="sg__table">
+          <tr>
+            <td class="sg__table-cell"><span class="sg__xs-font-size-quart">Extra small copy</span></td>
+            <td class="sg__table-cell"><span class="alt-copy">10px</span></td>
+            <td class="sg__table-cell"><code class="sg__code">@include fixed-font('xs')</code></td>
+          </tr>
+          <tr>
+            <td class="sg__table-cell"><span class="sg__sm-font-size-quart">Small copy</span></td>
+            <td class="sg__table-cell"><span class="alt-copy">14px</span></td>
+            <td class="sg__table-cell"><code class="sg__code">@include fixed-font('sm')</code></td>
+          </tr>
+          <tr>
+            <td class="sg__table-cell"><span class="sg__md-font-size-quart">Medium copy</span></td>
+            <td class="sg__table-cell"><span class="alt-copy">16px</span></td>
+            <td class="sg__table-cell"><code class="sg__code">@include fixed-font('md')</code></td>
+          </tr>
+          <tr>
+            <td class="sg__table-cell"><span class="sg__lg-font-size-quart">Large copy</span></td>
+            <td class="sg__table-cell"><span class="alt-copy">20px</span></td>
+            <td class="sg__table-cell"><code class="sg__code">@include fixed-font('lg')</code></td>
+          </tr>
+          <tr>
+            <td class="sg__table-cell"><span class="sg__xl-font-size-quart">Extra large copy</span></td>
+            <td class="sg__table-cell"><span class="alt-copy">24px</span></td>
+            <td class="sg__table-cell"><code class="sg__code">@include fixed-font('xl')</code></td>
+          </tr>
+          <tr>
+            <td class="sg__table-cell"><span class="sg__xxl-font-size-quart">Extra-extra large copy</span></td>
+            <td class="sg__table-cell"><span class="alt-copy">28x</span></td>
+            <td class="sg__table-cell"><code class="sg__code">@include fixed-font('xxl')</code></td>
+          </tr>
+        </table>
+
+        <pre class="sg__sample-code">
 // scss
 .fixed-example {
-  <span class="sg-highlight-code">@include fixed-font('lg')</span>;
+  <span class="sg__highlight-code">@include fixed-font('lg')</span>;
 }
 
 // output
@@ -568,28 +566,28 @@
 }
   </pre>
 
-        <h3 class="sg-subhdg">Line Height</h3>
-        <p>By default, line-height for the page is set to <code class="sg-code">1.4</code>. When using either of the font mixins above, line-height is calculated like so:</p>
+        <h3 class="sg__subhdg">Line Height</h3>
+        <p>By default, line-height for the page is set to <code class="sg__code">1.4</code>. When using either of the font mixins above, line-height is calculated like so:</p>
 
-        <table class="sg-table">
+        <table class="sg__table">
           <tr>
-            <td>Font size is &quot;medium&quot; or lower</td>
-            <td><code class="sg-code">1.4</code></td>
+            <td class="sg__table-cell">Font size is &quot;medium&quot; or lower</td>
+            <td class="sg__table-cell"><code class="sg__code">1.4</code></td>
           </tr>
           <tr>
-            <td>Font size is &quot;large&quot; or higher</td>
-            <td><code class="sg-code">1.2</code></td>
+            <td class="sg__table-cell">Font size is &quot;large&quot; or higher</td>
+            <td class="sg__table-cell"><code class="sg__code">1.2</code></td>
           </tr>
         </table>
 
         <p>There may be situations where you need a specific line-height other than the above. The mixins have you covered for that, too, by allowing you to pass in a custom line-height value as an optional second parameter.</p>
         <p>This can be useful for buttons or other situations where you want the text precisely vertically centered in a &quot;box.&quot;</p>
 
-        <pre class="sg-sample-code">
+        <pre class="sg__sample-code">
 // scss
 // note that this also works with responsive-font()
 .fixed-example {
-  @include fixed-font('lg', <span class="sg-highlight-code">5rem</span>);
+  @include fixed-font('lg', <span class="sg__highlight-code">5rem</span>);
 }
 
 // output
@@ -601,58 +599,58 @@
 
       </section>
 
-      <section id="text-styles" class="sg-section">
-        <h2 class="sg-hdg">Text Styles</h2>
-        <table class="sg-table">
+      <section id="text-styles" class="sg__section">
+        <h2 class="sg__hdg">Text Styles</h2>
+        <table class="sg__table">
           <tr>
-            <td><h1 class="heading-primary">Primary Header</h1></td>
-            <td><span class="alt-copy">xx-large, 10px/20px bottom margin, bold, sierra</span></td>
-            <td><code class="sg-code">.heading-primary</code></td>
+            <td class="sg__table-cell"><h1 class="heading-primary">Primary Header</h1></td>
+            <td class="sg__table-cell"><span class="alt-copy">xx-large, 10px/20px bottom margin, bold, sierra</span></td>
+            <td class="sg__table-cell"><code class="sg__code">.heading-primary</code></td>
           </tr>
           <tr>
-            <td><h2 class="heading-secondary">Secondary Headers</h2></td>
-            <td><span class="alt-copy">large, 10/20px bottom margin, bold, sierra</span></td>
-            <td><code class="sg-code">.heading-secondary</code></td>
+            <td class="sg__table-cell"><h2 class="heading-secondary">Secondary Headers</h2></td>
+            <td class="sg__table-cell"><span class="alt-copy">large, 10/20px bottom margin, bold, sierra</span></td>
+            <td class="sg__table-cell"><code class="sg__code">.heading-secondary</code></td>
           </tr>
           <tr>
-            <td><span class="sg-lg-font-size-responsive">Large body copy</span></td>
-            <td><span class="alt-copy">large, sierra</span></td>
-            <td>n/a</td>
+            <td class="sg__table-cell"><span class="sg__lg-font-size-responsive">Large body copy</span></td>
+            <td class="sg__table-cell"><span class="alt-copy">large, sierra</span></td>
+            <td class="sg__table-cell">n/a</td>
           </tr>
           <tr>
-            <td>Normal body copy</td>
-            <td><span class="alt-copy">medium, sierra</span></td>
-            <td>applied on <code class="sg-code">.page__content</code></td>
+            <td class="sg__table-cell">Normal body copy</td>
+            <td class="sg__table-cell"><span class="alt-copy">medium, sierra</span></td>
+            <td class="sg__table-cell">applied on <code class="sg__code">.page__content</code></td>
           </tr>
           <tr>
-            <td><span class="alt-copy">Alt copy</span></td>
-            <td><span class="alt-copy">size is based on context, cascade</span></td>
-            <td><code class="sg-code">.alt-copy</code></td>
+            <td class="sg__table-cell"><span class="alt-copy">Alt copy</span></td>
+            <td class="sg__table-cell"><span class="alt-copy">size is based on context, cascade</span></td>
+            <td class="sg__table-cell"><code class="sg__code">.alt-copy</code></td>
           </tr>
           <tr>
-            <td><span class="legal-copy">Legal copy</span></td>
-            <td><span class="alt-copy">extra small, cascade</span></td>
-            <td><code class="sg-code">.legal-copy</code></td>
+            <td class="sg__table-cell"><span class="legal-copy">Legal copy</span></td>
+            <td class="sg__table-cell"><span class="alt-copy">extra small, cascade</span></td>
+            <td class="sg__table-cell"><code class="sg__code">.legal-copy</code></td>
           </tr>
           <tr>
-            <td><span class="sg-ex-link"><a href="#">Link text</a></span></td>
-            <td><span class="alt-copy">underline on hover, pacific</span></td>
-            <td><code class="sg-code">&lt;a&gt;</code></td>
+            <td class="sg__table-cell"><span class="sg__ex-link"><a href="#">Link text</a></span></td>
+            <td class="sg__table-cell"><span class="alt-copy">underline on hover, pacific</span></td>
+            <td class="sg__table-cell"><code class="sg__code">&lt;a&gt;</code></td>
           </tr>
         </table>
 
-        <h3 class="sg-subhdg">Mixins for text styling</h3>
+        <h3 class="sg__subhdg">Mixins for text styling</h3>
         <p>In the case where any of the above use cases is not appropriate, there are mixins available
           to achieve the desired appearance.</p>
-        <h4 class="sg-subhdg2">hdg-text mixin</h4>
-        <p>The <code class="sg-code">hdg-text()</code> mixin can be used to create heading text
-          that's bold with a bottom margin of <code class="sg-code">10px/20px</code>. It is called by passing in a font-size and color.
+        <h4 class="sg__subhdg2">hdg-text mixin</h4>
+        <p>The <code class="sg__code">hdg-text()</code> mixin can be used to create heading text
+          that's bold with a bottom margin of <code class="sg__code">10px/20px</code>. It is called by passing in a font-size and color.
           It will automatically make the font responsive via a built-in call to the
-          <code class="sg-code">responsive-font()</code> mixin.</p>
-        <pre class="sg-sample-code">
+          <code class="sg__code">responsive-font()</code> mixin.</p>
+        <pre class="sg__sample-code">
 // scss
 .some-heading {
-  <span class="sg-highlight-code">@include hdg-text('md', $black);</span>
+  <span class="sg__highlight-code">@include hdg-text('md', $black);</span>
 }
 
 // output
@@ -669,13 +667,13 @@
   }
 }
         </pre>
-        <h4 class="sg-subhdg2">alt-copy mixin</h4>
-        <p>The <code class="sg-code">alt-copy()</code> mixin can optionally be called with
+        <h4 class="sg__subhdg2">alt-copy mixin</h4>
+        <p>The <code class="sg__code">alt-copy()</code> mixin can optionally be called with
           a font-size parameter. By default, font size is not specified and is based on the surrounding font size.</p>
-        <pre class="sg-sample-code">
+        <pre class="sg__sample-code">
 // scss
 .ticket-fees {
-  <span class="sg-highlight-code">@include alt-copy();</span>
+  <span class="sg__highlight-code">@include alt-copy();</span>
 }
 
 // output
@@ -687,45 +685,45 @@
 
       </section>
 
-      <section id="breakpoints" class="sg-section">
-        <h2 class="sg-hdg">Breakpoints</h2>
-        <table class="sg-table">
+      <section id="breakpoints" class="sg__section">
+        <h2 class="sg__hdg">Breakpoints</h2>
+        <table class="sg__table">
           <tr>
-            <td><span class="sg-mobile-bp">Mobile</span></td>
-            <td><code class="sg-code">$bp-xs</code></td>
+            <td class="sg__table-cell"><span class="sg__mobile-bp">Mobile</span></td>
+            <td class="sg__table-cell"><code class="sg__code">$bp-xs</code></td>
           </tr>
           <tr>
-            <td><span class="sg-large-mobile-bp">Large Mobile</span></td>
-            <td><code class="sg-code">$bp-sm</code></td>
+            <td class="sg__table-cell"><span class="sg__large-mobile-bp">Large Mobile</span></td>
+            <td class="sg__table-cell"><code class="sg__code">$bp-sm</code></td>
           </tr>
           <tr>
-            <td><span class="sg-tablet-bp">Tablet</span></td>
-            <td><code class="sg-code">$bp-md</code></td>
+            <td class="sg__table-cell"><span class="sg__tablet-bp">Tablet</span></td>
+            <td class="sg__table-cell"><code class="sg__code">$bp-md</code></td>
           </tr>
           <tr>
-            <td><span class="sg-desktop-bp">Desktop</span></td>
-            <td><code class="sg-code">$bp-lg</code></td>
+            <td class="sg__table-cell"><span class="sg__desktop-bp">Desktop</span></td>
+            <td class="sg__table-cell"><code class="sg__code">$bp-lg</code></td>
           </tr>
           <tr>
-            <td><span class="sg-max-bp">Max</span></td>
-            <td><code class="sg-code">$bp-xl</code></td>
+            <td class="sg__table-cell"><span class="sg__max-bp">Max</span></td>
+            <td class="sg__table-cell"><code class="sg__code">$bp-xl</code></td>
           </tr>
         </table>
 
-        <h3 class="sg-subhdg">Breakpoint mixin</h3>
-        <p>You can specify media queries by using the <code class="sg-code">breakpoint()</code> mixin.</p>
-        <p>The mixin accepts two parameters, <code class="sg-code">$min</code> and
-          <code class="sg-code">$max</code> values. By default, if only one parameter is passed, it is
-          assigned to the <code class="sg-code">$min</code> value.</p>
-        <p>The mixin takes <code class="sg-code">px</code> values and converts them to <code class="sg-code">em</code> units,
+        <h3 class="sg__subhdg">Breakpoint mixin</h3>
+        <p>You can specify media queries by using the <code class="sg__code">breakpoint()</code> mixin.</p>
+        <p>The mixin accepts two parameters, <code class="sg__code">$min</code> and
+          <code class="sg__code">$max</code> values. By default, if only one parameter is passed, it is
+          assigned to the <code class="sg__code">$min</code> value.</p>
+        <p>The mixin takes <code class="sg__code">px</code> values and converts them to <code class="sg__code">em</code> units,
           which is the preferred way to write media queries.</p>
-        <pre class="sg-sample-code">
+        <pre class="sg__sample-code">
 // scss
 .some-block {
   margin-top: 15px;
 
   // $bp-md will be assigned as min-width
-  <span class="sg-highlight-code">@include breakpoint($bp-md)</span> {
+  <span class="sg__highlight-code">@include breakpoint($bp-md)</span> {
     margin-top: 40px;
   }
 }
@@ -736,7 +734,7 @@
 }
 
 // note the conversion to em units
-<span class="sg-highlight-code">@media (min-width: 45em)</span> {
+<span class="sg__highlight-code">@media (min-width: 45em)</span> {
   .some-block {
     margin-top: 40px;
   }
@@ -744,14 +742,14 @@
         </pre>
 
         <p>If you need to specify the maximum breakpoint instead, you call the mixin by explicity
-          assigning the parameter to <code class="sg-code">$max</code>.</p>
-        <pre class="sg-sample-code">
+          assigning the parameter to <code class="sg__code">$max</code>.</p>
+        <pre class="sg__sample-code">
 // scss
 .another-block {
   [...]
 
   // here we are explicitly assigning our parameter to $max
-  <span class="sg-highlight-code">@include breakpoint($max: $bp-lg - 1)</span> {
+  <span class="sg__highlight-code">@include breakpoint($max: $bp-lg - 1)</span> {
     padding: 25px;
   }
 }
@@ -759,26 +757,26 @@
 // output
 [...]
 
-<span class="sg-highlight-code">@media (max-width: 63.6875em)</span> {
+<span class="sg__highlight-code">@media (max-width: 63.6875em)</span> {
   .another-block {
     padding: 25px;
   }
 }
         </pre>
 
-        <p>Note in the above example that we actually passed in <code class="sg-code">($max: $bp-lg -
+        <p>Note in the above example that we actually passed in <code class="sg__code">($max: $bp-lg -
           1)</code> because we want the styling rules to apply to anything <em>below</em> the max
           value. (We don't want to actually include the max value as part of the declaration.)</em>
         </p>
 
         <p>In our example, we're saying applying these rules to anything less than the <code
-          class="sg-code">1020px</code> width.</p>
+          class="sg__code">1020px</code> width.</p>
 
-        <h4 class="sg-subhdg2">Where to Use breakpoint</h4>
+        <h4 class="sg__subhdg2">Where to Use breakpoint</h4>
         <p>In SASS, declare your breakpoints within the elements affected. Do not declare media queries as another code block separate from the original context.</p>
 
-        <pre class="sg-sample-code">
-<span class="sg-highlight-code">// DON'T do this</span>
+        <pre class="sg__sample-code">
+<span class="sg__highlight-code">// DON'T do this</span>
 .class1 {
   font-size: 12px;
 }
@@ -797,7 +795,7 @@
   }
 }
 
-<span class="sg-highlight-code">// DO do this</span>
+<span class="sg__highlight-code">// DO do this</span>
 .class1 {
   font-size: 12px;
 
@@ -809,101 +807,101 @@
 
         </section>
 
-      <section id="grid" class="sg-section">
-        <h2 class="sg-hdg">Grid</h2>
-        <p>We use a <a href="http://susy.oddbird.net/">Susy</a>-based 12-column grid with <code class="sg-code">30px</code> gutters.</p>
+      <section id="grid" class="sg__section">
+        <h2 class="sg__hdg">Grid</h2>
+        <p>We use a <a href="http://susy.oddbird.net/">Susy</a>-based 12-column grid with <code class="sg__code">30px</code> gutters.</p>
       </section>
 
 
-      <section id="page-structure" class="sg-section">
-        <h2 class="sg-hdg">Page Structure</h2>
+      <section id="page-structure" class="sg__section">
+        <h2 class="sg__hdg">Page Structure</h2>
         <p>The basic layout of our pages is as follows:</p>
 
-        <pre class="sg-sample-code">
-&lt;body class=&quot;<span class="sg-highlight-code">page edp</span>&quot;&gt;
-  &lt;div class=&quot;<span class="sg-highlight-code">page__wrapper</span>&quot;&gt;
-    &lt;div class=&quot;<span class="sg-highlight-code">page__frame</span>&quot;&gt;
-      &lt;div class=&quot;<span class="sg-highlight-code">page__content</span>&quot;&gt;
+        <pre class="sg__sample-code">
+&lt;body class=&quot;<span class="sg__highlight-code">page edp</span>&quot;&gt;
+  &lt;div class=&quot;<span class="sg__highlight-code">page__wrapper</span>&quot;&gt;
+    &lt;div class=&quot;<span class="sg__highlight-code">page__frame</span>&quot;&gt;
+      &lt;div class=&quot;<span class="sg__highlight-code">page__content</span>&quot;&gt;
         &lt;!-- page content here --&gt;
         </pre>
 
-        <table class="sg-table">
+        <table class="sg__table">
           <tr>
-            <td><code class="sg-code">.page</code></td>
-            <td>Sets base typography for page and background color</td>
+            <td class="sg__table-cell"><code class="sg__code">.page</code></td>
+            <td class="sg__table-cell">Sets base typography for page and background color</td>
           </tr>
           <tr>
-            <td><code class="sg-code">.page__wrapper</code></td>
-            <td>Sets background color for a particular section of the page</td>
+            <td class="sg__table-cell"><code class="sg__code">.page__wrapper</code></td>
+            <td class="sg__table-cell">Sets background color for a particular section of the page</td>
           </tr>
           <tr>
-            <td><code class="sg-code">.page__frame</code></td>
-            <td>Sets max-width for your content area</td>
+            <td class="sg__table-cell"><code class="sg__code">.page__frame</code></td>
+            <td class="sg__table-cell">Sets max-width for your content area</td>
           </tr>
           <tr>
-            <td><code class="sg-code">.page__content</code></td>
-            <td>Sets default font size and other needed attributes for your content area</td>
+            <td class="sg__table-cell"><code class="sg__code">.page__content</code></td>
+            <td class="sg__table-cell">Sets default font size and other needed attributes for your content area</td>
           </tr>
           <tr>
-            <td><code class="sg-code">.[pagename]</code></td>
-            <td>Sets block context for any page-specific styles</td>
+            <td class="sg__table-cell"><code class="sg__code">.[pagename]</code></td>
+            <td class="sg__table-cell">Sets block context for any page-specific styles</td>
           </tr>
         </table>
 
         <p>Note that you don't always need to use all of the classes above.
          Only use those classes that you need to establish page structure.</p>
         <p>For example, if you don't need set to a background color for your section of a page that's different from the
-         body background, then you don't need to use <code class="sg-code">page__wrapper</code>. Similarly, if your
+         body background, then you don't need to use <code class="sg__code">page__wrapper</code>. Similarly, if your
          content is supposed to span the full width of the browser at all times, then you don't need
-        <code class="sg-code">page__frame</code>.</p>
+        <code class="sg__code">page__frame</code>.</p>
       </section>
 
-      <section id="spacing" class="sg-section">
-        <h2 class="sg-hdg">Spacing</h2>
+      <section id="spacing" class="sg__section">
+        <h2 class="sg__hdg">Spacing</h2>
         <p>Spacing between elements on the page should be one of three possible values, as shown below:</p>
 
-        <table class="sg-table">
+        <table class="sg__table">
           <tr>
-            <td>10px</td>
-            <td><code class="sg-code">$spacing-sm</code></td>
+            <td class="sg__table-cell">10px</td>
+            <td class="sg__table-cell"><code class="sg__code">$spacing-sm</code></td>
           </tr>
           <tr>
-            <td>20px</td>
-            <td><code class="sg-code">$spacing-md</code></td>
+            <td class="sg__table-cell">20px</td>
+            <td class="sg__table-cell"><code class="sg__code">$spacing-md</code></td>
           </tr>
           <tr>
-            <td>30px</td>
-            <td><code class="sg-code">$spacing-lg</code></td>
+            <td class="sg__table-cell">30px</td>
+            <td class="sg__table-cell"><code class="sg__code">$spacing-lg</code></td>
           </tr>
         </table>
 
-        <p>In most cases, spacing should be responsive, so at the <code class="sg-code">$bp-md</code> breakpoint, the above values should then be:</p>
+        <p>In most cases, spacing should be responsive, so at the <code class="sg__code">$bp-md</code> breakpoint, the above values should then be:</p>
 
-        <table class="sg-table">
+        <table class="sg__table">
           <tr>
-            <td>15px</td>
-            <td><code class="sg-code">increase-spacing($spacing-sm)</code></td>
+            <td class="sg__table-cell">15px</td>
+            <td class="sg__table-cell"><code class="sg__code">increase-spacing($spacing-sm)</code></td>
           </tr>
           <tr>
-            <td>30px</td>
-            <td><code class="sg-code">increase-spacing($spacing-md)</code></td>
+            <td class="sg__table-cell">30px</td>
+            <td class="sg__table-cell"><code class="sg__code">increase-spacing($spacing-md)</code></td>
           </tr>
           <tr>
-            <td>45px</td>
-            <td><code class="sg-code">increase-spacing($spacing-lg)</code></td>
+            <td class="sg__table-cell">45px</td>
+            <td class="sg__table-cell"><code class="sg__code">increase-spacing($spacing-lg)</code></td>
           </tr>
         </table>
 
         <p>To make it easier to set responsive spacing, there are two mixins available:</p>
 
-        <table class="sg-table">
+        <table class="sg__table">
           <tr>
-            <td>margin-based spacing</td>
-            <td><code class="sg-code">@include outer-spacing($x)</code></td>
+            <td class="sg__table-cell">margin-based spacing</td>
+            <td class="sg__table-cell"><code class="sg__code">@include outer-spacing($x)</code></td>
           </tr>
           <tr>
-            <td>padding-based spacing</td>
-            <td><code class="sg-code">@include inner-spacing($y)</code></td>
+            <td class="sg__table-cell">padding-based spacing</td>
+            <td class="sg__table-cell"><code class="sg__code">@include inner-spacing($y)</code></td>
           </tr>
         </table>
 
@@ -915,20 +913,20 @@
 
         <p>This is best illustrated with some examples.</p>
 
-        <pre class="sg-sample-code">
+        <pre class="sg__sample-code">
 // set same margin on all sides
-<span class="sg-highlight-code">@include outer-spacing($spacing-md);</span>
+<span class="sg__highlight-code">@include outer-spacing($spacing-md);</span>
 
 // set padding on top and bottom
-<span class="sg-highlight-code">@include inner-spacing($top: $spacing-sm, $bottom: $spacing-sm);</span>
+<span class="sg__highlight-code">@include inner-spacing($top: $spacing-sm, $bottom: $spacing-sm);</span>
 
 // set padding on top, right, and left
-<span class="sg-highlight-code">@include inner-spacing($top: $spacing-sm, $right: $spacing-md, $left: $spacing-md)</span>
+<span class="sg__highlight-code">@include inner-spacing($top: $spacing-sm, $right: $spacing-md, $left: $spacing-md)</span>
         </pre>
 
-        <p>When specifying spacing for any side(s), any side that you omit will be set to <code class="sg-code">0</code>.</p>
+        <p>When specifying spacing for any side(s), any side that you omit will be set to <code class="sg__code">0</code>.</p>
 
-        <pre class="sg-sample-code">
+        <pre class="sg__sample-code">
 // set 30px bottom margin
 .example {
   @include outer-spacing($bottom: $spacing-lg);
@@ -948,95 +946,95 @@
       </section>
 
 
-      <section id="buttons" class="sg-section">
-        <h2 class="sg-hdg">Buttons</h2>
-        <table class="sg-table sg-button-table">
+      <section id="buttons" class="sg__section">
+        <h2 class="sg__hdg">Buttons</h2>
+        <table class="sg__table">
           <tr>
-            <th class="sg-table-hdg">
+            <th class="sg__table-hdg">
               Example
             </th>
-            <th class="sg-table-hdg">
+            <th class="sg__table-hdg">
               Classes and dimensions (mobile/desktop)
             </th>
           </tr>
           <tr>
-            <td><button class="button">Primary Button</button></td>
-            <td><code class="sg-code">.button</code>, 44px/46px height, 20px/40px L/R padding</td>
+            <td class="sg__table-cell"><button class="button">Primary Button</button></td>
+            <td class="sg__table-cell"><code class="sg__code">.button</code>, 44px/46px height, 20px/40px L/R padding</td>
           </tr>
           <tr>
-            <td><button disabled class="button">Primary Button</button></td>
-            <td><code class="sg-code">.button</code>, disabled state</td>
+            <td class="sg__table-cell"><button disabled class="button">Primary Button</button></td>
+            <td class="sg__table-cell"><code class="sg__code">.button</code>, disabled state</td>
           </tr>
           <tr>
-            <td><button class="button button--cta">Checkout</button></td>
-            <td><code class="sg-code">.button .button--cta</code>, 44px/46px height, 20/40px L/R padding, bold</td>
+            <td class="sg__table-cell"><button class="button button--cta">Checkout</button></td>
+            <td class="sg__table-cell"><code class="sg__code">.button .button--cta</code>, 44px/46px height, 20/40px L/R padding, bold</td>
           </tr>
           <tr>
-            <td><button disabled class="button button--cta">Checkout</button></td>
-            <td><code class="sg-code">.button .button--cta</code>, disabled state</td>
+            <td class="sg__table-cell"><button disabled class="button button--cta">Checkout</button></td>
+            <td class="sg__table-cell"><code class="sg__code">.button .button--cta</code>, disabled state</td>
           </tr>
           <tr>
-            <td><button class="button button--static">Button</button></td>
-            <td><code class="sg-code">.button .button--static</code>, 20px L/R padding at all times</td>
+            <td class="sg__table-cell"><button class="button button--static">Button</button></td>
+            <td class="sg__table-cell"><code class="sg__code">.button .button--static</code>, 20px L/R padding at all times</td>
           </tr>
           <tr>
-            <td><button class="button button--full">Full width button</button></td>
-            <td><code class="sg-code">.button .button--full</code>, 100% width on mobile only</td>
+            <td class="sg__table-cell"><button class="button button--full">Full width button</button></td>
+            <td class="sg__table-cell"><code class="sg__code">.button .button--full</code>, 100% width on mobile only</td>
           </tr>
           <tr>
-            <td><button class="button-aux">Auxiliary Button</button></td>
-            <td><code class="sg-code">.button-aux</code>, 44px/46px height, 20px/40px L/R padding</td>
+            <td class="sg__table-cell"><button class="button-aux">Auxiliary Button</button></td>
+            <td class="sg__table-cell"><code class="sg__code">.button-aux</code>, 44px/46px height, 20px/40px L/R padding</td>
           </tr>
           <tr>
-            <td><button disabled class="button-aux">Auxiliary Button</button></td>
-            <td><code class="sg-code">.button-aux</code>, disabled state</td>
+            <td class="sg__table-cell"><button disabled class="button-aux">Auxiliary Button</button></td>
+            <td class="sg__table-cell"><code class="sg__code">.button-aux</code>, disabled state</td>
           </tr>
           <tr>
-            <td><button class="button-aux button-aux--secondary">Secondary Auxiliary Button</button></td>
-            <td><code class="sg-code">.button-aux .button-aux--secondary</code></td>
+            <td class="sg__table-cell"><button class="button-aux button-aux--secondary">Secondary Auxiliary Button</button></td>
+            <td class="sg__table-cell"><code class="sg__code">.button-aux .button-aux--secondary</code></td>
           </tr>
           <tr>
-            <td><button disabled class="button-aux button-aux--secondary">Secondary Auxiliary Button</button></td>
-            <td><code class="sg-code">.button-aux .button-aux--secondary</code>, disabled state</td>
+            <td class="sg__table-cell"><button disabled class="button-aux button-aux--secondary">Secondary Auxiliary Button</button></td>
+            <td class="sg__table-cell"><code class="sg__code">.button-aux .button-aux--secondary</code>, disabled state</td>
           </tr>
           <tr>
-            <td><button class="button-aux button-aux--full">Full width Auxiliary Button</button></td>
-            <td><code class="sg-code">.button-aux .button-aux--full</code>, 100% width on mobile only</td>
+            <td class="sg__table-cell"><button class="button-aux button-aux--full">Full width Auxiliary Button</button></td>
+            <td class="sg__table-cell"><code class="sg__code">.button-aux .button-aux--full</code>, 100% width on mobile only</td>
           </tr>
           <tr>
-            <td><button class="button-aux button-aux--minor">Minor Aux Button</button></td>
-            <td><code class="sg-code">.button-aux .button-aux--minor</code>, 30px/40px height, 15/20px L/R padding</td>
+            <td class="sg__table-cell"><button class="button-aux button-aux--minor">Minor Aux Button</button></td>
+            <td class="sg__table-cell"><code class="sg__code">.button-aux .button-aux--minor</code>, 30px/40px height, 15/20px L/R padding</td>
           </tr>
           <tr>
-            <td><button class="button-outlined">Outlined Button</button></td>
-            <td><code class="sg-code">.button-outlined</code>, 44px/46px height, 20px/40px L/R padding</td>
+            <td class="sg__table-cell"><button class="button-outlined">Outlined Button</button></td>
+            <td class="sg__table-cell"><code class="sg__code">.button-outlined</code>, 44px/46px height, 20px/40px L/R padding</td>
           </tr>
           <tr>
-            <td><button class="button-outlined button-outlined--static">Outlined Button</button></td>
-            <td><code class="sg-code">.button-outlined .button-outlined--static</code>, 20px L/R padding at all times</td>
+            <td class="sg__table-cell"><button class="button-outlined button-outlined--static">Outlined Button</button></td>
+            <td class="sg__table-cell"><code class="sg__code">.button-outlined .button-outlined--static</code>, 20px L/R padding at all times</td>
           </tr>
           <tr>
-            <td><button disabled class="button-outlined">Outlined Button</button></td>
-            <td><code class="sg-code">.button-outlined</code>, disabled state</td>
+            <td class="sg__table-cell"><button disabled class="button-outlined">Outlined Button</button></td>
+            <td class="sg__table-cell"><code class="sg__code">.button-outlined</code>, disabled state</td>
           </tr>
           <tr>
-            <td><button class="button-outlined button-outlined--full">Full width Outlined Button</button></td>
-            <td><code class="sg-code">.button-outlined .button-outlined--full</code>, 100% width on mobile only</td>
+            <td class="sg__table-cell"><button class="button-outlined button-outlined--full">Full width Outlined Button</button></td>
+            <td class="sg__table-cell"><code class="sg__code">.button-outlined .button-outlined--full</code>, 100% width on mobile only</td>
           </tr>
           <tr>
-            <td><button class="unbutton">Unstyled button</button></td>
-            <td><code class="sg-code">.unbutton</code>, looks like normal link text (needed for accessibility purposes)</td>
+            <td class="sg__table-cell"><button class="unbutton">Unstyled button</button></td>
+            <td class="sg__table-cell"><code class="sg__code">.unbutton</code>, looks like normal link text (needed for accessibility purposes)</td>
           </tr>
         </table>
       </section>
 
-      <section id="qty-picker" class="sg-section">
-        <h2 class="sg-hdg">Quantity Picker</h2>
+      <section id="qty-picker" class="sg__section">
+        <h2 class="sg__hdg">Quantity Picker</h2>
         <p>The following pattern should be used any time a user is prompted to select a quantity.</p>
 
-        <table class="sg-table sg-button-table">
+        <table class="sg__table sg__button-table">
           <tr>
-            <td>
+            <td class="sg__table-cell">
               <div class="qty-picker">
                 <button class="qty-picker__button qty-picker__button--decrement">
                   <svg class="icon-minus qty-picker__icon-minus">
@@ -1053,12 +1051,12 @@
                 </button>
               </div>
             </td>
-            <td>
-              <p>Standard quantity picker. Decrement button is <code class="sg-code">$brand-gray2</code> and increment button is <code class="sg-code">$brand-primary</code>.</p>
+            <td class="sg__table-cell">
+              <p>Standard quantity picker.</p>
             </td>
           </tr>
           <tr>
-            <td>
+            <td class="sg__table-cell">
               <div class="qty-picker">
                 <button class="qty-picker__button qty-picker__button--decrement is-disabled">
                   <svg class="icon-minus qty-picker__icon-minus">
@@ -1075,12 +1073,12 @@
                 </button>
               </div>
             </td>
-            <td>
+            <td class="sg__table-cell">
               <p>Minimum quantity reached. Decrement button and quantity are not shown.</p>
             </td>
           </tr>
           <tr>
-            <td>
+            <td class="sg__table-cell">
               <div class="qty-picker">
                 <button class="qty-picker__button qty-picker__button--decrement">
                   <svg class="icon-minus qty-picker__icon-minus">
@@ -1097,32 +1095,32 @@
                 </button>
               </div>
             </td>
-            <td>
+            <td class="sg__table-cell">
               <p>Maximum quantity reached. Increment button is disabled but still visible.</p>
             </td>
           </tr>
         </table>
       </section>
 
-      <section id="lists" class="sg-section">
-        <h2 class="sg-hdg">Lists</h2>
+      <section id="lists" class="sg__section">
+        <h2 class="sg__hdg">Lists</h2>
 
         <p>Default list styling for lists is as follows:</p>
 
-        <table class="sg-table">
+        <table class="sg__table">
           <tr>
-            <td class="sg-table-hdg">Unordered List</td>
-            <td class="sg-table-hdg">Ordered List</td>
+            <td class="sg__table-hdg">Unordered List</td>
+            <td class="sg__table-hdg">Ordered List</td>
           </tr>
           <tr>
-            <td>
+            <td class="sg__table-cell">
               <ul>
                 <li>list item</li>
                 <li>list item</li>
                 <li>list item</li>
               </ul>
             </td>
-            <td>
+            <td class="sg__table-cell">
               <ol>
                 <li>list item</li>
                 <li>list item</li>
@@ -1132,21 +1130,21 @@
           </tr>
         </table>
 
-        <p>If you want to disable default list style for your use case, you can use either the <code class="sg-code">unstyled-list</code> class or the <code class="sg-code">unstyled-list()</code> mixin to compose your own list class.</p>
+        <p>If you want to disable default list style for your use case, you can use either the <code class="sg__code">unstyled-list</code> class or the <code class="sg__code">unstyled-list()</code> mixin to compose your own list class.</p>
 
-        <pre class="sg-sample-code">
+        <pre class="sg__sample-code">
 // scss
 .your-list {
-  <span class="sg-highlight-code">@include unstyled-list();</span>
+  <span class="sg__highlight-code">@include unstyled-list();</span>
 
   // your styles here
 }
         </pre>
 
-        <h3 class="sg-subhdg">Delimited Lists</h3>
+        <h3 class="sg__subhdg">Delimited Lists</h3>
 
         <p>The Delimited List pattern has list items separated by a border. Each list item has top and bottom padding, and the list itself has a bottom margin.</p>
-        <p>All spacing values follow the <code class="sg-code">$spacing-sm</code> rules as described in <a href="#spacing">Spacing</a>.</p>
+        <p>All spacing values follow the <code class="sg__code">$spacing-sm</code> rules as described in <a href="#spacing">Spacing</a>.</p>
 
         <ul class="delimited-list">
           <li class="delimited-list__item">
@@ -1160,37 +1158,37 @@
           </li>
         </ul>
 
-        <pre class="sg-sample-code">
-&lt;ul class="<span class="sg-highlight-code">delimited-list</span>"&gt;
-  &lt;li class="<span class="sg-highlight-code">delimited-list__item</span>"&gt;
+        <pre class="sg__sample-code">
+&lt;ul class="<span class="sg__highlight-code">delimited-list</span>"&gt;
+  &lt;li class="<span class="sg__highlight-code">delimited-list__item</span>"&gt;
     First item
   &lt;/li&gt;
-  &lt;li class="<span class="sg-highlight-code">delimited-list__item</span>"&gt;
+  &lt;li class="<span class="sg__highlight-code">delimited-list__item</span>"&gt;
     Secondy item
   &lt;/li&gt;
-  &lt;li class="<span class="sg-highlight-code">delimited-list__item</span>"&gt;
+  &lt;li class="<span class="sg__highlight-code">delimited-list__item</span>"&gt;
     Third item
   &lt;/li&gt;
 &lt;/ul&gt;
         </pre>
 
-        <h3 class="sg-subhdg2">Embedded Delimited List</h3>
+        <h3 class="sg__subhdg2">Embedded Delimited List</h3>
         <p></p>
 
         <p>If you need to embed the Delimited List pattern in a container with a border, you'll need to turn off the bottom margin and apply left and right padding. Otherwise, the list content will be flush against the left and right borders.</p>
 
-        <p>Modifying the list to work in this scenario is simple: Just add the <code class="sg-code">--embedded</code> modifier to the list and list items:</p>
+        <p>Modifying the list to work in this scenario is simple: Just add the <code class="sg__code">--embedded</code> modifier to the list and list items:</p>
 
-        <pre class="sg-sample-code">
+        <pre class="sg__sample-code">
 &lt;div class="some-box"&gt;
-  &lt;ul class="delimited-list <span class="sg-highlight-code">delimited-list--embedded</span>"&gt;
-    &lt;li class="delimited-list__item <span class="sg-highlight-code">delimited-list__item--embedded</span>"&gt;
+  &lt;ul class="delimited-list <span class="sg__highlight-code">delimited-list--embedded</span>"&gt;
+    &lt;li class="delimited-list__item <span class="sg__highlight-code">delimited-list__item--embedded</span>"&gt;
       First item
     &lt;/li&gt;
-    &lt;li class="delimited-list__item <span class="sg-highlight-code">delimited-list__item--embedded</span>"&gt;
+    &lt;li class="delimited-list__item <span class="sg__highlight-code">delimited-list__item--embedded</span>"&gt;
       Secondy item
     &lt;/li&gt;
-    &lt;li class="delimited-list__item <span class="sg-highlight-code">delimited-list__item--embedded</span>"&gt;
+    &lt;li class="delimited-list__item <span class="sg__highlight-code">delimited-list__item--embedded</span>"&gt;
       Third item
     &lt;/li&gt;
 &lt;/div&gt;
@@ -1198,27 +1196,27 @@
 
         <p>That'll give you this:</p>
 
-        <div class="sg-list-box">
+        <div class="sg__list-box">
           <ul class="delimited-list delimited-list--embedded">
             <li class="delimited-list__item delimited-list__item--embedded">
-              <div class="sg-list-box-content">
+              <div class="sg__list-box-content">
                 Example 1
               </div>
             </li>
             <li class="delimited-list__item delimited-list__item--embedded">
-              <div class="sg-list-box-content">
+              <div class="sg__list-box-content">
                 Second item
               </div>
             </li>
             <li class="delimited-list__item delimited-list__item--embedded">
-              <div class="sg-list-box-content">
+              <div class="sg__list-box-content">
                 Last item in list
               </div>
             </li>
           </ul>
         </div>
 
-        <h3 class="sg-subhdg2">Compact Delimited List</h3>
+        <h3 class="sg__subhdg2">Compact Delimited List</h3>
         <p>There are occasions when separator lines are not desirable on mobile but are needed on desktop (resize to mobile view to see the difference).</p>
 
         <ul class="delimited-list">
@@ -1233,15 +1231,15 @@
           </li>
         </ul>
 
-        <pre class="sg-sample-code">
+        <pre class="sg__sample-code">
 &lt;ul class="delimited-list"&gt;
-  &lt;li class="delimited-list__item <span class="sg-highlight-code">delimited-list__item--compact</span>"&gt;
+  &lt;li class="delimited-list__item <span class="sg__highlight-code">delimited-list__item--compact</span>"&gt;
     First item
   &lt;/li&gt;
-  &lt;li class="delimited-list__item <span class="sg-highlight-code">delimited-list__item--compact</span>"&gt;
+  &lt;li class="delimited-list__item <span class="sg__highlight-code">delimited-list__item--compact</span>"&gt;
     Secondy item
   &lt;/li&gt;
-  &lt;li class="delimited-list__item <span class="sg-highlight-code">delimited-list__item--compact</span>"&gt;
+  &lt;li class="delimited-list__item <span class="sg__highlight-code">delimited-list__item--compact</span>"&gt;
     Third item
   &lt;/li&gt;
 &lt;/div&gt;
@@ -1249,55 +1247,55 @@
 
       </section>
 
-      <section id="form-elements" class="sg-section">
+      <section id="form-elements" class="sg__section">
 
-        <h2 class="sg-hdg">Form Elements</h2>
+        <h2 class="sg__hdg">Form Elements</h2>
 
-        <h3 class="sg-subhdg">Text fields</h3>
+        <h3 class="sg__subhdg">Text fields</h3>
 
         <p>Example of an the initial state of the input text-field, with fancy (floating) label animation.</p>
 
-        <div class="sg-input-wrapper">
+        <div class="sg__input-wrapper">
           <div class="input-group">
             <input name="email" type="text" class="input-group__text-field" aria-required="true">
             <label for="email" class="input-group__label">Email <span class="input-group__required">*</span></label>
           </div>
         </div>
 
-        <pre class="sg-sample-code">
-&lt;div class="<span class="sg-highlight-code">input-group</span>"&gt;
-  &lt;input id="email" name="email" type="text" class="<span class="sg-highlight-code">input-group__text-field</span>"&gt;
-  &lt;label for="email" class="<span class="sg-highlight-code">input-group__label</span>"&gt;Email &lt;span class="<span class="sg-highlight-code">input-group__required</span>">*&lt;/span>&lt;/label&gt;
+        <pre class="sg__sample-code">
+&lt;div class="<span class="sg__highlight-code">input-group</span>"&gt;
+  &lt;input id="email" name="email" type="text" class="<span class="sg__highlight-code">input-group__text-field</span>"&gt;
+  &lt;label for="email" class="<span class="sg__highlight-code">input-group__label</span>"&gt;Email &lt;span class="<span class="sg__highlight-code">input-group__required</span>">*&lt;/span>&lt;/label&gt;
 &lt;/div&gt;
         </pre>
 
-        <p>Filled input text-fields contains the class <code class="sg-code">has-content</code>, which floats the label</p>
+        <p>Filled input text-fields contains the class <code class="sg__code">has-content</code>, which floats the label</p>
 
-        <div class="sg-input-wrapper">
+        <div class="sg__input-wrapper">
           <div class="input-group">
             <input name="email" type="text" class="input-group__text-field has-content" aria-required="true" value="Dohn Joe">
             <label for="email" class="input-group__label">Email <span class="input-group__required">*</span></label>
           </div>
         </div>
 
-        <pre class="sg-sample-code">
+        <pre class="sg__sample-code">
 &lt;div class=&quot;input-group&quot;&gt;
-  &lt;input name=&quot;email&quot; type=&quot;text&quot; class=&quot;input-group__text-field <span class="sg-highlight-code">has-content</span>&quot; aria-required=&quot;true&quot; value=&quot;Dohn Joe&quot;&gt;
+  &lt;input name=&quot;email&quot; type=&quot;text&quot; class=&quot;input-group__text-field <span class="sg__highlight-code">has-content</span>&quot; aria-required=&quot;true&quot; value=&quot;Dohn Joe&quot;&gt;
   &lt;label for=&quot;email&quot; class=&quot;input-group__label&quot;&gt;Email &lt;span class=&quot;input-group__required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
 &lt;/div&gt;
         </pre>
 
-        <p>Same for text-fields in an error state. Only the input field has the class <code class="sg-code">is-error-field</code></p>
+        <p>Same for text-fields in an error state. Only the input field has the class <code class="sg__code">is-error-field</code></p>
 
-        <table class="sg-table">
+        <table class="sg__table">
           <tr>
-            <td>
+            <td class="sg__table-cell">
               <div class="input-group">
                 <input name="email" type="text" class="input-group__text-field is-error-field" aria-required="true">
                 <label for="email" class="input-group__label">Email <span class="input-group__required">*</span></label>
               </div>
             </td>
-            <td>
+            <td class="sg__table-cell">
               <div class="input-group">
                 <input name="email" type="text" class="input-group__text-field has-content is-error-field" aria-required="true" value="Dohn Joe">
                 <label for="email" class="input-group__label">Email <span class="input-group__required">*</span></label>
@@ -1306,14 +1304,14 @@
           </tr>
         </table>
 
-        <pre class="sg-sample-code">
+        <pre class="sg__sample-code">
 &lt;div class="input-group"&gt;
-  &lt;input id="email" name="email" type="text" class="input-group__text-field <span class="sg-highlight-code">is-error-field</span>"&gt;
+  &lt;input id="email" name="email" type="text" class="input-group__text-field <span class="sg__highlight-code">is-error-field</span>"&gt;
   &lt;label for="email" class="input-group__label"&gt;Email &lt;span class="input-group__required">*&lt;/span>&lt;/label&gt;
 &lt;/div&gt;
         </pre>
 
-        <h3 class="sg-subhdg">Drop downs</h3>
+        <h3 class="sg__subhdg">Drop downs</h3>
 
         <p>This is how we are going to implement drop downs.</p>
 
@@ -1324,7 +1322,7 @@
         }
         </script>
 
-        <div class="sg-input-wrapper">
+        <div class="sg__input-wrapper">
           <div class="input-group dropdown">
             <select id="state" class="dropdown__select" onChange="onSelectChange(this);">
               <option value=""></option>
@@ -1343,9 +1341,9 @@
           </div>
         </div>
 
-        <pre class="sg-sample-code">
-&lt;div class="input-group <span class="sg-highlight-code">dropdown</span>"&gt;
-  &lt;select id="state" class="<span class="sg-highlight-code">dropdown__select</span>"&gt;
+        <pre class="sg__sample-code">
+&lt;div class="input-group <span class="sg__highlight-code">dropdown</span>"&gt;
+  &lt;select id="state" class="<span class="sg__highlight-code">dropdown__select</span>"&gt;
     &lt;option value=""&gt;&lt;/option&gt;
     &lt;option value="AL"&gt;Alabama&lt;/option&gt;
     &lt;option value="AK"&gt;Alaska&lt;/option&gt;
@@ -1356,15 +1354,15 @@
   &lt;label for="state" class="input-group__label"&gt;
     State &lt;span class="input-group__required"&gt;*&lt;/span&gt;
   &lt;/label&gt;
-  &lt;svg class="<span class="sg-highlight-code">dropdown__icon-chevron</span>"&gt;
+  &lt;svg class="<span class="sg__highlight-code">dropdown__icon-chevron</span>"&gt;
     &lt;use xlink:href="img/sprite.svg#icon-chevron"&gt;
   &lt;/svg&gt;
 &lt;/div&gt;
         </pre>
 
-        <p>This is the filled state. We just apply the <code class="sg-code">has-content</code> class to the select element.</p>
+        <p>This is the filled state. We just apply the <code class="sg__code">has-content</code> class to the select element.</p>
 
-        <div class="sg-input-wrapper">
+        <div class="sg__input-wrapper">
           <div class="input-group dropdown">
             <select id="state" class="dropdown__select has-content" onChange="onSelectChange(this);">
               <option value=""></option>
@@ -1383,9 +1381,9 @@
           </div>
         </div>
 
-        <pre class="sg-sample-code">
+        <pre class="sg__sample-code">
 &lt;div class="input-group dropdown"&gt;
-  &lt;select id="state" class="dropdown__select <span class="sg-highlight-code">has-content</span>"&gt;
+  &lt;select id="state" class="dropdown__select <span class="sg__highlight-code">has-content</span>"&gt;
     &lt;option value=""&gt;&lt;/option&gt;
     &lt;option value="AL"&gt;Alabama&lt;/option&gt;
     &lt;option value="AK"&gt;Alaska&lt;/option&gt;
@@ -1402,9 +1400,9 @@
 &lt;/div&gt;
         </pre>
 
-        <p>This is the error state. We just apply the <code class="sg-code">is-error-field</code> class to the select element.</p>
+        <p>This is the error state. We just apply the <code class="sg__code">is-error-field</code> class to the select element.</p>
 
-        <div class="sg-input-wrapper">
+        <div class="sg__input-wrapper">
           <div class="input-group dropdown">
             <select id="state" class="dropdown__select is-error-field" onChange="onSelectChange(this);">
               <option value=""></option>
@@ -1423,9 +1421,9 @@
           </div>
         </div>
 
-        <pre class="sg-sample-code">
+        <pre class="sg__sample-code">
 &lt;div class="input-group dropdown"&gt;
-  &lt;select id="state" class="dropdown__select <span class="sg-highlight-code">is-error-field</span>"&gt;
+  &lt;select id="state" class="dropdown__select <span class="sg__highlight-code">is-error-field</span>"&gt;
     &lt;option value=""&gt;&lt;/option&gt;
     &lt;option value="AL"&gt;Alabama&lt;/option&gt;
     &lt;option value="AK"&gt;Alaska&lt;/option&gt;
@@ -1442,9 +1440,9 @@
 &lt;/div&gt;
         </pre>
 
-        <h3 class="sg-subhdg">Checkboxes</h3>
+        <h3 class="sg__subhdg">Checkboxes</h3>
         <p>We use custom checkboxes that have a 1px border when unchecked. In the checked state,
-          a white checkmark icon is seen against the <code class="sg-code">$brand-primary</code>
+          a white checkmark icon is seen against the <code class="sg__code">$brand-primary</code>
           background with no stroke around the checkbox.</p>
         <ul class="checkbox-list">
           <li class="checkbox-list__item checkbox">
@@ -1468,17 +1466,17 @@
         </ul>
       </section>
 
-      <section id="tiles" class="sg-section">
-        <h2 class="sg-hdg">Tile Selections</h2>
+      <section id="tiles" class="sg__section">
+        <h2 class="sg__hdg">Tile Selections</h2>
 
-        <h3 class="sg-subhdg3">Default Tile</h3>
+        <h3 class="sg__subhdg3">Default Tile</h3>
         <div class="tile-selection is-clickable">
           <div class="split-content tile-selection__content">
             -2350 EXP 11/15
           </div>
         </div>
 
-        <h3 class="sg-subhdg3">Selected Tile</h3>
+        <h3 class="sg__subhdg3">Selected Tile</h3>
         <div class="tile-selection tile-selection--selected is-clickable">
           <div class="split-content tile-selection__content">
             <div class="split-content__primary tile-selection__selected-text">
@@ -1493,23 +1491,23 @@
           </div>
         </div>
 
-        <pre class="sg-sample-code">
-&lt;div class="<span class="sg-highlight-code">tile-selection is-clickable</span>"&gt;
-  &lt;div class="<span class="sg-highlight-code">tile-selection__content</span>"&gt;
+        <pre class="sg__sample-code">
+&lt;div class="<span class="sg__highlight-code">tile-selection is-clickable</span>"&gt;
+  &lt;div class="<span class="sg__highlight-code">tile-selection__content</span>"&gt;
     -2350 EXP 11/15
   &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div class="<span class="sg-highlight-code">tile-selection tile-selection--selected is-clickable</span>"&gt;
-  &lt;div class="split-content <span class="sg-highlight-code">tile-selection__content</span>"&gt;
-    &lt;div class="split-content__primary <span class="sg-highlight-code">tile-selection__selected-text</span>"&gt;
+&lt;div class="<span class="sg__highlight-code">tile-selection tile-selection--selected is-clickable</span>"&gt;
+  &lt;div class="split-content <span class="sg__highlight-code">tile-selection__content</span>"&gt;
+    &lt;div class="split-content__primary <span class="sg__highlight-code">tile-selection__selected-text</span>"&gt;
       [...]
     &lt;/div&gt;
     &lt;div class="split-content__secondary"&gt;
       &lt;button class="button-aux button-aux--minor"&gt;Edit&lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-  &lt;div class="<span class="sg-highlight-code">tile-selection__content</span>"&gt;
+  &lt;div class="<span class="sg__highlight-code">tile-selection__content</span>"&gt;
       Content
   &lt;/div&gt;
 &lt;/div&gt;
@@ -1545,24 +1543,24 @@
 
         <p>To do this, simply incorporate the tile classes into a list.</p>
 
-        <pre class="sg-sample-code">
+        <pre class="sg__sample-code">
 &lt;ul class="unstyled-list"&gt;
-  &lt;li class="<span class="sg-highlight-code">tile-selection tile-selection--selected is-clickable</span>"&gt;
-    &lt;div class="split-content <span class="sg-highlight-code">tile-selection__content</span>"&gt;
-      &lt;div class="split-content__primary <span class="sg-highlight-code">tile-selection__selected-text</span>"&gt;
+  &lt;li class="<span class="sg__highlight-code">tile-selection tile-selection--selected is-clickable</span>"&gt;
+    &lt;div class="split-content <span class="sg__highlight-code">tile-selection__content</span>"&gt;
+      &lt;div class="split-content__primary <span class="sg__highlight-code">tile-selection__selected-text</span>"&gt;
         [...]
       &lt;/div&gt;
       &lt;div class="split-content__secondary"&gt;
         &lt;button class="button-aux button-aux--minor"&gt;Edit&lt;/button&gt;
       &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class="<span class="sg-highlight-code">tile-selection__content</span>"&gt;
+    &lt;div class="<span class="sg__highlight-code">tile-selection__content</span>"&gt;
         Content
     &lt;/div&gt;
   &lt;/li&gt;
 
-  &lt;li class="<span class="sg-highlight-code">tile-selection is-clickable</span>"&gt;
-    &lt;div class="<span class="sg-highlight-code">tile-selection__content</span>"&gt;
+  &lt;li class="<span class="sg__highlight-code">tile-selection is-clickable</span>"&gt;
+    &lt;div class="<span class="sg__highlight-code">tile-selection__content</span>"&gt;
       -2350 EXP 11/15
     &lt;/div&gt;
   &lt;/li&gt;
@@ -1571,8 +1569,8 @@
 
       </section>
 
-      <section id="tooltips" class="sg-section">
-        <h2 class="sg-hdg">Tooltips</h2>
+      <section id="tooltips" class="sg__section">
+        <h2 class="sg__hdg">Tooltips</h2>
         <p>Tooltip caret size is 10px on mobile, 15px on tablet/desktop. Internal padding of a tooltip follows the 10px/15px spacing rule as described in <a href="#spacing">Spacing</a>.</p>
         <div class="tooltip">
           <div class="tooltip__content">
@@ -1595,23 +1593,23 @@
           </div>
         </div>
 
-        <pre class="sg-sample-code">
-&lt;div class="<span class="sg-highlight-code">tooltip</span>"&gt;
-  &lt;div class="<span class="sg-highlight-code">tooltip__content</span>"&gt;
+        <pre class="sg__sample-code">
+&lt;div class="<span class="sg__highlight-code">tooltip</span>"&gt;
+  &lt;div class="<span class="sg__highlight-code">tooltip__content</span>"&gt;
     Content goes here.
   &lt;/div&gt;
 &lt;/div&gt;
           </pre>
       </section>
 
-      <section id="srs" class="sg-section">
-        <h2 class="sg-hdg">Sec-Row-Seat (SRS)</h2>
+      <section id="srs" class="sg__section">
+        <h2 class="sg__hdg">Sec-Row-Seat (SRS)</h2>
 
         <p>This is a visual pattern of displaying Section-Row-Seat (SRS) information, used in ISM tooltips and the checkout confirmation page.</p>
-        <p>The SRS element has a minimum width of <code class="sg-code">295px</code>, which doesn't account for any padding from its container or the page margins.</p>
+        <p>The SRS element has a minimum width of <code class="sg__code">295px</code>, which doesn't account for any padding from its container or the page margins.</p>
 
-        <h3 class="sg-subhdg3">Standard ticket header displaying a single ticket</h3>
-        <div class="sg-srs">
+        <h3 class="sg__subhdg3">Standard ticket header displaying a single ticket</h3>
+        <div class="sg__srs">
           <div class="srs">
             <div class="srs__set">
               <span class="srs__label">Sec</span>
@@ -1628,8 +1626,8 @@
           </div>
         </div>
 
-        <h3 class="sg-subhdg3">Non-contiguous seats</h3>
-        <div class="sg-srs">
+        <h3 class="sg__subhdg3">Non-contiguous seats</h3>
+        <div class="sg__srs">
           <div class="srs">
             <div class="srs__set">
               <span class="srs__label">Sec</span>
@@ -1649,8 +1647,8 @@
           </div>
         </div>
 
-        <h3 class="sg-subhdg3">Seat range</h3>
-        <div class="sg-srs">
+        <h3 class="sg__subhdg3">Seat range</h3>
+        <div class="sg__srs">
           <div class="srs">
             <div class="srs__set">
               <span class="srs__label">Sec</span>
@@ -1667,8 +1665,8 @@
           </div>
         </div>
 
-        <h3 class="sg-subhdg3">Worst case scenario</h3>
-        <div class="sg-srs">
+        <h3 class="sg__subhdg3">Worst case scenario</h3>
+        <div class="sg__srs">
           <div class="srs">
             <div class="srs__set">
               <span class="srs__label">Sec</span>
@@ -1685,9 +1683,9 @@
           </div>
         </div>
 
-        <h3 class="sg-subhdg">General Admission</h3>
+        <h3 class="sg__subhdg">General Admission</h3>
         <p>General Admission events have a different header as seen here.</p>
-        <div class="sg-srs">
+        <div class="sg__srs">
           <div class="srs">
             <div class="srs__set">
               <span class="srs__label">Sec</span>
@@ -1698,10 +1696,10 @@
         </div>
       </section>
 
-      <section id="split-content" class="sg-section">
-        <h2 class="sg-hdg">Split Content</h2>
+      <section id="split-content" class="sg__section">
+        <h2 class="sg__hdg">Split Content</h2>
         <p>This pattern dictates a block of content where one portion (or column) is primary and takes up all available width, while secondary content is only as wide as it needs to be.</p>
-        <p>The spacing between columns follows the responsive <code class="sg-code">$spacing-sm</code> values as defined in <a href="#spacing">Spacing</a>.</p>
+        <p>The spacing between columns follows the responsive <code class="sg__code">$spacing-sm</code> values as defined in <a href="#spacing">Spacing</a>.</p>
 
         <div class="split-content">
           <div class="split-content__primary">
@@ -1712,12 +1710,12 @@
           </div>
         </div>
 
-        <pre class="sg-sample-code">
-  &lt;div class="<span class="sg-highlight-code">split-content</span>"&gt;
-    &lt;div class="<span class="sg-highlight-code">split-content__primary</span>"&gt;
+        <pre class="sg__sample-code">
+  &lt;div class="<span class="sg__highlight-code">split-content</span>"&gt;
+    &lt;div class="<span class="sg__highlight-code">split-content__primary</span>"&gt;
       [...]
     &lt;/div&gt;
-    &lt;div class="<span class="sg-highlight-code">split-content__secondary</span>"&gt;
+    &lt;div class="<span class="sg__highlight-code">split-content__secondary</span>"&gt;
       [...]
     &lt;/div&gt;
   &lt;/div&gt;
@@ -1738,21 +1736,21 @@
           </div>
         </div>
 
-        <pre class="sg-sample-code">
+        <pre class="sg__sample-code">
 &lt;div class="split-content"&gt;
-  &lt;div class="<span class="sg-highlight-code">split-content__secondary</span>"&gt;
+  &lt;div class="<span class="sg__highlight-code">split-content__secondary</span>"&gt;
     [...]
   &lt;/div&gt;
-  &lt;div class="<span class="sg-highlight-code">split-content__primary</span>"&gt;
+  &lt;div class="<span class="sg__highlight-code">split-content__primary</span>"&gt;
     [...]
   &lt;/div&gt;
-  &lt;div class="<span class="sg-highlight-code">split-content__secondary</span>"&gt;
+  &lt;div class="<span class="sg__highlight-code">split-content__secondary</span>"&gt;
     [...]
   &lt;/div&gt;
 &lt;/div&gt;
         </pre>
 
-        <p>If you need content to be top-aligned, use the <code class="sg-code">split-content__primary--top</code> or <code class="sg-code">split-content__secondary--top</code> modifiers.</p>
+        <p>If you need content to be top-aligned, use the <code class="sg__code">split-content__primary--top</code> or <code class="sg__code">split-content__secondary--top</code> modifiers.</p>
 
         <div class="split-content">
           <div class="split-content__secondary split-content__secondary--top">
@@ -1767,9 +1765,9 @@
           </div>
         </div>
 
-        <pre class="sg-sample-code">
+        <pre class="sg__sample-code">
 &lt;div class="split-content"&gt;
-  &lt;div class="split-content__secondary <span class="sg-highlight-code">split-content__secondary--top</span>"&gt;
+  &lt;div class="split-content__secondary <span class="sg__highlight-code">split-content__secondary--top</span>"&gt;
     [...]
   &lt;/div&gt;
   &lt;div class="split-content__primary"&gt;
@@ -1782,28 +1780,28 @@
         </pre>
       </section>
 
-      <section id="product-info" class="sg-section">
-        <h2 class="sg-hdg">Product Information</h2>
+      <section id="product-info" class="sg__section">
+        <h2 class="sg__hdg">Product Information</h2>
         <p>This is a simple pattern to display product information.</p>
-        <p>The title of the product is &quot;large&quot; and <code class="sg-code">$brand-gray</code>. The description copy is &quot;small&quot; and <code class="sg-code">$brand-gray2</code>.</p>
+        <p>The title of the product is &quot;large&quot; and <code class="sg__code">$brand-gray</code>. The description copy is &quot;small&quot; and <code class="sg__code">$brand-gray2</code>.</p>
 
         <div class="product-info">
           <div class="product-info__title">Standard Tickets</div>
           <p class="product-info__desc">Description of product goes here. Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola.</p>
         </div>
 
-        <pre class="sg-sample-code">
+        <pre class="sg__sample-code">
 &lt;div class="product-info"&gt;
-  &lt;div class="<span class="sg-highlight-code">product-info__title</span>"&gt;
+  &lt;div class="<span class="sg__highlight-code">product-info__title</span>"&gt;
     Title of product
   &lt;/div&gt;
-  &lt;div class="<span class="sg-highlight-code">product-info__desc</span>"&gt;
+  &lt;div class="<span class="sg__highlight-code">product-info__desc</span>"&gt;
     &lt;p&gt;Description of product goes here.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
         </pre>
 
-        <h3 class="sg-subhdg">Compact Product Information</h3>
+        <h3 class="sg__subhdg">Compact Product Information</h3>
         <p>There can be scenarios where the large size of product tile doesn't work. In those cases, the product title is the same size as the description (small).</p>
 
         <div class="product-info">
@@ -1811,12 +1809,12 @@
           <p class="product-info__desc">Description of product goes here. Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola.</p>
         </div>
 
-        <pre class="sg-sample-code">
+        <pre class="sg__sample-code">
 &lt;div class="product-info"&gt;
-  &lt;div class="<span class="sg-highlight-code">product-info__compact-title</span>"&gt;
+  &lt;div class="<span class="sg__highlight-code">product-info__compact-title</span>"&gt;
     Title of product
   &lt;/div&gt;
-  &lt;div class="<span class="sg-highlight-code">product-info__desc</span>"&gt;
+  &lt;div class="<span class="sg__highlight-code">product-info__desc</span>"&gt;
     &lt;p&gt;Description of product goes here.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -1825,10 +1823,10 @@
         <p>Note that we are <em>not</em> using a BEM modifier class here.</p>
       </section>
 
-      <section id="dialogs" class="sg-section">
-        <h2 class="sg-hdg">Dialog</h2>
+      <section id="dialogs" class="sg__section">
+        <h2 class="sg__hdg">Dialog</h2>
 
-        <div class="sg-dialog">
+        <div class="sg__dialog">
           <div class="success-dialog">
             <div class="success-dialog__header">
               <h1 class="success-dialog__title">Success dialog</h1>
@@ -1839,7 +1837,7 @@
           </div>
         </div>
 
-        <div class="sg-dialog">
+        <div class="sg__dialog">
           <div class="caution-dialog">
             <div class="caution-dialog__header">
               <h1 class="caution-dialog__title">Caution dialog</h1>
@@ -1850,7 +1848,7 @@
           </div>
         </div>
 
-        <div class="sg-dialog">
+        <div class="sg__dialog">
           <div class="alert-dialog">
             <div class="alert-dialog__header">
               <h1 class="alert-dialog__title">Alert dialog</h1>
@@ -1861,15 +1859,15 @@
           </div>
         </div>
 
-        <h3 class="sg-subhdg">Modal Dialog</h3>
+        <h3 class="sg__subhdg">Modal Dialog</h3>
         <p>Modal dialogs are best illustrated on separate pages: <a href="modal-dialog.html">Modal Dialog</a> | <a href="modal-dialog-footer.html">Modal Dialog with footer</a>.</p>
       </section>
 
-      <section id="module" class="sg-section">
-        <h2 class="sg-hdg">Module</h2>
+      <section id="module" class="sg__section">
+        <h2 class="sg__hdg">Module</h2>
         <p>Modules are containers with a drop-shadow applied.</p>
 
-        <div class="sg-module">
+        <div class="sg__module">
           <div class="module">
             <div class="module__content module__srs">
               <div class="srs">
@@ -1896,9 +1894,9 @@
           </div>
         </div>
 
-        <h3 class="sg-subhdg">Perforated Edge</h3>
+        <h3 class="sg__subhdg">Perforated Edge</h3>
         <p>This is a variant of a module that has a perforated edge.</p>
-        <div class="sg-module">
+        <div class="sg__module">
           <div class="module module--perforated">
             <div class="module__content module__srs">
               <div class="srs">
@@ -1925,94 +1923,94 @@
           </div>
       </section>
 
-      <section id="datetime" class="sg-section">
-        <h2 class="sg-hdg">Date/Time</h2>
+      <section id="datetime" class="sg__section">
+        <h2 class="sg__hdg">Date/Time</h2>
         <p>Date/time information is displayed based on the following scenarios.</p>
 
-        <table class="sg-table">
+        <table class="sg__table">
           <tr>
-            <td>
-              <div class="sg-datestamp-wrapper">
+            <td class="sg__table-cell">
+              <div class="sg__datestamp-wrapper">
                 <span class="datestamp">Mon 2/24 @ 8:30p</span>
               </div>
             </td>
-            <td>
+            <td class="sg__table-cell">
               <p>Single date and time in the current year</p>
             </td>
           </tr>
           <tr>
-            <td>
-              <div class="sg-datestamp-wrapper">
+            <td class="sg__table-cell">
+              <div class="sg__datestamp-wrapper">
                 <span class="datestamp">Mon 2/24 @ 8p</span>
               </div>
             </td>
-            <td>
+            <td class="sg__table-cell">
               <p>Single date and time in the current year and time is on the hour</p>
             </td>
           </tr>
           <tr>
-            <td>
-              <div class="sg-datestamp-wrapper">
+            <td class="sg__table-cell">
+              <div class="sg__datestamp-wrapper">
                 <span class="datestamp">Mon 2/24/16 @ 8:30p</span>
               </div>
             </td>
-            <td>
+            <td class="sg__table-cell">
               <p>Single date and time, not in current year</p>
             </td>
           </tr>
           <tr>
-            <td>
-              <div class="sg-datestamp-wrapper">
+            <td class="sg__table-cell">
+              <div class="sg__datestamp-wrapper">
                 <span class="datestamp">Mon 2/24/16 @ 8p</span>
               </div>
             </td>
-            <td>
+            <td class="sg__table-cell">
               <p>Single date and time, not in current year, with time on the hour</p>
             </td>
           </tr>
           <tr>
-            <td>
-              <div class="sg-datestamp-wrapper">
+            <td class="sg__table-cell">
+              <div class="sg__datestamp-wrapper">
                 <span class="datestamp">Mon 2/24</span>
               </div>
             </td>
-            <td>
+            <td class="sg__table-cell">
               <p>Single date without time, current year</p>
             </td>
           </tr>
           <tr>
-            <td>
-              <div class="sg-datestamp-wrapper">
+            <td class="sg__table-cell">
+              <div class="sg__datestamp-wrapper">
                 <span class="datestamp">Mon 6/30 - Wed 7/2</span>
               </div>
             </td>
-            <td>
+            <td class="sg__table-cell">
               <p>Date range</p>
             </td>
           </tr>
           <tr>
-            <td>
-              <div class="sg-datestamp-wrapper">
+            <td class="sg__table-cell">
+              <div class="sg__datestamp-wrapper">
                 <span class="datestamp">Mon 12/30 - Wed 1/2/16</span>
               </div>
             </td>
-            <td>
+            <td class="sg__table-cell">
               <p>Date range with one date outside of current year</p>
             </td>
           </tr>
           <tr>
-            <td>
-              <div class="sg-datestamp-wrapper">
+            <td class="sg__table-cell">
+              <div class="sg__datestamp-wrapper">
                 <span class="datestamp">Mon 3/30/16 - Wed 4/2/16</span>
               </div>
             </td>
-            <td>
+            <td class="sg__table-cell">
               <p>Date range with dates outside of current year</p>
             </td>
           </tr>
           <tr>
-            <td>
-              <div class="sg-datestamp-wrapper">
+            <td class="sg__table-cell">
+              <div class="sg__datestamp-wrapper">
                 <div class="datestamp datestamp--no-dates">
                   <div class="datestamp__multi">
                     <div class="datestamp__text">
@@ -2023,13 +2021,13 @@
                 </div>
               </div>
             </td>
-            <td>
+            <td class="sg__table-cell">
               <p>Multiple dates and times</p>
             </td>
           </tr>
           <tr>
-            <td>
-              <div class="sg-datestamp-wrapper">
+            <td class="sg__table-cell">
+              <div class="sg__datestamp-wrapper">
                 <div class="datestamp datestamp--no-dates">
                   <div class="datestamp__tba">
                     <div class="datestamp__text">
@@ -2040,7 +2038,7 @@
                 </div>
               </div>
             </td>
-            <td>
+            <td class="sg__table-cell">
               <p>Date and time TBA</p>
             </td>
           </tr>
@@ -2053,13 +2051,13 @@
           </ul>
       </section>
 
-      <section id="timer" class="sg-section">
+      <section id="timer" class="sg__section">
           <style>
             .timer__animate {
                 animation-duration: 35s;
             }
           </style>
-        <h2 class="sg-hdg">Timer</h2>
+        <h2 class="sg__hdg">Timer</h2>
         <div class="timer">
           <div class="is-offscreen">Time left to complete page.</div>
           <div class="timer__indicator">13:49</div>
@@ -2069,7 +2067,7 @@
           <div class="timer__mask timer__animate"></div>
         </div>
 
-        <pre class="sg-sample-code">
+        <pre class="sg__sample-code">
 &lt;div class="timer">
   &lt;div class="is-offscreen">Time left to complete page.&lt;/div>
   &lt;div class="timer__indicator">13:49&lt;/div>
@@ -2088,27 +2086,27 @@
         </pre>
       </section>
 
-      <section id="event-header" class="sg-section">
-        <h2 class="sg-hdg">Event Headers</h2>
+      <section id="event-header" class="sg__section">
+        <h2 class="sg__hdg">Event Headers</h2>
         <p>Event headers are best illustrated on a <a href="event-header.html">separate page</a>.</p>
       </section>
 
-      <section id="cobrand-header" class="sg-section">
-        <h2 class="sg-hdg">Cobrand Headers</h2>
+      <section id="cobrand-header" class="sg__section">
+        <h2 class="sg__hdg">Cobrand Headers</h2>
         <p>Cobrand headers are best illustrated on a <a href="cobrand-header.html">separate page</a>.</p>
       </section>
 
-      <section id="cart" class="sg-section">
-        <h2 class="sg-hdg">Cart</h2>
+      <section id="cart" class="sg__section">
+        <h2 class="sg__hdg">Cart</h2>
         <p>The cart is best illustrated on a <a href="cart.html">separate page</a>.</p>
       </section>
 
-      <section id="ism-tooltip" class="sg-section">
-        <h3 class="sg-hdg">ISM Tooltips</h3>
+      <section id="ism-tooltip" class="sg__section">
+        <h3 class="sg__hdg">ISM Tooltips</h3>
         <p>This pattern utilizes <a href="#lists">Delimited List</a>, <a href="#tooltips">Tooltips</a>, and <a href="#srs">SRS</a>.</p>
 
-        <div class="sg-ism-tooltip">
-          <h4 class="sg-subhdg3">Single Ticket Type</h4>
+        <div class="sg__ism-tooltip">
+          <h4 class="sg__subhdg3">Single Ticket Type</h4>
           <div class="tooltip tooltip--ism">
             <div class="tooltip__content">
               <div class="tooltip__srs srs">
@@ -2145,8 +2143,8 @@
           </div>
         </div>
 
-        <div class="sg-ism-tooltip">
-          <h4 class="sg-subhdg3">Multiple Ticket Type</h4>
+        <div class="sg__ism-tooltip">
+          <h4 class="sg__subhdg3">Multiple Ticket Type</h4>
           <div class="tooltip tooltip--ism">
             <div class="tooltip__content">
               <div class="tooltip__srs srs">
@@ -2194,8 +2192,8 @@
           </div>
         </div>
 
-        <div class="sg-ism-tooltip">
-          <h4 class="sg-subhdg3">With Notes</h4>
+        <div class="sg__ism-tooltip">
+          <h4 class="sg__subhdg3">With Notes</h4>
           <div class="tooltip tooltip--ism">
             <div class="tooltip__content">
               <div class="tooltip__srs srs">
@@ -2246,8 +2244,8 @@
           </div>
         </div>
 
-        <div class="sg-ism-tooltip">
-          <h4 class="sg-subhdg3">General Admission</h4>
+        <div class="sg__ism-tooltip">
+          <h4 class="sg__subhdg3">General Admission</h4>
           <div class="tooltip tooltip--ism">
             <div class="tooltip__content">
               <div class="tooltip__srs srs">
@@ -2328,8 +2326,8 @@
           </div>
         </div>
 
-        <div class="sg-ism-tooltip">
-          <h4 class="sg-subhdg3">Resale</h4>
+        <div class="sg__ism-tooltip">
+          <h4 class="sg__subhdg3">Resale</h4>
           <div class="tooltip tooltip--ism">
             <div class="tooltip__content">
               <div class="tooltip__srs srs">
@@ -2390,8 +2388,8 @@
         </div>
       </section>
 
-      <section id="expando" class="sg-section">
-        <h2 class="sg-hdg">Expando</h2>
+      <section id="expando" class="sg__section">
+        <h2 class="sg__hdg">Expando</h2>
         <p>An expando is essentially a button that toggles a block of content open and close.</p>
         <p>Hover over &quot;2 Standard Tickets&quot; to see it in action.</p>
 
@@ -2410,12 +2408,12 @@
           <div class="expando-content product-info__desc">Center Level Seating Behind Third Bench Behind Ratchet Dugout</div>
         </div>
 
-        <pre class="sg-sample-code">
+        <pre class="sg__sample-code">
 &lt;div class="product-info"&gt;
   &lt;div class="product-info__title show-expando-example"&gt;
     2 Standard Tickets
-    &lt;button class="<span class="sg-highlight-code">expando-button</span>"&gt;
-      &lt;svg class="icon-chevron <span class="sg-highlight-code">expando-button__icon-chevron</span>"&gt;
+    &lt;button class="<span class="sg__highlight-code">expando-button</span>"&gt;
+      &lt;svg class="icon-chevron <span class="sg__highlight-code">expando-button__icon-chevron</span>"&gt;
         &lt;use xlink:href="img/sprite.svg#icon-chevron"&gt;&lt;/use&gt;
       &lt;/svg&gt;
     &lt;/button&gt;
@@ -2423,19 +2421,19 @@
   &lt;div class="product-info__desc"&gt;
     $100.00 x 2
   &lt;/div&gt;
-  &lt;div class="<span class="sg-highlight-code">expando-content</span> product-info__desc"&gt;
+  &lt;div class="<span class="sg__highlight-code">expando-content</span> product-info__desc"&gt;
     [...]
   &lt;/div&gt;
 &lt;/div&gt;
         </pre>
 
         <p>The expanded state is activated by adding two classes.</p>
-        <pre class="sg-sample-code">
+        <pre class="sg__sample-code">
 &lt;div class="product-info"&gt;
   &lt;div class="product-info__title show-expando-example"&gt;
     2 Standard Tickets
     &lt;button class="expando-button"&gt;
-      &lt;svg class="icon-chevron expando-button__icon-chevron <span class="sg-highlight-code">expando-button__icon-chevron--open</span>"&gt;
+      &lt;svg class="icon-chevron expando-button__icon-chevron <span class="sg__highlight-code">expando-button__icon-chevron--open</span>"&gt;
         &lt;use xlink:href="img/sprite.svg#icon-chevron"&gt;&lt;/use&gt;
       &lt;/svg&gt;
     &lt;/button&gt;
@@ -2443,7 +2441,7 @@
   &lt;div class="product-info__desc"&gt;
     $100.00 x 2
   &lt;/div&gt;
-  &lt;div class="expando-content <span class="sg-highlight-code">expando-content--open</span> product-info__desc"&gt;
+  &lt;div class="expando-content <span class="sg__highlight-code">expando-content--open</span> product-info__desc"&gt;
     [...]
   &lt;/div&gt;
 &lt;/div&gt;
@@ -2451,7 +2449,7 @@
 
         <p>This is the most basic version of the pattern. You may need to make additional styling modifications for your use cases.</p>
 
-        <h3 class="sg-subhdg">Variant</h3>
+        <h3 class="sg__subhdg">Variant</h3>
 
         <div class="tile-selection is-clickable">
           <div class="split-content tile-selection__content">
@@ -2469,97 +2467,97 @@
         </div>
       </section>
 
-      <section id="icons" class="sg-section">
-        <h3 class="sg-hdg">Icons</h3>
-        <table class="sg-table">
+      <section id="icons" class="sg__section">
+        <h3 class="sg__hdg">Icons</h3>
+        <table class="sg__table">
           <tbody>
             <tr>
-              <td>
+              <td class="sg__table-cell">
                 <svg class="icon-ada">
                   <use xlink:href="img/sprite.svg#icon-ada"></use>
                 </svg>
               </td>
-              <td>
+              <td class="sg__table-cell">
                 <svg class="icon-chevron">
                   <use xlink:href="img/sprite.svg#icon-chevron"></use>
                 </svg>
               </td>
-              <td>
+              <td class="sg__table-cell">
                 <svg class="icon-chevron icon-chevron--top">
                   <use xlink:href="img/sprite.svg#icon-chevron"></use>
                 </svg>
               </td>
-              <td>
+              <td class="sg__table-cell">
                 <svg class="icon-chevron icon-chevron--right">
                   <use xlink:href="img/sprite.svg#icon-chevron"></use>
                 </svg>
               </td>
-              <td>
+              <td class="sg__table-cell">
                 <svg class="icon-chevron icon-chevron--left">
                   <use xlink:href="img/sprite.svg#icon-chevron"></use>
                 </svg>
               </td>
-              <td>
+              <td class="sg__table-cell">
                 <svg class="icon-minus">
                   <use xlink:href="img/sprite.svg#icon-minus"></use>
                 </svg>
               </td>
-              <td>
+              <td class="sg__table-cell">
                 <svg class="icon-plus">
                   <use xlink:href="img/sprite.svg#icon-plus"></use>
                 </svg>
               </td>
-              <td>
+              <td class="sg__table-cell">
                 <svg class="icon-close">
                   <use xlink:href="img/sprite.svg#icon-plus"></use>
                 </svg>
               </td>
-              <td>
+              <td class="sg__table-cell">
                 <svg class="icon-alert">
                   <use xlink:href="img/sprite.svg#icon-alert"></use>
                 </svg>
               </td>
-              <td>
+              <td class="sg__table-cell">
                 <svg class="icon-check">
                   <use xlink:href="img/sprite.svg#icon-check"></use>
                 </svg>
               </td>
-              <td>
+              <td class="sg__table-cell">
                 <svg class="icon-menu">
                   <use xlink:href="img/sprite.svg#icon-menu"></use>
                 </svg>
               </td>
-              <td>
+              <td class="sg__table-cell">
                 <svg class="icon-more">
                   <use xlink:href="img/sprite.svg#icon-more"></use>
                 </svg>
               </td>
-              <td>
+              <td class="sg__table-cell">
                 <svg class="icon-ticket">
                   <use xlink:href="img/sprite.svg#icon-ticket"></use>
                 </svg>
               </td>
-              <td>
+              <td class="sg__table-cell">
                 <svg class="icon-verified">
                   <use xlink:href="img/sprite.svg#icon-verified"></use>
                 </svg>
               </td>
-              <td>
+              <td class="sg__table-cell">
                 <svg class="icon-resale">
                   <use xlink:href="img/sprite.svg#icon-resale"></use>
                 </svg>
               </td>
-              <td>
+              <td class="sg__table-cell">
                 <svg class="icon-caution">
                   <use xlink:href="img/sprite.svg#icon-caution"></use>
                 </svg>
               </td>
-              <td>
+              <td class="sg__table-cell">
                 <svg class="icon-lock">
                   <use xlink:href="img/sprite.svg#icon-lock"></use>
                 </svg>
               </td>
-              <td>
+              <td class="sg__table-cell">
                 <svg class="icon-unlock">
                   <use xlink:href="img/sprite.svg#icon-unlock"></use>
                 </svg>
@@ -2568,10 +2566,10 @@
           </tbody>
         </table>
       </section>
-      <section id="animated-icons" class="sg-section">
-        <h3 class="sg-hdg">Animated Icons</h3>
-        <h4 class="sg-subhdg3">Refreshing Icon</h4>
-        <div class="sg-polling">
+      <section id="animated-icons" class="sg__section">
+        <h3 class="sg__hdg">Animated Icons</h3>
+        <h4 class="sg__subhdg3">Refreshing Icon</h4>
+        <div class="sg__polling">
           <div class="polling-refresh">
             <svg class="icon-polling-refresh">
               <use xlink:href="img/sprite.svg#icon-polling-outline"></use>
@@ -2582,19 +2580,19 @@
           </div>
         </div>
 
-        <pre class="sg-sample-code">
-&lt;span class="<span class="sg-highlight-code">polling-refresh</span>">
-  &lt;svg class="<span class="sg-highlight-code">icon-polling-refresh</span>">
-    &lt;use xlink:href="<span class="sg-highlight-code">img/sprite.svg#icon-polling-outline</span>"></use>
+        <pre class="sg__sample-code">
+&lt;span class="<span class="sg__highlight-code">polling-refresh</span>">
+  &lt;svg class="<span class="sg__highlight-code">icon-polling-refresh</span>">
+    &lt;use xlink:href="<span class="sg__highlight-code">img/sprite.svg#icon-polling-outline</span>"></use>
   &lt;/svg>
-  &lt;svg class="<span class="sg-highlight-code">icon-polling-refresh polling-refresh__filled</span>">
-    &lt;use xlink:href="<span class="sg-highlight-code">img/sprite.svg#icon-polling-fill</span>"></use>
+  &lt;svg class="<span class="sg__highlight-code">icon-polling-refresh polling-refresh__filled</span>">
+    &lt;use xlink:href="<span class="sg__highlight-code">img/sprite.svg#icon-polling-fill</span>"></use>
   &lt;/svg>
 &lt;/span>
         </pre>
 
-        <h4 class="sg-subhdg3">Polling Icon</h4>
-        <div class="sg-polling-checkmark">
+        <h4 class="sg__subhdg3">Polling Icon</h4>
+        <div class="sg__polling-checkmark">
           <div class="polling-checkmark">
             <div class="polling-checkmark__left"></div>
             <div class="polling-checkmark__right"></div>
@@ -2606,7 +2604,7 @@
           </div>
         </div>
 
-        <pre class="sg-sample-code">
+        <pre class="sg__sample-code">
 &lt;div class="polling-checkmark">
   &lt;div class="polling-checkmark__left">&lt;/div>
   &lt;div class="polling-checkmark__right">&lt;/div>
@@ -2620,8 +2618,8 @@
 
       </section>
 
-      <section id="coding-style" class="sg-section">
-        <h2 class="sg-hdg">Coding Style</h2>
+      <section id="coding-style" class="sg__section">
+        <h2 class="sg__hdg">Coding Style</h2>
         <p>Our coding style guidelines are outlined <a href="coding-style.html">here</a>.</p>
       </section>
     </main>

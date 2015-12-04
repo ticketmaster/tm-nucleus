@@ -222,6 +222,16 @@ $event-text-cobrand: calc(100vw - (#{$supportive-cobrand} * 2) - #{$scrollbar-wi
   }
 }
 
+.event-header__ln-logo {
+  width: 175px;
+  height: 22px;
+  fill: $white;
+
+  @include breakpoint($max: $bp-lg - 1) {
+    display: none;
+  }
+}
+
 .event-header__menu-button {
   @include icon-button();
 
@@ -279,76 +289,5 @@ $event-text-cobrand: calc(100vw - (#{$supportive-cobrand} * 2) - #{$scrollbar-wi
   @include breakpoint($bp-lg) {
     float: right;
     margin-right: $gutter-width / 2;
-  }
-}
-
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Deprecated
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.event-header__event-info--checkout {
-  flex: 1 1 100%;
-  margin-top: 0;
-}
-
-.event-header__title--checkout {
-  width: calc(100vw - (#{$timer-container} * 2) - #{$scrollbar-width});
-
-  @include breakpoint($bp-md) {
-    width: calc(100vw - (#{$timer-container-lg} * 2) - #{$scrollbar-width});
-  }
-
-  @include breakpoint($bp-lg) {
-    width: calc(100vw - (#{$logo-container} * 2) - #{$scrollbar-width});
-  }
-}
-
-.event-header__venue-time {
-  color: $header-secondary-text-color;
-  white-space: nowrap;
-}
-
-.event-header__venue {
-  display: inline-block;
-  max-width: 35%;  // for iOS 7
-
-  // scss-lint:disable DuplicateProperty
-  max-width: calc(100vw - (#{$event-header-menu-container} * 2 + 40px) - #{$event-header-datestamp-width});
-  // scss-lint:enable DuplicateProperty
-
-  margin: auto;
-  vertical-align: top;
-}
-
-.event-header__venue--apart,
-.event-header__datestamp--apart {
-  @include breakpoint($max: $bp-md - 1) {
-    display: block;
-  }
-}
-
-.event-header__venue--apart {
-  max-width: $event-header-info-checkout-width;
-
-  @include breakpoint($bp-md) {
-    max-width: calc(100vw - (#{$timer-container-lg} * 2 + 40px) - #{$event-header-datestamp-width});
-  }
-
-  @include breakpoint($bp-lg) {
-    max-width: calc(100vw - (#{$logo-container} * 2 + 160px) - #{$event-header-datestamp-width});
-  }
-}
-
-.event-header__venue-separator--apart {
-  @include breakpoint($max: $bp-md - 1) {
-    display: none;
-  }
-}
-
-.event-header__supportive--checkout {
-  flex: 0 0 $timer-container;
-
-  @include breakpoint($bp-lg) {
-    flex: 0 0 $logo-container;
   }
 }

@@ -18,7 +18,7 @@ $sg-spacing: 1.5em;
 }
 
 
-.sg-header {
+.sg__header {
   @include span(full);
   @include outer-spacing($bottom: $spacing-lg);
 
@@ -35,41 +35,25 @@ $sg-spacing: 1.5em;
   }
 }
 
-.nucleus-logo {
+.sg__logo {
   width: 70px;
   height: 70px;
 
   fill: $white;
 }
 
-.nucleus-version {
+.sg__version {
   @include fixed-font('xs');
 }
 
-.sg-tm-logo {
-  width: 200px;
-  height: 27px;
-
-  fill: $white;
-
-  @include breakpoint($bp-md) {
-    width: 240px;
-    height: 35px;
-  }
-}
-
-.sg-name {
+.sg__name {
   @include responsive-font('md');
 
   font-weight: bold;
   color: $white;
 }
 
-.sg-title {
-  @include hdg-text('xl', $text-color);
-}
-
-.sg-nav {
+.sg__nav {
   @include span(full);
   @include outer-spacing($bottom: $spacing-lg);
   @include responsive-font('sm');
@@ -91,7 +75,7 @@ $sg-spacing: 1.5em;
   }
 }
 
-.sg-main {
+.sg__main {
   @include breakpoint($bp-md) {
     @include span(9);
   }
@@ -101,7 +85,7 @@ $sg-spacing: 1.5em;
   }
 }
 
-.sg-section {
+.sg__section {
   @include span(full);
   @include outer-spacing($bottom: $spacing-lg);
   @include responsive-font('md');
@@ -113,27 +97,23 @@ $sg-spacing: 1.5em;
   @include breakpoint($bp-md) {
     padding-bottom: increase-spacing($spacing-lg);
   }
-
-  .module {
-    margin-bottom: $sg-spacing;
-  }
 }
 
 
-.sg-hdg {
+.sg__hdg {
   @include hdg-text('xxl', $main-hdg-color);
 
   text-transform: uppercase;
 }
 
 
-.sg-subhdg {
+.sg__subhdg {
   @include hdg-text('md', $secondary-hdg-color);
 
   text-transform: uppercase;
 }
 
-.sg-subhdg2 {
+.sg__subhdg2 {
   @include hdg-text('sm', $alt-text-color, 5px);
 
   margin-top: 2em;
@@ -141,7 +121,7 @@ $sg-spacing: 1.5em;
   text-transform: uppercase;
 }
 
-.sg-subhdg3 {
+.sg__subhdg3 {
   @include hdg-text('sm', $text-color);
 
   margin-top: 2em;
@@ -151,7 +131,7 @@ $sg-spacing: 1.5em;
 }
 
 
-.sg-list {
+.sg__list {
   @include unstyled-list();
 
   margin-bottom: 1em;
@@ -164,7 +144,7 @@ $sg-spacing: 1.5em;
 }
 
 
-.sg-table {
+.sg__table {
   margin-bottom: 1em;
 
   @include breakpoint($bp-md) {
@@ -172,79 +152,50 @@ $sg-spacing: 1.5em;
 
     vertical-align: top;
   }
-
-  td {
-    @include responsive-font('sm');
-
-    padding: 0 10px 5px 0;
-
-    @include breakpoint($bp-md) {
-      padding-right: 25px;
-    }
-  }
 }
 
-.sg-typography-table {
-  td {
-    padding: 5px 10px;
-
-    vertical-align: top;
-  }
-
-  tr:nth-child(even) {
-    background-color: $table-alt-bg-color;
-  }
-}
-
-.sg-swatch-table {
-  td {
-    width: 25%;
-    padding-right: 15px;
-
-    vertical-align: top;
-  }
-
-  .sg-swatch-na {
-    padding-top: 25px;
-    text-align: center;
-  }
-}
-
-.sg-button-table {
-  td {
-    padding: 0 20px 10px 0;
-  }
-}
-
-
-.sg-table-hdg {
-  padding: 0 20px 5px 0;
+.sg__table-hdg {
+  padding-right: 20px;
+  padding-bottom: 5px;
 
   font-weight: bold;
   text-align: left;
   white-space: nowrap;
 }
 
-.sg-typography-hdg {
-  padding: 5px 10px;
+.sg__table-cell {
+  @include inner-spacing(false, 0, $spacing-sm, $spacing-sm, 0);
+
+  vertical-align: top;
 }
 
-.sg-typography-bp {
+.sg__typography-cell {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.sg__table-alternating-row {
+  &:nth-child(even) {
+    background-color: $table-alt-bg-color;
+  }
+}
+
+.sg__typography-bp {
   white-space: nowrap;
   vertical-align: top;
 }
 
-.sg-code {
+.sg__code {
   @include code-style();
 }
 
-.sg-code-xs {
+.sg__code--xs {
   @include code-style('xs');
 }
 
 
 // sample code style
-.sg-sample-code {
+.sg__sample-code {
   @include code-style();
 
   padding: 0 gutter();
@@ -265,13 +216,13 @@ $sg-spacing: 1.5em;
   }
 }
 
-.sg-highlight-code {
+.sg__highlight-code {
   color: $alert-color;
 }
 
 
 // swatches
-.sg-swatch {
+.sg__swatch {
   position: relative;
 
   width: 100%;
@@ -283,7 +234,7 @@ $sg-spacing: 1.5em;
 
 @each $color, $shades in $palette {
   @each $name, $shade in $shades {
-    .sg-swatch--#{$name} {
+    .sg__swatch--#{$name} {
       background: $shade;
 
       &:before {
@@ -307,7 +258,7 @@ $sg-spacing: 1.5em;
   }
 }
 
-.sg-swatch--state {
+.sg__swatch--state {
   width: 20vw;
 
   margin-bottom: 5px;
@@ -327,31 +278,31 @@ $sg-spacing: 1.5em;
   }
 }
 
-.sg-swatch--state.sg-swatch--pacific:before {
+.sg__swatch--state.sg__swatch--pacific:before {
   content: 'pacific';
 }
 
-.sg-swatch--state.sg-swatch--cascade:before {
+.sg__swatch--state.sg__swatch--cascade:before {
   content: 'cascade';
 }
 
-.sg-swatch--state.sg-swatch--yosemite:before {
+.sg__swatch--state.sg__swatch--yosemite:before {
   content: 'yosemite';
 }
 
-.sg-swatch--state.sg-swatch--helen:before {
+.sg__swatch--state.sg__swatch--helen:before {
   content: 'helen';
 }
 
-.sg-swatch--state.sg-swatch--malibu:before {
+.sg__swatch--state.sg__swatch--malibu:before {
   content: 'malibu';
 }
 
-.sg-swatch--state.sg-swatch--catalina:before {
+.sg__swatch--state.sg__swatch--catalina:before {
   content: 'catalina';
 }
 
-.sg-swatch--pacific-darker25 {
+.sg__swatch--pacific-darker25 {
   background: $brand-primary-darker25;
 
   &:before {
@@ -361,7 +312,7 @@ $sg-spacing: 1.5em;
   }
 }
 
-.sg-swatch--pacific-lighter50 {
+.sg__swatch--pacific-lighter50 {
   background: $brand-primary-lighter50;
 
   &:before {
@@ -369,7 +320,7 @@ $sg-spacing: 1.5em;
   }
 }
 
-.sg-swatch--pacific-lighter75 {
+.sg__swatch--pacific-lighter75 {
   background: $brand-primary-lighter75;
 
   &:before {
@@ -377,7 +328,7 @@ $sg-spacing: 1.5em;
   }
 }
 
-.sg-swatch--pacific-lighter87 {
+.sg__swatch--pacific-lighter87 {
   background: $brand-primary-lighter87;
 
   &:before {
@@ -385,7 +336,7 @@ $sg-spacing: 1.5em;
   }
 }
 
-.sg-swatch--cascade-darker25 {
+.sg__swatch--cascade-darker25 {
   background: $brand-gray2-darker25;
 
   &:before {
@@ -395,7 +346,7 @@ $sg-spacing: 1.5em;
   }
 }
 
-.sg-swatch--cascade-lighter50 {
+.sg__swatch--cascade-lighter50 {
   background: $brand-gray2-lighter50;
 
   &:before {
@@ -403,7 +354,7 @@ $sg-spacing: 1.5em;
   }
 }
 
-.sg-swatch--cascade-lighter75 {
+.sg__swatch--cascade-lighter75 {
   background: $brand-gray2-lighter75;
 
   &:before {
@@ -411,7 +362,7 @@ $sg-spacing: 1.5em;
   }
 }
 
-.sg-swatch--yosemite-darker25 {
+.sg__swatch--yosemite-darker25 {
   background: $brand-cta-darker25;
 
   &:before {
@@ -421,7 +372,7 @@ $sg-spacing: 1.5em;
   }
 }
 
-.sg-swatch--yosemite-lighter75 {
+.sg__swatch--yosemite-lighter75 {
   background: $brand-cta-lighter75;
 
   &:before {
@@ -429,7 +380,7 @@ $sg-spacing: 1.5em;
   }
 }
 
-.sg-swatch--helen-darker25 {
+.sg__swatch--helen-darker25 {
   background: $brand-alert-darker25;
 
   &:before {
@@ -439,7 +390,7 @@ $sg-spacing: 1.5em;
   }
 }
 
-.sg-swatch--helen-lighter75 {
+.sg__swatch--helen-lighter75 {
   background: $brand-alert-lighter75;
 
   &:before {
@@ -447,7 +398,7 @@ $sg-spacing: 1.5em;
   }
 }
 
-.sg-swatch--catalina-lighter50 {
+.sg__swatch--catalina-lighter50 {
   background: $brand-accent-lighter50;
 
   &:before {
@@ -457,7 +408,7 @@ $sg-spacing: 1.5em;
 
 
 
-.sg-swatches {
+.sg__swatches {
   @include clearfix();
 
   @include breakpoint($bp-md) {
@@ -466,7 +417,7 @@ $sg-spacing: 1.5em;
   }
 }
 
-.sg-swatch-group {
+.sg__swatch-group {
   @include outer-spacing($bottom: $spacing-md);
 
   @include breakpoint($bp-md) {
@@ -480,22 +431,22 @@ $sg-spacing: 1.5em;
   }
 }
 
-.sg-swatch-info {
+.sg__swatch-info {
   margin-bottom: 10px;
 
   line-height: 1.6;
 }
 
-.sg-swatch-name {
+.sg__swatch-name {
   display: block;
   margin: 3px 0;
 }
 
-.sg-swatch-usage {
+.sg__swatch-usage {
   margin-top: 5px;
 }
 
-.sg-swatch-state-usage {
+.sg__swatch-state-usage {
   @include fixed-font('xs');
 
   margin: 5px 0 0 5px;
@@ -504,14 +455,14 @@ $sg-spacing: 1.5em;
 
 // font sizes
 @each $name, $sizes in $font-sizes {
-  .sg-#{$name}-font-size {
+  .sg__#{$name}-font-size {
     $size: fetch-font($name, 'pint');
 
     font-size: $size;
     line-height: calc-lh($size);
   }
 
-  .sg-#{$name}-font-size-quart {
+  .sg__#{$name}-font-size-quart {
     $size: fetch-font($name, 'quart');
 
     font-size: $size;
@@ -519,7 +470,7 @@ $sg-spacing: 1.5em;
   }
 
   @if ($name != 'xs') {
-    .sg-#{$name}-font-size-gallon {
+    .sg__#{$name}-font-size-gallon {
       $size: fetch-font($name, 'gallon');
 
       font-size: $size;
@@ -527,24 +478,24 @@ $sg-spacing: 1.5em;
     }
   }
 
-  .sg-#{$name}-font-size-responsive {
+  .sg__#{$name}-font-size-responsive {
     @include responsive-font($name);
   }
 }
 
-.sg-font-usage {
+.sg__font-usage {
   @include responsive-font('sm');
 }
 
 // text styles
-.sg-ex-bold {
+.sg__ex-bold {
   font-weight: bold;
 }
 
 
 // generate breakpoint classes
 @each $device, $px in $breakpoints {
-  .sg-#{$device}-bp {
+  .sg__#{$device}-bp {
     &:before {
       content: '#{$px} - ';
     }
@@ -552,7 +503,7 @@ $sg-spacing: 1.5em;
 }
 
 @each $device, $px in $breakpoints {
-  .sg-#{$device}-limit {
+  .sg__#{$device}-limit {
     &:after {
       content: ' (up to #{$px - 1})';
     }
@@ -561,13 +512,13 @@ $sg-spacing: 1.5em;
 
 
 // quantity buttons
-.sg-embedded-qty-filter {
+.sg__embedded-qty-filter {
   width: 250px;
 }
 
 
 // lists {
-.sg-list-box {
+.sg__list-box {
   margin-bottom: 1em;
 
   background-color: $white;
@@ -576,34 +527,36 @@ $sg-spacing: 1.5em;
 
 
 // tooltips
-.sg-tooltip {
+.sg__tooltip {
   text-align: center;
 
-  + .sg-tooltip {
+  + .sg__tooltip {
     margin-top: 20px;
   }
 }
 
 
 // sec-row-seat
-.sg-srs {
+.sg__srs {
   @include outer-spacing($bottom: $spacing-md);
 
   width: $srs-min-width;
 }
 
-.sg-ism-tooltip {
+.sg__ism-tooltip {
   @include outer-spacing($bottom: $spacing-md);
 }
 
-.sg-input-wrapper {
+.sg__input-wrapper {
   @include outer-spacing($bottom: $spacing-md);
 
   width: 33%;
   // padding: 10px;
 }
 
-.sg-module {
+.sg__module {
+  @include outer-spacing($bottom: $spacing-md);
+
   width: 100%;
 
   @include breakpoint($bp-md) {
@@ -612,12 +565,12 @@ $sg-spacing: 1.5em;
 }
 
 
-.sg-unstyled-list {
+.sg__unstyled-list {
   @include unstyled-list();
 }
 
 
-.sg-dialog {
+.sg__dialog {
   width: 300px;
   margin-bottom: 20px;
 
@@ -626,14 +579,14 @@ $sg-spacing: 1.5em;
   }
 }
 
-.sg-dialog-modal {
+.sg__dialog-modal {
   width: 600px;
   padding: 50px;
   margin-bottom: 20px;
   background-color: $overlay-color;
 }
 
-.sg-polling {
+.sg__polling {
   width: 20px;
   background-color: $brand-gray;
 }

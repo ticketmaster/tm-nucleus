@@ -5,6 +5,17 @@ Changelog
 ---------
 **Changes**
 - Abstract color assignments to allow custom user configurations.
+- Deprecated event header support has been removed.
+- The following variables are no longer available:
+  - `$timer-container`
+  - `$timer-container-lg`
+  - `$logo-container`
+  - `$event-header-menu`
+  - `$event-header-menu-container`
+  - `$event-header-datestamp-width`
+  - `$event-header-info-checkout-width`
+  - `$event-image-size`
+- Update styleguide CSS to conform to BEM standards
 
 **0.15.0**
 ---------
