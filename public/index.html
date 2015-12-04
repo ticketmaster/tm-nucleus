@@ -62,6 +62,16 @@
     </nav>
 
     <main class="sg-main">
+      <section id="intro" class="sg-section">
+        <h2 class="sg-hdg">What is Nucleus?</h2>
+        <p>Nucleus is a CSS component styleguide built on <a href="http://bradfrost.com/blog/post/atomic-web-design/">atomic design principles</a> utilizing <a href="https://css-tricks.com/bem-101/">BEM</a> syntax and <a href="http://sass-lang.com/">SASS</a> goodness. Its primary mission is to create a consistent visual and coding foundation upon which other projects can build their sites.</p>
+        <p>While source files are written in .scss, we also provide compiled and minified CSS files for consumption if you choose to forgo using SASS in your build process.</p>
+        <p>The project is publicly available on <a href="https://github.com/Ticketmaster/tm-nucleus">Github</a> and as an <a href="https://www.npmjs.com/package/tm-nucleus">NPM module</a>.</p>
+
+        <h3 class="sg-subhdg">Changelog</h2>
+        <p>We're working on making a prettier changelog, but for now, you can see the ugly version <a href="https://github.com/Ticketmaster/tm-nucleus/blob/master/CHANGELOG.md">here</a>.</p>
+      </section>
+
       <section id="palette" class="sg-section">
 
         <h2 class="sg-hdg">Color Palette</h2>
@@ -73,6 +83,7 @@
               <span class="sg-swatch-name">pacific</span>
               <code class="sg-code">$brand-primary</code>
               <ul class="sg-list sg-swatch-usage">
+                <li>Header color</li>
                 <li>Links</li>
                 <li>Standard buttons</li>
                 <li>Focused border</li>
@@ -1703,10 +1714,10 @@
 
         <pre class="sg-sample-code">
   &lt;div class="<span class="sg-highlight-code">split-content</span>"&gt;
-    &lt;div class="<span class="sg-highlight-code">split-content__primary</span> module__content"&gt;
+    &lt;div class="<span class="sg-highlight-code">split-content__primary</span>"&gt;
       [...]
     &lt;/div&gt;
-    &lt;div class="<span class="sg-highlight-code">split-content__secondary</span> module__content"&gt;
+    &lt;div class="<span class="sg-highlight-code">split-content__secondary</span>"&gt;
       [...]
     &lt;/div&gt;
   &lt;/div&gt;
@@ -1715,7 +1726,7 @@
 
         <p>Secondary content can be placed before or after the primary content.</p>
 
-        <div class="split-content module__content">
+        <div class="split-content">
           <div class="split-content__secondary">
             <button class="button-outlined button-outlined--void button-outlined--small">Delete</button>
           </div>
@@ -1728,7 +1739,7 @@
         </div>
 
         <pre class="sg-sample-code">
-&lt;div class="split-content module__content"&gt;
+&lt;div class="split-content"&gt;
   &lt;div class="<span class="sg-highlight-code">split-content__secondary</span>"&gt;
     [...]
   &lt;/div&gt;
@@ -1743,7 +1754,7 @@
 
         <p>If you need content to be top-aligned, use the <code class="sg-code">split-content__primary--top</code> or <code class="sg-code">split-content__secondary--top</code> modifiers.</p>
 
-        <div class="split-content module__content">
+        <div class="split-content">
           <div class="split-content__secondary split-content__secondary--top">
             <button class="button-outlined button-outlined--void button-outlined--small">Delete</button>
           </div>
@@ -1757,7 +1768,7 @@
         </div>
 
         <pre class="sg-sample-code">
-&lt;div class="split-content module__content"&gt;
+&lt;div class="split-content"&gt;
   &lt;div class="split-content__secondary <span class="sg-highlight-code">split-content__secondary--top</span>"&gt;
     [...]
   &lt;/div&gt;
