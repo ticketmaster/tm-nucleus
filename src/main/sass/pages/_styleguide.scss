@@ -14,9 +14,14 @@ $sg-spacing: 1.5em;
   border: $base-border-style;
   border-radius: 4px;
   font-family: $monospace;
+  font-weight: normal;
   background-color: $code-bg-color;
 }
 
+.html,
+.scss {
+  @include responsive-font('sm');
+}
 
 .sg__header {
   @include span(full);
@@ -193,31 +198,9 @@ $sg-spacing: 1.5em;
   @include code-style('xs');
 }
 
-
-// sample code style
-.sg__sample-code {
-  @include code-style();
-
-  padding: 0 gutter();
-  margin-bottom: 1em;
-  clear: both;
-  background: $code-bg-color;
-
-  &:before {
-    @include responsive-font('sm');
-
-    display: block;
-    padding: 5px 10px;
-    margin: 0 (-($gutter-width / 2)) 1em;
-    font-weight: bold;
-    color: $white;
-    background: $black;
-    content: 'Example Usage';
-  }
-}
-
 .sg__highlight-code {
-  color: $alert-color;
+  font-weight: bold;
+  font-style: italic;
 }
 
 

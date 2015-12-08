@@ -11,6 +11,7 @@
     <link rel="shortcut icon" href="//s2.tmol.co/tm/4ab94a4f/static/favicon-rebrand.ico" type="image/x-icon">
     <link href="css/nucleus.css" rel="stylesheet" type="text/css">
     <link href="css/styleguide.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/zenburn.min.css">
   </head>
 
 <body class="page sg">
@@ -335,12 +336,11 @@
           the appropriate code when passed a font size.</p>
         <p>Note that we actually specify our font sizes in <code class="sg__code">rem</code> units.
           <code class="sg__code">1rem</code> is equivalent to <code class="sg__code">10px</code>.</p>
-        <pre class="sg__sample-code">
-// scss
+
+<pre><code class="scss">// scss
 .sample-text {
-  @include <span class="sg__highlight-code">responsive-font('md')</span>;
-}
-        </pre>
+  @include responsive-font('md');
+}</code></pre>
 
         <p>Using this mixin, our font sizes are then generated as follows (up to the specified widths).</p>
 
@@ -553,18 +553,16 @@
           </tr>
         </table>
 
-        <pre class="sg__sample-code">
-// scss
+<pre><code class="scss">// scss
 .fixed-example {
-  <span class="sg__highlight-code">@include fixed-font('lg')</span>;
+  @include fixed-font('lg');
 }
 
 // output
 .fixed-example {
   font-size: 1.8rem;
   line-height: 1.2;
-}
-  </pre>
+}</code></pre>
 
         <h3 class="sg__subhdg">Line Height</h3>
         <p>By default, line-height for the page is set to <code class="sg__code">1.4</code>. When using either of the font mixins above, line-height is calculated like so:</p>
@@ -583,19 +581,17 @@
         <p>There may be situations where you need a specific line-height other than the above. The mixins have you covered for that, too, by allowing you to pass in a custom line-height value as an optional second parameter.</p>
         <p>This can be useful for buttons or other situations where you want the text precisely vertically centered in a &quot;box.&quot;</p>
 
-        <pre class="sg__sample-code">
-// scss
-// note that this also works with responsive-font()
+<pre><code class="scss">// scss
+// note that you can specify line-height with responsive-font()
 .fixed-example {
-  @include fixed-font('lg', <span class="sg__highlight-code">5rem</span>);
+  @include fixed-font('lg', 5rem);
 }
 
 // output
 .fixed-example {
   font-size: 1.8rem;
   line-height: 5rem;
-}
-        </pre>
+}</code></pre>
 
       </section>
 
@@ -647,41 +643,39 @@
           that's bold with a bottom margin of <code class="sg__code">10px/20px</code>. It is called by passing in a font-size and color.
           It will automatically make the font responsive via a built-in call to the
           <code class="sg__code">responsive-font()</code> mixin.</p>
-        <pre class="sg__sample-code">
-// scss
+
+<pre><code class="scss">// scss
 .some-heading {
-  <span class="sg__highlight-code">@include hdg-text('md', $black);</span>
+  @include hdg-text('md', $black);
 }
 
 // output
 .some-heading {
-  margin-bottom: 5px;
-  font-size: 14px;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
   font-weight: bold;
   color: #000;
 }
 
 @media (min-width: 45em) {
   .some-heading {
-    font-size: 16px;
+    font-size: 1.6rem;
   }
-}
-        </pre>
-        <h4 class="sg__subhdg2">alt-copy mixin</h4>
-        <p>The <code class="sg__code">alt-copy()</code> mixin can optionally be called with
-          a font-size parameter. By default, font size is not specified and is based on the surrounding font size.</p>
-        <pre class="sg__sample-code">
-// scss
+}</code></pre>
+
+          <h4 class="sg__subhdg2">alt-copy mixin</h4>
+          <p>The <code class="sg__code">alt-copy()</code> mixin can optionally be called with
+            a font-size parameter. By default, font size is not specified and is based on the surrounding font size.</p>
+<pre><code class="scss">// scss
 .ticket-fees {
-  <span class="sg__highlight-code">@include alt-copy();</span>
+  @include alt-copy();
 }
 
 // output
 .ticket-fees {
   font-weight: normal;
   color: #768692;
-}
-        </pre>
+}</code></pre>
 
       </section>
 
@@ -717,13 +711,13 @@
           assigned to the <code class="sg__code">$min</code> value.</p>
         <p>The mixin takes <code class="sg__code">px</code> values and converts them to <code class="sg__code">em</code> units,
           which is the preferred way to write media queries.</p>
-        <pre class="sg__sample-code">
-// scss
+
+<pre><code class="scss">// scss
 .some-block {
   margin-top: 15px;
 
   // $bp-md will be assigned as min-width
-  <span class="sg__highlight-code">@include breakpoint($bp-md)</span> {
+  @include breakpoint($bp-md) {
     margin-top: 40px;
   }
 }
@@ -734,22 +728,21 @@
 }
 
 // note the conversion to em units
-<span class="sg__highlight-code">@media (min-width: 45em)</span> {
+@media (min-width: 45em) {
   .some-block {
     margin-top: 40px;
   }
-}
-        </pre>
+}</code></pre>
 
         <p>If you need to specify the maximum breakpoint instead, you call the mixin by explicity
           assigning the parameter to <code class="sg__code">$max</code>.</p>
-        <pre class="sg__sample-code">
-// scss
+
+<pre><code class="scss">// scss
 .another-block {
   [...]
 
   // here we are explicitly assigning our parameter to $max
-  <span class="sg__highlight-code">@include breakpoint($max: $bp-lg - 1)</span> {
+  @include breakpoint($max: $bp-lg - 1) {
     padding: 25px;
   }
 }
@@ -757,12 +750,11 @@
 // output
 [...]
 
-<span class="sg__highlight-code">@media (max-width: 63.6875em)</span> {
+@media (max-width: 63.6875em) {
   .another-block {
     padding: 25px;
   }
-}
-        </pre>
+}</code></pre>
 
         <p>Note in the above example that we actually passed in <code class="sg__code">($max: $bp-lg -
           1)</code> because we want the styling rules to apply to anything <em>below</em> the max
@@ -775,8 +767,7 @@
         <h4 class="sg__subhdg2">Where to Use breakpoint</h4>
         <p>In SASS, declare your breakpoints within the elements affected. Do not declare media queries as another code block separate from the original context.</p>
 
-        <pre class="sg__sample-code">
-<span class="sg__highlight-code">// DON'T do this</span>
+<pre><code class="scss">// DON'T do this
 .class1 {
   font-size: 12px;
 }
@@ -795,15 +786,14 @@
   }
 }
 
-<span class="sg__highlight-code">// DO do this</span>
+// DO do this
 .class1 {
   font-size: 12px;
 
   @include breakpoint($bp-md) {
     font-size: 18px;
   }
-}
-          </pre>
+}</code></pre>
 
         </section>
 
@@ -817,13 +807,11 @@
         <h2 class="sg__hdg">Page Structure</h2>
         <p>The basic layout of our pages is as follows:</p>
 
-        <pre class="sg__sample-code">
-&lt;body class=&quot;<span class="sg__highlight-code">page edp</span>&quot;&gt;
-  &lt;div class=&quot;<span class="sg__highlight-code">page__wrapper</span>&quot;&gt;
-    &lt;div class=&quot;<span class="sg__highlight-code">page__frame</span>&quot;&gt;
-      &lt;div class=&quot;<span class="sg__highlight-code">page__content</span>&quot;&gt;
-        &lt;!-- page content here --&gt;
-        </pre>
+<pre><code class="html">&lt;body class=&quot;page edp&quot;&gt;
+  &lt;div class=&quot;page__wrapper&quot;&gt;
+    &lt;div class=&quot;page__frame&quot;&gt;
+      &lt;div class=&quot;page__content&quot;&gt;
+        &lt;!-- page content here --&gt;</code></pre>
 
         <table class="sg__table">
           <tr>
@@ -858,7 +846,92 @@
 
       <section id="spacing" class="sg__section">
         <h2 class="sg__hdg">Spacing</h2>
-        <p>Spacing between elements on the page should be one of three possible values, as shown below:</p>
+        <p>Spacing between major page elements should be one of three possible values, as shown below.</p>
+
+        <table class="sg__table">
+          <tr>
+            <td class="sg__table-hdg">Breakpoint</td>
+            <td class="sg__table-hdg"><code class="sg__code">$spacing-sm</code></td>
+            <td class="sg__table-hdg"><code class="sg__code">$spacing-md</code></td>
+            <td class="sg__table-hdg"><code class="sg__code">$spacing-lg</code></td>
+          </tr>
+          <tr>
+            <td class="sg__table-cell">
+              &le; 719px
+            </td>
+            <td class="sg__table-cell">
+              10px
+            </td>
+            <td class="sg__table-cell">
+              20px
+            </td>
+            <td class="sg__table-cell">
+              30px
+            </td>
+          </tr>
+          <tr>
+            <td class="sg__table-cell">
+              &ge; 720px
+            </td>
+            <td class="sg__table-cell">
+              15px
+            </td>
+            <td class="sg__table-cell">
+              30px
+            </td>
+            <td class="sg__table-cell">
+              45px
+            </td>
+          </tr>
+        </table>
+
+        <p>To make it easier to set responsive spacing, there are two mixins available:</p>
+
+        <table class="sg__table">
+          <tr>
+            <td class="sg__table-cell">margin-based spacing</td>
+            <td class="sg__table-cell"><code class="sg__code">@include outer-spacing($x)</code></td>
+          </tr>
+          <tr>
+            <td class="sg__table-cell">padding-based spacing</td>
+            <td class="sg__table-cell"><code class="sg__code">@include inner-spacing($y)</code></td>
+          </tr>
+        </table>
+
+        <p>Both mixins behave in the same way.</p>
+        <ol>
+          <li>If a single parameter is passed, it will apply the value equally on all four sides.</li>
+          <li>If you don't want all sides to be uniform, you can assign values to the sides you want to modify.</li>
+        </ol>
+
+        <p>This is best illustrated with some examples.</p>
+
+<pre><code class="scss">// set same margin on all sides
+@include outer-spacing($spacing-md);
+
+// set padding on top and bottom
+@include inner-spacing($top: $spacing-sm, $bottom: $spacing-sm);
+
+// set padding on top, right, and left
+@include inner-spacing($top: $spacing-sm, $right: $spacing-md, $left: $spacing-md)</code></pre>
+
+        <p>When specifying spacing for any side(s), any side that you omit will be set to <code class="sg__code">0</code>.</p>
+
+<pre><code class="scss">// set 30px bottom margin
+.example {
+  @include outer-spacing($bottom: $spacing-lg);
+}
+
+// output from above will be
+.example {
+  margin: 0 0 30px 0;
+}
+
+@media (min-width: 23.4375em) {
+  .example {
+    margin: 0 0 45px 0;
+  }
+}</code></pre>
 
         <table class="sg__table">
           <tr>
@@ -891,58 +964,6 @@
             <td class="sg__table-cell"><code class="sg__code">increase-spacing($spacing-lg)</code></td>
           </tr>
         </table>
-
-        <p>To make it easier to set responsive spacing, there are two mixins available:</p>
-
-        <table class="sg__table">
-          <tr>
-            <td class="sg__table-cell">margin-based spacing</td>
-            <td class="sg__table-cell"><code class="sg__code">@include outer-spacing($x)</code></td>
-          </tr>
-          <tr>
-            <td class="sg__table-cell">padding-based spacing</td>
-            <td class="sg__table-cell"><code class="sg__code">@include inner-spacing($y)</code></td>
-          </tr>
-        </table>
-
-        <p>Both mixins behave in the same way.</p>
-        <ol>
-          <li>If a single parameter is passed, it will apply the value equally on all four sides.</li>
-          <li>If you don't want all sides to be uniform, you can assign values to the sides you want to modify.</li>
-        </ol>
-
-        <p>This is best illustrated with some examples.</p>
-
-        <pre class="sg__sample-code">
-// set same margin on all sides
-<span class="sg__highlight-code">@include outer-spacing($spacing-md);</span>
-
-// set padding on top and bottom
-<span class="sg__highlight-code">@include inner-spacing($top: $spacing-sm, $bottom: $spacing-sm);</span>
-
-// set padding on top, right, and left
-<span class="sg__highlight-code">@include inner-spacing($top: $spacing-sm, $right: $spacing-md, $left: $spacing-md)</span>
-        </pre>
-
-        <p>When specifying spacing for any side(s), any side that you omit will be set to <code class="sg__code">0</code>.</p>
-
-        <pre class="sg__sample-code">
-// set 30px bottom margin
-.example {
-  @include outer-spacing($bottom: $spacing-lg);
-}
-
-// output from above will be
-.example {
-  margin: 0 0 30px 0;
-}
-
-@media (min-width: 23.4375em) {
-  .example {
-    margin: 0 0 45px 0;
-  }
-}
-        </pre>
       </section>
 
 
@@ -1132,14 +1153,12 @@
 
         <p>If you want to disable default list style for your use case, you can use either the <code class="sg__code">unstyled-list</code> class or the <code class="sg__code">unstyled-list()</code> mixin to compose your own list class.</p>
 
-        <pre class="sg__sample-code">
-// scss
+<pre><code class="scss">// scss
 .your-list {
-  <span class="sg__highlight-code">@include unstyled-list();</span>
+  @include unstyled-list();
 
   // your styles here
-}
-        </pre>
+}</code></pre>
 
         <h3 class="sg__subhdg">Delimited Lists</h3>
 
@@ -1158,19 +1177,17 @@
           </li>
         </ul>
 
-        <pre class="sg__sample-code">
-&lt;ul class="<span class="sg__highlight-code">delimited-list</span>"&gt;
-  &lt;li class="<span class="sg__highlight-code">delimited-list__item</span>"&gt;
+<pre><code class="html">&lt;ul class="delimited-list"&gt;
+  &lt;li class="delimited-list__item"&gt;
     First item
   &lt;/li&gt;
-  &lt;li class="<span class="sg__highlight-code">delimited-list__item</span>"&gt;
-    Secondy item
+  &lt;li class="delimited-list__item"&gt;
+    Second item
   &lt;/li&gt;
-  &lt;li class="<span class="sg__highlight-code">delimited-list__item</span>"&gt;
+  &lt;li class="delimited-list__item"&gt;
     Third item
   &lt;/li&gt;
-&lt;/ul&gt;
-        </pre>
+&lt;/ul&gt;</code></pre>
 
         <h3 class="sg__subhdg2">Embedded Delimited List</h3>
         <p></p>
@@ -1179,20 +1196,19 @@
 
         <p>Modifying the list to work in this scenario is simple: Just add the <code class="sg__code">--embedded</code> modifier to the list and list items:</p>
 
-        <pre class="sg__sample-code">
-&lt;div class="some-box"&gt;
-  &lt;ul class="delimited-list <span class="sg__highlight-code">delimited-list--embedded</span>"&gt;
-    &lt;li class="delimited-list__item <span class="sg__highlight-code">delimited-list__item--embedded</span>"&gt;
+<pre><code class="html">&lt;div class="some-box"&gt;
+  &lt;ul class="delimited-list delimited-list--embedded"&gt;
+    &lt;li class="delimited-list__item delimited-list__item--embedded"&gt;
       First item
     &lt;/li&gt;
-    &lt;li class="delimited-list__item <span class="sg__highlight-code">delimited-list__item--embedded</span>"&gt;
-      Secondy item
+    &lt;li class="delimited-list__item delimited-list__item--embedded"&gt;
+      Second item
     &lt;/li&gt;
-    &lt;li class="delimited-list__item <span class="sg__highlight-code">delimited-list__item--embedded</span>"&gt;
+    &lt;li class="delimited-list__item delimited-list__item--embedded"&gt;
       Third item
     &lt;/li&gt;
-&lt;/div&gt;
-        </pre>
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
 
         <p>That'll give you this:</p>
 
@@ -1231,19 +1247,13 @@
           </li>
         </ul>
 
-        <pre class="sg__sample-code">
-&lt;ul class="delimited-list"&gt;
-  &lt;li class="delimited-list__item <span class="sg__highlight-code">delimited-list__item--compact</span>"&gt;
-    First item
+<pre><code class="html">&lt;ul class="delimited-list"&gt;
+  &lt;li class="delimited-list__item delimited-list__item--compact"&gt;
+    First item&lt;/li&gt;
+  &lt;li class="delimited-list__item delimited-list__item--compact"&gt;
+    Second item&lt;/li&gt;
   &lt;/li&gt;
-  &lt;li class="delimited-list__item <span class="sg__highlight-code">delimited-list__item--compact</span>"&gt;
-    Secondy item
-  &lt;/li&gt;
-  &lt;li class="delimited-list__item <span class="sg__highlight-code">delimited-list__item--compact</span>"&gt;
-    Third item
-  &lt;/li&gt;
-&lt;/div&gt;
-        </pre>
+&lt;/ul&gt;</code></pre>
 
       </section>
 
@@ -1253,7 +1263,7 @@
 
         <h3 class="sg__subhdg">Text fields</h3>
 
-        <p>Example of an the initial state of the input text-field, with fancy (floating) label animation.</p>
+        <p>Example of an the initial state of the input text-field, with fancing (floating) label animation.</p>
 
         <div class="sg__input-wrapper">
           <div class="input-group">
@@ -1262,12 +1272,12 @@
           </div>
         </div>
 
-        <pre class="sg__sample-code">
-&lt;div class="<span class="sg__highlight-code">input-group</span>"&gt;
-  &lt;input id="email" name="email" type="text" class="<span class="sg__highlight-code">input-group__text-field</span>"&gt;
-  &lt;label for="email" class="<span class="sg__highlight-code">input-group__label</span>"&gt;Email &lt;span class="<span class="sg__highlight-code">input-group__required</span>">*&lt;/span>&lt;/label&gt;
-&lt;/div&gt;
-        </pre>
+<pre><code class="html">&lt;div class="input-group"&gt;
+  &lt;input id="email" name="email" type="text" class="input-group__text-field"&gt;
+  &lt;label for="email" class="input-group__label"&gt;
+    Email &lt;span class="input-group__required"&gt;*&lt;/span&gt;
+  &lt;/label&gt;
+&lt;/div&gt;</code></pre>
 
         <p>Filled input text-fields contains the class <code class="sg__code">has-content</code>, which floats the label</p>
 
@@ -1278,14 +1288,14 @@
           </div>
         </div>
 
-        <pre class="sg__sample-code">
-&lt;div class=&quot;input-group&quot;&gt;
-  &lt;input name=&quot;email&quot; type=&quot;text&quot; class=&quot;input-group__text-field <span class="sg__highlight-code">has-content</span>&quot; aria-required=&quot;true&quot; value=&quot;Dohn Joe&quot;&gt;
-  &lt;label for=&quot;email&quot; class=&quot;input-group__label&quot;&gt;Email &lt;span class=&quot;input-group__required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
-&lt;/div&gt;
-        </pre>
+<pre><code class="html">&lt;div class=&quot;input-group&quot;&gt;
+  &lt;input name=&quot;email&quot; type=&quot;text&quot; class=&quot;input-group__text-field has-content&quot; aria-required=&quot;true&quot; value=&quot;Dohn Joe&quot;&gt;
+  &lt;label for=&quot;email&quot; class=&quot;input-group__label&quot;&gt;
+    Email &lt;span class=&quot;input-group__required&quot;&gt;*&lt;/span&gt;
+  &lt;/label&gt;
+&lt;/div&gt;</code></pre>
 
-        <p>Same for text-fields in an error state. Only the input field has the class <code class="sg__code">is-error-field</code></p>
+        <p>Same for text-fields in an error state. Only the input field has the class <code class="sg__code">is-error-field</code>.</p>
 
         <table class="sg__table">
           <tr>
@@ -1304,12 +1314,13 @@
           </tr>
         </table>
 
-        <pre class="sg__sample-code">
+<pre><code class="html">
 &lt;div class="input-group"&gt;
-  &lt;input id="email" name="email" type="text" class="input-group__text-field <span class="sg__highlight-code">is-error-field</span>"&gt;
-  &lt;label for="email" class="input-group__label"&gt;Email &lt;span class="input-group__required">*&lt;/span>&lt;/label&gt;
-&lt;/div&gt;
-        </pre>
+  &lt;input id="email" name="email" type="text" class="input-group__text-field is-error-field"&gt;
+  &lt;label for="email" class="input-group__label"&gt;
+    Email &lt;span class="input-group__required"&gt;*&lt;/span&gt;
+  &lt;/label&gt;
+&lt;/div&gt;</code></pre>
 
         <h3 class="sg__subhdg">Drop downs</h3>
 
@@ -1341,9 +1352,8 @@
           </div>
         </div>
 
-        <pre class="sg__sample-code">
-&lt;div class="input-group <span class="sg__highlight-code">dropdown</span>"&gt;
-  &lt;select id="state" class="<span class="sg__highlight-code">dropdown__select</span>"&gt;
+<pre><code class="html">&lt;div class="input-group dropdown"&gt;
+  &lt;select id="state" class="dropdown__select"&gt;
     &lt;option value=""&gt;&lt;/option&gt;
     &lt;option value="AL"&gt;Alabama&lt;/option&gt;
     &lt;option value="AK"&gt;Alaska&lt;/option&gt;
@@ -1354,11 +1364,10 @@
   &lt;label for="state" class="input-group__label"&gt;
     State &lt;span class="input-group__required"&gt;*&lt;/span&gt;
   &lt;/label&gt;
-  &lt;svg class="<span class="sg__highlight-code">dropdown__icon-chevron</span>"&gt;
+  &lt;svg class="dropdown__icon-chevron"&gt;
     &lt;use xlink:href="img/sprite.svg#icon-chevron"&gt;
   &lt;/svg&gt;
-&lt;/div&gt;
-        </pre>
+&lt;/div&gt;</code></pre>
 
         <p>This is the filled state. We just apply the <code class="sg__code">has-content</code> class to the select element.</p>
 
@@ -1381,8 +1390,7 @@
           </div>
         </div>
 
-        <pre class="sg__sample-code">
-&lt;div class="input-group dropdown"&gt;
+<pre><code class="html">&lt;div class="input-group dropdown"&gt;
   &lt;select id="state" class="dropdown__select <span class="sg__highlight-code">has-content</span>"&gt;
     &lt;option value=""&gt;&lt;/option&gt;
     &lt;option value="AL"&gt;Alabama&lt;/option&gt;
@@ -1397,8 +1405,7 @@
   &lt;svg class="dropdown__icon-chevron"&gt;
     &lt;use xlink:href="img/sprite.svg#icon-chevron"&gt;
   &lt;/svg&gt;
-&lt;/div&gt;
-        </pre>
+&lt;/div&gt;</code></pre>
 
         <p>This is the error state. We just apply the <code class="sg__code">is-error-field</code> class to the select element.</p>
 
@@ -1421,8 +1428,7 @@
           </div>
         </div>
 
-        <pre class="sg__sample-code">
-&lt;div class="input-group dropdown"&gt;
+<pre><code class="html">&lt;div class="input-group dropdown"&gt;
   &lt;select id="state" class="dropdown__select <span class="sg__highlight-code">is-error-field</span>"&gt;
     &lt;option value=""&gt;&lt;/option&gt;
     &lt;option value="AL"&gt;Alabama&lt;/option&gt;
@@ -1437,8 +1443,7 @@
   &lt;svg class="dropdown__icon-chevron"&gt;
     &lt;use xlink:href="img/sprite.svg#icon-chevron"&gt;
   &lt;/svg&gt;
-&lt;/div&gt;
-        </pre>
+&lt;/div&gt;</code></pre>
 
         <h3 class="sg__subhdg">Checkboxes</h3>
         <p>We use custom checkboxes that have a 1px border when unchecked. In the checked state,
@@ -1491,27 +1496,25 @@
           </div>
         </div>
 
-        <pre class="sg__sample-code">
-&lt;div class="<span class="sg__highlight-code">tile-selection is-clickable</span>"&gt;
-  &lt;div class="<span class="sg__highlight-code">tile-selection__content</span>"&gt;
+<pre><code class="html">&lt;div class="tile-selection is-clickable"&gt;
+  &lt;div class="tile-selection__content"&gt;
     -2350 EXP 11/15
   &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div class="<span class="sg__highlight-code">tile-selection tile-selection--selected is-clickable</span>"&gt;
-  &lt;div class="split-content <span class="sg__highlight-code">tile-selection__content</span>"&gt;
-    &lt;div class="split-content__primary <span class="sg__highlight-code">tile-selection__selected-text</span>"&gt;
+&lt;div class="tile-selection tile-selection--selected is-clickable"&gt;
+  &lt;div class="split-content tile-selection__content"&gt;
+    &lt;div class="split-content__primary tile-selection__selected-text"&gt;
       [...]
     &lt;/div&gt;
     &lt;div class="split-content__secondary"&gt;
       &lt;button class="button-aux button-aux--minor"&gt;Edit&lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-  &lt;div class="<span class="sg__highlight-code">tile-selection__content</span>"&gt;
+  &lt;div class="tile-selection__content"&gt;
       Content
   &lt;/div&gt;
-&lt;/div&gt;
-        </pre>
+&lt;/div&gt;</code></pre>
 
         <p>Typically, tiles will be rendered as a list of options.</p>
 
@@ -1543,29 +1546,27 @@
 
         <p>To do this, simply incorporate the tile classes into a list.</p>
 
-        <pre class="sg__sample-code">
-&lt;ul class="unstyled-list"&gt;
-  &lt;li class="<span class="sg__highlight-code">tile-selection tile-selection--selected is-clickable</span>"&gt;
-    &lt;div class="split-content <span class="sg__highlight-code">tile-selection__content</span>"&gt;
-      &lt;div class="split-content__primary <span class="sg__highlight-code">tile-selection__selected-text</span>"&gt;
+<pre><code class="html">&lt;ul class="unstyled-list"&gt;
+  &lt;li class="tile-selection tile-selection--selected is-clickable"&gt;
+    &lt;div class="split-content tile-selection__content"&gt;
+      &lt;div class="split-content__primary tile-selection__selected-text"&gt;
         [...]
       &lt;/div&gt;
       &lt;div class="split-content__secondary"&gt;
         &lt;button class="button-aux button-aux--minor"&gt;Edit&lt;/button&gt;
       &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class="<span class="sg__highlight-code">tile-selection__content</span>"&gt;
+    &lt;div class="tile-selection__content"&gt;
         Content
     &lt;/div&gt;
   &lt;/li&gt;
 
-  &lt;li class="<span class="sg__highlight-code">tile-selection is-clickable</span>"&gt;
-    &lt;div class="<span class="sg__highlight-code">tile-selection__content</span>"&gt;
+  &lt;li class="tile-selection is-clickable"&gt;
+    &lt;div class="tile-selection__content"&gt;
       -2350 EXP 11/15
     &lt;/div&gt;
   &lt;/li&gt;
-&lt;/ul&gt;
-        </pre>
+&lt;/ul&gt;</code></pre>
 
       </section>
 
@@ -1593,13 +1594,12 @@
           </div>
         </div>
 
-        <pre class="sg__sample-code">
-&lt;div class="<span class="sg__highlight-code">tooltip</span>"&gt;
-  &lt;div class="<span class="sg__highlight-code">tooltip__content</span>"&gt;
+<pre><code class="html">&lt;div class="tooltip"&gt;
+  &lt;div class="tooltip__content"&gt;
     Content goes here.
   &lt;/div&gt;
-&lt;/div&gt;
-          </pre>
+&lt;/div&gt;</pre></code>
+
       </section>
 
       <section id="srs" class="sg__section">
@@ -1710,17 +1710,15 @@
           </div>
         </div>
 
-        <pre class="sg__sample-code">
-  &lt;div class="<span class="sg__highlight-code">split-content</span>"&gt;
-    &lt;div class="<span class="sg__highlight-code">split-content__primary</span>"&gt;
+<pre><code class="html">&lt;div class="split-content"&gt;
+    &lt;div class="split-content__primary"&gt;
       [...]
     &lt;/div&gt;
-    &lt;div class="<span class="sg__highlight-code">split-content__secondary</span>"&gt;
+    &lt;div class="split-content__secondary"&gt;
       [...]
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;
-        </pre>
+&lt;/div&gt;</code></pre>
 
         <p>Secondary content can be placed before or after the primary content.</p>
 
@@ -1736,19 +1734,17 @@
           </div>
         </div>
 
-        <pre class="sg__sample-code">
-&lt;div class="split-content"&gt;
-  &lt;div class="<span class="sg__highlight-code">split-content__secondary</span>"&gt;
+<pre><code class="html">&lt;div class="split-content"&gt;
+  &lt;div class="split-content__secondary"&gt;
     [...]
   &lt;/div&gt;
-  &lt;div class="<span class="sg__highlight-code">split-content__primary</span>"&gt;
+  &lt;div class="split-content__primary"&gt;
     [...]
   &lt;/div&gt;
-  &lt;div class="<span class="sg__highlight-code">split-content__secondary</span>"&gt;
+  &lt;div class="split-content__secondary"&gt;
     [...]
   &lt;/div&gt;
-&lt;/div&gt;
-        </pre>
+&lt;/div&gt;</code></pre>
 
         <p>If you need content to be top-aligned, use the <code class="sg__code">split-content__primary--top</code> or <code class="sg__code">split-content__secondary--top</code> modifiers.</p>
 
@@ -1765,8 +1761,7 @@
           </div>
         </div>
 
-        <pre class="sg__sample-code">
-&lt;div class="split-content"&gt;
+<pre><code class="html">&lt;div class="split-content"&gt;
   &lt;div class="split-content__secondary <span class="sg__highlight-code">split-content__secondary--top</span>"&gt;
     [...]
   &lt;/div&gt;
@@ -1776,8 +1771,8 @@
   &lt;div class="split-content__secondary"&gt;
     [...]
   &lt;/div&gt;
-&lt;/div&gt;
-        </pre>
+&lt;/div&gt;</code></pre>
+
       </section>
 
       <section id="product-info" class="sg__section">
@@ -1790,16 +1785,14 @@
           <p class="product-info__desc">Description of product goes here. Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola.</p>
         </div>
 
-        <pre class="sg__sample-code">
-&lt;div class="product-info"&gt;
-  &lt;div class="<span class="sg__highlight-code">product-info__title</span>"&gt;
+<pre><code class="html">&lt;div class="product-info"&gt;
+  &lt;div class="product-info__title"&gt;
     Title of product
   &lt;/div&gt;
-  &lt;div class="<span class="sg__highlight-code">product-info__desc</span>"&gt;
+  &lt;div class="product-info__desc"&gt;
     &lt;p&gt;Description of product goes here.&lt;/p&gt;
   &lt;/div&gt;
-&lt;/div&gt;
-        </pre>
+&lt;/div&gt;</code></pre>
 
         <h3 class="sg__subhdg">Compact Product Information</h3>
         <p>There can be scenarios where the large size of product tile doesn't work. In those cases, the product title is the same size as the description (small).</p>
@@ -1809,16 +1802,14 @@
           <p class="product-info__desc">Description of product goes here. Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola.</p>
         </div>
 
-        <pre class="sg__sample-code">
-&lt;div class="product-info"&gt;
+<pre><code class="html">&lt;div class="product-info"&gt;
   &lt;div class="<span class="sg__highlight-code">product-info__compact-title</span>"&gt;
     Title of product
   &lt;/div&gt;
-  &lt;div class="<span class="sg__highlight-code">product-info__desc</span>"&gt;
+  &lt;div class="product-info__desc"&gt;
     &lt;p&gt;Description of product goes here.&lt;/p&gt;
   &lt;/div&gt;
-&lt;/div&gt;
-        </pre>
+&lt;/div&gt;</code></pre>
 
         <p>Note that we are <em>not</em> using a BEM modifier class here.</p>
       </section>
@@ -2067,23 +2058,22 @@
           <div class="timer__mask timer__animate"></div>
         </div>
 
-        <pre class="sg__sample-code">
-&lt;div class="timer">
-  &lt;div class="is-offscreen">Time left to complete page.&lt;/div>
-  &lt;div class="timer__indicator">13:49&lt;/div>
-  &lt;div class="timer__spinner timer__animate">&lt;/div>
-  &lt;div class="timer__filler timer__animate">&lt;/div>
-  &lt;div class="timer__bg">&lt;/div>
-  &lt;div class="timer__mask timer__animate">&lt;/div>
-&lt;/div>
+<pre><code class="html">&lt;style&gt;
+// to override default animation duration (i.e. 30s)
+.timer__animate {
+    animation-duration: 35s;
+}
+&lt;/style&gt;
 
-&lt;style>
-  // to override default animation duration (i.e. 5s)
-  .timer__animate {
-      animation-duration: 35s;
-  }
-&lt;/style>
-        </pre>
+&lt;div class="timer"&gt;
+  &lt;div class="is-offscreen"&gt;Time left to complete page.&lt;/div&gt;
+  &lt;div class="timer__indicator"&gt;13:49&lt;/div&gt;
+  &lt;div class="timer__spinner timer__animate"&gt;&lt;/div&gt;
+  &lt;div class="timer__filler timer__animate"&gt;&lt;/div&gt;
+  &lt;div class="timer__bg"&gt;&lt;/div&gt;
+  &lt;div class="timer__mask timer__animate"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
       </section>
 
       <section id="event-header" class="sg__section">
@@ -2408,12 +2398,11 @@
           <div class="expando-content product-info__desc">Center Level Seating Behind Third Bench Behind Ratchet Dugout</div>
         </div>
 
-        <pre class="sg__sample-code">
-&lt;div class="product-info"&gt;
+<pre><code class="html">&lt;div class="product-info"&gt;
   &lt;div class="product-info__title show-expando-example"&gt;
     2 Standard Tickets
-    &lt;button class="<span class="sg__highlight-code">expando-button</span>"&gt;
-      &lt;svg class="icon-chevron <span class="sg__highlight-code">expando-button__icon-chevron</span>"&gt;
+    &lt;button class="expando-button"&gt;
+      &lt;svg class="icon-chevron expando-button__icon-chevron"&gt;
         &lt;use xlink:href="img/sprite.svg#icon-chevron"&gt;&lt;/use&gt;
       &lt;/svg&gt;
     &lt;/button&gt;
@@ -2421,15 +2410,14 @@
   &lt;div class="product-info__desc"&gt;
     $100.00 x 2
   &lt;/div&gt;
-  &lt;div class="<span class="sg__highlight-code">expando-content</span> product-info__desc"&gt;
+  &lt;div class="expando-content product-info__desc"&gt;
     [...]
   &lt;/div&gt;
-&lt;/div&gt;
-        </pre>
+&lt;/div&gt;</code></pre>
 
         <p>The expanded state is activated by adding two classes.</p>
-        <pre class="sg__sample-code">
-&lt;div class="product-info"&gt;
+
+<pre><code class="html">&lt;div class="product-info"&gt;
   &lt;div class="product-info__title show-expando-example"&gt;
     2 Standard Tickets
     &lt;button class="expando-button"&gt;
@@ -2444,8 +2432,7 @@
   &lt;div class="expando-content <span class="sg__highlight-code">expando-content--open</span> product-info__desc"&gt;
     [...]
   &lt;/div&gt;
-&lt;/div&gt;
-        </pre>
+&lt;/div&gt;</code></pre>
 
         <p>This is the most basic version of the pattern. You may need to make additional styling modifications for your use cases.</p>
 
@@ -2580,16 +2567,14 @@
           </div>
         </div>
 
-        <pre class="sg__sample-code">
-&lt;span class="<span class="sg__highlight-code">polling-refresh</span>">
-  &lt;svg class="<span class="sg__highlight-code">icon-polling-refresh</span>">
-    &lt;use xlink:href="<span class="sg__highlight-code">img/sprite.svg#icon-polling-outline</span>"></use>
-  &lt;/svg>
-  &lt;svg class="<span class="sg__highlight-code">icon-polling-refresh polling-refresh__filled</span>">
-    &lt;use xlink:href="<span class="sg__highlight-code">img/sprite.svg#icon-polling-fill</span>"></use>
-  &lt;/svg>
-&lt;/span>
-        </pre>
+<pre><code class="html">&lt;span class="polling-refresh"&gt;
+  &lt;svg class="icon-polling-refresh"&gt;
+    &lt;use xlink:href="img/sprite.svg#icon-polling-outline"&gt;&lt;/use&gt;
+  &lt;/svg&gt;
+  &lt;svg class="icon-polling-refresh polling-refresh__filled"&gt;
+    &lt;use xlink:href="img/sprite.svg#icon-polling-fill"&gt;&gt;/use&gt;
+  &lt;/svg&gt;
+&lt;/span&gt;</code></pre>
 
         <h4 class="sg__subhdg3">Polling Icon</h4>
         <div class="sg__polling-checkmark">
@@ -2604,17 +2589,15 @@
           </div>
         </div>
 
-        <pre class="sg__sample-code">
-&lt;div class="polling-checkmark">
-  &lt;div class="polling-checkmark__left">&lt;/div>
-  &lt;div class="polling-checkmark__right">&lt;/div>
-  &lt;div class="polling-checkmark__icon">
-    &lt;svg class="icon-polling-checkmark">
-      &lt;use xlink:href="img/sprite.svg#icon-polling-checkmark">&lt;/use>
-    &lt;/svg>
-  &lt;/div>
-&lt;/div>
-        </pre>
+<pre><code class="html">&lt;div class="polling-checkmark"&gt;
+  &lt;div class="polling-checkmark__left"&gt;&lt;/div&gt;
+  &lt;div class="polling-checkmark__right"&gt;&lt;/div&gt;
+  &lt;div class="polling-checkmark__icon"&gt;
+    &lt;svg class="icon-polling-checkmark"&gt;
+      &lt;use xlink:href="img/sprite.svg#icon-polling-checkmark"&gt;&lt;/use&gt;
+    &lt;/svg&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
 
       </section>
 
@@ -2639,5 +2622,7 @@
               expandoPanel.classList.remove('expando-content--open');
           });
   </script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
