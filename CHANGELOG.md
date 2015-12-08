@@ -1,6 +1,10 @@
 Changelog
 =========
 
+**Unreleased**
+---------
+- Add error svg
+
 **0.16.0**
 ---------
 **New Features**
