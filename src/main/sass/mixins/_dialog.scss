@@ -6,7 +6,7 @@
   color: $white;
 }
 
-@mixin dialog-content($color: $brand-gray2, $pad: $spacing-sm) {
+@mixin dialog-content($color: $alt-text-color, $pad: $spacing-sm) {
   @include responsive-font('sm');
   @include inner-spacing($pad);
 

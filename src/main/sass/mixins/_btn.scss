@@ -3,7 +3,7 @@
 // to call the get-darker/lighter functions dynamically instead of with set vars
 
 // mixin to create buttons
-@mixin btn($color: $brand-primary, $txtcolor: $white, $height: $button-height, $hoverstate: false, $outlined: false) {
+@mixin btn($color: $primary-button-color, $txtcolor: $white, $height: $button-height, $hoverstate: false, $outlined: false) {
   @include btn-base($height);
 
   @if not $outlined {
@@ -95,7 +95,7 @@
 }
 
 // unstyled button
-@mixin unbutton($txtcolor: $brand-primary, $padding: $button-padding) {
+@mixin unbutton($txtcolor: $link-color, $padding: $button-padding) {
   padding: 0 $padding;
   font-weight: normal;
   color: $txtcolor;

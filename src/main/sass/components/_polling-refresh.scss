@@ -10,7 +10,7 @@
     z-index: z('hide');
     width: 20px;
     height: 20px;
-    background-color: rgba($brand-gray, 0.9);
+    background-color: rgba($polling-refresh-bg-color, 0.9);
     content: '';
     animation: $polling-refresh-animation;
   }

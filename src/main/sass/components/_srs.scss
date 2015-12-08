@@ -28,7 +28,7 @@
   @include responsive-font('sm', 1);
 
   font-weight: normal;
-  color: $brand-gray2;
+  color: $alt-text-color;
   text-transform: uppercase;
 }
 
@@ -36,7 +36,7 @@
   @include responsive-font('xl', 1);
 
   font-weight: bold;
-  color: $brand-gray;
+  color: $text-color;
 }
 
 .srs__ga {

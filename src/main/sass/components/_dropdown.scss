@@ -4,7 +4,7 @@
 }
 
 .dropdown__icon-chevron {
-  @include icon($brand-gray2, $dropdown-chevron-size, $dropdown-chevron-size);
+  @include icon($icon-color, $dropdown-chevron-size, $dropdown-chevron-size);
 
   position: absolute;
   right: 10px;
@@ -19,7 +19,7 @@
   width: 100%;
   height: $input-height;
   padding: 20px ($dropdown-chevron-size + 19px) 0 10px;
-  color: $brand-gray;
+  color: $text-color;
   cursor: pointer;
   background: none;
   border: 0;
@@ -35,12 +35,12 @@
 
   &:-moz-focusring {
     color: transparent;
-    text-shadow: 0 0 0 $brand-gray;
+    text-shadow: 0 0 0 $text-color;
   }
 
   &:focus ~ .dropdown__icon-chevron,
   &:active ~ .dropdown__icon-chevron {
-    fill: $brand-primary;
+    fill: $primary-button-color;
   }
 }
 
@@ -50,9 +50,9 @@
 
 .dropdown__select.is-error-field ~ .input-group__label,
 .dropdown__select.is-error-field ~ .input-group__label .input-group__required {
-  color: $brand-alert;
+  color: $alert-color;
 }
 
 .dropdown__select.is-error-field ~ .dropdown__icon-chevron {
-  fill: $brand-alert;
+  fill: $alert-color;
 }

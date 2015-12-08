@@ -1,5 +1,5 @@
 .button-aux {
-  @include btn($brand-primary, $hoverstate: true);
+  @include btn($primary-aux-button-color, $hoverstate: true);
 
   text-transform: none;
   border-radius: $button-height / 2;
@@ -10,7 +10,7 @@
 }
 
 .button-aux--secondary {
-  @include btn-color($brand-gray2, $white, $hoverstate: true);
+  @include btn-color($secondary-button-color, $white, $hoverstate: true);
 }
 
 .button-aux--full {

@@ -34,7 +34,7 @@
 }
 
 
-@mixin hdg-text($set, $color: $brand-gray, $mb: $header-margin) {
+@mixin hdg-text($set, $color: $text-color, $mb: $header-margin) {
   @include responsive-font($set);
 
   margin-bottom: $mb;
@@ -53,7 +53,7 @@
   }
 
   font-weight: normal;
-  color: $brand-gray2;
+  color: $alt-text-color;
 }
 
 
