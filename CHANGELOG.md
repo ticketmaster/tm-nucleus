@@ -1,7 +1,7 @@
 Changelog
 =========
 
-**Unreleased**
+**0.16.0**
 ---------
 **New Features**
 - Add `_all-custom.scss` for custom palette configurations.
