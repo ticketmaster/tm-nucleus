@@ -57,6 +57,9 @@ $brand-cta-darker25:      get-darker($brand-cta, 25%);
 $brand-alert-darker25:    get-darker($brand-alert, 25%);
 $brand-accent-darker25:   get-darker($brand-accent, 25%);
 
+// BEGIN CUSTOMIZATIONS
+// variables below are the ones used by CSS components within Nucleus
+
 // Typography
 $text-color: $brand-gray;
 $alt-text-color: $brand-gray2;

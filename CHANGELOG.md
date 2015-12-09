@@ -3,6 +3,10 @@ Changelog
 
 **Unreleased**
 ---------
+**New Features**
+- Add `_all-custom.scss` for custom palette configurations.
+- Live Nation version of styleguide with LN palette (WIP).
+
 **Changes**
 - Abstract color assignments to allow custom user configurations.
 - Deprecated event header support has been removed.
