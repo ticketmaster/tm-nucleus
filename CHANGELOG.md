@@ -1,6 +1,10 @@
 Changelog
 =========
 
+**0.17.0**
+---------
+- Add error svg
+
 **0.16.0**
 ---------
 **New Features**
