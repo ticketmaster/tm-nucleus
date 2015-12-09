@@ -117,14 +117,14 @@ $font-sizes: (
 // Baseline for page
 html {
   font-size: $base-font-size;
-  color: $brand-gray;
+  color: $text-color;
 }
 
 body {
   font-family: $base-font-family;
   -webkit-font-smoothing: antialiased;
   line-height: $base-line-height;
-  color: $brand-gray;
+  color: $text-color;
 
   background-color: $white;
 }
@@ -154,12 +154,12 @@ strong {
 }
 
 a {
-  color: $brand-primary;
+  color: $link-color;
   text-decoration: none;
 
   &:active,
   &:hover {
-    color: $brand-primary-darker25;
+    color: $link-hover-color;
     text-decoration: underline;
   }
 

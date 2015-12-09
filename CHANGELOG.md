@@ -1,11 +1,33 @@
 Changelog
 =========
 
+**0.16.0**
+---------
+**New Features**
+- Add `_all-custom.scss` for custom palette configurations.
+- Live Nation version of styleguide with LN palette (WIP).
+
+**Changes**
+- Abstract color assignments to allow custom user configurations.
+- Deprecated event header support has been removed.
+- The following variables are no longer available:
+  - `$timer-container`
+  - `$timer-container-lg`
+  - `$logo-container`
+  - `$event-header-menu`
+  - `$event-header-menu-container`
+  - `$event-header-datestamp-width`
+  - `$event-header-info-checkout-width`
+  - `$event-image-size`
+- Update styleguide CSS to conform to BEM standards
+
 **0.15.0**
 ---------
 **Changes**
 - Default button font size is now `md` instead of `lg`.
 - Font size for `button-aux--minor` is now `sm` instead of `md`.
+- Apply certain colors via abstract variable names to facilitate custom client
+  colors. Introduce new `_customizable.scss` file to hold/assign abstract names.
 
 **Bug Fixes**
 - Change `timer` background color from transparent to `$brand-primary`

@@ -88,24 +88,24 @@
   </svg>
 
   <div class="page__content">
-    <h1 class="sg-hdg">Cobrand Headers</h1>
+    <h1 class="sg__hdg">Cobrand Headers</h1>
     <p>There are a few steps to take to enable cobranding of the event header.</p>
-    <p>The first is to embed the following HTML in <code class="sg-code">&lt;style&gt;</code> tags in the head of your document:</p>
-    <pre class="sg-sample-code">
+    <p>The first is to embed the following HTML in <code class="sg__code">&lt;style&gt;</code> tags in the head of your document:</p>
+    <pre class="sg__sample-code">
 .event-header,
 .cobrand-header {
-  background-color: <span class="sg-highlight-code">[brand-bgcolor]</span>;
+  background-color: <span class="sg__highlight-code">[brand-bgcolor]</span>;
 }
 
 .event-header__title,
 .event-header__date-venue {
-  color: <span class="sg-highlight-code">[brand-text-color]</span>;
+  color: <span class="sg__highlight-code">[brand-text-color]</span>;
 }
 
 .event-header__tm-logo,
 .cobrand-header__tm-logo,
 .event-header__more-icon {
-  fill: <span class="sg-highlight-code">[brand-text-color]</span>;
+  fill: <span class="sg__highlight-code">[brand-text-color]</span>;
 }
 
 .event-header__menu-button {
@@ -114,20 +114,20 @@
 
 .cobrand-header__verified {
   // determine which logo to use based on brand background color
-  background-image: url('path/to/verified-<span class="sg-highlight-code">[dark/light/pacific]</span>.svg');
+  background-image: url('path/to/verified-<span class="sg__highlight-code">[dark/light/pacific]</span>.svg');
 }
   </pre>
 
   <p>Checkout pages will also need the following style defined.</p>
 
-  <pre class="sg-sample-code">
+  <pre class="sg__sample-code">
 .timer__mask--cobranded {
-  background-color: <span class="sg-highlight-code">[brand-bgcolor]</span>;
+  background-color: <span class="sg__highlight-code">[brand-bgcolor]</span>;
 }
   </pre>
 
   <p>Light brand background colors will need these properties:</p>
-  <pre class="sg-sample-code">
+  <pre class="sg__sample-code">
 .timer__indicator {
   color: #000;
 }
@@ -141,14 +141,14 @@
 }
   </pre>
 
-  <p>Note that the above assumes that a brand color has been specified. If there is none, then the background will default to <code class="sg-code">$brand-primary</code>.</p>
+  <p>Note that the above assumes that a brand color has been specified. If there is none, then the background will default to <code class="sg__code">$brand-primary</code>.</p>
   <p>If a brand logo exists, then you will also need the following. (Otherwise, it will default to showing the Ticketmaster logo.)</p>
 
-  <pre class="sg-sample-code">
+  <pre class="sg__sample-code">
 // For when a brand logo exists
 
 .cobrand-header__logo {
-  background-image: <span class="sg-highlight-code">url('path/to/brand-logo.png')</span>;
+  background-image: <span class="sg__highlight-code">url('path/to/brand-logo.png')</span>;
 }
 
 .event-header__tm-logo,
@@ -159,7 +159,7 @@
 
     <p>Background color and image are returned via the branding service. Text color is dynamically calculated to be either white or black based on the background color.</p>
     <p>Additionally, the following modifier classes need to be added to your HTML markup:</p>
-    <pre class="sg-sample-code">
+    <pre class="sg__sample-code">
 .event-header__rotator--cobranded
 .event-header__date--cobranded
 .event-header__venue-name--cobranded
@@ -168,7 +168,7 @@
   </div>
 
   <div class="page__content">
-    <h2 class="sg-subhdg">Co-branded EDP</h2>
+    <h2 class="sg__subhdg">Co-branded EDP</h2>
   </div>
 
   <header class="page-header">
@@ -219,7 +219,7 @@
   </header>
 
   <div class="page__content">
-    <h2 class="sg-subhdg">Co-branded checkout with timer</h2>
+    <h2 class="sg__subhdg">Co-branded checkout with timer</h2>
   </div>
   <div class="cobrand-header">
     <div class="cobrand-header__logo">

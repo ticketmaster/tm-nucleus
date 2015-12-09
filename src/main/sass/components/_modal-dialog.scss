@@ -17,7 +17,7 @@
 
 .modal-dialog__header {
   position: relative;
-  background-color: $brand-primary;
+  background-color: $modal-color;
   border-top-right-radius: $base-border-radius;
   border-top-left-radius: $base-border-radius;
 }
@@ -63,7 +63,7 @@
 }
 
 .modal-dialog__content {
-  @include dialog-content($color: $brand-gray, $pad: $spacing-md);
+  @include dialog-content($color: $text-color, $pad: $spacing-md);
 }
 
 .modal-dialog__content--informational {

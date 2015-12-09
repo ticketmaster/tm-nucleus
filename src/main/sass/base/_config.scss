@@ -5,14 +5,14 @@ $spacing-sm: 10px;
 $spacing-ratio: 1.5;
 
 // Borders
-$base-border-style: 1px solid $brand-gray3;
-$input-border-style: 1px solid $brand-gray2;
-$focused-border-style: 1px solid $brand-primary;
-$success-border-style: 1px solid $brand-cta;
-$caution-border-style: 1px solid $brand-gray2;
-$alert-border-style: 1px solid $brand-alert;
+$base-border-style: 1px solid $base-border-color;
+$input-border-style: 1px solid $input-border-color;
+$focused-border-style: 1px solid $link-color;
+$success-border-style: 1px solid $success-color;
+$caution-border-style: 1px solid $caution-dialog-color;
+$alert-border-style: 1px solid $alert-color;
 $outline-style: 3px solid $outline-color;
-$tile-selected-style: 2px solid $brand-primary;
+$tile-selected-style: 2px solid $link-color;
 
 // Radius and shadows
 $base-border-radius: 3px;
@@ -71,15 +71,6 @@ $dropdown-chevron-size: 16px;
 $event-header-tm-short: 35px;
 $event-header-tm-full: 165px;
 $event-header-height: 8rem;
-// deprecated
-$timer-container: 90px;
-$timer-container-lg: 95px;
-$logo-container: 229px;
-$event-header-menu: 20px;
-$event-header-menu-container: 50px;
-$event-header-datestamp-width: 160px;  // approximate; worst case scenario
-$event-header-info-checkout-width: 42vw;
-$event-image-size: 205px;
 
 // Timer
 $timer-size: 55px;

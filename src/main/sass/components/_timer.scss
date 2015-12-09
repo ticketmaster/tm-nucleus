@@ -6,7 +6,7 @@ $timer-duration: 30s;
   width: $timer-size;
   height: $timer-size;
   margin: auto;
-  background-color: $brand-primary;
+  background-color: $header-color;
 
   @include breakpoint($bp-lg) {
     width: $timer-size-lg;
@@ -62,7 +62,7 @@ $timer-duration: 30s;
   z-index: z('timer-mask');
   width: 50%;
   height: 100%;
-  background-color: $brand-primary;
+  background-color: $header-color;
   border-right: 0;
   border-radius: 200% 0 0 200% / 100%;
   opacity: 1;

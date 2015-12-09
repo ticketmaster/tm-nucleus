@@ -1,4 +1,4 @@
-@mixin form-label($color: $brand-gray2) {
+@mixin form-label($color: $label-color) {
   @include responsive-font('xs');
 
   color: $color;
@@ -10,13 +10,13 @@
   border-bottom: $input-border-style;
 
   &.is-error-field {
-    color: $brand-alert;
+    color: $alert-color;
     border-bottom: $alert-border-style;
   }
 
   &.is-error-field + .input-group__label,
   &.is-error-field + .input-group__label > .input-group__required {
-    color: $brand-alert;
+    color: $alert-color;
   }
 }
 
@@ -31,7 +31,7 @@
 }
 
 @mixin textfield-active() {
-  border-bottom-color: $brand-primary;
+  border-bottom-color: $link-color;
   outline: none;
   background: none;
 }
