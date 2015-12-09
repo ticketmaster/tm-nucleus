@@ -1,7 +1,7 @@
 Changelog
 =========
 
-**Unreleased**
+**0.17.0**
 ---------
 - Add error svg
 
