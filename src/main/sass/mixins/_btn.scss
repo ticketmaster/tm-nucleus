@@ -95,16 +95,19 @@
 }
 
 // unstyled button
-@mixin unbutton($txtcolor: $link-color, $padding: $button-padding) {
+@mixin unbutton($txtcolor: $link-color, $padding: $button-padding, $wrap: 'nowrap') {
   padding: 0 $padding;
   font-weight: normal;
   color: $txtcolor;
   text-align: center;
-  white-space: nowrap;
   background-color: $transparent-color;
   border: 0;
   border-radius: 0;
   box-shadow: none;
+
+  @if ($wrap == 'nowrap') {
+    white-space: nowrap;
+  }
 
   &:hover {
     text-decoration: underline;
