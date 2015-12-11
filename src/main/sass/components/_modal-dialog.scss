@@ -64,6 +64,9 @@
 
 .modal-dialog__content {
   @include dialog-content($color: $text-color, $pad: $spacing-md);
+
+  max-height: $modal-content-height;
+  overflow-y: auto;
 }
 
 .modal-dialog__content--informational {
