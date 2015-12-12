@@ -1,6 +1,10 @@
 Changelog
 =========
 
+**Unreleased**
+---------
+- Add sad-ticket.svg
+
 **v0.18.0**
 ---------
 **New Features**
