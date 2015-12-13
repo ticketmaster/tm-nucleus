@@ -14,7 +14,10 @@
 
 // responsive spacing based on established ratio
 @function increase-spacing($val) {
-  @return $val * $spacing-ratio;
+  @if ($val != 'auto') {
+    @return $val * $spacing-ratio;
+  }
+  @return $val;
 }
 
 // there should an overlay z-index and an overlay-content z-index
