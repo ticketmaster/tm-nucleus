@@ -22,7 +22,7 @@
         <div class="split-content__secondary">
           <object data="img/nucleus.svg" type="image/svg+xml" class="sg__logo"></object>
         </div>
-        <div class="split-content__primary sg__name">Nucleus <span class="sg__version">v0.17.0</span></div>
+        <div class="split-content__primary sg__name">Nucleus <span class="sg__version">v0.18.0</span></div>
       </div>
     </div>
   </header>
@@ -946,57 +946,28 @@
 @include inner-spacing($top: $spacing-sm, $bottom: $spacing-sm);
 
 // set padding on top, right, and left
-@include inner-spacing($top: $spacing-sm, $right: $spacing-md, $left: $spacing-md)</code></pre>
+@include inner-spacing($top: $spacing-sm, $right: auto, $left: auto)</code></pre>
 
         <p>When specifying spacing for any side(s), any side that you omit will be set to <code class="sg__code">0</code>.</p>
 
+        <p>As of the 0.18 release, <code class="sg__code">outer-spacing()</code> can now accept <code class="sg__code">auto</code> as a parameter for any side.</p>
+
 <pre><code class="scss">// set 30px bottom margin
 .example {
-  @include outer-spacing($bottom: $spacing-lg);
+  @include outer-spacing($right: auto, $left: auto, $bottom: $spacing-lg);
 }
 
 // output from above will be
 .example {
-  margin: 0 0 30px 0;
+  margin: 0 auto 30px auto;
 }
 
 @media (min-width: 23.4375em) {
   .example {
-    margin: 0 0 45px 0;
+    margin: 0 auto 45px auto;
   }
 }</code></pre>
 
-        <table class="sg__table">
-          <tr>
-            <td class="sg__table-cell">10px</td>
-            <td class="sg__table-cell"><code class="sg__code">$spacing-sm</code></td>
-          </tr>
-          <tr>
-            <td class="sg__table-cell">20px</td>
-            <td class="sg__table-cell"><code class="sg__code">$spacing-md</code></td>
-          </tr>
-          <tr>
-            <td class="sg__table-cell">30px</td>
-            <td class="sg__table-cell"><code class="sg__code">$spacing-lg</code></td>
-          </tr>
-        </table>
-
-        <p>In most cases, spacing should be responsive, so at the <code class="sg__code">$bp-md</code> breakpoint, the above values should then be:</p>
-
-        <table class="sg__table">
-          <tr>
-            <td class="sg__table-cell">15px</td>
-            <td class="sg__table-cell"><code class="sg__code">increase-spacing($spacing-sm)</code></td>
-          </tr>
-          <tr>
-            <td class="sg__table-cell">30px</td>
-            <td class="sg__table-cell"><code class="sg__code">increase-spacing($spacing-md)</code></td>
-          </tr>
-          <tr>
-            <td class="sg__table-cell">45px</td>
-            <td class="sg__table-cell"><code class="sg__code">increase-spacing($spacing-lg)</code></td>
-          </tr>
-        </table>
       </section>
 
 
