@@ -1,7 +1,7 @@
 .polling-checkmark {
   position: relative;
-  width: 60px;
-  height: 60px;
+  width: $polling-size;
+  height: $polling-size;
   overflow: hidden;
   background: none repeat scroll 0 0 $polling-circle-unfilled-color;
   border-radius: 50%;
@@ -9,11 +9,11 @@
 
 .polling-checkmark:after {
   position: absolute;
-  top: 4px;
-  left: 4px;
+  top: $polling-border-size;
+  left: $polling-border-size;
   display: block;
-  width: 52px;
-  height: 52px;
+  width: $polling-size - ($polling-border-size * 2);
+  height: $polling-size - ($polling-border-size * 2);;
   background: none repeat scroll 0 0 $white;
   border-radius: 50%;
   content: '';

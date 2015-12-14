@@ -1,9 +1,24 @@
 Changelog
 =========
 
+**v0.18.0**
+---------
+**New Features**
+- Add `$nowrap` param to `unbutton()` mixin. The mixin can now accept an
+  optional third parameter to allow text to wrap. By default, it will set
+  `white-space: nowrap` so that existing usage is unaffected.
+- `increase-spacing` function can now accept `auto` as a parameter. This means
+  that the `outer-spacing()` mixin can also have `auto` passed in for any side.
+- Polling icon animation size is now configurable via `$polling-size` and
+  `$polling-border-size`.
+
+**Changes**
+- Allow modals to scroll when content runs long. `.modal-dialog__content` now
+  has a max height.
+
 **0.17.0**
 ---------
-- Add error svg
+- Add error svg.
 
 **0.16.0**
 ---------

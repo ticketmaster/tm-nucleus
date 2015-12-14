@@ -58,6 +58,8 @@ $modal-close-size: 44px;
 $modal-close-size-lg: 56px;
 $modal-close-indicator: 18px;
 $modal-close-indicator-lg: 20px;
+$polling-size: 60px;
+$polling-border-size: 4px;
 
 // Forms
 $textfield-gutter-left: 10px;
@@ -77,6 +79,9 @@ $timer-size: 55px;
 $timer-size-lg: 60px;
 $timer-border-thickness: 5px;
 $timer-opacity: 0.3;
+
+// Modal Dialogs
+$modal-content-height: 60vh;
 
 // Make images flexible
 img,
