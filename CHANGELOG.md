@@ -1,6 +1,10 @@
 Changelog
 =========
 
+**UNRELEASED**
+---------
+**Changes**
+- Allow modals to scroll when content run long. `.modal-dialog__content` is given a max height.
 - Added whitespace param to unbutton mixin
 
 **0.17.0**
