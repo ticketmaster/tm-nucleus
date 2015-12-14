@@ -1,11 +1,13 @@
 Changelog
 =========
 
-**UNRELEASED**
+**Unreleased**
 ---------
 **Changes**
 - Allow modals to scroll when content run long. `.modal-dialog__content` is given a max height.
 - Added whitespace param to unbutton mixin
+- Update polling icon animation size to be configurable via `$polling-size` and
+  `$polling-border-size`.
 
 **0.17.0**
 ---------
