@@ -7,7 +7,7 @@
 }
 
 @mixin set-spacing($type, $val, $top, $right, $bottom, $left) {
-  @if $val {
+  @if ($val and $val != 'custom') {
     #{$type}: $val;
 
     @include breakpoint($bp-md) {
