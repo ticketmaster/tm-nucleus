@@ -1,6 +1,8 @@
 Changelog
 =========
 
+- Added whitespace param to unbutton mixin
+
 **0.17.0**
 ---------
 - Add error svg
