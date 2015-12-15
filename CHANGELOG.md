@@ -1,6 +1,17 @@
 Changelog
 =========
 
+**0.19.0**
+---------
+**New Features**
+- Add new `dead-center()` mixin.
+- Add new `polling-refresh()` mixin.
+- Add new `fullscreen` variant for `modal-dialog` and `modal-dialog__content`.
+- Add sad-ticket.svg.
+
+**Changes**
+- `btn()` mixin now will apply same styling to anchor tags.
+
 **v0.18.0**
 ---------
 **New Features**

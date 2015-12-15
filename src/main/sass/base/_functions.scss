@@ -21,8 +21,8 @@
 }
 
 // there should an overlay z-index and an overlay-content z-index
-@function z($level) {
-  @return map-get($z-indexes, $level);
+@function z($level, $map: $z-indexes) {
+  @return map-get($map, $level);
 }
 
 // turn unit values into unitless
