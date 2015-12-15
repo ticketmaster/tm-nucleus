@@ -16,20 +16,28 @@
 
 // shared base for buttons
 @mixin btn-base($height) {
-  @include responsive-font('md', 1);
+  @include responsive-font('md', $height);
 
+  display: inline-block;
   min-height: $height;
   padding: 0 $button-padding;
   font-weight: normal;
   text-align: center;
+  text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
   border-radius: $button-border-radius;
   box-shadow: none;
+  cursor: pointer;
 
   @include breakpoint($bp-md) {
     min-height: $button-height-lg;
     padding: 0 $button-padding-lg;
+    line-height: $button-height-lg;
+  }
+
+  &:hover {
+    text-decoration: none;
   }
 }
 
@@ -47,6 +55,7 @@
     @include breakpoint($bp-lg) {
       &:focus,
       &:hover {
+        color: $txtcolor;
         background: get-darker($bgcolor);
       }
     }
