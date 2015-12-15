@@ -3,6 +3,8 @@ Changelog
 
 **Unreleased**
 ---------
+**New Features**
+- Add new `polling-refresh()` mixin.
 - Add sad-ticket.svg
 
 **v0.18.0**

@@ -1,0 +1,17 @@
+@mixin polling-refresh($size: $base-icon-size, $bg: $brand-gray) {
+  position: relative;
+  z-index: z('polling');
+  height: $size;
+
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: z('hide');
+    width: $size;
+    height: $size;
+    background-color: rgba($bg, 0.9);
+    content: '';
+    animation: $polling-refresh-animation;
+  }
+}
