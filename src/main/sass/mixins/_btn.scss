@@ -48,6 +48,12 @@
   border: 0;
 
   @if $hoverstate {
+    &:active,
+    &:focus,
+    &:hover {
+      color: $txtcolor;
+    }
+
     &:active {
       background-color: get-darker($bgcolor);
     }
