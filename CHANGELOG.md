@@ -1,6 +1,12 @@
 Changelog
 =========
 
+**0.19.1**
+---------
+**Bug Fixes**
+- Set color of anchor tag text to color parameter when styled as button on all 
+  breakpoints.
+
 **0.19.0**
 ---------
 **New Features**
