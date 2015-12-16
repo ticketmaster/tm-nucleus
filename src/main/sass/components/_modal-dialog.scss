@@ -75,6 +75,33 @@
   }
 }
 
+.modal-dialog__back {
+  @include unbutton($padding: 0);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $modal-close-size;
+  height: $modal-close-size;
+  line-height: 0;
+
+  @include breakpoint($bp-md) {
+    width: $modal-close-size-lg;
+    height: $modal-close-size-lg;
+  }
+}
+
+.modal-dialog__back-indicator {
+  @include icon($white, $modal-close-indicator, $modal-close-indicator);
+
+  transform: rotate(90deg);
+
+  @include breakpoint($bp-md) {
+    width: $modal-close-indicator-lg;
+    height: $modal-close-indicator-lg;
+  }
+}
+
 .modal-dialog__content {
   @include dialog-content($color: $text-color, $pad: $spacing-md);
 
