@@ -1,10 +1,18 @@
 Changelog
 =========
 
+**0.20.0**
+---------
+**New Features**
+- Add back arrow button for modals.
+
+**Bug Fixes**
+- Remove rounded borders showing up in iOS.
+
 **0.19.1**
 ---------
 **Bug Fixes**
-- Set color of anchor tag text to color parameter when styled as button on all 
+- Set color of anchor tag text to color parameter when styled as button on all
   breakpoints.
 
 **0.19.0**
