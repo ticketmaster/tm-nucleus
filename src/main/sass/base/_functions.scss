@@ -38,24 +38,18 @@
 
 // determine tooltip offset direction
 @function get-tooltip-offset-direction($pos) {
-  $offset: null;
+  $offset: 'top';
   @if ($pos == 'top' or $pos == 'bottom') {
     $offset: 'left';
-  }
-  @else {
-    $offset: 'top';
   }
   @return $offset;
 }
 
 // calculate tooltip offset
 @function get-tooltip-offset($pos, $size) {
-  $val: null;
+  $val: -($size / 2);
   @if ($pos == 'left') {
     $val: 0;
-  }
-  @else {
-    $val: -($size / 2);
   }
   @return $val;
 }
