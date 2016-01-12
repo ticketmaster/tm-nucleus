@@ -1,6 +1,13 @@
 Changelog
 =========
 
+**0.20.1**
+---------
+
+**Bug Fixes**
+- Define sass variable definitions outside of if statements to fix scope issues on newer versions of node-sass.
+
+
 **0.20.0**
 ---------
 **New Features**
