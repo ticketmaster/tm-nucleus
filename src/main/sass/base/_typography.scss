@@ -21,22 +21,18 @@
 
 // set default line height or custom
 @function get-lh($font, $lh) {
+  $val: $lh;
   @if not $lh {
     $val: calc-lh($font);
-  }
-  @else {
-    $val: $lh;
   }
   @return $val;
 }
 
 // calculate line height based on font size
 @function calc-lh($font-size) {
+  $lh: $header-line-height;
   @if ($font-size < 1.8) {
     $lh: $base-line-height;
-  }
-  @else {
-    $lh: $header-line-height;
   }
   @return $lh;
 }
