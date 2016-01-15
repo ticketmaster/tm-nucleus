@@ -121,6 +121,7 @@
 
 .modal-dialog__footer {
   @include inner-spacing($spacing-sm);
+  @include responsive-font('md');
 
   background: $white;
   border-top: $base-border-style;
