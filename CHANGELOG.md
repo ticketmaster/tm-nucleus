@@ -1,9 +1,13 @@
 Changelog
 =========
 
+**UNRELEASED**
+---------
+**Changes**
+- Update `.modal-dialog__footer` to use this font size: `@include responsive-font('md')`
+
 **0.20.1**
 ---------
-
 **Bug Fixes**
 - Define sass variable definitions outside of if statements to fix scope issues on newer versions of node-sass.
 
