@@ -1,0 +1,41 @@
+$chkbox-label-offset: 7px;
+
+.chkbox {
+  @include clearfix();
+
+  position: relative;
+}
+
+.chkbox__input {
+  float: left;
+  width: $base-icon-size;
+  height: $base-icon-size;
+  cursor: pointer;
+  background-color: $white;
+  border: $input-border-style;
+  border-radius: $base-border-radius;
+  appearance: none;
+}
+
+.chkbox__input:checked {
+  background-color: $link-color;
+  border: $focused-border-style;
+}
+
+.chkbox__input:checked:after {
+  position: absolute;
+  left: ($base-icon-size - $chkbox-size) / 2;
+  display: block;
+  width: $chkbox-size;
+  height: $chkbox-size * 2;
+  background-color: $link-color;
+  border: solid $white;
+  border-width: 0 $chkbox-thickness $chkbox-thickness 0;
+  content: '';
+  transform: rotate(45deg);
+}
+
+.chkbox__label {
+  display: block;
+  margin-left: $base-icon-size + $chkbox-label-offset;
+}
