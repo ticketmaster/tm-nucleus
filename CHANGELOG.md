@@ -1,9 +1,17 @@
 Changelog
 =========
 
+**0.21.0**
+---------
+**New Features**
+- Created a new component called `chkbox`. This allows checkboxes to now be focusable. Please do not use the component `checkbox` anymore. This will be deprecated.
+
+**Changes**
+- Update `.modal-dialog__footer` to use this font size: `@include responsive-font('md')`
+- Updated the page markup to use the new `chkbox` component.
+
 **0.20.1**
 ---------
-
 **Bug Fixes**
 - Define sass variable definitions outside of if statements to fix scope issues on newer versions of node-sass.
 
