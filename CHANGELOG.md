@@ -1,7 +1,7 @@
 Changelog
 =========
 
-**UNRELEASED**
+**0.21.0**
 ---------
 **New Features**
 - Created a new component called `chkbox`. This allows checkboxes to now be focusable. Please do not use the component `checkbox` anymore. This will be deprecated.
