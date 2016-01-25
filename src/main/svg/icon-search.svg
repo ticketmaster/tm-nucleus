@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="20px"
+	 viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+<title>Search Icon</title>
+<desc>Magnifying Glass</desc>
+<g id="desktop" sketch:type="MSPage">
+	<g id="d-edp-menu" transform="translate(-26.000000, -95.000000)" sketch:type="MSArtboardGroup">
+		<g id="menu" sketch:type="MSLayerGroup">
+			<g id="search" transform="translate(16.000000, 95.000000)" sketch:type="MSShapeGroup">
+				<path id="search-icon" fill="" d="M28.734,16.334l-4.15-4.149c0.788-1.233,1.254-2.694,1.254-4.267
+					C25.838,3.545,22.293,0,17.919,0C13.544,0,10,3.545,10,7.917c0,4.375,3.544,7.919,7.919,7.919c1.571,0,3.032-0.465,4.264-1.254
+					l4.15,4.149c0.332,0.332,0.767,0.498,1.201,0.498c0.434,0,0.867-0.166,1.199-0.498C29.396,18.07,29.396,16.996,28.734,16.334
+					L28.734,16.334z M12.262,7.917c0-3.118,2.538-5.656,5.658-5.656c3.118,0,5.655,2.538,5.655,5.656
+					c0,3.12-2.537,5.657-5.655,5.657C14.799,13.574,12.262,11.037,12.262,7.917L12.262,7.917z"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

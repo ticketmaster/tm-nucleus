@@ -109,6 +109,11 @@ textarea {
   font-size: $min-input-font-size;
 }
 
+// Hide IE default clear button
+input::-ms-clear {
+  display: none;
+}
+
 // Firefox fix to get button sizing in line with Chrome
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner {
