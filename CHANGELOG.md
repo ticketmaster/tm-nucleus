@@ -1,6 +1,12 @@
 Changelog
 =========
 
+**UNRELEASED**
+---------
+**New Features**
+- Added a new icon: `icon-search`. It is a magnifying glass
+- Disable IE specific close button on input field. This seems to happen on IE10+
+
 **0.21.0**
 ---------
 **New Features**

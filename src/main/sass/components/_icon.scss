@@ -30,6 +30,10 @@
   @include icon($icon-color);
 }
 
+.icon-search {
+  @include icon($icon-color);
+}
+
 .icon-minus {
   @include icon($icon-color);
 }
