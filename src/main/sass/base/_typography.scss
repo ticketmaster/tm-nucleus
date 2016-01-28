@@ -160,7 +160,7 @@ a {
   }
 
   &:focus {
-    outline-color: $outline-color;
+    outline: 0;
   }
 }
 

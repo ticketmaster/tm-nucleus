@@ -98,7 +98,7 @@ select,
 textarea,
 button {
   &:focus {
-    outline: $outline-style;
+    outline: 0;
   }
 }
 
