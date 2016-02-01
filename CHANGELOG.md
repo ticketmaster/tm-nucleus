@@ -1,7 +1,7 @@
 Changelog
 =========
 
-**UNRELEASED**
+**22.0**
 ---------
 **New Features**
 - Added a new icon: `icon-search`. It is a magnifying glass
