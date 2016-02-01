@@ -1,6 +1,15 @@
 Changelog
 =========
 
+**22.0**
+---------
+**New Features**
+- Added a new icon: `icon-search`. It is a magnifying glass
+- Disable IE specific close button on input field. This seems to happen on IE10+
+
+**Changes**
+- Turn off outline color on buttons and anchor tags
+
 **0.21.0**
 ---------
 **New Features**
