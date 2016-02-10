@@ -114,6 +114,11 @@ input::-ms-clear {
   display: none;
 }
 
+// Hide IE dropdown arrow button
+select::-ms-expand {
+  display: none;
+}
+
 // Firefox fix to get button sizing in line with Chrome
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner {

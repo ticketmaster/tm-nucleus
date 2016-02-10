@@ -1,7 +1,12 @@
 Changelog
 =========
 
-**22.0**
+**0.23.0**
+---------
+**New Features**
+- Disabled IE specific dropdown arrow on native `<select>` tags. Should use nucleus dropdown.
+
+**0.22.0**
 ---------
 **New Features**
 - Added a new icon: `icon-search`. It is a magnifying glass
