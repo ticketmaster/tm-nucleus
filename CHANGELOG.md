@@ -1,6 +1,11 @@
 Changelog
 =========
 
+**0.25.0**
+---------
+**Changes**
+- Update all button heights for all breakpoints.
+
 **0.24.0**
 ---------
 **New Features**
