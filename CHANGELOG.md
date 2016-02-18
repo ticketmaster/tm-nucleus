@@ -1,6 +1,11 @@
 Changelog
 =========
 
+**0.24.0**
+---------
+**New Features**
+- Create new treatment for MLB cobranded headers.
+
 **0.23.0**
 ---------
 **New Features**
