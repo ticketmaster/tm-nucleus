@@ -1,0 +1,19 @@
+@mixin cobrand-header-logo($svg-url) {
+  width: 150px;
+  height: $touch-size;
+  text-align: right;
+  // determine based on cobrand background color
+  background-image: url($svg-url);
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 125px;
+
+  @include breakpoint($bp-lg) {
+    position: absolute;
+    right: $gutter-width / 2;
+    width: 200px;
+    height: $event-header-height;
+    line-height: $event-header-height;
+    background-size: 175px;
+  }
+}

@@ -112,6 +112,11 @@
   display: none;
 }
 
+.cobrand-header__mlb-ticketmaster {
+  // determine which logo to use based on brand background color
+  background-image: url('path/to/mlb-ticketmaster-<span class="sg__highlight-code">[dark/light]</span>.svg');
+}
+
 .cobrand-header__verified {
   // determine which logo to use based on brand background color
   background-image: url('path/to/verified-<span class="sg__highlight-code">[dark/light/pacific]</span>.svg');
@@ -266,6 +271,56 @@
           <div class="timer__bg timer__bg--cobranded"></div>
           <div class="timer__mask timer__mask--cobranded timer__animate"></div>
         </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="page__content">
+    <h2 class="sg__subhdg">MLB Co-branded EDP</h2>
+  </div>
+  <header class="page-header">
+    <div class="cobrand-header">
+      <div class="cobrand-header__logo">
+        <svg class="cobrand-header__tm-logo">
+          <use xlink:href="#tm-logo"></use>
+        </svg>
+        <span class="ada-text">Anaheim Angels</span>
+      </div>
+      <div class="cobrand-header__mlb-ticketmaster">
+        <span class="ada-text">Ticketmaster Verified</span>
+      </div>
+    </div>
+    <div class="event-header">
+      <div class="event-header__supportive event-header__supportive--cobranded">
+        <button class="event-header__menu-button">
+          <svg class="event-header__menu-icon">
+            <use xlink:href="img/sprite.svg#icon-menu"></use>
+          </svg>
+        </button>
+        <a href="#" class="event-header__tm-link">
+          <svg class="event-header__tm-logo">
+            <use xlink:href="#tm-logo"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="event-header__event-info">
+        <h1 class="event-header__title event-header__title--cobranded truncate-text">
+          A Really Insane Super Crazy Long Event Title That Goes On and On Forever
+        </h1>
+        <div class="event-header__date-venue">
+          <div class="event-header__rotator event-header__rotator--cobranded">
+            <span class="event-header__date event-header__date--cobranded truncate-text">Mon 12/28 @ 12:45p</span>
+            <span class="event-header__venue-name event-header__venue-name--cobranded truncate-text">Verizon Wireless Ampitheathre, Los Angeles, CA</span>
+          </div>
+        </div>
+      </div>
+      <div class="event-header__supportive event-header__supportive--cobranded">
+        <button class="event-header__more-button">
+          <svg class="event-header__more-icon">
+            <use xlink:href="img/sprite.svg#icon-more"></use>
+          </svg>
+          <span class="ada-text">See more event information</span>
+        </button>
       </div>
     </div>
   </header>

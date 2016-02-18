@@ -49,24 +49,12 @@
   }
 }
 
-.cobrand-header__verified {
-  width: 150px;
-  height: $touch-size;
-  text-align: right;
-  // determine based on cobrand background color
-  background-image: url('../img/verified-pacific.svg');
-  background-position: right center;
-  background-repeat: no-repeat;
-  background-size: 125px;
+.cobrand-header__mlb-ticketmaster {
+  @include cobrand-header-logo('../img/mlb-ticketmaster-light.svg');
+}
 
-  @include breakpoint($bp-lg) {
-    position: absolute;
-    right: $gutter-width / 2;
-    width: 200px;
-    height: $event-header-height;
-    line-height: $event-header-height;
-    background-size: 175px;
-  }
+.cobrand-header__verified {
+  @include cobrand-header-logo('../img/verified-pacific.svg');
 }
 
 .cobrand-header__verified--timer {
