@@ -20,7 +20,8 @@ var src = {
   normalize: 'node_modules/normalize.css/normalize.css',
   scss: 'src/main/sass/**/*.scss',
   svg:  'src/main/svg/**/*.svg',
-  svg4everybody: 'node_modules/svg4everybody/dist/svg4everybody.min.js'
+  svg4everybody: 'node_modules/svg4everybody/dist/svg4everybody.min.js',
+  js: 'src/main/js/*.js'
 }
 
 var compiled = {
@@ -61,6 +62,11 @@ function copyNormalize() {
 // copy svg4everybody into directory
 function copySvg4Everybody(dir) {
   gulp.src(src.svg4everybody)
+    .pipe(gulp.dest(dir));
+}
+
+function copyJS(dir) {
+  gulp.src(src.js)
     .pipe(gulp.dest(dir));
 }
 
@@ -172,6 +178,7 @@ function startBS() {
 function watchFiles() {
   function monitor() {
     gulp.watch(src.html, reload);
+    gulp.watch(src.js, ['copy:js'], reload);
     gulp.watch(src.scss, ['compile:sass']);
     gulp.watch(src.svg, ['compile:svg', reload]);
   }
@@ -184,6 +191,7 @@ function makeDist() {
   minifyCss();
   copySvg();
   copySvg4Everybody(dist.js + '/vendors');
+  copyJS(dist.js);
 }
 
 
@@ -201,6 +209,10 @@ gulp.task('copy:normalize', copyNormalize);
 
 gulp.task('copy:svg4everybody', function() {
   copySvg4Everybody(compiled.js + '/vendors')
+});
+
+gulp.task('copy:js', function() {
+  copyJS(compiled.js)
 });
 
 gulp.task('copy:font', function() {
@@ -229,7 +241,7 @@ gulp.task('build', function() {
 // process, compile, and start up browsersync and watcher
 gulp.task('dev', function() {
   cleanFiles(compiled, plugins.sequence('clean', ['copy:normalize', 'copy:font',
-    'copy:img', 'compile:sass', 'compile:svg', 'copy:svg4everybody', 'watch', 'browser-sync']));
+    'copy:img', 'copy:js', 'compile:sass', 'compile:svg', 'copy:svg4everybody', 'watch', 'browser-sync']));
 })
 
 // update project distribution files

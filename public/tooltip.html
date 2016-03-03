@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, target-densitydpi=medium-dpi, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>TM Nucleus</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="//s2.tmol.co/tm/4ab94a4f/static/favicon-rebrand.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="//s2.tmol.co/tm/4ab94a4f/static/favicon-rebrand.ico" type="image/x-icon">
+    <link href="css/nucleus.css" rel="stylesheet" type="text/css">
+    <link href="css/styleguide.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/zenburn.min.css">
+
+    <script src="https://cdn.jsdelivr.net/lodash/4.6.1/lodash.min.js"></script>
+    <script src="https://fb.me/react-0.14.7.js"></script>
+    <script src="https://fb.me/react-dom-0.14.7.js"></script>
+    <script src="js/tooltip.js"></script>
+    <style>
+      #tooltip-demo {
+        position:relative;
+        width:900px;
+        height:600px;
+        margin: auto;
+        border: 1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id='tooltip-demo'></div>
+
+    <script type='text/javascript'>
+      var t1 = Tooltip.create();
+      t1.setBounds(document.getElementById('tooltip-demo'));
+
+      var demoBox = document.getElementById('tooltip-demo');
+      demoBox.addEventListener('click', function (evt){
+        t1.show(evt.x, evt.y, "hello!")
+      })
+    </script>
+  </body>
+</html>
