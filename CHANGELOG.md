@@ -1,6 +1,10 @@
 Changelog
 =========
 
+**0.25.1**
+---------
+- Fix logo height of cobrand header to 3.4rem.
+
 **0.25.0**
 ---------
 **Changes**

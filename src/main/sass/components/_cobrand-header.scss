@@ -23,16 +23,17 @@
   @include inner-spacing($top: $spacing-sm, $bottom: $spacing-sm);
 
   width: 150px;
-  height: $touch-size;
+  height: $cobrand-header-logo-height;
   background-position: left center;
   background-repeat: no-repeat;
   background-size: contain;
 
   @include breakpoint($bp-lg) {
     position: absolute;
+    top: $cobrand-header-offset;
     left: $gutter-width / 2;
     width: 200px;
-    height: $event-header-height;
+    height: $event-header-height - ($cobrand-header-offset * 2);
     line-height: $event-header-height;
   }
 }
