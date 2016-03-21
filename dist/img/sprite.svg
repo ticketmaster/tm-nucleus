@@ -35,6 +35,14 @@
         Checkmark icon
     </desc>
     <path fill="" d="M11.586 0L4.392 7.18 1.414 4.204 0 5.617 4.393 10 13 1.41z"/>
+</symbol><symbol id="icon-chevron-alt" viewBox="0 0 12 20">
+    <title>
+        Chevron icon (Alt version)
+    </title>
+    <desc>
+        Chevron-shaped icon used for navigational cues.
+    </desc>
+    <path fill="" d="M10.293 20l-10-10 10-10 1.414 1.414L3.12 10l8.587 8.586"/>
 </symbol><symbol id="icon-chevron" viewBox="0 0 13 8">
     <title>
         Chevron icon

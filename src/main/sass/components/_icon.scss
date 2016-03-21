@@ -26,6 +26,14 @@
   transform: rotate(90deg);
 }
 
+.icon-chevron-alt {
+  @include icon($icon-color, 12px, 20px);
+}
+
+.icon-chevron-alt--right {
+  transform: rotate(180deg);
+}
+
 .icon-menu {
   @include icon($icon-color);
 }
