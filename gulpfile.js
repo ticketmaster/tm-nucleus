@@ -1,3 +1,5 @@
+var child = require('child_process');
+var fs = require('fs');
 var _ = require('lodash');
 var del = require('del');
 var gulp = require('gulp');
@@ -230,11 +232,30 @@ gulp.task('build', function() {
 gulp.task('dev', function() {
   cleanFiles(compiled, plugins.sequence('clean', ['copy:normalize', 'copy:font',
     'copy:img', 'compile:sass', 'compile:svg', 'copy:svg4everybody', 'watch', 'browser-sync']));
-})
+});
+
+gulp.task('app', function() {
+  cleanFiles(compiled, plugins.sequence('clean', 'server', ['copy:normalize', 'copy:font',
+    'copy:img', 'compile:sass', 'compile:svg', 'copy:svg4everybody', 'watch', 'browser-sync']));
+});
 
 // update project distribution files
 gulp.task('dist', function() {
   cleanFiles(dist, makeDist);
+});
+
+gulp.task('server', function() {
+  var server = child.spawn('node', ['./bin/www']);
+
+  server.stdout.on('data', function(data) {
+    console.log(data.toString());
+  });
+
+  server.stdout.on('close', function(code) {
+    if (code !== 0) {
+      console.log('process exited with code ', code);
+    }
+  });
 });
 
 gulp.task('default', ['build']);
