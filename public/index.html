@@ -65,12 +65,12 @@
         <li><a href="#event-header">Event Header</a></li>
         <li><a href="#cobrand-header">Cobrand Header</a></li>
         <li><a href="#cart">Cart</a></li>
+        <li><a href="#breadcrumbs">Breadcrumbs</a></li>
         <li><a href="#ism-tooltip">ISM Tooltips</a></li>
         <li><a href="#expando">Expando</a></li>
         <li><a href="#icons">Icons</a></li>
         <li><a href="#animated-icons">Animated Icons</a></li>
         <li><a href="#coding-style">Coding Style</a></li>
-        <li><a href="#breadcrumbs">Breadcrumbs</a></li>
       </ol>
     </nav>
 
@@ -2105,6 +2105,54 @@
         <p>The cart is best illustrated on a <a href="cart.html">separate page</a>.</p>
       </section>
 
+      <section id="breadcrumbs" class="sg__section">
+        <h2 class="sg__hdg">Breadcrumbs</h2>
+        <p>The breadcrumbs pattern is an ordered list with <code class="sg__code">$base-border-style</code> and left and right padding that follow the <code class="sg__code">$spacing-sm</code> <a href="#spacing">spacing rules</a>. Its height is configured by <code class="sg__code">$breadcrumbs-height</code>.</p>
+        <p>Each item in the breadcrumb list has a max width controlled by <code class="sg__code">$breadcrumbs-max-width</code> (75px). Text that extends beyond this limit will be ellipsed.</p>
+        <p>The exceptions to the max width are the first item in the list (if it is the brand logo) and the last item in the list, which is allowed to fill available space.</p>
+
+        <div class="sg__breadcrumbs">
+          <h3 class="sg__subhdg">Normal use case</h3>
+          <ol class="breadcrumbs">
+            <li class="breadcrumbs__item breadcrumbs__item--logo">
+              <a href="#" class="breadcrumbs__link">
+                <svg class="breadcrumbs__brand-logo">
+                  <use xlink:href="#tm-logo"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">Second item</a></li>
+            <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">Third item</a></li>
+            <li class="breadcrumbs__item">Fourth item</li>
+          </ol>
+        </div>
+
+        <div class="sg__breadcrumbs">
+          <h3 class="sg__subhdg">Truncated breadcrumb item</h3>
+          <ol class="breadcrumbs">
+            <li class="breadcrumbs__item breadcrumbs__item--logo">
+              <a href="#" class="breadcrumbs__link">
+                <svg class="breadcrumbs__brand-logo">
+                  <use xlink:href="#tm-logo"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">Second item</a></li>
+            <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">Long third item example</a></li>
+            <li class="breadcrumbs__item">Bacon ipsum dolor amet capicola drumstick</li>
+          </ol>
+        </div>
+
+        <div class="sg__breadcrumbs">
+          <h3 class="sg__subhdg">Truncated last item, no brand logo</h3>
+          <ol class="breadcrumbs">
+            <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">No brand logo</a></li>
+            <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">In this breadcrumb list</a></li>
+            <li class="breadcrumbs__item">Bacon ipsum dolor amet capicola t-bone cupim drumstick porchetta beef ham kielbasa pork belly chuck</li>
+          </ol>
+        </div>
+      </section>
+
       <section id="ism-tooltip" class="sg__section">
         <h3 class="sg__hdg">ISM Tooltips</h3>
         <p>This pattern utilizes <a href="#lists">Delimited List</a>, <a href="#tooltips">Tooltips</a>, and <a href="#srs">SRS</a>.</p>
@@ -2623,42 +2671,6 @@
       <section id="coding-style" class="sg__section">
         <h2 class="sg__hdg">Coding Style</h2>
         <p>Our coding style guidelines are outlined <a href="coding-style.html">here</a>.</p>
-      </section>
-
-      <section id="breadcrumbs" class="sg__section">
-        <h2 class="sg__hdg">Breadcrumbs</h2>
-        <ol class="breadcrumbs">
-          <li class="breadcrumbs__item breadcrumbs__item--logo">
-            <a href="#" class="breadcrumbs__link">
-              <svg class="breadcrumbs__brand-logo">
-                <use xlink:href="#tm-logo"></use>
-              </svg>
-            </a>
-          </li>
-          <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">Second item</a></li>
-          <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">Third item</a></li>
-          <li class="breadcrumbs__item">Fourth item</li>
-        </ol>
-        <p>Breadcrumb example - regular</p>
-        <ol class="breadcrumbs">
-          <li class="breadcrumbs__item breadcrumbs__item--logo">
-            <a href="#" class="breadcrumbs__link">
-              <svg class="breadcrumbs__brand-logo">
-                <use xlink:href="#tm-logo"></use>
-              </svg>
-            </a>
-          </li>
-          <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">Second item</a></li>
-          <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">Third item Third item Third item Third item Third item Third item Third item </a></li>
-          <li class="breadcrumbs__item">Fourth item Fourth item Fourth item Fourth item Fourth item Fourth item Fourth item Fourth item Fourth item Fourth item Fourth item Fourth item Fourth item Fourth item Fourth item Fourth item Fourth item Fourth item </li>
-        </ol>
-        <p>Breadcrumb example - Long third item, long fourth item</p>
-        <ol class="breadcrumbs">
-          <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">Second item</a></li>
-          <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">Third item</a></li>
-          <li class="breadcrumbs__item">Fourth item Fourth item Fourth item Fourth item Fourth item Fourth item Fourth item Fourth item Fourth item Fourth item Fourth item Fourth item Fourth item Fourth item Fourth item Fourth item Fourth item Fourth item </li>
-        </ol>
-        <p>Breadcrumb example - Missing logo, long fourth item</p>
       </section>
     </main>
   </div>
