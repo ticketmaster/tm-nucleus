@@ -1,6 +1,6 @@
 {
   "name": "tm-nucleus",
-  "version": "0.25.1",
+  "version": "0.26.0",
   "author": "Ticketmaster",
   "license": "MIT",
   "private": false,
@@ -13,6 +13,7 @@
     "lint": "gulp scsslint",
     "build": "gulp",
     "dev": "gulp dev",
+    "app": "gulp app",
     "dist": "gulp dist"
   },
   "dependencies": {

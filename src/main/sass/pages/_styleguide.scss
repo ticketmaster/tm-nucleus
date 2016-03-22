@@ -569,6 +569,14 @@ $sg-spacing: 1.5em;
   background-color: $overlay-color;
 }
 
+.sg__breadcrumbs {
+  @include outer-spacing($bottom: $spacing-md);
+
+  &:last-child {
+    @include outer-spacing($bottom: 0);
+  }
+}
+
 .sg__polling {
   width: 20px;
   background-color: $brand-gray;

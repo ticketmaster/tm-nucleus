@@ -1,8 +1,22 @@
 Changelog
 =========
 
+**0.26.0**
+---------
+**New Features**
+- Add breadcrumbs pattern.
+- Add new `icon-chevron-alt` icon. These should be used for paginationa and
+  left/right controls. Previous chevron is now used only show/hide controls in
+  the up and down directions.
+- Add new `npm run app` Gulp task to start up server and run the `dev` in a
+  single command.
+  **NOTE**: For those upgrading from a previous version of Nucleus, you may need to
+  delete your `node_modules` directory if you experience any difficulties with
+  the new task. Doing a fresh `npm install` should resolve any issues.
+
 **0.25.1**
 ---------
+**Bug Fixes**
 - Fix logo height of cobrand header to 3.4rem.
 
 **0.25.0**
