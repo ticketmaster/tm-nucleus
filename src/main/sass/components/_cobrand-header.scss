@@ -50,12 +50,52 @@
   }
 }
 
-.cobrand-header__mlb-ticketmaster {
-  @include cobrand-header-logo('../img/mlb-ticketmaster-light.svg');
-}
-
 .cobrand-header__verified {
   @include cobrand-header-logo('../img/verified-pacific.svg');
+
+  @include target-ie-edge() {
+    @include breakpoint($bp-lg) {
+      position: absolute;
+      top: 0;
+      right: 20px;
+    }
+  }
+}
+
+.cobrand-header__verified--mlb {
+  width: 150px;
+  padding-top: 15px;
+  background-image: none;
+
+  @include breakpoint($bp-md) {
+    width: 200px;
+  }
+
+  @include breakpoint($bp-lg) {
+    padding-top: 7px;
+  }
+}
+
+.cobrand-header__mlb-svg {
+  width: 150px;
+
+  @include breakpoint($bp-md) {
+    width: 200px;
+  }
+
+  @include target-ie() {
+    height: 20px;
+  }
+
+  @include target-ie-edge() {
+    height: 20px;
+
+    @include breakpoint($bp-lg) {
+      position: absolute;
+      top: 30px;
+      right: 0;
+    }
+  }
 }
 
 .cobrand-header__verified--timer {

@@ -45,9 +45,9 @@
         display: none;
       }
 
-      .cobrand-header__verified {
+      /*.cobrand-header__verified {
         background-image: url('../img/verified-dark.svg');
-      }
+      }*/
 
       /* If brand background color is light, then add the following */
       /*.timer__indicator {
@@ -116,7 +116,7 @@
   display: none;
 }
 
-.cobrand-header__mlb-ticketmaster {
+.cobrand-header__verified--mlb {
   // determine which logo to use based on brand background color
   background-image: url('path/to/mlb-ticketmaster-<span class="sg__highlight-code">[dark/light]</span>.svg');
 }
@@ -290,7 +290,8 @@
         </svg>
         <span class="ada-text">Anaheim Angels</span>
       </div>
-      <div class="cobrand-header__mlb-ticketmaster">
+      <div class="cobrand-header__verified cobrand-header__verified--mlb">
+        <object aria-hidden="true" type="image/svg+xml" class="cobrand-header__mlb-svg" data="img/mlb-ticketmaster-light.svg"></object>
         <span class="ada-text">Ticketmaster Verified</span>
       </div>
     </div>

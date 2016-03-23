@@ -4,3 +4,10 @@
     @content;
   }
 }
+
+// targets IE Edge
+@mixin target-ie-edge() {
+  @supports (-ms-accelerator:true) {
+    @content;
+  }
+}
