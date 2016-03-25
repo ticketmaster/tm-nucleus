@@ -1,6 +1,14 @@
 Changelog
 =========
 
+**0.2.0**
+---------
+**New Features**
+- Add new `target-ie-edge` mixin for targeting IE Edge browser.
+
+**Bug Fixes**
+- Fix alignment issue with MLB cobranded header.
+
 **0.26.0**
 ---------
 **New Features**
