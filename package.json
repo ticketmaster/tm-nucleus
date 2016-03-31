@@ -1,6 +1,6 @@
 {
   "name": "tm-nucleus",
-  "version": "0.27.0",
+  "version": "0.27.1",
   "author": "Ticketmaster",
   "license": "MIT",
   "private": false,
@@ -41,6 +41,7 @@
     "gulp-svgstore": "^5.0.4",
     "lodash": "^3.10.1",
     "node-sass": "3.4.2",
+    "normalize.css": "3.0.3",
     "svg4everybody": "^2.0.0"
   }
 }

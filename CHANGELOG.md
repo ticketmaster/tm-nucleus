@@ -1,7 +1,11 @@
 Changelog
 =========
 
-**0.2.0**
+**0.27.1**
+---------
+- Add missing normalize.css dependency to package.json.
+
+**0.27.0**
 ---------
 **New Features**
 - Add new `target-ie-edge` mixin for targeting IE Edge browser.
