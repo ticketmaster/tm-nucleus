@@ -1,0 +1,35 @@
+.general-dialog {
+  border: $general-border-style;
+}
+
+.general-dialog__header {
+  background-color: $general-color;
+}
+
+.general-dialog__title {
+  @include dialog-title('sm');
+}
+
+.general-dialog__title>span {
+  vertical-align: middle;
+}
+
+.general-dialog__title>.icon-alert {
+  border: 1px solid $white;
+  border-radius: 20px;
+  fill: $white;
+  height: 20px;
+  padding: 3px;
+  transform: rotate(180deg);
+  vertical-align: middle;
+  width: 20px;
+}
+
+.general-dialog__title>span {
+  padding-left: 7px;
+  vertical-align: center;
+}
+
+.general-dialog__content {
+  @include dialog-content;
+}

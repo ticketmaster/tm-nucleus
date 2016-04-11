@@ -10,6 +10,25 @@
   @include dialog-title('sm');
 }
 
+.caution-dialog__title>span {
+  vertical-align: middle;
+}
+
+.caution-dialog__title>.icon-minus {
+  border: 1px solid $white;
+  border-radius: 20px;
+  fill: $white;
+  height: 20px;
+  padding: 3px;
+  vertical-align: middle;
+  width: 20px;
+}
+
+.caution-dialog__title>span {
+  padding-left: 7px;
+  vertical-align: center;
+}
+
 .caution-dialog__content {
   @include dialog-content();
 }
