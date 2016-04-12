@@ -10,10 +10,6 @@
   @include dialog-title('sm');
 }
 
-.caution-dialog__title>span {
-  vertical-align: middle;
-}
-
 .caution-dialog__title-icon {
   border: 1px solid $white;
   border-radius: 20px;
@@ -26,7 +22,7 @@
 
 .caution-dialog__title-text {
   padding-left: 7px;
-  vertical-align: center;
+  vertical-align: middle;
 }
 
 .caution-dialog__content {
