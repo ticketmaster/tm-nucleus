@@ -1,20 +1,20 @@
-.general-dialog {
-  border: $general-border-style;
+.info-dialog {
+  border: $info-border-style;
 }
 
-.general-dialog__header {
-  background-color: $general-color;
+.info-dialog__header {
+  background-color: $info-color;
 }
 
-.general-dialog__title {
+.info-dialog__title {
   @include dialog-title('sm');
 }
 
-.general-dialog__title>span {
+.info-dialog__title>span {
   vertical-align: middle;
 }
 
-.general-dialog__title>.icon-alert {
+.info-dialog__title-icon {
   border: 1px solid $white;
   border-radius: 20px;
   fill: $white;
@@ -25,11 +25,11 @@
   width: 20px;
 }
 
-.general-dialog__title>span {
+.info-dialog__title-text {
   padding-left: 7px;
   vertical-align: center;
 }
 
-.general-dialog__content {
+.info-dialog__content {
   @include dialog-content;
 }

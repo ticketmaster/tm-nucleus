@@ -14,7 +14,7 @@
   vertical-align: middle;
 }
 
-.alert-dialog__title>.icon-alert {
+.alert-dialog__title-icon {
   border: 1px solid $white;
   border-radius: 20px;
   fill: $white;
@@ -24,7 +24,7 @@
   width: 20px;
 }
 
-.alert-dialog__title>span {
+.alert-dialog__title-text {
   padding-left: 7px;
   vertical-align: center;
 }
