@@ -10,6 +10,7 @@ $brand-accent:   #d0006f;
 $brand-accent2:  #2088b3;
 $brand-alert:    #f00;
 $brand-caution:  #fa3;
+$brand-info:     #768692;
 $brand-gray2:    #768692;
 $brand-gray3:    #dfe4e7;
 $brand-gray4:    #f6f7f9;
@@ -98,7 +99,7 @@ $header-secondary-text-color: $white;
 // Borders
 $base-border-color: $brand-gray3;
 $input-border-color: $brand-gray2;
-$caution-dialog-color: $brand-gray2;
+$caution-dialog-color: $brand-caution;
 $cobrand-border-color: $brand-gray3;
 
 // Utility
@@ -106,6 +107,7 @@ $resale-color: $brand-accent;
 $success-color: $brand-cta;
 $alert-color: $brand-alert;
 $caution-color: $brand-caution;
+$info-color: $brand-gray;
 $label-color: $brand-gray2;
 $modal-color: $brand-gray5;
 $transparent-color: rgba($white, 0);
