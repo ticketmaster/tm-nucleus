@@ -6,6 +6,21 @@
   color: $white;
 }
 
+@mixin dialog-title-icon($width: $base-icon-size, $height: $base-icon-size) {
+  border: $title-icon-border-style;
+  border-radius: $base-icon-size;
+  fill: $white;
+  height: $height;
+  padding: 3px;
+  vertical-align: middle;
+  width: $width;
+}
+
+@mixin dialog-title-text($width: $base-icon-size, $height: $base-icon-size) {
+  padding-left: 7px;
+  vertical-align: middle;
+}
+
 @mixin dialog-content($color: $alt-text-color, $pad: $spacing-sm) {
   @include responsive-font('sm');
   @include inner-spacing($pad);
