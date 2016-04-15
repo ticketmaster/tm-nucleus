@@ -7,13 +7,13 @@
 }
 
 @mixin dialog-title-icon($width: $base-icon-size, $height: $base-icon-size) {
-  border: $title-icon-border-style;
-  border-radius: $base-icon-size;
-  fill: $white;
+  width: $width;
   height: $height;
   padding: 3px;
   vertical-align: middle;
-  width: $width;
+  border: $title-icon-border-style;
+  border-radius: $base-icon-size;
+  fill: $white;
 }
 
 @mixin dialog-title-text($width: $base-icon-size, $height: $base-icon-size) {
