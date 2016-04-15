@@ -11,18 +11,11 @@
 }
 
 .success-dialog__title-icon {
-  border: 1px solid $white;
-  border-radius: 20px;
-  fill: $white;
-  height: 20px;
-  padding: 3px;
-  vertical-align: middle;
-  width: 20px;
+  @include dialog-title-icon();
 }
 
 .success-dialog__title-text {
-  padding-left: 7px;
-  vertical-align: middle;
+  @include dialog-title-text();
 }
 
 .success-dialog__content {

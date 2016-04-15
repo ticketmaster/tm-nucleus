@@ -11,19 +11,13 @@
 }
 
 .info-dialog__title-icon {
-  border: 1px solid $white;
-  border-radius: 20px;
-  fill: $white;
-  height: 20px;
-  padding: 3px;
+  @include dialog-title-icon();
+
   transform: rotate(180deg);
-  vertical-align: middle;
-  width: 20px;
 }
 
 .info-dialog__title-text {
-  padding-left: 7px;
-  vertical-align: middle;
+  @include dialog-title-text();
 }
 
 .info-dialog__content {
