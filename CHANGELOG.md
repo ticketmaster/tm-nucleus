@@ -1,6 +1,10 @@
 Changelog
 =========
 
+**0.27.3**
+---------
+- Correct spacing in dialogs header
+
 **0.27.2**
 ---------
 - Remove SVG fill
