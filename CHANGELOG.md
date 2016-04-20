@@ -1,6 +1,10 @@
 Changelog
 =========
 
+**0.27.2**
+---------
+- Remove SVG fill
+
 **0.27.1**
 ---------
 - Add missing normalize.css dependency to package.json.
