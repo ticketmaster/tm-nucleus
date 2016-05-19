@@ -1,55 +1,55 @@
 // calculate different shades
-@function get-darker($color, $percent: 25%) {
-  @return mix($black, $color, $percent);
+@function get-darker($nc-color, $nc-percent: 25%) {
+  @return mix($nc-black, $nc-color, $nc-percent);
 }
 
-@function get-lighter($color, $percent: 75%) {
-  @return mix($white, $color, $percent);
+@function get-lighter($nc-color, $nc-percent: 75%) {
+  @return mix($nc-white, $nc-color, $nc-percent);
 }
 
 // return hex value associated with name
-@function color($name, $shade) {
-  @return map-get(map-get($palette, $name), $shade);
+@function color($nc-name, $nc-shade) {
+  @return map-get(map-get($nc-palette, $nc-name), $nc-shade);
 }
 
 // responsive spacing based on established ratio
-@function increase-spacing($val) {
-  @if ($val != 'auto') {
-    @return $val * $spacing-ratio;
+@function increase-spacing($nc-val) {
+  @if ($nc-val != 'auto') {
+    @return $nc-val * $nc-spacing-ratio;
   }
-  @return $val;
+  @return $nc-val;
 }
 
 // there should an overlay z-index and an overlay-content z-index
-@function z($level, $map: $z-indexes) {
-  @return map-get($map, $level);
+@function z($nc-level, $nc-map: $nc-z-indexes) {
+  @return map-get($nc-map, $nc-level);
 }
 
 // turn unit values into unitless
-@function strip-units($num) {
-  @return $num / ($num * 0 + 1);
+@function strip-units($nc-num) {
+  @return $nc-num / ($nc-num * 0 + 1);
 }
 
 // convert px to em
-@function em($px, $context: $default-font-size) {
-  @if ($px == 0) { @return 0; }
-  @return $px / $context * 1em;
+@function em($nc-px, $nc-context: $nc-default-font-size) {
+  @if ($nc-px == 0) { @return 0; }
+  @return $nc-px / $nc-context * 1em;
 }
 
 // determine tooltip offset direction
-@function get-tooltip-offset-direction($pos) {
-  $offset: 'top';
-  @if ($pos == 'top' or $pos == 'bottom') {
-    $offset: 'left';
+@function get-tooltip-offset-direction($nc-pos) {
+  $nc-offset: 'top';
+  @if ($nc-pos == 'top' or $nc-pos == 'bottom') {
+    $nc-offset: 'left';
   }
-  @return $offset;
+  @return $nc-offset;
 }
 
 // calculate tooltip offset
-@function get-tooltip-offset($pos, $size) {
-  $val: -($size / 2);
-  @if ($pos == 'left') {
-    $val: 0;
+@function get-tooltip-offset($nc-pos, $nc-size) {
+  $nc-val: -($nc-size / 2);
+  @if ($nc-pos == 'left') {
+    $nc-val: 0;
   }
-  @return $val;
+  @return $nc-val;
 }

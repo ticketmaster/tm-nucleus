@@ -1,5 +1,5 @@
 .delimited-list {
-  @include unstyled-list();
+  @include nc-unstyled-list();
 
   margin-bottom: 1em;
 }
@@ -9,9 +9,9 @@
 }
 
 .delimited-list__item {
-  @include inner-spacing($top: $spacing-sm, $bottom: $spacing-sm);
+  @include nc-inner-spacing($top: $nc-spacing-sm, $bottom: $nc-spacing-sm);
 
-  border-top: $base-border-style;
+  border-top: $nc-base-border-style;
 
   &:first-child {
     border-top: 0;
@@ -19,16 +19,16 @@
 }
 
 .delimited-list__item--selected {
-  background-color: $list-item-hover-color;
+  background-color: $nc-list-item-hover-color;
 }
 
 .delimited-list__item--embedded {
-  @include inner-spacing($spacing-sm);
+  @include nc-inner-spacing($nc-spacing-sm);
 }
 
 .delimited-list__item--compact {
-  @include breakpoint($max: $bp-md - 1) {
-    padding: ($spacing-sm / 2) 0;
+  @include nc-breakpoint($max: $nc-bp-md - 1) {
+    padding: ($nc-spacing-sm / 2) 0;
     border: 0;
   }
 }
@@ -36,5 +36,5 @@
 
 // TODO: clean outs
 .module__content + .delimited-list {
-  border-top: $base-border-style;
+  border-top: $nc-base-border-style;
 }

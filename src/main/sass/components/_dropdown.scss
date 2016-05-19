@@ -4,7 +4,7 @@
 }
 
 .dropdown__icon-chevron {
-  @include icon($icon-color, $dropdown-chevron-size, $dropdown-chevron-size);
+  @include nc-icon($nc-icon-color, $nc-dropdown-chevron-size, $nc-dropdown-chevron-size);
 
   position: absolute;
   right: 10px;
@@ -12,47 +12,47 @@
 }
 
 .dropdown__select {
-  @include responsive-font('lg');
+  @include nc-responsive-font('lg');
 
   position: relative;
   z-index: 1;
   width: 100%;
-  height: $input-height;
-  padding: 20px ($dropdown-chevron-size + 19px) 0 10px;
-  color: $text-color;
+  height: $nc-input-height;
+  padding: 20px ($nc-dropdown-chevron-size + 19px) 0 10px;
+  color: $nc-text-color;
   cursor: pointer;
   background: none;
   border: 0;
-  border-bottom: $input-border-style;
+  border-bottom: $nc-input-border-style;
   border-radius: 0;
   appearance: none;
 
   &:focus,
   &:active {
-    border-bottom: $focused-border-style;
+    border-bottom: $nc-focused-border-style;
     outline: 0;
   }
 
   &:-moz-focusring {
     color: transparent;
-    text-shadow: 0 0 0 $text-color;
+    text-shadow: 0 0 0 $nc-text-color;
   }
 
   &:focus ~ .dropdown__icon-chevron,
   &:active ~ .dropdown__icon-chevron {
-    fill: $primary-button-color;
+    fill: $nc-primary-button-color;
   }
 }
 
 .dropdown__select.is-error-field {
-  border-bottom: $alert-border-style;
+  border-bottom: $nc-alert-border-style;
 }
 
 .dropdown__select.is-error-field ~ .input-group__label,
 .dropdown__select.is-error-field ~ .input-group__label .input-group__required {
-  color: $alert-color;
+  color: $nc-alert-color;
 }
 
 .dropdown__select.is-error-field ~ .dropdown__icon-chevron {
-  fill: $alert-color;
+  fill: $nc-alert-color;
 }

@@ -1,4 +1,4 @@
 // TODO: get rid of this in EDP
 .heading-section {
-  @include hdg-text('md', $text-color, 0);
+  @include nc-hdg-text('md', $nc-text-color, 0);
 }

@@ -14,10 +14,10 @@
 
 .split-content__secondary {
   flex: 0 0 auto;
-  padding-left: $spacing-sm;
+  padding-left: $nc-spacing-sm;
 
-  @include breakpoint($bp-md) {
-    padding-left: increase-spacing($spacing-sm);
+  @include nc-breakpoint($nc-bp-md) {
+    padding-left: increase-spacing($nc-spacing-sm);
   }
 
   // we don't want left padding if it's the first item
@@ -31,9 +31,9 @@
 }
 
 .split-content__secondary + .split-content__primary {
-  padding-left: $spacing-sm;
+  padding-left: $nc-spacing-sm;
 
-  @include breakpoint($bp-md) {
-    padding-left: increase-spacing($spacing-sm);
+  @include nc-breakpoint($nc-bp-md) {
+    padding-left: increase-spacing($nc-spacing-sm);
   }
 }

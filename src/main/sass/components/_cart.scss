@@ -1,5 +1,5 @@
 .cart {
-  @include clearfix();
+  @include nc-clearfix();
   @include span(full);
 
   position: fixed;
@@ -8,11 +8,11 @@
   z-index: z('cart');
   width: 100%;
   height: auto;
-  padding-top: $spacing-sm;
-  padding-bottom: $spacing-md;
+  padding-top: $nc-spacing-sm;
+  padding-bottom: $nc-spacing-md;
   white-space: nowrap;
-  background: $page-section-bg-color;
-  border-top: $base-border-style;
+  background: $nc-page-section-bg-color;
+  border-top: $nc-base-border-style;
 }
 
 .cart__total {
@@ -20,9 +20,9 @@
 }
 
 .cart__total-amt {
-  @include responsive-font('xl');
+  @include nc-responsive-font('xl');
 }
 
 .cart__total-desc {
-  @include alt-copy('md');
+  @include nc-alt-copy('md');
 }

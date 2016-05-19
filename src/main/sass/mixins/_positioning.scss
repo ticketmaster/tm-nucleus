@@ -1,16 +1,16 @@
-@mixin vertically-center($pos: relative) {
+@mixin nc-vertically-center($pos: relative) {
   position: $pos;
   top: 50%;
   transform: translateY(-50%);
 }
 
-@mixin horizontally-center($pos: relative) {
+@mixin nc-horizontally-center($pos: relative) {
   position: $pos;
   left: 50%;
   transform: translateX(-50%);
 }
 
-@mixin dead-center($pos) {
+@mixin nc-dead-center($pos) {
   position: $pos;
   top: 50%;
   left: 50%;

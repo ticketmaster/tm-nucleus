@@ -1,4 +1,4 @@
-@mixin breakpoint($min: 0, $max: 0) {
+@mixin nc-breakpoint($min: 0, $max: 0) {
 
   // convert values to ems
   $em-min: em($min);

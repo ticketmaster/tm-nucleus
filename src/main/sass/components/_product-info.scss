@@ -1,12 +1,12 @@
 .product-info__title {
-  @include responsive-font('lg');
+  @include nc-responsive-font('lg');
 }
 
 .product-info__compact-title {
-  @include responsive-font('sm');
+  @include nc-responsive-font('sm');
 }
 
 .product-info__desc {
-  @include responsive-font('sm');
-  @include alt-copy();
+  @include nc-responsive-font('sm');
+  @include nc-alt-copy();
 }
