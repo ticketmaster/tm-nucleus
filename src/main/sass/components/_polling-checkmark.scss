@@ -1,40 +1,40 @@
 .polling-checkmark {
   position: relative;
-  width: $polling-size;
-  height: $polling-size;
+  width: $nc-polling-size;
+  height: $nc-polling-size;
   overflow: hidden;
-  background: none repeat scroll 0 0 $polling-circle-unfilled-color;
+  background: none repeat scroll 0 0 $nc-polling-circle-unfilled-color;
   border-radius: 50%;
 }
 
 .polling-checkmark:after {
   position: absolute;
-  top: $polling-border-size;
-  left: $polling-border-size;
+  top: $nc-polling-border-size;
+  left: $nc-polling-border-size;
   display: block;
-  width: $polling-size - ($polling-border-size * 2);
-  height: $polling-size - ($polling-border-size * 2);
-  background: none repeat scroll 0 0 $white;
+  width: $nc-polling-size - ($nc-polling-border-size * 2);
+  height: $nc-polling-size - ($nc-polling-border-size * 2);
+  background: none repeat scroll 0 0 $nc-white;
   border-radius: 50%;
   content: '';
-  box-shadow: 0 0 10px rgba($black, 0.1);
+  box-shadow: 0 0 10px rgba($nc-black, 0.1);
 }
 
 .polling-checkmark__left {
-  @include polling-checkmark-ring();
+  @include nc-polling-checkmark-ring();
 
   left: 0;
 }
 
 .polling-checkmark__right {
-  @include polling-checkmark-ring();
+  @include nc-polling-checkmark-ring();
 
   left: 50%;
 }
 
 .polling-checkmark__left:after,
 .polling-checkmark__right:after {
-  @include polling-checkmark-animate();
+  @include nc-polling-checkmark-animate();
 }
 
 .polling-checkmark__left:after {

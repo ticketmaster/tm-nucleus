@@ -3,37 +3,37 @@
 // to call the get-darker/lighter functions dynamically instead of with set vars
 
 // mixin to create buttons
-@mixin btn($color: $primary-button-color, $txtcolor: $white, $height: $button-height, $hoverstate: false, $outlined: false) {
-  @include btn-base($height);
+@mixin nc-btn($color: $primary-button-color, $txtcolor: $nc-white, $height: $nc-button-height, $hoverstate: false, $outlined: false) {
+  @include nc-btn-base($height);
 
   @if not $outlined {
-    @include btn-color($color, $txtcolor, $hoverstate: $hoverstate);
+    @include nc-btn-color($color, $txtcolor, $hoverstate: $hoverstate);
   }
   @else {
-    @include btn-outlined($color, $hoverstate: $hoverstate);
+    @include nc-btn-outlined($color, $hoverstate: $hoverstate);
   }
 }
 
 // shared base for buttons
-@mixin btn-base($height) {
-  @include responsive-font('md', $height);
+@mixin nc-btn-base($height) {
+  @include nc-responsive-font('md', $height);
 
   display: inline-block;
   min-height: $height;
-  padding: 0 $button-padding;
+  padding: 0 $nc-button-padding;
   font-weight: normal;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
-  border-radius: $button-border-radius;
+  border-radius: $nc-button-border-radius;
   box-shadow: none;
   cursor: pointer;
 
-  @include breakpoint($bp-md) {
-    min-height: $button-height-lg;
-    padding: 0 $button-padding-lg;
-    line-height: $button-height-lg;
+  @include nc-breakpoint($nc-bp-md) {
+    min-height: $nc-button-height-lg;
+    padding: 0 $nc-button-padding-lg;
+    line-height: $nc-button-height-lg;
   }
 
   &:hover {
@@ -42,7 +42,7 @@
 }
 
 // set the button color
-@mixin btn-color($bgcolor, $txtcolor, $hoverstate: false) {
+@mixin nc-btn-color($bgcolor, $txtcolor, $hoverstate: false) {
   color: $txtcolor;
   background-color: $bgcolor;
   border: 0;
@@ -58,7 +58,7 @@
       background-color: get-darker($bgcolor);
     }
 
-    @include breakpoint($bp-lg) {
+    @include nc-breakpoint($nc-bp-lg) {
       &:focus,
       &:hover {
         color: $txtcolor;
@@ -68,14 +68,14 @@
   }
 
   &[disabled] {
-    @include btn-disabled($bgcolor);
+    @include nc-btn-disabled($bgcolor);
   }
 }
 
 // set the outlined color
-@mixin btn-outlined($color, $hoverstate: false) {
+@mixin nc-btn-outlined($color, $hoverstate: false) {
   color: $color;
-  background-color: $white;
+  background-color: $nc-white;
   border: 1px solid $color;
 
   @if $hoverstate {
@@ -84,7 +84,7 @@
       border-color: get-darker($color);
     }
 
-    @include breakpoint($bp-lg) {
+    @include nc-breakpoint($nc-bp-lg) {
       &:focus,
       &:hover {
         color: get-darker($color);
@@ -94,12 +94,12 @@
   }
 
   &[disabled] {
-    @include btn-disabled($color, $outlined: true);
+    @include nc-btn-disabled($color, $outlined: true);
   }
 }
 
 // set disabled color
-@mixin btn-disabled($color, $outlined: false) {
+@mixin nc-btn-disabled($color, $outlined: false) {
   @if not $outlined {
     background-color: get-lighter($color);
   }
@@ -110,12 +110,12 @@
 }
 
 // unstyled button
-@mixin unbutton($txtcolor: $link-color, $padding: $button-padding, $nowrap: 'nowrap') {
+@mixin nc-unbutton($txtcolor: $nc-link-color, $padding: $nc-button-padding, $nowrap: 'nowrap') {
   padding: 0 $padding;
   font-weight: normal;
   color: $txtcolor;
   text-align: center;
-  background-color: $transparent-color;
+  background-color: $nc-transparent-color;
   border: 0;
   border-radius: 0;
   box-shadow: none;
@@ -130,8 +130,8 @@
 }
 
 // icon button
-@mixin icon-button() {
-  @include unbutton($padding: 0);
+@mixin nc-icon-button() {
+  @include nc-unbutton($padding: 0);
 
   line-height: 0;
 }

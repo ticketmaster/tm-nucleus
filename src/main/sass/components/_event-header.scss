@@ -1,33 +1,33 @@
-$more-icon-width: 21px;
-$more-icon-height: 5px;
-$supportive-size: $base-icon-size + $gutter-width;
-$supportive-size-md: $supportive-size + $event-header-tm-short + 10px;
-$supportive-size-lg: 200px + ($gutter-width * 1.5);
-$supportive-timer: $timer-size + $gutter-width;
-$supportive-timer-lg: $timer-size-lg + $gutter-width;
-$supportive-cobrand: $more-icon-width + $gutter-width - ($more-icon-width - $more-icon-height);
-$event-text-sm: calc(100vw - (#{$supportive-size} * 2) - #{$scrollbar-width});
-$event-text-md: calc(100vw - (#{$supportive-size-md} * 2) - #{$scrollbar-width});
-$event-text-lg: calc(100vw - (#{$supportive-size-lg} * 2) - #{$scrollbar-width});
-$event-text-timer: calc(100vw - (#{$supportive-timer} * 2) - #{$scrollbar-width});
-$event-text-timer-ie: calc(100vw - (#{$supportive-timer} * 2 + 12px) - #{$scrollbar-width});
-$event-text-cobrand: calc(100vw - (#{$supportive-cobrand} * 2) - #{$scrollbar-width});
+$nc-more-icon-width: 21px;
+$nc-more-icon-height: 5px;
+$nc-supportive-size: $nc-base-icon-size + $nc-gutter-width;
+$nc-supportive-size-md: $nc-supportive-size + $nc-event-header-tm-short + 10px;
+$nc-supportive-size-lg: 200px + ($nc-gutter-width * 1.5);
+$nc-supportive-timer: $nc-timer-size + $nc-gutter-width;
+$nc-supportive-timer-lg: $nc-timer-size-lg + $nc-gutter-width;
+$nc-supportive-cobrand: $nc-more-icon-width + $nc-gutter-width - ($nc-more-icon-width - $nc-more-icon-height);
+$nc-event-text-sm: calc(100vw - (#{$nc-supportive-size} * 2) - #{$nc-scrollbar-width});
+$nc-event-text-md: calc(100vw - (#{$nc-supportive-size-md} * 2) - #{$nc-scrollbar-width});
+$nc-event-text-lg: calc(100vw - (#{$nc-supportive-size-lg} * 2) - #{$nc-scrollbar-width});
+$nc-event-text-timer: calc(100vw - (#{$nc-supportive-timer} * 2) - #{$nc-scrollbar-width});
+$nc-event-text-timer-ie: calc(100vw - (#{$nc-supportive-timer} * 2 + 12px) - #{$nc-scrollbar-width});
+$nc-event-text-cobrand: calc(100vw - (#{$nc-supportive-cobrand} * 2) - #{$nc-scrollbar-width});
 
 .event-header {
-  @include responsive-font('sm');
+  @include nc-responsive-font('sm');
 
   position: relative;
   display: flex;
   align-items: center;
-  min-width: $bp-xs;
-  min-height: $event-header-height;
+  min-width: $nc-bp-xs;
+  min-height: $nc-event-header-height;
   padding: 1.8rem 0;
-  color: $header-text-color;
+  color: $nc-header-text-color;
   text-align: center;
-  background-color: $header-color;
-  box-shadow: 0 1px 0 rgba($black, 0.25);
+  background-color: $nc-header-color;
+  box-shadow: 0 1px 0 rgba($nc-black, 0.25);
 
-  @include breakpoint($bp-md) {
+  @include nc-breakpoint($nc-bp-md) {
     padding: 1.6rem 0;
   }
 }
@@ -40,7 +40,7 @@ $event-text-cobrand: calc(100vw - (#{$supportive-cobrand} * 2) - #{$scrollbar-wi
   flex: 1 1 100%;
   cursor: pointer;
 
-  @include breakpoint($bp-lg) {
+  @include nc-breakpoint($nc-bp-lg) {
     margin-top: -14px;
   }
 }
@@ -50,106 +50,106 @@ $event-text-cobrand: calc(100vw - (#{$supportive-cobrand} * 2) - #{$scrollbar-wi
 }
 
 .event-header__title {
-  @include responsive-font('lg');
+  @include nc-responsive-font('lg');
 
-  width: $event-text-sm;
+  width: $nc-event-text-sm;
   margin: 0 auto;
   font-weight: normal;
-  color: $header-text-color;
+  color: $nc-header-text-color;
 
-  @include breakpoint($bp-md) {
-    width: $event-text-md;
+  @include nc-breakpoint($nc-bp-md) {
+    width: $nc-event-text-md;
   }
 
-  @include breakpoint($bp-lg) {
-    width: $event-text-lg;
+  @include nc-breakpoint($nc-bp-lg) {
+    width: $nc-event-text-lg;
   }
 }
 
 .event-header__rotator {
-  @include breakpoint($max: $bp-md - 1) {
-    @include text-rotator-current();
+  @include nc-breakpoint($max: $nc-bp-md - 1) {
+    @include nc-text-rotator-current();
   }
 
-  @include breakpoint($bp-md) {
-    @include truncate-text();
+  @include nc-breakpoint($nc-bp-md) {
+    @include nc-truncate-text();
 
-    width: $event-text-md;
+    width: $nc-event-text-md;
   }
 
-  @include breakpoint($bp-lg) {
-    width: $event-text-lg;
+  @include nc-breakpoint($nc-bp-lg) {
+    width: $nc-event-text-lg;
   }
 }
 
 .event-header__date,
 .event-header__venue-name {
-  @include breakpoint($max: $bp-md - 1) {
+  @include nc-breakpoint($max: $nc-bp-md - 1) {
     display: block;
-    width: $event-text-sm;
+    width: $nc-event-text-sm;
   }
 }
 
 .event-header__title--cobranded,
 .event-header__rotator--cobranded {
-  width: $event-text-cobrand;
+  width: $nc-event-text-cobrand;
 
-  @include breakpoint($bp-lg) {
-    width: $event-text-lg;
+  @include nc-breakpoint($nc-bp-lg) {
+    width: $nc-event-text-lg;
   }
 }
 
 .event-header__title--timer {
-  @include breakpoint($max: $bp-md - 1) {
-    width: $event-text-timer;
+  @include nc-breakpoint($max: $nc-bp-md - 1) {
+    width: $nc-event-text-timer;
 
-    @include target-ie() {
-      width: $event-text-timer-ie;
+    @include nc-target-ie() {
+      width: $nc-event-text-timer-ie;
     }
   }
 }
 
 .event-header__rotator--timer {
-  @include breakpoint($bp-lg) {
-    width: $event-text-lg;
+  @include nc-breakpoint($nc-bp-lg) {
+    width: $nc-event-text-lg;
   }
 }
 
 .event-header__date--cobranded,
 .event-header__venue-name--cobranded {
-  width: $event-text-cobrand;
+  width: $nc-event-text-cobrand;
 
-  @include breakpoint($bp-lg) {
-    width: $event-text-lg;
+  @include nc-breakpoint($nc-bp-lg) {
+    width: $nc-event-text-lg;
   }
 }
 
 .event-header__date--timer,
 .event-header__venue-name--timer {
-  @include breakpoint($max: $bp-md - 1) {
-    width: $event-text-timer;
+  @include nc-breakpoint($max: $nc-bp-md - 1) {
+    width: $nc-event-text-timer;
 
-    @include target-ie() {
-      width: $event-text-timer-ie;
+    @include nc-target-ie() {
+      width: $nc-event-text-timer-ie;
     }
   }
 }
 
 .event-header__supportive {
-  flex: 0 0 $supportive-size;
+  flex: 0 0 $nc-supportive-size;
   min-height: 1px;
   text-align: left;
 
-  @include breakpoint($bp-md) {
-    flex: 0 0 $supportive-size-md;
+  @include nc-breakpoint($nc-bp-md) {
+    flex: 0 0 $nc-supportive-size-md;
   }
 
-  @include breakpoint($bp-lg) {
-    flex: 0 0 $supportive-size-lg;
+  @include nc-breakpoint($nc-bp-lg) {
+    flex: 0 0 $nc-supportive-size-lg;
   }
 
   &:first-child {
-    padding-left: $gutter-width / 2;
+    padding-left: $nc-gutter-width / 2;
   }
 
   &:last-child {
@@ -158,40 +158,40 @@ $event-text-cobrand: calc(100vw - (#{$supportive-cobrand} * 2) - #{$scrollbar-wi
 }
 
 .event-header__supportive--cobranded {
-  flex: 0 0 $supportive-cobrand;
+  flex: 0 0 $nc-supportive-cobrand;
 
-  @include breakpoint($bp-lg) {
-    flex: 0 0 $supportive-size-lg;
+  @include nc-breakpoint($nc-bp-lg) {
+    flex: 0 0 $nc-supportive-size-lg;
   }
 }
 
 .event-header__supportive--timer {
-  flex: 0 0 $supportive-timer;
+  flex: 0 0 $nc-supportive-timer;
 
-  @include breakpoint($bp-lg) {
-    flex: 0 0 $supportive-size-lg;
+  @include nc-breakpoint($nc-bp-lg) {
+    flex: 0 0 $nc-supportive-size-lg;
   }
 
   &:first-child {
-    padding-left: $gutter-width / 2;
+    padding-left: $nc-gutter-width / 2;
   }
 }
 
 .event-header__title-link {
-  color: $header-text-color;
+  color: $nc-header-text-color;
 }
 
 .event-header__date-venue {
-  color: $header-secondary-text-color;
+  color: $nc-header-secondary-text-color;
   white-space: nowrap;
 
-  @include breakpoint($max: $bp-md - 1) {
-    @include text-rotator($rotator-height);
+  @include nc-breakpoint($max: $nc-bp-md - 1) {
+    @include nc-text-rotator($nc-rotator-height);
   }
 }
 
 .event-header__date {
-  @include breakpoint($bp-md) {
+  @include nc-breakpoint($nc-bp-md) {
     &:after {
       content: ',';
     }
@@ -199,7 +199,7 @@ $event-text-cobrand: calc(100vw - (#{$supportive-cobrand} * 2) - #{$scrollbar-wi
 }
 
 .event-header__logo {
-  @include breakpoint($max: $bp-lg - 1) {
+  @include nc-breakpoint($max: $nc-bp-lg - 1) {
     display: none;
   }
 }
@@ -207,7 +207,7 @@ $event-text-cobrand: calc(100vw - (#{$supportive-cobrand} * 2) - #{$scrollbar-wi
 .event-header__tm-link {
   font-size: 0;
 
-  @include breakpoint($max: $bp-md - 1) {
+  @include nc-breakpoint($max: $nc-bp-md - 1) {
     display: none;
   }
 }
@@ -215,9 +215,9 @@ $event-text-cobrand: calc(100vw - (#{$supportive-cobrand} * 2) - #{$scrollbar-wi
 .event-header__tm-logo {
   width: 150px;
   height: 20px;
-  fill: $white;
+  fill: $nc-white;
 
-  @include breakpoint($max: $bp-lg - 1) {
+  @include nc-breakpoint($max: $nc-bp-lg - 1) {
     display: none;
   }
 }
@@ -225,48 +225,48 @@ $event-text-cobrand: calc(100vw - (#{$supportive-cobrand} * 2) - #{$scrollbar-wi
 .event-header__ln-logo {
   width: 175px;
   height: 22px;
-  fill: $white;
+  fill: $nc-white;
 
-  @include breakpoint($max: $bp-lg - 1) {
+  @include nc-breakpoint($max: $nc-bp-lg - 1) {
     display: none;
   }
 }
 
 .event-header__menu-button {
-  @include icon-button();
+  @include nc-icon-button();
 
   height: 44px;
-  padding-left: $gutter-width / 2;
-  margin-left: -($gutter-width / 2);
+  padding-left: $nc-gutter-width / 2;
+  margin-left: -($nc-gutter-width / 2);
   text-align: left;
 
-  @include breakpoint($max: $bp-md - 1) {
+  @include nc-breakpoint($max: $nc-bp-md - 1) {
     width: 44px;
   }
 
-  @include breakpoint($bp-lg) {
+  @include nc-breakpoint($nc-bp-lg) {
     padding-right: 5px;
   }
 }
 
 .event-header__menu-button + .event-header__tm-link {
-  @include breakpoint($bp-lg) {
+  @include nc-breakpoint($nc-bp-lg) {
     margin-left: 5px;
   }
 }
 
 .event-header__menu-icon {
-  @include icon($white);
+  @include nc-icon($nc-white);
 }
 
 .event-header__more-button {
-  @include icon-button();
+  @include nc-icon-button();
 
   height: 44px;
-  padding: 0 calc((#{$gutter-width} / 2) - (#{$more-icon-width - $more-icon-height} / 2));
+  padding: 0 calc((#{$nc-gutter-width} / 2) - (#{$nc-more-icon-width - $nc-more-icon-height} / 2));
   text-align: right;
 
-  @include breakpoint($bp-lg) {
+  @include nc-breakpoint($nc-bp-lg) {
     position: absolute;
     bottom: 13px;
     left: 50%;
@@ -278,16 +278,16 @@ $event-text-cobrand: calc(100vw - (#{$supportive-cobrand} * 2) - #{$scrollbar-wi
 }
 
 .event-header__more-icon {
-  @include icon($white, $more-icon-width, $more-icon-height);
+  @include nc-icon($nc-white, $nc-more-icon-width, $nc-more-icon-height);
 
-  @include breakpoint($max: $bp-lg - 1) {
+  @include nc-breakpoint($max: $nc-bp-lg - 1) {
     transform: rotate(90deg);
   }
 }
 
 .event-header__timer {
-  @include breakpoint($bp-lg) {
+  @include nc-breakpoint($nc-bp-lg) {
     float: right;
-    margin-right: $gutter-width / 2;
+    margin-right: $nc-gutter-width / 2;
   }
 }

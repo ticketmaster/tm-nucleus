@@ -1,30 +1,30 @@
-@mixin dialog-title($size) {
-  @include responsive-font($size);
-  @include inner-spacing($spacing-sm);
+@mixin nc-dialog-title($size) {
+  @include nc-responsive-font($size);
+  @include nc-inner-spacing($nc-spacing-sm);
 
   font-weight: normal;
-  color: $white;
+  color: $nc-white;
 }
 
-@mixin dialog-title-icon($width: $base-icon-size, $height: $base-icon-size) {
+@mixin nc-dialog-title-icon($width: $nc-base-icon-size, $height: $nc-base-icon-size) {
   width: $width;
   height: $height;
   padding: 3px;
   vertical-align: middle;
-  border: $title-icon-border-style;
-  border-radius: $base-icon-size;
-  fill: $white;
+  border: $nc-title-icon-border-style;
+  border-radius: $nc-base-icon-size;
+  fill: $nc-white;
 }
 
-@mixin dialog-title-text($width: $base-icon-size, $height: $base-icon-size) {
+@mixin nc-dialog-title-text($width: $nc-base-icon-size, $height: $nc-base-icon-size) {
   padding-left: 10px;
   vertical-align: middle;
 }
 
-@mixin dialog-content($color: $alt-text-color, $pad: $spacing-sm) {
-  @include responsive-font('sm');
-  @include inner-spacing($pad);
+@mixin nc-dialog-content($color: $nc-alt-text-color, $pad: $nc-spacing-sm) {
+  @include nc-responsive-font('sm');
+  @include nc-inner-spacing($pad);
 
   color: $color;
-  background-color: $white;
+  background-color: $nc-white;
 }

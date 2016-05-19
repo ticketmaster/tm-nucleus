@@ -1,23 +1,23 @@
 .caution-dialog {
-  border: $caution-border-style;
+  border: $nc-caution-border-style;
 }
 
 .caution-dialog__header {
-  background-color: $caution-dialog-color;
+  background-color: $nc-caution-dialog-color;
 }
 
 .caution-dialog__title {
-  @include dialog-title('sm');
+  @include nc-dialog-title('sm');
 }
 
 .caution-dialog__title-icon {
-  @include dialog-title-icon();
+  @include nc-dialog-title-icon();
 }
 
 .caution-dialog__title-text {
-  @include dialog-title-text();
+  @include nc-dialog-title-text();
 }
 
 .caution-dialog__content {
-  @include dialog-content();
+  @include nc-dialog-content();
 }

@@ -1,4 +1,4 @@
-@mixin polling-refresh($size: $base-icon-size, $bg: $brand-gray) {
+@mixin nc-polling-refresh($size: $nc-base-icon-size, $bg: $brand-gray) {
   position: relative;
   z-index: z('polling');
   height: $size;
@@ -12,6 +12,6 @@
     height: $size;
     background-color: rgba($bg, 0.9);
     content: '';
-    animation: $polling-refresh-animation;
+    animation: $nc-polling-refresh-animation;
   }
 }

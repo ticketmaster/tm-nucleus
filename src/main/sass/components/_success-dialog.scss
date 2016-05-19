@@ -1,23 +1,23 @@
 .success-dialog {
-  border: $success-border-style;
+  border: $nc-success-border-style;
 }
 
 .success-dialog__header {
-  background-color: $success-color;
+  background-color: $nc-success-color;
 }
 
 .success-dialog__title {
-  @include dialog-title('sm');
+  @include nc-dialog-title('sm');
 }
 
 .success-dialog__title-icon {
-  @include dialog-title-icon();
+  @include nc-dialog-title-icon();
 }
 
 .success-dialog__title-text {
-  @include dialog-title-text();
+  @include nc-dialog-title-text();
 }
 
 .success-dialog__content {
-  @include dialog-content();
+  @include nc-dialog-content();
 }

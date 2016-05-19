@@ -1,6 +1,6 @@
-@mixin tile() {
-  border-radius: $base-border-radius;
-  border: $input-border-style;
+@mixin nc-tile() {
+  border-radius: $nc-base-border-radius;
+  border: $nc-input-border-style;
 
-  @include outer-spacing($bottom: $spacing-md);
+  @include nc-outer-spacing($bottom: $nc-spacing-md);
 }

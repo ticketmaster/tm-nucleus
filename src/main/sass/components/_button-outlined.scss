@@ -1,5 +1,5 @@
 .button-outlined {
-  @include btn($alert-color, $hoverstate: true, $outlined: true);
+  @include nc-btn($nc-alert-color, $hoverstate: true, $outlined: true);
 }
 
 .button-outlined--static {

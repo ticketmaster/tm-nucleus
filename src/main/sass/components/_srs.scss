@@ -3,7 +3,7 @@
   position: relative;
   display: flex;
   justify-content: space-between;
-  min-width: $srs-min-width;
+  min-width: $nc-srs-min-width;
 }
 
 .srs__set {
@@ -25,18 +25,18 @@
 }
 
 .srs__label {
-  @include responsive-font('sm', 1);
+  @include nc-responsive-font('sm', 1);
 
   font-weight: normal;
-  color: $alt-text-color;
+  color: $nc-alt-text-color;
   text-transform: uppercase;
 }
 
 .srs__value {
-  @include responsive-font('xl', 1);
+  @include nc-responsive-font('xl', 1);
 
   font-weight: bold;
-  color: $text-color;
+  color: $nc-text-color;
 }
 
 .srs__ga {

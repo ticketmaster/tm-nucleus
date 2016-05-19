@@ -1,37 +1,37 @@
-$breadcrumbs-width: strip-units(fetch-font('xs', 'quart') * $breadcrumbs-chevron-dim);
-$breadcrumbs-border-width: strip-units((fetch-font('xs', 'quart') * $breadcrumbs-chevron-border-width) * 2);
-$breadcrumbs-chevron-size: ($breadcrumbs-width + $breadcrumbs-border-width) * 10px;
+$nc-breadcrumbs-width: strip-units(fetch-font('xs', 'quart') * $nc-breadcrumbs-chevron-dim);
+$nc-breadcrumbs-border-width: strip-units((fetch-font('xs', 'quart') * $nc-breadcrumbs-chevron-border-width) * 2);
+$nc-breadcrumbs-chevron-size: ($nc-breadcrumbs-width + $nc-breadcrumbs-border-width) * 10px;
 
 .breadcrumbs {
-  @include unstyled-list();
-  @include responsive-font('xs', $breadcrumbs-height);
-  @include inner-spacing($left: $spacing-sm, $right: $spacing-sm);
+  @include nc-unstyled-list();
+  @include nc-responsive-font('xs', $nc-breadcrumbs-height);
+  @include nc-inner-spacing($left: $nc-spacing-sm, $right: $nc-spacing-sm);
 
   display: flex;
-  border: $base-border-style;
+  border: $nc-base-border-style;
 
-  @include breakpoint($max: $bp-md - 1) {
+  @include nc-breakpoint($max: $nc-bp-md - 1) {
     display: none;
    }
 }
 
 .breadcrumbs__item {
-  @include truncate-text();
+  @include nc-truncate-text();
 
   flex: 0 0 auto;
   float: left;
-  max-width: $breadcrumbs-max-width + $breadcrumbs-border-width + $breadcrumbs-chevron-size + $breadcrumbs-spacing;
+  max-width: $nc-breadcrumbs-max-width + $nc-breadcrumbs-border-width + $nc-breadcrumbs-chevron-size + $nc-breadcrumbs-spacing;
 
   &:before {
     position: relative;
     display: inline-block;
-    width: $breadcrumbs-chevron-dim;
-    height: $breadcrumbs-chevron-dim;
-    margin-right: $breadcrumbs-spacing;
+    width: $nc-breadcrumbs-chevron-dim;
+    height: $nc-breadcrumbs-chevron-dim;
+    margin-right: $nc-breadcrumbs-spacing;
     vertical-align: text-bottom;
-    border-color: $input-border-color;
+    border-color: $nc-input-border-color;
     border-style: solid;
-    border-width: $breadcrumbs-chevron-border-width $breadcrumbs-chevron-border-width 0 0;
+    border-width: $nc-breadcrumbs-chevron-border-width $nc-breadcrumbs-chevron-border-width 0 0;
     content: '';
     transform: scale(0.5, 0.9) rotate(45deg);
   }
@@ -41,7 +41,7 @@ $breadcrumbs-chevron-size: ($breadcrumbs-width + $breadcrumbs-border-width) * 10
   }
 
   &:last-child {
-    @include truncate-text();
+    @include nc-truncate-text();
 
     flex: 1 1 auto;
   }
@@ -53,15 +53,15 @@ $breadcrumbs-chevron-size: ($breadcrumbs-width + $breadcrumbs-border-width) * 10
 }
 
 .breadcrumbs__item--logo {
-  flex: 0 0 $breadcrumbs-logo-width;
+  flex: 0 0 $nc-breadcrumbs-logo-width;
 }
 
 .breadcrumbs__brand-logo {
-  width: $breadcrumbs-logo-width;
-  height: $breadcrumbs-logo-height;
-  fill: $breadcrumbs-logo-color;
+  width: $nc-breadcrumbs-logo-width;
+  height: $nc-breadcrumbs-logo-height;
+  fill: $nc-breadcrumbs-logo-color;
 }
 
 .breadcrumbs__link {
-  color: $breadcrumbs-link-color;
+  color: $nc-breadcrumbs-link-color;
 }

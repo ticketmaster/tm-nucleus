@@ -1,10 +1,10 @@
-@mixin text-rotator($height) {
+@mixin nc-text-rotator($height) {
   height: $height;
   line-height: $height;
   overflow: hidden;
 }
 
-@mixin text-rotator-current {
+@mixin nc-text-rotator-current {
   position: relative;
   display: inline-block;
   white-space: nowrap;
@@ -13,6 +13,6 @@
   animation-iteration-count: infinite;
 }
 
-@mixin text-rotator-line {
+@mixin nc-text-rotator-line {
   display: block;
 }

@@ -2,136 +2,129 @@
 // scss-lint:disable ColorVariable
 
 // base colors
-$brand-tm:       #009cde;
-$brand-primary:  #e11d39;
-$brand-cta:      #2cb3ad;
-$brand-success:  #19ab20;
-$brand-accent:   #d0006f;
-$brand-accent2:  #2088b3;
-$brand-alert:    #f00;
-$brand-caution:  #fa3;
-$brand-gray2:    #768692;
-$brand-gray3:    #dfe4e7;
-$brand-gray4:    #f6f7f9;
-$brand-gray5:    #576671;
-$black:          #000;
-$white:          #fff;
+$nc-brand-tm:       #009cde;
+$nc-brand-primary:  #e11d39;
+$nc-brand-cta:      #2cb3ad;
+$nc-brand-success:  #19ab20;
+$nc-brand-accent:   #d0006f;
+$nc-brand-accent2:  #2088b3;
+$nc-brand-alert:    #f00;
+$nc-brand-caution:  #fa3;
+$nc-brand-gray2:    #768692;
+$nc-brand-gray3:    #dfe4e7;
+$nc-brand-gray4:    #f6f7f9;
+$nc-brand-gray5:    #576671;
+$nc-black:          #000;
+$nc-white:          #fff;
 
 // map hex values to names
-$palette: (
+$nc-palette: (
   'gray': (
-    'sierra':   get-darker($brand-gray2, 40%),
-    'cascade':  $brand-gray2,
-    'rocky':    $brand-gray3,
-    'ridge':    $brand-gray4,
-    'smoky':    $brand-gray5
+    'sierra':   get-darker($nc-brand-gray2, 40%),
+    'cascade':  $nc-brand-gray2,
+    'rocky':    $nc-brand-gray3,
+    'ridge':    $nc-brand-gray4,
+    'smoky':    $nc-brand-gray5
   ),
   'blue': (
-    'shasta':  $brand-accent2
+    'shasta':  $nc-brand-accent2
   ),
   'green': (
-    'yosemite': $brand-success,
-    'tahoe':    $brand-cta
+    'yosemite': $nc-brand-success,
+    'tahoe':    $nc-brand-cta
   ),
   'pink': (
-    'catalina': $brand-accent
+    'catalina': $nc-brand-accent
   ),
   'red': (
-    'helen':    $brand-alert,
-    'rainier':  $brand-primary
+    'helen':    $nc-brand-alert,
+    'rainier':  $nc-brand-primary
   ),
   'yellow': (
-    'malibu':   $brand-caution
+    'malibu':   $nc-brand-caution
   )
 );
 
 // derived colors from base
-$brand-gray: color('gray', 'sierra');
+$nc-brand-gray: color('gray', 'sierra');
 
 // shades/derivatives
-$brand-primary-lighter50: get-lighter($brand-primary, 50%);
-$brand-primary-lighter75: get-lighter($brand-primary, 75%);
-$brand-primary-lighter87: get-lighter($brand-primary, 87.5%);
-$brand-gray2-lighter50:   get-lighter($brand-gray2, 50%);
-$brand-gray2-lighter75:   get-lighter($brand-gray2, 75%);
-$brand-gray5-lighter50:   get-lighter($brand-gray5, 50%);
-$brand-gray5-lighter75:   get-lighter($brand-gray5, 75%);
-$brand-cta-lighter50:     get-lighter($brand-cta, 50%);
-$brand-cta-lighter75:     get-lighter($brand-cta, 75%);
-$brand-cta-lighter87:     get-lighter($brand-cta, 87.5%);
-$brand-success-lighter75: get-lighter($brand-success, 75%);
-$brand-alert-lighter75:   get-lighter($brand-alert, 75%);
-$brand-accent-lighter50:  get-lighter($brand-accent, 50%);
-$brand-accent2-lighter50: get-lighter($brand-accent2, 50%);
+$nc-brand-primary-lighter50: get-lighter($nc-brand-primary, 50%);
+$nc-brand-primary-lighter75: get-lighter($nc-brand-primary, 75%);
+$nc-brand-primary-lighter87: get-lighter($nc-brand-primary, 87.5%);
+$nc-brand-gray2-lighter50:   get-lighter($nc-brand-gray2, 50%);
+$nc-brand-gray2-lighter75:   get-lighter($nc-brand-gray2, 75%);
+$nc-brand-gray5-lighter50:   get-lighter($nc-brand-gray5, 50%);
+$nc-brand-gray5-lighter75:   get-lighter($nc-brand-gray5, 75%);
+$nc-brand-cta-lighter50:     get-lighter($nc-brand-cta, 50%);
+$nc-brand-cta-lighter75:     get-lighter($nc-brand-cta, 75%);
+$nc-brand-cta-lighter87:     get-lighter($nc-brand-cta, 87.5%);
+$nc-brand-success-lighter75: get-lighter($nc-brand-success, 75%);
+$nc-brand-alert-lighter75:   get-lighter($nc-brand-alert, 75%);
+$nc-brand-accent-lighter50:  get-lighter($nc-brand-accent, 50%);
+$nc-brand-accent2-lighter50: get-lighter($nc-brand-accent2, 50%);
 
-$brand-primary-darker25:  get-darker($brand-primary, 25%);
-$brand-gray2-darker25:    get-darker($brand-gray2, 25%);
-$brand-gray5-darker25:    get-darker($brand-gray5, 25%);
-$brand-cta-darker25:      get-darker($brand-cta, 25%);
-$brand-success-darker25:  get-darker($brand-success, 25%);
-$brand-alert-darker25:    get-darker($brand-alert, 25%);
+$nc-brand-primary-darker25:  get-darker($nc-brand-primary, 25%);
+$nc-brand-gray2-darker25:    get-darker($nc-brand-gray2, 25%);
+$nc-brand-gray5-darker25:    get-darker($nc-brand-gray5, 25%);
+$nc-brand-cta-darker25:      get-darker($nc-brand-cta, 25%);
+$nc-brand-success-darker25:  get-darker($nc-brand-success, 25%);
+$nc-brand-alert-darker25:    get-darker($nc-brand-alert, 25%);
 
 // Typography
-$text-color: $brand-gray;
-$alt-text-color: $brand-gray2;
-$link-color: $brand-cta;
-$link-hover-color: $brand-cta-darker25;
+$nc-text-color: $nc-brand-gray;
+$nc-alt-text-color: $nc-brand-gray2;
+$nc-link-color: $nc-brand-cta;
+$nc-link-hover-color: $nc-brand-cta-darker25;
 
 // Buttons
-$primary-button-color: $brand-gray5;
-$primary-aux-button-color: $brand-cta;
-$secondary-button-color: $brand-gray5;
-$cta-button-color: $brand-cta;
+$nc-primary-button-color: $nc-brand-gray5;
+$nc-primary-aux-button-color: $nc-brand-cta;
+$nc-secondary-button-color: $nc-brand-gray5;
+$nc-cta-button-color: $nc-brand-cta;
 
 // Qty Picker
-$qty-increment-button-color: $brand-cta;
-$qty-increment-button-hover-color: $brand-cta-darker25;
-$qty-increment-button-disabled-color: $brand-cta-lighter75;
-$qty-decrement-button-color: $brand-gray5;
-$qty-decrement-button-hover-color: $brand-gray5-darker25;
+$nc-qty-increment-button-color: $nc-brand-cta;
+$nc-qty-increment-button-hover-color: $nc-brand-cta-darker25;
+$nc-qty-increment-button-disabled-color: $nc-brand-cta-lighter75;
+$nc-qty-decrement-button-color: $nc-brand-gray5;
+$nc-qty-decrement-button-hover-color: $nc-brand-gray5-darker25;
 
 // Event Header
-$header-color: $brand-primary;
-$header-text-color: $white;
-$header-secondary-text-color: $white;
+$nc-header-color: $nc-brand-primary;
+$nc-header-text-color: $nc-white;
+$nc-header-secondary-text-color: $nc-white;
 
 // Borders
-$base-border-color: $brand-gray3;
-$input-border-color: $brand-gray2;
-$caution-dialog-color: $brand-caution;
-$cobrand-border-color: $brand-gray3;
+$nc-base-border-color: $nc-brand-gray3;
+$nc-input-border-color: $nc-brand-gray2;
+$nc-caution-dialog-color: $nc-brand-caution;
+$nc-cobrand-border-color: $nc-brand-gray3;
 
 // Utility
-$resale-color: $brand-accent;
-$success-color: $brand-cta;
-$alert-color: $brand-alert;
-$caution-color: $brand-caution;
-$info-color: $brand-gray;
-$label-color: $brand-gray2;
-$modal-color: $brand-gray5;
-$transparent-color: rgba($white, 0);
-$overlay-color: rgba($black, 0.75);
-$outline-color: $brand-cta-lighter75;
-$shadow-color: rgba($black, 0.5);
-$perforated-shadow-color: rgba($black, 0.25);
+$nc-resale-color: $nc-brand-accent;
+$nc-success-color: $nc-brand-cta;
+$nc-alert-color: $nc-brand-alert;
+$nc-caution-color: $nc-brand-caution;
+$nc-info-color: $nc-brand-gray;
+$nc-label-color: $nc-brand-gray2;
+$nc-modal-color: $nc-brand-gray5;
+$nc-transparent-color: rgba($nc-white, 0);
+$nc-overlay-color: rgba($nc-black, 0.75);
+$nc-outline-color: $nc-brand-cta-lighter75;
+$nc-shadow-color: rgba($nc-black, 0.5);
+$nc-perforated-shadow-color: rgba($nc-black, 0.25);
 
 // Icons
-$icon-color: $brand-gray5;
-$ada-icon-color: $brand-tm;
-$verified-icon-ticket-color: $brand-gray;
-$verified-icon-circle-color: $brand-tm;
-$polling-circle-unfilled-color: $brand-gray4;
+$nc-icon-color: $nc-brand-gray5;
+$nc-ada-icon-color: $nc-brand-tm;
+$nc-verified-icon-ticket-color: $nc-brand-gray;
+$nc-verified-icon-circle-color: $nc-brand-tm;
+$nc-polling-circle-unfilled-color: $nc-brand-gray4;
 
 // Breadcrumbs
-$breadcrumbs-logo-color: $brand-gray2;
-$breadcrumbs-link-color: $brand-gray2;
-
-// Misc
-$list-item-hover-color: $brand-cta-lighter87;
-$page-section-bg-color: $brand-gray4;
-$caret-legacy-color: $brand-gray2-lighter50;
-$polling-refresh-bg-color: $brand-gray;
-$tooltip-color: $white;
+$nc-breadcrumbs-logo-color: $nc-brand-gray2;
+$nc-breadcrumbs-link-color: $nc-brand-gray2;
 
 // Toggle Switch
 $toggle-switch-indicator-bg-color: $white;
@@ -146,10 +139,9 @@ $slider-range-active-bg-color: $brand-cta;
 $slider-knob-bg-color: $white;
 $slider-knob-shadow-color: rgba($black, 0.5);
 
-// Tab Selections
-$tab-item-color: $brand-gray2;
-$tab-item-selected-color: $brand-gray2;
-
-// Radio Icon
-$radio-icon-bg-color: $white;
-$radio-icon-selected-color: $link-color;
+// Misc
+$nc-list-item-hover-color: $nc-brand-cta-lighter87;
+$nc-page-section-bg-color: $nc-brand-gray4;
+$nc-caret-legacy-color: $nc-brand-gray2-lighter50;
+$nc-polling-refresh-bg-color: $nc-brand-gray;
+$nc-tooltip-color: $nc-white;

@@ -1,14 +1,14 @@
 // Breakpoints for media queries
-$bp-xs: 320px;
-$bp-sm: 375px;
-$bp-md: 720px;
-$bp-lg: 1020px;
-$bp-xl: 1440px;
+$nc-bp-xs: 320px;
+$nc-bp-sm: 375px;
+$nc-bp-md: 720px;
+$nc-bp-lg: 1020px;
+$nc-bp-xl: 1440px;
 
-$breakpoints: (
-  'mobile': $bp-xs,
-  'large-mobile': $bp-sm,
-  'tablet': $bp-md,
-  'desktop': $bp-lg,
-  'max': $bp-xl
+$nc-breakpoints: (
+  'mobile': $nc-bp-xs,
+  'large-mobile': $nc-bp-sm,
+  'tablet': $nc-bp-md,
+  'desktop': $nc-bp-lg,
+  'max': $nc-bp-xl
 );

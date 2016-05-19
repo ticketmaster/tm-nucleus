@@ -1,5 +1,5 @@
 .checkbox {
-  @include clearfix();
+  @include nc-clearfix();
 
   position: relative;
 }
@@ -10,25 +10,25 @@
 
 .checkbox__label {
   display: inline-block;
-  padding-left: $base-icon-size + 10px;
+  padding-left: $nc-base-icon-size + 10px;
   cursor: pointer;
 }
 
 .checkbox__icon {
-  @include icon($white, 16px, 16px);
+  @include nc-icon($nc-white, 16px, 16px);
 
   position: absolute;
   top: 0;
   left: 0;
-  width: $base-icon-size;
-  height: $base-icon-size;
+  width: $nc-base-icon-size;
+  height: $nc-base-icon-size;
   margin-top: 0.1em;
-  background-color: $white;
-  border: $input-border-style;
-  border-radius: $base-border-radius;
+  background-color: $nc-white;
+  border: $nc-input-border-style;
+  border-radius: $nc-base-border-radius;
 }
 
 .checkbox__input:checked ~ .checkbox__label > .checkbox__icon {
-  background-color: $link-color;
+  background-color: $nc-link-color;
   border: 0;
 }

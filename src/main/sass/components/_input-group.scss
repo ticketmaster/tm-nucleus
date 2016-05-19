@@ -1,32 +1,32 @@
 .input-group {
-  @include clearfix();
+  @include nc-clearfix();
 
   position: relative;
 }
 
 .input-group__label {
-  @include responsive-font('lg');
+  @include nc-responsive-font('lg');
 
   position: absolute;
-  bottom: $input-label-bottom;
-  left: $textfield-gutter-left;
-  color: $label-color;
+  bottom: $nc-input-label-bottom;
+  left: $nc-textfield-gutter-left;
+  color: $nc-label-color;
   pointer-events: none;
-  transition: $form-label-animation;
+  transition: $nc-form-label-animation;
 }
 
 .input-group__text-field {
-  @include responsive-font('lg');
-  @include textfield-underline();
+  @include nc-responsive-font('lg');
+  @include nc-textfield-underline();
 
-  height: $input-height;
+  height: $nc-input-height;
   padding-bottom: 0;
-  padding-left: $textfield-gutter-left;
-  color: $text-color;
+  padding-left: $nc-textfield-gutter-left;
+  color: $nc-text-color;
 
   &:focus,
   &:active {
-    @include textfield-active();
+    @include nc-textfield-active();
   }
 }
 
@@ -36,7 +36,7 @@
   margin-top: 0;
   border-radius: 0;
 
-  @include breakpoint($bp-md) {
+  @include nc-breakpoint($nc-bp-md) {
     border-radius: 5px;
   }
 }
@@ -46,21 +46,21 @@
   top: -10px;
   right: 7px;
 
-  @include breakpoint($bp-md) {
+  @include nc-breakpoint($nc-bp-md) {
     right: -20px;
   }
 }
 
 .input-group__required {
-  color: $link-color;
+  color: $nc-link-color;
 }
 
 // Toggle States
 .input-group__text-field.has-content + .input-group__label,
 .dropdown__select.has-content + .input-group__label {
-  @include form-label();
+  @include nc-form-label();
 
-  bottom: $input-label-bottom-active;
+  bottom: $nc-input-label-bottom-active;
 }
 
 .input-group__text-field:active + .input-group__label,
@@ -69,7 +69,7 @@
 .input-group__text-field.has-content:focus + .input-group__label,
 .dropdown__select.has-content:active + .input-group__label,
 .dropdown__select.has-content:focus + .input-group__label {
-  @include form-label($label-color);
+  @include nc-form-label($nc-label-color);
 
-  bottom: $input-label-bottom-active;
+  bottom: $nc-input-label-bottom-active;
 }

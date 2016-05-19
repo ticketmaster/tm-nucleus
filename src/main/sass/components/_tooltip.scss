@@ -1,79 +1,79 @@
 .tooltip {
-  @include drop-shadow();
-  @include tooltip-position('bottom');
+  @include nc-drop-shadow();
+  @include nc-tooltip-position('bottom');
 
   position: relative;
-  background-color: $tooltip-color;
-  border-radius: $base-border-radius;
+  background-color: $nc-tooltip-color;
+  border-radius: $nc-base-border-radius;
 
   &:after {
     position: absolute;
     display: block;
-    width: $tooltip-caret;
-    height: $tooltip-caret;
-    background-color: $tooltip-color;
+    width: $nc-tooltip-caret;
+    height: $nc-tooltip-caret;
+    background-color: $nc-tooltip-color;
     content: '';
     transform: rotate(45deg);
 
-    @include breakpoint($bp-md) {
-      width: $tooltip-caret-lg;
-      height: $tooltip-caret-lg;
+    @include nc-breakpoint($nc-bp-md) {
+      width: $nc-tooltip-caret-lg;
+      height: $nc-tooltip-caret-lg;
     }
   }
 }
 
 .tooltip--right {
-  @include tooltip-position('right');
+  @include nc-tooltip-position('right');
 }
 
 .tooltip--left {
-  @include tooltip-position('left');
+  @include nc-tooltip-position('left');
 }
 
 .tooltip--top {
-  @include tooltip-position('top');
+  @include nc-tooltip-position('top');
 }
 
 .tooltip--ism {
-  width: $ism-tooltip-width;
+  width: $nc-ism-tooltip-width;
 
-  @include breakpoint($bp-md) {
-    width: $ism-tooltip-width + 20;
+  @include nc-breakpoint($nc-bp-md) {
+    width: $nc-ism-tooltip-width + 20;
   }
 }
 
 .tooltip__content {
-  @include inner-spacing($spacing-sm);
-  @include responsive-font('sm');
+  @include nc-inner-spacing($nc-spacing-sm);
+  @include nc-responsive-font('sm');
 }
 
 .tooltip__srs {
-  @include outer-spacing($bottom: -($spacing-sm));
-  @include inner-spacing($bottom: $spacing-sm);
+  @include nc-outer-spacing($bottom: -($nc-spacing-sm));
+  @include nc-inner-spacing($bottom: $nc-spacing-sm);
 
-  border-bottom: $base-border-style;
+  border-bottom: $nc-base-border-style;
 }
 
 .tooltip__delimited-list {
-  @include inner-spacing($right: $spacing-sm, $left: $spacing-sm);
-  @include responsive-font('sm');
+  @include nc-inner-spacing($right: $nc-spacing-sm, $left: $nc-spacing-sm);
+  @include nc-responsive-font('sm');
 
   margin-bottom: 0;
 }
 
 .tooltip__delimited-list + .tooltip__content {
-  @include outer-spacing($right: $spacing-sm, $left: $spacing-sm);
+  @include nc-outer-spacing($right: $nc-spacing-sm, $left: $nc-spacing-sm);
 
   padding-right: 0;
   padding-left: 0;
-  border-top: $base-border-style;
+  border-top: $nc-base-border-style;
 }
 
 .tooltip--ism__subtotal {
-  @include responsive-font('xl');
+  @include nc-responsive-font('xl');
 }
 
 .tooltip__legal {
-  @include inner-spacing($right: $spacing-sm, $bottom: $spacing-sm, $left: $spacing-sm);
-  @include responsive-font('xs');
+  @include nc-inner-spacing($right: $nc-spacing-sm, $bottom: $nc-spacing-sm, $left: $nc-spacing-sm);
+  @include nc-responsive-font('xs');
 }

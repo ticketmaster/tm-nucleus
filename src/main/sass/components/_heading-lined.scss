@@ -1,10 +1,10 @@
 .heading-lined {
-  @include outer-spacing($bottom: $spacing-sm);
-  @include inner-spacing($left: $spacing-sm, $right: $spacing-sm);
+  @include nc-outer-spacing($bottom: $nc-spacing-sm);
+  @include nc-inner-spacing($left: $nc-spacing-sm, $right: $nc-spacing-sm);
 
   position: relative;
   display: table;
-  color: $alt-text-color;
+  color: $nc-alt-text-color;
   text-align: center;
   white-space: nowrap;
 
@@ -14,31 +14,31 @@
     top: 0.63em;
     display: table-cell;
     width: 45%;
-    border-top: $base-border-style;
+    border-top: $nc-base-border-style;
     content: '';
   }
 
   &:before {
-    right: $spacing-sm;
+    right: $nc-spacing-sm;
 
-    @include breakpoint($bp-md) {
-      right: increase-spacing($spacing-sm);
+    @include nc-breakpoint($nc-bp-md) {
+      right: increase-spacing($nc-spacing-sm);
     }
   }
 
   &:after {
-    left: $spacing-sm;
+    left: $nc-spacing-sm;
 
-    @include breakpoint($bp-md) {
-      left: increase-spacing($spacing-sm);
+    @include nc-breakpoint($nc-bp-md) {
+      left: increase-spacing($nc-spacing-sm);
     }
   }
 }
 
 .heading-lined--primary {
-  @include responsive-font('lg');
+  @include nc-responsive-font('lg');
 }
 
 .heading-lined--secondary {
-  @include responsive-font('md');
+  @include nc-responsive-font('md');
 }
