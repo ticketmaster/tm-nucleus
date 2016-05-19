@@ -1,25 +1,25 @@
 .info-dialog {
-  border: $info-border-style;
+  border: $nc-info-border-style;
 }
 
 .info-dialog__header {
-  background-color: $info-color;
+  background-color: $nc-info-color;
 }
 
 .info-dialog__title {
-  @include dialog-title('sm');
+  @include nc-dialog-title('sm');
 }
 
 .info-dialog__title-icon {
-  @include dialog-title-icon();
+  @include nc-dialog-title-icon();
 
   transform: rotate(180deg);
 }
 
 .info-dialog__title-text {
-  @include dialog-title-text();
+  @include nc-dialog-title-text();
 }
 
 .info-dialog__content {
-  @include dialog-content;
+  @include nc-dialog-content;
 }

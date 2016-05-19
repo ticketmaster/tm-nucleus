@@ -1,41 +1,41 @@
-$chkbox-label-offset: 7px;
+$nc-chkbox-label-offset: 7px;
 
 .chkbox {
-  @include clearfix();
+  @include nc-clearfix();
 
   position: relative;
 }
 
 .chkbox__input {
   float: left;
-  width: $base-icon-size;
-  height: $base-icon-size;
+  width: $nc-base-icon-size;
+  height: $nc-base-icon-size;
   cursor: pointer;
-  background-color: $white;
-  border: $input-border-style;
-  border-radius: $base-border-radius;
+  background-color: $nc-white;
+  border: $nc-input-border-style;
+  border-radius: $nc-base-border-radius;
   appearance: none;
 }
 
 .chkbox__input:checked {
-  background-color: $link-color;
-  border: $focused-border-style;
+  background-color: $nc-link-color;
+  border: $nc-focused-border-style;
 }
 
 .chkbox__input:checked:after {
   position: absolute;
-  left: ($base-icon-size - $chkbox-size) / 2;
+  left: ($nc-base-icon-size - $nc-chkbox-size) / 2;
   display: block;
-  width: $chkbox-size;
-  height: $chkbox-size * 2;
-  background-color: $link-color;
-  border: solid $white;
-  border-width: 0 $chkbox-thickness $chkbox-thickness 0;
+  width: $nc-chkbox-size;
+  height: $nc-chkbox-size * 2;
+  background-color: $nc-link-color;
+  border: solid $nc-white;
+  border-width: 0 $nc-chkbox-thickness $nc-chkbox-thickness 0;
   content: '';
   transform: rotate(45deg);
 }
 
 .chkbox__label {
   display: block;
-  margin-left: $base-icon-size + $chkbox-label-offset;
+  margin-left: $nc-base-icon-size + $nc-chkbox-label-offset;
 }

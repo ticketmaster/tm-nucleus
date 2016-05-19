@@ -1,44 +1,44 @@
-@mixin form-label($color: $label-color) {
-  @include responsive-font('xs');
+@mixin nc-form-label($color: $nc-label-color) {
+  @include nc-responsive-font('xs');
 
   color: $color;
 }
 
-@mixin base-textfield() {
+@mixin nc-base-textfield() {
   width: 100%;
   border: 0;
-  border-bottom: $input-border-style;
+  border-bottom: $nc-input-border-style;
 
   &.is-error-field {
-    color: $alert-color;
-    border-bottom: $alert-border-style;
+    color: $nc-alert-color;
+    border-bottom: $nc-alert-border-style;
   }
 
   &.is-error-field + .input-group__label,
   &.is-error-field + .input-group__label > .input-group__required {
-    color: $alert-color;
+    color: $nc-alert-color;
   }
 }
 
-@mixin textfield-underline() {
-  @include base-textfield();
+@mixin nc-textfield-underline() {
+  @include nc-base-textfield();
 
   position: relative;
-  padding-top: $input-label-height;
+  padding-top: $nc-input-label-height;
   padding-bottom: 5px;
   background: none;
   box-shadow: none;
   border-radius: 0;
 }
 
-@mixin textfield-active() {
-  border-bottom-color: $link-color;
+@mixin nc-textfield-active() {
+  border-bottom-color: $nc-link-color;
   outline: none;
   background: none;
 }
 
 // TODO: verify this is needed
 // DO NOT USE
-@mixin textfield-box() {
-  @include base-textfield();
+@mixin nc-textfield-box() {
+  @include nc-base-textfield();
 }

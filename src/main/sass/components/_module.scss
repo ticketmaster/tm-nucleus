@@ -1,8 +1,8 @@
 .module {
-  @include drop-shadow();
+  @include nc-drop-shadow();
 
   position: relative;
-  background: $white;
+  background: $nc-white;
 }
 
 .module--perforated {
@@ -12,15 +12,15 @@
     display: block;
     width: 100%;
     height: 5px;
-    background: transparent url(map-get($svgs, pedge)) repeat-x 0 0 scroll;
+    background: transparent url(map-get($nc-svgs, pedge)) repeat-x 0 0 scroll;
     content: '';
   }
 }
 
 .module__content {
-  @include inner-spacing($spacing-sm);
+  @include nc-inner-spacing($nc-spacing-sm);
 }
 
 .module__srs {
-  border-bottom: $base-border-style;
+  border-bottom: $nc-base-border-style;
 }

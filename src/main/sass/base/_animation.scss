@@ -1,8 +1,8 @@
 // Animation
-$form-label-animation: all 0.15s ease-out 0s;
-$expando-animation-open: all 0.5s ease-out 0s;
-$expando-animation: all 0.3s ease-in 0s;
-$polling-refresh-animation: wipe 2s infinite;
+$nc-form-label-animation: all 0.15s ease-out 0s;
+$nc-expando-animation-open: all 0.5s ease-out 0s;
+$nc-expando-animation: all 0.3s ease-in 0s;
+$nc-polling-refresh-animation: wipe 2s infinite;
 
 @keyframes text-rotation {
   0% {
@@ -14,11 +14,11 @@ $polling-refresh-animation: wipe 2s infinite;
   }
 
   50% {
-    top: -$rotator-height;
+    top: -$nc-rotator-height;
   }
 
   90% {
-    top: -$rotator-height;
+    top: -$nc-rotator-height;
   }
 
   100% {

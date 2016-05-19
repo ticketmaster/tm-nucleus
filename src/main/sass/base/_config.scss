@@ -1,102 +1,102 @@
 // Spacing
-$spacing-lg: 30px;
-$spacing-md: 20px;
-$spacing-sm: 10px;
-$spacing-ratio: 1.5;
+$nc-spacing-lg: 30px;
+$nc-spacing-md: 20px;
+$nc-spacing-sm: 10px;
+$nc-spacing-ratio: 1.5;
 
 // Borders
-$base-border-style: 1px solid $base-border-color;
-$input-border-style: 1px solid $input-border-color;
-$title-icon-border-style: 1px solid $white;
-$focused-border-style: 1px solid $link-color;
-$success-border-style: 1px solid $success-color;
-$caution-border-style: 1px solid $caution-dialog-color;
-$alert-border-style: 1px solid $alert-color;
-$info-border-style: 1px solid $brand-gray;
-$outline-style: 3px solid $outline-color;
-$tile-selected-style: 2px solid $link-color;
+$nc-base-border-style: 1px solid $nc-base-border-color;
+$nc-input-border-style: 1px solid $nc-input-border-color;
+$nc-title-icon-border-style: 1px solid $nc-white;
+$nc-focused-border-style: 1px solid $nc-link-color;
+$nc-success-border-style: 1px solid $nc-success-color;
+$nc-caution-border-style: 1px solid $nc-caution-dialog-color;
+$nc-alert-border-style: 1px solid $nc-alert-color;
+$nc-info-border-style: 1px solid $nc-brand-gray;
+$nc-outline-style: 3px solid $nc-outline-color;
+$nc-tile-selected-style: 2px solid $nc-link-color;
 
 // Radius and shadows
-$base-border-radius: 3px;
-$shadow-x: 0;
-$shadow-y: 1px;
-$shadow-blur: 4px;
-$shadow-spread: 1px;
-$box-shadow-style: $shadow-x $shadow-y $shadow-blur $shadow-spread $shadow-color;
-$inner-shadow-style: inset 0 1px 3px 0 $shadow-color;
+$nc-base-border-radius: 3px;
+$nc-shadow-x: 0;
+$nc-shadow-y: 1px;
+$nc-shadow-blur: 4px;
+$nc-shadow-spread: 1px;
+$nc-box-shadow-style: $nc-shadow-x $nc-shadow-y $nc-shadow-blur $nc-shadow-spread $nc-shadow-color;
+$nc-inner-shadow-style: inset 0 1px 3px 0 $nc-shadow-color;
 
 // Perforated edge shadow
-$perforated-shadow-x: 0;
-$perforated-shadow-y: 1px;
-$perforated-shadow-blur: 10px;
-$perforated-shadow-spread: 2px;
-$perforated-box-shadow-style: $perforated-shadow-x $perforated-shadow-y $perforated-shadow-blur $perforated-shadow-spread $perforated-shadow-color;
-$perforated-inner-shadow-style: inset 0 1px 1px 0 $shadow-color;
+$nc-perforated-shadow-x: 0;
+$nc-perforated-shadow-y: 1px;
+$nc-perforated-shadow-blur: 10px;
+$nc-perforated-shadow-spread: 2px;
+$nc-perforated-box-shadow-style: $nc-perforated-shadow-x $nc-perforated-shadow-y $nc-perforated-shadow-blur $nc-perforated-shadow-spread $nc-perforated-shadow-color;
+$nc-perforated-inner-shadow-style: inset 0 1px 1px 0 $nc-shadow-color;
 
 // Buttons
-$button-height: 36px;
-$button-height-lg: 38px;
-$button-minor-height: 30px;
-$button-minor-height-lg: 40px;
-$button-border-radius: $base-border-radius;
-$button-padding: 20px;
-$button-padding-lg: 40px;
-$button-minor-padding: 15px;
-$button-minor-padding-lg: 20px;
+$nc-button-height: 36px;
+$nc-button-height-lg: 38px;
+$nc-button-minor-height: 30px;
+$nc-button-minor-height-lg: 40px;
+$nc-button-border-radius: $nc-base-border-radius;
+$nc-button-padding: 20px;
+$nc-button-padding-lg: 40px;
+$nc-button-minor-padding: 15px;
+$nc-button-minor-padding-lg: 20px;
 
 // Quantity picker
-$qty-picker-button-size: 40px;
+$nc-qty-picker-button-size: 40px;
 
 // Sizes
-$touch-size: 44px;
-$scrollbar-width: 20px;
-$rotator-height: 1.4em;
-$srs-min-width: 295px;
-$tooltip-caret: 15px;
-$tooltip-caret-lg: 20px;
-$ism-tooltip-width: 315px;
-$base-icon-size: 20px;
-$modal-close-size: 44px;
-$modal-close-size-lg: 56px;
-$modal-close-indicator: 18px;
-$modal-close-indicator-lg: 20px;
-$polling-size: 60px;
-$polling-border-size: 4px;
+$nc-touch-size: 44px;
+$nc-scrollbar-width: 20px;
+$nc-rotator-height: 1.4em;
+$nc-srs-min-width: 295px;
+$nc-tooltip-caret: 15px;
+$nc-tooltip-caret-lg: 20px;
+$nc-ism-tooltip-width: 315px;
+$nc-base-icon-size: 20px;
+$nc-modal-close-size: 44px;
+$nc-modal-close-size-lg: 56px;
+$nc-modal-close-indicator: 18px;
+$nc-modal-close-indicator-lg: 20px;
+$nc-polling-size: 60px;
+$nc-polling-border-size: 4px;
 
 // Forms
-$textfield-gutter-left: 10px;
-$input-height: 55px;
-$input-label-height: 20px;
-$input-label-bottom: 5px;
-$input-label-bottom-active: 30px;
-$dropdown-chevron-size: 16px;
-$chkbox-size: 8px;
-$chkbox-thickness: 3px;
+$nc-textfield-gutter-left: 10px;
+$nc-input-height: 55px;
+$nc-input-label-height: 20px;
+$nc-input-label-bottom: 5px;
+$nc-input-label-bottom-active: 30px;
+$nc-dropdown-chevron-size: 16px;
+$nc-chkbox-size: 8px;
+$nc-chkbox-thickness: 3px;
 
 // Event Header
-$event-header-tm-short: 35px;
-$event-header-tm-full: 165px;
-$event-header-height: 8rem;
-$cobrand-header-offset: 0.5rem;
-$cobrand-header-logo-height: 3.4rem;
+$nc-event-header-tm-short: 35px;
+$nc-event-header-tm-full: 165px;
+$nc-event-header-height: 8rem;
+$nc-cobrand-header-offset: 0.5rem;
+$nc-cobrand-header-logo-height: 3.4rem;
 
 // Timer
-$timer-size: 55px;
-$timer-size-lg: 60px;
-$timer-border-thickness: 5px;
-$timer-opacity: 0.3;
+$nc-timer-size: 55px;
+$nc-timer-size-lg: 60px;
+$nc-timer-border-thickness: 5px;
+$nc-timer-opacity: 0.3;
 
 // Breadcrumbs
-$breadcrumbs-logo-width: 83px;
-$breadcrumbs-logo-height: 11px;
-$breadcrumbs-max-width: 75px;
-$breadcrumbs-height: 4.9rem;
-$breadcrumbs-chevron-dim: 1.15em;
-$breadcrumbs-spacing: 5px;
-$breadcrumbs-chevron-border-width: 0.1em;
+$nc-breadcrumbs-logo-width: 83px;
+$nc-breadcrumbs-logo-height: 11px;
+$nc-breadcrumbs-max-width: 75px;
+$nc-breadcrumbs-height: 4.9rem;
+$nc-breadcrumbs-chevron-dim: 1.15em;
+$nc-breadcrumbs-spacing: 5px;
+$nc-breadcrumbs-chevron-border-width: 0.1em;
 
 // Modal Dialogs
-$modal-content-height: 60vh;
+$nc-modal-content-height: 60vh;
 
 // Make images flexible
 img,
@@ -119,7 +119,7 @@ input,
 select,
 textarea {
   padding: 0;
-  font-size: $min-input-font-size;
+  font-size: $nc-min-input-font-size;
 }
 
 // Hide IE default clear button

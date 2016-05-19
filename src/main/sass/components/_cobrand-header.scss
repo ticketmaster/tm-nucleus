@@ -3,16 +3,16 @@
 }
 
 .cobrand-header {
-  @include inner-spacing($right: $spacing-sm, $left: $spacing-sm);
+  @include nc-inner-spacing($right: $nc-spacing-sm, $left: $nc-spacing-sm);
 
   z-index: z('above-page');
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: $header-color;
-  border-bottom: 1px solid rgba($cobrand-border-color, 0.25);
+  background-color: $nc-header-color;
+  border-bottom: 1px solid rgba($nc-cobrand-border-color, 0.25);
 
-  @include breakpoint($bp-lg) {
+  @include nc-breakpoint($nc-bp-lg) {
     position: relative;
     height: 0;
     padding: 0;
@@ -20,41 +20,41 @@
 }
 
 .cobrand-header__logo {
-  @include inner-spacing($top: $spacing-sm, $bottom: $spacing-sm);
+  @include nc-inner-spacing($top: $nc-spacing-sm, $bottom: $nc-spacing-sm);
 
   width: 150px;
-  height: $cobrand-header-logo-height;
+  height: $nc-cobrand-header-logo-height;
   background-position: left center;
   background-repeat: no-repeat;
   background-size: contain;
 
-  @include breakpoint($bp-lg) {
+  @include nc-breakpoint($nc-bp-lg) {
     position: absolute;
-    top: $cobrand-header-offset;
-    left: $gutter-width / 2;
+    top: $nc-cobrand-header-offset;
+    left: $nc-gutter-width / 2;
     width: 200px;
-    height: $event-header-height - ($cobrand-header-offset * 2);
-    line-height: $event-header-height;
+    height: $nc-event-header-height - ($nc-cobrand-header-offset * 2);
+    line-height: $nc-event-header-height;
   }
 }
 
 .cobrand-header__tm-logo {
-  @include vertically-center();
+  @include nc-vertically-center();
 
   width: 90px;
   height: 12px;
-  fill: $white;
+  fill: $nc-white;
 
-  @include breakpoint($bp-lg) {
+  @include nc-breakpoint($nc-bp-lg) {
     display: none;
   }
 }
 
 .cobrand-header__verified {
-  @include cobrand-header-logo('../img/verified-pacific.svg');
+  @include nc-cobrand-header-logo('../img/verified-pacific.svg');
 
-  @include target-ie-edge() {
-    @include breakpoint($bp-lg) {
+  @include nc-target-ie-edge() {
+    @include nc-breakpoint($nc-bp-lg) {
       position: absolute;
       top: 0;
       right: 20px;
@@ -67,11 +67,11 @@
   padding-top: 15px;
   background-image: none;
 
-  @include breakpoint($bp-md) {
+  @include nc-breakpoint($nc-bp-md) {
     width: 200px;
   }
 
-  @include breakpoint($bp-lg) {
+  @include nc-breakpoint($nc-bp-lg) {
     padding-top: 7px;
   }
 }
@@ -79,18 +79,18 @@
 .cobrand-header__mlb-svg {
   width: 150px;
 
-  @include breakpoint($bp-md) {
+  @include nc-breakpoint($nc-bp-md) {
     width: 200px;
   }
 
-  @include target-ie() {
+  @include nc-target-ie() {
     height: 20px;
   }
 
-  @include target-ie-edge() {
+  @include nc-target-ie-edge() {
     height: 20px;
 
-    @include breakpoint($bp-lg) {
+    @include nc-breakpoint($nc-bp-lg) {
       position: absolute;
       top: 30px;
       right: 0;
@@ -99,7 +99,7 @@
 }
 
 .cobrand-header__verified--timer {
-  @include breakpoint($bp-lg) {
+  @include nc-breakpoint($nc-bp-lg) {
     display: none;
   }
 }

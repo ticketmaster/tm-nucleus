@@ -2,7 +2,7 @@
 // For normal box-shaped objects, use the regular box-shadow CSS3 property
 // For more info, see: http://thenewcode.com/600/Creating-a-True-Cross-Browser-Drop-Shadow-Effect-With-CSS3-/blog/600/Creating-a-True-Cross-Browser-Drop-Shadow-Effect-With-CSS-amp-SVG-SVG
 
-@mixin drop-shadow($x: $shadow-x, $y: $shadow-y, $blur: $shadow-blur, $spread: $shadow-spread, $color: $shadow-color) {
+@mixin nc-drop-shadow($x: $nc-shadow-x, $y: $nc-shadow-y, $blur: $nc-shadow-blur, $spread: $nc-shadow-spread, $color: $nc-shadow-color) {
 
   // CSS3 drop-shadow filter renders differently, so we need to halve the value
   $modern-blur: $blur / 2;
@@ -18,7 +18,7 @@
   filter: drop-shadow($x $y $modern-blur $color);
 
   // IE10+
-  @include target-ie() {
+  @include nc-target-ie() {
     box-shadow: $x $y $blur $spread $color;
   }
 }

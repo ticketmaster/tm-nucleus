@@ -1,6 +1,6 @@
 $slide-animation: 1s;
 
-@mixin slider($min-ht: 0, $max-ht: 8888px) {
+@mixin nc-slider($min-ht: 0, $max-ht: 8888px) {
   max-height: $min-ht;
   overflow: hidden;
   transition: $slide-animation;
@@ -12,7 +12,7 @@ $slide-animation: 1s;
   }
 }
 
-@mixin slider-ease($min-ht: 0, $max-ht: 1000px) {
+@mixin nc-slider-ease($min-ht: 0, $max-ht: 1000px) {
   overflow: hidden;
   max-height: $min-ht;
 

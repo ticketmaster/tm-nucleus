@@ -1,12 +1,12 @@
 // targets IE10+
-@mixin target-ie() {
+@mixin nc-target-ie() {
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     @content;
   }
 }
 
 // targets IE Edge
-@mixin target-ie-edge() {
+@mixin nc-target-ie-edge() {
   @supports (-ms-accelerator:true) {
     @content;
   }

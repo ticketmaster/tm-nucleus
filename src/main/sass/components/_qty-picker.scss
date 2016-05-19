@@ -4,38 +4,38 @@
 }
 
 .qty-picker__button {
-  @include unbutton($padding: 0);
+  @include nc-unbutton($padding: 0);
 
-  width: $qty-picker-button-size;
-  height: $qty-picker-button-size;
+  width: $nc-qty-picker-button-size;
+  height: $nc-qty-picker-button-size;
   line-height: 0;
-  background: $qty-increment-button-color;
+  background: $nc-qty-increment-button-color;
   border-radius: 100%;
 
-  @include breakpoint($bp-lg) {
+  @include nc-breakpoint($nc-bp-lg) {
     &:focus,
     &:hover {
-      background: $qty-increment-button-hover-color;
+      background: $nc-qty-increment-button-hover-color;
     }
   }
 
   &:active {
-    background: $qty-increment-button-hover-color;
+    background: $nc-qty-increment-button-hover-color;
   }
 }
 
 .qty-picker__button--decrement {
-  background: $qty-decrement-button-color;
+  background: $nc-qty-decrement-button-color;
 
-  @include breakpoint($bp-lg) {
+  @include nc-breakpoint($nc-bp-lg) {
     &:focus,
     &:hover {
-      background: $qty-decrement-button-hover-color;
+      background: $nc-qty-decrement-button-hover-color;
     }
   }
 
   &:active {
-    background: $qty-decrement-button-hover-color;
+    background: $nc-qty-decrement-button-hover-color;
   }
 }
 
@@ -45,23 +45,23 @@
 }
 
 .qty-picker__button.is-disabled {
-  background: $qty-increment-button-disabled-color;
+  background: $nc-qty-increment-button-disabled-color;
 }
 
 .qty-picker__icon-minus,
 .qty-picker__icon-plus {
   width: 18px;
   height: 18px;
-  fill: $white;
+  fill: $nc-white;
 }
 
 .qty-picker__number {
-  @include responsive-font('xl', $qty-picker-button-size);
+  @include nc-responsive-font('xl', $nc-qty-picker-button-size);
 
   display: inline-block;
-  width: $qty-picker-button-size;
-  height: $qty-picker-button-size;
-  color: $text-color;
+  width: $nc-qty-picker-button-size;
+  height: $nc-qty-picker-button-size;
+  color: $nc-text-color;
   text-align: center;
   vertical-align: top;
 

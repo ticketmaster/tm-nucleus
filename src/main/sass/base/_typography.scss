@@ -11,118 +11,118 @@
 }
 
 // return responsive font size
-@function get-quart-size($num) {
-  @return $num + $font-size-factor;
+@function get-quart-size($nc-num) {
+  @return $nc-num + $nc-font-size-factor;
 }
 
-@function get-gallon-size($num) {
-  @return $num + ($font-size-factor * 2);
+@function get-gallon-size($nc-num) {
+  @return $nc-num + ($nc-font-size-factor * 2);
 }
 
 // set default line height or custom
-@function get-lh($font, $lh) {
-  $val: $lh;
-  @if not $lh {
-    $val: calc-lh($font);
+@function get-lh($nc-font, $nc-lh) {
+  $nc-val: $nc-lh;
+  @if not $nc-lh {
+    $nc-val: calc-lh($nc-font);
   }
-  @return $val;
+  @return $nc-val;
 }
 
 // calculate line height based on font size
-@function calc-lh($font-size) {
-  $lh: $header-line-height;
-  @if ($font-size < 1.8) {
-    $lh: $base-line-height;
+@function calc-lh($nc-font-size) {
+  $nc-lh: $nc-header-line-height;
+  @if ($nc-font-size < 1.8) {
+    $nc-lh: $nc-base-line-height;
   }
-  @return $lh;
+  @return $nc-lh;
 }
 
 // retrieve font-size
-@function fetch-font($set, $size: 'pint') {
-  @return map-get(map-get($font-sizes, $set), $size);
+@function fetch-font($nc-set, $nc-size: 'pint') {
+  @return map-get(map-get($nc-font-sizes, $nc-set), $nc-size);
 }
 
-$tm-sans: 'TM Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$monospace: Menlo, Consolas, 'Courier New', monospace;
+$nc-tm-sans: 'TM Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$nc-monospace: Menlo, Consolas, 'Courier New', monospace;
 
 // Typography settings
-$base-font-family: $tm-sans;
-$base-line-height: 1.4;
-$header-line-height: 1.2;
-$header-margin: 10px;
+$nc-base-font-family: $nc-tm-sans;
+$nc-base-line-height: 1.4;
+$nc-header-line-height: 1.2;
+$nc-header-margin: 10px;
 
 // Default font sizes
-$default-font-size: 16px; // for media queries
-$base-font-size: 62.5%;   // == 10px
-$font-size-factor: 0.2;
+$nc-default-font-size: 16px; // for media queries
+$nc-base-font-size: 62.5%;   // == 10px
+$nc-font-size-factor: 0.2;
 
 // Base font sizes
 // DO NOT use these variables elsewhere
 // See styleguide for documentation on defining font-sizes
-$base-xs-font: 1rem;
-$base-sm-font: 1.2rem;
-$base-md-font: 1.4rem;
-$base-lg-font: 1.8rem;
-$base-xl-font: 2.2rem;
-$base-xxl-font: 2.6rem;
-$base-xxxl-font: 4rem;
+$nc-base-xs-font: 1rem;
+$nc-base-sm-font: 1.2rem;
+$nc-base-md-font: 1.4rem;
+$nc-base-lg-font: 1.8rem;
+$nc-base-xl-font: 2.2rem;
+$nc-base-xxl-font: 2.6rem;
+$nc-base-xxxl-font: 4rem;
 
 // Other font sizes
-$body-font-size: $base-md-font;
-$min-input-font-size: 1.6rem; // min required to avoid iOS zooming
+$nc-body-font-size: $nc-base-md-font;
+$nc-min-input-font-size: 1.6rem; // min required to avoid iOS zooming
 
 // Font sizes
-$font-sizes: (
+$nc-font-sizes: (
   'xs': (
-    'pint':   $base-xs-font,
-    'quart':  $base-xs-font,
-    'gallon': get-quart-size($base-xs-font)
+    'pint':   $nc-base-xs-font,
+    'quart':  $nc-base-xs-font,
+    'gallon': get-quart-size($nc-base-xs-font)
   ),
   'sm': (
-    'pint':   $base-sm-font,
-    'quart':  get-quart-size($base-sm-font),
-    'gallon': get-gallon-size($base-sm-font)
+    'pint':   $nc-base-sm-font,
+    'quart':  get-quart-size($nc-base-sm-font),
+    'gallon': get-gallon-size($nc-base-sm-font)
   ),
   'md': (
-    'pint':   $base-md-font,
-    'quart':  get-quart-size($base-md-font),
-    'gallon': get-gallon-size($base-md-font)
+    'pint':   $nc-base-md-font,
+    'quart':  get-quart-size($nc-base-md-font),
+    'gallon': get-gallon-size($nc-base-md-font)
   ),
   'lg': (
-    'pint':   $base-lg-font,
-    'quart':  get-quart-size($base-lg-font),
-    'gallon': get-gallon-size($base-lg-font)
+    'pint':   $nc-base-lg-font,
+    'quart':  get-quart-size($nc-base-lg-font),
+    'gallon': get-gallon-size($nc-base-lg-font)
   ),
   'xl': (
-    'pint':   $base-xl-font,
-    'quart':  get-quart-size($base-xl-font),
-    'gallon': get-gallon-size($base-xl-font)
+    'pint':   $nc-base-xl-font,
+    'quart':  get-quart-size($nc-base-xl-font),
+    'gallon': get-gallon-size($nc-base-xl-font)
   ),
   'xxl': (
-    'pint':   $base-xxl-font,
-    'quart':  get-quart-size($base-xxl-font),
-    'gallon': get-gallon-size($base-xxl-font)
+    'pint':   $nc-base-xxl-font,
+    'quart':  get-quart-size($nc-base-xxl-font),
+    'gallon': get-gallon-size($nc-base-xxl-font)
   ),
   'xxxl': (
-    'pint':   $base-xxxl-font,
-    'quart':  get-quart-size($base-xxxl-font),
-    'gallon': get-gallon-size($base-xxxl-font)
+    'pint':   $nc-base-xxxl-font,
+    'quart':  get-quart-size($nc-base-xxxl-font),
+    'gallon': get-gallon-size($nc-base-xxxl-font)
   )
 );
 
 // Baseline for page
 html {
-  font-size: $base-font-size;
-  color: $text-color;
+  font-size: $nc-base-font-size;
+  color: $nc-text-color;
 }
 
 body {
-  font-family: $base-font-family;
+  font-family: $nc-base-font-family;
   -webkit-font-smoothing: antialiased;
-  line-height: $base-line-height;
-  color: $text-color;
+  line-height: $nc-base-line-height;
+  color: $nc-text-color;
 
-  background-color: $white;
+  background-color: $nc-white;
 }
 
 h1,
@@ -133,7 +133,7 @@ h5,
 h6 {
   margin: 0;
 
-  line-height: $header-line-height;
+  line-height: $nc-header-line-height;
   text-rendering: optimizeLegibility; // Fix the character spacing for headings
 }
 
@@ -150,12 +150,12 @@ strong {
 }
 
 a {
-  color: $link-color;
+  color: $nc-link-color;
   text-decoration: none;
 
   &:active,
   &:hover {
-    color: $link-hover-color;
+    color: $nc-link-hover-color;
     text-decoration: underline;
   }
 

@@ -2,11 +2,11 @@
   height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: $expando-animation;
+  transition: $nc-expando-animation;
 }
 
 .expando-content--open {
   height: auto;
   opacity: 1;
-  transition: $expando-animation-open;
+  transition: $nc-expando-animation-open;
 }

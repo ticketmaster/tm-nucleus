@@ -1,17 +1,17 @@
 .icon-ada {
-  @include icon($ada-icon-color);
+  @include nc-icon($nc-ada-icon-color);
 }
 
 .icon-alert {
-  @include icon($icon-color);
+  @include nc-icon($nc-icon-color);
 }
 
 .icon-check {
-  @include icon($icon-color);
+  @include nc-icon($nc-icon-color);
 }
 
 .icon-chevron {
-  @include icon($icon-color, 13px, 8px);
+  @include nc-icon($nc-icon-color, 13px, 8px);
 }
 
 .icon-chevron--top {
@@ -27,7 +27,7 @@
 }
 
 .icon-chevron-alt {
-  @include icon($icon-color, 12px, 20px);
+  @include nc-icon($nc-icon-color, 12px, 20px);
 }
 
 .icon-chevron-alt--right {
@@ -35,23 +35,23 @@
 }
 
 .icon-menu {
-  @include icon($icon-color);
+  @include nc-icon($nc-icon-color);
 }
 
 .icon-search {
-  @include icon($icon-color);
+  @include nc-icon($nc-icon-color);
 }
 
 .icon-minus {
-  @include icon($icon-color);
+  @include nc-icon($nc-icon-color);
 }
 
 .icon-more {
-  @include icon($icon-color);
+  @include nc-icon($nc-icon-color);
 }
 
 .icon-plus {
-  @include icon($icon-color);
+  @include nc-icon($nc-icon-color);
 }
 
 .icon-plus--circled {
@@ -60,41 +60,41 @@
 }
 
 .icon-close {
-  @include icon($icon-color);
+  @include nc-icon($nc-icon-color);
 
   transform: rotate(45deg);
 }
 
 .icon-resale {
-  @include icon($resale-color);
+  @include nc-icon($nc-resale-color);
 }
 
 .icon-ticket {
-  @include icon($icon-color);
+  @include nc-icon($nc-icon-color);
 }
 
 .icon-caution {
-  @include icon($caution-color);
+  @include nc-icon($nc-caution-color);
 }
 
 .icon-polling-checkmark {
-  @include icon($link-color, $polling-size, $polling-size);
+  @include nc-icon($nc-link-color, $nc-polling-size, $nc-polling-size);
 }
 
 .icon-polling-refresh {
-  @include icon($white);
+  @include nc-icon($nc-white);
 }
 
 .icon-verified {
-  @include icon($verified-icon-ticket-color);
+  @include nc-icon($nc-verified-icon-ticket-color);
 
-  color: $verified-icon-circle-color;
+  color: $nc-verified-icon-circle-color;
 }
 
 .icon-lock {
-  @include icon($caution-color);
+  @include nc-icon($nc-caution-color);
 }
 
 .icon-unlock {
-  @include icon($icon-color);
+  @include nc-icon($nc-icon-color);
 }
