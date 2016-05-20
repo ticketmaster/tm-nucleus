@@ -1,0 +1,75 @@
+.nc-input-group {
+  @include nc-clearfix();
+
+  position: relative;
+}
+
+.nc-input-group__label {
+  @include nc-responsive-font('lg');
+
+  position: absolute;
+  bottom: $nc-input-label-bottom;
+  left: $nc-textfield-gutter-left;
+  color: $nc-label-color;
+  pointer-events: none;
+  transition: $nc-form-label-animation;
+}
+
+.nc-input-group__text-field {
+  @include nc-responsive-font('lg');
+  @include nc-textfield-underline();
+
+  height: $nc-input-height;
+  padding-bottom: 0;
+  padding-left: $nc-textfield-gutter-left;
+  color: $nc-text-color;
+
+  &:focus,
+  &:active {
+    @include nc-textfield-active();
+  }
+}
+
+.nc-input-group.nc-is-error-field {
+  height: 44px;
+  padding-top: 18px;
+  margin-top: 0;
+  border-radius: 0;
+
+  @include nc-breakpoint($nc-bp-md) {
+    border-radius: 5px;
+  }
+}
+
+.nc-input-group__tooltip {
+  position: absolute;
+  top: -10px;
+  right: 7px;
+
+  @include nc-breakpoint($nc-bp-md) {
+    right: -20px;
+  }
+}
+
+.nc-input-group__required {
+  color: $nc-link-color;
+}
+
+// Toggle States
+.nc-input-group__text-field.nc-has-content + .nc-input-group__label,
+.nc-dropdown__select.nc-has-content + .nc-input-group__label {
+  @include nc-form-label();
+
+  bottom: $nc-input-label-bottom-active;
+}
+
+.nc-input-group__text-field:active + .nc-input-group__label,
+.nc-input-group__text-field.nc-has-content:active + .nc-input-group__label,
+.nc-input-group__text-field:focus + .nc-input-group__label,
+.nc-input-group__text-field.nc-has-content:focus + .nc-input-group__label,
+.nc-dropdown__select.nc-has-content:active + .nc-input-group__label,
+.nc-dropdown__select.nc-has-content:focus + .nc-input-group__label {
+  @include nc-form-label($nc-label-color);
+
+  bottom: $nc-input-label-bottom-active;
+}

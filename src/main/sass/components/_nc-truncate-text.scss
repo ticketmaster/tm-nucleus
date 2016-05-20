@@ -1,0 +1,4 @@
+// need to set a width on container in order for truncation to work
+.nc-truncate-text {
+  @include nc-truncate-text();
+}

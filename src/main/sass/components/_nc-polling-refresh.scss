@@ -1,0 +1,10 @@
+.nc-polling-refresh {
+  @include nc-polling-refresh($nc-base-icon-size, $nc-brand-gray);
+}
+
+.nc-polling-refresh__filled {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: z('hide');
+}

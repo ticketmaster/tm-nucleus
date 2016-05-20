@@ -1,0 +1,40 @@
+.nc-delimited-list {
+  @include nc-unstyled-list();
+
+  margin-bottom: 1em;
+}
+
+.nc-delimited-list--embedded {
+  margin-bottom: 0;
+}
+
+.nc-delimited-list__item {
+  @include nc-inner-spacing($top: $nc-spacing-sm, $bottom: $nc-spacing-sm);
+
+  border-top: $nc-base-border-style;
+
+  &:first-child {
+    border-top: 0;
+  }
+}
+
+.nc-delimited-list__item--selected {
+  background-color: $nc-list-item-hover-color;
+}
+
+.nc-delimited-list__item--embedded {
+  @include nc-inner-spacing($nc-spacing-sm);
+}
+
+.nc-delimited-list__item--compact {
+  @include nc-breakpoint($max: $nc-bp-md - 1) {
+    padding: ($nc-spacing-sm / 2) 0;
+    border: 0;
+  }
+}
+
+
+// TODO: clean outs
+.nc-module__content + .nc-delimited-list {
+  border-top: $nc-base-border-style;
+}

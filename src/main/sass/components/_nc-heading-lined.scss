@@ -1,0 +1,44 @@
+.nc-heading-lined {
+  @include nc-outer-spacing($bottom: $nc-spacing-sm);
+  @include nc-inner-spacing($left: $nc-spacing-sm, $right: $nc-spacing-sm);
+
+  position: relative;
+  display: table;
+  color: $nc-alt-text-color;
+  text-align: center;
+  white-space: nowrap;
+
+  &:before,
+  &:after {
+    position: relative;
+    top: 0.63em;
+    display: table-cell;
+    width: 45%;
+    border-top: $nc-base-border-style;
+    content: '';
+  }
+
+  &:before {
+    right: $nc-spacing-sm;
+
+    @include nc-breakpoint($nc-bp-md) {
+      right: increase-spacing($nc-spacing-sm);
+    }
+  }
+
+  &:after {
+    left: $nc-spacing-sm;
+
+    @include nc-breakpoint($nc-bp-md) {
+      left: increase-spacing($nc-spacing-sm);
+    }
+  }
+}
+
+.nc-heading-lined--primary {
+  @include nc-responsive-font('lg');
+}
+
+.nc-heading-lined--secondary {
+  @include nc-responsive-font('md');
+}

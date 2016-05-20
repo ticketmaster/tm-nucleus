@@ -1,0 +1,7 @@
+.nc-checkbox-list {
+  @include nc-unstyled-list();
+}
+
+.nc-checkbox-list__item {
+  @include nc-outer-spacing($top: $nc-spacing-sm);
+}

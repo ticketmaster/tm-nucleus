@@ -1,0 +1,79 @@
+.nc-tooltip {
+  @include nc-drop-shadow();
+  @include nc-tooltip-position('bottom');
+
+  position: relative;
+  background-color: $nc-tooltip-color;
+  border-radius: $nc-base-border-radius;
+
+  &:after {
+    position: absolute;
+    display: block;
+    width: $nc-tooltip-caret;
+    height: $nc-tooltip-caret;
+    background-color: $nc-tooltip-color;
+    content: '';
+    transform: rotate(45deg);
+
+    @include nc-breakpoint($nc-bp-md) {
+      width: $nc-tooltip-caret-lg;
+      height: $nc-tooltip-caret-lg;
+    }
+  }
+}
+
+.nc-tooltip--right {
+  @include nc-tooltip-position('right');
+}
+
+.nc-tooltip--left {
+  @include nc-tooltip-position('left');
+}
+
+.nc-tooltip--top {
+  @include nc-tooltip-position('top');
+}
+
+.nc-tooltip--ism {
+  width: $nc-ism-tooltip-width;
+
+  @include nc-breakpoint($nc-bp-md) {
+    width: $nc-ism-tooltip-width + 20;
+  }
+}
+
+.nc-tooltip__content {
+  @include nc-inner-spacing($nc-spacing-sm);
+  @include nc-responsive-font('sm');
+}
+
+.nc-tooltip__srs {
+  @include nc-outer-spacing($bottom: -($nc-spacing-sm));
+  @include nc-inner-spacing($bottom: $nc-spacing-sm);
+
+  border-bottom: $nc-base-border-style;
+}
+
+.nc-tooltip__delimited-list {
+  @include nc-inner-spacing($right: $nc-spacing-sm, $left: $nc-spacing-sm);
+  @include nc-responsive-font('sm');
+
+  margin-bottom: 0;
+}
+
+.nc-tooltip__delimited-list + .nc-tooltip__content {
+  @include nc-outer-spacing($right: $nc-spacing-sm, $left: $nc-spacing-sm);
+
+  padding-right: 0;
+  padding-left: 0;
+  border-top: $nc-base-border-style;
+}
+
+.nc-tooltip--ism__subtotal {
+  @include nc-responsive-font('xl');
+}
+
+.nc-tooltip__legal {
+  @include nc-inner-spacing($right: $nc-spacing-sm, $bottom: $nc-spacing-sm, $left: $nc-spacing-sm);
+  @include nc-responsive-font('xs');
+}

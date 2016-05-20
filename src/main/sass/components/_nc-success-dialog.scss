@@ -1,0 +1,23 @@
+.nc-success-dialog {
+  border: $nc-success-border-style;
+}
+
+.nc-success-dialog__header {
+  background-color: $nc-success-color;
+}
+
+.nc-success-dialog__title {
+  @include nc-dialog-title('sm');
+}
+
+.nc-success-dialog__title-icon {
+  @include nc-dialog-title-icon();
+}
+
+.nc-success-dialog__title-text {
+  @include nc-dialog-title-text();
+}
+
+.nc-success-dialog__content {
+  @include nc-dialog-content();
+}

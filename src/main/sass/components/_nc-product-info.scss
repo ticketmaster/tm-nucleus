@@ -1,0 +1,12 @@
+.nc-product-info__title {
+  @include nc-responsive-font('lg');
+}
+
+.nc-product-info__compact-title {
+  @include nc-responsive-font('sm');
+}
+
+.nc-product-info__desc {
+  @include nc-responsive-font('sm');
+  @include nc-alt-copy();
+}

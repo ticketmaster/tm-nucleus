@@ -1,0 +1,136 @@
+.nc-modal-dialog {
+  @include nc-drop-shadow();
+
+  width: calc(100vw - #{$nc-gutter-width});
+
+  @include nc-breakpoint($nc-bp-md) {
+    max-width: 600px;
+  }
+}
+
+.nc-modal-dialog--center {
+  @include nc-dead-center(fixed);
+}
+
+.nc-modal-dialog--fullscreen {
+  @include nc-breakpoint($max: $nc-bp-md - 1) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+  }
+
+  @include nc-breakpoint($nc-bp-md) {
+    @include nc-dead-center(fixed);
+  }
+}
+
+.nc-modal-dialog__header {
+  position: relative;
+  background-color: $nc-modal-color;
+  border-top-right-radius: $nc-base-border-radius;
+  border-top-left-radius: $nc-base-border-radius;
+}
+
+.nc-modal-dialog__title {
+  @include nc-dialog-title('lg');
+
+  padding-right: $nc-modal-close-size;
+  padding-left: $nc-modal-close-size;
+  text-align: center;
+
+  @include nc-breakpoint($nc-bp-md) {
+    padding-right: $nc-modal-close-size-lg;
+    padding-left: $nc-modal-close-size-lg;
+  }
+}
+
+.nc-modal-dialog__close {
+  @include nc-unbutton($padding: 0);
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: $nc-modal-close-size;
+  height: $nc-modal-close-size;
+  line-height: 0;
+
+  @include nc-breakpoint($nc-bp-md) {
+    width: $nc-modal-close-size-lg;
+    height: $nc-modal-close-size-lg;
+  }
+}
+
+.nc-modal-dialog__close-indicator {
+  @include nc-icon($nc-white, $nc-modal-close-indicator, $nc-modal-close-indicator);
+
+  transform: rotate(45deg);
+
+  @include nc-breakpoint($nc-bp-md) {
+    width: $nc-modal-close-indicator-lg;
+    height: $nc-modal-close-indicator-lg;
+  }
+}
+
+.nc-modal-dialog__back {
+  @include nc-unbutton($padding: 0);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $nc-modal-close-size;
+  height: $nc-modal-close-size;
+  line-height: 0;
+
+  @include nc-breakpoint($nc-bp-md) {
+    width: $nc-modal-close-size-lg;
+    height: $nc-modal-close-size-lg;
+  }
+}
+
+.nc-modal-dialog__back-indicator {
+  @include nc-icon($nc-white, $nc-modal-close-indicator, $nc-modal-close-indicator);
+
+  transform: rotate(90deg);
+
+  @include nc-breakpoint($nc-bp-md) {
+    width: $nc-modal-close-indicator-lg;
+    height: $nc-modal-close-indicator-lg;
+  }
+}
+
+.nc-modal-dialog__content {
+  @include nc-dialog-content($color: $nc-text-color, $pad: $nc-spacing-md);
+
+  max-height: $nc-modal-content-height;
+  overflow-y: auto;
+}
+
+.nc-modal-dialog__content--informational {
+  border-bottom-right-radius: $nc-base-border-radius;
+  border-bottom-left-radius: $nc-base-border-radius;
+}
+
+.nc-modal-dialog__content--fullscreen {
+  height: 100%;
+  max-height: none;
+}
+
+.nc-modal-dialog__footer {
+  @include nc-inner-spacing($nc-spacing-sm);
+  @include nc-responsive-font('md');
+
+  background: $nc-page-section-bg-color;
+  border-top: $nc-base-border-style;
+  border-bottom-right-radius: $nc-base-border-radius;
+  border-bottom-left-radius: $nc-base-border-radius;
+}
+
+.nc-modal-dialog__button {
+  @include nc-breakpoint($max: $nc-bp-md - 1) {
+    width: 100%;
+  }
+}

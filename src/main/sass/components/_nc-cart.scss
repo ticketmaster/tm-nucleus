@@ -1,0 +1,26 @@
+.nc-cart {
+  @include nc-clearfix();
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: z('cart');
+  width: 100%;
+  height: auto;
+  padding: $nc-spacing-sm $nc-gutter-width-half $nc-spacing-md $nc-gutter-width-half;
+  white-space: nowrap;
+  background: $nc-page-section-bg-color;
+  border-top: $nc-base-border-style;
+}
+
+.nc-cart__total {
+  text-align: right;
+}
+
+.nc-cart__total-amt {
+  @include nc-responsive-font('xl');
+}
+
+.nc-cart__total-desc {
+  @include nc-alt-copy('md');
+}

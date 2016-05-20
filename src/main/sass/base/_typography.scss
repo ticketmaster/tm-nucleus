@@ -10,36 +10,40 @@
   font-weight: bold;
 }
 
-// return responsive font size
-@function get-quart-size($nc-num) {
-  @return $nc-num + $nc-font-size-factor;
+@function get-type-size($set) {
+
 }
 
-@function get-gallon-size($nc-num) {
-  @return $nc-num + ($nc-font-size-factor * 2);
+// return responsive font size
+@function get-quart-size($num) {
+  @return $num + $nc-font-size-factor;
+}
+
+@function get-gallon-size($num) {
+  @return $num + ($nc-font-size-factor * 2);
 }
 
 // set default line height or custom
-@function get-lh($nc-font, $nc-lh) {
-  $nc-val: $nc-lh;
-  @if not $nc-lh {
-    $nc-val: calc-lh($nc-font);
+@function get-lh($font, $lh) {
+  $val: $lh;
+  @if not $lh {
+    $val: calc-lh($font);
   }
-  @return $nc-val;
+  @return $val;
 }
 
 // calculate line height based on font size
-@function calc-lh($nc-font-size) {
-  $nc-lh: $nc-header-line-height;
-  @if ($nc-font-size < 1.8) {
-    $nc-lh: $nc-base-line-height;
+@function calc-lh($font-size) {
+  $lh: $nc-header-line-height;
+  @if ($font-size < 1.8) {
+    $lh: $nc-base-line-height;
   }
-  @return $nc-lh;
+  @return $lh;
 }
 
 // retrieve font-size
-@function fetch-font($nc-set, $nc-size: 'pint') {
-  @return map-get(map-get($nc-font-sizes, $nc-set), $nc-size);
+@function fetch-font($set, $size: 'pint') {
+  @return map-get(map-get($nc-font-sizes, $set), $size);
 }
 
 $nc-tm-sans: 'TM Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -47,6 +51,7 @@ $nc-monospace: Menlo, Consolas, 'Courier New', monospace;
 
 // Typography settings
 $nc-base-font-family: $nc-tm-sans;
+$nc-type-scale-ratio: 1.125;
 $nc-base-line-height: 1.4;
 $nc-header-line-height: 1.2;
 $nc-header-margin: 10px;
