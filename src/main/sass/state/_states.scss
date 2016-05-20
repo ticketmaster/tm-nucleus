@@ -1,28 +1,28 @@
-.is-hidden {
+.nc-is-hidden {
   display: none;
 }
 
-.is-invisible {
+.nc-is-invisible {
   visibility: hidden;
 }
 
-.is-clickable {
+.nc-is-clickable {
   cursor: pointer;
 }
 
-.is-scrollable {
+.nc-is-scrollable {
   overflow: auto;
 }
 
-.is-error-message {
+.nc-is-error-message {
   color: $nc-alert-color;
 }
 
-.is-success-message {
+.nc-is-success-message {
   color: $nc-success-color;
 }
 
-.is-offscreen {
+.nc-is-offscreen {
   position: absolute;
   top: auto;
   left: -10000px;

@@ -1,0 +1,41 @@
+$nc-chkbox-label-offset: 7px;
+
+.nc-chkbox {
+  @include nc-clearfix();
+
+  position: relative;
+}
+
+.nc-chkbox__input {
+  float: left;
+  width: $nc-base-icon-size;
+  height: $nc-base-icon-size;
+  cursor: pointer;
+  background-color: $nc-white;
+  border: $nc-input-border-style;
+  border-radius: $nc-base-border-radius;
+  appearance: none;
+}
+
+.nc-chkbox__input:checked {
+  background-color: $nc-link-color;
+  border: $nc-focused-border-style;
+}
+
+.nc-chkbox__input:checked:after {
+  position: absolute;
+  left: ($nc-base-icon-size - $nc-chkbox-size) / 2;
+  display: block;
+  width: $nc-chkbox-size;
+  height: $nc-chkbox-size * 2;
+  background-color: $nc-link-color;
+  border: solid $nc-white;
+  border-width: 0 $nc-chkbox-thickness $nc-chkbox-thickness 0;
+  content: '';
+  transform: rotate(45deg);
+}
+
+.nc-chkbox__label {
+  display: block;
+  margin-left: $nc-base-icon-size + $nc-chkbox-label-offset;
+}
