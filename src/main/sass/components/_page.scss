@@ -20,9 +20,10 @@
 
 // use frame to set max-width and other structural styling here
 .page__frame {
-  @include container($nc-bp-xl);
   @include nc-clearfix();
 
+  max-width: $nc-bp-xl;
+  margin: \auto;
   clear: both;
 }
 
@@ -32,6 +33,6 @@
   @include nc-responsive-font('md');
 
   @include nc-breakpoint($nc-bp-lg) {
-    @include pad($nc-gutter-width no-gutters);
+    padding: 0 $nc-gutter-width;
   }
 }

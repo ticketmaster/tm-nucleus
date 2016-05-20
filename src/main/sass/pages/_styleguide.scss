@@ -1,42 +1,43 @@
 // config
-$code-bg-color: $brand-gray4;
-$main-hdg-color: $brand-primary;
-$secondary-hdg-color: $brand-accent;
-$table-alt-bg-color: $brand-gray4;
+$code-bg-color: $nc-brand-gray4;
+$main-hdg-color: $nc-brand-primary;
+$secondary-hdg-color: $nc-brand-accent;
+$table-alt-bg-color: $nc-brand-gray4;
 
 $sg-swatch-height: 70px;
 $sg-spacing: 1.5em;
 
 @mixin code-style($sz: sm) {
-  @include fixed-font($sz);
+  @include nc-fixed-font($sz);
 
   padding: 2px 4px;
-  border: $base-border-style;
+  border: $nc-base-border-style;
   border-radius: 4px;
-  font-family: $monospace;
+  font-family: $nc-monospace;
   font-weight: normal;
   background-color: $code-bg-color;
 }
 
 .html,
 .scss {
-  @include responsive-font('sm');
+  @include nc-responsive-font('sm');
 }
 
 .sg__header {
-  @include span(full);
-  @include outer-spacing($bottom: $spacing-lg);
+  @include nc-outer-spacing($bottom: $nc-spacing-lg);
 
-  padding-top: $spacing-sm;
-  padding-bottom: $spacing-sm;
+  width: 100%;
+  float: left;
+  padding-top: $nc-spacing-sm;
+  padding-bottom: $nc-spacing-sm;
 
   line-height: 1;
 
-  background-color: $header-color;
+  background-color: $nc-header-color;
 
-  @include breakpoint($bp-md) {
-    padding-top: increase-spacing($spacing-sm);
-    padding-bottom: increase-spacing($spacing-sm);
+  @include nc-breakpoint($nc-bp-md) {
+    padding-top: increase-spacing($nc-spacing-sm);
+    padding-bottom: increase-spacing($nc-spacing-sm);
   }
 }
 
@@ -44,82 +45,85 @@ $sg-spacing: 1.5em;
   width: 70px;
   height: 70px;
 
-  fill: $white;
+  fill: $nc-white;
 }
 
 .sg__version {
-  @include fixed-font('xs');
+  @include nc-fixed-font('xs');
 }
 
 .sg__name {
-  @include responsive-font('md');
+  @include nc-responsive-font('md');
 
   font-weight: bold;
-  color: $white;
+  color: $nc-white;
 }
 
 .sg__nav {
-  @include span(full);
-  @include outer-spacing($bottom: $spacing-lg);
-  @include responsive-font('sm');
+  @include nc-outer-spacing($bottom: $nc-spacing-lg);
+  @include nc-responsive-font('sm');
 
-  padding-bottom: $spacing-lg;
+  width: 100%;
+  float: left;
+  padding: 0 $nc-gutter-width-half $nc-spacing-lg $nc-gutter-width-half;
+  border-bottom: $nc-base-border-style;
 
-  border-bottom: $base-border-style;
-
-  @include breakpoint($bp-md) {
-    @include span(3);
-
-    padding-bottom: increase-spacing($spacing-lg);
-
+  @include nc-breakpoint($nc-bp-md) {
+    width: 25%;
+    padding: 0 $nc-gutter-width-half increase-spacing($nc-spacing-lg) $nc-gutter-width-half;
     border-bottom: 0;
   }
 
-  @include breakpoint($bp-lg) {
-    @include span(2);
+  @include nc-breakpoint($nc-bp-lg) {
+    width: 20%;
   }
 }
 
 .sg__main {
-  @include breakpoint($bp-md) {
-    @include span(9);
+  width: 100%;
+  float: left;
+
+  @include nc-breakpoint($nc-bp-md) {
+    width: 75%;
+    padding: 0 $nc-gutter-width-half;
   }
 
-  @include breakpoint($bp-lg) {
-    @include span(10);
+  @include nc-breakpoint($nc-bp-lg) {
+    width: 80%;
   }
 }
 
 .sg__section {
-  @include span(full);
-  @include outer-spacing($bottom: $spacing-lg);
-  @include responsive-font('md');
+  @include nc-outer-spacing($bottom: $nc-spacing-lg);
+  @include nc-responsive-font('md');
 
-  padding-bottom: $spacing-lg;
+  width: 100%;
+  float: left;
+  padding: 0 $nc-gutter-width-half $nc-spacing-lg $nc-gutter-width-half;
 
-  border-bottom: $base-border-style;
+  border-bottom: $nc-base-border-style;
 
-  @include breakpoint($bp-md) {
-    padding-bottom: increase-spacing($spacing-lg);
+  @include nc-breakpoint($nc-bp-md) {
+    padding-bottom: increase-spacing($nc-spacing-lg);
   }
 }
 
 
 .sg__hdg {
-  @include hdg-text('xxl', $main-hdg-color);
+  @include nc-hdg-text('xxl', $main-hdg-color);
 
   text-transform: uppercase;
 }
 
 
 .sg__subhdg {
-  @include hdg-text('md', $secondary-hdg-color);
+  @include nc-hdg-text('md', $secondary-hdg-color);
 
   text-transform: uppercase;
 }
 
 .sg__subhdg2 {
-  @include hdg-text('sm', $alt-text-color, 5px);
+  @include nc-hdg-text('sm', $nc-alt-text-color, 5px);
 
   margin-top: 2em;
 
@@ -127,7 +131,7 @@ $sg-spacing: 1.5em;
 }
 
 .sg__subhdg3 {
-  @include hdg-text('sm', $text-color);
+  @include nc-hdg-text('sm', $nc-text-color);
 
   margin-top: 2em;
 
@@ -137,7 +141,7 @@ $sg-spacing: 1.5em;
 
 
 .sg__list {
-  @include unstyled-list();
+  @include nc-unstyled-list();
 
   margin-bottom: 1em;
 
@@ -152,7 +156,7 @@ $sg-spacing: 1.5em;
 .sg__table {
   margin-bottom: 1em;
 
-  @include breakpoint($bp-md) {
+  @include nc-breakpoint($nc-bp-md) {
     display: inline-block;
 
     vertical-align: top;
@@ -169,7 +173,7 @@ $sg-spacing: 1.5em;
 }
 
 .sg__table-cell {
-  @include inner-spacing(false, 0, $spacing-sm, $spacing-sm, 0);
+  @include nc-inner-spacing(false, 0, $nc-spacing-sm, $nc-spacing-sm, 0);
 
   vertical-align: top;
 }
@@ -211,11 +215,11 @@ $sg-spacing: 1.5em;
   width: 100%;
   height: $sg-swatch-height;
 
-  border-radius: $base-border-radius * 2;
+  border-radius: $nc-base-border-radius * 2;
 }
 
 
-@each $color, $shades in $palette {
+@each $color, $shades in $nc-palette {
   @each $name, $shade in $shades {
     .sg__swatch--#{$name} {
       background: $shade;
@@ -229,10 +233,10 @@ $sg-spacing: 1.5em;
           or $name == 'ridge'
           or $name == 'havasu'
         ) {
-          color: $black;
+          color: $nc-black;
         }
         @else {
-          color: $white;
+          color: $nc-white;
         }
 
         content: '#{$shade}';
@@ -246,11 +250,11 @@ $sg-spacing: 1.5em;
 
   margin-bottom: 5px;
 
-  @include breakpoint($bp-md) {
+  @include nc-breakpoint($nc-bp-md) {
     width: 13vw;
   }
 
-  @include breakpoint($bp-lg) {
+  @include nc-breakpoint($nc-bp-lg) {
     width: 15vw;
   }
 
@@ -286,130 +290,130 @@ $sg-spacing: 1.5em;
 }
 
 .sg__swatch--pacific-darker25 {
-  background: $brand-primary-darker25;
+  background: $nc-brand-primary-darker25;
 
   &:before {
-    color: $white;
+    color: $nc-white;
 
-    content: '#{$brand-primary-darker25}';
+    content: '#{$nc-brand-primary-darker25}';
   }
 }
 
 .sg__swatch--pacific-lighter50 {
-  background: $brand-primary-lighter50;
+  background: $nc-brand-primary-lighter50;
 
   &:before {
-    content: '#{$brand-primary-lighter50}';
+    content: '#{$nc-brand-primary-lighter50}';
   }
 }
 
 .sg__swatch--pacific-lighter75 {
-  background: $brand-primary-lighter75;
+  background: $nc-brand-primary-lighter75;
 
   &:before {
-    content: '#{$brand-primary-lighter75}';
+    content: '#{$nc-brand-primary-lighter75}';
   }
 }
 
 .sg__swatch--pacific-lighter87 {
-  background: $brand-primary-lighter87;
+  background: $nc-brand-primary-lighter87;
 
   &:before {
-    content: '#{$brand-primary-lighter87}';
+    content: '#{$nc-brand-primary-lighter87}';
   }
 }
 
 .sg__swatch--cascade-darker25 {
-  background: $brand-gray2-darker25;
+  background: $nc-brand-gray2-darker25;
 
   &:before {
-    color: $white;
+    color: $nc-white;
 
-    content: '#{$brand-gray2-darker25}';
+    content: '#{$nc-brand-gray2-darker25}';
   }
 }
 
 .sg__swatch--cascade-lighter50 {
-  background: $brand-gray2-lighter50;
+  background: $nc-brand-gray2-lighter50;
 
   &:before {
-    content: '#{$brand-gray2-lighter50}';
+    content: '#{$nc-brand-gray2-lighter50}';
   }
 }
 
 .sg__swatch--cascade-lighter75 {
-  background: $brand-gray2-lighter75;
+  background: $nc-brand-gray2-lighter75;
 
   &:before {
-    content: '#{$brand-gray2-lighter75}';
+    content: '#{$nc-brand-gray2-lighter75}';
   }
 }
 
 .sg__swatch--yosemite-darker25 {
-  background: $brand-cta-darker25;
+  background: $nc-brand-cta-darker25;
 
   &:before {
-    color: $white;
+    color: $nc-white;
 
-    content: '#{$brand-cta-darker25}';
+    content: '#{$nc-brand-cta-darker25}';
   }
 }
 
 .sg__swatch--yosemite-lighter75 {
-  background: $brand-cta-lighter75;
+  background: $nc-brand-cta-lighter75;
 
   &:before {
-    content: '#{$brand-cta-lighter75}';
+    content: '#{$nc-brand-cta-lighter75}';
   }
 }
 
 .sg__swatch--helen-darker25 {
-  background: $brand-alert-darker25;
+  background: $nc-brand-alert-darker25;
 
   &:before {
-    color: $white;
+    color: $nc-white;
 
-    content: '#{$brand-alert-darker25}';
+    content: '#{$nc-brand-alert-darker25}';
   }
 }
 
 .sg__swatch--helen-lighter75 {
-  background: $brand-alert-lighter75;
+  background: $nc-brand-alert-lighter75;
 
   &:before {
-    content: '#{$brand-alert-lighter75}';
+    content: '#{$nc-brand-alert-lighter75}';
   }
 }
 
 .sg__swatch--catalina-lighter50 {
-  background: $brand-accent-lighter50;
+  background: $nc-brand-accent-lighter50;
 
   &:before {
-    content: '#{$brand-accent-lighter50}';
+    content: '#{$nc-brand-accent-lighter50}';
   }
 }
 
 
 
 .sg__swatches {
-  @include clearfix();
+  @include nc-clearfix();
 
-  @include breakpoint($bp-md) {
+  @include nc-breakpoint($nc-bp-md) {
     display: flex;
     flex-wrap: wrap;
   }
 }
 
 .sg__swatch-group {
-  @include outer-spacing($bottom: $spacing-md);
+  @include nc-outer-spacing($bottom: $nc-spacing-md);
 
-  @include breakpoint($bp-md) {
+  @include nc-breakpoint($nc-bp-md) {
     display: inline-block;
     width: 45%;
     margin-right: 20px;
   }
 
-  @include breakpoint($bp-lg) {
+  @include nc-breakpoint($nc-bp-lg) {
     width: 30%;
   }
 }
@@ -430,14 +434,14 @@ $sg-spacing: 1.5em;
 }
 
 .sg__swatch-state-usage {
-  @include fixed-font('xs');
+  @include nc-fixed-font('xs');
 
   margin: 5px 0 0 5px;
 }
 
 
 // font sizes
-@each $name, $sizes in $font-sizes {
+@each $name, $sizes in $nc-font-sizes {
   .sg__#{$name}-font-size {
     $size: fetch-font($name, 'pint');
 
@@ -462,12 +466,12 @@ $sg-spacing: 1.5em;
   }
 
   .sg__#{$name}-font-size-responsive {
-    @include responsive-font($name);
+    @include nc-responsive-font($name);
   }
 }
 
 .sg__font-usage {
-  @include responsive-font('sm');
+  @include nc-responsive-font('sm');
 }
 
 // text styles
@@ -477,7 +481,7 @@ $sg-spacing: 1.5em;
 
 
 // generate breakpoint classes
-@each $device, $px in $breakpoints {
+@each $device, $px in $nc-breakpoints {
   .sg__#{$device}-bp {
     &:before {
       content: '#{$px} - ';
@@ -485,7 +489,7 @@ $sg-spacing: 1.5em;
   }
 }
 
-@each $device, $px in $breakpoints {
+@each $device, $px in $nc-breakpoints {
   .sg__#{$device}-limit {
     &:after {
       content: ' (up to #{$px - 1})';
@@ -504,8 +508,8 @@ $sg-spacing: 1.5em;
 .sg__list-box {
   margin-bottom: 1em;
 
-  background-color: $white;
-  border: $base-border-style;
+  background-color: $nc-white;
+  border: $nc-base-border-style;
 }
 
 
@@ -521,35 +525,35 @@ $sg-spacing: 1.5em;
 
 // sec-row-seat
 .sg__srs {
-  @include outer-spacing($bottom: $spacing-md);
+  @include nc-outer-spacing($bottom: $nc-spacing-md);
 
-  width: $srs-min-width;
+  width: $nc-srs-min-width;
 }
 
 .sg__ism-tooltip {
-  @include outer-spacing($bottom: $spacing-md);
+  @include nc-outer-spacing($bottom: $nc-spacing-md);
 }
 
 .sg__input-wrapper {
-  @include outer-spacing($bottom: $spacing-md);
+  @include nc-outer-spacing($bottom: $nc-spacing-md);
 
   width: 33%;
   // padding: 10px;
 }
 
 .sg__module {
-  @include outer-spacing($bottom: $spacing-md);
+  @include nc-outer-spacing($bottom: $nc-spacing-md);
 
   width: 100%;
 
-  @include breakpoint($bp-md) {
+  @include nc-breakpoint($nc-bp-md) {
     width: 350px;
   }
 }
 
 
 .sg__unstyled-list {
-  @include unstyled-list();
+  @include nc-unstyled-list();
 }
 
 
@@ -557,7 +561,7 @@ $sg-spacing: 1.5em;
   width: 300px;
   margin-bottom: 20px;
 
-  @include breakpoint($bp-md) {
+  @include nc-breakpoint($nc-bp-md) {
     width: 600px;
   }
 }
@@ -566,18 +570,18 @@ $sg-spacing: 1.5em;
   width: 600px;
   padding: 50px;
   margin-bottom: 20px;
-  background-color: $overlay-color;
+  background-color: $nc-overlay-color;
 }
 
 .sg__breadcrumbs {
-  @include outer-spacing($bottom: $spacing-md);
+  @include nc-outer-spacing($bottom: $nc-spacing-md);
 
   &:last-child {
-    @include outer-spacing($bottom: 0);
+    @include nc-outer-spacing($bottom: 0);
   }
 }
 
 .sg__polling {
   width: 20px;
-  background-color: $brand-gray;
+  background-color: $nc-brand-gray;
 }
