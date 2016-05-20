@@ -1,0 +1,23 @@
+.nc-alert-dialog {
+  border: $nc-alert-border-style;
+}
+
+.nc-alert-dialog__header {
+  background-color: $nc-alert-color;
+}
+
+.nc-alert-dialog__title {
+  @include nc-dialog-title('sm');
+}
+
+.nc-alert-dialog__title-icon {
+  @include nc-dialog-title-icon();
+}
+
+.nc-alert-dialog__title-text {
+  @include nc-dialog-title-text();
+}
+
+.nc-alert-dialog__content {
+  @include nc-dialog-content();
+}

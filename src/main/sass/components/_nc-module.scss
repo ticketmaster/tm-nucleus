@@ -1,0 +1,26 @@
+.nc-module {
+  @include nc-drop-shadow();
+
+  position: relative;
+  background: $nc-white;
+}
+
+.nc-module--perforated {
+  &:after {
+    position: absolute;
+    bottom: -3px;
+    display: block;
+    width: 100%;
+    height: 5px;
+    background: transparent url(map-get($nc-svgs, pedge)) repeat-x 0 0 scroll;
+    content: '';
+  }
+}
+
+.nc-module__content {
+  @include nc-inner-spacing($nc-spacing-sm);
+}
+
+.nc-module__srs {
+  border-bottom: $nc-base-border-style;
+}

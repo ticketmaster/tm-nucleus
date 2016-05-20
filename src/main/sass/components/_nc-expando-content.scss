@@ -1,0 +1,12 @@
+.nc-expando-content {
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: $nc-expando-animation;
+}
+
+.nc-expando-content--open {
+  height: auto;
+  opacity: 1;
+  transition: $nc-expando-animation-open;
+}

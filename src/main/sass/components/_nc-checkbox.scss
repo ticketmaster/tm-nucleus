@@ -1,0 +1,34 @@
+.nc-checkbox {
+  @include nc-clearfix();
+
+  position: relative;
+}
+
+.nc-checkbox__input {
+  display: none;
+}
+
+.nc-checkbox__label {
+  display: inline-block;
+  padding-left: $nc-base-icon-size + 10px;
+  cursor: pointer;
+}
+
+.nc-checkbox__icon {
+  @include nc-icon($nc-white, 16px, 16px);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $nc-base-icon-size;
+  height: $nc-base-icon-size;
+  margin-top: 0.1em;
+  background-color: $nc-white;
+  border: $nc-input-border-style;
+  border-radius: $nc-base-border-radius;
+}
+
+.nc-checkbox__input:checked ~ .nc-checkbox__label > .nc-checkbox__icon {
+  background-color: $nc-link-color;
+  border: 0;
+}

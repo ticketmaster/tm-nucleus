@@ -1,0 +1,11 @@
+.nc-button-outlined {
+  @include nc-btn($nc-alert-color, $hoverstate: true, $outlined: true);
+}
+
+.nc-button-outlined--static {
+  padding: 0 20px;
+}
+
+.nc-button-outlined--full {
+  width: 100%;
+}

@@ -1,0 +1,22 @@
+.nc-tile-selection {
+  @include nc-tile();
+}
+
+.nc-tile-selection__content {
+  @include nc-inner-spacing($nc-spacing-sm);
+
+  color: $nc-alt-text-color;
+}
+
+.nc-tile-selection__content:not(:first-child) {
+  border-top: $nc-base-border-style;
+}
+
+.nc-tile-selection--selected {
+  border: $nc-tile-selected-style;
+}
+
+.nc-tile-selection__selected-text {
+  font-weight: bold;
+  color: $nc-link-color;
+}

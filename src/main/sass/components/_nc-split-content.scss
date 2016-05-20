@@ -1,0 +1,39 @@
+.nc-split-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.nc-split-content__primary {
+  flex: 1 1 100%;
+}
+
+.nc-split-content__primary--top {
+  align-self: flex-start;
+}
+
+.nc-split-content__secondary {
+  flex: 0 0 auto;
+  padding-left: $nc-spacing-sm;
+
+  @include nc-breakpoint($nc-bp-md) {
+    padding-left: increase-spacing($nc-spacing-sm);
+  }
+
+  // we don't want left padding if it's the first item
+  &:first-child {
+    padding-left: 0;
+  }
+}
+
+.nc-split-content__secondary--top {
+  align-self: flex-start;
+}
+
+.nc-split-content__secondary + .nc-split-content__primary {
+  padding-left: $nc-spacing-sm;
+
+  @include nc-breakpoint($nc-bp-md) {
+    padding-left: increase-spacing($nc-spacing-sm);
+  }
+}

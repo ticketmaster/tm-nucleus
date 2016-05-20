@@ -1,0 +1,22 @@
+.nc-expando-button {
+  @include nc-unbutton($padding: 0);
+
+  line-height: 0;
+  vertical-align: middle;
+}
+
+.nc-expando-button--container {
+  width: 19px;
+  height: 19px;
+  border: $nc-input-border-style;
+  border-radius: 100%;
+}
+
+.nc-expando-button__icon-chevron {
+  transition: $nc-expando-animation;
+}
+
+.nc-expando-button__icon-chevron--open {
+  transform: rotate(180deg);
+  transition: $nc-expando-animation;
+}

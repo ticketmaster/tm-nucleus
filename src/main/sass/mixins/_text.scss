@@ -1,4 +1,7 @@
-// mixins
+@mixin nc-type-scale($set, $heading: false, $responsive: true) {
+  
+}
+
 @mixin nc-responsive-font($set: 'md', $lh: false) {
   $pint: fetch-font($set);
 
