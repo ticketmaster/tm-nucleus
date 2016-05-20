@@ -40,7 +40,7 @@
     "gulp-svgmin": "^1.2.0",
     "gulp-svgstore": "^5.0.4",
     "lodash": "^3.10.1",
-    "node-sass": "3.4.2",
+    "node-sass": "3.5.3",
     "normalize.css": "3.0.3",
     "svg4everybody": "^2.0.0"
   }

@@ -111,6 +111,10 @@ $nc-font-sizes: (
 );
 
 // Baseline for page
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 html {
   font-size: $nc-base-font-size;
   color: $nc-text-color;
