@@ -1,0 +1,73 @@
+$radio-label-offset: 7px;
+$radio-label-offset-lg: 15px;
+$icon-size-lg: 24px;
+
+.radio,
+.radio--lg {
+  @include clearfix();
+
+  position: relative;
+}
+
+.radio__input,
+.radio__input--lg {
+  position: absolute;
+  opacity: 0;
+}
+
+.radio__label,
+.radio__label--lg {
+  display: inline-block;
+  padding-left: $base-icon-size + $radio-label-offset;
+  cursor: pointer;
+}
+
+.radio__icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: $base-icon-size;
+  height: $base-icon-size;
+  background-color: $white;
+  border: $input-border-style;
+  border-radius: $circle-border-radius;
+}
+
+.radio__input:checked ~ .radio__label > .radio__icon:after,
+.radio__input--lg:checked ~ .radio__label--lg > .radio__icon:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: $base-icon-size / 2;
+  height: $base-icon-size / 2;
+  margin-top: - ($base-icon-size / 4);
+  margin-left: - ($base-icon-size / 4);
+  background-color: $link-color;
+  border-radius: 50%;
+  content: '';
+}
+
+// Large radio button specific rules
+.radio__label--lg {
+  @include hdg-text('lg', $brand-gray2, $bold: false);
+
+  padding-left: $icon-size-lg + $radio-label-offset-lg;
+}
+
+.radio__input--lg:checked ~ .radio__label--lg {
+  @include hdg-text('lg', $brand-primary);
+}
+
+.radio__input--lg:checked ~ .radio__label--lg > .radio__icon:after {
+  width: 14px;
+  height: 14px;
+  margin-top: - $radio-label-offset;
+  margin-left: - $radio-label-offset;
+}
+
+.radio__label--lg > .radio__icon {
+  width: $icon-size-lg;
+  height: $icon-size-lg;
+}

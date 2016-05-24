@@ -1,3 +1,7 @@
+$checkbox-size: 8px;
+$checkbox-thickness: 3px;
+$checkbox-label-offset: 7px;
+
 .checkbox {
   @include clearfix();
 
@@ -5,21 +9,21 @@
 }
 
 .checkbox__input {
-  display: none;
+  position: absolute;
+  opacity: 0;
 }
 
 .checkbox__label {
   display: inline-block;
-  padding-left: $base-icon-size + 10px;
+  padding-left: $base-icon-size + $checkbox-label-offset;
   cursor: pointer;
 }
 
 .checkbox__icon {
-  @include icon($white, 16px, 16px);
-
   position: absolute;
   top: 0;
   left: 0;
+  display: inline-block;
   width: $base-icon-size;
   height: $base-icon-size;
   margin-top: 0.1em;
@@ -28,7 +32,20 @@
   border-radius: $base-border-radius;
 }
 
-.checkbox__input:checked ~ .checkbox__label > .checkbox__icon {
+.checkbox__input:checked  ~ .checkbox__label > .checkbox__icon {
   background-color: $link-color;
-  border: 0;
+  border: $focused-border-style;
+}
+
+.checkbox__input:checked ~ .checkbox__label > .checkbox__icon:after {
+  position: absolute;
+  left: (($base-icon-size - $checkbox-size) / 2) - 1;
+  display: block;
+  width: $checkbox-size;
+  height: $checkbox-size * 2;
+  background-color: $link-color;
+  border: solid $white;
+  border-width: 0 $checkbox-thickness $checkbox-thickness 0;
+  content: '';
+  transform: rotate(45deg);
 }

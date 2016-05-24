@@ -54,6 +54,7 @@
         <li><a href="#lists">Lists</a></li>
         <li><a href="#form-elements">Form Elements</a></li>
         <li><a href="#tiles">Tile Selections</a></li>
+        <li><a href="#tabs">Tab Selections</a></li>
         <li><a href="#tooltips">Tooltips</a></li>
         <li><a href="#srs">Sec-Row-Seat</a></li>
         <li><a href="#split-content">Split Content</a></li>
@@ -1469,20 +1470,112 @@
         <p>We use custom checkboxes that have a 1px border when unchecked. In the checked state,
           a white checkmark icon is seen against the <code class="sg__code">$brand-primary</code>
           background with no stroke around the checkbox.</p>
+
         <ul class="checkbox-list">
-          <li class="checkbox-list__item chkbox">
-            <input type="checkbox" class="chkbox__input" id="sample-chkbx" />
-            <label for="sample-chkbx" class="chkbox__label">
+          <li class="checkbox-list__item checkbox">
+            <input type="checkbox" class="checkbox__input" id="sample-checkbox1" />
+            <label for="sample-checkbox1" class="checkbox__label">
+              <div class="checkbox__icon"></div>
               Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola frankfurter picanha ham.
             </label>
           </li>
-          <li class="checkbox-list__item chkbox">
-            <input type="checkbox" class="chkbox__input" id="sample-chkbx2" />
-            <label for="sample-chkbx2" class="chkbox__label">
+          <li class="checkbox-list__item checkbox">
+            <input type="checkbox" class="checkbox__input" id="sample-checkbox2" />
+            <label for="sample-checkbox2" class="checkbox__label">
+              <div class="checkbox__icon"></div>
               Ticket name
             </label>
           </li>
         </ul>
+        <pre><code class="html">&lt;ul class=&quot;checkbox-list&quot;&gt;
+  &lt;li class=&quot;checkbox-list__item checkbox&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; class=&quot;checkbox__input&quot; id=&quot;sample-checkbox1&quot;&gt;
+    &lt;label for=&quot;sample-checkbox1&quot; class=&quot;checkbox__label&quot;&gt;
+      &lt;div class=&quot;checkbox__icon&quot;&gt;&lt;/div&gt;
+      Bacon ipsum dolor amet biltong jowl meatball venison rump pig.
+      Short loin ribeye beef ribs brisket pig tail prosciutto short
+      ribs bresaola frankfurter picanha ham.
+    &lt;/label&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;checkbox-list__item checkbox&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; class=&quot;checkbox__input&quot; id=&quot;sample-checkbox2&quot;&gt;
+    &lt;label for=&quot;sample-checkbox2&quot; class=&quot;checkbox__label&quot;&gt;
+      &lt;div class=&quot;checkbox__icon&quot;&gt;&lt;/div&gt;
+      Ticket name
+    &lt;/label&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+        <h3 class="sg__subhdg">Radio Buttons</h3>
+        <ul class="radio-list">
+          <li class="radio-list__item radio">
+            <input type="radio" name="radio-sample2" class="radio__input" id="sample-radio3" />
+            <label for="sample-radio3" class="radio__label">
+              <div class="radio__icon"></div>
+              One-line description
+            </label>
+          </li>
+          <li class="radio-list__item radio">
+            <input type="radio" name="radio-sample2" class="radio__input" id="sample-radio4" />
+            <label for="sample-radio4" class="radio__label">
+              <div class="radio__icon"></div>
+              Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola frankfurter picanha ham.
+            </label>
+          </li>
+        </ul>
+        <pre><code class="html">&lt;ul class=&quot;radio-list&quot;&gt;
+  &lt;li class=&quot;radio-list__item radio&quot;&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;radio-sample2&quot; class=&quot;radio__input&quot; id=&quot;sample-radio3&quot;&gt;
+    &lt;label for=&quot;sample-radio3&quot; class=&quot;radio__label&quot;&gt;
+      &lt;div class=&quot;radio__icon&quot;&gt;&lt;/div&gt;
+      One-line description
+    &lt;/label&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;radio-list__item radio&quot;&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;radio-sample2&quot; class=&quot;radio__input&quot; id=&quot;sample-radio4&quot;&gt;
+    &lt;label for=&quot;sample-radio4&quot; class=&quot;radio__label&quot;&gt;
+      &lt;div class=&quot;radio__icon&quot;&gt;&lt;/div&gt;
+      Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin
+      ribeye beef ribs brisket pig tail prosciutto short ribs bresaola frankfurter
+      picanha ham.
+    &lt;/label&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+        <h4 class="sg__subhdg3">Bigger radio buttons</h4>
+        <ul class="radio-list">
+          <li class="radio-list__item radio--lg">
+            <input type="radio" name="radio-sample3" class="radio__input--lg" id="sample-radio5" />
+            <label for="sample-radio5" class="radio__label--lg">
+              <div class="radio__icon"></div>
+              One-line description
+            </label>
+          </li>
+          <li class="radio-list__item radio--lg">
+            <input type="radio" name="radio-sample3" class="radio__input--lg" id="sample-radio6" />
+            <label for="sample-radio6" class="radio__label--lg">
+              <div class="radio__icon"></div>
+              Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola frankfurter picanha ham.
+            </label>
+          </li>
+        </ul>
+        <pre><code class="html">&lt;ul class=&quot;radio-list&quot;&gt;
+  &lt;li class=&quot;radio-list__item radio--lg&quot;&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;radio-sample3&quot; class=&quot;radio__input--lg&quot; id=&quot;sample-radio5&quot;&gt;
+    &lt;label for=&quot;sample-radio5&quot; class=&quot;radio__label--lg&quot;&gt;
+      &lt;div class=&quot;radio__icon&quot;&gt;&lt;/div&gt;
+      One-line description
+    &lt;/label&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;radio-list__item radio--lg&quot;&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;radio-sample3&quot; class=&quot;radio__input--lg&quot; id=&quot;sample-radio6&quot;&gt;
+    &lt;label for=&quot;sample-radio6&quot; class=&quot;radio__label--lg&quot;&gt;
+      &lt;div class=&quot;radio__icon&quot;&gt;&lt;/div&gt;
+      Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye
+      beef ribs brisket pig tail prosciutto short ribs bresaola frankfurter picanha ham.
+    &lt;/label&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
       </section>
 
       <section id="tiles" class="sg__section">
@@ -1581,6 +1674,24 @@
     &lt;/div&gt;
   &lt;/li&gt;
 &lt;/ul&gt;</code></pre>
+
+      </section>
+
+      <section id="tabs" class="sg__section">
+        <h3 class="sg__hdg">Tab Selections</h2>
+
+        <ul class="tab-selection">
+          <li class="tab-selection__item tab-selection__item--selected">USA</li>
+          <li class="tab-selection__item">Canada</li>
+          <li class="tab-selection__item">Other Country</li>
+        </ul>
+
+<pre><code class="html">&lt;ul class=&quot;tab-selection&quot;&gt;
+&nbsp;&nbsp;&lt;li class=&quot;tab-selection__item tab-selection__item--selected&quot;&gt;USA&lt;/li&gt;
+&nbsp;&nbsp;&lt;li class=&quot;tab-selection__item&quot;&gt;Canada&lt;/li&gt;
+&nbsp;&nbsp;&lt;li class=&quot;tab-selection__item&quot;&gt;Other Country&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
 
       </section>
 

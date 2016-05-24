@@ -1,0 +1,28 @@
+.tab-selection {
+  @include unstyled-list();
+
+  display: inline-block;
+  margin-bottom: 1em;
+  border: $input-border-style;
+  border-radius: $base-border-radius;
+}
+
+.tab-selection__item {
+  @include responsive-font('lg');
+  @include inner-spacing($left: $spacing-md, $right: $spacing-md, $top: $spacing-sm, $bottom: $spacing-sm);
+
+  display: inline-block;
+  color: $brand-gray2;
+  cursor: pointer;
+  border-left: $input-border-style;
+
+  &:first-child {
+    border-left: 0;
+  }
+}
+
+.tab-selection__item--selected {
+  font-weight: bold;
+  color: $brand-gray;
+}
+

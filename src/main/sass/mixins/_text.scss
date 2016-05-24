@@ -34,11 +34,15 @@
 }
 
 
-@mixin hdg-text($set, $color: $text-color, $mb: $header-margin) {
+@mixin hdg-text($set, $color: $text-color, $mb: $header-margin, $bold: true) {
   @include responsive-font($set);
 
   margin-bottom: $mb;
-  font-weight: bold;
+
+  @if $bold == true {
+    font-weight: bold;
+  }
+
   color: $color;
 
   @include breakpoint($bp-md) {
