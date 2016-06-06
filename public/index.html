@@ -51,6 +51,7 @@
         <li><a href="#spacing">Spacing</a></li>
         <li><a href="#buttons">Buttons</a></li>
         <li><a href="#qty-picker">Quantity Picker</a></li>
+        <li><a href="#toggle-switch">Toggle Switch</a></li>
         <li><a href="#lists">Lists</a></li>
         <li><a href="#form-elements">Form Elements</a></li>
         <li><a href="#tiles">Tile Selections</a></li>
@@ -1142,7 +1143,79 @@
           </tr>
         </table>
       </section>
+      <section id="toggle-switch" class="sg__section">
+        <h2 class="sg__hdg">Toggle Switch</h2>
+        <p>The following should be used when user is prompted a toggle switch (e.g. ON/OFF)</p>
+        <table class="sg__table">
+          <tr>
+            <td class="sg__subhdg"></td>
+            <td class="sg__table-hdg">Off</td>
+            <td class="sg__table-hdg">Default On</td>
+            <td class="sg__table-hdg">Resale On</td>
+          </tr>
+          <tr>
+            <td class="sg__table-cell sg__subhdg">
+              Variants
+            </td>
+            <td class="sg__table-cell">
+                <button class="toggle-switch__button">
+                  <div class="toggle-switch__on toggle-switch--hidden">on</div>
+                  <div class="toggle-switch__indicator toggle-switch__indicator--left"></div>
+                  <div class="toggle-switch__off">off</div>
+                </button>
+            </td>
+            <td class="sg__table-cell">
+                <button class="toggle-switch__button toggle-switch__button--active">
+                  <div class="toggle-switch__on">on</div>
+                  <div class="toggle-switch__indicator toggle-switch__indicator--right"></div>
+                  <div class="toggle-switch__off toggle-switch--hidden">off</div>
+                </button>
+            </td>
+            <td class="sg__table-cell">
+                <button class="toggle-switch__button toggle-switch__button--active-resale">
+                  <div class="toggle-switch__on">on</div>
+                  <div class="toggle-switch__indicator toggle-switch__indicator--right">
+                    <svg class="icon-resale">
+                      <use xlink:href="img/sprite.svg#icon-resale"></use>
+                    </svg>
+                  </div>
+                  <div class="toggle-switch__off toggle-switch--hidden">off</div>
+                </button>
+            </td>
+          </tr>
+        </table>
 
+<pre><code class="html">// OFF State
+
+&lt;button class="toggle-switch__button"&gt;
+  &lt;div class="toggle-switch__on toggle-switch--hidden"&gt;on&lt;/div&gt;
+  &lt;div class="toggle-switch__indicator toggle-switch__indicator--left"&gt;&lt;/div&gt;
+  &lt;div class="toggle-switch__off"&gt;off&lt;/div&gt;
+&lt;/button&gt;
+
+// Default ON
+
+&lt;button class="toggle-switch__button toggle-switch__button--active"&gt;
+  &lt;div class="toggle-switch__on"&gt;on&lt;/div&gt;
+  &lt;div class="toggle-switch__indicator toggle-switch__indicator--right"&gt;&lt;/div&gt;
+  &lt;div class="toggle-switch__off toggle-switch--hidden"&gt;off&lt;/div&gt;
+&lt;/button&gt;
+
+// Resale ON w/ Resale Logo SVG
+
+&lt;button class="toggle-switch__button toggle-switch__button--active-resale"&gt;
+  &lt;div class="toggle-switch__on"&gt;on&lt;/div&gt;
+  &lt;div class="toggle-switch__indicator--resale toggle-switch__indicator--right"&gt;
+    &lt;svg class="icon-resale"&gt;
+      &lt;use xlink:href="img/sprite.svg#icon-resale"&gt;&lt;/use&gt;
+    &lt;/svg&gt;
+  &lt;/div&gt;
+  &lt;div class="toggle-switch__off toggle-switch--hidden"&gt;off&lt;/div&gt;
+&lt;/button&gt;
+
+</code></pre>
+
+      </section>
       <section id="lists" class="sg__section">
         <h2 class="sg__hdg">Lists</h2>
 

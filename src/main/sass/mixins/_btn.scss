@@ -135,3 +135,52 @@
 
   line-height: 0;
 }
+
+// toggle switch mixins
+
+// styles toggle switch button
+
+@mixin toggle-switch-button() {
+  @include unbutton($padding: 0);
+  @include fixed-font('sm');
+  @include toggle-switch-color();
+
+  position: relative;
+  height: $toggle-switch-button-size;
+  min-width: $toggle-switch-button-size * 2;
+  overflow: hidden;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border-radius: 40px;
+}
+
+// sets toggle switch color
+
+@mixin toggle-switch-color($color: $toggle-switch-off-bg-color) {
+    @include btn-outlined(get-darker($color), $hoverstate: false);
+
+    color: $toggle-switch-indicator-bg-color;
+    background-color: $color;
+}
+
+// styles inner elements of the toggle switch
+
+@mixin toggle-switch-element($padding, $width: auto, $is-indicator: false) {
+  display: inline-block;
+  height: $toggle-switch-button-size;
+  width: $width;
+  padding: $padding;
+  vertical-align: top;
+  overflow: hidden;
+  background-color: inherit;
+
+  @if $is-indicator {
+    position: absolute;
+    top: -1px;
+    border: 1px solid;
+    border-color: inherit;
+    border-radius: 100%;
+    background-color: white;
+  }
+}
