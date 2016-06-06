@@ -1,13 +1,17 @@
 Changelog
 =========
 
+**0.28.0**
+---------
+- Add new `toggle-switch` pattern.
+
 **0.27.3**
 ---------
-- Correct spacing in dialogs header
+- Correct spacing in dialog headers.
 
 **0.27.2**
 ---------
-- Remove SVG fill
+- Remove SVG fill.
 
 **0.27.1**
 ---------
