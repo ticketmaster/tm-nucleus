@@ -1,9 +1,10 @@
 // third-party dependencies
 @import '../vendors/normalize/normalize';
-  
+
 // import order matters!
 @import 'functions';
 @import 'breakpoints';
+@import 'color-functions';
 @import 'palette';
 @import 'typography';
 @import 'config';
