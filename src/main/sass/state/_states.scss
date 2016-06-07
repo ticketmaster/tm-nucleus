@@ -1,32 +1,32 @@
 .nc-is-hidden {
-  display: none;
+  display: none !important;
 }
 
 .nc-is-invisible {
-  visibility: hidden;
+  visibility: hidden !important;
 }
 
 .nc-is-clickable {
-  cursor: pointer;
+  cursor: pointer !important;
 }
 
 .nc-is-scrollable {
-  overflow: auto;
+  overflow: auto !important;
 }
 
 .nc-is-error-message {
-  color: $nc-alert-color;
+  color: $nc-alert-color !important;
 }
 
 .nc-is-success-message {
-  color: $nc-success-color;
+  color: $nc-success-color !important;
 }
 
 .nc-is-offscreen {
-  position: absolute;
-  top: auto;
-  left: -10000px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+  position: absolute !important;
+  top: auto !important;
+  left: -10000px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
 }
