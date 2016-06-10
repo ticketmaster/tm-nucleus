@@ -5,7 +5,7 @@
 .nc-cobrand-header {
   @include nc-inner-spacing($right: $nc-spacing-sm, $left: $nc-spacing-sm);
 
-  z-index: z('above-page');
+  z-index: nc-z('above-page');
   display: flex;
   align-items: center;
   justify-content: space-between;

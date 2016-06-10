@@ -1,8 +1,8 @@
 @mixin nc-breakpoint($min: 0, $max: 0) {
 
   // convert values to ems
-  $em-min: em($min);
-  $em-max: em($max);
+  $em-min: nc-em($min);
+  $em-max: nc-em($max);
 
   $query: '';
 

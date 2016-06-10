@@ -6,7 +6,7 @@
   }
 
   &:after {
-    $direction: get-tooltip-offset-direction($pos);
+    $direction: nc-get-tooltip-offset-direction($pos);
 
     // reset positioning attributes first
     top: auto;
@@ -14,14 +14,14 @@
     bottom: auto;
     left: auto;
 
-    #{$pos}: get-tooltip-offset($pos, $nc-tooltip-caret);
+    #{$pos}: nc-get-tooltip-offset($pos, $nc-tooltip-caret);
 
     #{$direction}: 50%;
 
     margin-#{$direction}: -($nc-tooltip-caret / 2);
 
     @include nc-breakpoint($nc-bp-md) {
-      #{$pos}: get-tooltip-offset($pos, $nc-tooltip-caret-lg);
+      #{$pos}: nc-get-tooltip-offset($pos, $nc-tooltip-caret-lg);
 
       margin-#{$direction}: -($nc-tooltip-caret-lg / 2);
     }

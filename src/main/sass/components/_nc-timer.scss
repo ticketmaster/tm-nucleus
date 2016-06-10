@@ -18,7 +18,7 @@ $nc-timer-duration: 30s;
   @include nc-responsive-font('sm');
   @include nc-vertically-center(absolute);
 
-  z-index: z('timer-indicator');
+  z-index: nc-z('timer-indicator');
   width: 100%;
   color: $nc-white;
   text-align: center;
@@ -27,7 +27,7 @@ $nc-timer-duration: 30s;
 .nc-timer__spinner {
   @include nc-timer-base($nc-white);
 
-  z-index: z('timer-spinner');
+  z-index: nc-z('timer-spinner');
   border-right: 0;
   border-radius: 100% 0 0 100% / 50% 0 0 50%;
   animation: timer-rota $nc-timer-duration linear infinite;
@@ -37,7 +37,7 @@ $nc-timer-duration: 30s;
   @include nc-timer-base($nc-white);
 
   left: 50%;
-  z-index: z('timer-filler');
+  z-index: nc-z('timer-filler');
   border-left: 0;
   border-radius: 0 100% 100% 0 / 0 50% 50% 0;
   opacity: 0;
@@ -59,7 +59,7 @@ $nc-timer-duration: 30s;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: z('timer-mask');
+  z-index: nc-z('timer-mask');
   width: 50%;
   height: 100%;
   background-color: $nc-header-color;

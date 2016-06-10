@@ -17,7 +17,7 @@
   padding-left: $nc-spacing-sm;
 
   @include nc-breakpoint($nc-bp-md) {
-    padding-left: increase-spacing($nc-spacing-sm);
+    padding-left: nc-increase-spacing($nc-spacing-sm);
   }
 
   // we don't want left padding if it's the first item
@@ -34,6 +34,6 @@
   padding-left: $nc-spacing-sm;
 
   @include nc-breakpoint($nc-bp-md) {
-    padding-left: increase-spacing($nc-spacing-sm);
+    padding-left: nc-increase-spacing($nc-spacing-sm);
   }
 }
