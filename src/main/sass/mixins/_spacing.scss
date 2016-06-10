@@ -11,14 +11,14 @@
     #{$type}: $val;
 
     @include nc-breakpoint($nc-bp-md) {
-      #{$type}: increase-spacing($val);
+      #{$type}: nc-increase-spacing($val);
     }
   }
   @else {
     #{$type}: $top $right $bottom $left;
 
     @include nc-breakpoint($nc-bp-md) {
-      #{$type}: increase-spacing($top) increase-spacing($right) increase-spacing($bottom) increase-spacing($left);
+      #{$type}: nc-increase-spacing($top) nc-increase-spacing($right) nc-increase-spacing($bottom) nc-increase-spacing($left);
     }
   }
 }

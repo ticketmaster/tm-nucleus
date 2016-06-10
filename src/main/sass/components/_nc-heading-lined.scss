@@ -22,7 +22,7 @@
     right: $nc-spacing-sm;
 
     @include nc-breakpoint($nc-bp-md) {
-      right: increase-spacing($nc-spacing-sm);
+      right: nc-increase-spacing($nc-spacing-sm);
     }
   }
 
@@ -30,7 +30,7 @@
     left: $nc-spacing-sm;
 
     @include nc-breakpoint($nc-bp-md) {
-      left: increase-spacing($nc-spacing-sm);
+      left: nc-increase-spacing($nc-spacing-sm);
     }
   }
 }

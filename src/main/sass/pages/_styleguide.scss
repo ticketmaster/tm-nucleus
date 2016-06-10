@@ -34,8 +34,8 @@ $sg-spacing: 1.5em;
   background-color: $nc-header-color;
 
   @include nc-breakpoint($nc-bp-md) {
-    padding-top: increase-spacing($nc-spacing-sm);
-    padding-bottom: increase-spacing($nc-spacing-sm);
+    padding-top: nc-increase-spacing($nc-spacing-sm);
+    padding-bottom: nc-increase-spacing($nc-spacing-sm);
   }
 }
 
@@ -67,7 +67,7 @@ $sg-spacing: 1.5em;
 
   @include nc-breakpoint($nc-bp-md) {
     width: 25%;
-    padding: 0 $nc-gutter-width-half increase-spacing($nc-spacing-lg);
+    padding: 0 $nc-gutter-width-half nc-increase-spacing($nc-spacing-lg);
     border-bottom: 0;
   }
 
@@ -101,7 +101,7 @@ $sg-spacing: 1.5em;
   border-bottom: $nc-base-border-style;
 
   @include nc-breakpoint($nc-bp-md) {
-    padding-bottom: increase-spacing($nc-spacing-lg);
+    padding-bottom: nc-increase-spacing($nc-spacing-lg);
   }
 }
 
@@ -440,25 +440,25 @@ $sg-spacing: 1.5em;
 // font sizes
 @each $name, $sizes in $nc-font-sizes {
   .sg__#{$name}-font-size {
-    $size: fetch-font($name, 'pint');
+    $size: nc-fetch-font($name, 'pint');
 
     font-size: $size;
-    line-height: calc-lh($size);
+    line-height: nc-calc-lh($size);
   }
 
   .sg__#{$name}-font-size-quart {
-    $size: fetch-font($name, 'quart');
+    $size: nc-fetch-font($name, 'quart');
 
     font-size: $size;
-    line-height: calc-lh($size);
+    line-height: nc-calc-lh($size);
   }
 
   @if ($name != 'xs') {
     .sg__#{$name}-font-size-gallon {
-      $size: fetch-font($name, 'gallon');
+      $size: nc-fetch-font($name, 'gallon');
 
       font-size: $size;
-      line-height: calc-lh($size);
+      line-height: nc-calc-lh($size);
     }
   }
 
