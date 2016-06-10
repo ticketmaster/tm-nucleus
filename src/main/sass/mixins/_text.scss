@@ -1,22 +1,22 @@
 @mixin nc-type-scale($set, $heading: false, $responsive: true) {
-  
+
 }
 
 @mixin nc-responsive-font($set: 'md', $lh: false) {
-  $pint: fetch-font($set);
+  $pint: nc-fetch-font($set);
 
   font-size: $pint;
-  line-height: get-lh($pint, $lh);
+  line-height: nc-get-lh($pint, $lh);
 
   @include nc-breakpoint($nc-bp-sm) {
-    $quart: fetch-font($set, 'quart');
+    $quart: nc-fetch-font($set, 'quart');
 
     font-size: $quart;
-    line-height: get-lh($quart, $lh);
+    line-height: nc-get-lh($quart, $lh);
   }
 
   @include nc-breakpoint($nc-bp-md) {
-    $gallon: fetch-font($set, 'gallon');
+    $gallon: nc-fetch-font($set, 'gallon');
 
     font-size: $gallon;
 
@@ -24,16 +24,16 @@
       $lh: $nc-base-line-height;
     }
 
-    line-height: get-lh($gallon, $lh);
+    line-height: nc-get-lh($gallon, $lh);
   }
 }
 
 
 @mixin nc-fixed-font($set: 'md', $lh: false) {
-  $size: fetch-font($set, 'quart');
+  $size: nc-fetch-font($set, 'quart');
 
   font-size: $size;
-  line-height: get-lh($size, $lh);
+  line-height: nc-get-lh($size, $lh);
 }
 
 

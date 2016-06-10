@@ -10,30 +10,30 @@
   font-weight: bold;
 }
 
-@function get-type-size($set) {
+@function nc-get-type-size($set) {
 
 }
 
 // return responsive font size
-@function get-quart-size($num) {
+@function nc-get-quart-size($num) {
   @return $num + $nc-font-size-factor;
 }
 
-@function get-gallon-size($num) {
+@function nc-get-gallon-size($num) {
   @return $num + ($nc-font-size-factor * 2);
 }
 
 // set default line height or custom
-@function get-lh($font, $lh) {
+@function nc-get-lh($font, $lh) {
   $val: $lh;
   @if not $lh {
-    $val: calc-lh($font);
+    $val: nc-calc-lh($font);
   }
   @return $val;
 }
 
 // calculate line height based on font size
-@function calc-lh($font-size) {
+@function nc-calc-lh($font-size) {
   $lh: $nc-header-line-height;
   @if ($font-size < 1.8) {
     $lh: $nc-base-line-height;
@@ -42,7 +42,7 @@
 }
 
 // retrieve font-size
-@function fetch-font($set, $size: 'pint') {
+@function nc-fetch-font($set, $size: 'pint') {
   @return map-get(map-get($nc-font-sizes, $set), $size);
 }
 
@@ -81,37 +81,37 @@ $nc-font-sizes: (
   'xs': (
     'pint':   $nc-base-xs-font,
     'quart':  $nc-base-xs-font,
-    'gallon': get-quart-size($nc-base-xs-font)
+    'gallon': nc-get-quart-size($nc-base-xs-font)
   ),
   'sm': (
     'pint':   $nc-base-sm-font,
-    'quart':  get-quart-size($nc-base-sm-font),
-    'gallon': get-gallon-size($nc-base-sm-font)
+    'quart':  nc-get-quart-size($nc-base-sm-font),
+    'gallon': nc-get-gallon-size($nc-base-sm-font)
   ),
   'md': (
     'pint':   $nc-base-md-font,
-    'quart':  get-quart-size($nc-base-md-font),
-    'gallon': get-gallon-size($nc-base-md-font)
+    'quart':  nc-get-quart-size($nc-base-md-font),
+    'gallon': nc-get-gallon-size($nc-base-md-font)
   ),
   'lg': (
     'pint':   $nc-base-lg-font,
-    'quart':  get-quart-size($nc-base-lg-font),
-    'gallon': get-gallon-size($nc-base-lg-font)
+    'quart':  nc-get-quart-size($nc-base-lg-font),
+    'gallon': nc-get-gallon-size($nc-base-lg-font)
   ),
   'xl': (
     'pint':   $nc-base-xl-font,
-    'quart':  get-quart-size($nc-base-xl-font),
-    'gallon': get-gallon-size($nc-base-xl-font)
+    'quart':  nc-get-quart-size($nc-base-xl-font),
+    'gallon': nc-get-gallon-size($nc-base-xl-font)
   ),
   'xxl': (
     'pint':   $nc-base-xxl-font,
-    'quart':  get-quart-size($nc-base-xxl-font),
-    'gallon': get-gallon-size($nc-base-xxl-font)
+    'quart':  nc-get-quart-size($nc-base-xxl-font),
+    'gallon': nc-get-gallon-size($nc-base-xxl-font)
   ),
   'xxxl': (
     'pint':   $nc-base-xxxl-font,
-    'quart':  get-quart-size($nc-base-xxxl-font),
-    'gallon': get-gallon-size($nc-base-xxxl-font)
+    'quart':  nc-get-quart-size($nc-base-xxxl-font),
+    'gallon': nc-get-gallon-size($nc-base-xxxl-font)
   )
 );
 
