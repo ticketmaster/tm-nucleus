@@ -1,7 +1,20 @@
-@mixin nc-type-scale($set, $heading: false, $responsive: true) {
+@mixin nc-type-scale($set, $lh: $nc-base-line-height, $responsive: true) {
+  font-size: nc-get-font($set, 'sm');
+  line-height: $lh;
 
+  @if ($responsive) {
+    @include nc-breakpoint($bp-md) {
+      font-size: nc-get-font($set, 'md');
+    }
+
+    @include nc-breakpoint($bp-lg) {
+      font-size: nc-get-font($set, 'lg');
+    }
+  }
 }
 
+
+// deprecated
 @mixin nc-responsive-font($set: 'md', $lh: false) {
   $pint: nc-fetch-font($set);
 
@@ -37,7 +50,7 @@
 }
 
 
-@mixin nc-hdg-text($set, $color: $text-color, $mb: $nc-header-margin) {
+@mixin nc-hdg-text($set, $color: $nc-text-color, $mb: $nc-header-margin) {
   @include nc-responsive-font($set);
 
   margin-bottom: $mb;
