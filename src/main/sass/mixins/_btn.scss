@@ -158,29 +158,30 @@
 // sets toggle switch color
 
 @mixin toggle-switch-color($color: $toggle-switch-off-bg-color) {
-    @include btn-outlined(get-darker($color), $hoverstate: false);
-
-    color: $toggle-switch-indicator-bg-color;
-    background-color: $color;
+  color: $toggle-switch-indicator-bg-color;
+  box-shadow: inset 0 1px 10px get-darker($color);
+  background-color: $color;
 }
 
 // styles inner elements of the toggle switch
 
 @mixin toggle-switch-element($padding, $width: auto, $is-indicator: false) {
   display: inline-block;
-  height: $toggle-switch-button-size;
-  width: $width;
   padding: $padding;
   vertical-align: top;
   overflow: hidden;
-  background-color: inherit;
 
   @if $is-indicator {
     position: absolute;
-    top: -1px;
-    border: 1px solid;
-    border-color: inherit;
+    top: 1px;
+    width: $width;
+    height: $width;
+    background-color: $white;
     border-radius: 100%;
-    background-color: white;
+  }
+
+  @else {
+    width: $width;
+    height: $toggle-switch-button-size;
   }
 }
