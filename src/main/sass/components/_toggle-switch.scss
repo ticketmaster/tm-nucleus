@@ -2,7 +2,7 @@
 
 // Toggle Switch Button Element
 
-.toggle-switch__button{
+.toggle-switch__button {
   @include toggle-switch-button();
 }
 
@@ -14,38 +14,19 @@
   @include toggle-switch-color($resale-color);
 }
 
-// Toggle Switch OFF Element
-
-.toggle-switch__off {
-  @include toggle-switch-element(4px 8px 0 28px);
-}
-
-// Toggle Switch ON Element
-
-.toggle-switch__on {
-  @include toggle-switch-element(4px 30px 0 8px);
-}
-
-// Toggle Switch On/Off State
-
-.toggle-switch--hidden {
-  width: 0;
-  padding: 0;
-}
-
 // Toggle Switch Indicator Element
 
 .toggle-switch__indicator {
-  @include toggle-switch-element(4px, $toggle-switch-button-size, true);
+  @include toggle-switch-element(4px, $toggle-switch-button-size - 2, true);
 }
 
 // Toggle Switch Indicator Position States
 
 .toggle-switch__indicator--right {
-  right: -1px;
+  right: 1px;
 }
 
 .toggle-switch__indicator--left {
-  left: -1px;
+  left: 1px;
 }
 
