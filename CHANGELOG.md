@@ -1,20 +1,29 @@
 Changelog
 =========
 
+**0.28.1**
+---------
+**Bug Fixes**
+- Tweak `toggle-switch` pattern.
+
 **0.28.0**
 ---------
+**New Features**
 - Add new `toggle-switch` pattern.
 
 **0.27.3**
 ---------
+**Bug Fixes**
 - Correct spacing in dialog headers.
 
 **0.27.2**
 ---------
+**Bug Fixes**
 - Remove SVG fill.
 
 **0.27.1**
 ---------
+**Bug Fixes**
 - Add missing normalize.css dependency to package.json.
 
 **0.27.0**
