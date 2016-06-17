@@ -49,6 +49,68 @@
   @return $px / $context * 1em;
 }
 
+// calculate sizes given basis and ratio
+@function nc-garamond($count, $dir, $basis, $ratio) {
+  @if ($count != 0) {
+    @if ($dir == 'up') {
+      @for $i from 1 through $count {
+        $basis: $basis * $nc-type-scale-ratio;
+      }
+    }
+
+    @if ($dir == 'down') {
+      @for $i from 1 through $count {
+        $basis: $basis / $nc-type-scale-ratio;
+      }
+    }
+  }
+
+  $size: nc-round-num($basis, $digits: 2);
+
+  @return $size;
+}
+
+// generate sets based on steps from basis
+@function nc-gutenberg($start, $set, $basis, $ratio) {
+  $map: ();
+  $direction: 'up';
+  $iterations: $start;
+
+  @if ($iterations < 0) {
+    $iterations: $iterations * -1;
+  }
+
+  @each $key in $set {
+    @if ($start < 0) {
+      $direction: 'down';
+    }
+    @else {
+      $direction: 'up';
+    }
+
+    $size: nc-garamond($iterations, $direction, $basis, $ratio);
+    $map: map-merge($map, ($key: $size));
+
+    @if ($start < 0) {
+      $iterations: $iterations - 1;
+    }
+    @else {
+      $iterations: $iterations + 1;
+    }
+
+    $start: $start + 1;
+  }
+
+  @return $map;
+}
+
+
+// retrieve font size given $set (milli, uno, etc) and $size (sm, md, lg)
+@function nc-get-font($set, $size) {
+  @return map-get(map-get($nc-font-map, $set), $size);
+}
+
+
 // determine tooltip offset direction
 @function nc-get-tooltip-offset-direction($pos) {
   $offset: 'top';

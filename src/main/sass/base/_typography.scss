@@ -11,77 +11,12 @@
 }
 
 
-@function nc-calc-type-size($count, $dir) {
-  $size: $nc-source-font-size;
-
-  @if ($count != 0) {
-    @if ($dir == 'up') {
-      @for $i from 1 through $count {
-        $size: $size * $nc-type-scale-ratio;
-      }
-    }
-
-    @if ($dir == 'down') {
-      @for $i from 1 through $count {
-        $size: $size / $nc-type-scale-ratio;
-      }
-    }
-  }
-
-  @return nc-round-num($size, $digits: 2);
-}
-
-// generate font sets based on steps from base
-@function nc-gen-font-set($scale-start) {
-  $map: ();
-  $direction: 'up';
-  $iterations: $scale-start;
-
-  @if ($iterations < 0) {
-    $iterations: $iterations * -1;
-  }
-
-  @each $key in $nc-font-set-list {
-    @if ($scale-start < 0) {
-      $direction: 'down';
-    }
-    @else {
-      $direction: 'up';
-    }
-
-    $size: nc-calc-type-size($iterations, $direction);
-    $map: map-merge($map, ($key: $size));
-
-    @if ($scale-start < 0) {
-      $iterations: $iterations - 1;
-    }
-    @else {
-      $iterations: $iterations + 1;
-    }
-
-    $scale-start: $scale-start + 1;
-  }
-
-  @return $map;
-}
-
-// retrieve font size given $set (milli, uno, etc) and $size (sm, md, lg)
-@function nc-get-font($set, $size) {
-  @return map-get(map-get($nc-font-map, $set), $size);
-}
-
-// retrieve font-size
-@function nc-fetch-font($set, $size: 'pint') {
-  @return map-get(map-get($nc-font-sizes, $set), $size);
-}
-
-
 $nc-tm-sans: 'TM Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $nc-monospace: Menlo, Consolas, 'Courier New', monospace;
 
 // Typography settings
 $nc-base-font-family: $nc-tm-sans;
-$nc-source-font-size: 1.6rem;
+$nc-type-size-basis: 1.6rem;
 $nc-type-scale-ratio: 1.125;
 $nc-base-line-height: 1.4;
 
@@ -113,12 +48,19 @@ $nc-font-map: ();
 $nc-font-set-start: -4;
 
 @each $key in $nc-font-name-list {
-  $nc-font-map: map-merge($nc-font-map, ($key: nc-gen-font-set($nc-font-set-start)));
+  $nc-font-map: map-merge($nc-font-map, ($key:
+    nc-gutenberg($nc-font-set-start, $nc-font-set-list, $nc-type-size-basis, $nc-type-scale-ratio)
+  ));
   $nc-font-set-start: $nc-font-set-start + 1;
 }
 
 
 
+
+// retrieve font-size
+@function nc-fetch-font($set, $size: 'pint') {
+  @return map-get(map-get($nc-font-sizes, $set), $size);
+}
 
 // return responsive font size
 @function nc-get-quart-size($num) {
@@ -211,6 +153,8 @@ $nc-font-sizes: (
     'gallon': nc-get-gallon-size($nc-base-xxxl-font)
   )
 );
+
+
 
 // Baseline for page
 *,
