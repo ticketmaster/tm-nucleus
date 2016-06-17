@@ -1,3 +1,7 @@
+@mixin nc-spacing() {
+  
+}
+
 @mixin nc-outer-spacing($val: false, $top: 0, $right: 0, $bottom: 0, $left: 0) {
   @include nc-set-spacing('margin', $val, $top, $right, $bottom, $left);
 }

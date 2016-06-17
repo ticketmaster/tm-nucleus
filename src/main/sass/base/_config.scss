@@ -1,13 +1,39 @@
+// Spacing
+$nc-spacing-basis: 0.8rem;  // == 8px
+$nc-spacing-ratio: 1.5;
+$nc-spacing-name-list:
+  'slim',
+  'cozy',
+  'compact',
+  'moderate',
+  'normal',
+  'expanded',
+  'spacious',
+  'giant';
+$nc-spacing-set-list:
+  'mini',
+  'maxi';
+$nc-spacing-map: ();
+$nc-spacing-set-start: -2;
+
+@each $key in $nc-spacing-name-list {
+  $nc-spacing-map: map-merge($nc-spacing-map, ($key:
+    nc-gutenberg($nc-spacing-set-start, $nc-spacing-set-list, $nc-spacing-basis, $nc-spacing-ratio)
+  ));
+  $nc-spacing-set-start: $nc-spacing-set-start + 1;
+}
+
+
 // Grid
+// deprecated
 $nc-total-columns: 12;
 $nc-gutter-width: 30px;
 $nc-gutter-width-half: $nc-gutter-width / 2;
 
-// Spacing
+// deprecated
 $nc-spacing-lg: 30px;
 $nc-spacing-md: 20px;
 $nc-spacing-sm: 10px;
-$nc-spacing-ratio: 1.5;
 
 // Borders
 $nc-base-border-style: 1px solid $nc-base-border-color;
