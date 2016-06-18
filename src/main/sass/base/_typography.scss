@@ -13,19 +13,18 @@
 
 $nc-tm-sans: 'TM Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $nc-monospace: Menlo, Consolas, 'Courier New', monospace;
+$nc-default-font-size: 16px; // for media queries
+$nc-base-font-size: 62.5%;   // == 10px
 
 // Typography settings
 $nc-base-font-family: $nc-tm-sans;
 $nc-type-size-basis: 1.6rem;
 $nc-type-scale-ratio: 1.125;
 $nc-base-line-height: 1.4;
-
-// Default font sizes
-$nc-default-font-size: 16px; // for media queries
-$nc-base-font-size: 62.5%;   // == 10px
-$nc-font-size-factor: 0.2;
+$nc-type-scale-digits: 2;
 
 // Font sizes
+$nc-font-scale-start: -4;
 $nc-font-name-list:
   'milli',
   'centi',
@@ -45,17 +44,18 @@ $nc-font-set-list:
   'md',
   'lg';
 $nc-font-map: ();
-$nc-font-set-start: -4;
 
 @each $key in $nc-font-name-list {
   $nc-font-map: map-merge($nc-font-map, ($key:
-    nc-gutenberg($nc-font-set-start, $nc-font-set-list, $nc-type-size-basis, $nc-type-scale-ratio)
+    nc-generate-scale-map($nc-font-scale-start, $nc-font-set-list, $nc-type-size-basis, $nc-type-scale-ratio, $nc-type-scale-digits)
   ));
-  $nc-font-set-start: $nc-font-set-start + 1;
+  $nc-font-scale-start: $nc-font-scale-start + 1;
 }
 
 
 
+
+$nc-font-size-factor: 0.2;
 
 // retrieve font-size
 @function nc-fetch-font($set, $size: 'pint') {

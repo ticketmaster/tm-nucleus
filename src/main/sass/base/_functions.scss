@@ -50,28 +50,28 @@
 }
 
 // calculate sizes given basis and ratio
-@function nc-garamond($count, $dir, $basis, $ratio) {
+@function nc-calc-scale-value($count, $dir, $basis, $ratio, $digits) {
   @if ($count != 0) {
     @if ($dir == 'up') {
       @for $i from 1 through $count {
-        $basis: $basis * $nc-type-scale-ratio;
+        $basis: $basis * $ratio;
       }
     }
 
     @if ($dir == 'down') {
       @for $i from 1 through $count {
-        $basis: $basis / $nc-type-scale-ratio;
+        $basis: $basis / $ratio;
       }
     }
   }
 
-  $size: nc-round-num($basis, $digits: 2);
+  $size: nc-round-num($basis, $digits);
 
   @return $size;
 }
 
-// generate sets based on steps from basis
-@function nc-gutenberg($start, $set, $basis, $ratio) {
+// generate values based on steps from basis
+@function nc-generate-scale-map($start, $set, $basis, $ratio, $digits) {
   $map: ();
   $direction: 'up';
   $iterations: $start;
@@ -88,7 +88,7 @@
       $direction: 'up';
     }
 
-    $size: nc-garamond($iterations, $direction, $basis, $ratio);
+    $size: nc-calc-scale-value($iterations, $direction, $basis, $ratio, $digits);
     $map: map-merge($map, ($key: $size));
 
     @if ($start < 0) {
@@ -105,9 +105,12 @@
 }
 
 
-// retrieve font size given $set (milli, uno, etc) and $size (sm, md, lg)
-@function nc-get-font($set, $size) {
-  @return map-get(map-get($nc-font-map, $set), $size);
+// retrieve values from nested map
+@function nc-get-nested-map($map, $key, $subkey) {
+  @if (map-has-key($map, $key) and map-has-key(map-get($map, $key), $subkey)) {
+    @return map-get(map-get($map, $key), $subkey);
+  }
+  @return false;
 }
 
 

@@ -1,6 +1,8 @@
 // Spacing
 $nc-spacing-basis: 0.8rem;  // == 8px
 $nc-spacing-ratio: 1.5;
+$nc-spacing-digits: 1;
+$nc-spacing-scale-start: -2;
 $nc-spacing-name-list:
   'slim',
   'cozy',
@@ -14,13 +16,12 @@ $nc-spacing-set-list:
   'mini',
   'maxi';
 $nc-spacing-map: ();
-$nc-spacing-set-start: -2;
 
 @each $key in $nc-spacing-name-list {
   $nc-spacing-map: map-merge($nc-spacing-map, ($key:
-    nc-gutenberg($nc-spacing-set-start, $nc-spacing-set-list, $nc-spacing-basis, $nc-spacing-ratio)
+    nc-generate-scale-map($nc-spacing-scale-start, $nc-spacing-set-list, $nc-spacing-basis, $nc-spacing-ratio, $nc-spacing-digits)
   ));
-  $nc-spacing-set-start: $nc-spacing-set-start + 1;
+  $nc-spacing-scale-start: $nc-spacing-scale-start + 1;
 }
 
 
