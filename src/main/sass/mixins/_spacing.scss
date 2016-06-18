@@ -1,7 +1,67 @@
-@mixin nc-spacing() {
-  
+// pass in spacing set name (e.g, 'cozy') or map (e.g., ('top': 'cozy')) to $outside/inside
+@mixin nc-spacing($outside: false, $inside: false, $responsive: true) {
+  @if (not $outside and not $inside) {
+    @warn 'must specify either $outside or $inside';
+  }
+
+  @if ($outside) {
+    @include nc-spacing-generator('margin', $outside, $responsive);
+  }
+
+  @if ($inside) {
+    @include nc-spacing-generator('padding', $inside, $responsive);
+  }
 }
 
+@mixin nc-spacing-generator($spacing-type, $spacing-values, $responsive) {
+  // map of custom values
+  @if (type-of($spacing-values) == map) {
+    @each $direction, $value in $spacing-values {
+      @if (type-of($value) == number) {
+        #{$spacing-type}-#{$direction}: $value;
+
+        @if ($responsive and $value != 0) {
+          @include nc-breakpoint($nc-bp-md) {
+            #{$spacing-type}-#{$direction}: $value * $nc-spacing-ratio;
+          }
+        }
+      }
+      @else {
+        $mini: nc-get-nested-map($nc-spacing-map, $value, 'mini');
+
+        // matches key, so retrieve and print value
+        @if ($mini) {
+          #{$spacing-type}-#{$direction}: $mini;
+
+          @if ($responsive) {
+            @include nc-breakpoint($nc-bp-md) {
+              #{$spacing-type}-#{$direction}: nc-get-nested-map($nc-spacing-map, $value, 'maxi');
+            }
+          }
+        }
+
+        // no key matched, so print string as-is
+        @else {
+          #{$spacing-type}-#{$direction}: $value;
+        }
+      }
+    }
+  }
+
+  // same values all around
+  @else {
+    #{$spacing-type}: nc-get-nested-map($nc-spacing-map, $spacing-values, 'mini');
+
+    @if ($responsive) {
+      @include nc-breakpoint($nc-bp-md) {
+        #{$spacing-type}: nc-get-nested-map($nc-spacing-map, $spacing-values, 'maxi');
+      }
+    }
+  }
+}
+
+
+// deprecate
 @mixin nc-outer-spacing($val: false, $top: 0, $right: 0, $bottom: 0, $left: 0) {
   @include nc-set-spacing('margin', $val, $top, $right, $bottom, $left);
 }

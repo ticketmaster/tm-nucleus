@@ -1,14 +1,14 @@
 @mixin nc-type-scale($set, $lh: $nc-base-line-height, $responsive: true) {
-  font-size: nc-get-font($set, 'sm');
+  font-size: nc-get-nested-map($nc-font-map, $set, 'sm');
   line-height: $lh;
 
   @if ($responsive) {
     @include nc-breakpoint($nc-bp-md) {
-      font-size: nc-get-font($set, 'md');
+      font-size: nc-get-nested-map($nc-font-map, $set, 'md');
     }
 
     @include nc-breakpoint($nc-bp-lg) {
-      font-size: nc-get-font($set, 'lg');
+      font-size: nc-get-nested-map($nc-font-map, $set, 'lg');
     }
   }
 }
