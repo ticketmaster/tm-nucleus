@@ -110,7 +110,7 @@ $nc-font-set-list:
   'md',
   'lg';
 $nc-font-map: ();
-$nc-font-set-start: -2;
+$nc-font-set-start: -4;
 
 @each $key in $nc-font-name-list {
   $nc-font-map: map-merge($nc-font-map, ($key: nc-gen-font-set($nc-font-set-start)));
