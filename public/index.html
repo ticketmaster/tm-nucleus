@@ -63,10 +63,12 @@
         <li><a href="#module">Module</a></li>
         <li><a href="#datetime">Date/Time</a></li>
         <li><a href="#timer">Timer</a></li>
+        <li><a href="#slider">Slider</a></li>
         <li><a href="#event-header">Event Header</a></li>
         <li><a href="#cobrand-header">Cobrand Header</a></li>
         <li><a href="#cart">Cart</a></li>
         <li><a href="#breadcrumbs">Breadcrumbs</a></li>
+        <li><a href="#price-slider">Price Slider</a></li>
         <li><a href="#ism-tooltip">ISM Tooltips</a></li>
         <li><a href="#expando">Expando</a></li>
         <li><a href="#icons">Icons</a></li>
@@ -2190,6 +2192,56 @@
 
       </section>
 
+      <section id="slider" class="sg__section">
+        <h2 class="sg__hdg">Slider</h2>
+
+        <h3 class="sg__subhdg">Knob Position</h3>
+        <p>The lower bound and upper bound positions can be changed by setting the "left" value of <code class="sg__code">#min-handle</code> and <code class="sg__code">#max-handle</code> elements.</p>
+        <p>The active area of the slider bar should reflect the correct value based on knob position and this can be achieved by setting the correct "left" and "width" value of <code class="sg__code">.slider__range--active</code> element.</p>
+
+        <h4>Example</h4>
+        <style type="text/css">
+          #min-handle {
+            left: 32%;
+          }
+          #max-handle {
+            left: 85%;
+          }
+          .slider__range--active {
+            left: 32%;
+            width: 53%;
+          }
+        </style>
+        <div class="slider">
+          <div
+            class="slider__wrapper"
+            role="slider"
+            aria-label="Price"
+            aria-valuemax=10000
+            aria-valuemin=199
+            aria-valuenow=2665
+            aria-valuetext='2665 to 8900'>
+            <div class="slider__range"></div>
+            <div class="slider__range--active"></div>
+            <div id="min-handle" class="slider__handle"></div>
+            <div id="max-handle" class="slider__handle"></div>
+          </div>
+        </div>
+
+<pre><code class="html">&lt;style type="text/css"&gt;
+  #min-handle {
+    left: 32%;
+  }
+  #max-handle {
+    left: 85%;
+  }
+  .slider__range--active {
+    left: 32%;
+    width: 53%;
+  }
+&lt;/style&gt;</code></pre>
+      </section>
+
       <section id="event-header" class="sg__section">
         <h2 class="sg__hdg">Event Headers</h2>
         <p>Event headers are best illustrated on a <a href="event-header.html">separate page</a>.</p>
@@ -2250,6 +2302,46 @@
             <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">In this breadcrumb list</a></li>
             <li class="breadcrumbs__item">Bacon ipsum dolor amet capicola t-bone cupim drumstick porchetta beef ham kielbasa pork belly chuck capicola t-bone cupim drumstick porchetta beef ham kielbasa pork belly chuck</li>
           </ol>
+        </div>
+      </section>
+
+      <section id="price-slider" class="sg__section">
+        <h2 class="sg__hdg">PRICE SLIDER</h2>
+        <p>The price slider pattern utilizes <a href="#slider">Slider</a> along with price labels.</p>
+        <style type="text/css">
+          .sg__price-slider--preview #min-handle {
+            left: 0%;
+          }
+          .sg__price-slider--preview #max-handle {
+            left: 100%;
+          }
+          .sg__price-slider--preview .slider__range--active {
+            left: 0%;
+            width: 100%;
+          }
+        </style>
+        <div class="sg__price-slider sg__price-slider--preview">
+          <div class="price-slider">
+            <div class="price-slider__label price-slider__label-min">$199</div>
+            <div class="price-slider__slider">
+              <div class="slider">
+                <div
+                  class="slider__wrapper"
+                  role="slider"
+                  aria-label="Price"
+                  aria-valuemax=10000
+                  aria-valuemin=199
+                  aria-valuenow=199
+                  aria-valuetext='199 to 10000'>
+                  <div class="slider__range"></div>
+                  <div class="slider__range--active"></div>
+                  <div id="min-handle" class="slider__handle"></div>
+                  <div id="max-handle" class="slider__handle"></div>
+                </div>
+              </div>
+            </div>
+            <div class="price-slider__label">$10,000</div>
+          </div>
         </div>
       </section>
 

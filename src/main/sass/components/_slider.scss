@@ -1,0 +1,64 @@
+$slider-handle-size: 30px;
+$slider-handle-size-large: 32px;
+$slider-range-height: 5px;
+$slider-range-top: ($slider-handle-size - $slider-range-height) / 2;
+$slider-range-top-large: ($slider-handle-size-large - $slider-range-height) / 2;
+
+.slider {
+  position: relative;
+  display: block;
+  height: $slider-handle-size;
+  margin: 0 $slider-handle-size / 2;
+
+  @include breakpoint($min: $bp-md) {
+    height: $slider-handle-size-large;
+    margin: 0 $slider-handle-size-large / 2;
+  }
+}
+
+.slider__wrapper {
+  width: 100%;
+  cursor: pointer;
+}
+
+.slider__range {
+  @include slider-bar($slider-range-top, $slider-range-height);
+
+  position: relative;
+
+  @include breakpoint($min: $bp-md) {
+    top: $slider-range-top-large;
+  }
+}
+
+.slider__range--active {
+  @include slider-bar($slider-range-top, $slider-range-height);
+
+  position: absolute;
+  width: 0;
+  background-color: $slider-range-active-bg-color;
+}
+
+.slider__handle {
+  position: absolute;
+  top: 0;
+  width: $slider-handle-size;
+  height: $slider-handle-size;
+  margin-left: -($slider-handle-size / 2);
+  cursor: pointer;
+  background: $slider-knob-bg-color;
+  border-radius: $slider-handle-size / 2;
+  box-shadow: 0 1px 4px $slider-knob-shadow-color;
+
+  @include breakpoint($min: $bp-md) {
+    width: $slider-handle-size-large;
+    height: $slider-handle-size-large;
+    margin-left: -($slider-handle-size-large / 2);
+    border-radius: $slider-handle-size-large / 2;
+  }
+
+  &.is-active,
+  &:focus {
+    outline: none;
+  }
+}

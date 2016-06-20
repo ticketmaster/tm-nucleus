@@ -581,3 +581,7 @@ $sg-spacing: 1.5em;
   width: 20px;
   background-color: $brand-gray;
 }
+
+.sg__price-slider--preview {
+  @include outer-spacing($bottom: $spacing-md);
+}
