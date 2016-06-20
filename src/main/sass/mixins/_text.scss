@@ -3,11 +3,11 @@
   line-height: $lh;
 
   @if ($responsive) {
-    @include nc-breakpoint($bp-md) {
+    @include nc-breakpoint($nc-bp-md) {
       font-size: nc-get-font($set, 'md');
     }
 
-    @include nc-breakpoint($bp-lg) {
+    @include nc-breakpoint($nc-bp-lg) {
       font-size: nc-get-font($set, 'lg');
     }
   }
