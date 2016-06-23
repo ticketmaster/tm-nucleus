@@ -1,6 +1,10 @@
 Changelog
 =========
 
+**0.29.0**
+---------
+- Add new Price Slider component.
+
 **0.28.1**
 ---------
 **Bug Fixes**
