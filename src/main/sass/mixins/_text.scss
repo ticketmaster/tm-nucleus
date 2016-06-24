@@ -3,11 +3,11 @@
   line-height: $lh;
 
   @if ($responsive) {
-    @include nc-breakpoint($nc-bp-md) {
+    @include nc-breakpoint($nc-bp-sm) {
       font-size: nc-get-nested-map($nc-font-map, $set, 'md');
     }
 
-    @include nc-breakpoint($nc-bp-lg) {
+    @include nc-breakpoint($nc-bp-md) {
       font-size: nc-get-nested-map($nc-font-map, $set, 'lg');
     }
   }

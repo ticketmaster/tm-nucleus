@@ -1,9 +1,7 @@
 @import 'base/all';
 @import 'mixins/all';
 
-$hm: 10px;
-
 .test {
   // @include nc-spacing($outside: 'cozy', $inside: 'spacious');
-  @include nc-spacing($inside: ('top': $hm));
+  @include nc-type-scale('centi');
 }
