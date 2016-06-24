@@ -65,6 +65,7 @@ $nc-text-color: $nc-brand-gray;
 $nc-alt-text-color: $nc-brand-gray2;
 $nc-link-color: $nc-brand-primary;
 $nc-link-hover-color: $nc-brand-primary-darker25;
+$nc-placeholder-text-color: $nc-brand-gray2-lighter50;
 
 // Buttons
 $nc-primary-button-color: $nc-brand-primary;
@@ -87,6 +88,8 @@ $nc-header-secondary-text-color: $nc-brand-primary-lighter75;
 // Borders
 $nc-base-border-color: $nc-brand-gray3;
 $nc-input-border-color: $nc-brand-gray2;
+$nc-input-active-border-color: $nc-brand-primary;
+
 $nc-caution-dialog-color: $nc-brand-caution;
 $nc-cobrand-border-color: $nc-brand-gray3;
 
@@ -97,6 +100,8 @@ $nc-alert-color: $nc-brand-alert;
 $nc-caution-color: $nc-brand-caution;
 $nc-info-color: $nc-brand-gray;
 $nc-label-color: $nc-brand-gray2;
+$nc-label-dark-color: get-darker($nc-brand-gray2, 40%);
+$nc-label-light-color: $nc-white;
 $nc-modal-color: $nc-brand-primary;
 $nc-transparent-color: rgba($nc-white, 0);
 $nc-overlay-color: rgba($nc-black, 0.75);
@@ -134,3 +139,4 @@ $nc-page-section-bg-color: $nc-brand-gray4;
 $nc-caret-legacy-color: $nc-brand-gray2-lighter50;
 $nc-polling-refresh-bg-color: $nc-brand-gray;
 $nc-tooltip-color: $nc-white;
+$nc-input-background-color: $nc-white;
