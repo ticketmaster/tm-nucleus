@@ -207,7 +207,8 @@ a {
   text-decoration: none;
 
   &:active,
-  &:hover {
+  &:hover,
+  &:focus {
     color: $nc-link-hover-color;
     text-decoration: underline;
   }

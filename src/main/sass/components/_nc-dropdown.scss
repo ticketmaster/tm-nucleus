@@ -4,34 +4,21 @@
 }
 
 .nc-dropdown__icon-chevron {
-  @include nc-icon($nc-icon-color, $nc-dropdown-chevron-size, $nc-dropdown-chevron-size);
+  @include nc-icon($nc-icon-color, $nc-dropdown-chevron-width, $nc-dropdown-chevron-height);
 
   position: absolute;
-  right: 10px;
-  bottom: 15px;
+  right: 15px;
+  bottom: 18px;
+  pointer-events: none;
 }
 
 .nc-dropdown__select {
-  @include nc-responsive-font('lg');
+  @include nc-base-field();
 
   position: relative;
-  z-index: 1;
-  width: 100%;
-  height: $nc-input-height;
-  padding: 20px ($nc-dropdown-chevron-size + 19px) 0 10px;
-  color: $nc-text-color;
+  padding: 0 ($nc-dropdown-chevron-width + 19px) 0 15px;
   cursor: pointer;
-  background: none;
-  border: 0;
-  border-bottom: $nc-input-border-style;
-  border-radius: 0;
   appearance: none;
-
-  &:focus,
-  &:active {
-    border-bottom: $nc-focused-border-style;
-    outline: 0;
-  }
 
   &:-moz-focusring {
     color: transparent;
@@ -42,17 +29,9 @@
   &:active ~ .nc-dropdown__icon-chevron {
     fill: $nc-primary-button-color;
   }
-}
 
-.nc-dropdown__select.nc-is-error-field {
-  border-bottom: $nc-alert-border-style;
-}
-
-.nc-dropdown__select.nc-is-error-field ~ .nc-input-group__label,
-.nc-dropdown__select.nc-is-error-field ~ .nc-input-group__label .nc-input-group__required {
-  color: $nc-alert-color;
-}
-
-.nc-dropdown__select.nc-is-error-field ~ .nc-dropdown__icon-chevron {
-  fill: $nc-alert-color;
+  &:focus ~ .nc-dropdown__icon-chevron.nc-dropdown__icon-chevron--error,
+  &:active ~ .nc-dropdown__icon-chevron.nc-dropdown__icon-chevron--error {
+    fill: $nc-alert-color;
+  }
 }
