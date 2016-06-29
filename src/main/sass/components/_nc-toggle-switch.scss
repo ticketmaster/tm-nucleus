@@ -1,0 +1,31 @@
+// Toggle Switch CSS
+
+// Toggle Switch Button Element
+
+.nc-toggle-switch__button {
+  @include nc-toggle-switch-button();
+}
+
+.nc-toggle-switch__button--active {
+  @include nc-toggle-switch-color($nc-toggle-switch-on-bg-color);
+}
+
+.nc-toggle-switch__button--active-resale {
+  @include nc-toggle-switch-color($nc-resale-color);
+}
+
+// Toggle Switch Indicator Element
+
+.nc-toggle-switch__indicator {
+  @include nc-toggle-switch-element(4px, $nc-toggle-switch-button-size - 2, true);
+}
+
+// Toggle Switch Indicator Position States
+
+.nc-toggle-switch__indicator--right {
+  right: 1px;
+}
+
+.nc-toggle-switch__indicator--left {
+  left: 1px;
+}

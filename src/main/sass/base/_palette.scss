@@ -116,17 +116,17 @@ $nc-breadcrumbs-logo-color: $nc-brand-gray2;
 $nc-breadcrumbs-link-color: $nc-brand-gray2;
 
 // Toggle Switch
-$toggle-switch-indicator-bg-color: $white;
-$toggle-switch-off-bg-color: $brand-gray2-lighter50;
-$toggle-switch-on-bg-color: $brand-primary;
+$nc-toggle-switch-indicator-bg-color: $nc-white;
+$nc-toggle-switch-off-bg-color: $nc-brand-gray2-lighter50;
+$nc-toggle-switch-on-bg-color: $nc-brand-primary;
 
 // Slider
-$slider-range-shadow-color: rgba($black, 0.25);
-$slider-range-border-color: $brand-gray;
-$slider-range-bg-color: $brand-gray3;
-$slider-range-active-bg-color: $brand-primary;
-$slider-knob-bg-color: $white;
-$slider-knob-shadow-color: rgba($black, 0.5);
+$nc-slider-range-shadow-color: rgba($nc-black, 0.25);
+$nc-slider-range-border-color: $nc-brand-gray;
+$nc-slider-range-bg-color: $nc-brand-gray3;
+$nc-slider-range-active-bg-color: $nc-brand-primary;
+$nc-slider-knob-bg-color: $nc-white;
+$nc-slider-knob-shadow-color: rgba($nc-black, 0.5);
 
 // Misc
 $nc-list-item-hover-color: $nc-brand-primary-lighter87;
