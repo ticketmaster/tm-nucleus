@@ -463,7 +463,7 @@ $sg-spacing: 1.5em;
   }
 
   .sg__#{$name}-font-size-responsive {
-    @include nc-responsive-font($name);
+    // @include nc-responsive-font($name);
   }
 }
 
