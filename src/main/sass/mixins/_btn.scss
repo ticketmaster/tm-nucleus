@@ -124,7 +124,9 @@
     white-space: nowrap;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
+    color: $nc-link-hover-color;
     text-decoration: underline;
   }
 }
