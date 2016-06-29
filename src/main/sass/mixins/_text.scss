@@ -14,39 +14,20 @@
 }
 
 
-// deprecated
-@mixin nc-responsive-font($set: 'md', $lh: false) {
-  $pint: nc-fetch-font($set);
-
-  font-size: $pint;
-  line-height: nc-get-lh($pint, $lh);
-
-  @include nc-breakpoint($nc-bp-sm) {
-    $quart: nc-fetch-font($set, 'quart');
-
-    font-size: $quart;
-    line-height: nc-get-lh($quart, $lh);
+@mixin nc-alt-copy($set: false) {
+  @if $set {
+    @include nc-responsive-font($set);
   }
 
-  @include nc-breakpoint($nc-bp-md) {
-    $gallon: nc-fetch-font($set, 'gallon');
-
-    font-size: $gallon;
-
-    @if ($set == 'md' and not $lh) {
-      $lh: $nc-base-line-height;
-    }
-
-    line-height: nc-get-lh($gallon, $lh);
-  }
+  font-weight: normal;
+  color: $nc-alt-text-color;
 }
 
 
-@mixin nc-fixed-font($set: 'md', $lh: false) {
-  $size: nc-fetch-font($set, 'quart');
-
-  font-size: $size;
-  line-height: nc-get-lh($size, $lh);
+@mixin nc-truncate-text() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 
@@ -63,18 +44,60 @@
 }
 
 
-@mixin nc-alt-copy($set: false) {
-  @if $set {
-    @include nc-responsive-font($set);
+// deprecated
+@mixin nc-responsive-font($set: 'md', $lh: false) {
+  $name: '';
+
+  @if ($set == 'xs') {
+    $name: 'milli';
+  }
+  @else if ($set == 'sm') {
+    $name: 'centi';
+  }
+  @else if ($set == 'md') {
+    $name: 'uno';
+  }
+  @else if ($set == 'lg') {
+    $name: 'kilo';
+  }
+  @else if ($set == 'xl') {
+    $name: 'giga';
+  }
+  @else if ($set == 'xxl') {
+    $name: 'peta';
+  }
+  @else {
+    @warn 'invalid size specified';
   }
 
-  font-weight: normal;
-  color: $nc-alt-text-color;
+  @include nc-type-scale($name, $lh);
 }
 
 
-@mixin nc-truncate-text() {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+@mixin nc-fixed-font($set: 'md', $lh: false) {
+  $name: '';
+
+  @if ($set == 'xs') {
+    $name: 'milli';
+  }
+  @else if ($set == 'sm') {
+    $name: 'centi';
+  }
+  @else if ($set == 'md') {
+    $name: 'uno';
+  }
+  @else if ($set == 'lg') {
+    $name: 'kilo';
+  }
+  @else if ($set == 'xl') {
+    $name: 'giga';
+  }
+  @else if ($set == 'xxl') {
+    $name: 'peta';
+  }
+  @else {
+    @warn 'invalid size specified';
+  }
+
+  @include nc-type-scale($name, $lh, false);
 }
