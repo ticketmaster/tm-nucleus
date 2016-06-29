@@ -1,0 +1,51 @@
+$nc-price-slider-min-label-lg-width: 6.45rem;
+$nc-price-slider-max-label-lg-width: 8.19rem;
+$nc-price-slider-min-label-sm-width: 5.5rem;
+$nc-price-slider-max-label-sm-width: 7.1rem;
+$nc-price-slider-min-label-xs-width: 5.2rem;
+$nc-price-slider-max-label-xs-width: 6.47rem;
+$nc-price-slider-label-line-height: 3.2rem;
+
+.nc-price-slider {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.nc-price-slider__label {
+  @include nc-inner-spacing($left: $nc-spacing-sm);
+  @include nc-responsive-font('lg', $nc-price-slider-label-line-height);
+
+  flex: 0 0 auto;
+  min-width: $nc-price-slider-max-label-sm-width;
+  text-align: left;
+
+  @include nc-breakpoint($nc-bp-lg) {
+    min-width: $nc-price-slider-max-label-lg-width;
+  }
+
+  @include nc-breakpoint($max: $nc-bp-sm - 1) {
+    min-width: $nc-price-slider-max-label-xs-width;
+  }
+}
+
+.nc-price-slider__label-min {
+  @include nc-inner-spacing($left: 0, $right: $nc-spacing-sm);
+
+  min-width: $nc-price-slider-min-label-sm-width;
+  text-align: right;
+
+  @include nc-breakpoint($nc-bp-lg) {
+    min-width: $nc-price-slider-min-label-lg-width;
+  }
+
+  @include nc-breakpoint($max: $nc-bp-sm - 1) {
+    min-width: $nc-price-slider-min-label-xs-width;
+  }
+}
+
+.nc-price-slider__slider {
+  flex: 1 0 auto;
+  text-align: left;
+}

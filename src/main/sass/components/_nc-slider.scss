@@ -1,0 +1,64 @@
+$nc-slider-handle-size: 30px;
+$nc-slider-handle-size-large: 32px;
+$nc-slider-range-height: 5px;
+$nc-slider-range-top: ($nc-slider-handle-size - $nc-slider-range-height) / 2;
+$nc-slider-range-top-large: ($nc-slider-handle-size-large - $nc-slider-range-height) / 2;
+
+.nc-slider {
+  position: relative;
+  display: block;
+  height: $nc-slider-handle-size;
+  margin: 0 $nc-slider-handle-size / 2;
+
+  @include nc-breakpoint($min: $nc-bp-md) {
+    height: $nc-slider-handle-size-large;
+    margin: 0 $nc-slider-handle-size-large / 2;
+  }
+}
+
+.nc-slider__wrapper {
+  width: 100%;
+  cursor: pointer;
+}
+
+.nc-slider__range {
+  @include nc-slider-bar($nc-slider-range-top, $nc-slider-range-height);
+
+  position: relative;
+
+  @include nc-breakpoint($min: $nc-bp-md) {
+    top: $nc-slider-range-top-large;
+  }
+}
+
+.nc-slider__range--active {
+  @include nc-slider-bar($nc-slider-range-top, $nc-slider-range-height);
+
+  position: absolute;
+  width: 0;
+  background-color: $nc-slider-range-active-bg-color;
+}
+
+.nc-slider__handle {
+  position: absolute;
+  top: 0;
+  width: $nc-slider-handle-size;
+  height: $nc-slider-handle-size;
+  margin-left: -($nc-slider-handle-size / 2);
+  cursor: pointer;
+  background: $nc-slider-knob-bg-color;
+  border-radius: $nc-slider-handle-size / 2;
+  box-shadow: 0 1px 4px $nc-slider-knob-shadow-color;
+
+  @include nc-breakpoint($min: $nc-bp-md) {
+    width: $nc-slider-handle-size-large;
+    height: $nc-slider-handle-size-large;
+    margin-left: -($nc-slider-handle-size-large / 2);
+    border-radius: $nc-slider-handle-size-large / 2;
+  }
+
+  &.is-active,
+  &:focus {
+    outline: none;
+  }
+}

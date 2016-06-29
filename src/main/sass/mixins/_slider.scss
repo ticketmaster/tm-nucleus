@@ -24,13 +24,13 @@ $slide-animation: 1s;
   }
 }
 
-@mixin slider-bar($slider-range-top: 0, $slider-range-height: 5px) {
+@mixin nc-slider-bar($slider-range-top: 0, $slider-range-height: 5px) {
   position: relative;
   top: $slider-range-top;
   width: 100%;
   height: $slider-range-height;
-  background-color: $slider-range-bg-color;
-  border: 1px $slider-range-border-color;
+  background-color: $nc-slider-range-bg-color;
+  border: 1px $nc-slider-range-border-color;
   border-radius: 4px;
-  box-shadow: inset 0 1px 0 $slider-range-shadow-color;
+  box-shadow: inset 0 1px 0 $nc-slider-range-shadow-color;
 }
