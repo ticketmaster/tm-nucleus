@@ -1,8 +1,8 @@
 // config
-$code-bg-color: $nc-brand-gray4;
-$main-hdg-color: $nc-brand-primary;
-$secondary-hdg-color: $nc-brand-accent;
-$table-alt-bg-color: $nc-brand-gray4;
+$code-bg-color: nc-color('ridge');
+$main-hdg-color: nc-color('pacific');
+$secondary-hdg-color: nc-color('catalina');
+$table-alt-bg-color: nc-color('ridge');
 
 $sg-swatch-height: 70px;
 $sg-spacing: 1.5em;
@@ -20,7 +20,7 @@ $sg-spacing: 1.5em;
 
 .html,
 .scss {
-  @include nc-responsive-font('sm');
+  @include nc-type-scale('centi');
 }
 
 .sg__header {
@@ -50,7 +50,7 @@ $sg-spacing: 1.5em;
 }
 
 .sg__name {
-  @include nc-responsive-font('md');
+  @include nc-type-scale('uno');
 
   font-weight: bold;
   color: $nc-white;
@@ -58,7 +58,7 @@ $sg-spacing: 1.5em;
 
 .sg__nav {
   @include nc-outer-spacing($bottom: $nc-spacing-lg);
-  @include nc-responsive-font('sm');
+  @include nc-type-scale('centi');
 
   float: left;
   width: 100%;
@@ -92,7 +92,7 @@ $sg-spacing: 1.5em;
 
 .sg__section {
   @include nc-outer-spacing($bottom: $nc-spacing-lg);
-  @include nc-responsive-font('md');
+  @include nc-type-scale('uno');
 
   float: left;
   width: 100%;
@@ -216,31 +216,31 @@ $sg-spacing: 1.5em;
 }
 
 
-@each $color, $shades in $nc-palette {
-  @each $name, $shade in $shades {
-    .sg__swatch--#{$name} {
-      background: $shade;
-
-      &:before {
-        position: absolute;
-        bottom: 10px;
-        left: 10px;
-
-        @if ($name == 'rocky'
-          or $name == 'ridge'
-          or $name == 'havasu'
-        ) {
-          color: $nc-black;
-        }
-        @else {
-          color: $nc-white;
-        }
-
-        content: '#{$shade}';
-      }
-    }
-  }
-}
+// @each $color, $shades in $nc-palette {
+//   @each $name, $shade in $shades {
+//     .sg__swatch--#{$name} {
+//       background: $shade;
+//
+//       &:before {
+//         position: absolute;
+//         bottom: 10px;
+//         left: 10px;
+//
+//         @if ($name == 'rocky'
+//           or $name == 'ridge'
+//           or $name == 'havasu'
+//         ) {
+//           color: $nc-black;
+//         }
+//         @else {
+//           color: $nc-white;
+//         }
+//
+//         content: '#{$shade}';
+//       }
+//     }
+//   }
+// }
 
 .sg__swatch--state {
   width: 20vw;
@@ -287,106 +287,106 @@ $sg-spacing: 1.5em;
 }
 
 .sg__swatch--pacific-darker25 {
-  background: $nc-brand-primary-darker25;
+  background: nc-color('pacific', 'dark');
 
   &:before {
     color: $nc-white;
 
-    content: '#{$nc-brand-primary-darker25}';
+    content: '#{nc-color('pacific', 'dark')}';
   }
 }
 
 .sg__swatch--pacific-lighter50 {
-  background: $nc-brand-primary-lighter50;
+  background: nc-color('pacific', 'light');
 
   &:before {
-    content: '#{$nc-brand-primary-lighter50}';
+    content: '#{nc-color('pacific', 'light')}';
   }
 }
 
 .sg__swatch--pacific-lighter75 {
-  background: $nc-brand-primary-lighter75;
+  background: nc-color('pacific', 'muted');
 
   &:before {
-    content: '#{$nc-brand-primary-lighter75}';
+    content: '#{nc-color('pacific', 'muted')}';
   }
 }
 
 .sg__swatch--pacific-lighter87 {
-  background: $nc-brand-primary-lighter87;
+  background: nc-color('pacific', 'background');
 
   &:before {
-    content: '#{$nc-brand-primary-lighter87}';
+    content: '#{nc-color('pacific', 'background')}';
   }
 }
 
 .sg__swatch--cascade-darker25 {
-  background: $nc-brand-gray2-darker25;
+  background: nc-color('cascade', 'dark');
 
   &:before {
     color: $nc-white;
 
-    content: '#{$nc-brand-gray2-darker25}';
+    content: '#{nc-color('cascade', 'dark')}';
   }
 }
 
 .sg__swatch--cascade-lighter50 {
-  background: $nc-brand-gray2-lighter50;
+  background: nc-color('cascade', 'light');
 
   &:before {
-    content: '#{$nc-brand-gray2-lighter50}';
+    content: '#{nc-color('cascade', 'light')}';
   }
 }
 
 .sg__swatch--cascade-lighter75 {
-  background: $nc-brand-gray2-lighter75;
+  background: nc-color('cascade', 'muted');
 
   &:before {
-    content: '#{$nc-brand-gray2-lighter75}';
+    content: '#{nc-color('cascade', 'muted')}';
   }
 }
 
 .sg__swatch--yosemite-darker25 {
-  background: $nc-brand-cta-darker25;
+  background: nc-color('yosemite', 'dark');
 
   &:before {
     color: $nc-white;
 
-    content: '#{$nc-brand-cta-darker25}';
+    content: '#{nc-color('yosemite', 'dark')}';
   }
 }
 
 .sg__swatch--yosemite-lighter75 {
-  background: $nc-brand-cta-lighter75;
+  background: nc-color('yosemite', 'muted');
 
   &:before {
-    content: '#{$nc-brand-cta-lighter75}';
+    content: '#{nc-color('yosemite', 'muted')}';
   }
 }
 
 .sg__swatch--helen-darker25 {
-  background: $nc-brand-alert-darker25;
+  background: nc-color('helen', 'dark');
 
   &:before {
     color: $nc-white;
 
-    content: '#{$nc-brand-alert-darker25}';
+    content: '#{nc-color('helen', 'dark')}';
   }
 }
 
 .sg__swatch--helen-lighter75 {
-  background: $nc-brand-alert-lighter75;
+  background: nc-color('helen', 'muted');
 
   &:before {
-    content: '#{$nc-brand-alert-lighter75}';
+    content: '#{nc-color('helen', 'muted')}';
   }
 }
 
 .sg__swatch--catalina-lighter50 {
-  background: $nc-brand-accent-lighter50;
+  background: nc-color('catalina', 'light');
 
   &:before {
-    content: '#{$nc-brand-accent-lighter50}';
+    content: '#{nc-color('catalina', 'light')}';
   }
 }
 
@@ -468,7 +468,7 @@ $sg-spacing: 1.5em;
 }
 
 .sg__font-usage {
-  @include nc-responsive-font('sm');
+  @include nc-type-scale('centi');
 }
 
 // text styles
@@ -535,8 +535,21 @@ $sg-spacing: 1.5em;
   @include nc-outer-spacing($bottom: $nc-spacing-md);
 
   width: 33%;
-  // padding: 10px;
 }
+
+.sg__label-example {
+  padding-left: 15px;
+  padding-top: 3px;
+}
+
+.sg__label-example--light {
+  background-color: nc-color('cascade', 'background');
+}
+
+.sg__label-example--dark {
+  background-color: nc-color('sierra');
+}
+
 
 .sg__module {
   @include nc-outer-spacing($bottom: $nc-spacing-md);
@@ -580,7 +593,7 @@ $sg-spacing: 1.5em;
 
 .sg__polling {
   width: 20px;
-  background-color: $nc-brand-gray;
+  background-color: nc-color('sierra');
 }
 
 .sg__price-slider--preview {

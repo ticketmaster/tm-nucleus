@@ -15,7 +15,7 @@ $nc-price-slider-label-line-height: 3.2rem;
 
 .nc-price-slider__label {
   @include nc-inner-spacing($left: $nc-spacing-sm);
-  @include nc-responsive-font('lg', $nc-price-slider-label-line-height);
+  @include nc-type-scale('kilo', $nc-price-slider-label-line-height);
 
   flex: 0 0 auto;
   min-width: $nc-price-slider-max-label-sm-width;

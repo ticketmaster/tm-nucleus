@@ -2,5 +2,5 @@
   border-radius: $nc-base-border-radius;
   border: $nc-input-border-style;
 
-  @include nc-outer-spacing($bottom: $nc-spacing-md);
+  @include nc-spacing($outside: ('bottom': 'normal'));
 }

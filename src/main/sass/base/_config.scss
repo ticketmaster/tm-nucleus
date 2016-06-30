@@ -25,17 +25,6 @@ $nc-spacing-map: ();
 }
 
 
-// Grid
-// deprecated
-$nc-total-columns: 12;
-$nc-gutter-width: 30px;
-$nc-gutter-width-half: $nc-gutter-width / 2;
-
-// deprecated
-$nc-spacing-lg: 30px;
-$nc-spacing-md: 20px;
-$nc-spacing-sm: 10px;
-
 // Borders
 $nc-base-border-style: 1px solid $nc-base-border-color;
 $nc-input-border-style: 1px solid $nc-input-border-color;
@@ -44,7 +33,7 @@ $nc-focused-border-style: 1px solid $nc-link-color;
 $nc-success-border-style: 1px solid $nc-success-color;
 $nc-caution-border-style: 1px solid $nc-caution-dialog-color;
 $nc-alert-border-style: 1px solid $nc-alert-color;
-$nc-info-border-style: 1px solid $nc-brand-gray;
+$nc-info-border-style: 1px solid $nc-info-border-color;
 $nc-outline-style: 3px solid $nc-outline-color;
 $nc-tile-selected-style: 2px solid $nc-link-color;
 
@@ -99,6 +88,7 @@ $nc-polling-size: 60px;
 $nc-polling-border-size: 4px;
 
 // Forms
+$nc-min-input-font-size: 1.6rem; // min required to avoid iOS zooming
 $nc-textfield-gutter-left: 10px;
 $nc-input-height: 45px;
 $nc-input-label-height: 20px;
@@ -134,44 +124,18 @@ $nc-breadcrumbs-chevron-border-width: 0.1em;
 // Modal Dialogs
 $nc-modal-content-height: 60vh;
 
-// Make images flexible
-img,
-picture {
-  max-width: 100%;
-  margin: 0;
-}
 
-// Disable outline of form elements on focus in Chrome
-input,
-select,
-textarea,
-button {
-  &:focus {
-    outline: 0;
-  }
-}
 
-input,
-select,
-textarea {
-  padding: 0;
-  font-size: $nc-min-input-font-size;
-}
+// ************************************************************************** //
+// Values below are deprecated and will no longer be available in Nucleus 2.0
+// ************************************************************************** //
 
-// Hide IE default clear button
-input::-ms-clear {
-  display: none;
-}
+// Grid
+$nc-total-columns: 12;
+$nc-gutter-width: 30px;
+$nc-gutter-width-half: $nc-gutter-width / 2;
 
-// Hide IE dropdown arrow button
-select::-ms-expand {
-  display: none;
-}
-
-// Firefox fix to get button sizing in line with Chrome
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner {
-  padding: 0;
-  margin-top: -1px;
-  border: 0;
-}
+// Spacing
+$nc-spacing-lg: 30px;
+$nc-spacing-md: 20px;
+$nc-spacing-sm: 10px;

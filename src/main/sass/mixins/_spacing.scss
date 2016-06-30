@@ -1,7 +1,7 @@
 // pass in spacing set name (e.g, 'cozy') or map (e.g., ('top': 'cozy')) to $outside/inside
 @mixin nc-spacing($outside: false, $inside: false, $responsive: true) {
   @if (not $outside and not $inside) {
-    @warn 'must specify either $outside or $inside';
+    @error 'must specify either $outside or $inside';
   }
 
   @if ($outside) {
@@ -13,37 +13,18 @@
   }
 }
 
+
 @mixin nc-spacing-generator($spacing-type, $spacing-values, $responsive) {
+
   // map of custom values
   @if (type-of($spacing-values) == map) {
-    @each $direction, $value in $spacing-values {
-      @if (type-of($value) == number) {
-        #{$spacing-type}-#{$direction}: $value;
+    $shorthand: length($spacing-values) == 4;
 
-        @if ($responsive and $value != 0) {
-          @include nc-breakpoint($nc-bp-md) {
-            #{$spacing-type}-#{$direction}: $value * $nc-spacing-ratio;
-          }
-        }
-      }
-      @else {
-        $mini: nc-get-nested-map($nc-spacing-map, $value, 'mini');
+    @include nc-spacing-print-map($spacing-type, $spacing-values, 'mini', $shorthand: $shorthand);
 
-        // matches key, so retrieve and print value
-        @if ($mini) {
-          #{$spacing-type}-#{$direction}: $mini;
-
-          @if ($responsive) {
-            @include nc-breakpoint($nc-bp-md) {
-              #{$spacing-type}-#{$direction}: nc-get-nested-map($nc-spacing-map, $value, 'maxi');
-            }
-          }
-        }
-
-        // no key matched, so print string as-is
-        @else {
-          #{$spacing-type}-#{$direction}: $value;
-        }
+    @if ($responsive) {
+      @include nc-breakpoint($nc-bp-md) {
+        @include nc-spacing-print-map($spacing-type, $spacing-values, 'maxi', $shorthand: $shorthand);
       }
     }
   }
@@ -59,6 +40,73 @@
     }
   }
 }
+
+
+@mixin nc-spacing-print-map($type, $map, $set, $shorthand: false) {
+  $direction-list: 'top', 'right', 'bottom', 'left';
+  $combined-output: '';
+
+  // verify that the directions are valid
+  @each $direction, $value in $map {
+    @if (index($direction-list, $direction) == null) {
+      @error '#{$direction} is an invalid name for #{$type}';
+    }
+  }
+
+  @each $direction in $direction-list {
+    $output: false;
+
+    @if map-has-key($map, $direction) {
+      $value: map-get($map, $direction);
+      $is-number: type-of($value) == number;
+      $is-negative-string: not $is-number and nc-is-neg-string($value);
+
+      @if ($is-negative-string) {
+        $value: str-slice($value, 2, str-length($value));
+        $output: nc-spacing-val($value, $set);
+        $output: -#{$output};
+      }
+      @else {
+        $output: nc-spacing-val($value, $set);
+      }
+    }
+
+    @if ($output) {
+      @if ($shorthand) {
+        $combined-output: #{$combined-output} #{$output};
+      }
+      @else {
+        #{$type}-#{$direction}: $output;
+      }
+    }
+  }
+
+  @if ($shorthand) {
+    #{$type}: $combined-output;
+  }
+}
+
+
+@function nc-spacing-val($val, $set) {
+  $output: false;
+  $is-num: type-of($val) == number;
+  $is-mapped: map-has-key($nc-spacing-map, $val);
+
+  @if ($is-num or not $is-mapped) {
+    @if ($set == 'maxi' and $is-num) {
+      $output: $val * $nc-spacing-ratio;
+    }
+    @else {
+      $output: $val;
+    }
+  }
+  @else {
+    $output: nc-get-nested-map($nc-spacing-map, $val, $set);
+  }
+
+  @return $output;
+}
+
 
 
 // deprecate

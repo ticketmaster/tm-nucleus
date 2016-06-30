@@ -21,7 +21,7 @@ $nc-base-font-family: $nc-tm-sans;
 $nc-type-size-basis: 1.6rem;
 $nc-type-scale-ratio: 1.125;
 $nc-base-line-height: 1.4;
-$nc-type-scale-digits: 2;
+$nc-type-scale-digits: 1;
 
 // Font sizes
 $nc-font-scale-start: -4;
@@ -51,6 +51,14 @@ $nc-font-map: ();
   ));
   $nc-font-scale-start: $nc-font-scale-start + 1;
 }
+
+
+@function nc-get-font($name, $size) {
+  @return nc-get-nested-map($nc-font-map, $name, $size);
+}
+
+
+
 
 
 
@@ -113,7 +121,6 @@ $nc-base-xxxl-font: 4rem;
 // deprecate
 // Other font sizes
 $nc-body-font-size: $nc-base-md-font;
-$nc-min-input-font-size: 1.6rem; // min required to avoid iOS zooming
 
 // deprecate
 $nc-font-sizes: (
@@ -153,73 +160,3 @@ $nc-font-sizes: (
     'gallon': nc-get-gallon-size($nc-base-xxxl-font)
   )
 );
-
-
-
-// Baseline for page
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
-html {
-  font-size: $nc-base-font-size;
-  color: $nc-text-color;
-}
-
-body {
-  font-family: $nc-base-font-family;
-  -webkit-font-smoothing: antialiased;
-  line-height: $nc-base-line-height;
-  letter-spacing: 0.3px;
-  color: $nc-text-color;
-
-  background-color: $nc-white;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-
-  line-height: $nc-header-line-height;
-  text-rendering: optimizeLegibility; // Fix the character spacing for headings
-}
-
-p {
-  margin: 0 0 1em;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-strong {
-  font-weight: bold;
-}
-
-a {
-  color: $nc-link-color;
-  text-decoration: none;
-
-  &:active,
-  &:hover,
-  &:focus {
-    color: $nc-link-hover-color;
-    text-decoration: underline;
-  }
-
-  &:focus {
-    outline: 0;
-  }
-}
-
-abbr {
-  text-decoration: none;
-
-  border-bottom: 0;
-}

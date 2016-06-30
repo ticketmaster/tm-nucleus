@@ -30,7 +30,7 @@
 // use content to set default font size for text
 .nc-page__content {
   @include nc-clearfix();
-  @include nc-responsive-font('md');
+  @include nc-type-scale('uno');
 
   @include nc-breakpoint($nc-bp-lg) {
     padding: 0 $nc-gutter-width;

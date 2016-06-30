@@ -1,6 +1,6 @@
 // scss-lint:disable VariableForProperty
 // Disable linter because we're passing in the color as a variable, so we need
-// to call the get-darker/lighter functions dynamically instead of with set vars
+// to call the nc-get-darker/lighter functions dynamically instead of with set vars
 
 // mixin to create buttons
 @mixin nc-btn($color: $primary-button-color, $txtcolor: $nc-white, $height: $nc-button-height, $hoverstate: false, $outlined: false) {
@@ -16,7 +16,7 @@
 
 // shared base for buttons
 @mixin nc-btn-base($height) {
-  @include nc-responsive-font('md', $height);
+  @include nc-type-scale('uno', $height);
 
   display: inline-block;
   min-height: $height;
@@ -55,14 +55,14 @@
     }
 
     &:active {
-      background-color: get-darker($bgcolor);
+      background-color: nc-get-darker($bgcolor);
     }
 
     @include nc-breakpoint($nc-bp-lg) {
       &:focus,
       &:hover {
         color: $txtcolor;
-        background: get-darker($bgcolor);
+        background: nc-get-darker($bgcolor);
       }
     }
   }
@@ -80,15 +80,15 @@
 
   @if $hoverstate {
     &:active {
-      color: get-darker($color);
-      border-color: get-darker($color);
+      color: nc-get-darker($color);
+      border-color: nc-get-darker($color);
     }
 
     @include nc-breakpoint($nc-bp-lg) {
       &:focus,
       &:hover {
-        color: get-darker($color);
-        border-color: get-darker($color);
+        color: nc-get-darker($color);
+        border-color: nc-get-darker($color);
       }
     }
   }
@@ -101,11 +101,11 @@
 // set disabled color
 @mixin nc-btn-disabled($color, $outlined: false) {
   @if not $outlined {
-    background-color: get-lighter($color);
+    background-color: nc-get-lighter($color);
   }
   @else {
-    color: get-lighter($color);
-    border-color: get-lighter($color);
+    color: nc-get-lighter($color);
+    border-color: nc-get-lighter($color);
   }
 }
 
@@ -138,10 +138,8 @@
   line-height: 0;
 }
 
-// toggle switch mixins
 
 // styles toggle switch button
-
 @mixin nc-toggle-switch-button() {
   @include nc-unbutton($padding: 0);
   @include nc-fixed-font('sm');
@@ -157,16 +155,15 @@
   border-radius: 40px;
 }
 
-// sets toggle switch color
 
+// sets toggle switch color
 @mixin nc-toggle-switch-color($color: $nc-toggle-switch-off-bg-color) {
   color: $nc-toggle-switch-indicator-bg-color;
-  box-shadow: inset 0 1px 10px get-darker($color);
+  box-shadow: inset 0 1px 10px nc-get-darker($color);
   background-color: $color;
 }
 
 // styles inner elements of the toggle switch
-
 @mixin nc-toggle-switch-element($padding, $width: auto, $is-indicator: false) {
   display: inline-block;
   padding: $padding;

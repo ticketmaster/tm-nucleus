@@ -1,0 +1,59 @@
+// calculate different shades
+@function nc-get-darker($color, $percent: 25%) {
+  @return mix(#000, $color, $percent);
+}
+
+@function nc-get-lighter($color, $percent: 75%) {
+  @return mix(#fff, $color, $percent);
+}
+
+@function nc-generate-shades($color, $shades: $nc-shades) {
+  $map: ();
+  $val: '';
+  $shade-name: map-keys($shades);
+
+  $base: map-get($nc-colors, $color);
+  $map: map-merge($map, ('base': $base));
+
+  @each $key in $shade-name {
+    $percentage: map-get($shades, $key);
+
+    @if ($key == 'dark') {
+      $val: nc-get-darker($base, $percentage);
+    }
+    @else {
+      $val: nc-get-lighter($base, $percentage);
+    }
+
+    $map: map-merge($map, ($key: $val));
+  }
+
+  @return $map;
+}
+
+@function nc-color($name, $shade: 'base', $map: $nc-palette) {
+  @return map-get(map-get($map, $name), $shade);
+}
+
+
+$nc-black: #000;
+$nc-white: #fff;
+
+$nc-colors: (
+  'sierra':     #414141,
+  'cascade':    #768692,
+  'rocky':      #dfe4e7,
+  'ridge':      #f6f7f9,
+  'pacific':    #009cde,
+  'yosemite':   #19ab20,
+  'helen':      #f00,
+  'malibu':     #fa3,
+  'catalina':   #d0006f
+);
+
+$nc-shades: (
+  'dark':       25%,
+  'light':      50%,
+  'muted':      75%,
+  'background': 87.5%
+);
