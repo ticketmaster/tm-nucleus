@@ -133,6 +133,39 @@
 }
 
 
+// adapter
+// re-map v0.x font sizes to v1.x scale
+@function nc-remap-type-size($name) {
+  $new-name: '';
+
+  @if ($name == 'xs') {
+    $new-name: 'milli';
+  }
+  @else if ($name == 'sm') {
+    $new-name: 'centi';
+  }
+  @else if ($name == 'md') {
+    $new-name: 'uno';
+  }
+  @else if ($name == 'lg') {
+    $new-name: 'kilo';
+  }
+  @else if ($name == 'xl') {
+    $new-name: 'giga';
+  }
+  @else if ($name == 'xxl') {
+    $new-name: 'peta';
+  }
+  @else if ($name == 'xxxl') {
+    $new-name: 'zetta';
+  }
+  @else {
+    @warn 'invalid size specified';
+  }
+
+  @return $new-name;
+}
+
 // deprecated
 // responsive spacing based on established ratio
 @function nc-increase-spacing($val) {
