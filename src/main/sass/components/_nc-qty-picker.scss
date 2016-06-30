@@ -56,7 +56,7 @@
 }
 
 .nc-qty-picker__number {
-  @include nc-responsive-font('xl', $nc-qty-picker-button-size);
+  @include nc-type-scale('giga', $nc-qty-picker-button-size);
 
   display: inline-block;
   width: $nc-qty-picker-button-size;

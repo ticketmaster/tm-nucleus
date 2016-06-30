@@ -15,7 +15,7 @@ $nc-timer-duration: 30s;
 }
 
 .nc-timer__indicator {
-  @include nc-responsive-font('sm');
+  @include nc-type-scale('centi');
   @include nc-vertically-center(absolute);
 
   z-index: nc-z('timer-indicator');

@@ -1,14 +1,14 @@
 // Breakpoints for media queries
-$nc-bp-xs: 320px;
-$nc-bp-sm: 375px;
-$nc-bp-md: 720px;
-$nc-bp-lg: 1020px;
-$nc-bp-xl: 1440px;
-
 $nc-breakpoints: (
-  'mobile': $nc-bp-xs,
-  'large-mobile': $nc-bp-sm,
-  'tablet': $nc-bp-md,
-  'desktop': $nc-bp-lg,
-  'max': $nc-bp-xl
+  'mobile':       320px,
+  'large-mobile': 375px,
+  'tablet':       720px,
+  'desktop':      1020px,
+  'max':          1440px
 );
+
+$nc-bp-xs: map-get($nc-breakpoints, 'mobile');
+$nc-bp-sm: map-get($nc-breakpoints, 'large-mobile');
+$nc-bp-md: map-get($nc-breakpoints, 'tablet');
+$nc-bp-lg: map-get($nc-breakpoints, 'desktop');
+$nc-bp-xl: map-get($nc-breakpoints, 'max');

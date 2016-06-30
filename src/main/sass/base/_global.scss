@@ -1,0 +1,109 @@
+// Baseline for page
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $nc-base-font-size;
+  color: $nc-text-color;
+}
+
+body {
+  font-family: $nc-base-font-family;
+  -webkit-font-smoothing: antialiased;
+  line-height: $nc-base-line-height;
+  letter-spacing: 0.3px;
+  color: $nc-text-color;
+
+  background-color: $nc-white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+
+  line-height: $nc-header-line-height;
+  text-rendering: optimizeLegibility; // Fix the character spacing for headings
+}
+
+p {
+  margin: 0 0 1em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+strong {
+  font-weight: bold;
+}
+
+a {
+  color: $nc-link-color;
+  text-decoration: none;
+
+  &:active,
+  &:hover,
+  &:focus {
+    color: $nc-link-hover-color;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+abbr {
+  text-decoration: none;
+
+  border-bottom: 0;
+}
+
+// Make images flexible
+img,
+picture {
+  max-width: 100%;
+  margin: 0;
+}
+
+// Disable outline of form elements on focus in Chrome
+input,
+select,
+textarea,
+button {
+  &:focus {
+    outline: 0;
+  }
+}
+
+input,
+select,
+textarea {
+  padding: 0;
+  font-size: $nc-min-input-font-size;
+}
+
+// Hide IE default clear button
+input::-ms-clear {
+  display: none;
+}
+
+// Hide IE dropdown arrow button
+select::-ms-expand {
+  display: none;
+}
+
+// Firefox fix to get button sizing in line with Chrome
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner {
+  padding: 0;
+  margin-top: -1px;
+  border: 0;
+}

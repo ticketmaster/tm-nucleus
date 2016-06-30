@@ -1,5 +1,5 @@
 .nc-polling-refresh {
-  @include nc-polling-refresh($nc-base-icon-size, $nc-brand-gray);
+  @include nc-polling-refresh();
 }
 
 .nc-polling-refresh__filled {

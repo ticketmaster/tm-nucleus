@@ -1,7 +1,10 @@
 @mixin nc-dialog-title($size) {
-  @include nc-responsive-font($size);
-  @include nc-inner-spacing($nc-spacing-sm);
+  $name: nc-remap-type-size($size);
 
+  @include nc-type-scale($name);
+  @include nc-spacing($inside: 'compact');
+
+  content: $name;
   font-weight: normal;
   color: $nc-white;
 }
@@ -21,9 +24,9 @@
   vertical-align: middle;
 }
 
-@mixin nc-dialog-content($color: $nc-alt-text-color, $pad: $nc-spacing-sm) {
-  @include nc-responsive-font('sm');
-  @include nc-inner-spacing($pad);
+@mixin nc-dialog-content($color: $nc-alt-text-color, $pad: 'compact') {
+  @include nc-type-scale('centi');
+  @include nc-spacing($inside: $pad);
 
   color: $color;
   background-color: $nc-white;
