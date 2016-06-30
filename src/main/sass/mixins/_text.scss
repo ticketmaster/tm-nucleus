@@ -46,28 +46,10 @@
 
 // deprecated
 @mixin nc-responsive-font($set: 'md', $lh: false) {
-  $name: '';
+  $name: nc-remap-type-size($set);
 
-  @if ($set == 'xs') {
-    $name: 'milli';
-  }
-  @else if ($set == 'sm') {
-    $name: 'centi';
-  }
-  @else if ($set == 'md') {
-    $name: 'uno';
-  }
-  @else if ($set == 'lg') {
-    $name: 'kilo';
-  }
-  @else if ($set == 'xl') {
-    $name: 'giga';
-  }
-  @else if ($set == 'xxl') {
-    $name: 'peta';
-  }
-  @else {
-    @warn 'invalid size specified';
+  @if not $lh {
+    $lh: $nc-base-line-height;
   }
 
   @include nc-type-scale($name, $lh);
@@ -75,28 +57,10 @@
 
 
 @mixin nc-fixed-font($set: 'md', $lh: false) {
-  $name: '';
+  $name: nc-remap-type-size($set);
 
-  @if ($set == 'xs') {
-    $name: 'milli';
-  }
-  @else if ($set == 'sm') {
-    $name: 'centi';
-  }
-  @else if ($set == 'md') {
-    $name: 'uno';
-  }
-  @else if ($set == 'lg') {
-    $name: 'kilo';
-  }
-  @else if ($set == 'xl') {
-    $name: 'giga';
-  }
-  @else if ($set == 'xxl') {
-    $name: 'peta';
-  }
-  @else {
-    @warn 'invalid size specified';
+  @if not $lh {
+    $lh: $nc-base-line-height;
   }
 
   @include nc-type-scale($name, $lh, false);
