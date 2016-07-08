@@ -14,7 +14,7 @@ $nc-event-text-timer-ie: calc(100vw - (#{$nc-supportive-timer} * 2 + 12px) - #{$
 $nc-event-text-cobrand: calc(100vw - (#{$nc-supportive-cobrand} * 2) - #{$nc-scrollbar-width});
 
 .nc-event-header {
-  @include nc-responsive-font('sm');
+  @include nc-type-scale('centi');
 
   position: relative;
   display: flex;
@@ -50,7 +50,7 @@ $nc-event-text-cobrand: calc(100vw - (#{$nc-supportive-cobrand} * 2) - #{$nc-scr
 }
 
 .nc-event-header__title {
-  @include nc-responsive-font('lg');
+  @include nc-type-scale('kilo');
 
   width: $nc-event-text-sm;
   margin: 0 auto;

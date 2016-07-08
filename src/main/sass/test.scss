@@ -1,7 +1,21 @@
+@import 'themes/tm';
 @import 'base/all';
 @import 'mixins/all';
 
+$map: (
+  'top': 'compact',
+  'right': 10px,
+  'left': auto,
+  'bottom': 0
+);
+
+$map2: (
+  'top': '-compact',
+  'right': 0,
+  'left': auto
+);
+
 .test {
-  // @include nc-spacing($outside: 'cozy', $inside: 'spacious');
-  @include nc-type-scale('centi');
+  // @include nc-spacing($inside: $map);
+  @include nc-spacing($outside: $map2);
 }

@@ -1,5 +1,13 @@
+$nc-cart-padding: (
+  'top': 'compact',
+  'right': $nc-gutter-width-half,
+  'bottom': 'moderate',
+  'left': $nc-gutter-width-half
+);
+
 .nc-cart {
   @include nc-clearfix();
+  @include nc-spacing($inside: $nc-cart-padding, $responsive: false);
 
   position: fixed;
   bottom: 0;
@@ -7,7 +15,7 @@
   z-index: nc-z('cart');
   width: 100%;
   height: auto;
-  padding: $nc-spacing-sm $nc-gutter-width-half $nc-spacing-md;
+  // padding: $nc-spacing-sm $nc-gutter-width-half $nc-spacing-md;
   white-space: nowrap;
   background: $nc-page-section-bg-color;
   border-top: $nc-base-border-style;
@@ -18,7 +26,7 @@
 }
 
 .nc-cart__total-amt {
-  @include nc-responsive-font('xl');
+  @include nc-type-scale('giga');
 }
 
 .nc-cart__total-desc {

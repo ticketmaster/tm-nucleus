@@ -1,5 +1,35 @@
+// retrieve values from nested map
+@function nc-get-nested-map($map, $key, $subkey) {
+  @if (map-has-key($map, $key) and map-has-key(map-get($map, $key), $subkey)) {
+    @return map-get(map-get($map, $key), $subkey);
+  }
+  @error "either '#{$key}' or '#{$subkey}' does not exist in '#{$map}'";
+}
+
+// check if value is in list
+@function nc-list-contains($list, $item) {
+  @return index($list, $item) != null;
+}
+
+
+// check if string starts with a '-' aka is negative
+@function nc-is-neg-string($str) {
+  $index: false;
+
+  @if (type-of($str) == string) {
+    $index: str-index($str, '-');
+  }
+  @else {
+    @warn '`nc-is-neg-string` expects a string but was given #{$str}';
+  }
+
+  @if $index == 1 { @return true; }
+  @return false;
+}
+
+
 // via https://gist.github.com/terkel/4373420
-@function nc-round-num ($number, $digits: 0, $mode: round) {
+@function nc-round-num($number, $digits: 0, $mode: round) {
   $n: 1;
   // $number must be a number
   @if type-of($number) != number {
@@ -105,15 +135,6 @@
 }
 
 
-// retrieve values from nested map
-@function nc-get-nested-map($map, $key, $subkey) {
-  @if (map-has-key($map, $key) and map-has-key(map-get($map, $key), $subkey)) {
-    @return map-get(map-get($map, $key), $subkey);
-  }
-  @return false;
-}
-
-
 // determine tooltip offset direction
 @function nc-get-tooltip-offset-direction($pos) {
   $offset: 'top';
@@ -136,7 +157,7 @@
 // adapter
 // re-map v0.x font sizes to v1.x scale
 @function nc-remap-type-size($name) {
-  $new-name: '';
+  $new-name: $name;
 
   @if ($name == 'xs') {
     $new-name: 'milli';
@@ -159,16 +180,28 @@
   @else if ($name == 'xxxl') {
     $new-name: 'zetta';
   }
-  @else {
-    @warn 'invalid size specified';
+  @else if not index($nc-font-name-list, $name) {
+    @error 'invalid size specified';
   }
 
   @return $new-name;
 }
 
-// deprecated
+
+@function nc-deprecate($thing, $type) {
+  @return 'The `#{$thing}` #{$type} is deprecated and will be removed in Nucleus 2.0';
+}
+
+
+
+// ************************************************************************** //
+// Below functions are deprecated and will be removed in Nucleus 2.0
+// ************************************************************************** //
+
 // responsive spacing based on established ratio
 @function nc-increase-spacing($val) {
+  // @warn nc-deprecate('nc-increase-spacing', 'function');
+
   @if ($val != 'auto') {
     @return $val * $nc-spacing-ratio;
   }

@@ -1,22 +1,24 @@
 @mixin nc-type-scale($set, $lh: $nc-base-line-height, $responsive: true) {
-  font-size: nc-get-nested-map($nc-font-map, $set, 'sm');
+  font-size: nc-get-font($set, 'sm');
   line-height: $lh;
 
   @if ($responsive) {
     @include nc-breakpoint($nc-bp-sm) {
-      font-size: nc-get-nested-map($nc-font-map, $set, 'md');
+      font-size: nc-get-font($set, 'md');
     }
 
     @include nc-breakpoint($nc-bp-md) {
-      font-size: nc-get-nested-map($nc-font-map, $set, 'lg');
+      font-size: nc-get-font($set, 'lg');
     }
   }
 }
 
 
-@mixin nc-alt-copy($set: false) {
+@mixin nc-alt-copy($set: false, $responsive: true) {
   @if $set {
-    @include nc-responsive-font($set);
+    $name: nc-remap-type-size($set);
+
+    @include nc-type-scale($name, $responsive: $responsive);
   }
 
   font-weight: normal;
@@ -32,7 +34,9 @@
 
 
 @mixin nc-hdg-text($set, $color: $nc-text-color, $mb: $nc-header-margin) {
-  @include nc-responsive-font($set);
+  $name: nc-remap-type-size($set);
+
+  @include nc-type-scale($name);
 
   margin-bottom: $mb;
   font-weight: bold;
@@ -46,22 +50,19 @@
 
 // deprecated
 @mixin nc-responsive-font($set: 'md', $lh: false) {
-  $name: nc-remap-type-size($set);
-
-  @if not $lh {
-    $lh: $nc-base-line-height;
-  }
-
-  @include nc-type-scale($name, $lh);
+  @include nc-type-adapter($set, $lh, true);
 }
 
-
 @mixin nc-fixed-font($set: 'md', $lh: false) {
+  @include nc-type-adapter($set, $lh, false);
+}
+
+@mixin nc-type-adapter($set, $lh, $responsive) {
   $name: nc-remap-type-size($set);
 
   @if not $lh {
     $lh: $nc-base-line-height;
   }
 
-  @include nc-type-scale($name, $lh, false);
+  @include nc-type-scale($name, $lh, $responsive);
 }

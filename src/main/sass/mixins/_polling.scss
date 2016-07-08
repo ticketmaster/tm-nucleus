@@ -24,7 +24,7 @@
 }
 
 
-@mixin nc-polling-refresh($size: $nc-base-icon-size, $bg: $brand-gray) {
+@mixin nc-polling-refresh($size: $nc-base-icon-size, $bg: $nc-polling-refresh-bg-color) {
   position: relative;
   z-index: nc-z('polling');
   height: $size;

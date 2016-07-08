@@ -20,7 +20,7 @@
 }
 
 .nc-button-aux--minor {
-  @include nc-responsive-font('sm');
+  @include nc-type-scale('centi');
 
   min-height: $nc-button-minor-height;
   padding: 0 $nc-button-minor-padding;

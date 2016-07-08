@@ -1,12 +1,12 @@
 .nc-product-info__title {
-  @include nc-responsive-font('lg');
+  @include nc-type-scale('kilo');
 }
 
 .nc-product-info__compact-title {
-  @include nc-responsive-font('sm');
+  @include nc-type-scale('centi');
 }
 
 .nc-product-info__desc {
-  @include nc-responsive-font('sm');
+  @include nc-type-scale('centi');
   @include nc-alt-copy();
 }

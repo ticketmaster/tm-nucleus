@@ -4,9 +4,10 @@
 // import order matters!
 @import 'functions';
 @import 'breakpoints';
-@import 'color-functions';
-@import 'palette';
-@import 'typography';
 @import 'config';
+@import 'typography';
 @import 'animation';
 @import 'maps';
+
+// baseline html definitions
+@import 'global';

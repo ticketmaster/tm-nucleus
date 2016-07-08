@@ -36,9 +36,9 @@
 }
 
 .nc-heading-lined--primary {
-  @include nc-responsive-font('lg');
+  @include nc-type-scale('kilo');
 }
 
 .nc-heading-lined--secondary {
-  @include nc-responsive-font('md');
+  @include nc-type-scale('uno');
 }
