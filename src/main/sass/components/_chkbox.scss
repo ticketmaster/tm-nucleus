@@ -6,36 +6,67 @@ $chkbox-label-offset: 7px;
   position: relative;
 }
 
-.chkbox__input {
-  float: left;
-  width: $base-icon-size;
-  height: $base-icon-size;
+input.chkbox__input {
+  margin: $spacing-sm $spacing-sm $spacing-sm 0;
   cursor: pointer;
-  background-color: $white;
+  height: $base-icon-size;
+  opacity: 0;
+  width: $input-label-height;
+  position: relative;
+  top: 0px;
+  float: left;
+  z-index: 100;
+}
+
+input.chkbox__input + label.chkbox__label {
+  position: relative;
+  margin-left: $spacing-sm;
+
+}
+
+input.chkbox__input + label.chkbox__label:after {
+  width: $input-label-height;
+  content: "";
+  display: inline-block;
+  position: absolute;
+  height: $spacing-md;
+  left: -1*$spacing-sm;
+  top: $spacing-sm;
+  z-index: -10;
   border: $input-border-style;
   border-radius: $base-border-radius;
-  appearance: none;
+  box-sizing: border-box;
 }
 
-.chkbox__input:checked {
-  background-color: $link-color;
-  border: $focused-border-style;
-}
-
-.chkbox__input:checked:after {
+input.chkbox__input:checked + label.chkbox__label:after {
+  width: $input-label-height;
+  content: "";
+  display: inline-block;
+  border: 1px solid transparent;
   position: absolute;
-  left: ($base-icon-size - $chkbox-size) / 2;
-  display: block;
-  width: $chkbox-size;
-  height: $chkbox-size * 2;
-  background-color: $link-color;
-  border: solid $white;
-  border-width: 0 $chkbox-thickness $chkbox-thickness 0;
-  content: '';
-  transform: rotate(45deg);
+  height: $base-icon-size;
+  left: -1*$spacing-sm;
+  top: $spacing-sm;
+  border-radius: $base-border-radius;
+  z-index: -10;
+  background: $link-color;
+  box-sizing: border-box;
 }
 
-.chkbox__label {
-  display: block;
-  margin-left: $base-icon-size + $chkbox-label-offset;
+input.chkbox__input:checked + label.chkbox__label:before {
+  background: $link-color;
+  border-color: $white;
+  border-image: none;
+  border-style: solid;
+  border-width: 0 $base-border-radius $base-border-radius 0;
+  content: "";
+  display: inline-block;
+  height: 15px;
+  left: -3px;
+  position: absolute;
+  top: $spacing-sm;
+  transform: rotate(44deg);
+  width: 6px;
+  z-index: -1;
+  border-top-left-radius: $spacing-sm;
 }
