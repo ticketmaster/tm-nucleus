@@ -1,3 +1,5 @@
+/** @define heading-section; weak */
+
 // TODO: get rid of this in EDP
 .nc-heading-section {
   @include nc-hdg-text('md', $nc-text-color, 0);

@@ -5,23 +5,28 @@ $slide-animation: 1s;
   overflow: hidden;
   transition: $slide-animation;
 
+  /* stylelint-disable selector-class-pattern */
+  // holder from v0.x -- we shouldn't be using multi-class selectors anymore
   &.slider-open {
     max-height: $max-ht;
-
     transition: $slide-animation;
   }
+  /* stylelint-enable selector-class-pattern */
 }
 
 @mixin nc-slider-ease($min-ht: 0, $max-ht: 1000px) {
-  overflow: hidden;
   max-height: $min-ht;
+  overflow: hidden;
 
   @content;
 
+  /* stylelint-disable selector-class-pattern */
+  // holder from v0.x -- we shouldn't be using multi-class selectors anymore
   &.slider-open {
     max-height: $max-ht;
     transition: max-height $slide-animation ease-in;
   }
+  /* stylelint-enable selector-class-pattern */
 }
 
 @mixin nc-slider-bar($slider-range-top: 0, $slider-range-height: 5px) {

@@ -1,3 +1,5 @@
+/** @define dropdown; weak */
+
 .nc-dropdown {
   position: relative;
   width: 100%;
@@ -21,7 +23,7 @@
   appearance: none;
 
   &:-moz-focusring {
-    color: transparent;
+    color: $nc-transparent-color;
     text-shadow: 0 0 0 $nc-text-color;
   }
 
@@ -34,4 +36,12 @@
   &:active ~ .nc-dropdown__icon-chevron.nc-dropdown__icon-chevron--error {
     fill: $nc-alert-color;
   }
+}
+
+.nc-dropdown__select--error {
+  border-color: $nc-alert-color;
+}
+
+.nc-dropdown__icon-chevron--error {
+  fill: $nc-alert-color;
 }

@@ -1,7 +1,7 @@
 @mixin nc-text-rotator($height) {
   height: $height;
-  line-height: $height;
   overflow: hidden;
+  line-height: $height;
 }
 
 @mixin nc-text-rotator-current {

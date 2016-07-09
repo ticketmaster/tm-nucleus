@@ -1,3 +1,5 @@
+/** @define delimited-list; weak */
+
 .nc-delimited-list {
   @include nc-unstyled-list();
 
@@ -34,7 +36,9 @@
 }
 
 
-// TODO: clean outs
+/* stylelint-disable plugin/selector-bem-pattern */
+// holdover from v0.x -- we shouldn't be using multi-class selectors anymore
 .nc-module__content + .nc-delimited-list {
   border-top: $nc-base-border-style;
 }
+/* stylelint-enable plugin/selector-bem-pattern */

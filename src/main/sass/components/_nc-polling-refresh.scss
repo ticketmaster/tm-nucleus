@@ -1,3 +1,5 @@
+/** @define polling-refresh; weak */
+
 .nc-polling-refresh {
   @include nc-polling-refresh();
 }

@@ -1,3 +1,5 @@
+/** @define heading-lined; weak  */
+
 .nc-heading-lined {
   @include nc-outer-spacing($bottom: $nc-spacing-sm);
   @include nc-inner-spacing($left: $nc-spacing-sm, $right: $nc-spacing-sm);
@@ -8,8 +10,8 @@
   text-align: center;
   white-space: nowrap;
 
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     position: relative;
     top: 0.63em;
     display: table-cell;
@@ -18,7 +20,7 @@
     content: '';
   }
 
-  &:before {
+  &::before {
     right: $nc-spacing-sm;
 
     @include nc-breakpoint($nc-bp-md) {
@@ -26,7 +28,7 @@
     }
   }
 
-  &:after {
+  &::after {
     left: $nc-spacing-sm;
 
     @include nc-breakpoint($nc-bp-md) {

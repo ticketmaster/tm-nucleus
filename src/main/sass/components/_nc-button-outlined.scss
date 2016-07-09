@@ -1,3 +1,5 @@
+/** @define button-outlined; weak */
+
 .nc-button-outlined {
   @include nc-btn($nc-alert-color, $hoverstate: true, $outlined: true);
 }

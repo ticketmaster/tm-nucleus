@@ -3,13 +3,17 @@
 
 @import 'shared';
 
+/* stylelint-disable color-no-hex */
 // add LN specific colors to base palette
-$nc-colors: map-merge($nc-colors, (
-  'smoky':      #576671,
-  'rainier':    #e11d39,
-  'tahoe':      #2cb3ad,
-  'shasta':     #2088b3
-));
+$nc-colors: map-merge(
+  $nc-colors, (
+    'smoky':      #576671,
+    'rainier':    #e11d39,
+    'tahoe':      #2cb3ad,
+    'shasta':     #2088b3
+  )
+);
+/* stylelint-enable color-no-hex */
 
 $nc-palette: ();
 

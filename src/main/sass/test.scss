@@ -15,7 +15,7 @@ $map2: (
   'left': auto
 );
 
-.test {
+.nc-test {
   // @include nc-spacing($inside: $map);
   @include nc-spacing($outside: $map2);
 }
