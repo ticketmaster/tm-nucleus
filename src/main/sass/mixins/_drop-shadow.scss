@@ -7,15 +7,17 @@
   // CSS3 drop-shadow filter renders differently, so we need to halve the value
   $modern-blur: $blur / 2;
 
-  // Work around for iOS/Safari. Tooltip would flicker without this http://stackoverflow.com/a/13020881
-  backface-visibility: hidden;
-
   // IE8-9 fallback
-  // scss-lint:disable VendorPrefix
+  /* stylelint-disable property-no-vendor-prefix, string-quotes */
+  // allow special case
   -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=#{$x}, OffY=#{$y}, Color='#{$color}')";
+  /* stylelint-enable property-no-vendor-prefix, string-quotes */
 
   // modern browsers
   filter: drop-shadow($x $y $modern-blur $color);
+
+  // Work around for iOS/Safari. Tooltip would flicker without this http://stackoverflow.com/a/13020881
+  backface-visibility: hidden;
 
   // IE10+
   @include nc-target-ie() {

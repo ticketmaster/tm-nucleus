@@ -1,3 +1,5 @@
+/** @define button; weak */
+
 // standard buttons are 44px height
 .nc-button {
   @include nc-btn($nc-primary-button-color, $hoverstate: true);

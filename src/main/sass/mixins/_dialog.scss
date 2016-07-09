@@ -4,9 +4,9 @@
   @include nc-type-scale($name);
   @include nc-spacing($inside: 'compact');
 
-  content: $name;
   font-weight: normal;
   color: $nc-white;
+  content: $name;
 }
 
 @mixin nc-dialog-title-icon($width: $nc-base-icon-size, $height: $nc-base-icon-size) {

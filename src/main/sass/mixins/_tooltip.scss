@@ -5,7 +5,7 @@
     margin-#{$pos}: $nc-tooltip-caret-lg;
   }
 
-  &:after {
+  &::after {
     $direction: nc-get-tooltip-offset-direction($pos);
 
     // reset positioning attributes first
@@ -46,11 +46,11 @@
     border-right: $caret-border-style;
     border-bottom: $caret-border-style;
   }
-  @elseif ($pos == 'right') {
+  @else if ($pos == 'right') {
     border-top: $caret-border-style;
     border-right: $caret-border-style;
   }
-  @elseif ($pos == 'left') {
+  @else if ($pos == 'left') {
     border-bottom: $caret-border-style;
     border-left: $caret-border-style;
   }

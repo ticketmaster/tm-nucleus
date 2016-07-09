@@ -1,6 +1,8 @@
-.nc-page-header {
-  position: relative;
-}
+/** @define cobrand-header; weak */
+
+// .nc-page-header {
+//   position: relative;
+// }
 
 .nc-cobrand-header {
   @include nc-inner-spacing($right: $nc-spacing-sm, $left: $nc-spacing-sm);

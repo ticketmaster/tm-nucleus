@@ -1,3 +1,5 @@
+/** @define input-group; weak */
+
 .nc-input-group {
   @include nc-clearfix();
 
@@ -15,11 +17,11 @@
   text-transform: uppercase;
 }
 
-.nc-input-group__label.nc-input-group__label--dark {
+.nc-input-group__label--dark {
   color: $nc-label-dark-color;
 }
 
-.nc-input-group__label.nc-input-group__label--light {
+.nc-input-group__label--light {
   color: $nc-label-light-color;
 }
 
@@ -35,13 +37,13 @@
   padding: 0 15px;
   appearance: none;
 
+  &::placeholder {
+    color: $nc-placeholder-text-color;
+  }
+
   &:-webkit-autofill {
     box-shadow: 0 0 0 1000px $nc-input-background-color inset;
   }
-
-  &::placeholder {
-    color: $nc-placeholder-text-color;
-  };
 }
 
 .nc-input-group__error-message {
@@ -52,19 +54,14 @@
   color: $nc-alert-color;
 }
 
-.nc-dropdown__select.nc-dropdown__select--error,
-.nc-input-group__text-field.nc-input-group__text-field--error {
+.nc-input-group__text-field--error {
   border-color: $nc-alert-color;
 }
 
-.nc-input-group__label.nc-input-group__label--error {
+.nc-input-group__label--error {
   color: $nc-alert-color;
 }
 
-.nc-dropdown__icon-chevron.nc-dropdown__icon-chevron--error {
-  fill: $nc-alert-color;
-}
-
-.nc-input-group__required.nc-input-group__required--error {
+.nc-input-group__required--error {
   color: $nc-alert-color;
 }

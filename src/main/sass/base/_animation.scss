@@ -121,7 +121,7 @@ $nc-polling-refresh-animation: wipe 2s infinite;
   }
 }
 
-@keyframes ui-spinner-rotate-right{
+@keyframes ui-spinner-rotate-right {
   0% {
     transform: rotate(0deg);
   }
@@ -142,7 +142,8 @@ $nc-polling-refresh-animation: wipe 2s infinite;
     transform: rotate(360deg);
   }
 }
-@keyframes ui-spinner-rotate-left{
+
+@keyframes ui-spinner-rotate-left {
   0% {
     transform: rotate(0deg);
   }

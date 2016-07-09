@@ -10,12 +10,17 @@
   },
   "scripts": {
     "start": "node ./bin/www",
-    "lint": "gulp scsslint",
+    "lint-staged": "lint-staged",
+    "lint:scss": "stylelint --syntax scss --config .stylelint.config.js",
     "build": "gulp",
     "dev": "gulp dev",
     "app": "gulp app",
     "dist": "gulp dist"
   },
+  "lint-staged": {
+    "*.scss": "lint:scss"
+  },
+  "pre-commit": "lint-staged",
   "dependencies": {
     "body-parser": "~1.13.2",
     "cookie-parser": "~1.3.5",
@@ -32,16 +37,23 @@
     "gulp-autoprefixer": "^2.3.1",
     "gulp-load-plugins": "^1.0.0-rc.1",
     "gulp-minify-css": "^1.2.0",
+    "gulp-postcss": "^6.1.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "2.0.4",
-    "gulp-scss-lint": "^0.3.0",
     "gulp-sequence": "^0.4.1",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-svgmin": "^1.2.0",
     "gulp-svgstore": "^5.0.4",
+    "lint-staged": "^2.0.2",
     "lodash": "^3.10.1",
     "node-sass": "3.5.3",
     "normalize.css": "3.0.3",
+    "postcss-reporter": "^1.4.1",
+    "postcss-scss": "^0.1.8",
+    "pre-commit": "^1.1.3",
+    "stylelint": "^6.9.0",
+    "stylelint-declaration-use-variable": "^1.4.0",
+    "stylelint-selector-bem-pattern": "^1.0.0",
     "svg4everybody": "^2.0.0"
   }
 }

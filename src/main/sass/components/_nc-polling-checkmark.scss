@@ -1,3 +1,5 @@
+/** @define polling-checkmark; weak */
+
 .nc-polling-checkmark {
   position: relative;
   width: $nc-polling-size;
@@ -7,7 +9,7 @@
   border-radius: 50%;
 }
 
-.nc-polling-checkmark:after {
+.nc-polling-checkmark::after {
   position: absolute;
   top: $nc-polling-border-size;
   left: $nc-polling-border-size;
@@ -32,19 +34,19 @@
   left: 50%;
 }
 
-.nc-polling-checkmark__left:after,
-.nc-polling-checkmark__right:after {
+.nc-polling-checkmark__left::after,
+.nc-polling-checkmark__right::after {
   @include nc-polling-checkmark-animate();
 }
 
-.nc-polling-checkmark__left:after {
+.nc-polling-checkmark__left::after {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
   animation-delay: 1.25s;
   animation-name: ui-spinner-rotate-right;
 }
 
-.nc-polling-checkmark__right:after {
+.nc-polling-checkmark__right::after {
   left: -100%;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;

@@ -1,3 +1,5 @@
+/** @define event-header; weak */
+
 $nc-more-icon-width: 21px;
 $nc-more-icon-height: 5px;
 $nc-supportive-size: $nc-base-icon-size + $nc-gutter-width;
@@ -192,7 +194,7 @@ $nc-event-text-cobrand: calc(100vw - (#{$nc-supportive-cobrand} * 2) - #{$nc-scr
 
 .nc-event-header__date {
   @include nc-breakpoint($nc-bp-md) {
-    &:after {
+    &::after {
       content: ',';
     }
   }

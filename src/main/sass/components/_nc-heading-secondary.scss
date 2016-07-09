@@ -1,3 +1,5 @@
+/** @define heading-secondary; weak */
+
 .nc-heading-secondary {
   @include nc-hdg-text('lg', $nc-text-color);
 }

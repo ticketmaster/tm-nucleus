@@ -16,5 +16,7 @@
     $query: '(max-width: #{$em-max})';
   }
 
-  @media #{$query} { @content; }
+  @media #{$query} {
+    @content;
+  }
 }

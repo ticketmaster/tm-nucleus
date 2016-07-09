@@ -1,4 +1,4 @@
-// scss-lint:disable VariableForProperty
+/* stylelint-disable sh-waqar/declaration-use-variable */
 // Disable linter because we're passing in the color as a variable, so we need
 // to call the nc-get-darker/lighter functions dynamically instead of with set vars
 
@@ -26,9 +26,9 @@
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
+  cursor: pointer;
   border-radius: $nc-button-border-radius;
   box-shadow: none;
-  cursor: pointer;
 
   @include nc-breakpoint($nc-bp-md) {
     min-height: $nc-button-height-lg;
@@ -159,16 +159,16 @@
 // sets toggle switch color
 @mixin nc-toggle-switch-color($color: $nc-toggle-switch-off-bg-color) {
   color: $nc-toggle-switch-indicator-bg-color;
-  box-shadow: inset 0 1px 10px nc-get-darker($color);
   background-color: $color;
+  box-shadow: inset 0 1px 10px nc-get-darker($color);
 }
 
 // styles inner elements of the toggle switch
 @mixin nc-toggle-switch-element($padding, $width: auto, $is-indicator: false) {
   display: inline-block;
   padding: $padding;
-  vertical-align: top;
   overflow: hidden;
+  vertical-align: top;
 
   @if $is-indicator {
     position: absolute;
