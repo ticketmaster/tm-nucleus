@@ -1,11 +1,7 @@
 /** @define cobrand-header; weak */
 
-// .nc-page-header {
-//   position: relative;
-// }
-
 .nc-cobrand-header {
-  @include nc-inner-spacing($right: $nc-spacing-sm, $left: $nc-spacing-sm);
+  @include nc-spacing($inside: ('right': 'compact', 'left': 'compact'));
 
   z-index: nc-z('above-page');
   display: flex;
@@ -22,7 +18,7 @@
 }
 
 .nc-cobrand-header__logo {
-  @include nc-inner-spacing($top: $nc-spacing-sm, $bottom: $nc-spacing-sm);
+  @include nc-spacing($inside: ('top': 'compact', 'bottom': 'compact'));
 
   width: 150px;
   height: $nc-cobrand-header-logo-height;
@@ -53,7 +49,23 @@
 }
 
 .nc-cobrand-header__verified {
-  @include nc-cobrand-header-logo('../img/verified-pacific.svg');
+  width: 150px;
+  height: $nc-touch-size;
+  text-align: right;
+  // determine based on cobrand background color
+  background-image: url('../img/verified-pacific.svg');
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 125px;
+
+  @include nc-breakpoint($nc-bp-lg) {
+    position: absolute;
+    right: $nc-gutter-width / 2;
+    width: 200px;
+    height: $nc-event-header-height;
+    line-height: $nc-event-header-height;
+    background-size: 175px;
+  }
 
   @include nc-target-ie-edge() {
     @include nc-breakpoint($nc-bp-lg) {

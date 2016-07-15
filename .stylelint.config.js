@@ -10,7 +10,6 @@ module.exports = {
       ignoreAtRules: ['if', 'else', 'content', 'return', 'error', 'warn']
     }],
     'at-rule-name-case': 'lower',
-    'at-rule-name-newline-after': 'always-multi-line',
     'at-rule-name-space-after': 'always',
     'at-rule-no-unknown': [true, {
       ignoreAtRules: [
