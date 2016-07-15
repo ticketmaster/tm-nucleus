@@ -142,7 +142,7 @@
 // styles toggle switch button
 @mixin nc-toggle-switch-button() {
   @include nc-unbutton($padding: 0);
-  @include nc-fixed-font('sm');
+  @include nc-type-scale('uno', $responsive: false);
   @include nc-toggle-switch-color();
 
   position: relative;

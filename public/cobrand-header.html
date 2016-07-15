@@ -12,11 +12,14 @@
     <link href="css/nucleus.css" rel="stylesheet" type="text/css">
     <link href="css/styleguide.css" rel="stylesheet" type="text/css">
     <style>
-      .page__content {
+      .page-header {
+        position: relative;
+      }
+      .nc-page__content {
         margin-bottom: 10px;
         padding: 0 15px;
       }
-      .page__content:not(:first-child) {
+      .nc-page__content:not(:first-child) {
         margin-top: 20px;
       }
 
@@ -24,46 +27,49 @@
         Stuff below applies for cobranding
         The values here are merely for illustrative purposes
       */
-      .event-header,
-      .cobrand-header,
-      .timer__mask--cobranded {
+      .nc-event-header,
+      .nc-cobrand-header,
+      .nc-timer__mask--cobranded {
         background-color: #283866;
       }
 
-      .event-header__title,
-      .event-header__date-venue {
+      .nc-event-header__title,
+      .nc-event-header__date-venue {
         color: #fff;
       }
 
-      .event-header__tm-logo,
-      .cobrand-header__tm-logo,
-      .event-header__more-icon {
+      .nc-event-header__tm-logo,
+      .nc-cobrand-header__tm-logo,
+      .nc-event-header__more-icon {
         fill: #fff;
       }
 
-      .event-header__menu-button {
+      .nc-event-header__menu-button {
         display: none;
       }
 
-      /*.cobrand-header__verified {
+      .nc-cobrand-header__verified {
         background-image: url('../img/verified-dark.svg');
-      }*/
+      }
+      .nc-cobrand-header__verified--mlb {
+        background-image: none;
+      }
 
       /* If brand background color is light, then add the following */
-      /*.timer__indicator {
+      /*.nc-timer__indicator {
         color: #000;
       }
-      .timer__spinner,
-      .timer__filler {
+      .nc-timer__spinner,
+      .nc-timer__filler {
         border-color: #000;
       }
-      .timer__bg,
-      .timer__mask {
+      .nc-timer__bg,
+      .nc-timer__mask {
         border-color: rgba(0, 0, 0, 0.3);
       }*/
 
       /* If brand logo is present, then add the following */
-      .cobrand-header__logo {
+      .nc-cobrand-header__logo {
         background-image: url('../img/sample-cobrand-logo.png');
       }
 
@@ -71,8 +77,8 @@
         background-image: url('../img/mlb-logo.svg');
       }
 
-      .event-header__tm-logo,
-      .cobrand-header__tm-logo {
+      .nc-event-header__tm-logo,
+      .nc-cobrand-header__tm-logo {
         display: none;
       }
     </style>
@@ -91,37 +97,32 @@
     </symbol>
   </svg>
 
-  <div class="page__content">
+  <div class="nc-page__content">
     <h1 class="sg__hdg">Cobrand Headers</h1>
     <p>There are a few steps to take to enable cobranding of the event header.</p>
     <p>The first is to embed the following HTML in <code class="sg__code">&lt;style&gt;</code> tags in the head of your document:</p>
     <pre class="sg__sample-code">
-.event-header,
-.cobrand-header {
+.nc-event-header,
+.nc-cobrand-header {
   background-color: <span class="sg__highlight-code">[brand-bgcolor]</span>;
 }
 
-.event-header__title,
-.event-header__date-venue {
+.nc-event-header__title,
+.nc-event-header__date-venue {
   color: <span class="sg__highlight-code">[brand-text-color]</span>;
 }
 
-.event-header__tm-logo,
-.cobrand-header__tm-logo,
-.event-header__more-icon {
+.nc-event-header__tm-logo,
+.nc-cobrand-header__tm-logo,
+.nc-event-header__more-icon {
   fill: <span class="sg__highlight-code">[brand-text-color]</span>;
 }
 
-.event-header__menu-button {
+.nc-event-header__menu-button {
   display: none;
 }
 
-.cobrand-header__verified--mlb {
-  // determine which logo to use based on brand background color
-  background-image: url('path/to/mlb-ticketmaster-<span class="sg__highlight-code">[dark/light]</span>.svg');
-}
-
-.cobrand-header__verified {
+.nc-cobrand-header__verified {
   // determine which logo to use based on brand background color
   background-image: url('path/to/verified-<span class="sg__highlight-code">[dark/light/pacific]</span>.svg');
 }
@@ -130,22 +131,22 @@
   <p>Checkout pages will also need the following style defined.</p>
 
   <pre class="sg__sample-code">
-.timer__mask--cobranded {
+.nc-timer__mask--cobranded {
   background-color: <span class="sg__highlight-code">[brand-bgcolor]</span>;
 }
   </pre>
 
   <p>Light brand background colors will need these properties:</p>
   <pre class="sg__sample-code">
-.timer__indicator {
+.nc-timer__indicator {
   color: #000;
 }
-.timer__spinner,
-.timer__filler {
+.nc-timer__spinner,
+.nc-timer__filler {
   border-color: #000;
 }
-.timer__bg,
-.timer__mask {
+.nc-timer__bg,
+.nc-timer__mask {
   border-color: rgba(0, 0, 0, 0.3);
 }
   </pre>
@@ -156,12 +157,12 @@
   <pre class="sg__sample-code">
 // For when a brand logo exists
 
-.cobrand-header__logo {
+.nc-cobrand-header__logo {
   background-image: <span class="sg__highlight-code">url('path/to/brand-logo.png')</span>;
 }
 
-.event-header__tm-logo,
-.cobrand-header__tm-logo {
+.nc-event-header__tm-logo,
+.nc-cobrand-header__tm-logo {
   display: none;
 }
     </pre>
@@ -169,168 +170,168 @@
     <p>Background color and image are returned via the branding service. Text color is dynamically calculated to be either white or black based on the background color.</p>
     <p>Additionally, the following modifier classes need to be added to your HTML markup:</p>
     <pre class="sg__sample-code">
-.event-header__rotator--cobranded
-.event-header__date--cobranded
-.event-header__venue-name--cobranded
-.event-header__supportive--cobranded
+.nc-event-header__rotator--cobranded
+.nc-event-header__date--cobranded
+.nc-event-header__venue-name--cobranded
+.nc-event-header__supportive--cobranded
     </pre>
   </div>
 
-  <div class="page__content">
+  <div class="nc-page__content">
     <h2 class="sg__subhdg">Co-branded EDP</h2>
   </div>
 
   <header class="page-header">
-    <div class="cobrand-header">
-      <div class="cobrand-header__logo">
-        <svg class="cobrand-header__tm-logo">
+    <div class="nc-cobrand-header">
+      <div class="nc-cobrand-header__logo">
+        <svg class="nc-cobrand-header__tm-logo">
           <use xlink:href="#tm-logo"></use>
         </svg>
-        <span class="ada-text">NFL Ticket Exchange</span>
+        <span class="nc-ada-text">NFL Ticket Exchange</span>
       </div>
-      <div class="cobrand-header__verified">
-        <span class="ada-text">Ticketmaster Verified</span>
+      <div class="nc-cobrand-header__verified">
+        <span class="nc-ada-text">Ticketmaster Verified</span>
       </div>
     </div>
-    <div class="event-header">
-      <div class="event-header__supportive event-header__supportive--cobranded">
-        <button class="event-header__menu-button">
-          <svg class="event-header__menu-icon">
+    <div class="nc-event-header">
+      <div class="nc-event-header__supportive nc-event-header__supportive--cobranded">
+        <button class="nc-event-header__menu-button">
+          <svg class="nc-event-header__menu-icon">
             <use xlink:href="img/sprite.svg#icon-menu"></use>
           </svg>
         </button>
-        <a href="#" class="event-header__tm-link">
-          <svg class="event-header__tm-logo">
+        <a href="#" class="nc-event-header__tm-link">
+          <svg class="nc-event-header__tm-logo">
             <use xlink:href="#tm-logo"></use>
           </svg>
         </a>
       </div>
-      <div class="event-header__event-info">
-        <h1 class="event-header__title event-header__title--cobranded truncate-text">
+      <div class="nc-event-header__event-info">
+        <h1 class="nc-event-header__title nc-event-header__title--cobranded nc-truncate-text">
           A Really Insane Super Crazy Long Event Title That Goes On and On Forever
         </h1>
-        <div class="event-header__date-venue">
-          <div class="event-header__rotator event-header__rotator--cobranded">
-            <span class="event-header__date event-header__date--cobranded truncate-text">Mon 12/28 @ 12:45p</span>
-            <span class="event-header__venue-name event-header__venue-name--cobranded truncate-text">Verizon Wireless Ampitheathre, Los Angeles, CA</span>
+        <div class="nc-event-header__date-venue">
+          <div class="nc-event-header__rotator nc-event-header__rotator--cobranded">
+            <span class="nc-event-header__date nc-event-header__date--cobranded nc-truncate-text">Mon 12/28 @ 12:45p</span>
+            <span class="nc-event-header__venue-name nc-event-header__venue-name--cobranded nc-truncate-text">Verizon Wireless Ampitheathre, Los Angeles, CA</span>
           </div>
         </div>
       </div>
-      <div class="event-header__supportive event-header__supportive--cobranded">
-        <button class="event-header__more-button">
-          <svg class="event-header__more-icon">
+      <div class="nc-event-header__supportive nc-event-header__supportive--cobranded">
+        <button class="nc-event-header__more-button">
+          <svg class="nc-event-header__more-icon">
             <use xlink:href="img/sprite.svg#icon-more"></use>
           </svg>
-          <span class="ada-text">See more event information</span>
+          <span class="nc-ada-text">See more event information</span>
         </button>
       </div>
     </div>
   </header>
 
-  <div class="page__content">
+  <div class="nc-page__content">
     <h2 class="sg__subhdg">Co-branded checkout with timer</h2>
   </div>
-  <div class="cobrand-header">
-    <div class="cobrand-header__logo">
-      <svg class="cobrand-header__tm-logo">
+  <div class="nc-cobrand-header">
+    <div class="nc-cobrand-header__logo">
+      <svg class="nc-cobrand-header__tm-logo">
         <use xlink:href="#tm-logo"></use>
       </svg>
-      <span class="ada-text">Cobrand Name</span>
+      <span class="nc-ada-text">Cobrand Name</span>
     </div>
-    <div class="cobrand-header__verified cobrand-header__verified--timer">
-      <span class="ada-text">Ticketmaster Verified</span>
+    <div class="nc-cobrand-header__verified nc-cobrand-header__verified--timer">
+      <span class="nc-ada-text">Ticketmaster Verified</span>
     </div>
   </div>
-  <header class="event-header event-header--timer event-header--cobranded">
-    <div class="event-header__supportive event-header__supportive--timer event-header__supportive--cobranded">
-      <button class="event-header__menu-button event-header__menu-button--cobranded">
-        <svg class="event-header__menu-icon">
+  <header class="nc-event-header nc-event-header--timer nc-event-header--cobranded">
+    <div class="nc-event-header__supportive nc-event-header__supportive--timer nc-event-header__supportive--cobranded">
+      <button class="nc-event-header__menu-button nc-event-header__menu-button--cobranded">
+        <svg class="nc-event-header__menu-icon">
           <use xlink:href="img/sprite.svg#icon-menu"></use>
         </svg>
       </button>
-      <a href="#" class="event-header__tm-link event-header__tm-link--cobranded">
-        <svg class="event-header__tm-logo">
+      <a href="#" class="nc-event-header__tm-link nc-event-header__tm-link--cobranded">
+        <svg class="nc-event-header__tm-logo">
           <use xlink:href="#tm-logo"></use>
         </svg>
       </a>
     </div>
-    <div class="event-header__event-info event-header__event-info--timer">
-      <h1 class="event-header__title event-header__title--timer truncate-text">
+    <div class="nc-event-header__event-info nc-event-header__event-info--timer">
+      <h1 class="nc-event-header__title nc-event-header__title--timer nc-truncate-text">
         A Really Insane Super Crazy Long Event Title That Goes On and On Forever
       </h1>
-      <div class="event-header__date-venue event-header__date-venue--timer event-header__date-venue--cobranded">
-        <div class="event-header__rotator event-header__rotator--timer">
-          <span class="event-header__date event-header__date--timer truncate-text">Mon 12/28 - Wed 12/30</span>
-          <span class="event-header__venue-name event-header__venue-name--timer truncate-text">Verizon Wireless Ampitheathre, Los Angeles, CA</span>
+      <div class="nc-event-header__date-venue nc-event-header__date-venue--timer nc-event-header__date-venue--cobranded">
+        <div class="nc-event-header__rotator nc-event-header__rotator--timer">
+          <span class="nc-event-header__date nc-event-header__date--timer nc-truncate-text">Mon 12/28 - Wed 12/30</span>
+          <span class="nc-event-header__venue-name nc-event-header__venue-name--timer nc-truncate-text">Verizon Wireless Ampitheathre, Los Angeles, CA</span>
         </div>
       </div>
     </div>
-    <div class="event-header__supportive event-header__supportive--timer event-header__supportive--cobranded">
-      <div class="event-header__timer">
-        <div class="timer">
-          <div class="is-offscreen">Time left to complete page.</div>
-          <div class="timer__indicator">00:00</div>
-          <div class="timer__spinner timer__spinner--cobranded timer__animate"></div>
-          <div class="timer__filler timer__filler--cobranded timer__animate"></div>
-          <div class="timer__bg timer__bg--cobranded"></div>
-          <div class="timer__mask timer__mask--cobranded timer__animate"></div>
+    <div class="nc-event-header__supportive nc-event-header__supportive--timer nc-event-header__supportive--cobranded">
+      <div class="nc-event-header__timer">
+        <div class="nc-timer nc-timer__mask--cobranded">
+          <div class="nc-is-offscreen">Time left to complete page.</div>
+          <div class="nc-timer__indicator">00:00</div>
+          <div class="nc-timer__spinner nc-timer__spinner--cobranded nc-timer__animate"></div>
+          <div class="nc-timer__filler nc-timer__filler--cobranded nc-timer__animate"></div>
+          <div class="nc-timer__bg nc-timer__bg--cobranded"></div>
+          <div class="nc-timer__mask nc-timer__mask--cobranded nc-timer__animate"></div>
         </div>
       </div>
     </div>
   </header>
 
-  <div class="page__content">
+  <div class="nc-page__content">
     <h2 class="sg__subhdg">MLB Co-branded EDP</h2>
   </div>
   <header class="page-header">
-    <div class="cobrand-header">
-      <div class="cobrand-header__logo sg-cobrand-header__logo">
-        <svg class="cobrand-header__tm-logo">
+    <div class="nc-cobrand-header">
+      <div class="nc-cobrand-header__logo sg-cobrand-header__logo">
+        <svg class="nc-cobrand-header__tm-logo">
           <use xlink:href="#tm-logo"></use>
         </svg>
-        <span class="ada-text">Anaheim Angels</span>
+        <span class="nc-ada-text">Anaheim Angels</span>
       </div>
-      <div class="cobrand-header__verified cobrand-header__verified--mlb">
-        <object aria-hidden="true" type="image/svg+xml" class="cobrand-header__mlb-svg" data="img/mlb-ticketmaster-light.svg"></object>
-        <span class="ada-text">Ticketmaster Verified</span>
+      <div class="nc-cobrand-header__verified nc-cobrand-header__verified--mlb">
+        <object aria-hidden="true" type="image/svg+xml" class="nc-cobrand-header__mlb-svg" data="img/mlb-ticketmaster-light.svg"></object>
+        <span class="nc-ada-text">Ticketmaster Verified</span>
       </div>
     </div>
-    <div class="event-header">
-      <div class="event-header__supportive event-header__supportive--cobranded">
-        <button class="event-header__menu-button">
-          <svg class="event-header__menu-icon">
+    <div class="nc-event-header">
+      <div class="nc-event-header__supportive nc-event-header__supportive--cobranded">
+        <button class="nc-event-header__menu-button">
+          <svg class="nc-event-header__menu-icon">
             <use xlink:href="img/sprite.svg#icon-menu"></use>
           </svg>
         </button>
-        <a href="#" class="event-header__tm-link">
-          <svg class="event-header__tm-logo">
+        <a href="#" class="nc-event-header__tm-link">
+          <svg class="nc-event-header__tm-logo">
             <use xlink:href="#tm-logo"></use>
           </svg>
         </a>
       </div>
-      <div class="event-header__event-info">
-        <h1 class="event-header__title event-header__title--cobranded truncate-text">
+      <div class="nc-event-header__event-info">
+        <h1 class="nc-event-header__title nc-event-header__title--cobranded nc-truncate-text">
           A Really Insane Super Crazy Long Event Title That Goes On and On Forever
         </h1>
-        <div class="event-header__date-venue">
-          <div class="event-header__rotator event-header__rotator--cobranded">
-            <span class="event-header__date event-header__date--cobranded truncate-text">Mon 12/28 @ 12:45p</span>
-            <span class="event-header__venue-name event-header__venue-name--cobranded truncate-text">Verizon Wireless Ampitheathre, Los Angeles, CA</span>
+        <div class="nc-event-header__date-venue">
+          <div class="nc-event-header__rotator nc-event-header__rotator--cobranded">
+            <span class="nc-event-header__date nc-event-header__date--cobranded nc-truncate-text">Mon 12/28 @ 12:45p</span>
+            <span class="nc-event-header__venue-name nc-event-header__venue-name--cobranded nc-truncate-text">Verizon Wireless Ampitheathre, Los Angeles, CA</span>
           </div>
         </div>
       </div>
-      <div class="event-header__supportive event-header__supportive--cobranded">
-        <button class="event-header__more-button">
-          <svg class="event-header__more-icon">
+      <div class="nc-event-header__supportive nc-event-header__supportive--cobranded">
+        <button class="nc-event-header__more-button">
+          <svg class="nc-event-header__more-icon">
             <use xlink:href="img/sprite.svg#icon-more"></use>
           </svg>
-          <span class="ada-text">See more event information</span>
+          <span class="nc-ada-text">See more event information</span>
         </button>
       </div>
     </div>
   </header>
 
-  <div class="page__content">
+  <div class="nc-page__content">
     <p><a href="index.html#event-header">Back to styleguide</a>.</p>
   </div>
 
