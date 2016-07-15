@@ -1,3 +1,5 @@
+/** @define expando-button; weak */
+
 .nc-expando-button {
   @include nc-unbutton($padding: 0);
 

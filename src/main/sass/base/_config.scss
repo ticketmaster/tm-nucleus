@@ -18,9 +18,9 @@ $nc-spacing-set-list:
 $nc-spacing-map: ();
 
 @each $key in $nc-spacing-name-list {
-  $nc-spacing-map: map-merge($nc-spacing-map, ($key:
-    nc-generate-scale-map($nc-spacing-scale-start, $nc-spacing-set-list, $nc-spacing-basis, $nc-spacing-ratio, $nc-spacing-digits)
-  ));
+  $nc-spacing-map: map-merge(
+    $nc-spacing-map, ($key: nc-generate-scale-map($nc-spacing-scale-start, $nc-spacing-set-list, $nc-spacing-basis, $nc-spacing-ratio, $nc-spacing-digits))
+  );
   $nc-spacing-scale-start: $nc-spacing-scale-start + 1;
 }
 

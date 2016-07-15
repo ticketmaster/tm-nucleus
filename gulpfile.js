@@ -4,6 +4,9 @@ var _ = require('lodash');
 var del = require('del');
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
+var reporter = require('postcss-reporter');
+var scss = require('postcss-scss');
+var stylelint = require('stylelint');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 
@@ -104,13 +107,21 @@ function minifyCss() {
   return stream;
 }
 
-// run scsslint
+// run stylelint
 function lintSass() {
   var stream = gulp.src([src.scss, '!src/main/sass/vendors/**/*.scss'])
-    .pipe(plugins.scssLint({
-      'config': 'scss-lint.yml',
-      'reporterOutput': 'lint-report.json'
-      }))
+    .pipe(plugins.postcss([
+      stylelint({
+        configFile: '.stylelint.config.js'
+      }),
+      reporter({
+        clearMessages: true
+      })
+    ],
+    {
+      syntax: scss
+    }
+  ));
   return stream;
 }
 
@@ -218,31 +229,9 @@ gulp.task('compile:sass', compileSass);
 gulp.task('compile:svg', processSvg);
 gulp.task('minify:svg', minifySvg);
 gulp.task('minify:icons', makeSvgSprite);
-gulp.task('scsslint', lintSass);
+gulp.task('lint:sass', lintSass);
 gulp.task('browser-sync', startBS());
 gulp.task('watch', watchFiles());
-
-// just process and compile source files
-gulp.task('build', function() {
-  cleanFiles(compiled, plugins.sequence('clean', ['copy:normalize', 'copy:font',
-    'copy:img', 'compile:sass', 'compile:svg', 'copy:svg4everybody']));
-});
-
-// process, compile, and start up browsersync and watcher
-gulp.task('dev', function() {
-  cleanFiles(compiled, plugins.sequence('clean', ['copy:normalize', 'copy:font',
-    'copy:img', 'compile:sass', 'compile:svg', 'copy:svg4everybody', 'watch', 'browser-sync']));
-});
-
-gulp.task('app', function() {
-  cleanFiles(compiled, plugins.sequence('clean', 'server', ['copy:normalize', 'copy:font',
-    'copy:img', 'compile:sass', 'compile:svg', 'copy:svg4everybody', 'watch', 'browser-sync']));
-});
-
-// update project distribution files
-gulp.task('dist', function() {
-  cleanFiles(dist, makeDist);
-});
 
 gulp.task('server', function() {
   var server = child.spawn('node', ['./bin/www']);
@@ -256,6 +245,27 @@ gulp.task('server', function() {
       console.log('process exited with code ', code);
     }
   });
+});
+
+
+// just process and compile source files
+gulp.task('build', function() {
+  cleanFiles(compiled, plugins.sequence('clean', 'lint:sass',
+    ['copy:normalize', 'copy:font', 'copy:img', 'compile:sass', 'compile:svg',
+     'copy:svg4everybody']
+  ));
+});
+
+gulp.task('app', function() {
+  cleanFiles(compiled, plugins.sequence('clean', 'server', 'lint:sass',
+    ['copy:normalize', 'copy:font', 'copy:img', 'compile:sass', 'compile:svg',
+     'copy:svg4everybody', 'watch', 'browser-sync']
+   ));
+});
+
+// update project distribution files
+gulp.task('dist', function() {
+  cleanFiles(dist, makeDist);
 });
 
 gulp.task('default', ['build']);

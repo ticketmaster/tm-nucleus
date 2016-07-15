@@ -1,12 +1,12 @@
 @mixin nc-base-field() {
   @include nc-type-scale('kilo', $responsive: false);
 
-  height: $nc-input-height;
   width: 100%;
+  height: $nc-input-height;
   color: $nc-text-color;
-  border-radius: 3px;
-  border: $nc-input-border-style;
   background: $nc-input-background-color;
+  border: $nc-input-border-style;
+  border-radius: 3px;
 
   &:focus,
   &:active {

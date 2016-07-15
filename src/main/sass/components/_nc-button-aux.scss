@@ -1,3 +1,5 @@
+/** @define button-aux; weak */
+
 .nc-button-aux {
   @include nc-btn($nc-primary-aux-button-color, $hoverstate: true);
 
@@ -6,7 +8,7 @@
 
   @include nc-breakpoint($nc-bp-md) {
     border-radius: $nc-button-height-lg / 2;
-  };
+  }
 }
 
 .nc-button-aux--secondary {

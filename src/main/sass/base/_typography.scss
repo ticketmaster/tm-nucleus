@@ -6,13 +6,17 @@
 
 @font-face {
   font-family: 'TM Sans';
-  src: url('../font/TMSans-Bold.woff') format('woff');
   font-weight: bold;
+  src: url('../font/TMSans-Bold.woff') format('woff');
 }
 
 
+/* stylelint-disable value-keyword-case */
+// allow font names to be capitalized
 $nc-tm-sans: 'TM Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $nc-monospace: Menlo, Consolas, 'Courier New', monospace;
+/* stylelint-enable value-keyword-case */
+
 $nc-default-font-size: 16px; // for media queries
 $nc-base-font-size: 62.5%;   // == 10px
 
@@ -46,9 +50,9 @@ $nc-font-set-list:
 $nc-font-map: ();
 
 @each $key in $nc-font-name-list {
-  $nc-font-map: map-merge($nc-font-map, ($key:
-    nc-generate-scale-map($nc-font-scale-start, $nc-font-set-list, $nc-type-size-basis, $nc-type-scale-ratio, $nc-type-scale-digits)
-  ));
+  $nc-font-map: map-merge(
+    $nc-font-map, ($key: nc-generate-scale-map($nc-font-scale-start, $nc-font-set-list, $nc-type-size-basis, $nc-type-scale-ratio, $nc-type-scale-digits))
+  );
   $nc-font-scale-start: $nc-font-scale-start + 1;
 }
 
@@ -58,11 +62,7 @@ $nc-font-map: ();
 }
 
 
-
-
-
-
-
+// deprecated
 $nc-font-size-factor: 0.2;
 
 // retrieve font-size

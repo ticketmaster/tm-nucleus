@@ -1,3 +1,5 @@
+/** @define chkbox; weak */
+
 $nc-chkbox-label-offset: 7px;
 
 .nc-chkbox {
@@ -22,7 +24,7 @@ $nc-chkbox-label-offset: 7px;
   border: $nc-focused-border-style;
 }
 
-.nc-chkbox__input:checked:after {
+.nc-chkbox__input:checked::after {
   position: absolute;
   left: ($nc-base-icon-size - $nc-chkbox-size) / 2;
   display: block;

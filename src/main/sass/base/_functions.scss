@@ -3,7 +3,7 @@
   @if (map-has-key($map, $key) and map-has-key(map-get($map, $key), $subkey)) {
     @return map-get(map-get($map, $key), $subkey);
   }
-  @error "either '#{$key}' or '#{$subkey}' does not exist in '#{$map}'";
+  @error 'either '#{$key}' or '#{$subkey}' does not exist in '#{$map}'';
 }
 
 // check if value is in list
@@ -23,7 +23,10 @@
     @warn '`nc-is-neg-string` expects a string but was given #{$str}';
   }
 
-  @if $index == 1 { @return true; }
+  @if $index == 1 {
+    @return true;
+  }
+
   @return false;
 }
 
@@ -36,6 +39,7 @@
     @warn '#{ $number } is not a number.';
     @return $number;
   }
+
   // $digits must be a unitless number
   @if type-of($digits) != number {
     @warn '#{ $digits } is not a number.';
@@ -45,9 +49,11 @@
     @warn '#{ $digits } has a unit.';
     @return $number;
   }
+
   @for $i from 1 through $digits {
     $n: $n * 10;
   }
+
   @if $mode == round {
     @return round($number * $n) / $n;
   }
@@ -75,7 +81,9 @@
 
 // convert px to em
 @function nc-em($px, $context: $nc-default-font-size) {
-  @if ($px == 0) { @return 0; }
+  @if ($px == 0) {
+    @return 0;
+  }
   @return $px / $context * 1em;
 }
 
@@ -187,10 +195,12 @@
   @return $new-name;
 }
 
-
+/* stylelint-disable number-no-trailing-zeros */
+// allow '2.0' in string
 @function nc-deprecate($thing, $type) {
   @return 'The `#{$thing}` #{$type} is deprecated and will be removed in Nucleus 2.0';
 }
+/* stylelint-enable number-no-trailing-zeros */
 
 
 

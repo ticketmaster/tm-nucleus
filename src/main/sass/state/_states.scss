@@ -1,4 +1,7 @@
-// scss-lint:disable ImportantRule, VariableForProperty
+/** @define utilities */
+
+/* stylelint-disable declaration-no-important */
+// allow these properties to always have precedence
 .nc-is-hidden {
   display: none !important;
 }

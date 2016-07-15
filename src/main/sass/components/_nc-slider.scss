@@ -1,3 +1,5 @@
+/** @define slider; weak */
+
 $nc-slider-handle-size: 30px;
 $nc-slider-handle-size-large: 32px;
 $nc-slider-range-height: 5px;
@@ -57,8 +59,11 @@ $nc-slider-range-top-large: ($nc-slider-handle-size-large - $nc-slider-range-hei
     border-radius: $nc-slider-handle-size-large / 2;
   }
 
+  /* stylelint-disable selector-class-pattern, plugin/selector-bem-pattern */
+  // holdover from v0.x -- we shouldn't use multi-class selectors anymore
   &.is-active,
   &:focus {
     outline: none;
   }
+  /* stylelint-enable selector-class-pattern, plugin/selector-bem-pattern */
 }

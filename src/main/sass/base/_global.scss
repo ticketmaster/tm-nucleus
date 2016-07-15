@@ -1,7 +1,8 @@
+/* stylelint-disable selector-no-type, selector-no-universal */
 // Baseline for page
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -73,6 +74,7 @@ picture {
   margin: 0;
 }
 
+/* stylelint-disable no-descending-specificity */
 // Disable outline of form elements on focus in Chrome
 input,
 select,
@@ -102,8 +104,9 @@ select::-ms-expand {
 
 // Firefox fix to get button sizing in line with Chrome
 button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner {
+[type='button']::-moz-focus-inner {
   padding: 0;
   margin-top: -1px;
   border: 0;
 }
+/* stylelint-enable no-descending-specificity */
