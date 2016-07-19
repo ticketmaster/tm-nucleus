@@ -5,7 +5,7 @@
 }
 
 .nc-tile-selection__content {
-  @include nc-inner-spacing($nc-spacing-sm);
+  @include nc-spacing($inside: 'compact');
 
   color: $nc-alt-text-color;
 }

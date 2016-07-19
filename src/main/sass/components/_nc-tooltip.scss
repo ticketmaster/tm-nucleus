@@ -45,26 +45,25 @@
 }
 
 .nc-tooltip__content {
-  @include nc-inner-spacing($nc-spacing-sm);
+  @include nc-spacing($inside: 'compact');
   @include nc-type-scale('centi');
 }
 
 .nc-tooltip__srs {
-  @include nc-outer-spacing($bottom: -($nc-spacing-sm));
-  @include nc-inner-spacing($bottom: $nc-spacing-sm);
+  @include nc-spacing($outside: ('bottom': '-compact'), $inside: ('bottom': 'compact'));
 
   border-bottom: $nc-base-border-style;
 }
 
 .nc-tooltip__delimited-list {
-  @include nc-inner-spacing($right: $nc-spacing-sm, $left: $nc-spacing-sm);
+  @include nc-spacing($inside: ('right': 'compact', 'left': 'compact'));
   @include nc-type-scale('centi');
 
   margin-bottom: 0;
 }
 
 .nc-tooltip__delimited-list + .nc-tooltip__content {
-  @include nc-outer-spacing($right: $nc-spacing-sm, $left: $nc-spacing-sm);
+  @include nc-spacing($outside: ('right': 'compact', 'left': 'compact'));
 
   padding-right: 0;
   padding-left: 0;
@@ -76,6 +75,10 @@
 }
 
 .nc-tooltip__legal {
-  @include nc-inner-spacing($right: $nc-spacing-sm, $bottom: $nc-spacing-sm, $left: $nc-spacing-sm);
   @include nc-type-scale('milli');
+  @include nc-spacing($inside: (
+    'right': 'compact',
+    'bottom': 'compact',
+    'left': 'compact'
+  ));
 }

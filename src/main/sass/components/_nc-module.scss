@@ -20,7 +20,7 @@
 }
 
 .nc-module__content {
-  @include nc-inner-spacing($nc-spacing-sm);
+  @include nc-spacing($inside: 'compact');
 }
 
 .nc-module__srs {
