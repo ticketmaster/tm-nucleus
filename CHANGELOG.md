@@ -1,6 +1,10 @@
 Changelog
 =========
 
+**0.29.1**
+---------
+- Adjust slider active color for LN.
+
 **0.29.0**
 ---------
 - Add new Price Slider component.
