@@ -1,0 +1,103 @@
+{{> header title=config.pages.srs.title}}
+
+<div class="sg__content">
+  {{> nav active='srs' }}
+
+  <div class="sg-main">
+
+    <section id="srs" class="sg__section">
+      <h2 class="sg__hdg">Sec-Row-Seat (SRS)</h2>
+
+      <p>This is a visual pattern of displaying Section-Row-Seat (SRS) information, used in ISM tooltips and the checkout confirmation page.</p>
+      <p>The SRS element has a minimum width of <code class="sg__code">295px</code>, which doesn't account for any padding from its container or the page margins.</p>
+
+      <h3 class="sg__subhdg3">Standard ticket header displaying a single ticket</h3>
+      <div class="sg__srs">
+        <div class="nc-srs">
+          <div class="nc-srs__set">
+            <span class="nc-srs__label">Sec</span>
+            <span class="nc-srs__value">21</span>
+          </div>
+          <div class="nc-srs__set">
+            <span class="nc-srs__label">Row</span>
+            <span class="nc-srs__value">13</span>
+          </div>
+          <div class="nc-srs__set">
+            <span class="nc-srs__label">Seat</span>
+            <span class="nc-srs__value">23</span>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="sg__subhdg3">Non-contiguous seats</h3>
+      <div class="sg__srs">
+        <div class="nc-srs">
+          <div class="nc-srs__set">
+            <span class="nc-srs__label">Sec</span>
+            <span class="nc-srs__value">21</span>
+            <span class="nc-srs__value">21</span>
+          </div>
+          <div class="nc-srs__set">
+            <span class="nc-srs__label">Row</span>
+            <span class="nc-srs__value">13</span>
+            <span class="nc-srs__value">13</span>
+          </div>
+          <div class="nc-srs__set">
+            <span class="nc-srs__label">Seat</span>
+            <span class="nc-srs__value">23</span>
+            <span class="nc-srs__value">26</span>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="sg__subhdg3">Seat range</h3>
+      <div class="sg__srs">
+        <div class="nc-srs">
+          <div class="nc-srs__set">
+            <span class="nc-srs__label">Sec</span>
+            <span class="nc-srs__value">21</span>
+          </div>
+          <div class="nc-srs__set">
+            <span class="nc-srs__label">Row</span>
+            <span class="nc-srs__value">13</span>
+          </div>
+          <div class="nc-srs__set">
+            <span class="nc-srs__label">Seat</span>
+            <span class="nc-srs__value">123-125</span>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="sg__subhdg3">Worst case scenario</h3>
+      <div class="sg__srs">
+        <div class="nc-srs">
+          <div class="nc-srs__set">
+            <span class="nc-srs__label">Sec</span>
+            <span class="nc-srs__value">Loge12</span>
+          </div>
+          <div class="nc-srs__set">
+            <span class="nc-srs__label">Row</span>
+            <span class="nc-srs__value">1239</span>
+          </div>
+          <div class="nc-srs__set">
+            <span class="nc-srs__label">Seat</span>
+            <span class="nc-srs__value">1809-1813</span>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="sg__subhdg">General Admission</h3>
+      <p>General Admission events have a different header as seen here.</p>
+      <div class="sg__srs">
+        <div class="nc-srs">
+          <div class="nc-srs__set">
+            <span class="nc-srs__label">Sec</span>
+            <span class="nc-srs__value">Floor</span>
+            <span class="nc-srs__ga">General Admission</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>

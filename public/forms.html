@@ -1,0 +1,197 @@
+{{> header title=config.pages.forms.title}}
+
+<div class="sg__content">
+  {{> nav active='forms' }}
+
+  <div class="sg-main">
+
+    <section id="form-elements" class="sg__section">
+      <h2 class="sg__hdg">Form Elements</h2>
+
+      <h3 class="sg__subhdg">Labels</h3>
+      <p>There are 2 label modifier classes that you have to add besides the <code class="sg__code">nc-input-group__label</code> class to handle different background colors.</p>
+
+      <table class="sg__table">
+        <tr>
+          <td class="sg__table-cell sg__label-example">
+            <div class="nc-input-group">
+              <label for="email" class="nc-input-group__label">EMAIL<span class="nc-input-group__required">*</span></label>
+              <input name="email" type="text" class="nc-input-group__text-field" placeholder="EMAIL" aria-required="true">
+            </div>
+          </td>
+          <td class="sg__table-cell sg__label-example sg__label-example--light">
+            <div class="nc-input-group">
+              <label for="email" class="nc-input-group__label nc-input-group__label--dark">EMAIL<span class="nc-input-group__required">*</span></label>
+              <input name="email" type="text" class="nc-input-group__text-field" placeholder="EMAIL" aria-required="true">
+            </div>
+            <code class="sg__code">
+              nc-input-group__label--dark
+            </code>
+          </td>
+          <td class="sg__table-cell sg__label-example sg__label-example--dark">
+            <div class="nc-input-group">
+              <label for="email" class="nc-input-group__label nc-input-group__label--light">EMAIL<span class="nc-input-group__required">*</span></label>
+              <input name="email" type="text" class="nc-input-group__text-field" placeholder="EMAIL" aria-required="true">
+            </div>
+            <code class="sg__code">
+              nc-input-group__label--light
+            </code>
+          </td>
+        </tr>
+      </table>
+
+      <h3 class="sg__subhdg">Text fields</h3>
+
+      <p>Example of an the initial state of the input text-field.</p>
+
+      <div class="sg__input-wrapper">
+        <div class="nc-input-group">
+          <label for="email" class="nc-input-group__label">EMAIL<span class="nc-input-group__required">*</span></label>
+          <input name="email" type="text" class="nc-input-group__text-field" aria-required="true">
+        </div>
+      </div>
+
+<pre><code class="html">&lt;div class="input-group"&gt;
+&lt;label for="email" class="input-group__label"&gt;
+EMAIL&lt;span class="input-group__required"&gt;*&lt;/span&gt;
+&lt;/label&gt;
+&lt;input id="email" name="email" type="text" class="input-group__text-field"&gt;
+&lt;/div&gt;</code></pre>
+
+      <p>Text fields in error state should add the <code class="sg__code">--error</code> modifier class to all the nucleus elements.</p>
+
+      <table class="sg__table">
+        <tr>
+          <td class="sg__table-cell">
+            <div class="nc-input-group nc-input-group--error">
+              <label for="email" class="nc-input-group__label nc-input-group__label--error">EMAIL<span class="nc-input-group__required nc-input-group__required--error">*</span></label>
+              <input name="email" type="text" class="nc-input-group__text-field nc-input-group__text-field--error" placeholder="EMAIL" aria-required="true">
+            </div>
+          </td>
+          <td class="sg__table-cell">
+            <div class="nc-input-group nc-input-group--error">
+              <label for="email" class="nc-input-group__label nc-input-group__label--error">EMAIL<span class="nc-input-group__required nc-input-group__required--error">*</span></label>
+              <input name="email" type="text" class="nc-input-group__text-field nc-input-group__text-field--error" aria-required="true" value="Dohn Joe">
+            </div>
+          </td>
+        </tr>
+      </table>
+
+<pre><code class="html">
+&lt;div class="nc-input-group <span class="sg__highlight-code">nc-input-group--error</span>"&gt;
+&lt;label for="email" class="nc-input-group__label <span class="sg__highlight-code">nc-input-group__label--error</span>"&gt;
+EMAIL&lt;span class="nc-input-group__required <span class="sg__highlight-code">nc-input-group__required--error</span>"&gt;*&lt;/span&gt;
+&lt;/label&gt;
+&lt;input id="email" name="email" type="text" class="nc-input-group__text-field <span class="sg__highlight-code">nc-input-group__text-field--error</span>" placeholder="EMAIL"&gt;
+&lt;/div&gt;</code></pre>
+
+      <p>You can also use the <code class="sg__code">nc-input-group__error-message</code> class to show an error message.</p>
+
+      <div class="sg__input-wrapper">
+        <div class="nc-input-group nc-input-group--error">
+          <label for="email" class="nc-input-group__label nc-input-group__label--error">EMAIL<span class="nc-input-group__required nc-input-group__required--error">*</span></label>
+          <input name="email" type="text" class="nc-input-group__text-field nc-input-group__text-field--error" placeholder="EMAIL" aria-required="true">
+          <span class="nc-input-group__error-message">This is a sampe error message to show when something goes wrong with the input field.</span>
+        </div>
+      </div>
+
+      <h3 class="sg__subhdg">Drop downs</h3>
+
+      <p>This is how we are going to implement drop downs.</p>
+
+      <div class="sg__input-wrapper">
+        <div class="nc-input-group nc-dropdown">
+          <label for="state" class="nc-input-group__label">
+            STATE<span class="nc-input-group__required">*</span>
+          </label>
+          <select id="state" class="nc-dropdown__select">
+            <option value=""></option>
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+            <option value="CA">California</option>
+          </select>
+          <svg class="nc-dropdown__icon-chevron">
+            <use xlink:href="img/sprite.svg#icon-chevron"></use>
+          </svg>
+        </div>
+      </div>
+
+<pre><code class="html">&lt;div class="nc-input-group dropdown"&gt;
+&lt;label for="state" class="nc-input-group__label"&gt;
+STATE&lt;span class="nc-input-group__required"&gt;*&lt;/span&gt;
+&lt;/label&gt;
+&lt;select id="state" class="nc-dropdown__select"&gt;
+&lt;option value=""&gt;&lt;/option&gt;
+&lt;option value="AL"&gt;Alabama&lt;/option&gt;
+&lt;option value="AK"&gt;Alaska&lt;/option&gt;
+&lt;option value="AZ"&gt;Arizona&lt;/option&gt;
+&lt;option value="AR"&gt;Arkansas&lt;/option&gt;
+&lt;option value="CA"&gt;California&lt;/option&gt;
+&lt;/select&gt;
+&lt;svg class="nc-dropdown__icon-chevron"&gt;
+&lt;use xlink:href="img/sprite.svg#icon-chevron"&gt;
+&lt;/svg&gt;
+&lt;/div&gt;</code></pre>
+
+      <p>This is the error state. We add the <code class="sg__code">--error</code> modifier class to all nucleus elements.</p>
+
+      <div class="sg__input-wrapper">
+        <div class="nc-input-group nc-dropdown nc-input-group--error">
+          <label for="state" class="nc-input-group__label nc-input-group__label--error">
+            STATE<span class="nc-input-group__required nc-input-group__required--error">*</span>
+          </label>
+          <select id="state" class="nc-dropdown__select nc-dropdown__select--error">
+            <option value=""></option>
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+            <option value="CA">California</option>
+          </select>
+          <svg class="nc-dropdown__icon-chevron nc-dropdown__icon-chevron--error">
+            <use xlink:href="img/sprite.svg#icon-chevron">
+          </svg>
+        </div>
+      </div>
+
+<pre><code class="html">&lt;div class="nc-input-group dropdown <span class="sg__highlight-code">nc-input-group--error</span>"&gt;
+&lt;label for="state" class="nc-input-group__label <span class="sg__highlight-code">nc-input-group__label--error</span>"&gt;
+STATE&lt;span class="nc-input-group__required <span class="sg__highlight-code">nc-input-group__required--error</span>"&gt;*&lt;/span&gt;
+&lt;/label&gt;
+&lt;select id="state" class="nc-dropdown__select <span class="sg__highlight-code">nc-dropdown__select--error</span>"&gt;
+&lt;option value=""&gt;&lt;/option&gt;
+&lt;option value="AL"&gt;Alabama&lt;/option&gt;
+&lt;option value="AK"&gt;Alaska&lt;/option&gt;
+&lt;option value="AZ"&gt;Arizona&lt;/option&gt;
+&lt;option value="AR"&gt;Arkansas&lt;/option&gt;
+&lt;option value="CA"&gt;California&lt;/option&gt;
+&lt;/select&gt;
+&lt;svg class="nc-dropdown__icon-chevron <span class="sg__highlight-code">nc-dropdown__icon-chevron--error</span>"&gt;
+&lt;use xlink:href="img/sprite.svg#icon-chevron"&gt;
+&lt;/svg&gt;
+&lt;/div&gt;</code></pre>
+
+      <h3 class="sg__subhdg">Checkboxes</h3>
+      <p>We use custom checkboxes that have a 1px border when unchecked. In the checked state,
+        a white checkmark icon is seen against the <code class="sg__code">$nc-brand-primary</code>
+        background with no stroke around the checkbox.</p>
+      <ul class="nc-checkbox-list">
+        <li class="nc-checkbox-list__item nc-chkbox">
+          <input type="checkbox" class="nc-chkbox__input" id="sample-chkbx" />
+          <label for="sample-chkbx" class="nc-chkbox__label">
+            Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola frankfurter picanha ham.
+          </label>
+        </li>
+        <li class="nc-checkbox-list__item nc-chkbox">
+          <input type="checkbox" class="nc-chkbox__input" id="sample-chkbx2" />
+          <label for="sample-chkbx2" class="nc-chkbox__label">
+            Ticket name
+          </label>
+        </li>
+      </ul>
+    </section>
+
+  </div>
+</div>

@@ -1,0 +1,280 @@
+{{> header title=config.pages.palette.title}}
+
+<div class="sg__content">
+  {{> nav active='palette' }}
+
+  <div class="sg-main">
+
+    <section id="palette" class="sg__section">
+
+      <h2 class="sg__hdg">Color Palette</h2>
+
+      <div class="sg__swatches">
+        <div class="sg__swatch-group">
+          <div class="sg__swatch sg__swatch--pacific"></div>
+          <div class="sg__swatch-info">
+            <span class="sg__swatch-name">pacific</span>
+            <code class="sg__code">$nc-brand-primary</code>
+            <ul class="sg__list sg__swatch-usage">
+              <li>Header color</li>
+              <li>Links</li>
+              <li>Standard buttons</li>
+              <li>Focused border</li>
+              <li>Selected radio button</li>
+              <li>Progress bar</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sg__swatch-group">
+          <div class="sg__swatch sg__swatch--catalina"></div>
+          <div class="sg__swatch-info">
+            <span class="sg__swatch-name">catalina</span>
+            <code class="sg__code">$nc-brand-accent</code>
+            <ul class="sg__list sg__swatch-usage">
+              <li>Resale icons</li>
+              <li>Resale seats on ISM</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sg__swatch-group">
+          <div class="sg__swatch sg__swatch--sierra"></div>
+          <div class="sg__swatch-info">
+            <span class="sg__swatch-name">sierra</span>
+            <code class="sg__code">$nc-brand-gray</code>
+            <ul class="sg__list sg__swatch-usage">
+              <li>Primary copy</li>
+              <li>ISM selected seat</li>
+            </ul>
+          </div>
+        </div>
+        <div class="sg__swatch-group">
+          <div class="sg__swatch sg__swatch--cascade"></div>
+          <div class="sg__swatch-info">
+            <span class="sg__swatch-name">cascade</span>
+            <code class="sg__code">$nc-brand-gray2</code>
+            <ul class="sg__list sg__swatch-usage">
+              <li>Secondary copy</li>
+              <li>Secondary buttons</li>
+              <li>Badge background</li>
+              <li>ISM sold seat</li>
+              <li>Chevron color</li>
+              <li>Dropdown arrow color</li>
+            </ul>
+          </div>
+        </div>
+        <div class="sg__swatch-group">
+          <div class="sg__swatch sg__swatch--rocky"></div>
+          <div class="sg__swatch-info">
+            <span class="sg__swatch-name">rocky</span>
+            <code class="sg__code">$nc-brand-gray3</code>
+            <ul class="sg__list sg__swatch-usage">
+              <li>Divider lines</li>
+              <li>Borders</li>
+              <li>Datestamp year background</li>
+              <li>Toggle panel chevron</li>
+            </ul>
+          </div>
+        </div>
+        <div class="sg__swatch-group">
+          <div class="sg__swatch sg__swatch--ridge"></div>
+           <div class="sg__swatch-info">
+             <span class="sg__swatch-name">ridge</span>
+             <code class="sg__code">$nc-brand-gray4</code>
+             <ul class="sg__list sg__swatch-usage">
+               <li>Background color</li>
+             </ul>
+           </div>
+        </div>
+
+        <div class="sg__swatch-group">
+          <div class="sg__swatch sg__swatch--yosemite"></div>
+          <div class="sg__swatch-info">
+            <span class="sg__swatch-name">yosemite</span>
+            <code class="sg__code">$nc-brand-cta</code>
+            <ul class="sg__list sg__swatch-usage">
+              <li>Checkout/Cart Links</li>
+              <li>Checkout/Cart Buttons</li>
+              <li>Success message</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sg__swatch-group">
+          <div class="sg__swatch sg__swatch--malibu"></div>
+          <div class="sg__swatch-info">
+            <span class="sg__swatch-name">malibu</span>
+            <code class="sg__code">$nc-brand-caution</code>
+          </div>
+        </div>
+
+        <div class="sg__swatch-group">
+          <div class="sg__swatch sg__swatch--helen"></div>
+          <div class="sg__swatch-info">
+            <span class="sg__swatch-name">helen</span>
+            <code class="sg__code">$nc-brand-alert</code>
+            <ul class="sg__list sg__swatch-usage">
+              <li>Errors</li>
+              <li>Alerts</li>
+              <li>Void buttons</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <h4 class="sg__subhdg">States</h4>
+      <p>To provide visual cues for interaction, we shade our colors on hover, when disabled, etc. We derive these colors by mixing the core colors with white or black.</p>
+
+      <table class="sg__table">
+        <tr>
+          <th class="sg__table-hdg">25% black</th>
+          <th class="sg__table-hdg">50% white</th>
+          <th class="sg__table-hdg">75% white</th>
+          <td class="sg__table-hdg">87.5% white</td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell">
+            <div class="sg__swatch sg__swatch--state sg__swatch--pacific-darker25"></div>
+            <code class="sg__code--xs">$nc-brand-primary-darker25</code>
+            <ul class="sg__list sg__swatch-state-usage">
+              <li>Hover</li>
+            </ul>
+          </td>
+          <td class="sg__table-cell">
+            <div class="sg__swatch sg__swatch--state sg__swatch--pacific-lighter50"></div>
+            <code class="sg__code--xs">$nc-brand-primary-lighter50</code>
+            <ul class="sg__list sg__swatch-state-usage">
+              <li>ISM seats outside of search</li>
+            </ul>
+          </td>
+          <td class="sg__table-cell">
+            <div class="sg__swatch sg__swatch--state sg__swatch--pacific-lighter75"></div>
+            <code class="sg__code--xs">$nc-brand-primary-lighter75</code>
+            <ul class="sg__list sg__swatch-state-usage">
+              <li>Disabled</li>
+              <li>Event header secondary copy</li>
+              <li>Accessibility focus</li>
+            </ul>
+          </td>
+          <td class="sg__table-cell">
+            <div class="sg__swatch sg__swatch--state sg__swatch--pacific-lighter87"></div>
+            <code class="sg__code--xs">$nc-brand-primary-lighter87</code>
+            <ul class="sg__list sg__swatch-state-usage">
+              <li>Top Picks hover</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="sg__swatch-na">
+            n/a
+          </td>
+          <td class="sg__table-cell">
+            <div class="sg__swatch sg__swatch--state sg__swatch--catalina-lighter50"></div>
+            <code class="sg__code--xs">$nc-brand-accent-lighter50</code>
+            <ul class="sg__list sg__swatch-state-usage">
+              <li>ISM Resale seats outside of search</li>
+            </ul>
+          </td>
+          <td class="sg__swatch-na">
+            n/a
+          </td>
+          <td class="sg__swatch-na">
+            n/a
+          </td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell">
+            <div class="sg__swatch sg__swatch--state sg__swatch--cascade-darker25"></div>
+            <code class="sg__code--xs">$nc-brand-gray2-darker25</code>
+            <ul class="sg__list sg__swatch-state-usage">
+              <li>Hover</li>
+            </ul>
+          </td>
+          <td class="sg__table-cell">
+            <div class="sg__swatch sg__swatch--state sg__swatch--cascade-lighter50"></div>
+            <code class="sg__code--xs">$nc-brand-gray2-lighter50</code>
+            <ul class="sg__list sg__swatch-state-usage">
+              <li>Form placeholder text</li>
+              <li>ISM sections unavailable</li>
+              <li>ISM sections outside of search</li>
+            </ul>
+          </td>
+          <td class="sg__table-cell">
+            <div class="sg__swatch sg__swatch--state sg__swatch--cascade-lighter75"></div>
+            <code class="sg__code--xs">$nc-brand-gray2-lighter75</code>
+            <ul class="sg__list sg__swatch-state-usage">
+              <li>Disabled</li>
+            </ul>
+          </td>
+          <td class="sg__swatch-na">
+            n/a
+          </td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell">
+            <div class="sg__swatch sg__swatch--state sg__swatch--yosemite-darker25"></div>
+            <code class="sg__code--xs">$nc-brand-cta-darker25</code>
+            <ul class="sg__list sg__swatch-state-usage">
+              <li>Hover</li>
+            </ul>
+          </td>
+          <td class="sg__swatch-na">
+            n/a
+          </td>
+          <td class="sg__table-cell">
+            <div class="sg__swatch sg__swatch--state sg__swatch--yosemite-lighter75"></div>
+            <code class="sg__code--xs">$nc-brand-cta-lighter75</code>
+            <ul class="sg__list sg__swatch-state-usage">
+              <li>Disabled</li>
+            </ul>
+          </td>
+          <td class="sg__swatch-na">
+            n/a
+          </td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell">
+            <div class="sg__swatch sg__swatch--state sg__swatch--helen-darker25"></div>
+            <code class="sg__code--xs">$nc-brand-alert-darker25</code>
+            <ul class="sg__list sg__swatch-state-usage">
+              <li>Hover</li>
+            </ul>
+          </td>
+          <td class="sg__swatch-na">
+            n/a
+          </td>
+          <td class="sg__table-cell">
+            <div class="sg__swatch sg__swatch--state sg__swatch--helen-lighter75"></div>
+            <code class="sg__code--xs">$nc-brand-alert-lighter75</code>
+            <ul class="sg__list sg__swatch-state-usage">
+              <li>Disabled</li>
+            </ul>
+          </td>
+          <td class="sg__swatch-na">
+            n/a
+          </td>
+        </tr>
+      </table>
+
+      <h3 class="sg__subhdg">Palette Customization</h3>
+      <p>To apply custom colors, use the <code class="sg__code">_palette.scss</code> file as your basis by creating a copy of it in your local project folder. Open the local file and look for this:</p>
+
+<pre><code class="scss">// BEGIN CUSTOMIZATIONS</code></pre>
+
+      <p>You can safely ignore/redefine/delete the variables above this comment. Our CSS components only reference the variables that are defined after the above line.</p>
+      <p>To include your custom palette in the compiled output, you'll need to create a custom import for Nucleus:</p>
+
+<pre><code class="scss">@import '<span class="sg__highlight-code">[path/to/custom]/palette</span>';
+@import '[path/to/nucleus]/base/all-custom';
+@import '[path/to/nucleus]/mixins/all';
+@import '[path/to/nucleus]/components/all';
+@import '[path/to/nucleus]/states/all';
+</code></pre>
+
+      <p>Note that you will not have access to any of Nucleus's functions or mixins at this point in your custom palette file since it precedes any imports from Nucleus.</p>
+
+    </section>
+
+  </div>
+</div>

@@ -1,0 +1,88 @@
+{{> header title=config.pages.split-content.title}}
+
+<div class="sg__content">
+  {{> nav active='split-content' }}
+
+  <div class="sg-main">
+
+    <section id="split-content" class="sg__section">
+      <h2 class="sg__hdg">Split Content</h2>
+      <p>This pattern dictates a block of content where one portion (or column) is primary and takes up all available width, while secondary content is only as wide as it needs to be.</p>
+      <p>The spacing between columns follows the responsive <code class="sg__code">$spacing-sm</code> values as defined in <a href="#spacing">Spacing</a>.</p>
+
+      <div class="nc-split-content">
+        <div class="nc-split-content__primary">
+          <p>Note how content in this area takes up all available space. Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola frankfurter picanha ham.</p>
+        </div>
+        <div class="nc-split-content__secondary">
+          <button class="nc-button">Good Ol' Button</button>
+        </div>
+      </div>
+
+<pre><code class="html">&lt;div class="nc-split-content"&gt;
+&lt;div class="nc-split-content__primary"&gt;
+[...]
+&lt;/div&gt;
+&lt;div class="nc-split-content__secondary"&gt;
+[...]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+      <p>Secondary content can be placed before or after the primary content.</p>
+
+      <div class="nc-split-content">
+        <div class="nc-split-content__secondary">
+          <button class="nc-button-outlined nc-button-outlined--void nc-button-outlined--small">Delete</button>
+        </div>
+        <div class="nc-split-content__primary">
+          <p>Note how content in this area takes up all available space. Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola frankfurter picanha ham.</p>
+        </div>
+        <div class="nc-split-content__secondary">
+          <button class="nc-button nc-button--cta">Buy</button>
+        </div>
+      </div>
+
+<pre><code class="html">&lt;div class="nc-split-content"&gt;
+&lt;div class="nc-split-content__secondary"&gt;
+[...]
+&lt;/div&gt;
+&lt;div class="nc-split-content__primary"&gt;
+[...]
+&lt;/div&gt;
+&lt;div class="nc-split-content__secondary"&gt;
+[...]
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+      <p>If you need content to be top-aligned, use the <code class="sg__code">nc-split-content__primary--top</code> or <code class="sg__code">nc-split-content__secondary--top</code> modifiers.</p>
+
+      <div class="nc-split-content">
+        <div class="nc-split-content__secondary nc-split-content__secondary--top">
+          <button class="nc-button-outlined nc-button-outlined--void nc-button-outlined--small">Delete</button>
+        </div>
+        <div class="nc-split-content__primary">
+          <p>Bacon ipsum dolor amet pariatur venison meatball, turducken dolore ball tip pork belly ribeye consequat fatback kielbasa ham hock leberkas. Quis non frankfurter fatback, doner in shankle excepteur ut. Kevin dolore short loin quis velit dolor laborum est frankfurter kielbasa voluptate. Doner boudin tempor leberkas beef ribs.</p>
+          <p>Beef sint et pariatur fatback. Adipisicing frankfurter ut in. Duis ipsum magna qui. Minim spare ribs hamburger, porchetta proident eiusmod et fugiat duis shankle deserunt dolore magna turkey.</p>
+        </div>
+        <div class="nc-split-content__secondary">
+          <button class="nc-button nc-button--cta">Buy</button>
+        </div>
+      </div>
+
+<pre><code class="html">&lt;div class="nc-split-content"&gt;
+&lt;div class="nc-split-content__secondary <span class="sg__highlight-code">nc-split-content__secondary--top</span>"&gt;
+[...]
+&lt;/div&gt;
+&lt;div class="nc-split-content__primary"&gt;
+[...]
+&lt;/div&gt;
+&lt;div class="nc-split-content__secondary"&gt;
+[...]
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+    </section>
+
+  </div>
+</div>

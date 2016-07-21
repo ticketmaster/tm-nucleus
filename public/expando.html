@@ -1,0 +1,99 @@
+{{> header title=config.pages.expando.title}}
+
+<div class="sg__content">
+  {{> nav active='expando' }}
+
+  <div class="sg-main">
+
+    <section id="expando" class="sg__section">
+      <h2 class="sg__hdg">Expando</h2>
+      <p>An expando is essentially a button that toggles a block of content open and close.</p>
+      <p>Hover over &quot;2 Standard Tickets&quot; to see it in action.</p>
+
+      <div class="nc-product-info">
+        <div class="nc-product-info__title chevron-expando-example">
+          2 Standard Tickets
+          <button class="nc-expando-button">
+            <svg class="nc-icon-chevron nc-expando-button__icon-chevron">
+              <use xlink:href="img/sprite.svg#icon-chevron"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="nc-product-info__desc">
+          $100.00 x 2
+        </div>
+        <div class="nc-expando-content nc-product-info__desc">Center Level Seating Behind Third Bench Behind Ratchet Dugout</div>
+      </div>
+
+<pre><code class="html">&lt;div class="nc-product-info"&gt;
+&lt;div class="nc-product-info__title"&gt;
+2 Standard Tickets
+&lt;button class="nc-expando-button"&gt;
+&lt;svg class="nc-icon-chevron nc-expando-button__icon-chevron"&gt;
+  &lt;use xlink:href="img/sprite.svg#icon-chevron"&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class="nc-product-info__desc"&gt;
+$100.00 x 2
+&lt;/div&gt;
+&lt;div class="nc-expando-content nc-product-info__desc"&gt;
+[...]
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+  <p>The expanded state is activated by adding two classes.</p>
+
+<pre><code class="html">&lt;div class="nc-product-info"&gt;
+&lt;div class="nc-product-info__title"&gt;
+2 Standard Tickets
+&lt;button class="nc-expando-button"&gt;
+&lt;svg class="nc-icon-chevron nc-expando-button__icon-chevron <span class="sg__highlight-code">nc-expando-button__icon-chevron--open</span>"&gt;
+  &lt;use xlink:href="img/sprite.svg#icon-chevron"&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class="nc-product-info__desc"&gt;
+$100.00 x 2
+&lt;/div&gt;
+&lt;div class="nc-expando-content <span class="sg__highlight-code">nc-expando-content--open</span> nc-product-info__desc"&gt;
+[...]
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+      <p>This is the most basic version of the pattern. You may need to make additional styling modifications for your use cases.</p>
+
+      <h3 class="sg__subhdg">Variant</h3>
+
+      <div class="nc-tile-selection nc-is-clickable">
+        <div class="nc-split-content nc-tile-selection__content">
+          <div class="nc-split-content__primary">
+            Some Title
+          </div>
+          <div class="nc-split-content__secondary">
+            <button class="nc-expando-button nc-expando-button--container">
+              <svg class="nc-icon-plus nc-icon-plus--circled">
+                <use xlink:href="img/sprite.svg#icon-plus"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      var expandoExample = document.getElementsByClassName('chevron-expando-example')[0];
+      var expandoIcon = document.getElementsByClassName('nc-expando-button__icon-chevron')[0];
+      var expandoPanel = document.getElementsByClassName('nc-expando-content')[0];
+          expandoExample.addEventListener('mouseover', function(){
+              expandoIcon.classList.add('nc-expando-button__icon-chevron--open');
+              expandoPanel.classList.add('nc-expando-content--open');
+          });
+          expandoExample.addEventListener('mouseout', function() {
+                expandoIcon.classList.remove('nc-expando-button__icon-chevron--open');
+                expandoPanel.classList.remove('nc-expando-content--open');
+            });
+    </script>
+
+  </div>
+</div>

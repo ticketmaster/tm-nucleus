@@ -1,0 +1,137 @@
+{{> header title=config.pages.datetime.title}}
+
+<div class="sg__content">
+  {{> nav active='datetime' }}
+
+  <div class="sg-main">
+
+    <section id="datetime" class="sg__section">
+      <h2 class="sg__hdg">Date/Time</h2>
+      <p>Date/time information is displayed based on the following scenarios.</p>
+
+      <table class="sg__table">
+        <tr>
+          <td class="sg__table-cell">
+            <div class="sg__datestamp-wrapper">
+              <span class="nc-datestamp">Mon 2/24 @ 8:30p</span>
+            </div>
+          </td>
+          <td class="sg__table-cell">
+            <p>Single date and time in the current year</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell">
+            <div class="sg__datestamp-wrapper">
+              <span class="nc-datestamp">Mon 2/24 @ 8p</span>
+            </div>
+          </td>
+          <td class="sg__table-cell">
+            <p>Single date and time in the current year and time is on the hour</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell">
+            <div class="sg__datestamp-wrapper">
+              <span class="nc-datestamp">Mon 2/24/16 @ 8:30p</span>
+            </div>
+          </td>
+          <td class="sg__table-cell">
+            <p>Single date and time, not in current year</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell">
+            <div class="sg__datestamp-wrapper">
+              <span class="nc-datestamp">Mon 2/24/16 @ 8p</span>
+            </div>
+          </td>
+          <td class="sg__table-cell">
+            <p>Single date and time, not in current year, with time on the hour</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell">
+            <div class="sg__datestamp-wrapper">
+              <span class="nc-datestamp">Mon 2/24</span>
+            </div>
+          </td>
+          <td class="sg__table-cell">
+            <p>Single date without time, current year</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell">
+            <div class="sg__datestamp-wrapper">
+              <span class="nc-datestamp">Mon 6/30 - Wed 7/2</span>
+            </div>
+          </td>
+          <td class="sg__table-cell">
+            <p>Date range</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell">
+            <div class="sg__datestamp-wrapper">
+              <span class="nc-datestamp">Mon 12/30 - Wed 1/2/16</span>
+            </div>
+          </td>
+          <td class="sg__table-cell">
+            <p>Date range with one date outside of current year</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell">
+            <div class="sg__datestamp-wrapper">
+              <span class="nc-datestamp">Mon 3/30/16 - Wed 4/2/16</span>
+            </div>
+          </td>
+          <td class="sg__table-cell">
+            <p>Date range with dates outside of current year</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell">
+            <div class="sg__datestamp-wrapper">
+              <div class="nc-datestamp nc-datestamp--no-dates">
+                <div class="nc-datestamp__multi">
+                  <div class="nc-datestamp__text">
+                    <span class="nc-datestamp__multi-name">Multiple</span>
+                    <span class="nc-datestamp__dt-text">Dates & Times</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="sg__table-cell">
+            <p>Multiple dates and times</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell">
+            <div class="sg__datestamp-wrapper">
+              <div class="nc-datestamp nc-datestamp--no-dates">
+                <div class="nc-datestamp__tba">
+                  <div class="nc-datestamp__text">
+                    <span class="nc-datestamp__dt-text">Date &amp; Time</span>
+                    <span class="nc-datestamp__tba-name">TBA</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="sg__table-cell">
+            <p>Date and time TBA</p>
+          </td>
+        </tr>
+      </table>
+
+      <p>In summary:</p>
+        <ul>
+          <li>The year is only shown if the date is outside of the current year.</li>
+          <li>If the time falls on the hour (:00), then only the hour is shown.</li>
+        </ul>
+    </section>
+
+  </div>
+</div>

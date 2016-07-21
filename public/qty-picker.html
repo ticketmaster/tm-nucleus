@@ -1,0 +1,83 @@
+{{> header title=config.pages.qty-picker.title}}
+
+<div class="sg__content">
+  {{> nav active='qty-picker' }}
+
+  <div class="sg-main">
+
+    <section id="qty-picker" class="sg__section">
+      <h2 class="sg__hdg">Quantity Picker</h2>
+      <p>The following pattern should be used any time a user is prompted to select a quantity.</p>
+
+      <table class="sg__table sg__button-table">
+        <tr>
+          <td class="sg__table-cell">
+            <div class="nc-qty-picker">
+              <button class="nc-qty-picker__button nc-qty-picker__button--decrement">
+                <svg class="nc-icon-minus nc-qty-picker__icon-minus">
+                  <use xlink:href="img/sprite.svg#icon-minus"></use>
+                </svg>
+              </button>
+              <div class="nc-qty-picker__number">
+                2
+              </div>
+              <button class="nc-qty-picker__button nc-qty-picker__button--increment">
+                <svg class="nc-icon-plus nc-qty-picker__icon-plus">
+                  <use xlink:href="img/sprite.svg#icon-plus"></use>
+                </svg>
+              </button>
+            </div>
+          </td>
+          <td class="sg__table-cell">
+            <p>Standard quantity picker.</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell">
+            <div class="nc-qty-picker">
+              <button class="nc-qty-picker__button nc-qty-picker__button--decrement nc-is-disabled">
+                <svg class="nc-icon-minus nc-qty-picker__icon-minus">
+                  <use xlink:href="img/sprite.svg#icon-minus"></use>
+                </svg>
+              </button>
+              <div class="nc-qty-picker__number nc-qty-picker__number--disabled">
+                0
+              </div>
+              <button class="nc-qty-picker__button nc-qty-picker__button--increment">
+                <svg class="nc-icon-plus nc-qty-picker__icon-plus">
+                  <use xlink:href="img/sprite.svg#icon-plus"></use>
+                </svg>
+              </button>
+            </div>
+          </td>
+          <td class="sg__table-cell">
+            <p>Minimum quantity reached. Decrement button and quantity are not shown.</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell">
+            <div class="nc-qty-picker">
+              <button class="nc-qty-picker__button nc-qty-picker__button--decrement">
+                <svg class="nc-icon-minus nc-qty-picker__icon-minus">
+                  <use xlink:href="img/sprite.svg#icon-minus"></use>
+                </svg>
+              </button>
+              <div class="nc-qty-picker__number">
+                50
+              </div>
+              <button class="nc-qty-picker__button nc-qty-picker__button--increment nc-is-disabled">
+                <svg class="nc-icon-plus nc-qty-picker__icon-plus">
+                  <use xlink:href="img/sprite.svg#icon-plus"></use>
+                </svg>
+              </button>
+            </div>
+          </td>
+          <td class="sg__table-cell">
+            <p>Maximum quantity reached. Increment button is disabled but still visible.</p>
+          </td>
+        </tr>
+      </table>
+    </section>
+
+  </div>
+</div>

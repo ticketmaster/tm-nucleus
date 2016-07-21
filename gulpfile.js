@@ -250,14 +250,14 @@ gulp.task('server', function() {
 
 // just process and compile source files
 gulp.task('build', function() {
-  cleanFiles(compiled, plugins.sequence('clean', 'lint:sass',
+  cleanFiles(compiled, plugins.sequence('clean',
     ['copy:normalize', 'copy:font', 'copy:img', 'compile:sass', 'compile:svg',
      'copy:svg4everybody']
   ));
 });
 
 gulp.task('app', function() {
-  cleanFiles(compiled, plugins.sequence('clean', 'server', 'lint:sass',
+  cleanFiles(compiled, plugins.sequence('clean', 'server',
     ['copy:normalize', 'copy:font', 'copy:img', 'compile:sass', 'compile:svg',
      'copy:svg4everybody', 'watch', 'browser-sync']
    ));

@@ -1,0 +1,48 @@
+{{> header title=config.pages.product-info.title}}
+
+<div class="sg__content">
+  {{> nav active='product-info' }}
+
+  <div class="sg-main">
+
+    <section id="product-info" class="sg__section">
+      <h2 class="sg__hdg">Product Info</h2>
+      <p>This is a simple pattern to display product information.</p>
+      <p>The title of the product is &quot;large&quot; and <code class="sg__code">$nc-brand-gray</code>. The description copy is &quot;small&quot; and <code class="sg__code">$nc-brand-gray2</code>.</p>
+
+      <div class="nc-product-info">
+        <div class="nc-product-info__title">Standard Tickets</div>
+        <p class="nc-product-info__desc">Description of product goes here. Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola.</p>
+      </div>
+
+<pre><code class="html">&lt;div class="pnc-roduct-info"&gt;
+&lt;div class="nc-product-info__title"&gt;
+Title of product
+&lt;/div&gt;
+&lt;div class="nc-product-info__desc"&gt;
+&lt;p&gt;Description of product goes here.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+      <h3 class="sg__subhdg">Compact Product Information</h3>
+      <p>There can be scenarios where the large size of product tile doesn't work. In those cases, the product title is the same size as the description (small).</p>
+
+      <div class="nc-product-info">
+        <div class="nc-product-info__compact-title">Standard Tickets</div>
+        <p class="nc-product-info__desc">Description of product goes here. Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola.</p>
+      </div>
+
+<pre><code class="html">&lt;div class="product-info"&gt;
+&lt;div class="<span class="sg__highlight-code">nc-product-info__compact-title</span>"&gt;
+Title of product
+&lt;/div&gt;
+&lt;div class="nc-product-info__desc"&gt;
+&lt;p&gt;Description of product goes here.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+      <p>Note that we are <em>not</em> using a BEM modifier class here.</p>
+    </section>
+
+  </div>
+</div>

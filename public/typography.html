@@ -1,0 +1,363 @@
+{{> header title=config.pages.typography.title}}
+
+<div class="sg__content">
+  {{> nav active='typography' }}
+
+  <div class="sg-main">
+
+    <section id="typography" class="sg__section">
+
+      <h2 class="sg__hdg">Typography</h2>
+      <p>Our web font is TM Sans, a custom typeface created for us by the foundry Monotype.</p>
+      <h3 class="sg__subhdg">Responsive fonts</h3>
+      <p>With few exceptions, font sizes on our pages should be responsive at certain breakpoints. You should assume that any font size specified by a designer should be responsive unless explicitly stated otherwise.</p>
+      <p>To simplify the process of creating responsive fonts, we have a <code class="sg__code">nc-responsive-font()</code> mixin to generate
+        the appropriate code when passed a font size.</p>
+      <p>Note that we actually specify our font sizes in <code class="sg__code">rem</code> units.
+        <code class="sg__code">1rem</code> is equivalent to <code class="sg__code">10px</code>.</p>
+
+<pre><code class="scss">// scss
+.sample-text {
+@include nc-responsive-font('md');
+}</code></pre>
+
+      <p>Using this mixin, our font sizes are then generated as follows (up to the specified widths).</p>
+
+      <table class="sg__table">
+        <tr>
+          <th class="sg__table-hdg sg__typography-cell">Breakpoint</th>
+          <th class="sg__table-hdg sg__typography-cell">X-Small</th>
+          <th class="sg__table-hdg sg__typography-cell">Small</th>
+          <th class="sg__table-hdg sg__typography-cell">Medium</th>
+          <th class="sg__table-hdg sg__typography-cell">Large</th>
+          <th class="sg__table-hdg sg__typography-cell">X-Large</th>
+          <th class="sg__table-hdg sg__typography-cell">XX-Large</th>
+          <th class="sg__table-hdg sg__typography-cell">XXX-Large</th>
+        </tr>
+        <tr class="sg__table-alternating-row">
+          <td class="sg__table-cell sg__typography-cell sg__typography-bp">
+            Small Mobile<br />
+            &le; 374px
+          </td>
+          <td class="sg__table-cell sg__typography-cell sg__xs-font-size">
+            10px font size
+          </td>
+          <td class="sg__table-cell sg__typography-cell sg__sm-font-size">
+            12px font size
+          </td>
+          <td class="sg__table-cell sg__typography-cell sg__md-font-size">
+            14px font size
+          </td>
+          <td class="sg__table-cell sg__typography-cell sg__lg-font-size">
+            18px font size
+          </td>
+          <td class="sg__table-cell sg__typography-cell sg__xl-font-size">
+            22px font size
+          </td>
+          <td class="sg__table-cell sg__typography-cell sg__xxl-font-size">
+            26px font size
+          </td>
+          <td class="sg__table-cell sg__typography-cell sg__xxxl-font-size">
+            40px font size
+          </td>
+        </tr>
+        <tr class="sg__table-alternating-row">
+          <td class="sg__table-cell sg__typography-cell sg__typography-bp">
+            Mobile<br />
+            375px - 719px
+          </td>
+          <td class="sg__table-cell sg__typography-cell sg__xs-font-size-quart">
+            no change
+          </td>
+          <td class="sg__table-cell sg__typography-cell sg__sm-font-size-quart">
+            14px font size
+          </td>
+          <td class="sg__table-cell sg__typography-cell sg__md-font-size-quart">
+            16px font size
+          </td>
+          <td class="sg__table-cell sg__typography-cell sg__lg-font-size-quart">
+            20px font size
+          </td>
+          <td class="sg__table-cell sg__typography-cell sg__xl-font-size-quart">
+            24px font size
+          </td>
+          <td class="sg__table-cell sg__typography-cell sg__xxl-font-size-quart">
+            28px font size
+          </td>
+          <td class="sg__table-cell sg__typography-cell sg__xxxl-font-size">
+            42px font size
+          </td>
+        </tr>
+        <tr class="sg__table-alternating-row">
+          <td class="sg__table-cell sg__typography-cell sg__typography-bp">
+            Tablet/Desktop<br />
+            &ge; 720px
+          </td>
+          <td class="sg__table-cell sg__typography-cell sg__xs-font-size-quart">
+            12px font size
+          </td>
+          <td class="sg__table-cell sg__typography-cell sg__sm-font-size-gallon">
+            16px font size
+          </td>
+          <td class="sg__table-cell sg__typography-cell sg__md-font-size-gallon">
+            18px font size
+          </td>
+          <td class="sg__table-cell sg__typography-cell sg__lg-font-size-gallon">
+            22px font size
+          </td>
+          <td class="sg__table-cell sg__typography-cell sg__xl-font-size-gallon">
+            26px font size
+          </td>
+          <td class="sg__table-cell sg__typography-cell sg__xxl-font-size-gallon">
+            30px font size
+          </td>
+          <td class="sg__table-cell sg__typography-cell sg__xxxl-font-size">
+            44px font size
+          </td>
+        </tr>
+        <tr class="sg__table-alternating-row">
+          <td class="sg__table-cell sg__typography-cell sg__typography-bp">
+            Usage
+          </td>
+          <td class="sg__table-cell sg__typography-cell sg__font-usage">
+            <ul class="sg__list">
+              <li>Legal copy</li>
+            </ul>
+          </td>
+          <td class="sg__table-cell sg__typography-cell sg__font-usage">
+            <ul class="sg__list">
+              <li>Tooltip copy</li>
+              <li>Labels</li>
+              <li>List items</li>
+            </ul>
+          </td>
+          <td class="sg__table-cell sg__typography-cell sg__font-usage">
+            <ul class="sg__list">
+              <li>Body copy</li>
+              <li>Small auxiliary buttons</li>
+              <li>Event subheader</li>
+            </ul>
+          </td>
+          <td class="sg__table-cell sg__typography-cell sg__font-usage">
+            <ul class="sg__list">
+              <li>Subheaders</li>
+              <li>Auxiliary buttons</li>
+              <li>Lightbox headers</li>
+              <li>Form fields</li>
+              <li>Tile fields</li>
+              <li>Ticket types (Filters)</li>
+            </ul>
+          </td>
+          <td class="sg__table-cell sg__typography-cell sg__font-usage">
+            <ul class="sg__list">
+              <li>Event header</li>
+              <li>Qty (Filters)</li>
+              <li>Price (Filters)</li>
+              <li>Sec, Row, Seat (ISM tooltips)</li>
+              <li>Ticket bag</li>
+            </ul>
+          </td>
+          <td class="sg__table-cell sg__typography-cell sg__font-usage">
+            <ul class="sg__list">
+              <li>Primary headers</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+
+      <p>And here they are displayed responsively (resize browser window to see):</p>
+
+      <table class="sg__table">
+        <tr>
+          <td class="sg__table-cell"><span class="sg__xs-font-size-responsive">Extra small copy</span></td>
+          <td class="sg__table-cell"><code class="sg__code">@include nc-responsive-font('xs');</code></td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell"><span class="sg__sm-font-size-responsive">Small copy</span></td>
+          <td class="sg__table-cell"><code class="sg__code">@include nc-responsive-font('sm');</code></td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell"><span class="sg__md-font-size-responsive">Medium copy</span></td>
+          <td class="sg__table-cell"><code class="sg__code">@include nc-responsive-font('md');</code></td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell"><span class="sg__lg-font-size-responsive">Large copy</span></td>
+          <td class="sg__table-cell"><code class="sg__code">@include nc-responsive-font('lg');</code></td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell"><span class="sg__xl-font-size-responsive">Extra large copy</span></td>
+          <td class="sg__table-cell"><code class="sg__code">@include nc-responsive-font('xl');</code></td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell"><span class="sg__xxl-font-size-responsive">Extra-extra large copy</span></td>
+          <td class="sg__table-cell"><code class="sg__code">@include nc-responsive-font('xxl');</code></td>
+        </tr>
+      </table>
+
+      <h3 class="sg__subhdg">Fixed font sizes</h3>
+      <p>In the rare case of using a fixed font size, use our <code class="sg__code">fixed-font()</code> mixin.</p>
+      <p>It defaults to the <code class="sg__code">md</code> font size. You can override this by passing in a size parameter.</p>
+      <p>Note that fixed font sizes are based on the mobile breakpoint sizes (<code class="sg__code">375px - 719px</code>), as indicated in the previous section.</p>
+
+      <table class="sg__table">
+        <tr>
+          <td class="sg__table-cell"><span class="sg__xs-font-size-quart">Extra small copy</span></td>
+          <td class="sg__table-cell"><span class="nc-alt-copy">10px</span></td>
+          <td class="sg__table-cell"><code class="sg__code">@include nc-fixed-font('xs')</code></td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell"><span class="sg__sm-font-size-quart">Small copy</span></td>
+          <td class="sg__table-cell"><span class="nc-alt-copy">14px</span></td>
+          <td class="sg__table-cell"><code class="sg__code">@include nc-fixed-font('sm')</code></td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell"><span class="sg__md-font-size-quart">Medium copy</span></td>
+          <td class="sg__table-cell"><span class="nc-alt-copy">16px</span></td>
+          <td class="sg__table-cell"><code class="sg__code">@include nc-fixed-font('md')</code></td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell"><span class="sg__lg-font-size-quart">Large copy</span></td>
+          <td class="sg__table-cell"><span class="nc-alt-copy">20px</span></td>
+          <td class="sg__table-cell"><code class="sg__code">@include nc-fixed-font('lg')</code></td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell"><span class="sg__xl-font-size-quart">Extra large copy</span></td>
+          <td class="sg__table-cell"><span class="nc-alt-copy">24px</span></td>
+          <td class="sg__table-cell"><code class="sg__code">@include nc-fixed-font('xl')</code></td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell"><span class="sg__xxl-font-size-quart">Extra-extra large copy</span></td>
+          <td class="sg__table-cell"><span class="nc-alt-copy">28x</span></td>
+          <td class="sg__table-cell"><code class="sg__code">@include nc-fixed-font('xxl')</code></td>
+        </tr>
+      </table>
+
+<pre><code class="scss">// scss
+.fixed-example {
+@include nc-fixed-font('lg');
+}
+
+// output
+.fixed-example {
+font-size: 1.8rem;
+line-height: 1.2;
+}</code></pre>
+
+      <h3 class="sg__subhdg">Line Height</h3>
+      <p>By default, line-height for the page is set to <code class="sg__code">1.4</code>. When using either of the font mixins above, line-height is calculated like so:</p>
+
+      <table class="sg__table">
+        <tr>
+          <td class="sg__table-cell">Font size is &quot;medium&quot; or lower</td>
+          <td class="sg__table-cell"><code class="sg__code">1.4</code></td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell">Font size is &quot;large&quot; or higher</td>
+          <td class="sg__table-cell"><code class="sg__code">1.2</code></td>
+        </tr>
+      </table>
+
+      <p>There may be situations where you need a specific line-height other than the above. The mixins have you covered for that, too, by allowing you to pass in a custom line-height value as an optional second parameter.</p>
+      <p>This can be useful for buttons or other situations where you want the text precisely vertically centered in a &quot;box.&quot;</p>
+
+<pre><code class="scss">// scss
+// note that you can specify line-height with responsive-font()
+.fixed-example {
+@include nc-fixed-font('lg', 5rem);
+}
+
+// output
+.fixed-example {
+font-size: 1.8rem;
+line-height: 5rem;
+}</code></pre>
+
+    </section>
+
+    <section id="text-styles" class="sg__section">
+      <h2 class="sg__hdg">Text Styles</h2>
+      <table class="">
+        <tr>
+          <td class="sg__table-cell"><h1 class="nc-heading-primary">Primary Header</h1></td>
+          <td class="sg__table-cell"><span class="nc-alt-copy">xx-large, 10px/20px bottom margin, bold, sierra</span></td>
+          <td class="sg__table-cell"><code class="sg__code">.nc-heading-primary</code></td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell"><h2 class="nc-heading-secondary">Secondary Headers</h2></td>
+          <td class="sg__table-cell"><span class="nc-alt-copy">large, 10/20px bottom margin, bold, sierra</span></td>
+          <td class="sg__table-cell"><code class="sg__code">.nc-heading-secondary</code></td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell"><span class="sg__lg-font-size-responsive">Large body copy</span></td>
+          <td class="sg__table-cell"><span class="nc-alt-copy">large, sierra</span></td>
+          <td class="sg__table-cell">n/a</td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell">Normal body copy</td>
+          <td class="sg__table-cell"><span class="nc-alt-copy">medium, sierra</span></td>
+          <td class="sg__table-cell">applied on <code class="sg__code">.nc-page__content</code></td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell"><span class="nc-alt-copy">Alt copy</span></td>
+          <td class="sg__table-cell"><span class="nc-alt-copy">size is based on context, cascade</span></td>
+          <td class="sg__table-cell"><code class="sg__code">.nc-alt-copy</code></td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell"><span class="nc-legal-copy">Legal copy</span></td>
+          <td class="sg__table-cell"><span class="nc-alt-copy">extra small, cascade</span></td>
+          <td class="sg__table-cell"><code class="sg__code">.nc-legal-copy</code></td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell"><span class="sg__ex-link"><a href="#">Link text</a></span></td>
+          <td class="sg__table-cell"><span class="nc-alt-copy">underline on hover, pacific</span></td>
+          <td class="sg__table-cell"><code class="sg__code">&lt;a&gt;</code></td>
+        </tr>
+      </table>
+
+      <h3 class="sg__subhdg">Mixins for text styling</h3>
+      <p>In the case where any of the above use cases is not appropriate, there are mixins available
+        to achieve the desired appearance.</p>
+      <h4 class="sg__subhdg2">nc-hdg-text mixin</h4>
+      <p>The <code class="sg__code">nc-hdg-text()</code> mixin can be used to create heading text
+        that's bold with a bottom margin of <code class="sg__code">10px/20px</code>. It is called by passing in a font-size and color.
+        It will automatically make the font responsive via a built-in call to the
+        <code class="sg__code">nc-responsive-font()</code> mixin.</p>
+
+<pre><code class="scss">// scss
+.some-heading {
+@include nc-hdg-text('md', $black);
+}
+
+// output
+.some-heading {
+margin-bottom: 10px;
+font-size: 1.4rem;
+font-weight: bold;
+color: #000;
+}
+
+@media (min-width: 45em) {
+.some-heading {
+font-size: 1.6rem;
+}
+}</code></pre>
+
+      <h4 class="sg__subhdg2">nc-alt-copy mixin</h4>
+      <p>The <code class="sg__code">nc-alt-copy()</code> mixin can optionally be called with
+        a font-size parameter. By default, font size is not specified and is based on the surrounding font size.</p>
+
+<pre><code class="scss">// scss
+.ticket-fees {
+@include nc-alt-copy();
+}
+
+// output
+.ticket-fees {
+font-weight: normal;
+color: #768692;
+}</code></pre>
+
+    </section>
+
+  </div>
+</div>

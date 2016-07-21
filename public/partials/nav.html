@@ -1,0 +1,15 @@
+<nav class="sg-nav">
+  <div class="sg-nav__logo">
+    <svg class="tm-logo">
+      <use xlink:href="#tm-logo"></use>
+    </svg>
+    <div class="sg-nav__title">Design System</div>
+  </div>
+  <ol class="sg-nav__list">
+    {{#each config.pages}}
+      <li class="sg-nav__list-item">
+        <a href="{{this.url}}" class="sg-nav__link {{#ifCond @key '==' ../active}}sg-nav__link--active{{/ifCond}}">{{this.title}}</a>
+      </li>
+    {{/each}}
+  </ol>
+</nav>
