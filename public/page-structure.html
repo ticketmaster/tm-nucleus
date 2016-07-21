@@ -1,0 +1,50 @@
+{{> header title=config.pages.page-structure.title}}
+
+<div class="sg__content">
+  {{> nav active='page-structure' }}
+
+  <div class="sg-main">
+
+    <section id="page-structure" class="sg__section">
+      <h2 class="sg__hdg">Page Structure</h2>
+      <p>The basic layout of our pages is as follows:</p>
+
+<pre><code class="html">&lt;body class=&quot;nc-page edp&quot;&gt;
+&lt;div class=&quot;nc-page__wrapper&quot;&gt;
+&lt;div class=&quot;nc-page__frame&quot;&gt;
+&lt;div class=&quot;nc-page__content&quot;&gt;
+  &lt;!-- page content here --&gt;</code></pre>
+
+      <table class="sg__table">
+        <tr>
+          <td class="sg__table-cell"><code class="sg__code">.nc-page</code></td>
+          <td class="sg__table-cell">Sets base typography for page and background color</td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell"><code class="sg__code">.nc-page__wrapper</code></td>
+          <td class="sg__table-cell">Sets background color for a particular section of the page</td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell"><code class="sg__code">.nc-page__frame</code></td>
+          <td class="sg__table-cell">Sets max-width for your content area</td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell"><code class="sg__code">.nc-page__content</code></td>
+          <td class="sg__table-cell">Sets default font size and other needed attributes for your content area</td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell"><code class="sg__code">.[pagename]</code></td>
+          <td class="sg__table-cell">Sets block context for any page-specific styles</td>
+        </tr>
+      </table>
+
+      <p>Note that you don't always need to use all of the classes above.
+       Only use those classes that you need to establish page structure.</p>
+      <p>For example, if you don't need set to a background color for your section of a page that's different from the
+       body background, then you don't need to use <code class="sg__code">nc-page__wrapper</code>. Similarly, if your
+       content is supposed to span the full width of the browser at all times, then you don't need
+      <code class="sg__code">page__frame</code>.</p>
+    </section>
+
+  </div>
+</div>

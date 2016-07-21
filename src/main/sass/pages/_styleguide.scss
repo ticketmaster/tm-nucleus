@@ -1,5 +1,7 @@
 /* stylelint-disable */
 // config
+$nav-bg-color: nc-color('ridge');
+$nav-bg-hover-color: nc-color('sierra', 'background');
 $code-bg-color: nc-color('ridge');
 $main-hdg-color: nc-color('pacific');
 $secondary-hdg-color: nc-color('catalina');
@@ -55,10 +57,6 @@ $stacking-order: (
   fill: $nc-white;
 }
 
-.sg-logo--branded {
-  fill: nc-color('pacific');
-}
-
 .sg-version {
   @include nc-type-scale('milli');
 }
@@ -88,8 +86,8 @@ $stacking-order: (
     position: fixed;
     top: 0;
     width: $nav-width;
-    height: calc(100vh);
-    background-color: $nc-page-section-bg-color;
+    height: 100vh;
+    background-color: $nav-bg-color;
   }
 }
 
@@ -111,7 +109,7 @@ $stacking-order: (
   }
 }
 
-.sg-nav__list-item {
+.sg-nav__link {
   @include nc-spacing($inside: (
     'top': 'slim',
     'bottom': 'slim',
@@ -119,63 +117,74 @@ $stacking-order: (
     'right': 'moderate'
     )
   );
+
+  display: block;
+  transition: background-color 0.5s ease,
+              color 0.5s ease;
+
+  &:hover {
+    text-decoration: none;
+    background-color: $nav-bg-hover-color;
+  }
+}
+
+.sg-nav__link--active {
+  $active-border-size: 5px;
+
+  padding-left: calc(#{nc-get-spacing('moderate', 'mini')} - #{$active-border-size});
+  border-left: $active-border-size solid nc-color('catalina');
+
+  @include nc-breakpoint($nc-bp-md) {
+    padding-left: calc(#{nc-get-spacing('moderate', 'maxi')} - #{$active-border-size});
+  }
 }
 
 .sg-main {
-  @include nc-breakpoint($nc-bp-md) {
-    @include nc-spacing($outside: ('top': 'normal'));
+  @include nc-spacing(
+    $outside: ('top': 'normal'),
+    $inside: ('left': 'normal', 'right': 'normal')
+  );
 
+  @include nc-breakpoint($nc-bp-md) {
     top: $header-height;
     margin-left: $nav-width;
     height: calc(100vh - #{$header-height});
-    padding: 0 $nc-gutter-width-half;
   }
 }
 
 .sg__section {
-  @include nc-spacing($outside: ('top': 'moderate', 'bottom': 'moderate'));
   @include nc-type-scale('uno');
-
-  // float: left;
-  // width: 100%;
-  padding: 0 $nc-gutter-width-half $nc-spacing-lg;
+  @include nc-spacing(
+    $outside: ('top': 'normal', 'bottom': 'normal'),
+    $inside: ('bottom': 'normal')
+  );
 
   border-bottom: $nc-base-border-style;
-
-  @include nc-breakpoint($nc-bp-md) {
-    padding-bottom: nc-increase-spacing($nc-spacing-lg);
-  }
 }
 
 
 .sg__hdg {
   @include nc-type-scale('giga');
 
+  font-weight: normal;
   color: $main-hdg-color;
 }
 
 
 .sg__subhdg {
-  @include nc-hdg-text('md', $secondary-hdg-color);
+  @include nc-type-scale('kilo');
+  @include nc-spacing($outside: ('top': 'moderate'));
 
-  text-transform: uppercase;
+  font-weight: normal;
+  color: $main-hdg-color;
 }
 
 .sg__subhdg2 {
-  @include nc-hdg-text('sm', $nc-alt-text-color, 5px);
-
-  margin-top: 2em;
-
-  text-transform: uppercase;
+  @include nc-type-scale('uno');
 }
 
 .sg__subhdg3 {
-  @include nc-hdg-text('sm', $nc-text-color);
-
-  margin-top: 2em;
-
-  font-weight: normal;
-  text-transform: uppercase;
+  @include nc-type-scale('centi');
 }
 
 

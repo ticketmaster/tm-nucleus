@@ -1,0 +1,43 @@
+{{> header title=config.pages.timer.title}}
+
+<div class="sg__content">
+  {{> nav active='timer' }}
+
+  <div class="sg-main">
+
+    <section id="timer" class="sg__section">
+      <style>
+        .timer__animate {
+            animation-duration: 35s;
+        }
+      </style>
+      <h2 class="sg__hdg">Timer</h2>
+      <div class="nc-timer">
+        <div class="nc-is-offscreen">Time left to complete page.</div>
+        <div class="nc-timer__indicator">13:49</div>
+        <div class="nc-timer__spinner nc-timer__animate"></div>
+        <div class="nc-timer__filler nc-timer__animate"></div>
+        <div class="nc-timer__bg"></div>
+        <div class="nc-timer__mask nc-timer__animate"></div>
+      </div>
+
+<pre><code class="html">&lt;style&gt;
+// to override default animation duration (i.e. 30s)
+.timer__animate {
+animation-duration: 35s;
+}
+&lt;/style&gt;
+
+&lt;div class="nc-timer"&gt;
+&lt;div class="nc-is-offscreen"&gt;Time left to complete page.&lt;/div&gt;
+&lt;div class="nc-timer__indicator"&gt;13:49&lt;/div&gt;
+&lt;div class="nc-timer__spinner nc-timer__animate"&gt;&lt;/div&gt;
+&lt;div class="nc-timer__filler nc-timer__animate"&gt;&lt;/div&gt;
+&lt;div class="nc-timer__bg"&gt;&lt;/div&gt;
+&lt;div class="nc-timer__mask nc-timer__animate"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+    </section>
+
+  </div>
+</div>

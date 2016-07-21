@@ -1,0 +1,328 @@
+{{> header title=config.pages.tooltips.title}}
+
+<div class="sg__content">
+  {{> nav active='tooltips' }}
+
+  <div class="sg-main">
+
+    <section id="tooltips" class="sg__section">
+      <h2 class="sg__hdg">Tooltips</h2>
+      <p>Tooltip caret size is 10px on mobile, 15px on tablet/desktop. Internal padding of a tooltip follows the 10px/15px spacing rule as described in <a href="#spacing">Spacing</a>.</p>
+      <div class="nc-tooltip">
+        <div class="nc-tooltip__content">
+          <p>Default nc-tooltip, with the caret on the bottom</p>
+        </div>
+      </div>
+      <div class="nc-tooltip nc-tooltip--right">
+        <div class="nc-tooltip__content">
+          <p>Tooltip with caret on right</p>
+        </div>
+      </div>
+      <div class="nc-tooltip nc-tooltip--left">
+        <div class="nc-tooltip__content">
+          <p>Tooltip with caret on left</p>
+        </div>
+      </div>
+      <div class="nc-tooltip nc-tooltip--top">
+        <div class="nc-tooltip__content">
+          <p>Tooltip with caret on top</p>
+        </div>
+      </div>
+
+<pre><code class="html">&lt;div class="nc-tooltip"&gt;
+&lt;div class="nc-tooltip__content"&gt;
+Content goes here.
+&lt;/div&gt;
+&lt;/div&gt;</pre></code>
+
+    </section>
+
+    <section id="ism-tooltip" class="sg__section">
+      <h3 class="sg__hdg">ISM Tooltips</h3>
+      <p>This pattern utilizes <a href="#lists">Delimited List</a>, <a href="#tooltips">Tooltips</a>, and <a href="#srs">SRS</a>.</p>
+
+      <div class="sg__ism-tooltip">
+        <h4 class="sg__subhdg3">Single Ticket Type</h4>
+        <div class="nc-tooltip nc-tooltip--ism">
+          <div class="nc-tooltip__content">
+            <div class="nc-tooltip__srs nc-srs">
+              <div class="nc-srs__set">
+                <span class="nc-srs__label">Sec</span>
+                <span class="nc-srs__value">21</span>
+              </div>
+              <div class="nc-srs__set">
+                <span class="nc-srs__label">Row</span>
+                <span class="nc-srs__value">13</span>
+              </div>
+              <div class="nc-srs__set">
+                <span class="nc-srs__label">Seat</span>
+                <span class="nc-srs__value">23</span>
+              </div>
+            </div>
+          </div>
+          <ul class="nc-tooltip__delimited-list nc-delimited-list">
+            <li class="nc-delimited-list__item">
+              <div class="nc-split-content">
+                <div class="nc-split-content__primary">
+                  <div>Standard Ticket</div>
+                  <div>$100.00</div>
+                </div>
+                <div class="nc-split-content__secondary">
+                  <button class="nc-button nc-button--static">Add</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="nc-tooltip__legal">
+            Additional <a href="#">service fees and charges</a> will apply at checkout.
+          </div>
+        </div>
+      </div>
+
+      <div class="sg__ism-tooltip">
+        <h4 class="sg__subhdg3">Multiple Ticket Type</h4>
+        <div class="nc-tooltip nc-tooltip--ism">
+          <div class="nc-tooltip__content">
+            <div class="nc-tooltip__srs nc-srs">
+              <div class="nc-srs__set">
+                <span class="nc-srs__label">Sec</span>
+                <span class="nc-srs__value">21</span>
+              </div>
+              <div class="nc-srs__set">
+                <span class="nc-srs__label">Row</span>
+                <span class="nc-srs__value">13</span>
+              </div>
+              <div class="nc-srs__set">
+                <span class="nc-srs__label">Seat</span>
+                <span class="nc-srs__value">23</span>
+              </div>
+            </div>
+          </div>
+          <ul class="nc-tooltip__delimited-list nc-delimited-list">
+            <li class="nc-delimited-list__item">
+              <div class="nc-split-content">
+                <div class="nc-split-content__primary">
+                  <div>Standard Ticket</div>
+                  <div>$100.00</div>
+                </div>
+                <div class="nc-split-content__secondary">
+                  <button class="nc-button nc-button--static">Add</button>
+                </div>
+              </div>
+            </li>
+            <li class="nc-delimited-list__item">
+              <div class="nc-split-content">
+                <div class="nc-split-content__primary">
+                  <div>Child Ticket</div>
+                  <div>$90.00</div>
+                </div>
+                <div class="nc-split-content__secondary">
+                  <button class="nc-button nc-button--static">Add</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="nc-tooltip__legal">
+            Additional <a href="#">service fees and charges</a> will apply at checkout.
+          </div>
+        </div>
+      </div>
+
+      <div class="sg__ism-tooltip">
+        <h4 class="sg__subhdg3">With Notes</h4>
+        <div class="nc-tooltip nc-tooltip--ism">
+          <div class="nc-tooltip__content">
+            <div class="nc-tooltip__srs nc-srs">
+              <div class="nc-srs__set">
+                <span class="nc-srs__label">Sec</span>
+                <span class="nc-srs__value">21</span>
+              </div>
+              <div class="nc-srs__set">
+                <span class="nc-srs__label">Row</span>
+                <span class="nc-srs__value">13</span>
+              </div>
+              <div class="nc-srs__set">
+                <span class="nc-srs__label">Seat</span>
+                <span class="nc-srs__value">23</span>
+              </div>
+            </div>
+          </div>
+          <ul class="nc-tooltip__delimited-list nc-delimited-list">
+            <li class="nc-delimited-list__item">
+              <div class="nc-split-content">
+                <div class="nc-split-content__primary">
+                  <div>Standard Ticket</div>
+                  <div>$100.00</div>
+                </div>
+                <div class="nc-split-content__secondary">
+                  <button class="nc-button nc-button--static">Add</button>
+                </div>
+              </div>
+            </li>
+            <li class="nc-delimited-list__item">
+              <div class="nc-split-content">
+                <div class="nc-split-content__primary">
+                  <div>Child Ticket</div>
+                  <div>$90.00</div>
+                </div>
+                <div class="nc-split-content__secondary">
+                  <button class="nc-button nc-button--static">Add</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="nc-tooltip__content">
+            <span>Obstructed View</span>
+          </div>
+          <div class="nc-tooltip__legal">
+            Additional <a href="#">service fees and charges</a> will apply at checkout.
+          </div>
+        </div>
+      </div>
+
+      <div class="sg__ism-tooltip">
+        <h4 class="sg__subhdg3">General Admission</h4>
+        <div class="nc-tooltip nc-tooltip--ism">
+          <div class="nc-tooltip__content">
+            <div class="nc-tooltip__srs nc-srs">
+              <div class="nc-srs__set">
+                <span class="nc-srs__label">Sec</span>
+                <span class="nc-srs__value">Floor</span>
+                <span class="nc-srs__ga">General Admission</span>
+              </div>
+            </div>
+          </div>
+          <ul class="nc-tooltip__delimited-list nc-delimited-list">
+            <li class="nc-delimited-list__item">
+              <div class="nc-split-content">
+                <div class="nc-split-content__primary">
+                  <div>Standard Ticket</div>
+                  <div>$100.00 ea</div>
+                </div>
+                <div class="nc-split-content__secondary">
+                  <div class="nc-qty-picker">
+                    <button class="nc-qty-picker__button nc-qty-picker__button--decrement">
+                      <svg class="nc-icon-minus nc-qty-picker__icon-minus">
+                        <use xlink:href="img/sprite.svg#icon-minus"></use>
+                      </svg>
+                    </button>
+                    <div class="nc-qty-picker__number">
+                      2
+                    </div>
+                    <button class="nc-qty-picker__button nc-qty-picker__button--increment">
+                      <svg class="nc-icon-plus nc-qty-picker__icon-plus">
+                        <use xlink:href="img/sprite.svg#icon-plus"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nc-delimited-list__item">
+              <div class="nc-split-content">
+                <div class="nc-split-content__primary">
+                  <div>Child Ticket</div>
+                  <div>$90.00 ea</div>
+                </div>
+                <div class="nc-split-content__secondary">
+                  <div class="nc-qty-picker">
+                    <button class="nc-qty-picker__button nc-qty-picker__button--decrement">
+                      <svg class="nc-icon-minus nc-qty-picker__icon-minus">
+                        <use xlink:href="img/sprite.svg#icon-minus"></use>
+                      </svg>
+                    </button>
+                    <div class="nc-qty-picker__number">
+                      2
+                    </div>
+                    <button class="nc-qty-picker__button nc-qty-picker__button--increment">
+                      <svg class="nc-icon-plus nc-qty-picker__icon-plus">
+                        <use xlink:href="img/sprite.svg#icon-plus"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="nc-tooltip__content">
+            <div class="nc-split-content">
+              <div class="nc-split-content__primary">
+                <div class="tooltip--ism__subtotal">
+                  $100.00
+                </div>
+              </div>
+              <div class="nc-split-content__secondary">
+                <button class="button button--static">Add</button>
+              </div>
+            </div>
+          </div>
+          <div class="nc-tooltip__legal">
+            Additional <a href="#">service fees and charges</a> will apply at checkout.
+          </div>
+        </div>
+      </div>
+
+      <div class="sg__ism-tooltip">
+        <h4 class="sg__subhdg3">Resale</h4>
+        <div class="nc-tooltip nc-tooltip--ism">
+          <div class="nc-tooltip__content">
+            <div class="nc-tooltip__srs nc-srs">
+              <div class="nc-srs__set">
+                <span class="nc-srs__label">Sec</span>
+                <span class="nc-srs__value">21</span>
+              </div>
+              <div class="nc-srs__set">
+                <span class="nc-srs__label">Row</span>
+                <span class="nc-srs__value">J</span>
+              </div>
+              <div class="nc-srs__set">
+                <span class="nc-srs__label">Seat</span>
+                <span class="nc-srs__value">14-16</span>
+              </div>
+            </div>
+          </div>
+          <ul class="nc-tooltip__delimited-list nc-delimited-list">
+            <li class="nc-delimited-list__item">
+              <div class="nc-split-content">
+                <div class="nc-split-content__primary">
+                  <div>Fan-to-Fan Resale</div>
+                  <div>$100.00 ea</div>
+                </div>
+                <div class="nc-split-content__secondary">
+                  <div class="nc-qty-picker">
+                    <button class="nc-qty-picker__button nc-qty-picker__button--decrement">
+                      <svg class="nc-icon-minus nc-qty-picker__icon-minus">
+                        <use xlink:href="img/sprite.svg#icon-minus"></use>
+                      </svg>
+                    </button>
+                    <div class="nc-qty-picker__number">
+                      2
+                    </div>
+                    <button class="nc-qty-picker__button nc-qty-picker__button--increment">
+                      <svg class="nc-icon-plus nc-qty-picker__icon-plus">
+                        <use xlink:href="img/sprite.svg#icon-plus"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="nc-tooltip__content">
+            <div class="nc-split-content">
+              <div class="nc-split-content__primary">
+                <div class="nc-tooltip--ism__subtotal">
+                  $200.00
+                </div>
+              </div>
+              <div class="nc-split-content__secondary">
+                <button class="nc-button nc-button--cta nc-button--static">Checkout</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>

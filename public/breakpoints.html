@@ -1,0 +1,126 @@
+{{> header title=config.pages.breakpoints.title}}
+
+<div class="sg__content">
+  {{> nav active='breakpoints' }}
+
+  <div class="sg-main">
+
+    <section id="breakpoints" class="sg__section">
+      <h2 class="sg__hdg">Breakpoints</h2>
+      <table class="sg__table">
+        <tr>
+          <td class="sg__table-cell"><span class="sg__mobile-bp">Mobile</span></td>
+          <td class="sg__table-cell"><code class="sg__code">$nc-bp-xs</code></td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell"><span class="sg__large-mobile-bp">Large Mobile</span></td>
+          <td class="sg__table-cell"><code class="sg__code">$nc-bp-sm</code></td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell"><span class="sg__tablet-bp">Tablet</span></td>
+          <td class="sg__table-cell"><code class="sg__code">$nc-bp-md</code></td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell"><span class="sg__desktop-bp">Desktop</span></td>
+          <td class="sg__table-cell"><code class="sg__code">$nc-bp-lg</code></td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell"><span class="sg__max-bp">Max</span></td>
+          <td class="sg__table-cell"><code class="sg__code">$nc-bp-xl</code></td>
+        </tr>
+      </table>
+
+      <h3 class="sg__subhdg">Breakpoint mixin</h3>
+      <p>You can specify media queries by using the <code class="sg__code">nc-breakpoint()</code> mixin.</p>
+      <p>The mixin accepts two parameters, <code class="sg__code">$min</code> and
+        <code class="sg__code">$max</code> values. By default, if only one parameter is passed, it is
+        assigned to the <code class="sg__code">$min</code> value.</p>
+      <p>The mixin takes <code class="sg__code">px</code> values and converts them to <code class="sg__code">em</code> units,
+        which is the preferred way to write media queries.</p>
+
+<pre><code class="scss">// scss
+.some-block {
+margin-top: 15px;
+
+// $bp-md will be assigned as min-width
+@include nc-breakpoint($bp-md) {
+margin-top: 40px;
+}
+}
+
+// output
+.some-block {
+margin-top: 15px;
+}
+
+// note the conversion to em units
+@media (min-width: 45em) {
+.some-block {
+margin-top: 40px;
+}
+}</code></pre>
+
+      <p>If you need to specify the maximum breakpoint instead, you call the mixin by explicity
+        assigning the parameter to <code class="sg__code">$max</code>.</p>
+
+<pre><code class="scss">// scss
+.another-block {
+[...]
+
+// here we are explicitly assigning our parameter to $max
+@include nc-breakpoint($max: $bp-lg - 1) {
+padding: 25px;
+}
+}
+
+// output
+[...]
+
+@media (max-width: 63.6875em) {
+.another-block {
+padding: 25px;
+}
+}</code></pre>
+
+      <p>Note in the above example that we actually passed in <code class="sg__code">($max: $bp-lg -
+        1)</code> because we want the styling rules to apply to anything <em>below</em> the max
+        value. (We don't want to actually include the max value as part of the declaration.)</em>
+      </p>
+
+      <p>In our example, we're saying applying these rules to anything less than the <code
+        class="sg__code">1020px</code> width.</p>
+
+      <h4 class="sg__subhdg2">Where to Use breakpoint</h4>
+      <p>In SASS, declare your breakpoints within the elements affected. Do not declare media queries as another code block separate from the original context.</p>
+
+<pre><code class="scss">// DON'T do this
+.class1 {
+font-size: 12px;
+}
+.class2 {
+padding: 50px;
+}
+
+[...]
+
+@include nc-breakpoint($bp-md) {
+.class1 {
+font-size: 18px;
+}
+.class2 {
+padding: 100px;
+}
+}
+
+// DO do this
+.class1 {
+font-size: 12px;
+
+@include nc-breakpoint($bp-md) {
+font-size: 18px;
+}
+}</code></pre>
+
+    </section>
+  </div>
+</div>
