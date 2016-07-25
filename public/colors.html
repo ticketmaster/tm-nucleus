@@ -1,0 +1,691 @@
+{{> header title=config.pages.palette.title}}
+
+<div class="sg__content">
+  {{> nav active='palette' }}
+
+  <div class="sg-main">
+
+    <section id="palette" class="sg-section">
+
+      <h2 class="sg-hdg">Palette</h2>
+
+      <div class="sg-swatches">
+        <h2 class="sg-subhdg">Neutral Colors</h2>
+        <div class="sg-swatch">
+          <div class="sg-swatch__chip sg-swatch__chip--sierra-base">
+            <span class="sg-swatch__hex sg-swatch__hex">#475058</span>
+          </div>
+          <div class="sg-swatch__info">
+            <span class="sg-swatch__name">sierra</span>
+            <ul class="sg-swatch__usage-list">
+              <li>For primary and standard copy</li>
+              <li>For elements requiring high contrast</li>
+            </ul>
+          </div>
+        </div>
+        <div class="sg-swatch">
+          <div class="sg-swatch__chip sg-swatch__chip--cascade-base">
+            <span class="sg-swatch__hex">#768692</span>
+          </div>
+          <div class="sg-swatch__info">
+            <span class="sg-swatch__name">cascade</span>
+            <ul class="sg-swatch__usage-list">
+              <li>For secondary copy</li>
+              <li>To de-emphasize elements</li>
+            </ul>
+          </div>
+        </div>
+        <div class="sg-swatch">
+          <div class="sg-swatch__chip sg-swatch__chip--rocky-base">
+            <span class="sg-swatch__hex sg-swatch__hex--dark">#dfe4e7</span>
+          </div>
+          <div class="sg-swatch__info">
+            <span class="sg-swatch__name">rocky</span>
+            <ul class="sg-swatch__usage-list">
+              <li>For divider lines</li>
+            </ul>
+          </div>
+        </div>
+        <div class="sg-swatch">
+          <div class="sg-swatch__chip sg-swatch__chip--ridge-base">
+            <span class="sg-swatch__hex sg-swatch__hex--dark">#f6f7f9</span>
+          </div>
+           <div class="sg-swatch__info">
+             <span class="sg-swatch__name">ridge</span>
+             <ul class="sg-swatch__usage-list">
+               <li>For backgrounds</li>
+             </ul>
+           </div>
+        </div>
+
+        <h2 class="sg-subhdg">Primary Color</h2>
+        <div class="sg-swatch">
+          <div class="sg-swatch__chip sg-swatch__chip--pacific-base">
+            <span class="sg-swatch__hex">#009cde</span>
+          </div>
+          <div class="sg-swatch__info">
+            <span class="sg-swatch__name">pacific</span>
+            <ul class="sg-swatch__usage-list">
+              <li>For primary buttons, text links, and call-to-action elements</li>
+              <li>For elements showcasing Ticketmaster's brand</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 class="sg-subhdg">Secondary Colors</h2>
+        <div class="sg-swatch">
+          <div class="sg-swatch__chip sg-swatch__chip--yosemite-base">
+            <span class="sg-swatch__hex">#19ab20</span>
+          </div>
+          <div class="sg-swatch__info">
+            <span class="sg-swatch__name">yosemite</span>
+            <ul class="sg-swatch__usage-list">
+              <li>For success copy and elements with positive connotations</li>
+              <li>For buttons and call-to-action elements directing to checkout</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sg-swatch">
+          <div class="sg-swatch__chip sg-swatch__chip--helen-base">
+            <span class="sg-swatch__hex">#f00</span>
+          </div>
+          <div class="sg-swatch__info">
+            <span class="sg-swatch__name">helen</span>
+            <ul class="sg-swatch__usage-list">
+              <li>For error and alert copy and elements with negative connotations</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sg-swatch">
+          <div class="sg-swatch__chip sg-swatch__chip--malibu-base">
+            <span class="sg-swatch__hex">#fa3</span>
+          </div>
+          <div class="sg-swatch__info">
+            <span class="sg-swatch__name">malibu</span>
+            <ul class="sg-swatch__usage-list">
+              <li>For warning copy and elements with cautious connotations</li>
+              <li>For locked elements</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sg-swatch">
+          <div class="sg-swatch__chip sg-swatch__chip--catalina-base">
+            <span class="sg-swatch__hex">#d0006f</span>
+          </div>
+          <div class="sg-swatch__info">
+            <span class="sg-swatch__name">catalina</span>
+            <ul class="sg-swatch__usage-list">
+              <li>For resale elements</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <h3 class="sg-subhdg">Shades</h4>
+      <p>Shades are used as visual cues for interactivity, such as for hovering, when an element is disabled, etc.</p>
+      <p>Shades <em>should not</em> be used statically &mdash; that is, they should only ever be seen when the user has initiated an action. You should not be using any shades when designing static elements of your component.</p>
+
+      <table class="sg-shades-table">
+        <tr>
+          <th class="sg-shades-table__hdg">Shade</th>
+          <th class="sg-shades-table__hdg">Usage</th>
+        </tr>
+        <tr>
+          <td class="sg-shades-table__cell">base</td>
+          <td class="sg-shades-table__cell">the default color</td>
+        </tr>
+        <tr>
+          <td class="sg-shades-table__cell">dark</td>
+          <td class="sg-shades-table__cell">for hover states</td>
+        </tr>
+        <tr>
+          <td class="sg-shades-table__cell">light</td>
+          <td class="sg-shades-table__cell">for indicating that something is outside of your selection criteria</td>
+        </tr>
+        <tr>
+          <td class="sg-shades-table__cell">muted</td>
+          <td class="sg-shades-table__cell">for disabled states</td>
+        </tr>
+        <tr>
+          <td class="sg-shades-table__cell">background</td>
+          <td class="sg-shades-table__cell">for use as backgrounds</td>
+        </tr>
+      </table>
+
+      <p>Note that for most of these shades, their relationships and usage are well-defined and should not have any deviations.
+        For example, the <code class="sg-code">dark</code> shade should always be used for a visual cue of hovering over an element.</p>
+      <p>Below is a reference for all of the different shades that are derived from our base palette.</p>
+
+      <table class="sg-swatch-table">
+        <tr>
+          <th class="sg-swatch-table__hdg">color</th>
+          <th class="sg-swatch-table__hdg">base</th>
+          <th class="sg-swatch-table__hdg">dark</th>
+          <th class="sg-swatch-table__hdg">light</th>
+          <td class="sg-swatch-table__hdg">muted</td>
+          <td class="sg-swatch-table__hdg">background</td>
+        </tr>
+        <tr>
+          <td class="sg-swatch-table__cell">
+            <strong>Pacific</strong>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--pacific-base">
+                <span class="sg-swatch__hex">#009cde</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--pacific-dark">
+                <span class="sg-swatch__hex">#0075a7</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--pacific-light">
+                <span class="sg-swatch__hex sg-swatch__hex--dark">#80ceef</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--pacific-muted">
+                <span class="sg-swatch__hex sg-swatch__hex--dark">#bfe6f7</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--pacific-background">
+                <span class="sg-swatch__hex sg-swatch__hex--dark">#dff3fb</span>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="sg-swatch-table__cell">
+            <strong>Sierra</strong>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--sierra-base">
+                <span class="sg-swatch__hex">#475058</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--sierra-dark">
+                <span class="sg-swatch__hex">#353c42</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--sierra-light">
+                <span class="sg-swatch__hex sg-swatch__hex--dark">#a3a8ac</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--sierra-muted">
+                <span class="sg-swatch__hex sg-swatch__hex--dark">#d1d3d5</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--sierra-background">
+                <span class="sg-swatch__hex sg-swatch__hex--dark">#e8e9ea</span>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="sg-swatch-table__cell">
+            <strong>Cascade</strong>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--cascade-base">
+                <span class="sg-swatch__hex">#768692</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--cascade-dark">
+                <span class="sg-swatch__hex">#59656e</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--cascade-light">
+                <span class="sg-swatch__hex sg-swatch__hex--dark">#bbc3c9</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--cascade-muted">
+                <span class="sg-swatch__hex sg-swatch__hex--dark">#dde1e4</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--cascade-background">
+                <span class="sg-swatch__hex sg-swatch__hex--dark">#eef0f1</span>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="sg-swatch-table__cell">
+            <strong>Rocky</strong>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--rocky-base">
+                <span class="sg-swatch__hex sg-swatch__hex--dark">#dfe4e7</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--rocky-dark">
+                <span class="sg-swatch__hex">#a7abad</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--rocky-light">
+                <span class="sg-swatch__hex sg-swatch__hex--dark">#eff2f3</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--rocky-muted">
+                <span class="sg-swatch__hex sg-swatch__hex--dark">#f7f8f9</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--rocky-background">
+                <span class="sg-swatch__hex sg-swatch__hex--dark">#fbfcfc</span>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="sg-swatch-table__cell">
+            <strong>Ridge</strong>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--ridge-base">
+                <span class="sg-swatch__hex sg-swatch__hex--dark">#f6f7f9</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--ridge-dark">
+                <span class="sg-swatch__hex">#b9b9bb</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--ridge-light">
+                <span class="sg-swatch__hex sg-swatch__hex--dark">#fbfbfc</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--ridge-muted">
+                <span class="sg-swatch__hex sg-swatch__hex--dark">#fdfdfe</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--ridge-background">
+                <span class="sg-swatch__hex sg-swatch__hex--dark">#fefefe</span>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="sg-swatch-table__cell">
+            <strong>Yosemite</strong>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--yosemite-base">
+                <span class="sg-swatch__hex">#19ab20</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--yosemite-dark">
+                <span class="sg-swatch__hex">#138018</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--yosemite-light">
+                <span class="sg-swatch__hex sg-swatch__hex--dark">#8cd590</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--yosemite-muted">
+                <span class="sg-swatch__hex sg-swatch__hex--dark">#c6eac7</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--yosemite-background">
+                <span class="sg-swatch__hex sg-swatch__hex--dark">#e2f5e3</span>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="sg-swatch-table__cell">
+            <strong>Helen</strong>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--helen-base">
+                <span class="sg-swatch__hex">#f00</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--helen-dark">
+                <span class="sg-swatch__hex">#bf0000</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--helen-light">
+                <span class="sg-swatch__hex">#ff8080</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--helen-muted">
+                <span class="sg-swatch__hex sg-swatch__hex--dark">#ffbfbf</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--helen-background">
+                <span class="sg-swatch__hex sg-swatch__hex--dark">#ffdfdf</span>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="sg-swatch-table__cell">
+            <strong>Malibu</strong>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--malibu-base">
+                <span class="sg-swatch__hex">#fa3</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--malibu-dark">
+                <span class="sg-swatch__hex">#bf8026</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--malibu-light">
+                <span class="sg-swatch__hex sg-swatch__hex--dark">#ffd599</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--malibu-muted">
+                <span class="sg-swatch__hex sg-swatch__hex--dark">#ffeacc</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--malibu-background">
+                <span class="sg-swatch__hex sg-swatch__hex--dark">#fff4e6</span>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="sg-swatch-table__cell">
+            <strong>Catalina</strong>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--catalina-base">
+                <span class="sg-swatch__hex">#d0006f</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--catalina-dark">
+                <span class="sg-swatch__hex">#9c0053</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--catalina-light">
+                <span class="sg-swatch__hex">#e880b7</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--catalina-muted">
+                <span class="sg-swatch__hex sg-swatch__hex--dark">#f3bfdb</span>
+              </div>
+            </div>
+          </td>
+          <td class="sg-swatch-table__cell">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip sg-swatch__chip--helen-background">
+                <span class="sg-swatch__hex sg-swatch__hex--dark">#ffdfdf</span>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="sg-section">
+      <h2 class="sg-hdg sg-code-hdg">Code Reference</h2>
+
+      <h3 class="sg-subhdg">Palette Customization</h3>
+      <p>Nucleus has built-in support for Ticketmaster and Live Nation palettes.
+        These are located in the /themes directory, and are named
+        <code class="sg-code">tm.scss</code> and
+        <code class="sg-code">ln.scss</code>, respectively. </p>
+      <p>Switching between TM and LN is just a matter of changing which theme
+        to import.</p>
+
+<pre class="sg-code-block"><code class="scss">/* TM theme */
+@import '<span class="sg__highlight-code">[path/to/nucleus]/tm</span>';
+@import '[path/to/nucleus]/base/all';
+@import '[path/to/nucleus]/mixins/all';
+@import '[path/to/nucleus]/components/all';
+@import '[path/to/nucleus]/states/all';
+
+/* LN theme */
+@import '<span class="sg__highlight-code">[path/to/nucleus]/ln</span>';
+@import '[path/to/nucleus]/base/all';
+@import '[path/to/nucleus]/mixins/all';
+@import '[path/to/nucleus]/components/all';
+@import '[path/to/nucleus]/states/all';
+</code></pre>
+
+      <p>To apply custom colors, refer to <code class="sg-code">ln.scss</code>
+        as your model. You will need to merge any custom colors into Nucleus's
+        palette, then apply them via the <code class="sg-code">nc-color()</code>
+        function.</p>
+      <div class="sg-callout">
+        <h4 class="sg-subhdg2">Important Note</h4>
+        <p>All of your color definitions should be abstracted in your theme file.
+          This is to support branding at the app level. (Themes are not always 1:1;
+          the fact that everything that's blue in the TM theme does not necessarily
+          mean that it is red in the LN theme.)</p>
+      </div>
+      <p>To use your custom theme, import it before anything else from Nucleus.</p>
+
+<pre class="sg-code-block"><code class="scss">/* Custom theme */
+@import '<span class="sg__highlight-code">[path/to/custom]/your-theme</span>';
+@import '[path/to/nucleus]/base/all';
+@import '[path/to/nucleus]/mixins/all';
+@import '[path/to/nucleus]/components/all';
+@import '[path/to/nucleus]/states/all';
+</code></pre>
+
+      <h3 class="sg-code-hdg">
+        <code class="sg-code-hdg__name">nc-color()</code>
+        <span class="sg-code-hdg__badge sg-function-badge">Function</span>
+        <span class="sg-code-hdg__source-file">base/_typography.scss</span>
+      </h3>
+      <p>Returns hex value from palette.</p>
+      <table class="sg-params-table">
+        <tr>
+          <th class="sg-params-table__hdg">Parameters</th>
+          <th class="sg-params-table__hdg">Default</th>
+          <th class="sg-params-table__hdg">Description</th>
+          <th class="sg-params-table__hdg">Required</th>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$name</code></td>
+          <td class="sg-params-table__cell">&nbsp;</td>
+          <td class="sg-params-table__cell">Name of color. (e.g., <code class="sg-code">sierra</code>.)</td>
+          <td class="sg-params-table__cell sg-params-table__cell--check">
+            <svg class="nc-icon-check sg-icon-check">
+              <use xlink:href="img/sprite.svg#icon-check"></use>
+            </svg>
+          </td>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$shade</code></td>
+          <td class="sg-params-table__cell"><code class="sg-code">base</code></td>
+          <td class="sg-params-table__cell">Name of shade. (e.g., <code class="sg-code">dark</code>.)</td>
+          <td class="sg-params-table__cell">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$map</code></td>
+          <td class="sg-params-table__cell"><code class="sg-code">$nc-palette</code></td>
+          <td class="sg-params-table__cell">SASS map that contains palette.</td>
+          <td class="sg-params-table__cell">&nbsp;</td>
+        </tr>
+      </table>
+
+<pre class="sg-code-block"><code class="scss">$var1: nc-color('sierra');             /* #475058 */
+$var2: nc-color('pacific', 'muted');   /* #bfe6f7 */</code></pre>
+
+      <h3 class="sg-code-hdg">
+        <code class="sg-code-hdg__name">nc-get-darker()</code>
+        <span class="sg-code-hdg__badge sg-function-badge">Function</span>
+        <span class="sg-code-hdg__source-file">base/_typography.scss</span>
+      </h3>
+      <p>Given a color, returns a new color mixed with a percentage of white (<code class="sg-code">#000</code>).</p>
+      <table class="sg-params-table">
+        <tr>
+          <th class="sg-params-table__hdg">Parameters</th>
+          <th class="sg-params-table__hdg">Default</th>
+          <th class="sg-params-table__hdg">Description</th>
+          <th class="sg-params-table__hdg">Required</th>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$color</code></td>
+          <td class="sg-params-table__cell">&nbsp;</td>
+          <td class="sg-params-table__cell">Hex value.</td>
+          <td class="sg-params-table__cell sg-params-table__cell--check">
+            <svg class="nc-icon-check sg-icon-check">
+              <use xlink:href="img/sprite.svg#icon-check"></use>
+            </svg>
+          </td>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$percent</code></td>
+          <td class="sg-params-table__cell"><code class="sg-code">25%</code></td>
+          <td class="sg-params-table__cell">Percentage of white to mix in with the given <code class="sg-code">$color</code>.</td>
+          <td class="sg-params-table__cell">&nbsp;</td>
+        </tr>
+      </table>
+
+<pre class="sg-code-block"><code class="scss">$darker: nc-get-darker(#19ab20);  /* #138018 */</code></pre>
+
+      <h3 class="sg-code-hdg">
+        <code class="sg-code-hdg__name">nc-get-lighter()</code>
+        <span class="sg-code-hdg__badge sg-function-badge">Function</span>
+        <span class="sg-code-hdg__source-file">base/_typography.scss</span>
+      </h3>
+      <p>Given a color, returns a new color mixed with a percentage of white (<code class="sg-code">#fff</code>).</p>
+      <table class="sg-params-table">
+        <tr>
+          <th class="sg-params-table__hdg">Parameters</th>
+          <th class="sg-params-table__hdg">Default</th>
+          <th class="sg-params-table__hdg">Description</th>
+          <th class="sg-params-table__hdg">Required</th>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$color</code></td>
+          <td class="sg-params-table__cell">&nbsp;</td>
+          <td class="sg-params-table__cell">Hex value.</td>
+          <td class="sg-params-table__cell sg-params-table__cell--check">
+            <svg class="nc-icon-check sg-icon-check">
+              <use xlink:href="img/sprite.svg#icon-check"></use>
+            </svg>
+          </td>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$percent</code></td>
+          <td class="sg-params-table__cell"><code class="sg-code">25%</code></td>
+          <td class="sg-params-table__cell">Percentage of white to mix in with the given <code class="sg-code">$color</code>.</td>
+          <td class="sg-params-table__cell">&nbsp;</td>
+        </tr>
+      </table>
+
+<pre class="sg-code-block"><code class="scss">$lighter: nc-get-lighter(#f00, 50%);  /* #ff8080 */</code></pre>
+
+    </section>
+
+  </div>
+</div>

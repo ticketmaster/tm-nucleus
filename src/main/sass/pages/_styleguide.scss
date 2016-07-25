@@ -9,23 +9,81 @@ $table-alt-bg-color: nc-color('ridge');
 
 $header-height: 10rem;
 $nav-width: 20rem;
-$sg-swatch-height: 70px;
+$sg-swatch-size: 80px;
+$sg-swatch-size-lg: $sg-swatch-size * $nc-type-scale-ratio;
 $sg-spacing: 1.5em;
+$border-radius: 5px;
+
+$minor-block-spacing: (
+  'top': 'moderate',
+  'bottom': 'moderate'
+);
+
+$std-table-cell-spacing: (
+  'top': 'slim',
+  'right': 'moderate',
+  'bottom': 'slim',
+  'left': 'moderate'
+);
 
 $stacking-order: (
   'header':   500,
-  'nav':      400
+  'nav':      400,
+  'page':     300,
+  'sub-page': 200
 );
 
-@mixin code-style($sz: sm) {
-  @include nc-fixed-font($sz);
+@mixin code-style($sz: 'milli') {
+  @include nc-type-scale($sz);
+  @include nc-spacing($inside: 'slim', $responsive: false);
 
-  padding: 2px 4px;
   border: $nc-base-border-style;
-  border-radius: 4px;
+  border-radius: $border-radius;
   font-family: $nc-monospace;
   font-weight: normal;
+  color: $nc-text-color;
   background-color: $code-bg-color;
+}
+
+@mixin table() {
+  @include nc-spacing($outside: $minor-block-spacing);
+}
+
+@mixin table-hdg($align) {
+  @include nc-type-scale('centi');
+  @include nc-spacing($inside: ('left': 'moderate', 'right': 'moderate'));
+
+  font-weight: bold;
+  text-align: $align;
+
+  &:first-child {
+    @include nc-spacing($inside: ('left': 0));
+  }
+}
+
+@mixin table-cell() {
+  @include nc-spacing($inside: $std-table-cell-spacing);
+
+  &:first-child {
+    @include nc-spacing($inside: ('left': 0));
+  }
+}
+
+@mixin badge($bgcolor, $txtcolor: $nc-white, $sz: 'milli') {
+  @include nc-type-scale($sz, $responsive: false);
+  @include nc-spacing($inside: (
+    'top': 'slim',
+    'right': 'cozy',
+    'bottom': 'slim',
+    'left': 'cozy'
+  ))
+
+  display: inline-block;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: $txtcolor;
+  border-radius: $border-radius;
+  background-color: $bgcolor;
 }
 
 .html,
@@ -57,11 +115,15 @@ $stacking-order: (
   fill: $nc-white;
 }
 
+.sg-icon-check {
+  fill: nc-color('yosemite');
+}
+
 .sg-version {
   @include nc-type-scale('milli');
 }
 
-.sg__title {
+.sg-title {
   @include nc-type-scale('giga', $lh: $header-height);
 
   font-weight: normal;
@@ -73,7 +135,7 @@ $stacking-order: (
 
   @include nc-spacing(
     $outside: ('bottom': 'moderate'),
-    $inside: ('top': 'moderate', 'bottom': 'moderate'),
+    $inside: $minor-block-spacing,
     $responsive: false
   );
 
@@ -152,7 +214,7 @@ $stacking-order: (
   }
 }
 
-.sg__section {
+.sg-section {
   @include nc-type-scale('uno');
   @include nc-spacing(
     $outside: ('top': 'normal', 'bottom': 'normal'),
@@ -160,31 +222,102 @@ $stacking-order: (
   );
 
   border-bottom: $nc-base-border-style;
+
+  &:last-child {
+    border-bottom: 0;
+  }
 }
 
-
-.sg__hdg {
-  @include nc-type-scale('giga');
+.sg-hdg {
+  @include nc-type-scale('tera');
+  @include nc-spacing($outside: ('bottom': 'compact'));
 
   font-weight: normal;
   color: $main-hdg-color;
 }
 
-
-.sg__subhdg {
-  @include nc-type-scale('kilo');
-  @include nc-spacing($outside: ('top': 'moderate'));
+.sg-subhdg {
+  @include nc-type-scale('mega');
+  @include nc-spacing($outside: ('top': 'normal', 'bottom': 'compact'));
 
   font-weight: normal;
   color: $main-hdg-color;
 }
 
-.sg__subhdg2 {
-  @include nc-type-scale('uno');
+.sg-subhdg2 {
+  @include nc-type-scale('hecto');
+
+  font-weight: bold;
+  color: nc-color('cascade');
 }
 
-.sg__subhdg3 {
-  @include nc-type-scale('centi');
+.sg-required {
+  @include nc-type-scale('milli');
+  color: nc-color('helen');
+}
+
+.sg-function-badge {
+  @include badge(nc-color('cascade'));
+}
+
+.sg-code-hdg {
+  @include nc-spacing($outside: ('bottom': 'compact'));
+
+  display: flex;
+  align-items: center;
+  font-weight: normal;
+}
+
+.sg-code-hdg__name {
+  @include code-style('uno');
+
+  flex: 0 0 auto;
+}
+
+.sg-code-hdg__badge {
+  @include nc-spacing($outside: ('left': 'compact'));
+
+  flex: 0 0 auto;
+}
+
+.sg-code-hdg__source-file {
+  @include nc-type-scale('milli');
+
+  flex: 1 1 100%;
+  text-align: right;
+  color: nc-color('malibu');
+}
+
+.sg-code-block + .sg-code-hdg {
+  @include nc-spacing($outside: ('top': 'expanded'));
+}
+
+.sg-code {
+  @include code-style();
+}
+
+.sg-params-table {
+  @include table();
+}
+
+.sg-params-table__hdg {
+  @include table-hdg(left);
+}
+
+.sg-params-table__cell {
+  @include table-cell();
+}
+
+.sg-params-table__cell--check {
+  text-align: center;
+}
+
+.sg-callout {
+  @include nc-spacing($inside: 'moderate', $outside: $minor-block-spacing);
+
+  background-color: nc-color('malibu', 'background');
+  border: 1px solid nc-color('malibu');
+  border-radius: $border-radius;
 }
 
 
@@ -242,12 +375,9 @@ $stacking-order: (
   vertical-align: top;
 }
 
-.sg__code {
-  @include code-style();
-}
 
 .sg__code--xs {
-  @include code-style('xs');
+  // @include code-style('xs');
 }
 
 .sg__highlight-code {
@@ -255,237 +385,113 @@ $stacking-order: (
   font-weight: bold;
 }
 
-
-// swatches
-.sg__swatch {
-  position: relative;
-
-  width: 100%;
-  height: $sg-swatch-height;
-
-  border-radius: $nc-base-border-radius * 2;
-}
-
-
-// @each $color, $shades in $nc-palette {
-//   @each $name, $shade in $shades {
-//     .sg__swatch--#{$name} {
-//       background: $shade;
-//
-//       &:before {
-//         position: absolute;
-//         bottom: 10px;
-//         left: 10px;
-//
-//         @if ($name == 'rocky'
-//           or $name == 'ridge'
-//           or $name == 'havasu'
-//         ) {
-//           color: $nc-black;
-//         }
-//         @else {
-//           color: $nc-white;
-//         }
-//
-//         content: '#{$shade}';
-//       }
-//     }
-//   }
-// }
-
-.sg__swatch--state {
-  width: 20vw;
-
-  margin-bottom: 5px;
-
-  @include nc-breakpoint($nc-bp-md) {
-    width: 13vw;
-  }
-
-  @include nc-breakpoint($nc-bp-lg) {
-    width: 15vw;
-  }
-
-  &:before {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-  }
-}
-
-.sg__swatch--state.sg__swatch--pacific:before {
-  content: 'pacific';
-}
-
-.sg__swatch--state.sg__swatch--cascade:before {
-  content: 'cascade';
-}
-
-.sg__swatch--state.sg__swatch--yosemite:before {
-  content: 'yosemite';
-}
-
-.sg__swatch--state.sg__swatch--helen:before {
-  content: 'helen';
-}
-
-.sg__swatch--state.sg__swatch--malibu:before {
-  content: 'malibu';
-}
-
-.sg__swatch--state.sg__swatch--catalina:before {
-  content: 'catalina';
-}
-
-.sg__swatch--pacific-darker25 {
-  background: nc-color('pacific', 'dark');
-
-  &:before {
-    color: $nc-white;
-
-    content: '#{nc-color('pacific', 'dark')}';
-  }
-}
-
-.sg__swatch--pacific-lighter50 {
-  background: nc-color('pacific', 'light');
-
-  &:before {
-    content: '#{nc-color('pacific', 'light')}';
-  }
-}
-
-.sg__swatch--pacific-lighter75 {
-  background: nc-color('pacific', 'muted');
-
-  &:before {
-    content: '#{nc-color('pacific', 'muted')}';
-  }
-}
-
-.sg__swatch--pacific-lighter87 {
-  background: nc-color('pacific', 'background');
-
-  &:before {
-    content: '#{nc-color('pacific', 'background')}';
-  }
-}
-
-.sg__swatch--cascade-darker25 {
-  background: nc-color('cascade', 'dark');
-
-  &:before {
-    color: $nc-white;
-
-    content: '#{nc-color('cascade', 'dark')}';
-  }
-}
-
-.sg__swatch--cascade-lighter50 {
-  background: nc-color('cascade', 'light');
-
-  &:before {
-    content: '#{nc-color('cascade', 'light')}';
-  }
-}
-
-.sg__swatch--cascade-lighter75 {
-  background: nc-color('cascade', 'muted');
-
-  &:before {
-    content: '#{nc-color('cascade', 'muted')}';
-  }
-}
-
-.sg__swatch--yosemite-darker25 {
-  background: nc-color('yosemite', 'dark');
-
-  &:before {
-    color: $nc-white;
-
-    content: '#{nc-color('yosemite', 'dark')}';
-  }
-}
-
-.sg__swatch--yosemite-lighter75 {
-  background: nc-color('yosemite', 'muted');
-
-  &:before {
-    content: '#{nc-color('yosemite', 'muted')}';
-  }
-}
-
-.sg__swatch--helen-darker25 {
-  background: nc-color('helen', 'dark');
-
-  &:before {
-    color: $nc-white;
-
-    content: '#{nc-color('helen', 'dark')}';
-  }
-}
-
-.sg__swatch--helen-lighter75 {
-  background: nc-color('helen', 'muted');
-
-  &:before {
-    content: '#{nc-color('helen', 'muted')}';
-  }
-}
-
-.sg__swatch--catalina-lighter50 {
-  background: nc-color('catalina', 'light');
-
-  &:before {
-    content: '#{nc-color('catalina', 'light')}';
-  }
-}
-
-
-
-.sg__swatches {
+.sg-swatch {
   @include nc-clearfix();
 
+  display: flex;
+  align-items: center;
+}
+
+.sg-swatch + .sg-swatch {
+  @include nc-spacing($outside: ('top': 'normal'));
+}
+
+.sg-swatch__chip {
+  position: relative;
+  flex: 0 0 $sg-swatch-size;
+  align-self: flex-start;
+  width: $sg-swatch-size;
+  height: $sg-swatch-size;
+  border-radius: 100%;
+
   @include nc-breakpoint($nc-bp-md) {
-    display: flex;
-    flex-wrap: wrap;
+    width: $sg-swatch-size-lg;
+    height: $sg-swatch-size-lg;
+    flex: 0 0 $sg-swatch-size-lg;
   }
 }
 
-.sg__swatch-group {
-  @include nc-outer-spacing($bottom: $nc-spacing-md);
+// name = sierra
+// shade = dark
+// color = hex
+@each $name, $shades in $nc-palette {
+  @each $shade, $color in $shades {
+    .sg-swatch__chip--#{$name}-#{$shade} {
+      background: $color;
 
-  @include nc-breakpoint($nc-bp-md) {
-    display: inline-block;
-    width: 45%;
-    margin-right: 20px;
-  }
+      // sanity check to verify that the html matches actual hex values
+      &::before {
+        @include nc-dead-center(absolute);
 
-  @include nc-breakpoint($nc-bp-lg) {
-    width: 30%;
+        margin: 1px 0 0 1px;
+        color: darken($color, 10%);
+        content: '#{$color}';
+      }
+    }
   }
 }
 
-.sg__swatch-info {
-  margin-bottom: 10px;
+.sg-swatch__hex {
+  @include nc-dead-center(absolute);
 
-  line-height: 1.6;
+  color: $nc-white;
 }
 
-.sg__swatch-name {
+.sg-swatch__hex--dark {
+  color: nc-color('sierra');
+}
+
+.sg-swatch__info {
+  @include nc-spacing($outside: ('left': 'moderate'));
+}
+
+.sg-swatch__name {
+  @include nc-spacing($outside: ('top': 'slim', 'bottom': 'slim'));
+
   display: block;
-  margin: 3px 0;
+  font-weight: bold;
+  text-transform: capitalize;
 }
 
-.sg__swatch-usage {
-  margin-top: 5px;
+.sg-swatch__usage-list {
+  margin: 0 0 0 nc-get-spacing('normal', 'mini');
+  padding: 0;
+  line-height: 1.6;
+  color: nc-color('cascade');
 }
 
-.sg__swatch-state-usage {
-  @include nc-fixed-font('xs');
-
-  margin: 5px 0 0 5px;
+.sg-swatch-table {
+  @include nc-spacing($outside: ('top': 'moderate'));
 }
+
+.sg-swatch-table__hdg {
+  @include table-hdg(center);
+
+  &:first-child {
+    text-align: left;
+  }
+}
+
+.sg-swatch-table__cell {
+  @include nc-spacing($inside: 'moderate');
+
+  &:first-child {
+    @include nc-spacing($inside: ('left': 0));
+  }
+}
+
+.sg-shades-table {
+  @include nc-spacing($outside: $minor-block-spacing);
+}
+
+.sg-shades-table__hdg {
+  @include table-hdg(left);
+}
+
+.sg-shades-table__cell {
+  @include table-cell();
+}
+
 
 
 // font sizes

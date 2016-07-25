@@ -5,11 +5,11 @@
 
   <div class="sg-main">
 
-    <section id="form-elements" class="sg__section">
-      <h2 class="sg__hdg">Form Elements</h2>
+    <section id="form-elements" class="sg-section">
+      <h2 class="sg-hdg">Form Elements</h2>
 
-      <h3 class="sg__subhdg">Labels</h3>
-      <p>There are 2 label modifier classes that you have to add besides the <code class="sg__code">nc-input-group__label</code> class to handle different background colors.</p>
+      <h3 class="sg-subhdg">Labels</h3>
+      <p>There are 2 label modifier classes that you have to add besides the <code class="sg-code">nc-input-group__label</code> class to handle different background colors.</p>
 
       <table class="sg__table">
         <tr>
@@ -24,7 +24,7 @@
               <label for="email" class="nc-input-group__label nc-input-group__label--dark">EMAIL<span class="nc-input-group__required">*</span></label>
               <input name="email" type="text" class="nc-input-group__text-field" placeholder="EMAIL" aria-required="true">
             </div>
-            <code class="sg__code">
+            <code class="sg-code">
               nc-input-group__label--dark
             </code>
           </td>
@@ -33,14 +33,14 @@
               <label for="email" class="nc-input-group__label nc-input-group__label--light">EMAIL<span class="nc-input-group__required">*</span></label>
               <input name="email" type="text" class="nc-input-group__text-field" placeholder="EMAIL" aria-required="true">
             </div>
-            <code class="sg__code">
+            <code class="sg-code">
               nc-input-group__label--light
             </code>
           </td>
         </tr>
       </table>
 
-      <h3 class="sg__subhdg">Text fields</h3>
+      <h3 class="sg-subhdg">Text fields</h3>
 
       <p>Example of an the initial state of the input text-field.</p>
 
@@ -58,7 +58,7 @@ EMAIL&lt;span class="input-group__required"&gt;*&lt;/span&gt;
 &lt;input id="email" name="email" type="text" class="input-group__text-field"&gt;
 &lt;/div&gt;</code></pre>
 
-      <p>Text fields in error state should add the <code class="sg__code">--error</code> modifier class to all the nucleus elements.</p>
+      <p>Text fields in error state should add the <code class="sg-code">--error</code> modifier class to all the nucleus elements.</p>
 
       <table class="sg__table">
         <tr>
@@ -85,7 +85,7 @@ EMAIL&lt;span class="nc-input-group__required <span class="sg__highlight-code">n
 &lt;input id="email" name="email" type="text" class="nc-input-group__text-field <span class="sg__highlight-code">nc-input-group__text-field--error</span>" placeholder="EMAIL"&gt;
 &lt;/div&gt;</code></pre>
 
-      <p>You can also use the <code class="sg__code">nc-input-group__error-message</code> class to show an error message.</p>
+      <p>You can also use the <code class="sg-code">nc-input-group__error-message</code> class to show an error message.</p>
 
       <div class="sg__input-wrapper">
         <div class="nc-input-group nc-input-group--error">
@@ -95,7 +95,7 @@ EMAIL&lt;span class="nc-input-group__required <span class="sg__highlight-code">n
         </div>
       </div>
 
-      <h3 class="sg__subhdg">Drop downs</h3>
+      <h3 class="sg-subhdg">Drop downs</h3>
 
       <p>This is how we are going to implement drop downs.</p>
 
@@ -135,7 +135,7 @@ STATE&lt;span class="nc-input-group__required"&gt;*&lt;/span&gt;
 &lt;/svg&gt;
 &lt;/div&gt;</code></pre>
 
-      <p>This is the error state. We add the <code class="sg__code">--error</code> modifier class to all nucleus elements.</p>
+      <p>This is the error state. We add the <code class="sg-code">--error</code> modifier class to all nucleus elements.</p>
 
       <div class="sg__input-wrapper">
         <div class="nc-input-group nc-dropdown nc-input-group--error">
@@ -173,9 +173,9 @@ STATE&lt;span class="nc-input-group__required <span class="sg__highlight-code">n
 &lt;/svg&gt;
 &lt;/div&gt;</code></pre>
 
-      <h3 class="sg__subhdg">Checkboxes</h3>
+      <h3 class="sg-subhdg">Checkboxes</h3>
       <p>We use custom checkboxes that have a 1px border when unchecked. In the checked state,
-        a white checkmark icon is seen against the <code class="sg__code">$nc-brand-primary</code>
+        a white checkmark icon is seen against the <code class="sg-code">$nc-brand-primary</code>
         background with no stroke around the checkbox.</p>
       <ul class="nc-checkbox-list">
         <li class="nc-checkbox-list__item nc-chkbox">

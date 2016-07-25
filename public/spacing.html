@@ -5,16 +5,16 @@
 
   <div class="sg-main">
 
-    <section id="spacing" class="sg__section">
-      <h2 class="sg__hdg">Spacing</h2>
+    <section id="spacing" class="sg-section">
+      <h2 class="sg-hdg">Spacing</h2>
       <p>Spacing between major page elements should be one of three possible values, as shown below.</p>
 
       <table class="sg__table">
         <tr>
           <td class="sg__table-hdg">Breakpoint</td>
-          <td class="sg__table-hdg"><code class="sg__code">$nc-spacing-sm</code></td>
-          <td class="sg__table-hdg"><code class="sg__code">$nc-spacing-md</code></td>
-          <td class="sg__table-hdg"><code class="sg__code">$nc-spacing-lg</code></td>
+          <td class="sg__table-hdg"><code class="sg-code">$nc-spacing-sm</code></td>
+          <td class="sg__table-hdg"><code class="sg-code">$nc-spacing-md</code></td>
+          <td class="sg__table-hdg"><code class="sg-code">$nc-spacing-lg</code></td>
         </tr>
         <tr>
           <td class="sg__table-cell">
@@ -51,11 +51,11 @@
       <table class="sg__table">
         <tr>
           <td class="sg__table-cell">margin-based spacing</td>
-          <td class="sg__table-cell"><code class="sg__code">@include nc-outer-spacing($x)</code></td>
+          <td class="sg__table-cell"><code class="sg-code">@include nc-outer-spacing($x)</code></td>
         </tr>
         <tr>
           <td class="sg__table-cell">padding-based spacing</td>
-          <td class="sg__table-cell"><code class="sg__code">@include nc-inner-spacing($y)</code></td>
+          <td class="sg__table-cell"><code class="sg-code">@include nc-inner-spacing($y)</code></td>
         </tr>
       </table>
 
@@ -76,9 +76,9 @@
 // set padding on top, right, and left
 @include nc-inner-spacing($top: $spacing-sm, $right: auto, $left: auto)</code></pre>
 
-      <p>When specifying spacing for any side(s), any side that you omit will be set to <code class="sg__code">0</code>.</p>
+      <p>When specifying spacing for any side(s), any side that you omit will be set to <code class="sg-code">0</code>.</p>
 
-      <p>As of the 0.18 release, <code class="sg__code">nc-outer-spacing()</code> can now accept <code class="sg__code">auto</code> as a parameter for any side.</p>
+      <p>As of the 0.18 release, <code class="sg-code">nc-outer-spacing()</code> can now accept <code class="sg-code">auto</code> as a parameter for any side.</p>
 
 <pre><code class="scss">// set 30px bottom margin
 .example {

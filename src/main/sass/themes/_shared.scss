@@ -1,3 +1,8 @@
+// get color from palette; default shade is 'base'
+@function nc-color($name, $shade: 'base', $map: $nc-palette) {
+  @return map-get(map-get($map, $name), $shade);
+}
+
 // calculate different shades
 @function nc-get-darker($color, $percent: 25%) {
   @return mix(#000, $color, $percent);
@@ -31,10 +36,6 @@
   @return $map;
 }
 
-@function nc-color($name, $shade: 'base', $map: $nc-palette) {
-  @return map-get(map-get($map, $name), $shade);
-}
-
 
 /* stylelint-disable color-no-hex */
 /* defining color palette */
@@ -42,7 +43,7 @@ $nc-black: #000;
 $nc-white: #fff;
 
 $nc-colors: (
-  'sierra':     #414141,
+  'sierra':     #475058,
   'cascade':    #768692,
   'rocky':      #dfe4e7,
   'ridge':      #f6f7f9,
