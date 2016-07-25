@@ -5,8 +5,8 @@
 
   <div class="sg-main">
 
-    <section id="lists" class="sg__section">
-      <h2 class="sg__hdg">Lists</h2>
+    <section id="lists" class="sg-section">
+      <h2 class="sg-hdg">Lists</h2>
 
       <p>Default list styling for lists is as follows:</p>
 
@@ -33,7 +33,7 @@
         </tr>
       </table>
 
-      <p>If you want to disable default list style for your use case, you can use either the <code class="sg__code">unstyled-list</code> class or the <code class="sg__code">unstyled-list()</code> mixin to compose your own list class.</p>
+      <p>If you want to disable default list style for your use case, you can use either the <code class="sg-code">unstyled-list</code> class or the <code class="sg-code">unstyled-list()</code> mixin to compose your own list class.</p>
 
 <pre><code class="scss">// scss
 .your-list {
@@ -42,10 +42,10 @@
 // your styles here
 }</code></pre>
 
-      <h3 class="sg__subhdg">Delimited Lists</h3>
+      <h3 class="sg-subhdg">Delimited Lists</h3>
 
       <p>The Delimited List pattern has list items separated by a border. Each list item has top and bottom padding, and the list itself has a bottom margin.</p>
-      <p>All spacing values follow the <code class="sg__code">$spacing-sm</code> rules as described in <a href="#spacing">Spacing</a>.</p>
+      <p>All spacing values follow the <code class="sg-code">$spacing-sm</code> rules as described in <a href="#spacing">Spacing</a>.</p>
 
       <ul class="nc-delimited-list">
         <li class="nc-delimited-list__item">
@@ -71,12 +71,12 @@ Third item
 &lt;/li&gt;
 &lt;/ul&gt;</code></pre>
 
-      <h3 class="sg__subhdg2">Embedded Delimited List</h3>
+      <h3 class="sg-subhdg2">Embedded Delimited List</h3>
       <p></p>
 
       <p>If you need to embed the Delimited List pattern in a container with a border, you'll need to turn off the bottom margin and apply left and right padding. Otherwise, the list content will be flush against the left and right borders.</p>
 
-      <p>Modifying the list to work in this scenario is simple: Just add the <code class="sg__code">--embedded</code> modifier to the list and list items:</p>
+      <p>Modifying the list to work in this scenario is simple: Just add the <code class="sg-code">--embedded</code> modifier to the list and list items:</p>
 
 <pre><code class="html">&lt;div class="some-box"&gt;
 &lt;ul class="nc-delimited-list nc-delimited-list--embedded"&gt;
@@ -114,7 +114,7 @@ Third item
         </ul>
       </div>
 
-      <h3 class="sg__subhdg2">Compact Delimited List</h3>
+      <h3 class="sg-subhdg2">Compact Delimited List</h3>
       <p>There are occasions when separator lines are not desirable on mobile but are needed on desktop (resize to mobile view to see the difference).</p>
 
       <ul class="nc-delimited-list">
