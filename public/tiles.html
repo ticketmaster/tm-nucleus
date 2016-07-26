@@ -1,0 +1,108 @@
+{{> header title=config.pages.tiles.title}}
+
+<div class="sg__content">
+  {{> nav active='tiles' }}
+
+  <div class="sg-main">
+
+    <section id="tiles" class="sg__section">
+      <h2 class="sg__hdg">Tile Selections</h2>
+
+      <h3 class="sg__subhdg3">Default Tile</h3>
+      <div class="nc-tile-selection nc-is-clickable">
+        <div class="nc-split-content nc-tile-selection__content">
+          -2350 EXP 11/15
+        </div>
+      </div>
+
+      <h3 class="sg__subhdg3">Selected Tile</h3>
+      <div class="nc-tile-selection nc-tile-selection--selected nc-is-clickable">
+        <div class="nc-split-content nc-tile-selection__content">
+          <div class="nc-split-content__primary nc-tile-selection__selected-text">
+            -2350 EXP 11/15
+          </div>
+          <div class="nc-split-content__secondary">
+            <button class="nc-button-aux nc-button-aux--minor">Edit</button>
+          </div>
+        </div>
+        <div class="nc-tile-selection__content">
+          Content
+        </div>
+      </div>
+
+<pre><code class="html">&lt;div class="nc-tile-selection is-clickable"&gt;
+&lt;div class="nc-tile-selection__content"&gt;
+-2350 EXP 11/15
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="nc-tile-selection nc-tile-selection--selected nc-is-clickable"&gt;
+&lt;div class="nc-split-content nc-tile-selection__content"&gt;
+&lt;div class="nc-split-content__primary nc-tile-selection__selected-text"&gt;
+[...]
+&lt;/div&gt;
+&lt;div class="nc-split-content__secondary"&gt;
+&lt;button class="nc-button-aux nc-button-aux--minor"&gt;Edit&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="nc-tile-selection__content"&gt;
+Content
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+      <p>Typically, tiles will be rendered as a list of options.</p>
+
+      <ul class="nc-unstyled-list">
+        <li class="nc-tile-selection nc-tile-selection--selected nc-is-clickable">
+          <div class="nc-split-content nc-tile-selection__content">
+            <div class="nc-split-content__primary nc-tile-selection__selected-text">
+              -2350 EXP 11/15
+            </div>
+            <div class="nc-split-content__secondary nc-tile-selection--selected__secondary-heading">
+              <button class="nc-button-aux nc-button-aux--minor">Edit</button>
+            </div>
+          </div>
+          <div class="nc-tile-selection__content">
+            Content
+          </div>
+        </li>
+        <li class="nc-tile-selection nc-is-clickable">
+          <div class="nc-split-content nc-tile-selection__content">
+            -2350 EXP 11/15
+          </div>
+        </li>
+        <li class="nc-tile-selection nc-is-clickable">
+          <div class="nc-split-content nc-tile-selection__content">
+            -1234 EXP 8/20
+          </div>
+        </li>
+      </ul>
+
+      <p>To do this, simply incorporate the tile classes into a list.</p>
+
+<pre><code class="html">&lt;ul class="nc-unstyled-list"&gt;
+&lt;li class="nc-tile-selection nc-tile-selection--selected nc-is-clickable"&gt;
+&lt;div class="nc-split-content nc-tile-selection__content"&gt;
+&lt;div class="nc-split-content__primary nc-tile-selection__selected-text"&gt;
+  [...]
+&lt;/div&gt;
+&lt;div class="nc-split-content__secondary"&gt;
+  &lt;button class="nc-button-aux nc-button-aux--minor"&gt;Edit&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="nc-tile-selection__content"&gt;
+  Content
+&lt;/div&gt;
+&lt;/li&gt;
+
+&lt;li class="nc-tile-selection nc-is-clickable"&gt;
+&lt;div class="nc-tile-selection__content"&gt;
+-2350 EXP 11/15
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+    </section>
+
+  </div>
+</div>

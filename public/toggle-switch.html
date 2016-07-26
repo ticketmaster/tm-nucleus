@@ -1,0 +1,71 @@
+{{> header title=config.pages.toggle-switch.title}}
+
+<div class="sg__content">
+  {{> nav active='toggle-switch' }}
+
+  <div class="sg-main">
+
+    <section id="toggle-switch" class="sg__section">
+      <h2 class="sg__hdg">Toggle Switch</h2>
+      <p>The following should be used when user is prompted a toggle switch (e.g. ON/OFF)</p>
+      <table class="sg__table">
+        <tr>
+          <td class="sg__subhdg"></td>
+          <td class="sg__table-hdg">Off</td>
+          <td class="sg__table-hdg">Default On</td>
+          <td class="sg__table-hdg">Resale On</td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell sg__subhdg">
+            Variants
+          </td>
+          <td class="sg__table-cell">
+              <button class="nc-toggle-switch__button">
+                <div class="nc-toggle-switch__indicator nc-toggle-switch__indicator--left"></div>
+              </button>
+          </td>
+          <td class="sg__table-cell">
+              <button class="nc-toggle-switch__button nc-toggle-switch__button--active">
+                <div class="nc-toggle-switch__indicator nc-toggle-switch__indicator--right"></div>
+              </button>
+          </td>
+          <td class="sg__table-cell">
+              <button class="nc-toggle-switch__button nc-toggle-switch__button--active-resale">
+                <div class="nc-toggle-switch__indicator nc-toggle-switch__indicator--right">
+                  <svg class="nc-icon-resale">
+                    <use xlink:href="img/sprite.svg#icon-resale"></use>
+                  </svg>
+                </div>
+              </button>
+          </td>
+        </tr>
+      </table>
+
+<pre><code class="html">// OFF State
+
+&lt;button class="nc-toggle-switch__button"&gt;
+&lt;div class="nc-toggle-switch__indicator toggle-switch__indicator--left"&gt;&lt;/div&gt;
+&lt;/button&gt;
+
+// Default ON
+
+&lt;button class="nc-toggle-switch__button toggle-switch__button--active"&gt;
+&lt;div class="nc-toggle-switch__indicator toggle-switch__indicator--right"&gt;&lt;/div&gt;
+&lt;/button&gt;
+
+// Resale ON w/ Resale Logo SVG
+
+&lt;button class="nc-toggle-switch__button toggle-switch__button--active-resale"&gt;
+&lt;div class="nc-toggle-switch__indicator--resale toggle-switch__indicator--right"&gt;
+&lt;svg class="icon-resale"&gt;
+&lt;use xlink:href="img/sprite.svg#icon-resale"&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;/div&gt;
+&lt;/button&gt;
+
+</code></pre>
+
+    </section>
+
+  </div>
+</div>

@@ -1,0 +1,102 @@
+{{> header title=config.pages.spacing.title}}
+
+<div class="sg__content">
+  {{> nav active='spacing' }}
+
+  <div class="sg-main">
+
+    <section id="spacing" class="sg__section">
+      <h2 class="sg__hdg">Spacing</h2>
+      <p>Spacing between major page elements should be one of three possible values, as shown below.</p>
+
+      <table class="sg__table">
+        <tr>
+          <td class="sg__table-hdg">Breakpoint</td>
+          <td class="sg__table-hdg"><code class="sg__code">$nc-spacing-sm</code></td>
+          <td class="sg__table-hdg"><code class="sg__code">$nc-spacing-md</code></td>
+          <td class="sg__table-hdg"><code class="sg__code">$nc-spacing-lg</code></td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell">
+            &le; 719px
+          </td>
+          <td class="sg__table-cell">
+            10px
+          </td>
+          <td class="sg__table-cell">
+            20px
+          </td>
+          <td class="sg__table-cell">
+            30px
+          </td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell">
+            &ge; 720px
+          </td>
+          <td class="sg__table-cell">
+            15px
+          </td>
+          <td class="sg__table-cell">
+            30px
+          </td>
+          <td class="sg__table-cell">
+            45px
+          </td>
+        </tr>
+      </table>
+
+      <p>To make it easier to set responsive spacing, there are two mixins available:</p>
+
+      <table class="sg__table">
+        <tr>
+          <td class="sg__table-cell">margin-based spacing</td>
+          <td class="sg__table-cell"><code class="sg__code">@include nc-outer-spacing($x)</code></td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell">padding-based spacing</td>
+          <td class="sg__table-cell"><code class="sg__code">@include nc-inner-spacing($y)</code></td>
+        </tr>
+      </table>
+
+      <p>Both mixins behave in the same way.</p>
+      <ol>
+        <li>If a single parameter is passed, it will apply the value equally on all four sides.</li>
+        <li>If you don't want all sides to be uniform, you can assign values to the sides you want to modify.</li>
+      </ol>
+
+      <p>This is best illustrated with some examples.</p>
+
+<pre><code class="scss">// set same margin on all sides
+@include nc-outer-spacing($spacing-md);
+
+// set padding on top and bottom
+@include nc-inner-spacing($top: $spacing-sm, $bottom: $spacing-sm);
+
+// set padding on top, right, and left
+@include nc-inner-spacing($top: $spacing-sm, $right: auto, $left: auto)</code></pre>
+
+      <p>When specifying spacing for any side(s), any side that you omit will be set to <code class="sg__code">0</code>.</p>
+
+      <p>As of the 0.18 release, <code class="sg__code">nc-outer-spacing()</code> can now accept <code class="sg__code">auto</code> as a parameter for any side.</p>
+
+<pre><code class="scss">// set 30px bottom margin
+.example {
+@include nc-outer-spacing($right: auto, $left: auto, $bottom: $spacing-lg);
+}
+
+// output from above will be
+.example {
+margin: 0 auto 30px auto;
+}
+
+@media (min-width: 23.4375em) {
+.example {
+margin: 0 auto 45px auto;
+}
+}</code></pre>
+
+    </section>
+
+  </div>
+</div>

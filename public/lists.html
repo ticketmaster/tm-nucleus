@@ -1,0 +1,143 @@
+{{> header title=config.pages.lists.title}}
+
+<div class="sg__content">
+  {{> nav active='lists' }}
+
+  <div class="sg-main">
+
+    <section id="lists" class="sg__section">
+      <h2 class="sg__hdg">Lists</h2>
+
+      <p>Default list styling for lists is as follows:</p>
+
+      <table class="sg__table">
+        <tr>
+          <td class="sg__table-hdg">Unordered List</td>
+          <td class="sg__table-hdg">Ordered List</td>
+        </tr>
+        <tr>
+          <td class="sg__table-cell">
+            <ul>
+              <li>list item</li>
+              <li>list item</li>
+              <li>list item</li>
+            </ul>
+          </td>
+          <td class="sg__table-cell">
+            <ol>
+              <li>list item</li>
+              <li>list item</li>
+              <li>list item</li>
+            </ol>
+          </td>
+        </tr>
+      </table>
+
+      <p>If you want to disable default list style for your use case, you can use either the <code class="sg__code">unstyled-list</code> class or the <code class="sg__code">unstyled-list()</code> mixin to compose your own list class.</p>
+
+<pre><code class="scss">// scss
+.your-list {
+@include nc-unstyled-list();
+
+// your styles here
+}</code></pre>
+
+      <h3 class="sg__subhdg">Delimited Lists</h3>
+
+      <p>The Delimited List pattern has list items separated by a border. Each list item has top and bottom padding, and the list itself has a bottom margin.</p>
+      <p>All spacing values follow the <code class="sg__code">$spacing-sm</code> rules as described in <a href="#spacing">Spacing</a>.</p>
+
+      <ul class="nc-delimited-list">
+        <li class="nc-delimited-list__item">
+          Example 1
+        </li>
+        <li class="nc-delimited-list__item">
+          Second item
+        </li>
+        <li class="nc-delimited-list__item">
+          Last item in list
+        </li>
+      </ul>
+
+<pre><code class="html">&lt;ul class="nc-delimited-list"&gt;
+&lt;li class="nc-delimited-list__item"&gt;
+First item
+&lt;/li&gt;
+&lt;li class="nc-delimited-list__item"&gt;
+Second item
+&lt;/li&gt;
+&lt;li class="nc-delimited-list__item"&gt;
+Third item
+&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+      <h3 class="sg__subhdg2">Embedded Delimited List</h3>
+      <p></p>
+
+      <p>If you need to embed the Delimited List pattern in a container with a border, you'll need to turn off the bottom margin and apply left and right padding. Otherwise, the list content will be flush against the left and right borders.</p>
+
+      <p>Modifying the list to work in this scenario is simple: Just add the <code class="sg__code">--embedded</code> modifier to the list and list items:</p>
+
+<pre><code class="html">&lt;div class="some-box"&gt;
+&lt;ul class="nc-delimited-list nc-delimited-list--embedded"&gt;
+&lt;li class="nc-delimited-list__item nc-delimited-list__item--embedded"&gt;
+First item
+&lt;/li&gt;
+&lt;li class="nc-delimited-list__item nc-delimited-list__item--embedded"&gt;
+Second item
+&lt;/li&gt;
+&lt;li class="nc-delimited-list__item nc-delimited-list__item--embedded"&gt;
+Third item
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+
+      <p>That'll give you this:</p>
+
+      <div class="sg__list-box">
+        <ul class="nc-delimited-list nc-delimited-list--embedded">
+          <li class="nc-delimited-list__item nc-delimited-list__item--embedded">
+            <div class="sg__list-box-content">
+              Example 1
+            </div>
+          </li>
+          <li class="nc-delimited-list__item nc-delimited-list__item--embedded">
+            <div class="sg__list-box-content">
+              Second item
+            </div>
+          </li>
+          <li class="nc-delimited-list__item nc-delimited-list__item--embedded">
+            <div class="sg__list-box-content">
+              Last item in list
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <h3 class="sg__subhdg2">Compact Delimited List</h3>
+      <p>There are occasions when separator lines are not desirable on mobile but are needed on desktop (resize to mobile view to see the difference).</p>
+
+      <ul class="nc-delimited-list">
+        <li class="nc-delimited-list__item nc-delimited-list__item--compact">
+          Example 1
+        </li>
+        <li class="nc-delimited-list__item nc-delimited-list__item--compact">
+          Second item
+        </li>
+        <li class="nc-delimited-list__item nc-delimited-list__item--compact">
+          Last item in list
+        </li>
+      </ul>
+
+<pre><code class="html">&lt;ul class="nc-delimited-list"&gt;
+&lt;li class="nc-delimited-list__item nc-delimited-list__item--compact"&gt;
+First item&lt;/li&gt;
+&lt;li class="nc-delimited-list__item nc-delimited-list__item--compact"&gt;
+Second item&lt;/li&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+    </section>
+
+  </div>
+</div>

@@ -92,3 +92,11 @@ $nc-caret-legacy-color: nc-color('cascade', 'light');
 $nc-polling-refresh-bg-color: nc-color('sierra');
 $nc-tooltip-color: $nc-white;
 $nc-input-background-color: $nc-white;
+
+// TM Gradient
+/* stylelint-disable color-no-hex */
+// exception for the brand gradient hex, which is not used anywhere else
+$nc-gradient-start: #575dc6;
+/* stylelint-enable color-no-hex */
+$nc-gradient-end: nc-color('pacific');
+$nc-tm-gradient: linear-gradient(to right, $nc-gradient-start, $nc-gradient-end);
