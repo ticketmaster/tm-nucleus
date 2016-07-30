@@ -9,21 +9,19 @@ $table-alt-bg-color: nc-color('ridge');
 
 $header-height: 10rem;
 $nav-width: 20rem;
-$sg-swatch-size: 80px;
+$sg-swatch-size: 8rem;
 $sg-swatch-size-lg: $sg-swatch-size * $nc-type-scale-ratio;
 $sg-spacing: 1.5em;
 $border-radius: 5px;
 
+$page-margins: (
+  'left': 'expanded',
+  'right': 'expanded'
+);
+
 $minor-block-spacing: (
   'top': 'moderate',
   'bottom': 'moderate'
-);
-
-$std-table-cell-spacing: (
-  'top': 'slim',
-  'right': 'moderate',
-  'bottom': 'slim',
-  'left': 'moderate'
 );
 
 $stacking-order: (
@@ -45,28 +43,93 @@ $stacking-order: (
   background-color: $code-bg-color;
 }
 
-@mixin table() {
-  @include nc-spacing($outside: $minor-block-spacing);
+@mixin table($margins: $minor-block-spacing) {
+  @include nc-spacing($outside: $margins);
 }
 
-@mixin table-hdg($align) {
+@mixin table-hdg($align, $type: false) {
   @include nc-type-scale('centi');
-  @include nc-spacing($inside: ('left': 'moderate', 'right': 'moderate'));
 
   font-weight: bold;
   text-align: $align;
 
+  $pad: (
+    'left': 'moderate',
+    'right': 'moderate'
+  );
+  $first-left: 0;
+
+  @if ($type == 'zebra') {
+    $pad: ('bottom': 'cozy');
+    $first-left: 'compact';
+  }
+
+  @include nc-spacing($inside: $pad);
+
   &:first-child {
-    @include nc-spacing($inside: ('left': 0));
+    @include nc-spacing($inside: ('left': $first-left));
+
+    text-align: left;
   }
 }
 
-@mixin table-cell() {
-  @include nc-spacing($inside: $std-table-cell-spacing);
+@mixin table-cell($align, $type: false) {
+  $pad: (
+    'top': 'slim',
+    'right': 'moderate',
+    'bottom': 'slim',
+    'left': 'moderate'
+  );
+  $first-col: ('left': 0);
+
+  @if ($type == 'zebra') {
+    $pad: (
+      'top': 'slim',
+      'right': 'normal',
+      'bottom': 'slim',
+      'left': 'normal'
+    );
+    $first-col: 'compact';
+  }
+
+  @include nc-spacing($inside: $pad);
+
+  text-align: $align;
 
   &:first-child {
-    @include nc-spacing($inside: ('left': 0));
+    @include nc-spacing($inside: $first-col);
   }
+}
+
+@mixin swatch-container() {
+  @include nc-clearfix();
+
+  display: flex;
+  align-items: center;
+}
+
+@mixin swatch-chip($border: false) {
+  position: relative;
+  flex: 0 0 $sg-swatch-size;
+  align-self: flex-start;
+  width: $sg-swatch-size;
+  height: $sg-swatch-size;
+  text-align: center;
+  border-radius: 100%;
+
+  @if ($border) {
+    border: $border;
+  }
+
+  @include nc-breakpoint($nc-bp-md) {
+    width: $sg-swatch-size-lg;
+    height: $sg-swatch-size-lg;
+    flex: 0 0 $sg-swatch-size-lg;
+  }
+}
+
+@mixin swatch-description($margin: ('left': 'moderate')) {
+  @include nc-spacing($outside: $margin);
 }
 
 @mixin badge($bgcolor, $txtcolor: $nc-white, $sz: 'milli') {
@@ -86,13 +149,14 @@ $stacking-order: (
   background-color: $bgcolor;
 }
 
+
 .html,
 .scss {
   @include nc-type-scale('centi');
 }
 
 .sg-header {
-  @include nc-spacing($inside: ('left': 'normal', 'right': 'normal'));
+  @include nc-spacing($inside: $page-margins);
 
   height: $header-height;
   background: $nc-tm-gradient;
@@ -204,7 +268,7 @@ $stacking-order: (
 .sg-main {
   @include nc-spacing(
     $outside: ('top': 'normal'),
-    $inside: ('left': 'normal', 'right': 'normal')
+    $inside: $page-margins
   );
 
   @include nc-breakpoint($nc-bp-md) {
@@ -229,7 +293,7 @@ $stacking-order: (
 }
 
 .sg-hdg {
-  @include nc-type-scale('tera');
+  @include nc-type-scale('giga');
   @include nc-spacing($outside: ('bottom': 'compact'));
 
   font-weight: normal;
@@ -237,7 +301,7 @@ $stacking-order: (
 }
 
 .sg-subhdg {
-  @include nc-type-scale('mega');
+  @include nc-type-scale('kilo');
   @include nc-spacing($outside: ('top': 'normal', 'bottom': 'compact'));
 
   font-weight: normal;
@@ -246,18 +310,17 @@ $stacking-order: (
 
 .sg-subhdg2 {
   @include nc-type-scale('hecto');
+  @include nc-spacing($outside: ('top': 'normal', 'bottom': 'slim'));
 
   font-weight: bold;
-  color: nc-color('cascade');
-}
-
-.sg-required {
-  @include nc-type-scale('milli');
-  color: nc-color('helen');
 }
 
 .sg-function-badge {
   @include badge(nc-color('cascade'));
+}
+
+.sg-mixin-badge {
+  @include badge(nc-color('yosemite'));
 }
 
 .sg-code-hdg {
@@ -305,7 +368,7 @@ $stacking-order: (
 }
 
 .sg-params-table__cell {
-  @include table-cell();
+  @include table-cell(left);
 }
 
 .sg-params-table__cell--check {
@@ -318,6 +381,224 @@ $stacking-order: (
   background-color: nc-color('malibu', 'background');
   border: 1px solid nc-color('malibu');
   border-radius: $border-radius;
+}
+
+.sg-callout__hdg {
+  @include nc-type-scale('hecto');
+
+  color: nc-color('malibu');
+}
+
+
+.sg-usage-list {
+  margin: 0 0 0 nc-get-spacing('normal', 'mini');
+  padding: 0;
+  line-height: 1.6;
+  color: nc-color('cascade');
+}
+
+.sg-swatch-list {
+  @include nc-unstyled-list();
+}
+
+.sg-swatch-list__item {
+  @include nc-spacing($outside: ('top': 'normal'));
+
+  &:first-child {
+    @include nc-spacing($outside: 0);
+  }
+}
+
+
+.sg-default-table {
+  @include table();
+}
+
+.sg-default-table__hdg {
+  @include table-hdg(left);
+}
+
+.sg-default-table__cell {
+  @include table-cell(left);
+}
+
+
+.sg-swatch {
+  @include swatch-container();
+}
+
+.sg-swatch__chip {
+  @include swatch-chip();
+}
+
+// name = sierra
+// shade = dark
+// color = hex
+@each $name, $shades in $nc-palette {
+  @each $shade, $color in $shades {
+    .sg-swatch__chip--#{$name}-#{$shade} {
+      background: $color;
+
+      // sanity check to verify that the html matches actual hex values
+      &::before {
+        @include nc-dead-center(absolute);
+
+        margin: 1px 0 0 1px;
+        color: darken($color, 10%);
+        content: '#{$color}';
+      }
+    }
+  }
+}
+
+.sg-swatch__hex {
+  @include nc-dead-center(absolute);
+
+  color: $nc-white;
+}
+
+.sg-swatch__hex--dark {
+  color: nc-color('sierra');
+}
+
+.sg-swatch__info {
+  @include swatch-description();
+}
+
+.sg-swatch__name {
+  @include nc-spacing($outside: ('bottom': 'slim'));
+
+  display: block;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.sg-swatch-table {
+  @include table(('top': 'moderate'));
+}
+
+.sg-swatch-table__hdg {
+  @include table-hdg(center);
+}
+
+.sg-swatch-table__cell {
+  @include nc-spacing($inside: 'moderate');
+
+  &:first-child {
+    @include nc-spacing($inside: ('left': 0));
+  }
+}
+
+
+// name = kilo
+// set = md
+// size = 1.8rem
+@each $name, $sets in $nc-font-map {
+  @each $set, $size in $sets {
+    .sg-font-size--#{$name}-#{$set} {
+      position: relative;
+      display: block;
+      padding-right: 9rem;
+      font-size: $size;
+
+      &::after {
+        $px: nc-px($size);
+        $lh: nc-strip-units($px * $nc-base-line-height);
+
+        @include nc-type-scale('centi');
+        @include nc-vertically-center();
+
+        position: absolute;
+        right: 0;
+        color: nc-color('cascade');
+        content: '#{nc-px($size)} / #{$lh}';
+      }
+    }
+  }
+}
+
+.sg-font-sample {
+  @include nc-type-scale('giga');
+
+  letter-spacing: 5px;
+  color: nc-color('cascade');
+}
+
+.sg-font-sample--bold {
+  font-weight: bold;
+}
+
+.sg-font-sample__type {
+  display: block;
+}
+
+.sg-font-table {
+  @include table();
+}
+
+.sg-font-table__hdg {
+  @include table-hdg(center, 'zebra');
+}
+
+.sg-font-table__hdg-range {
+  display: block;
+  font-weight: normal;
+  color: nc-color('cascade');
+}
+
+.sg-font-table tr:nth-child(even) {
+  background-color: nc-color('ridge');
+}
+
+.sg-font-table__cell {
+  @include table-cell(left, 'zebra');
+}
+
+
+.sg-type-style {
+  @include swatch-container();
+}
+
+.sg-type-style__example {
+  @include nc-type-scale('exa', $lh: $sg-swatch-size);
+  @include swatch-chip($border: $nc-base-border-style);
+
+  @include nc-breakpoint($nc-bp-md) {
+    line-height: $sg-swatch-size-lg;
+  }
+}
+
+.sg-type-style__example--links {
+  color: nc-color('pacific');
+}
+
+.sg-type-style__example--alert {
+  color: nc-color('helen');
+}
+
+.sg-type-style__example--success {
+  color: nc-color('yosemite');
+}
+
+.sg-type-style__example--disabled {
+  color: nc-color('cascade', 'muted');
+}
+
+.sg-type-style__spacing {
+  @include nc-type-scale('centi', $lh: $sg-swatch-size);
+  @include swatch-chip($border: $nc-base-border-style);
+
+  @include nc-breakpoint($nc-bp-md) {
+    line-height: $sg-swatch-size-lg;
+  }
+}
+
+.sg-type-style__spacing--caps {
+  @include nc-all-caps();
+}
+
+.sg-type-style__description {
+  @include swatch-description();
 }
 
 
@@ -384,114 +665,6 @@ $stacking-order: (
   font-style: italic;
   font-weight: bold;
 }
-
-.sg-swatch {
-  @include nc-clearfix();
-
-  display: flex;
-  align-items: center;
-}
-
-.sg-swatch + .sg-swatch {
-  @include nc-spacing($outside: ('top': 'normal'));
-}
-
-.sg-swatch__chip {
-  position: relative;
-  flex: 0 0 $sg-swatch-size;
-  align-self: flex-start;
-  width: $sg-swatch-size;
-  height: $sg-swatch-size;
-  border-radius: 100%;
-
-  @include nc-breakpoint($nc-bp-md) {
-    width: $sg-swatch-size-lg;
-    height: $sg-swatch-size-lg;
-    flex: 0 0 $sg-swatch-size-lg;
-  }
-}
-
-// name = sierra
-// shade = dark
-// color = hex
-@each $name, $shades in $nc-palette {
-  @each $shade, $color in $shades {
-    .sg-swatch__chip--#{$name}-#{$shade} {
-      background: $color;
-
-      // sanity check to verify that the html matches actual hex values
-      &::before {
-        @include nc-dead-center(absolute);
-
-        margin: 1px 0 0 1px;
-        color: darken($color, 10%);
-        content: '#{$color}';
-      }
-    }
-  }
-}
-
-.sg-swatch__hex {
-  @include nc-dead-center(absolute);
-
-  color: $nc-white;
-}
-
-.sg-swatch__hex--dark {
-  color: nc-color('sierra');
-}
-
-.sg-swatch__info {
-  @include nc-spacing($outside: ('left': 'moderate'));
-}
-
-.sg-swatch__name {
-  @include nc-spacing($outside: ('top': 'slim', 'bottom': 'slim'));
-
-  display: block;
-  font-weight: bold;
-  text-transform: capitalize;
-}
-
-.sg-swatch__usage-list {
-  margin: 0 0 0 nc-get-spacing('normal', 'mini');
-  padding: 0;
-  line-height: 1.6;
-  color: nc-color('cascade');
-}
-
-.sg-swatch-table {
-  @include nc-spacing($outside: ('top': 'moderate'));
-}
-
-.sg-swatch-table__hdg {
-  @include table-hdg(center);
-
-  &:first-child {
-    text-align: left;
-  }
-}
-
-.sg-swatch-table__cell {
-  @include nc-spacing($inside: 'moderate');
-
-  &:first-child {
-    @include nc-spacing($inside: ('left': 0));
-  }
-}
-
-.sg-shades-table {
-  @include nc-spacing($outside: $minor-block-spacing);
-}
-
-.sg-shades-table__hdg {
-  @include table-hdg(left);
-}
-
-.sg-shades-table__cell {
-  @include table-cell();
-}
-
 
 
 // font sizes

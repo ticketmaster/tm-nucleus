@@ -1,7 +1,7 @@
 {
   "pages": {
     "home": {
-      "title": "Getting Started",
+      "title": "Introduction",
       "url":   "index.html"
     },
     "palette": {

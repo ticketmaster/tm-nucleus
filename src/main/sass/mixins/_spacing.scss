@@ -31,11 +31,23 @@
 
   // same values all around
   @else {
-    #{$spacing-type}: nc-get-nested-map($nc-spacing-map, $spacing-values, 'mini');
+    @if (type-of($spacing-values) == number) {
+      #{$spacing-type}: $spacing-values;
 
-    @if ($responsive) {
-      @include nc-breakpoint($nc-bp-md) {
-        #{$spacing-type}: nc-get-nested-map($nc-spacing-map, $spacing-values, 'maxi');
+      @if ($responsive and ($spacing-values != 0)) {
+        @include nc-breakpoint($nc-bp-md) {
+          #{$spacing-type}: $spacing-values * $nc-spacing-ratio;
+        }
+      }
+    }
+
+    @else {
+      #{$spacing-type}: nc-get-nested-map($nc-spacing-map, $spacing-values, 'mini');
+
+      @if ($responsive) {
+        @include nc-breakpoint($nc-bp-md) {
+          #{$spacing-type}: nc-get-nested-map($nc-spacing-map, $spacing-values, 'maxi');
+        }
       }
     }
   }
@@ -87,6 +99,11 @@
 }
 
 
+@function nc-get-spacing($name, $size) {
+  @return nc-get-nested-map($nc-spacing-map, $name, $size);
+}
+
+
 @function nc-spacing-val($val, $set) {
   $output: false;
   $is-num: type-of($val) == number;
@@ -105,11 +122,6 @@
   }
 
   @return $output;
-}
-
-
-@function nc-get-spacing($name, $size) {
-  @return nc-get-nested-map($nc-spacing-map, $name, $size);
 }
 
 

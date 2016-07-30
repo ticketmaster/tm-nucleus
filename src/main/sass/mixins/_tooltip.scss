@@ -1,3 +1,22 @@
+// determine tooltip offset direction
+@function nc-get-tooltip-offset-direction($pos) {
+  $offset: 'top';
+  @if ($pos == 'top' or $pos == 'bottom') {
+    $offset: 'left';
+  }
+  @return $offset;
+}
+
+// calculate tooltip offset
+@function nc-get-tooltip-offset($pos, $size) {
+  $val: -($size / 2);
+  @if ($pos == 'left') {
+    $val: 0;
+  }
+  @return $val;
+}
+
+
 @mixin nc-tooltip-position($pos) {
   margin-#{$pos}: $nc-tooltip-caret;
 
