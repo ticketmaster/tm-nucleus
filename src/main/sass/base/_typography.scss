@@ -26,6 +26,8 @@ $nc-type-size-basis: 1.6rem;
 $nc-type-scale-ratio: 1.125;
 $nc-base-line-height: 1.4;
 $nc-type-scale-digits: 1;
+$nc-base-letter-spacing: 0.3px;
+$nc-caps-letter-spacing: 2px;
 
 // Font sizes
 $nc-font-scale-start: -4;
@@ -62,6 +64,7 @@ $nc-font-map: ();
 }
 
 
+/* ~~~~~~~~~~~ BURN WITH FIRE ~~~~~~~~~~~~~ */
 // deprecated
 $nc-font-size-factor: 0.2;
 

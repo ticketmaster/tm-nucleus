@@ -15,7 +15,7 @@ body {
   font-family: $nc-base-font-family;
   -webkit-font-smoothing: antialiased;
   line-height: $nc-base-line-height;
-  letter-spacing: 0.3px;
+  letter-spacing: $nc-base-letter-spacing;
   color: $nc-text-color;
 
   background-color: $nc-white;

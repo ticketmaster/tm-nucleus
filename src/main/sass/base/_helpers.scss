@@ -6,6 +6,7 @@
   @error 'either '#{$key}' or '#{$subkey}' does not exist in '#{$map}'';
 }
 
+
 // check if value is in list
 @function nc-list-contains($list, $item) {
   @return index($list, $item) != null;
@@ -69,15 +70,18 @@
   }
 }
 
+
 // there should an overlay z-index and an overlay-content z-index
 @function nc-z($level, $map: $nc-z-indexes) {
   @return map-get($map, $level);
 }
 
+
 // turn unit values into unitless
 @function nc-strip-units($num) {
   @return $num / ($num * 0 + 1);
 }
+
 
 // convert px to em
 @function nc-em($px, $context: $nc-default-font-size) {
@@ -86,6 +90,25 @@
   }
   @return $px / $context * 1em;
 }
+
+
+// convert rem to px
+@function nc-px($rem) {
+  @if ($rem == 0) {
+    @return 0;
+  }
+  @return nc-strip-units($rem) * 10px;
+}
+
+
+// convert px to rem
+@function nc-rem($px) {
+  @if ($px == 0) {
+    @return 0;
+  }
+  @return nc-strip-units($px/10) * 1rem;
+}
+
 
 // calculate sizes given basis and ratio
 @function nc-calc-scale-value($count, $dir, $basis, $ratio, $digits) {
@@ -107,6 +130,7 @@
 
   @return $size;
 }
+
 
 // generate values based on steps from basis
 @function nc-generate-scale-map($start, $set, $basis, $ratio, $digits) {
@@ -140,25 +164,6 @@
   }
 
   @return $map;
-}
-
-
-// determine tooltip offset direction
-@function nc-get-tooltip-offset-direction($pos) {
-  $offset: 'top';
-  @if ($pos == 'top' or $pos == 'bottom') {
-    $offset: 'left';
-  }
-  @return $offset;
-}
-
-// calculate tooltip offset
-@function nc-get-tooltip-offset($pos, $size) {
-  $val: -($size / 2);
-  @if ($pos == 'left') {
-    $val: 0;
-  }
-  @return $val;
 }
 
 

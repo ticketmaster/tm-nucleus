@@ -2,20 +2,9 @@
 @import 'base/all';
 @import 'mixins/all';
 
-$map: (
-  'top': 'compact',
-  'right': 10px,
-  'left': auto,
-  'bottom': 0
-);
-
-$map2: (
-  'top': '-compact',
-  'right': 0,
-  'left': auto
-);
-
 .nc-test {
   // @include nc-spacing($inside: $map);
-  @include nc-spacing($outside: $map2);
+  @include nc-spacing($outside: 0);
+
+  font-size: nc-rem(20px);
 }

@@ -26,13 +26,20 @@
 }
 
 
-@mixin nc-truncate-text() {
+@mixin nc-all-caps($ls: $nc-caps-letter-spacing) {
+  letter-spacing: $ls;
+  text-transform: uppercase;
+}
+
+
+@mixin nc-truncate-text($width: false) {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 
+// possibly deprecate
 @mixin nc-hdg-text($set, $color: $nc-text-color, $mb: $nc-header-margin) {
   $name: nc-remap-type-size($set);
 
