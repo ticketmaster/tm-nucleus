@@ -53,10 +53,13 @@
 .cobrand-header__verified {
   @include cobrand-header-logo('../img/verified-pacific.svg');
 
+  @include breakpoint($bp-lg) {
+    top: 0;
+  }
+
   @include target-ie-edge() {
     @include breakpoint($bp-lg) {
       position: absolute;
-      top: 0;
       right: 20px;
     }
   }
