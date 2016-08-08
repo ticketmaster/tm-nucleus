@@ -1,12 +1,19 @@
 Changelog
 =========
 
+**0.29.2**
+---------
+**Bug Fixes**
+- Adjust positioning of cobranded header in latest Chrome v52+.
+
 **0.29.1**
 ---------
+**Bug Fixes**
 - Adjust slider active color for LN.
 
 **0.29.0**
 ---------
+**New Features**
 - Add new Price Slider component.
 
 **0.28.1**
