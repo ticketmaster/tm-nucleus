@@ -6,95 +6,152 @@
   <div class="sg-main">
 
     <section id="spacing" class="sg-section">
-      <h2 class="sg-hdg">Spacing</h2>
-      <p>Spacing between major page elements should be one of three possible values, as shown below.</p>
+      <h2 class="sg-hdg">Scale</h2>
+      <p>Whitespace is an important part of creating rhythm and harmony between
+        elements on a page. To maintain consistency, we've developed a spacing
+        scale that has an 8px base size and a 1.5 ratio. All of our spacing values are
+        derived as a multiple of these two numbers.</p>
+      <p>With few exceptions, font sizes on our pages are responsive at the main
+        <a href="breakpoints.html">breakpoints</a>.</p>
 
-      <table class="sg__table">
+      <h3 class="sg-subhdg"><a id="size-chart" class="sg-anchor">Size chart</a></h3>
+      <p>The table below illustrates all of our available sizes at specific
+        breakpoints and their associated name.</p>
+
+      <table class="sg-size-table">
         <tr>
-          <td class="sg__table-hdg">Breakpoint</td>
-          <td class="sg__table-hdg"><code class="sg-code">$nc-spacing-sm</code></td>
-          <td class="sg__table-hdg"><code class="sg-code">$nc-spacing-md</code></td>
-          <td class="sg__table-hdg"><code class="sg-code">$nc-spacing-lg</code></td>
+          <th class="sg-size-table__hdg">Name</th>
+          <th class="sg-size-table__hdg">Mini <span class="sg-size-table__hdg-range">(&le; 719px)</span></th>
+          <th class="sg-size-table__hdg">Maxi <span class="sg-size-table__hdg-range">(&ge; 720px)</span></th>
+          <th class="sg-size-table__hdg">Usage</th>
         </tr>
         <tr>
-          <td class="sg__table-cell">
-            &le; 719px
-          </td>
-          <td class="sg__table-cell">
-            10px
-          </td>
-          <td class="sg__table-cell">
-            20px
-          </td>
-          <td class="sg__table-cell">
-            30px
+          <td class="sg-size-table__cell">slim</td>
+          <td class="sg-size-table__cell"><span class="sg-spacing-size--slim-mini"></span></td>
+          <td class="sg-size-table__cell"><span class="sg-spacing-size--slim-maxi"></span></td>
+          <td class="sg-size-table__cell">
+            <ul class="sg-usage-list">
+              <li>Between icons and labels</li>
+              <li>Between labels and form fields</li>
+            </ul>
           </td>
         </tr>
         <tr>
-          <td class="sg__table-cell">
-            &ge; 720px
+          <td class="sg-size-table__cell">cozy</td>
+          <td class="sg-size-table__cell"><span class="sg-spacing-size--cozy-mini"></span></td>
+          <td class="sg-size-table__cell"><span class="sg-spacing-size--cozy-maxi"></span></td>
+          <td class="sg-size-table__cell">
+            <ul class="sg-usage-list">
+              <li>Between icons and labels</li>
+            </ul>
           </td>
-          <td class="sg__table-cell">
-            15px
+        </tr>
+        <tr>
+          <td class="sg-size-table__cell">compact</td>
+          <td class="sg-size-table__cell"><span class="sg-spacing-size--compact-mini"></span></td>
+          <td class="sg-size-table__cell"><span class="sg-spacing-size--compact-maxi"></span></td>
+          <td class="sg-size-table__cell">
+            <ul class="sg-usage-list">
+              <li>Between inline elements</li>
+              <li>Between line items</li>
+            </ul>
           </td>
-          <td class="sg__table-cell">
-            30px
+        </tr>
+        <tr>
+          <td class="sg-size-table__cell">moderate</td>
+          <td class="sg-size-table__cell"><span class="sg-spacing-size--moderate-mini"></span></td>
+          <td class="sg-size-table__cell"><span class="sg-spacing-size--moderate-maxi"></span></td>
+          <td class="sg-size-table__cell">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="sg-size-table__cell">normal</td>
+          <td class="sg-size-table__cell"><span class="sg-spacing-size--normal-mini"></span></td>
+          <td class="sg-size-table__cell"><span class="sg-spacing-size--normal-maxi"></span></td>
+          <td class="sg-size-table__cell">
+            <ul class="sg-usage-list">
+              <li>Between minor blocks of content</li>
+              <li>Internal module and modal spacing</li>
+            </ul>
           </td>
-          <td class="sg__table-cell">
-            45px
+        </tr>
+        <tr>
+          <td class="sg-size-table__cell">expanded</td>
+          <td class="sg-size-table__cell"><span class="sg-spacing-size--expanded-mini"></span></td>
+          <td class="sg-size-table__cell"><span class="sg-spacing-size--expanded-maxi"></span></td>
+          <td class="sg-size-table__cell">
+            <ul class="sg-usage-list">
+              <li>Between major blocks of content</li>
+            </ul>
           </td>
+        </tr>
+        <tr>
+          <td class="sg-size-table__cell">spacious</td>
+          <td class="sg-size-table__cell"><span class="sg-spacing-size--spacious-mini"></span></td>
+          <td class="sg-size-table__cell"><span class="sg-spacing-size--spacious-maxi"></span></td>
+          <td class="sg-size-table__cell">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="sg-size-table__cell">giant</td>
+          <td class="sg-size-table__cell"><span class="sg-spacing-size--giant-mini"></span></td>
+          <td class="sg-size-table__cell"><span class="sg-spacing-size--giant-maxi"></span></td>
+          <td class="sg-size-table__cell">&nbsp;</td>
         </tr>
       </table>
 
-      <p>To make it easier to set responsive spacing, there are two mixins available:</p>
+    </section>
 
-      <table class="sg__table">
+    <section class="sg-section">
+      <h2 class="sg-hdg">Code Reference</h2>
+
+      <h3 class="sg-code-hdg">
+        <code class="sg-code-hdg__name">nc-spacing()</code>
+        <span class="sg-code-hdg__badge sg-mixin-badge">Mixin</span>
+        <span class="sg-code-hdg__source-file">mixins/_spacing.scss</span>
+      </h3>
+      <p>Generates size value from our spacing scale.</p>
+      <table class="sg-params-table">
         <tr>
-          <td class="sg__table-cell">margin-based spacing</td>
-          <td class="sg__table-cell"><code class="sg-code">@include nc-outer-spacing($x)</code></td>
+          <th class="sg-params-table__hdg">Parameters</th>
+          <th class="sg-params-table__hdg">Default</th>
+          <th class="sg-params-table__hdg">Description</th>
+          <th class="sg-params-table__hdg">Required</th>
         </tr>
         <tr>
-          <td class="sg__table-cell">padding-based spacing</td>
-          <td class="sg__table-cell"><code class="sg-code">@include nc-inner-spacing($y)</code></td>
+          <td class="sg-params-table__cell"><code class="sg-code">$outside</code></td>
+          <td class="sg-params-table__cell"><code class="sg-code">false</code></td>
+          <td class="sg-params-table__cell">Set margins; can be either name from <a href="#size-chart">size chart</a> or a SASS map</td>
+          <td class="sg-params-table__cell sg-params-table__cell--check">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$inside</code></td>
+          <td class="sg-params-table__cell"><code class="sg-code">false</code></td>
+          <td class="sg-params-table__cell">Set padding; can be either name from <a href="#size-chart">size chart</a> or a SASS map</td>
+          <td class="sg-params-table__cell sg-params-table__cell--check">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$responsive</code></td>
+          <td class="sg-params-table__cell"><code class="sg-code">true</code></td>
+          <td class="sg-params-table__cell">Should the size be responsive</td>
+          <td class="sg-params-table__cell sg-params-table__cell--check">&nbsp;</td>
         </tr>
       </table>
 
-      <p>Both mixins behave in the same way.</p>
-      <ol>
-        <li>If a single parameter is passed, it will apply the value equally on all four sides.</li>
-        <li>If you don't want all sides to be uniform, you can assign values to the sides you want to modify.</li>
-      </ol>
-
-      <p>This is best illustrated with some examples.</p>
-
-<pre><code class="scss">// set same margin on all sides
-@include nc-outer-spacing($spacing-md);
-
-// set padding on top and bottom
-@include nc-inner-spacing($top: $spacing-sm, $bottom: $spacing-sm);
-
-// set padding on top, right, and left
-@include nc-inner-spacing($top: $spacing-sm, $right: auto, $left: auto)</code></pre>
-
-      <p>When specifying spacing for any side(s), any side that you omit will be set to <code class="sg-code">0</code>.</p>
-
-      <p>As of the 0.18 release, <code class="sg-code">nc-outer-spacing()</code> can now accept <code class="sg-code">auto</code> as a parameter for any side.</p>
-
-<pre><code class="scss">// set 30px bottom margin
-.example {
-@include nc-outer-spacing($right: auto, $left: auto, $bottom: $spacing-lg);
+<pre class="sg-code-block"><code class="scss">/* basic usage */
+.text-basic {
+  @include nc-type-scale('kilo');
 }
 
-// output from above will be
-.example {
-margin: 0 auto 30px auto;
+/* passing line-height */
+.text-lh {
+  @include nc-type-scale('kilo', $lh: 1);
 }
 
-@media (min-width: 23.4375em) {
-.example {
-margin: 0 auto 45px auto;
+/* fixed font size aka not responsive */
+.text-fixed {
+  @include nc-type-scale('kilo', $responsive: false);
 }
-}</code></pre>
+
+</code></pre>
 
     </section>
 

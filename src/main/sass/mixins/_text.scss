@@ -14,11 +14,11 @@
 }
 
 
-@mixin nc-alt-copy($set: false, $responsive: true) {
+@mixin nc-alt-copy($set: false, $lh: $nc-base-line-height, $responsive: true) {
   @if $set {
     $name: nc-remap-type-size($set);
 
-    @include nc-type-scale($name, $responsive: $responsive);
+    @include nc-type-scale($name, $lh: $lh, $responsive: $responsive);
   }
 
   font-weight: normal;
