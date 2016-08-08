@@ -315,8 +315,9 @@ $stacking-order: (
   font-weight: bold;
 }
 
+
 .sg-function-badge {
-  @include badge(nc-color('cascade'));
+  @include badge(nc-color('catalina'));
 }
 
 .sg-mixin-badge {
@@ -532,25 +533,31 @@ $stacking-order: (
   display: block;
 }
 
-.sg-font-table {
+.sg-size-table {
   @include table();
 }
 
-.sg-font-table__hdg {
+.sg-size-table__hdg {
   @include table-hdg(center, 'zebra');
+
+  &:last-child {
+    @include nc-spacing($inside: ('left': 'normal'));
+
+    text-align: left;
+  }
 }
 
-.sg-font-table__hdg-range {
+.sg-size-table__hdg-range {
   display: block;
   font-weight: normal;
   color: nc-color('cascade');
 }
 
-.sg-font-table tr:nth-child(even) {
+.sg-size-table tr:nth-child(even) {
   background-color: nc-color('ridge');
 }
 
-.sg-font-table__cell {
+.sg-size-table__cell {
   @include table-cell(left, 'zebra');
 }
 
@@ -566,6 +573,10 @@ $stacking-order: (
   @include nc-breakpoint($nc-bp-md) {
     line-height: $sg-swatch-size-lg;
   }
+}
+
+.sg-type-style__example--italics {
+  color: nc-color('cascade');
 }
 
 .sg-type-style__example--links {
@@ -600,6 +611,32 @@ $stacking-order: (
 .sg-type-style__description {
   @include swatch-description();
 }
+
+
+
+// name = compact
+// set = mini
+// size = 1.8rem
+@each $name, $sets in $nc-spacing-map {
+  @each $set, $size in $sets {
+    .sg-spacing-size--#{$name}-#{$set} {
+      position: relative;
+      display: block;
+      padding-right: 9rem;
+
+      &::after {
+        $px: nc-px($size);
+
+        @include nc-type-scale('centi');
+        @include nc-dead-center(absolute);
+
+        color: nc-color('cascade');
+        content: '#{nc-px($size)}';
+      }
+    }
+  }
+}
+
 
 
 .sg__list {
@@ -667,36 +704,6 @@ $stacking-order: (
 }
 
 
-// font sizes
-@each $name, $sizes in $nc-font-sizes {
-  .sg__#{$name}-font-size {
-    $size: nc-fetch-font($name, 'pint');
-
-    font-size: $size;
-    line-height: nc-calc-lh($size);
-  }
-
-  .sg__#{$name}-font-size-quart {
-    $size: nc-fetch-font($name, 'quart');
-
-    font-size: $size;
-    line-height: nc-calc-lh($size);
-  }
-
-  @if ($name != 'xs') {
-    .sg__#{$name}-font-size-gallon {
-      $size: nc-fetch-font($name, 'gallon');
-
-      font-size: $size;
-      line-height: nc-calc-lh($size);
-    }
-  }
-
-  .sg__#{$name}-font-size-responsive {
-    // @include nc-responsive-font($name);
-  }
-}
-
 .sg__font-usage {
   @include nc-type-scale('centi');
 }
@@ -723,6 +730,9 @@ $stacking-order: (
     }
   }
 }
+
+
+
 
 
 // quantity buttons
