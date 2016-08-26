@@ -1,0 +1,54 @@
+$circle-border-radius: 50%;
+$radio-label-offset: 10px;
+
+.radio-list {
+  @include unstyled-list();
+}
+
+.radio-list__item {
+  @include outer-spacing($top: $spacing-md);
+}
+
+.radio {
+  @include clearfix();
+
+  position: relative;
+}
+
+.radio-input {
+  position: absolute;
+  opacity: 0;
+}
+
+.radio-label {
+  display: inline-block;
+  padding-left: $base-icon-size + $radio-label-offset;
+  cursor: pointer;
+}
+
+.radio-label__icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: $base-icon-size;
+  height: $base-icon-size;
+  background-color: $white;
+  border: $input-border-style;
+  border-radius: $circle-border-radius;
+}
+
+.radio-input:checked ~ .radio-label > .radio-label__icon:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: $base-icon-size / 2;
+  height: $base-icon-size / 2;
+  margin-top: - ($base-icon-size / 4);
+  margin-left: - ($base-icon-size / 4);
+  background-color: $link-color;
+  border-radius: 50%;
+  content: '';
+}
+
