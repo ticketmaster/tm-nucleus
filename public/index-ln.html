@@ -63,6 +63,7 @@
         <li><a href="#lists">Lists</a></li>
         <li><a href="#form-elements">Form Elements</a></li>
         <li><a href="#tiles">Tile Selections</a></li>
+        <li><a href="#tabs">Tab Selections</a></li>
         <li><a href="#tooltips">Tooltips</a></li>
         <li><a href="#srs">Sec-Row-Seat</a></li>
         <li><a href="#split-content">Split Content</a></li>
@@ -1489,6 +1490,71 @@
             </label>
           </li>
         </ul>
+
+<pre><code class="html">&lt;ul class=&quot;checkbox-list&quot;&gt;
+&nbsp;&lt;li class=&quot;checkbox-list__item checkbox&quot;&gt;
+&nbsp; &nbsp;&lt;input type=&quot;checkbox&quot; class=&quot;checkbox__input&quot; id=&quot;sample-chkbx&quot; /&gt;
+&nbsp; &nbsp;&lt;label for=&quot;sample-chkbx&quot; class=&quot;checkbox__label&quot;&gt;
+&nbsp; &nbsp; &nbsp;Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola frankfurter picanha ham.&nbsp;
+&nbsp; &nbsp; &nbsp;&lt;svg class=&quot;checkbox__icon&quot;&gt;
+&nbsp; &nbsp; &nbsp; &nbsp;&lt;use xlink:href=&quot;img/sprite.svg#icon-check&quot;&gt;&lt;/use&gt;
+&nbsp; &nbsp; &nbsp;&lt;/svg&gt;
+&nbsp; &nbsp;&lt;/label&gt;
+&nbsp;&lt;/li&gt;
+&nbsp;&lt;li class=&quot;checkbox-list__item checkbox&quot;&gt;
+&nbsp; &nbsp;&lt;input type=&quot;checkbox&quot; class=&quot;checkbox__input&quot; id=&quot;sample-chkbx2&quot; /&gt;
+&nbsp; &nbsp;&lt;label for=&quot;sample-chkbx2&quot; class=&quot;checkbox__label&quot;&gt;
+&nbsp; &nbsp; &nbsp;Ticket name&nbsp;
+&nbsp; &nbsp; &nbsp;&lt;svg class=&quot;checkbox__icon&quot;&gt;
+&nbsp; &nbsp; &nbsp; &nbsp;&lt;use xlink:href=&quot;img/sprite.svg#icon-check&quot;&gt;&lt;/use&gt;
+&nbsp; &nbsp; &nbsp;&lt;/svg&gt;
+&nbsp; &nbsp;&lt;/label&gt;
+&nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+        <h3 class="sg__subhdg">Radio Buttons</h3>
+        <ul class="radio-list">
+          <li class="radio-list__item radio">
+            <input type="radio" class="radio__input" id="sample-radio-1" name="sample-radio" />
+            <label for="sample-radio-1" class="radio__label">
+              Option #1 is large. Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola frankfurter picanha ham.
+            </label>
+          </li>
+          <li class="radio-list__item radio">
+            <input type="radio" class="radio__input" id="sample-radio-2" name="sample-radio" />
+            <label for="sample-radio-2" class="radio__label">
+              Option #2
+            </label>
+          </li>
+          <li class="radio-list__item radio">
+            <input type="radio" class="radio__input" id="sample-radio-3" name="sample-radio" />
+            <label for="sample-radio-3" class="radio__label">
+              Option #3
+            </label>
+          </li>
+        </ul>
+<pre><code class="html">&lt;ul class=&quot;radio-list&quot;&gt;
+&nbsp;&nbsp;&lt;li class=&quot;radio-list__item radio&quot;&gt;
+&nbsp;&nbsp; &nbsp;&lt;input type=&quot;radio&quot; class=&quot;radio__input&quot; id=&quot;sample-radio-1&quot; name=&quot;sample-radio&quot; /&gt;
+&nbsp;&nbsp; &nbsp;&lt;label for=&quot;sample-radio-1&quot; class=&quot;radio__label&quot;&gt;
+&nbsp;&nbsp; &nbsp; &nbsp;Option #1 is large. Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola frankfurter picanha ham.
+&nbsp;&nbsp; &nbsp;&lt;/label&gt;
+&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&lt;li class=&quot;radio-list__item radio&quot;&gt;
+&nbsp;&nbsp; &nbsp;&lt;input type=&quot;radio&quot; class=&quot;radio__input&quot; id=&quot;sample-radio-2&quot; name=&quot;sample-radio&quot; /&gt;
+&nbsp;&nbsp; &nbsp;&lt;label for=&quot;sample-radio-2&quot; class=&quot;radio__label&quot;&gt;
+&nbsp;&nbsp; &nbsp; &nbsp;Option #2
+&nbsp;&nbsp; &nbsp;&lt;/label&gt;
+&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&lt;li class=&quot;radio-list__item radio&quot;&gt;
+&nbsp;&nbsp; &nbsp;&lt;input type=&quot;radio&quot; class=&quot;radio__input&quot; id=&quot;sample-radio-3&quot; name=&quot;sample-radio&quot; /&gt;
+&nbsp;&nbsp; &nbsp;&lt;label for=&quot;sample-radio-3&quot; class=&quot;radio__label&quot;&gt;
+&nbsp;&nbsp; &nbsp; &nbsp;Option #3
+&nbsp;&nbsp; &nbsp;&lt;/label&gt;
+&nbsp;&nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
       </section>
 
       <section id="tiles" class="sg__section">
@@ -1588,6 +1654,23 @@
   &lt;/li&gt;
 &lt;/ul&gt;</code></pre>
 
+      </section>
+
+      <section id="tabs" class="sg__section">
+        <h2 class="sg__hdg">Tab Selection</h2>
+        <ul class="tab-selection">
+          <li class="tab-selection__item tab-selection__item--selected">USA</li>
+          <li class="tab-selection__item">Canada</li>
+          <li class="tab-selection__item">Other Country</li>
+        </ul>
+        <pre><code class="html">&lt;section id=&quot;tabs&quot; class=&quot;sg__section&quot;&gt;
+&nbsp;&nbsp; &lt;h2 class=&quot;sg__hdg&quot;&gt;Tab Selection&lt;/h2&gt;
+&nbsp;&nbsp; &lt;ul class=&quot;tab-selection&quot;&gt;
+&nbsp;&nbsp; &nbsp; &nbsp;&lt;li class=&quot;tab-selection__item tab-selection__item--selected&quot;&gt;USA&lt;/li&gt;
+&nbsp;&nbsp; &nbsp; &nbsp;&lt;li class=&quot;tab-selection__item&quot;&gt;Canada&lt;/li&gt;
+&nbsp;&nbsp; &nbsp; &nbsp;&lt;li class=&quot;tab-selection__item&quot;&gt;Other Country&lt;/li&gt;
+&nbsp;&nbsp; &lt;/ul&gt;
+&lt;/section&gt;</code></pre>
       </section>
 
       <section id="tooltips" class="sg__section">
