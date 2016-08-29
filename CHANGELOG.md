@@ -1,6 +1,12 @@
 Changelog
 =========
 
+**0.30.0**
+---------
+**New Features**
+- Add new `tab-selection` pattern.
+- Add new `radio` input style and `radio-list` pattern.
+
 **0.29.2**
 ---------
 **Bug Fixes**
