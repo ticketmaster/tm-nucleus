@@ -1,0 +1,36 @@
+.tab-selection {
+  @include unstyled-list();
+
+  display: inline-block;
+  border: $input-border-style;
+  border-radius: $base-border-radius;
+}
+
+.tab-selection__item {
+  @include fixed-font('sm');
+  @include inner-spacing($spacing-sm);
+
+  display: inline-block;
+  color: $tab-item-color;
+  cursor: pointer;
+  border-left: $input-border-style;
+
+  @include breakpoint($bp-sm) {
+    @include fixed-font('md');
+    @include inner-spacing($left: $spacing-md, $right: $spacing-md, $top: $spacing-sm, $bottom: $spacing-sm);
+  }
+
+  @include breakpoint($bp-md) {
+    @include fixed-font('xl');
+  }
+
+  &:first-child {
+    border-left: 0;
+  }
+}
+
+.tab-selection__item--selected {
+  font-weight: bold;
+  color: $tab-item-selected-color;
+}
+
