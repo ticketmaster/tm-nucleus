@@ -7,24 +7,22 @@
 }
 
 .tab-selection__item {
+  @include fixed-font('sm');
+  @include inner-spacing($spacing-sm);
+
   display: inline-block;
-  color: $brand-gray2;
+  color: $tab-item-color;
   cursor: pointer;
   border-left: $input-border-style;
 
-  @include breakpoint($bp-md) {
-    @include fixed-font('xl');
-    @include inner-spacing($left: $spacing-md, $right: $spacing-md, $top: $spacing-sm, $bottom: $spacing-sm);
-  }
-
-  @include breakpoint($min: $bp-sm, $max: $bp-md - 1) {
+  @include breakpoint($bp-sm) {
     @include fixed-font('md');
     @include inner-spacing($left: $spacing-md, $right: $spacing-md, $top: $spacing-sm, $bottom: $spacing-sm);
   }
 
-  @include breakpoint($max: $bp-sm - 1) {
-    @include fixed-font('sm');
-    @include inner-spacing($spacing-sm);
+  @include breakpoint($bp-md) {
+    @include fixed-font('xl');
+    @include inner-spacing($left: $spacing-md, $right: $spacing-md, $top: $spacing-sm, $bottom: $spacing-sm);
   }
 
   &:first-child {
@@ -34,6 +32,6 @@
 
 .tab-selection__item--selected {
   font-weight: bold;
-  color: $brand-gray;
+  color: $tab-item-selected-color;
 }
 

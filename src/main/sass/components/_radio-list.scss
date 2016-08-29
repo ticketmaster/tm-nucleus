@@ -1,0 +1,7 @@
+.radio-list {
+  @include unstyled-list();
+}
+
+.radio-list__item {
+  @include outer-spacing($top: $spacing-md);
+}
