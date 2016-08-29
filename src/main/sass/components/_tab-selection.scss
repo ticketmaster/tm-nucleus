@@ -22,7 +22,6 @@
 
   @include breakpoint($bp-md) {
     @include fixed-font('xl');
-    @include inner-spacing($left: $spacing-md, $right: $spacing-md, $top: $spacing-sm, $bottom: $spacing-sm);
   }
 
   &:first-child {
