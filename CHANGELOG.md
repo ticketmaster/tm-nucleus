@@ -1,6 +1,11 @@
 Changelog
 =========
 
+**0.31.0**
+---------
+**New Features**
+- Add new happy-tickets.svg.
+
 **0.30.0**
 ---------
 **New Features**
