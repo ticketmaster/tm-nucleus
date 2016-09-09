@@ -1,15 +1,16 @@
 dependencies:
   pre:
-    - pip install awscli    
+    - pip install awscli
   override:
     - npm install
     - npm run build
 
-deployment:  
+deployment:
     ci:
-      branch: master
-      commands:        
-        - aws --region us-west-1 s3 sync public/ s3://nucleus.tmol.co/
+      branch: v1.0
+      commands:
+        - aws --region us-west-1 s3 sync public/ s3://nucleus-v1.tmol.co/
+
 test:
   override:
     - npm test
