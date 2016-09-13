@@ -26,7 +26,6 @@ $slide-animation: 1s;
 
 @mixin slider-bar($slider-range-top: 0, $slider-range-height: 5px) {
   position: relative;
-  top: $slider-range-top;
   width: 100%;
   height: $slider-range-height;
   background-color: $slider-range-bg-color;
