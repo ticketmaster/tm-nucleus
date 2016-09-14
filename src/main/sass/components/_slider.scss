@@ -5,11 +5,7 @@ $slider-range-top: ($slider-handle-size - $slider-range-height) / 2;
 $slider-range-top-large: ($slider-handle-size-large - $slider-range-height) / 2;
 
 .price-slider__slider {
-  margin-right: $slider-handle-size;
-
-  @include breakpoint($min: $bp-md) {
-    margin-right: $slider-handle-size-large;
-  }
+  @include outer-spacing($left: $slider-handle-size / 2, $right: $slider-handle-size / 2);
 }
 
 .slider {
