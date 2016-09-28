@@ -1,4 +1,9 @@
 $slide-animation: 1s;
+$slider-handle-size: 30px;
+$slider-handle-size-large: 32px;
+$slider-range-height: 5px;
+$slider-range-top: ($slider-handle-size - $slider-range-height) / 2;
+$slider-range-top-large: ($slider-handle-size-large - $slider-range-height) / 2;
 
 @mixin slider($min-ht: 0, $max-ht: 8888px) {
   max-height: $min-ht;
