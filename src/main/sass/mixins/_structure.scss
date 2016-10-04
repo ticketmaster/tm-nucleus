@@ -1,0 +1,35 @@
+@mixin nc-split-content($gutter: moderate, $responsive: true) {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  &__primary {
+    flex: 1 1 100%;
+  }
+
+  &__secondary {
+    @include nc-spacing($inside: (left: $gutter), $responsive: $responsive);
+
+    flex: 0 0 auto;
+
+    // we don't want left padding if it's the first item
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+
+  &__primary--top,
+  &__secondary--top {
+    align-self: flex-start;
+  }
+
+  &__primary--bottom,
+  &__secondary--bottom {
+    align-self: flex-end;
+  }
+
+  &__secondary + &__primary {
+    @include nc-spacing($inside: (left: $gutter), $responsive: $responsive);
+  }
+
+}

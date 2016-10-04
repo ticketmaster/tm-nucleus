@@ -330,17 +330,17 @@
 
 <pre class="sg-code-block"><code class="scss">/* basic usage */
 .text-basic {
-  @include nc-type-scale('kilo');
+  @include nc-type-scale(kilo);
 }
 
 /* passing line-height */
 .text-lh {
-  @include nc-type-scale('kilo', $lh: 1);
+  @include nc-type-scale(kilo, $lh: 1);
 }
 
 /* fixed font size aka not responsive */
 .text-fixed {
-  @include nc-type-scale('kilo', $responsive: false);
+  @include nc-type-scale(kilo, $responsive: false);
 }
 
 </code></pre>
@@ -385,12 +385,12 @@
 
 /* specify a font size that's different from its context */
 .alt-size {
-  @include nc-alt-copy($set: 'centi');
+  @include nc-alt-copy($set: centi);
 }
 
 /* fixed font size aka not responsive */
 .alt-fixed {
-  @include nc-alt-copy($set: 'centi', $responsive: false);
+  @include nc-alt-copy($set: centi, $responsive: false);
 }
 
 </code></pre>
@@ -503,7 +503,7 @@
 
 <pre class="sg-code-block"z><code class="scss">/* basic usage */
 .some-text {
-  font-size: nc-get-font('mega', 'md');
+  font-size: nc-get-font(mega, md);
 }
 
 /* output */

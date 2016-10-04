@@ -8,21 +8,25 @@
       "title": "Colors",
       "url":   "colors.html"
     },
-    "typography": {
-      "title": "Typography",
-      "url":   "typography.html"
-    },
     "breakpoints": {
       "title": "Breakpoints",
       "url":   "breakpoints.html"
     },
-    "page-structure": {
-      "title": "Page Structure",
-      "url":   "page-structure.html"
+    "typography": {
+      "title": "Typography",
+      "url":   "typography.html"
     },
     "spacing": {
       "title": "Spacing",
       "url":   "spacing.html"
+    },
+    "split-content": {
+      "title": "Split Content",
+      "url":   "split-content.html"
+    },
+    "page-structure": {
+      "title": "Page Structure",
+      "url":   "page-structure.html"
     },
     "buttons": {
       "title": "Buttons",
@@ -51,10 +55,6 @@
     "srs": {
       "title": "SRS",
       "url":   "srs.html"
-    },
-    "split-content": {
-      "title": "Split Content",
-      "url":   "split-content.html"
     },
     "product-info": {
       "title": "Product Info",

@@ -491,6 +491,24 @@ $stacking-order: (
 }
 
 
+// generate breakpoint classes
+@each $device, $px in $nc-breakpoints {
+  .sg-#{$device}-bp {
+    &:before {
+      content: '#{$px} - ';
+    }
+  }
+}
+
+@each $device, $px in $nc-breakpoints {
+  .sg-#{$device}-limit {
+    &:after {
+      content: ' (up to #{$px - 1})';
+    }
+  }
+}
+
+
 // name = kilo
 // set = md
 // size = 1.8rem
@@ -639,6 +657,21 @@ $stacking-order: (
 
 
 
+// split-content examples
+.sg-split-container {
+  @include nc-spacing($outside: $minor-block-spacing);
+
+  border: 3px solid #004466;
+}
+.sg-split-primary {
+  background-color: #ccefff;
+}
+.sg-split-secondary {
+  border: 3px solid #9d79f2;
+}
+
+
+
 .sg__list {
   @include nc-unstyled-list();
 
@@ -713,23 +746,6 @@ $stacking-order: (
   font-weight: bold;
 }
 
-
-// generate breakpoint classes
-@each $device, $px in $nc-breakpoints {
-  .sg__#{$device}-bp {
-    &:before {
-      content: '#{$px} - ';
-    }
-  }
-}
-
-@each $device, $px in $nc-breakpoints {
-  .sg__#{$device}-limit {
-    &:after {
-      content: ' (up to #{$px - 1})';
-    }
-  }
-}
 
 
 
