@@ -137,20 +137,25 @@
       </table>
 
 <pre class="sg-code-block"><code class="scss">/* basic usage */
-.text-basic {
-  @include nc-type-scale('kilo');
+.widget {
+  @include nc-spacing($inside: compact);
 }
 
-/* passing line-height */
-.text-lh {
-  @include nc-type-scale('kilo', $lh: 1);
+/* using a SASS map; can either define separately or inline within @include call */
+$map: (
+  top: 10px,
+  right: slim,
+  left: 0
+);
+
+.widget-custom {
+  @include nc-spacing($outside: $map);
 }
 
-/* fixed font size aka not responsive */
+/* fixed spacing aka not responsive */
 .text-fixed {
-  @include nc-type-scale('kilo', $responsive: false);
+  @include nc-spacing($inside: moderate, $responsive: false);
 }
-
 </code></pre>
 
     </section>

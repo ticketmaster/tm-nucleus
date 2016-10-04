@@ -1,34 +1,5 @@
 /** @define split-content; weak */
 
 .nc-split-content {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.nc-split-content__primary {
-  flex: 1 1 100%;
-}
-
-.nc-split-content__primary--top {
-  align-self: flex-start;
-}
-
-.nc-split-content__secondary {
-  @include nc-spacing($inside: ('left': 'moderate'));
-
-  flex: 0 0 auto;
-
-  // we don't want left padding if it's the first item
-  &:first-child {
-    padding-left: 0;
-  }
-}
-
-.nc-split-content__secondary--top {
-  align-self: flex-start;
-}
-
-.nc-split-content__secondary + .nc-split-content__primary {
-  @include nc-spacing($inside: ('left': 'moderate'));
+  @include nc-split-content();
 }

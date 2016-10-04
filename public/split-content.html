@@ -6,81 +6,163 @@
   <div class="sg-main">
 
     <section id="split-content" class="sg-section">
-      <h2 class="sg-hdg">Split Content</h2>
-      <p>This pattern dictates a block of content where one portion (or column) is primary and takes up all available width, while secondary content is only as wide as it needs to be.</p>
-      <p>The spacing between columns follows the responsive <code class="sg-code">$spacing-sm</code> values as defined in <a href="#spacing">Spacing</a>.</p>
+      <h2 class="sg-hdg">Flexible Layout Pattern</h2>
+      <p>The Split Content pattern dictates a block of content where one portion (or column) is primary and takes up all available width, while secondary content is only as wide as it needs to be.</p>
+      <p>Spacing between column is usually responsive at <code class="sg-code">$bp-md</code> following the guidelines specified in the <a href="spacing.html">Spacing</a> size chart.</p>
 
-      <div class="nc-split-content">
-        <div class="nc-split-content__primary">
+      <h3 class="sg-subhdg">Examples</h3>
+      <p>Here's an example where the secondary content (purple box) is as wide as it needs to be to accommodate the button within, while the primary content (blue background) takes up the rest of the available space.</p>
+      <p>(Note: Borders are only shown for illustrative purposes.)</p>
+
+      <div class="nc-split-content sg-split-container">
+        <div class="nc-split-content__primary sg-split-primary">
           <p>Note how content in this area takes up all available space. Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola frankfurter picanha ham.</p>
         </div>
-        <div class="nc-split-content__secondary">
+        <div class="nc-split-content__secondary sg-split-secondary">
           <button class="nc-button">Good Ol' Button</button>
         </div>
       </div>
 
-<pre><code class="html">&lt;div class="nc-split-content"&gt;
-&lt;div class="nc-split-content__primary"&gt;
-[...]
-&lt;/div&gt;
-&lt;div class="nc-split-content__secondary"&gt;
-[...]
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+      <p>Secondary content can be placed before and/or after the primary content.</p>
 
-      <p>Secondary content can be placed before or after the primary content.</p>
+      <div class="nc-split-content sg-split-container">
+        <div class="nc-split-content__secondary sg-split-secondary">
+          <button class="nc-button">Good Ol' Button</button>
+        </div>
+        <div class="nc-split-content__primary sg-split-primary">
+          <p>Note how content in this area takes up all available space. Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola frankfurter picanha ham.</p>
+        </div>
+        <div class="nc-split-content__secondary sg-split-secondary">
+          <button class="nc-button nc-button--cta">Button</button>
+        </div>
+      </div>
+
+      <p>You can have as many secondary content pieces as you'd like.</p>
+
+      <div class="nc-split-content sg-split-container">
+        <div class="nc-split-content__secondary sg-split-secondary">
+          <p>Some text</p>
+        </div>
+        <div class="nc-split-content__primary sg-split-primary">
+          <p>Note how content in this area takes up all available space. Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola frankfurter picanha ham.</p>
+        </div>
+        <div class="nc-split-content__secondary sg-split-secondary">
+          <p>Another short snippet</p>
+        </div>
+        <div class="nc-split-content__secondary sg-split-secondary">
+          <button class="nc-button nc-button--cta">Button</button>
+        </div>
+      </div>
+
+      <p>The above exmaples show the default setup where all blocks are horizontally centered to the tallest column. However, you can also have specific columns be top-aligned and/or bottom-aligned-.</p>
+
+      <div class="nc-split-content sg-split-container">
+        <div class="nc-split-content__secondary nc-split-content__secondary--top sg-split-secondary">
+          <p>Some text</p>
+        </div>
+        <div class="nc-split-content__primary sg-split-primary">
+          <p>Note how content in this area takes up all available space. Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola frankfurter picanha ham.</p>
+        </div>
+        <div class="nc-split-content__secondary nc-split-content__secondary--top sg-split-secondary">
+          <p>Another short snippet</p>
+        </div>
+        <div class="nc-split-content__secondary nc-split-content__secondary--bottom sg-split-secondary">
+          <button class="nc-button nc-button--cta">Button</button>
+        </div>
+      </div>
+
+      <p>Finally, here's one of the examples above with highlights turned off.</p>
 
       <div class="nc-split-content">
         <div class="nc-split-content__secondary">
-          <button class="nc-button-outlined nc-button-outlined--void nc-button-outlined--small">Delete</button>
+          <p>Some text</p>
         </div>
         <div class="nc-split-content__primary">
           <p>Note how content in this area takes up all available space. Bacon ipsum dolor amet biltong jowl meatball venison rump pig. Short loin ribeye beef ribs brisket pig tail prosciutto short ribs bresaola frankfurter picanha ham.</p>
         </div>
         <div class="nc-split-content__secondary">
-          <button class="nc-button nc-button--cta">Buy</button>
-        </div>
-      </div>
-
-<pre><code class="html">&lt;div class="nc-split-content"&gt;
-&lt;div class="nc-split-content__secondary"&gt;
-[...]
-&lt;/div&gt;
-&lt;div class="nc-split-content__primary"&gt;
-[...]
-&lt;/div&gt;
-&lt;div class="nc-split-content__secondary"&gt;
-[...]
-&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-
-      <p>If you need content to be top-aligned, use the <code class="sg-code">nc-split-content__primary--top</code> or <code class="sg-code">nc-split-content__secondary--top</code> modifiers.</p>
-
-      <div class="nc-split-content">
-        <div class="nc-split-content__secondary nc-split-content__secondary--top">
-          <button class="nc-button-outlined nc-button-outlined--void nc-button-outlined--small">Delete</button>
-        </div>
-        <div class="nc-split-content__primary">
-          <p>Bacon ipsum dolor amet pariatur venison meatball, turducken dolore ball tip pork belly ribeye consequat fatback kielbasa ham hock leberkas. Quis non frankfurter fatback, doner in shankle excepteur ut. Kevin dolore short loin quis velit dolor laborum est frankfurter kielbasa voluptate. Doner boudin tempor leberkas beef ribs.</p>
-          <p>Beef sint et pariatur fatback. Adipisicing frankfurter ut in. Duis ipsum magna qui. Minim spare ribs hamburger, porchetta proident eiusmod et fugiat duis shankle deserunt dolore magna turkey.</p>
+          <p>Another short snippet</p>
         </div>
         <div class="nc-split-content__secondary">
-          <button class="nc-button nc-button--cta">Buy</button>
+          <button class="nc-button nc-button--cta">Button</button>
         </div>
       </div>
+    </section>
 
-<pre><code class="html">&lt;div class="nc-split-content"&gt;
-&lt;div class="nc-split-content__secondary <span class="sg__highlight-code">nc-split-content__secondary--top</span>"&gt;
-[...]
-&lt;/div&gt;
-&lt;div class="nc-split-content__primary"&gt;
-[...]
-&lt;/div&gt;
-&lt;div class="nc-split-content__secondary"&gt;
-[...]
-&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+    <section class="sg-section">
+      <h2 class="sg-hdg">Code Reference</h2>
+      <p>Nucleus provides a base <code class="sg-code">nc-split-content</code> series of classes to apply the above layout pattern.</p>
+
+      <table class="sg-params-table">
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">nc-split-content</code></td>
+          <td class="sg-params-table__cell">Apply to container for the block</td>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">nc-split-content__primary</code></td>
+          <td class="sg-params-table__cell">Apply to the column that should grow to take up all available space</td>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">nc-split-content__secondary</code></td>
+          <td class="sg-params-table__cell">Apply to columns that only need to be as wide as needed for their content</td>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">nc-split-content__[primary|secondary]--top</code></td>
+          <td class="sg-params-table__cell">Use to modifiy any particular column to be top-aligned</td>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">nc-split-content__[primary|secondary]--bottom</code></td>
+          <td class="sg-params-table__cell">Use to modifiy any particular column to be bottom-aligned</td>
+        </tr>
+      </table>
+
+      <p>In addition to these standard classes, Nucleus 1.0 now provides a mixin that allows you to customize the gutter between columns and whether this spacing should be responsive. The mixin will generate the child classes for you.</p>
+
+      <h3 class="sg-code-hdg">
+        <code class="sg-code-hdg__name">nc-split-content()</code>
+        <span class="sg-code-hdg__badge sg-mixin-badge">Mixin</span>
+        <span class="sg-code-hdg__source-file">mixins/_structure.scss</span>
+      </h3>
+      <p>Generates series of classes for split-content layout pattern.</p>
+      <table class="sg-params-table">
+        <tr>
+          <th class="sg-params-table__hdg">Parameters</th>
+          <th class="sg-params-table__hdg">Default</th>
+          <th class="sg-params-table__hdg">Description</th>
+          <th class="sg-params-table__hdg">Required</th>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$gutter</code></td>
+          <td class="sg-params-table__cell"><code class="sg-code">moderate</code></td>
+          <td class="sg-params-table__cell">Set amount of spacing between columns (refer to <a href="spacing.html">Spacing</a>)</td>
+          <td class="sg-params-table__cell sg-params-table__cell--check">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$responsive</code></td>
+          <td class="sg-params-table__cell"><code class="sg-code">true</code></td>
+          <td class="sg-params-table__cell">Should the size be responsive</td>
+          <td class="sg-params-table__cell sg-params-table__cell--check">&nbsp;</td>
+        </tr>
+      </table>
+
+<pre class="sg-code-block"><code class="scss">/* basic usage */
+.widget {
+  @include nc-split-content(cozy, false);
+}
+
+/* will generate these class names:
+    .widget {}
+    .widget__primary {}
+    .widget__secondary {}
+
+    .widget__primary--top,
+    .widget__secondary--top {}
+
+    .widget__primary--bottom,
+    .widget__secondary--bottom {}
+*/
+</code></pre>
+
 
     </section>
 
