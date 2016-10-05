@@ -39,6 +39,7 @@ $nc-tile-selected-style: 2px solid $nc-link-color;
 
 // Radius and shadows
 $nc-base-border-radius: 3px;
+$nc-circle-border-radius: 50%;
 $nc-shadow-x: 0;
 $nc-shadow-y: 1px;
 $nc-shadow-blur: 4px;
@@ -98,6 +99,7 @@ $nc-dropdown-chevron-width: 13px;
 $nc-dropdown-chevron-height: 8px;
 $nc-chkbox-size: 8px;
 $nc-chkbox-thickness: 3px;
+$nc-radio-label-offset: 10px;
 
 // Event Header
 $nc-event-header-tm-short: 35px;

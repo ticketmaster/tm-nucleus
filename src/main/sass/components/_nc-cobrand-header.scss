@@ -60,6 +60,7 @@
 
   @include nc-breakpoint($nc-bp-lg) {
     position: absolute;
+    top: 0;
     right: $nc-gutter-width / 2;
     width: 200px;
     height: $nc-event-header-height;

@@ -96,6 +96,10 @@
       "title": "Breadcrumbs",
       "url":   "breadcrumbs.html"
     },
+    "tabs": {
+      "title": "Tabs",
+      "url":   "tabs.html"
+    },
     "expando": {
       "title": "Expando",
       "url":   "expando.html"

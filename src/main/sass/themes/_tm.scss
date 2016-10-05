@@ -85,6 +85,14 @@ $nc-slider-range-active-bg-color: nc-color('pacific');
 $nc-slider-knob-bg-color: $nc-white;
 $nc-slider-knob-shadow-color: rgba($nc-black, 0.5);
 
+// Radio Icon
+$nc-radio-icon-bg-color: $nc-white;
+$nc-radio-icon-selected-color: $nc-link-color;
+
+// Tab Selections
+$nc-tab-item-color: nc-color(cascade);
+$nc-tab-item-selected-color: nc-color(cascade);
+
 // Misc
 $nc-list-item-hover-color: nc-color('pacific', 'muted');
 $nc-page-section-bg-color: nc-color('ridge');
