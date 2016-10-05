@@ -1,0 +1,45 @@
+/** @define radio; weak */
+
+.nc-radio {
+  @include nc-clearfix();
+
+  position: relative;
+}
+
+.nc-radio__input {
+  position: absolute;
+  opacity: 0;
+}
+
+.nc-radio__label {
+  display: inline-block;
+  padding-left: $nc-base-icon-size + $nc-radio-label-offset;
+  cursor: pointer;
+}
+
+.nc-radio__label::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: $nc-base-icon-size;
+  height: $nc-base-icon-size;
+  background-color: $nc-radio-icon-bg-color;
+  border: $nc-input-border-style;
+  border-radius: $nc-circle-border-radius;
+  content: '';
+}
+
+.nc-radio__input:checked ~ .nc-radio__label::after {
+  position: absolute;
+  top: $nc-base-icon-size / 2;
+  left: $nc-base-icon-size / 2;
+  display: block;
+  width: $nc-base-icon-size / 2;
+  height: $nc-base-icon-size / 2;
+  margin-top: -($nc-base-icon-size / 4);
+  margin-left: -($nc-base-icon-size / 4);
+  background-color: $nc-radio-icon-selected-color;
+  border-radius: $nc-circle-border-radius;
+  content: '';
+}

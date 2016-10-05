@@ -1,0 +1,9 @@
+/** @define radio-list; weak */
+
+.nc-radio-list {
+  @include nc-unstyled-list();
+}
+
+.nc-radio-list__item {
+  @include nc-spacing($outside: (top: compact));
+}

@@ -1,0 +1,44 @@
+/** @define tab-selection; weak */
+
+$nc-tab-item-spacing: (
+  top: compact,
+  bottom: compact,
+  left: normal,
+  right: normal
+);
+
+.nc-tab-selection {
+  @include nc-unstyled-list();
+
+  display: inline-block;
+  border: $nc-input-border-style;
+  border-radius: $nc-base-border-radius;
+}
+
+.nc-tab-selection__item {
+  @include nc-type-scale($set: centi, $responsive: false);
+  @include nc-spacing($inside: compact);
+
+  display: inline-block;
+  color: $nc-tab-item-color;
+  cursor: pointer;
+  border-left: $nc-input-border-style;
+
+  @include nc-breakpoint($nc-bp-sm) {
+    @include nc-type-scale($set: uno, $responsive: false);
+    @include nc-spacing($inside: $nc-tab-item-spacing);
+  }
+
+  @include nc-breakpoint($nc-bp-md) {
+    @include nc-type-scale($set: giga, $responsive: false);
+  }
+
+  &:first-child {
+    border-left: 0;
+  }
+}
+
+.nc-tab-selection__item--selected {
+  font-weight: bold;
+  color: $nc-tab-item-selected-color;
+}
