@@ -1,7 +1,7 @@
 /** @define button-aux; weak */
 
 .nc-button-aux {
-  @include nc-btn($nc-primary-aux-button-color, $hoverstate: true);
+  @include nc-btn(nc-theme('primary-aux-button-color'), $hoverstate: true);
 
   text-transform: none;
   border-radius: $nc-button-height / 2;
@@ -12,7 +12,7 @@
 }
 
 .nc-button-aux--secondary {
-  @include nc-btn-color($nc-secondary-button-color, $nc-white, $hoverstate: true);
+  @include nc-btn-color(nc-theme('secondary-button-color'), $nc-white, $hoverstate: true);
 }
 
 .nc-button-aux--full {

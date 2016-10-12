@@ -5,11 +5,11 @@
 }
 
 .nc-toggle-switch__button--active {
-  @include nc-toggle-switch-color($nc-toggle-switch-on-bg-color);
+  @include nc-toggle-switch-color(nc-theme('toggle-switch-on-bg-color'));
 }
 
 .nc-toggle-switch__button--active-resale {
-  @include nc-toggle-switch-color($nc-resale-color);
+  @include nc-toggle-switch-color(nc-theme('resale-color'));
 }
 
 // Toggle Switch Indicator Element

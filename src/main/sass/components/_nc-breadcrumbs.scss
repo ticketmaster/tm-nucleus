@@ -31,7 +31,7 @@ $nc-breadcrumbs-chevron-size: ($nc-breadcrumbs-width + $nc-breadcrumbs-border-wi
     height: $nc-breadcrumbs-chevron-dim;
     margin-right: $nc-breadcrumbs-spacing;
     vertical-align: text-bottom;
-    border-color: $nc-input-border-color;
+    border-color: nc-theme('input-border-color');
     border-style: solid;
     border-width: $nc-breadcrumbs-chevron-border-width $nc-breadcrumbs-chevron-border-width 0 0;
     content: '';
@@ -58,9 +58,9 @@ $nc-breadcrumbs-chevron-size: ($nc-breadcrumbs-width + $nc-breadcrumbs-border-wi
 .nc-breadcrumbs__brand-logo {
   width: $nc-breadcrumbs-logo-width;
   height: $nc-breadcrumbs-logo-height;
-  fill: $nc-breadcrumbs-logo-color;
+  fill: nc-theme('breadcrumbs-logo-color');
 }
 
 .nc-breadcrumbs__link {
-  color: $nc-breadcrumbs-link-color;
+  color: nc-theme('breadcrumbs-link-color');
 }

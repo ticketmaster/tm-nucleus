@@ -1,5 +1,5 @@
 // get color from palette; default shade is 'base'
-@function nc-color($name, $shade: 'base', $map: $nc-palette) {
+@function nc-color($name, $shade: 'base', $map: $nc-current-palette) {
   @return map-get(map-get($map, $name), $shade);
 }
 
@@ -12,12 +12,12 @@
   @return mix(#fff, $color, $percent);
 }
 
-@function nc-generate-shades($color, $shades: $nc-shades) {
+@function nc-generate-shades($colors, $color, $shades: $nc-shades) {
   $map: ();
   $val: '';
   $shade-name: map-keys($shades);
 
-  $base: map-get($nc-colors, $color);
+  $base: map-get($colors, $color);
   $map: map-merge($map, ('base': $base));
 
   @each $key in $shade-name {
@@ -38,18 +38,16 @@
 
 
 /* stylelint-disable color-no-hex */
-/* defining color palette */
+// defining color palette
 $nc-black: #000;
 $nc-white: #fff;
 
-$nc-colors: (
+$nc-base-colors: (
   'sierra':     #475058,
   'cascade':    #768692,
   'rocky':      #dfe4e7,
   'ridge':      #f6f7f9,
   'pacific':    #009cde,
-  'yosemite':   #19ab20,
-  'helen':      #f00,
   'malibu':     #fa3,
   'catalina':   #d0006f
 );
@@ -60,3 +58,20 @@ $nc-shades: (
   'muted':      75%,
   'background': 87.5%
 );
+
+$nc-tm-colors: map-merge(
+  $nc-base-colors, (
+    'yosemite':   #19ab20,
+    'helen':      #f00
+  )
+);
+
+$nc-ln-colors: map-merge(
+  $nc-base-colors, (
+    'smoky':      #576671,
+    'rainier':    #e11d39,
+    'tahoe':      #2cb3ad,
+    'shasta':     #2088b3
+  )
+);
+/* stylelint-enable color-no-hex */

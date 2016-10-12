@@ -1,11 +1,55 @@
 /** @define polling-checkmark; weak */
 
+@keyframes ui-spinner-rotate-left {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  75% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ui-spinner-rotate-right {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(180deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  75% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .nc-polling-checkmark {
   position: relative;
   width: $nc-polling-size;
   height: $nc-polling-size;
   overflow: hidden;
-  background: none repeat scroll 0 0 $nc-polling-circle-unfilled-color;
+  background: none repeat scroll 0 0 nc-theme('polling-circle-unfilled-color');
   border-radius: 50%;
 }
 

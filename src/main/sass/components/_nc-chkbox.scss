@@ -20,7 +20,7 @@ $nc-chkbox-label-offset: 7px;
 }
 
 .nc-chkbox__input:checked {
-  background-color: $nc-link-color;
+  background-color: nc-theme('link-color');
   border: $nc-focused-border-style;
 }
 
@@ -30,7 +30,7 @@ $nc-chkbox-label-offset: 7px;
   display: block;
   width: $nc-chkbox-size;
   height: $nc-chkbox-size * 2;
-  background-color: $nc-link-color;
+  background-color: nc-theme('link-color');
   border: solid $nc-white;
   border-width: 0 $nc-chkbox-thickness $nc-chkbox-thickness 0;
   content: '';

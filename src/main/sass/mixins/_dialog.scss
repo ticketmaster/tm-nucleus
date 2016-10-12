@@ -24,7 +24,7 @@
   vertical-align: middle;
 }
 
-@mixin nc-dialog-content($color: $nc-alt-text-color, $pad: 'compact') {
+@mixin nc-dialog-content($color: nc-theme('alt-text-color'), $pad: 'compact') {
   @include nc-type-scale('centi');
   @include nc-spacing($inside: $pad);
 

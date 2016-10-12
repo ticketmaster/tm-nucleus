@@ -22,7 +22,7 @@
   }
 
   font-weight: normal;
-  color: $nc-alt-text-color;
+  color: nc-theme('alt-text-color');
 }
 
 
@@ -40,7 +40,7 @@
 
 
 // possibly deprecate
-@mixin nc-hdg-text($set, $color: $nc-text-color, $mb: $nc-header-margin) {
+@mixin nc-hdg-text($set, $color: nc-theme('text-color'), $mb: $nc-header-margin) {
   $name: nc-remap-type-size($set);
 
   @include nc-type-scale($name);

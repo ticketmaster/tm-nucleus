@@ -6,7 +6,7 @@
 }
 
 .nc-dropdown__icon-chevron {
-  @include nc-icon($nc-icon-color, $nc-dropdown-chevron-width, $nc-dropdown-chevron-height);
+  @include nc-icon(nc-theme('icon-color'), $nc-dropdown-chevron-width, $nc-dropdown-chevron-height);
 
   position: absolute;
   right: 15px;
@@ -23,25 +23,25 @@
   appearance: none;
 
   &:-moz-focusring {
-    color: $nc-transparent-color;
-    text-shadow: 0 0 0 $nc-text-color;
+    color: nc-theme('transparent-color');
+    text-shadow: 0 0 0 nc-theme('text-color');
   }
 
   &:focus ~ .nc-dropdown__icon-chevron,
   &:active ~ .nc-dropdown__icon-chevron {
-    fill: $nc-primary-button-color;
+    fill: nc-theme('primary-button-color');
   }
 
   &:focus ~ .nc-dropdown__icon-chevron.nc-dropdown__icon-chevron--error,
   &:active ~ .nc-dropdown__icon-chevron.nc-dropdown__icon-chevron--error {
-    fill: $nc-alert-color;
+    fill: nc-theme('alert-color');
   }
 }
 
 .nc-dropdown__select--error {
-  border-color: $nc-alert-color;
+  border-color: nc-theme('alert-color');
 }
 
 .nc-dropdown__icon-chevron--error {
-  fill: $nc-alert-color;
+  fill: nc-theme('alert-color');
 }

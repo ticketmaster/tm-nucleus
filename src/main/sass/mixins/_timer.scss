@@ -2,7 +2,7 @@
   position: absolute;
   width: 50%;
   height: 100%;
-  background-color: $nc-transparent-color;
+  background-color: nc-theme('transparent-color');
   border: $nc-timer-border-thickness solid $color;
   transform-origin: 100% 50%;
 }

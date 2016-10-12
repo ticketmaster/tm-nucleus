@@ -38,7 +38,7 @@ $nc-slider-range-top-large: ($nc-slider-handle-size-large - $nc-slider-range-hei
 
   position: absolute;
   width: 0;
-  background-color: $nc-slider-range-active-bg-color;
+  background-color: nc-theme('slider-range-active-bg-color');
 }
 
 .nc-slider__handle {
@@ -48,9 +48,9 @@ $nc-slider-range-top-large: ($nc-slider-handle-size-large - $nc-slider-range-hei
   height: $nc-slider-handle-size;
   margin-left: -($nc-slider-handle-size / 2);
   cursor: pointer;
-  background: $nc-slider-knob-bg-color;
+  background: nc-theme('slider-knob-bg-color');
   border-radius: $nc-slider-handle-size / 2;
-  box-shadow: 0 1px 4px $nc-slider-knob-shadow-color;
+  box-shadow: 0 1px 4px nc-theme('slider-knob-shadow-color');
 
   @include nc-breakpoint($min: $nc-bp-md) {
     width: $nc-slider-handle-size-large;

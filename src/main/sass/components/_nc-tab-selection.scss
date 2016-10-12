@@ -20,7 +20,7 @@ $nc-tab-item-spacing: (
   @include nc-spacing($inside: compact);
 
   display: inline-block;
-  color: $nc-tab-item-color;
+  color: nc-theme('tab-item-color');
   cursor: pointer;
   border-left: $nc-input-border-style;
 
@@ -40,5 +40,5 @@ $nc-tab-item-spacing: (
 
 .nc-tab-selection__item--selected {
   font-weight: bold;
-  color: $nc-tab-item-selected-color;
+  color: nc-theme('tab-item-selected-color');
 }

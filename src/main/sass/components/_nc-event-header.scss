@@ -15,6 +15,28 @@ $nc-event-text-timer: calc(100vw - (#{$nc-supportive-timer} * 2) - #{$nc-scrollb
 $nc-event-text-timer-ie: calc(100vw - (#{$nc-supportive-timer} * 2 + 12px) - #{$nc-scrollbar-width});
 $nc-event-text-cobrand: calc(100vw - (#{$nc-supportive-cobrand} * 2) - #{$nc-scrollbar-width});
 
+@keyframes text-rotation {
+  0% {
+    top: 0;
+  }
+
+  40% {
+    top: 0;
+  }
+
+  50% {
+    top: -$nc-rotator-height;
+  }
+
+  90% {
+    top: -$nc-rotator-height;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
 .nc-event-header {
   @include nc-type-scale('centi');
 
@@ -24,9 +46,9 @@ $nc-event-text-cobrand: calc(100vw - (#{$nc-supportive-cobrand} * 2) - #{$nc-scr
   min-width: $nc-bp-xs;
   min-height: $nc-event-header-height;
   padding: 1.8rem 0;
-  color: $nc-header-text-color;
+  color: nc-theme('header-text-color');
   text-align: center;
-  background-color: $nc-header-color;
+  background-color: nc-theme('header-color');
   box-shadow: 0 1px 0 rgba($nc-black, 0.25);
 
   @include nc-breakpoint($nc-bp-md) {
@@ -57,7 +79,7 @@ $nc-event-text-cobrand: calc(100vw - (#{$nc-supportive-cobrand} * 2) - #{$nc-scr
   width: $nc-event-text-sm;
   margin: 0 auto;
   font-weight: normal;
-  color: $nc-header-text-color;
+  color: nc-theme('header-text-color');
 
   @include nc-breakpoint($nc-bp-md) {
     width: $nc-event-text-md;
@@ -180,11 +202,11 @@ $nc-event-text-cobrand: calc(100vw - (#{$nc-supportive-cobrand} * 2) - #{$nc-scr
 }
 
 .nc-event-header__title-link {
-  color: $nc-header-text-color;
+  color: nc-theme('header-text-color');
 }
 
 .nc-event-header__date-venue {
-  color: $nc-header-secondary-text-color;
+  color: nc-theme('header-secondary-text-color');
   white-space: nowrap;
 
   @include nc-breakpoint($max: $nc-bp-md - 1) {

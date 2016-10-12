@@ -1,0 +1,73 @@
+@function nc-theme($name) {
+  @return map-get($nc-current-theme, $name);
+}
+
+@function nc-theme-add($map) {
+  @return map-merge($nc-current-theme, $map);
+}
+
+$nc-base-theme: (
+  'ada-icon-color': nc-color('pacific', $map: $nc-base-palette),
+  'alt-text-color': nc-color('cascade', $map: $nc-base-palette),
+  'base-border-color': nc-color('rocky', $map: $nc-base-palette),
+  'breadcrumbs-link-color': nc-color('cascade', $map: $nc-base-palette),
+  'breadcrumbs-logo-color': nc-color('cascade', $map: $nc-base-palette),
+  'caret-legacy-color': nc-color('cascade', 'light', $map: $nc-base-palette),
+  'caution-color': nc-color('malibu', $map: $nc-base-palette),
+  'cobrand-border-color': nc-color('rocky', $map: $nc-base-palette),
+  'header-text-color': $nc-white,
+  'icon-color': nc-color('cascade', $map: $nc-base-palette),
+  'info-border-color': nc-color('sierra', $map: $nc-base-palette),
+  'info-color': nc-color('sierra', $map: $nc-base-palette),
+  'input-bg-color': $nc-white,
+  'input-border-color': nc-color('cascade', $map: $nc-base-palette),
+  'label-color': nc-color('cascade', $map: $nc-base-palette),
+  'label-dark-color': nc-color('cascade', 'dark', $map: $nc-base-palette),
+  'label-light-color': $nc-white,
+  'overlay-color': rgba($nc-black, 0.75),
+  'page-section-bg-color': nc-color('ridge', $map: $nc-base-palette),
+  'perforated-shadow-color': rgba($nc-black, 0.25),
+  'placeholder-text-color': nc-color('cascade', 'light', $map: $nc-base-palette),
+  'polling-circle-unfilled-color': nc-color('ridge', $map: $nc-base-palette),
+  'polling-refresh-bg-color': nc-color('sierra', $map: $nc-base-palette),
+  'radio-icon-bg-color': $nc-white,
+  'resale-color': nc-color('catalina', $map: $nc-base-palette),
+  'shadow-color': rgba($nc-black, 0.5),
+  'slider-knob-bg-color': $nc-white,
+  'slider-knob-shadow-color': rgba($nc-black, 0.5),
+  'slider-range-bg-color': nc-color('rocky', $map: $nc-base-palette),
+  'slider-range-border-color': nc-color('sierra', $map: $nc-base-palette),
+  'slider-range-shadow-color': rgba($nc-black, 0.25),
+  'tab-item-color': nc-color('cascade', $map: $nc-base-palette),
+  'tab-item-selected-color': nc-color('sierra', $map: $nc-base-palette),
+  'text-color': nc-color('sierra', $map: $nc-base-palette),
+  'toggle-switch-indicator-bg-color': $nc-white,
+  'toggle-switch-off-bg-color': nc-color('cascade', 'light', $map: $nc-base-palette),
+  'tooltip-bg-color': $nc-white,
+  'transparent-color': rgba($nc-white, 0),
+  'verified-icon-circle-color': nc-color('pacific', $map: $nc-base-palette),
+  'verified-icon-ticket-color': nc-color('sierra', $map: $nc-base-palette)
+);
+
+// bring in themes
+@import 'tm';
+@import 'ln';
+
+// set active theme to TM by default
+$nc-current-palette: $nc-tm-palette;
+$nc-current-theme: $nc-tm-theme;
+
+// check for user-specified theme
+@if global-variable-exists(nc-config) {
+  @if (map-has-key($nc-config, 'theme')) {
+    $theme: map-get($nc-config, 'theme');
+
+    @if ($theme == 'ln') {
+      $nc-current-palette: $nc-ln-palette;
+      $nc-current-theme: $nc-ln-theme;
+    }
+    @else if ($theme != 'tm') {
+      @error 'Invalid theme specified';
+    }
+  }
+}

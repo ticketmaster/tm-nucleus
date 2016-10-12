@@ -5,14 +5,14 @@
   font-family: $nc-base-font-family;
   -webkit-font-smoothing: antialiased;
   line-height: $nc-base-line-height;
-  color: $nc-text-color;
+  color: nc-theme('text-color');
   background-color: $nc-white;
 }
 
 // use wrapper to set background color for a particular section of the page
 .nc-page__wrapper {
   clear: both;
-  background-color: $nc-page-section-bg-color;
+  background-color: nc-theme('page-section-bg-color');
 }
 
 .nc-page__wrapper-footer {

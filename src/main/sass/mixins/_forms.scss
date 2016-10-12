@@ -3,14 +3,14 @@
 
   width: 100%;
   height: $nc-input-height;
-  color: $nc-text-color;
-  background: $nc-input-background-color;
+  color: nc-theme('text-color');
+  background: nc-theme('input-bg-color');
   border: $nc-input-border-style;
   border-radius: 3px;
 
   &:focus,
   &:active {
-    border-color: $nc-input-active-border-color;
+    border-color: nc-theme('input-active-border-color');
     outline: none;
   }
 }

@@ -5,7 +5,7 @@
 }
 
 .nc-success-dialog__header {
-  background-color: $nc-success-color;
+  background-color: nc-theme('success-color');
 }
 
 .nc-success-dialog__title {

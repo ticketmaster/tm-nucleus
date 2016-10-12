@@ -1,5 +1,25 @@
 /* stylelint-disable selector-no-type, selector-no-universal */
 // Baseline for page
+$nc-font-path: '../font';
+
+@if global-variable-exists(nc-config) {
+  @if (map-has-key($nc-config, 'font-path')) {
+    $nc-font-path: map-get($nc-config, 'font-path');
+  }
+}
+
+// TM Sans font
+@font-face {
+  font-family: 'TM Sans';
+  src: url('#{$nc-font-path}/TMSans-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'TM Sans';
+  font-weight: bold;
+  src: url('#{$nc-font-path}/TMSans-Bold.woff') format('woff');
+}
+
 *,
 *::before,
 *::after {
@@ -8,7 +28,7 @@
 
 html {
   font-size: $nc-base-font-size;
-  color: $nc-text-color;
+  color: nc-theme('text-color');
 }
 
 body {
@@ -16,7 +36,7 @@ body {
   -webkit-font-smoothing: antialiased;
   line-height: $nc-base-line-height;
   letter-spacing: $nc-base-letter-spacing;
-  color: $nc-text-color;
+  color: nc-theme('text-color');
 
   background-color: $nc-white;
 }
@@ -46,13 +66,13 @@ strong {
 }
 
 a {
-  color: $nc-link-color;
+  color: nc-theme('link-color');
   text-decoration: none;
 
   &:active,
   &:hover,
   &:focus {
-    color: $nc-link-hover-color;
+    color: nc-theme('link-hover-color');
     text-decoration: underline;
   }
 

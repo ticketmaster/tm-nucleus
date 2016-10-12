@@ -26,16 +26,16 @@ $nc-spacing-map: ();
 
 
 // Borders
-$nc-base-border-style: 1px solid $nc-base-border-color;
-$nc-input-border-style: 1px solid $nc-input-border-color;
+$nc-base-border-style: 1px solid nc-theme('base-border-color');
+$nc-input-border-style: 1px solid nc-theme('input-border-color');
 $nc-title-icon-border-style: 1px solid $nc-white;
-$nc-focused-border-style: 1px solid $nc-link-color;
-$nc-success-border-style: 1px solid $nc-success-color;
-$nc-caution-border-style: 1px solid $nc-caution-dialog-color;
-$nc-alert-border-style: 1px solid $nc-alert-color;
-$nc-info-border-style: 1px solid $nc-info-border-color;
-$nc-outline-style: 3px solid $nc-outline-color;
-$nc-tile-selected-style: 2px solid $nc-link-color;
+$nc-focused-border-style: 1px solid nc-theme('link-color');
+$nc-success-border-style: 1px solid nc-theme('success-color');
+$nc-caution-border-style: 1px solid nc-theme('caution-dialog-color');
+$nc-alert-border-style: 1px solid nc-theme('alert-color');
+$nc-info-border-style: 1px solid nc-theme('info-border-color');
+$nc-outline-style: 3px solid nc-theme('outline-color');
+$nc-tile-selected-style: 2px solid nc-theme('link-color');
 
 // Radius and shadows
 $nc-base-border-radius: 3px;
@@ -44,16 +44,16 @@ $nc-shadow-x: 0;
 $nc-shadow-y: 1px;
 $nc-shadow-blur: 4px;
 $nc-shadow-spread: 1px;
-$nc-box-shadow-style: $nc-shadow-x $nc-shadow-y $nc-shadow-blur $nc-shadow-spread $nc-shadow-color;
-$nc-inner-shadow-style: inset 0 1px 3px 0 $nc-shadow-color;
+$nc-box-shadow-style: $nc-shadow-x $nc-shadow-y $nc-shadow-blur $nc-shadow-spread nc-theme('shadow-color');
+$nc-inner-shadow-style: inset 0 1px 3px 0 nc-theme('shadow-color');
 
 // Perforated edge shadow
 $nc-perforated-shadow-x: 0;
 $nc-perforated-shadow-y: 1px;
 $nc-perforated-shadow-blur: 10px;
 $nc-perforated-shadow-spread: 2px;
-$nc-perforated-box-shadow-style: $nc-perforated-shadow-x $nc-perforated-shadow-y $nc-perforated-shadow-blur $nc-perforated-shadow-spread $nc-perforated-shadow-color;
-$nc-perforated-inner-shadow-style: inset 0 1px 1px 0 $nc-shadow-color;
+$nc-perforated-box-shadow-style: $nc-perforated-shadow-x $nc-perforated-shadow-y $nc-perforated-shadow-blur $nc-perforated-shadow-spread nc-theme('perforated-shadow-color');
+$nc-perforated-inner-shadow-style: inset 0 1px 1px 0 nc-theme('shadow-color');
 
 // Buttons
 $nc-button-height: 36px;
@@ -126,6 +126,27 @@ $nc-breadcrumbs-chevron-border-width: 0.1em;
 // Modal Dialogs
 $nc-modal-content-height: 60vh;
 
+// Animation
+$nc-expando-animation-open: all 0.5s ease-out 0s;
+$nc-expando-animation: all 0.3s ease-in 0s;
+
+// SVG
+$nc-svgs: (
+  'pedge': 'data:image/svg+xml,%3Csvg%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%22-294%20392%2011%206%22%3E%3Cstyle%3E.st0%7Bfill%3A%23FFFFFF%3B%7D%20.st1%7Bfill%3Anone%3B%7D%3C%2Fstyle%3E%3Ctitle%3ERectangle%20255%3C%2Ftitle%3E%3Cg%20id%3D%22desktop%22%3E%3Cg%20id%3D%22receipt-copy-3%22%3E%3Cg%20id%3D%22Rectangle-255%22%3E%3Cpath%20id%3D%22path-1%22%20class%3D%22st0%22%20d%3D%22M-304%20398h12.1c0-2.5%201.2-3.7%203.5-3.7%202.2%200%203.5%201.2%203.5%203.7h12v-6h-31v6z%22%2F%3E%3Cpath%20id%3D%22path-1_1_%22%20class%3D%22st1%22%20d%3D%22M-304%20398h12.1c0-2.5%201.2-3.7%203.5-3.7%202.2%200%203.5%201.2%203.5%203.7h12v-6h-31v6z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E'
+);
+
+// z-indexes
+$nc-z-indexes: (
+  'timer-filler': 100,
+  'timer-spinner': 200,
+  'timer-mask': 200,
+  'timer-indicator': 220,
+  'arrow': 1,
+  'event-footer': 50,
+  'polling': 1,
+  'hide': -1,
+  'above-page': 1
+);
 
 
 // ************************************************************************** //

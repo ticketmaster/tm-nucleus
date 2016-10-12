@@ -1,13 +1,5 @@
-// third-party dependencies
-@import '../vendors/normalize/normalize';
-
 // import order matters!
 @import 'helpers';
 @import 'breakpoints';
-@import 'config';
+@import 'variables';
 @import 'typography';
-@import 'animation';
-@import 'maps';
-
-// baseline html definitions
-@import 'global';

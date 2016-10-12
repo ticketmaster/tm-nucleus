@@ -1,110 +1,28 @@
 // TM Color Palette
-// scss-lint:disable ColorVariable
-
-@import 'shared';
-
-$nc-palette: ();
-
-@each $key in map-keys($nc-colors) {
-  $nc-palette: map-merge($nc-palette, ($key: nc-generate-shades($key)));
-}
-
-// Colors
-// Typography
-$nc-text-color: nc-color('sierra');
-$nc-alt-text-color: nc-color('cascade');
-$nc-link-color: nc-color('pacific');
-$nc-link-hover-color: nc-color('pacific', 'dark');
-$nc-placeholder-text-color: nc-color('cascade', 'light');
-
-// Buttons
-$nc-primary-button-color: nc-color('pacific');
-$nc-primary-aux-button-color: nc-color('pacific');
-$nc-secondary-button-color: nc-color('cascade');
-$nc-cta-button-color: nc-color('yosemite');
-
-// Qty Picker
-$nc-qty-increment-button-color: nc-color('pacific');
-$nc-qty-increment-button-hover-color: nc-color('pacific', 'dark');
-$nc-qty-increment-button-disabled-color: nc-color('pacific', 'muted');
-$nc-qty-decrement-button-color: nc-color('cascade');
-$nc-qty-decrement-button-hover-color: nc-color('cascade', 'dark');
-
-// Event Header
-$nc-header-color: nc-color('pacific');
-$nc-header-text-color: $nc-white;
-$nc-header-secondary-text-color: nc-color('pacific', 'muted');
-
-// Borders
-$nc-base-border-color: nc-color('rocky');
-$nc-input-border-color: nc-color('cascade');
-$nc-input-active-border-color: nc-color('pacific');
-$nc-cobrand-border-color: nc-color('rocky');
-$nc-info-border-color: nc-color('sierra');
-
-// Dialogs
-$nc-caution-dialog-color: nc-color('malibu');
-
-// Utility
-$nc-resale-color: nc-color('catalina');
-$nc-success-color: nc-color('yosemite');
-$nc-alert-color: nc-color('helen');
-$nc-caution-color: nc-color('malibu');
-$nc-info-color: nc-color('sierra');
-$nc-label-color: nc-color('cascade');
-$nc-label-dark-color: nc-color('cascade', 'dark');
-$nc-label-light-color: $nc-white;
-$nc-modal-color: nc-color('pacific');
-$nc-transparent-color: rgba($nc-white, 0);
-$nc-overlay-color: rgba($nc-black, 0.75);
-$nc-outline-color: nc-color('pacific', 'muted');
-$nc-shadow-color: rgba($nc-black, 0.5);
-$nc-perforated-shadow-color: rgba($nc-black, 0.25);
-
-// Icons
-$nc-icon-color: nc-color('cascade');
-$nc-ada-icon-color: nc-color('pacific');
-$nc-verified-icon-ticket-color: nc-color('sierra');
-$nc-verified-icon-circle-color: nc-color('pacific');
-$nc-polling-circle-unfilled-color: nc-color('ridge');
-
-// Breadcrumbs
-$nc-breadcrumbs-logo-color: nc-color('cascade');
-$nc-breadcrumbs-link-color: nc-color('cascade');
-
-// Toggle Switch
-$nc-toggle-switch-indicator-bg-color: $nc-white;
-$nc-toggle-switch-off-bg-color: nc-color('cascade', 'light');
-$nc-toggle-switch-on-bg-color: nc-color('pacific');
-
-// Slider
-$nc-slider-range-shadow-color: rgba($nc-black, 0.25);
-$nc-slider-range-border-color: nc-color('sierra');
-$nc-slider-range-bg-color: nc-color('rocky');
-$nc-slider-range-active-bg-color: nc-color('pacific');
-$nc-slider-knob-bg-color: $nc-white;
-$nc-slider-knob-shadow-color: rgba($nc-black, 0.5);
-
-// Radio Icon
-$nc-radio-icon-bg-color: $nc-white;
-$nc-radio-icon-selected-color: $nc-link-color;
-
-// Tab Selections
-$nc-tab-item-color: nc-color(cascade);
-$nc-tab-item-selected-color: nc-color(cascade);
-
-// Misc
-$nc-list-item-hover-color: nc-color('pacific', 'muted');
-$nc-page-section-bg-color: nc-color('ridge');
-$nc-caret-legacy-color: nc-color('cascade', 'light');
-$nc-polling-refresh-bg-color: nc-color('sierra');
-$nc-tooltip-color: $nc-white;
-$nc-input-background-color: $nc-white;
-
-// TM Gradient
-/* stylelint-disable color-no-hex */
-// exception for the brand gradient hex, which is not used anywhere else
-$nc-gradient-start: #575dc6;
-/* stylelint-enable color-no-hex */
-$nc-gradient-end: nc-color('pacific');
-$nc-tm-gradient: linear-gradient(to right, $nc-gradient-start, $nc-gradient-end);
+$nc-tm-theme: map-merge(
+  $nc-base-theme, (
+    'link-color': nc-color('pacific', $map: $nc-tm-palette),
+    'link-hover-color': nc-color('pacific', 'dark', $map: $nc-tm-palette),
+    'primary-button-color': nc-color('pacific', $map: $nc-tm-palette),
+    'primary-aux-button-color': nc-color('pacific', $map: $nc-tm-palette),
+    'secondary-button-color': nc-color('cascade', $map: $nc-tm-palette),
+    'cta-button-color': nc-color('yosemite', $map: $nc-tm-palette),
+    'qty-increment-button-color': nc-color('pacific', $map: $nc-tm-palette),
+    'qty-increment-button-hover-color': nc-color('pacific', 'dark', $map: $nc-tm-palette),
+    'qty-increment-disabled-button-color': nc-color('pacific', 'muted', $map: $nc-tm-palette),
+    'qty-decrement-button-color': nc-color('cascade', $map: $nc-tm-palette),
+    'qty-decrement-button-hover-color': nc-color('cascade', 'dark', $map: $nc-tm-palette),
+    'header-color': nc-color('pacific', $map: $nc-tm-palette),
+    'header-secondary-text-color': nc-color('pacific', 'muted', $map: $nc-tm-palette),
+    'input-active-border-color': nc-color('pacific', $map: $nc-tm-palette),
+    'caution-dialog-color': nc-color('malibu', $map: $nc-tm-palette),
+    'success-color': nc-color('yosemite', $map: $nc-tm-palette),
+    'alert-color': nc-color('helen', $map: $nc-tm-palette),
+    'modal-color': nc-color('pacific', $map: $nc-tm-palette),
+    'outline-color': nc-color('pacific', 'muted', $map: $nc-tm-palette),
+    'toggle-switch-on-bg-color': nc-color('pacific', $map: $nc-tm-palette),
+    'slider-range-active-bg-color': nc-color('pacific', $map: $nc-tm-palette),
+    'radio-icon-selected-color': nc-color('pacific', $map: $nc-tm-palette),
+    'list-item-hover-color': nc-color('pacific', 'muted', $map: $nc-tm-palette)
+  )
+);

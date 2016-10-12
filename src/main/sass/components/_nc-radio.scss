@@ -24,7 +24,7 @@
   display: inline-block;
   width: $nc-base-icon-size;
   height: $nc-base-icon-size;
-  background-color: $nc-radio-icon-bg-color;
+  background-color: nc-theme('radio-icon-bg-color');
   border: $nc-input-border-style;
   border-radius: $nc-circle-border-radius;
   content: '';
@@ -39,7 +39,7 @@
   height: $nc-base-icon-size / 2;
   margin-top: -($nc-base-icon-size / 4);
   margin-left: -($nc-base-icon-size / 4);
-  background-color: $nc-radio-icon-selected-color;
+  background-color: nc-theme('radio-icon-selected-color');
   border-radius: $nc-circle-border-radius;
   content: '';
 }

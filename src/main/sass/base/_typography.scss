@@ -1,16 +1,3 @@
-// TM Sans font
-@font-face {
-  font-family: 'TM Sans';
-  src: url('../font/TMSans-Regular.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'TM Sans';
-  font-weight: bold;
-  src: url('../font/TMSans-Bold.woff') format('woff');
-}
-
-
 /* stylelint-disable value-keyword-case */
 // allow font names to be capitalized
 $nc-tm-sans: 'TM Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;

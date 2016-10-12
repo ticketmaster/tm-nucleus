@@ -1,10 +1,16 @@
-@import 'themes/tm';
-@import 'base/all';
-@import 'mixins/all';
+/* stylelint-disable */
+// this is just for testing
+
+$nc-config: (
+  'font-path': 'blah/bl223ah',
+  'theme': 'ln'
+);
+
+// theme
+@import 'nucleus-core';
+
+$nc-current-theme: nc-theme-add(('something': #123456));
 
 .nc-test {
-  // @include nc-spacing($inside: $map);
-  @include nc-spacing($outside: 0);
-
-  font-size: nc-rem(20px);
+  color: nc-theme('something');
 }

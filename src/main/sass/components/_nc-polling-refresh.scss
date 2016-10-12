@@ -1,5 +1,15 @@
 /** @define polling-refresh; weak */
 
+@keyframes wipe {
+  0% {
+    height: 100%;
+  }
+
+  100% {
+    height: 0%;
+  }
+}
+
 .nc-polling-refresh {
   @include nc-polling-refresh();
 }

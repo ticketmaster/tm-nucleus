@@ -5,7 +5,7 @@
 }
 
 .nc-info-dialog__header {
-  background-color: $nc-info-color;
+  background-color: nc-theme('info-color');
 }
 
 .nc-info-dialog__title {

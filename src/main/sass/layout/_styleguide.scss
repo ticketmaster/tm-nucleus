@@ -39,7 +39,7 @@ $stacking-order: (
   border-radius: $border-radius;
   font-family: $nc-monospace;
   font-weight: normal;
-  color: $nc-text-color;
+  color: nc-theme('text-color');
   background-color: $code-bg-color;
 }
 
@@ -159,7 +159,7 @@ $stacking-order: (
   @include nc-spacing($inside: $page-margins);
 
   height: $header-height;
-  background: $nc-tm-gradient;
+  background: linear-gradient(to right, #575dc6, nc-color('pacific'));
   z-index: nc-z('header', $stacking-order);
 
   @include nc-breakpoint($nc-bp-md) {
@@ -180,7 +180,7 @@ $stacking-order: (
 }
 
 .sg-icon-check {
-  fill: nc-color('yosemite');
+  fill: nc-theme('success-color');
 }
 
 .sg-version {
@@ -317,11 +317,11 @@ $stacking-order: (
 
 
 .sg-function-badge {
-  @include badge(nc-color('catalina'));
+  @include badge(nc-theme('resale-color'));
 }
 
 .sg-mixin-badge {
-  @include badge(nc-color('yosemite'));
+  @include badge(nc-theme('success-color'));
 }
 
 .sg-code-hdg {
@@ -435,7 +435,7 @@ $stacking-order: (
 // name = sierra
 // shade = dark
 // color = hex
-@each $name, $shades in $nc-palette {
+@each $name, $shades in $nc-current-palette {
   @each $shade, $color in $shades {
     .sg-swatch__chip--#{$name}-#{$shade} {
       background: $color;
@@ -602,11 +602,11 @@ $stacking-order: (
 }
 
 .sg-type-style__example--alert {
-  color: nc-color('helen');
+  color: nc-theme('alert-color');
 }
 
 .sg-type-style__example--success {
-  color: nc-color('yosemite');
+  color: nc-theme('success-color');
 }
 
 .sg-type-style__example--disabled {
@@ -836,7 +836,7 @@ $stacking-order: (
   width: 600px;
   padding: 50px;
   margin-bottom: 20px;
-  background-color: $nc-overlay-color;
+  background-color: nc-theme('overlay-color');
 }
 
 .sg__breadcrumbs {

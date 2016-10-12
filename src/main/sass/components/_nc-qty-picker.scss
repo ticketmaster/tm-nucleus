@@ -11,33 +11,33 @@
   width: $nc-qty-picker-button-size;
   height: $nc-qty-picker-button-size;
   line-height: 0;
-  background: $nc-qty-increment-button-color;
+  background: nc-theme('qty-increment-button-color');
   border-radius: 100%;
 
   @include nc-breakpoint($nc-bp-lg) {
     &:focus,
     &:hover {
-      background: $nc-qty-increment-button-hover-color;
+      background: nc-theme('qty-increment-button-hover-color');
     }
   }
 
   &:active {
-    background: $nc-qty-increment-button-hover-color;
+    background: nc-theme('qty-increment-button-hover-color');
   }
 }
 
 .nc-qty-picker__button--decrement {
-  background: $nc-qty-decrement-button-color;
+  background: nc-theme('qty-decrement-button-color');
 
   @include nc-breakpoint($nc-bp-lg) {
     &:focus,
     &:hover {
-      background: $nc-qty-decrement-button-hover-color;
+      background: nc-theme('qty-decrement-button-hover-color');
     }
   }
 
   &:active {
-    background: $nc-qty-decrement-button-hover-color;
+    background: nc-theme('qty-decrement-button-hover-color');
   }
 }
 
@@ -50,7 +50,7 @@
 }
 
 .nc-qty-picker__button.nc-is-disabled {
-  background: $nc-qty-increment-button-disabled-color;
+  background: nc-theme('qty-increment-disabled-button-color');
 }
 
 .nc-qty-picker__icon-minus,
@@ -66,7 +66,7 @@
   display: inline-block;
   width: $nc-qty-picker-button-size;
   height: $nc-qty-picker-button-size;
-  color: $nc-text-color;
+  color: nc-theme('text-color');
   text-align: center;
   vertical-align: top;
 

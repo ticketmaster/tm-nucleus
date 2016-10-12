@@ -2,12 +2,33 @@
 
 $nc-timer-duration: 30s;
 
+@keyframes timer-rota {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes timer-opa {
+  0% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
 .nc-timer {
   position: relative;
   width: $nc-timer-size;
   height: $nc-timer-size;
   margin: auto;
-  background-color: $nc-header-color;
+  background-color: nc-theme('header-color');
 
   @include nc-breakpoint($nc-bp-lg) {
     width: $nc-timer-size-lg;
@@ -48,7 +69,7 @@ $nc-timer-duration: 30s;
 .nc-timer__bg {
   width: 100%;
   height: 100%;
-  background-color: $nc-transparent-color;
+  background-color: nc-theme('transparent-color');
   border: $nc-timer-border-thickness solid rgba($nc-white, $nc-timer-opacity);
   border-radius: 100%;
   opacity: 1;
@@ -63,7 +84,7 @@ $nc-timer-duration: 30s;
   z-index: nc-z('timer-mask');
   width: 50%;
   height: 100%;
-  background-color: $nc-header-color;
+  background-color: nc-theme('header-color');
   border-right: 0;
   border-radius: 200% 0 0 200% / 100%;
   opacity: 1;

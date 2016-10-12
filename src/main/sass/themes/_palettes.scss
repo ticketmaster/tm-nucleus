@@ -1,0 +1,16 @@
+// generate palettes
+$nc-base-palette: ();
+$nc-tm-palette: ();
+$nc-ln-palette: ();
+
+@each $key in map-keys($nc-base-colors) {
+  $nc-base-palette: map-merge($nc-base-palette, ($key: nc-generate-shades($nc-tm-colors, $key)));
+}
+
+@each $key in map-keys($nc-tm-colors) {
+  $nc-tm-palette: map-merge($nc-tm-palette, ($key: nc-generate-shades($nc-tm-colors, $key)));
+}
+
+@each $key in map-keys($nc-ln-colors) {
+  $nc-ln-palette: map-merge($nc-ln-palette, ($key: nc-generate-shades($nc-ln-colors, $key)));
+}

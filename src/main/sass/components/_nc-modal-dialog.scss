@@ -3,7 +3,7 @@
 .nc-modal-dialog {
   width: calc(100vw - #{$nc-gutter-width});
   border-radius: $nc-base-border-radius;
-  box-shadow: $nc-shadow-x $nc-shadow-y $nc-shadow-blur $nc-shadow-spread $nc-shadow-color;
+  box-shadow: $nc-shadow-x $nc-shadow-y $nc-shadow-blur $nc-shadow-spread nc-theme('shadow-color');
 
   @include nc-breakpoint($nc-bp-md) {
     max-width: 600px;
@@ -32,7 +32,7 @@
 
 .nc-modal-dialog__header {
   position: relative;
-  background-color: $nc-modal-color;
+  background-color: nc-theme('modal-color');
 }
 
 .nc-modal-dialog__title {
@@ -103,7 +103,7 @@
 }
 
 .nc-modal-dialog__content {
-  @include nc-dialog-content($color: $nc-text-color, $pad: 'normal');
+  @include nc-dialog-content($color: nc-theme('text-color'), $pad: 'normal');
 
   max-height: $nc-modal-content-height;
   overflow-y: auto;
@@ -123,7 +123,7 @@
   @include nc-spacing($inside: 'compact');
   @include nc-type-scale('uno');
 
-  background: $nc-page-section-bg-color;
+  background: nc-theme('page-section-bg-color');
   border-top: $nc-base-border-style;
 }
 

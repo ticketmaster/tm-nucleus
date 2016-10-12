@@ -5,7 +5,7 @@
 }
 
 .nc-alert-dialog__header {
-  background-color: $nc-alert-color;
+  background-color: nc-theme('alert-color');
 }
 
 .nc-alert-dialog__title {

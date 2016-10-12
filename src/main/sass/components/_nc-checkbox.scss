@@ -31,6 +31,6 @@
 }
 
 .nc-checkbox__input:checked ~ .nc-checkbox__label > .nc-checkbox__icon {
-  background-color: $nc-link-color;
+  background-color: nc-theme('link-color');
   border: 0;
 }

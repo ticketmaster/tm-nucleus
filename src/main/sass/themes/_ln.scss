@@ -1,114 +1,28 @@
-// TM Color Palette
-// scss-lint:disable ColorVariable
-
-@import 'shared';
-
-/* stylelint-disable color-no-hex */
-// add LN specific colors to base palette
-$nc-colors: map-merge(
-  $nc-colors, (
-    'smoky':      #576671,
-    'rainier':    #e11d39,
-    'tahoe':      #2cb3ad,
-    'shasta':     #2088b3
+// LN Color Palette
+$nc-ln-theme: map-merge(
+  $nc-base-theme, (
+    'link-color': nc-color('tahoe', $map: $nc-ln-palette),
+    'link-hover-color': nc-color('tahoe', 'dark', $map: $nc-ln-palette),
+    'primary-button-color': nc-color('smoky', $map: $nc-ln-palette),
+    'primary-aux-button-color': nc-color('tahoe', $map: $nc-ln-palette),
+    'secondary-button-color': nc-color('smoky', $map: $nc-ln-palette),
+    'cta-button-color': nc-color('tahoe', $map: $nc-ln-palette),
+    'qty-increment-button-color': nc-color('tahoe', $map: $nc-ln-palette),
+    'qty-increment-button-hover-color': nc-color('tahoe', 'dark', $map: $nc-ln-palette),
+    'qty-increment-disabled-button-color': nc-color('tahoe', 'muted', $map: $nc-ln-palette),
+    'qty-decrement-button-color': nc-color('smoky', $map: $nc-ln-palette),
+    'qty-decrement-button-hover-color': nc-color('smoky', 'dark', $map: $nc-ln-palette),
+    'header-color': nc-color('rainier', $map: $nc-ln-palette),
+    'header-secondary-text-color': $nc-white,
+    'input-active-border-color': nc-color('tahoe', $map: $nc-ln-palette),
+    'caution-dialog-color': nc-color('malibu', $map: $nc-ln-palette),
+    'success-color': nc-color('tahoe', $map: $nc-ln-palette),
+    'alert-color': nc-color('rainier', $map: $nc-ln-palette),
+    'modal-color': nc-color('smoky', $map: $nc-ln-palette),
+    'outline-color': nc-color('tahoe', 'muted', $map: $nc-ln-palette),
+    'toggle-switch-on-bg-color': nc-color('rainier', $map: $nc-ln-palette),
+    'slider-range-active-bg-color': nc-color('rainier', $map: $nc-ln-palette),
+    'radio-icon-selected-color': nc-color('tahoe', $map: $nc-ln-palette),
+    'list-item-hover-color': nc-color('tahoe', 'background', $map: $nc-ln-palette)
   )
 );
-/* stylelint-enable color-no-hex */
-
-$nc-palette: ();
-
-@each $key in map-keys($nc-colors) {
-  $nc-palette: map-merge($nc-palette, ($key: nc-generate-shades($key)));
-}
-
-
-// Typography
-$nc-text-color: nc-color('sierra');
-$nc-alt-text-color: nc-color('cascade');
-$nc-link-color: nc-color('tahoe');
-$nc-link-hover-color: nc-color('tahoe', 'dark');
-$nc-placeholder-text-color: nc-color('cascade', 'light');
-
-// Buttons
-$nc-primary-button-color: nc-color('smoky');
-$nc-primary-aux-button-color: nc-color('tahoe');
-$nc-secondary-button-color: nc-color('smoky');
-$nc-cta-button-color: nc-color('tahoe');
-
-// Qty Picker
-$nc-qty-increment-button-color: nc-color('tahoe');
-$nc-qty-increment-button-hover-color: nc-color('tahoe', 'dark');
-$nc-qty-increment-button-disabled-color: nc-color('tahoe', 'muted');
-$nc-qty-decrement-button-color: nc-color('smoky');
-$nc-qty-decrement-button-hover-color: nc-color('smoky', 'dark');
-
-// Event Header
-$nc-header-color: nc-color('rainier');
-$nc-header-text-color: $nc-white;
-$nc-header-secondary-text-color: $nc-white;
-
-// Borders
-$nc-base-border-color: nc-color('rocky');
-$nc-input-border-color: nc-color('cascade');
-$nc-input-active-border-color: nc-color('tahoe');
-$nc-cobrand-border-color: nc-color('rocky');
-$nc-info-border-color: nc-color('sierra');
-
-// Dialogs
-$nc-caution-dialog-color: nc-color('malibu');
-
-// Utility
-$nc-resale-color: nc-color('catalina');
-$nc-success-color: nc-color('tahoe');
-$nc-alert-color: nc-color('rainier');
-$nc-caution-color: nc-color('malibu');
-$nc-info-color: nc-color('sierra');
-$nc-label-color: nc-color('cascade');
-$nc-label-dark-color: nc-color('cascade', 'dark');
-$nc-label-light-color: $nc-white;
-$nc-modal-color: nc-color('smoky');
-$nc-transparent-color: rgba($nc-white, 0);
-$nc-overlay-color: rgba($nc-black, 0.75);
-$nc-outline-color: nc-color('tahoe', 'muted');
-$nc-shadow-color: rgba($nc-black, 0.5);
-$nc-perforated-shadow-color: rgba($nc-black, 0.25);
-
-// Icons
-$nc-icon-color: nc-color('smoky');
-$nc-ada-icon-color: nc-color('pacific');
-$nc-verified-icon-ticket-color: nc-color('sierra');
-$nc-verified-icon-circle-color: nc-color('pacific');
-$nc-polling-circle-unfilled-color: nc-color('ridge');
-
-// Breadcrumbs
-$nc-breadcrumbs-logo-color: nc-color('cascade');
-$nc-breadcrumbs-link-color: nc-color('cascade');
-
-// Toggle Switch
-$nc-toggle-switch-indicator-bg-color: $nc-white;
-$nc-toggle-switch-off-bg-color: nc-color('cascade', 'light');
-$nc-toggle-switch-on-bg-color: nc-color('rainier');
-
-// Slider
-$nc-slider-range-shadow-color: rgba($nc-black, 0.25);
-$nc-slider-range-border-color: nc-color('sierra');
-$nc-slider-range-bg-color: nc-color('rocky');
-$nc-slider-range-active-bg-color: nc-color('rainier');
-$nc-slider-knob-bg-color: $nc-white;
-$nc-slider-knob-shadow-color: rgba($nc-black, 0.5);
-
-// Radio Icon
-$nc-radio-icon-bg-color: $nc-white;
-$nc-radio-icon-selected-color: $nc-link-color;
-
-// Tab Selections
-$nc-tab-item-color: nc-color(cascade);
-$nc-tab-item-selected-color: nc-color(cascade);
-
-// Misc
-$nc-list-item-hover-color: nc-color('tahoe', 'background');
-$nc-page-section-bg-color: nc-color('ridge');
-$nc-caret-legacy-color: nc-color('cascade', 'light');
-$nc-polling-refresh-bg-color: nc-color('sierra');
-$nc-tooltip-color: $nc-white;
-$nc-input-background-color: $nc-white;

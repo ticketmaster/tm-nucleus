@@ -30,7 +30,7 @@
   @include nc-type-scale('centi', 1);
 
   font-weight: normal;
-  color: $nc-alt-text-color;
+  color: nc-theme('alt-text-color');
   text-transform: uppercase;
 }
 
@@ -38,7 +38,7 @@
   @include nc-type-scale('giga', 1);
 
   font-weight: bold;
-  color: $nc-text-color;
+  color: nc-theme('text-color');
 }
 
 .nc-srs__ga {

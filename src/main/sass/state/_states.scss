@@ -19,11 +19,11 @@
 }
 
 .nc-is-error-message {
-  color: $nc-alert-color !important;
+  color: nc-theme('alert-color') !important;
 }
 
 .nc-is-success-message {
-  color: $nc-success-color !important;
+  color: nc-theme('success-color') !important;
 }
 
 .nc-is-offscreen {

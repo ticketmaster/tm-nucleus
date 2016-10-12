@@ -7,7 +7,7 @@
 .nc-tile-selection__content {
   @include nc-spacing($inside: 'compact');
 
-  color: $nc-alt-text-color;
+  color: nc-theme('alt-text-color');
 }
 
 .nc-tile-selection__content:not(:first-child) {
@@ -20,5 +20,5 @@
 
 .nc-tile-selection__selected-text {
   font-weight: bold;
-  color: $nc-link-color;
+  color: nc-theme('link-color');
 }

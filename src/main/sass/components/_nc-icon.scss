@@ -1,17 +1,17 @@
 .nc-icon-ada {
-  @include nc-icon($nc-ada-icon-color);
+  @include nc-icon(nc-theme('ada-icon-color'));
 }
 
 .nc-icon-alert {
-  @include nc-icon($nc-icon-color);
+  @include nc-icon(nc-theme('icon-color'));
 }
 
 .nc-icon-check {
-  @include nc-icon($nc-icon-color);
+  @include nc-icon(nc-theme('icon-color'));
 }
 
 .nc-icon-chevron {
-  @include nc-icon($nc-icon-color, 13px, 8px);
+  @include nc-icon(nc-theme('icon-color'), 13px, 8px);
 }
 
 .nc-icon-chevron--top {
@@ -27,7 +27,7 @@
 }
 
 .nc-icon-chevron-alt {
-  @include nc-icon($nc-icon-color, 12px, 20px);
+  @include nc-icon(nc-theme('icon-color'), 12px, 20px);
 }
 
 .nc-icon-chevron-alt--right {
@@ -35,23 +35,23 @@
 }
 
 .nc-icon-menu {
-  @include nc-icon($nc-icon-color);
+  @include nc-icon(nc-theme('icon-color'));
 }
 
 .nc-icon-search {
-  @include nc-icon($nc-icon-color);
+  @include nc-icon(nc-theme('icon-color'));
 }
 
 .nc-icon-minus {
-  @include nc-icon($nc-icon-color);
+  @include nc-icon(nc-theme('icon-color'));
 }
 
 .nc-icon-more {
-  @include nc-icon($nc-icon-color);
+  @include nc-icon(nc-theme('icon-color'));
 }
 
 .nc-icon-plus {
-  @include nc-icon($nc-icon-color);
+  @include nc-icon(nc-theme('icon-color'));
 }
 
 .nc-icon-plus--circled {
@@ -60,25 +60,25 @@
 }
 
 .nc-icon-close {
-  @include nc-icon($nc-icon-color);
+  @include nc-icon(nc-theme('icon-color'));
 
   transform: rotate(45deg);
 }
 
 .nc-icon-resale {
-  @include nc-icon($nc-resale-color);
+  @include nc-icon(nc-theme('resale-color'));
 }
 
 .nc-icon-ticket {
-  @include nc-icon($nc-icon-color);
+  @include nc-icon(nc-theme('icon-color'));
 }
 
 .nc-icon-caution {
-  @include nc-icon($nc-caution-color);
+  @include nc-icon(nc-theme('caution-color'));
 }
 
 .nc-icon-polling-checkmark {
-  @include nc-icon($nc-link-color, $nc-polling-size, $nc-polling-size);
+  @include nc-icon(nc-theme('link-color'), $nc-polling-size, $nc-polling-size);
 }
 
 .nc-icon-polling-refresh {
@@ -86,43 +86,43 @@
 }
 
 .nc-icon-verified {
-  @include nc-icon($nc-verified-icon-ticket-color);
+  @include nc-icon(nc-theme('verified-icon-ticket-color'));
 
-  color: $nc-verified-icon-circle-color;
+  color: nc-theme('verified-icon-circle-color');
 }
 
 .nc-icon-lock {
-  @include nc-icon($nc-caution-color);
+  @include nc-icon(nc-theme('caution-color'));
 }
 
 .nc-icon-unlock {
-  @include nc-icon($nc-icon-color);
+  @include nc-icon(nc-theme('icon-color'));
 }
 
 .nc-icon-arrows {
-  @include nc-icon($nc-icon-color);
+  @include nc-icon(nc-theme('icon-color'));
 }
 
 .nc-icon-question-mark {
-  @include nc-icon($nc-icon-color);
+  @include nc-icon(nc-theme('icon-color'));
 }
 
 .nc-icon-return {
-  @include nc-icon($nc-icon-color);
+  @include nc-icon(nc-theme('icon-color'));
 }
 
 .nc-icon-speech-bubble {
-  @include nc-icon($nc-icon-color);
+  @include nc-icon(nc-theme('icon-color'));
 }
 
 .nc-icon-facebook {
-  @include nc-icon($nc-icon-color);
+  @include nc-icon(nc-theme('icon-color'));
 }
 
 .nc-icon-twitter {
-  @include nc-icon($nc-icon-color);
+  @include nc-icon(nc-theme('icon-color'));
 }
 
 .nc-icon-googleplus {
-  @include nc-icon($nc-icon-color);
+  @include nc-icon(nc-theme('icon-color'));
 }

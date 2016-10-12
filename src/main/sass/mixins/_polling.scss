@@ -1,3 +1,6 @@
+$nc-polling-refresh-animation: wipe 2s infinite;
+
+
 @mixin nc-polling-checkmark-ring() {
   position: absolute;
   width: 50%;
@@ -12,7 +15,7 @@
   left: 100%;
   width: 100%;
   height: 100%;
-  background: none repeat scroll 0 0 $nc-link-color;
+  background: none repeat scroll 0 0 nc-theme('link-color');
   border-radius: 999px;
   content: '';
   opacity: 0.8;
@@ -24,7 +27,7 @@
 }
 
 
-@mixin nc-polling-refresh($size: $nc-base-icon-size, $bg: $nc-polling-refresh-bg-color) {
+@mixin nc-polling-refresh($size: $nc-base-icon-size, $bg: nc-theme('polling-refresh-bg-color')) {
   position: relative;
   z-index: nc-z('polling');
   height: $size;
@@ -36,10 +39,7 @@
     z-index: nc-z('hide');
     width: $size;
     height: $size;
-    /* stylelint-disable sh-waqar/declaration-use-variable */
-    // Allow for dynamic color variable to be passed in
     background-color: rgba($bg, 0.9);
-    /* stylelint-enable sh-waqar/declaration-use-variable */
     content: '';
     animation: $nc-polling-refresh-animation;
   }
