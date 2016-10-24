@@ -45,25 +45,26 @@
 }
 
 .nc-tooltip__content {
-  @include nc-spacing($inside: 'compact');
+  @include nc-padding('compact');
   @include nc-type-scale('centi');
 }
 
 .nc-tooltip__srs {
-  @include nc-spacing($outside: ('bottom': '-compact'), $inside: ('bottom': 'compact'));
+  @include nc-margin(('bottom': '-compact'));
+  @include nc-padding(('bottom': 'compact'));
 
   border-bottom: $nc-base-border-style;
 }
 
 .nc-tooltip__delimited-list {
-  @include nc-spacing($inside: ('right': 'compact', 'left': 'compact'));
+  @include nc-padding(('right': 'compact', 'left': 'compact'));
   @include nc-type-scale('centi');
 
   margin-bottom: 0;
 }
 
 .nc-tooltip__delimited-list + .nc-tooltip__content {
-  @include nc-spacing($outside: ('right': 'compact', 'left': 'compact'));
+  @include nc-margin(('right': 'compact', 'left': 'compact'));
 
   padding-right: 0;
   padding-left: 0;
@@ -76,7 +77,7 @@
 
 .nc-tooltip__legal {
   @include nc-type-scale('milli');
-  @include nc-spacing($inside: (
+  @include nc-padding((
     'right': 'compact',
     'bottom': 'compact',
     'left': 'compact'

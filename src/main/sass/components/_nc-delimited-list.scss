@@ -11,7 +11,7 @@
 }
 
 .nc-delimited-list__item {
-  @include nc-spacing($inside: ('top': 'compact', 'bottom': 'compact'));
+  @include nc-padding(('top': 'compact', 'bottom': 'compact'));
 
   border-top: $nc-base-border-style;
 
@@ -25,12 +25,12 @@
 }
 
 .nc-delimited-list__item--embedded {
-  @include nc-spacing($inside: 'compact');
+  @include nc-padding('compact');
 }
 
 .nc-delimited-list__item--compact {
   @include nc-breakpoint($max: $nc-bp-md - 1) {
-    @include nc-spacing($inside: ('top': 'cozy', 'bottom': 'cozy'), $responsive: false);
+    @include nc-padding(('top': 'cozy', 'bottom': 'cozy'), $responsive: false);
 
     border: 0;
   }

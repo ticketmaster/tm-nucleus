@@ -1,18 +1,19 @@
 // pass in spacing set name (e.g, 'cozy') or map (e.g., ('top': 'cozy')) to $outside/inside
-@mixin nc-spacing($outside: false, $inside: false, $responsive: true) {
-  @if (not $outside and not $inside) {
-    @error 'must specify either $outside or $inside';
+@mixin nc-margin($vals, $responsive: true) {
+  @if (not $vals) {
+    @error 'must specify values for margin';
   }
 
-  @if ($outside) {
-    @include nc-spacing-generator('margin', $outside, $responsive);
-  }
-
-  @if ($inside) {
-    @include nc-spacing-generator('padding', $inside, $responsive);
-  }
+  @include nc-spacing-generator('margin', $vals, $responsive);
 }
 
+@mixin nc-padding($vals, $responsive: true) {
+  @if (not $vals) {
+    @error 'must specify values for padding';
+  }
+
+  @include nc-spacing-generator('padding', $vals, $responsive);
+}
 
 @mixin nc-spacing-generator($spacing-type, $spacing-values, $responsive) {
 

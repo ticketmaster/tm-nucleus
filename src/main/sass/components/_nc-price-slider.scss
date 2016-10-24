@@ -16,7 +16,7 @@ $nc-price-slider-label-line-height: 3.2rem;
 }
 
 .nc-price-slider__label {
-  @include nc-spacing($inside: ('left': 'compact'));
+  @include nc-padding(('left': 'compact'));
   @include nc-type-scale('kilo', $nc-price-slider-label-line-height);
 
   flex: 0 0 auto;
@@ -33,7 +33,7 @@ $nc-price-slider-label-line-height: 3.2rem;
 }
 
 .nc-price-slider__label-min {
-  @include nc-spacing($inside: ('left': 0, 'right': 'compact'));
+  @include nc-padding(('left': 0, 'right': 'compact'));
 
   min-width: $nc-price-slider-min-label-sm-width;
   text-align: right;

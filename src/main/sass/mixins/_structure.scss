@@ -8,7 +8,7 @@
   }
 
   &__secondary {
-    @include nc-spacing($inside: (left: $gutter), $responsive: $responsive);
+    @include nc-padding((left: $gutter), $responsive: $responsive);
 
     flex: 0 0 auto;
 
@@ -29,7 +29,7 @@
   }
 
   &__secondary + &__primary {
-    @include nc-spacing($inside: (left: $gutter), $responsive: $responsive);
+    @include nc-padding((left: $gutter), $responsive: $responsive);
   }
 
 }

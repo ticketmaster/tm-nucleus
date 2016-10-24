@@ -2,7 +2,7 @@
   $name: nc-remap-type-size($size);
 
   @include nc-type-scale($name);
-  @include nc-spacing($inside: 'compact');
+  @include nc-padding('compact');
 
   font-weight: normal;
   color: $nc-white;
@@ -26,7 +26,7 @@
 
 @mixin nc-dialog-content($color: nc-theme('alt-text-color'), $pad: 'compact') {
   @include nc-type-scale('centi');
-  @include nc-spacing($inside: $pad);
+  @include nc-padding($pad);
 
   color: $color;
   background-color: $nc-white;

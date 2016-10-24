@@ -8,7 +8,7 @@
 
 .nc-input-group__label {
   @include nc-type-scale('centi');
-  @include nc-spacing($outside: ('bottom': 'cozy'));
+  @include nc-margin(('bottom': 'cozy'));
 
   display: block;
   letter-spacing: 2px;
@@ -26,7 +26,7 @@
 }
 
 .nc-input-group__required {
-  @include nc-spacing($outside: ('left': 'slim'));
+  @include nc-margin(('left': 'slim'));
 
   color: nc-theme('input-active-border-color');
 }
@@ -48,7 +48,7 @@
 
 .nc-input-group__error-message {
   @include nc-type-scale('uno');
-  @include nc-spacing($outside: ('top': 'cozy'));
+  @include nc-margin(('top': 'cozy'));
 
   display: block;
   color: nc-theme('alert-color');

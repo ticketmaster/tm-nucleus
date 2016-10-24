@@ -1,7 +1,7 @@
 /** @define cobrand-header; weak */
 
 .nc-cobrand-header {
-  @include nc-spacing($inside: ('right': 'compact', 'left': 'compact'));
+  @include nc-padding(('right': 'compact', 'left': 'compact'));
 
   z-index: nc-z('above-page');
   display: flex;
@@ -18,7 +18,7 @@
 }
 
 .nc-cobrand-header__logo {
-  @include nc-spacing($inside: ('top': 'compact', 'bottom': 'compact'));
+  @include nc-padding(('top': 'compact', 'bottom': 'compact'));
 
   width: 150px;
   height: $nc-cobrand-header-logo-height;

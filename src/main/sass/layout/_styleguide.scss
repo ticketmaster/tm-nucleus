@@ -33,7 +33,7 @@ $stacking-order: (
 
 @mixin code-style($sz: 'milli') {
   @include nc-type-scale($sz);
-  @include nc-spacing($inside: 'slim', $responsive: false);
+  @include nc-padding('slim', $responsive: false);
 
   border: $nc-base-border-style;
   border-radius: $border-radius;
@@ -44,7 +44,7 @@ $stacking-order: (
 }
 
 @mixin table($margins: $minor-block-spacing) {
-  @include nc-spacing($outside: $margins);
+  @include nc-margin($margins);
 }
 
 @mixin table-hdg($align, $type: false) {
@@ -64,10 +64,10 @@ $stacking-order: (
     $first-left: 'compact';
   }
 
-  @include nc-spacing($inside: $pad);
+  @include nc-padding($pad);
 
   &:first-child {
-    @include nc-spacing($inside: ('left': $first-left));
+    @include nc-padding(('left': $first-left));
 
     text-align: left;
   }
@@ -92,12 +92,12 @@ $stacking-order: (
     $first-col: 'compact';
   }
 
-  @include nc-spacing($inside: $pad);
+  @include nc-padding($pad);
 
   text-align: $align;
 
   &:first-child {
-    @include nc-spacing($inside: $first-col);
+    @include nc-padding($first-col);
   }
 }
 
@@ -129,12 +129,12 @@ $stacking-order: (
 }
 
 @mixin swatch-description($margin: ('left': 'moderate')) {
-  @include nc-spacing($outside: $margin);
+  @include nc-margin($margin);
 }
 
 @mixin badge($bgcolor, $txtcolor: $nc-white, $sz: 'milli') {
   @include nc-type-scale($sz, $responsive: false);
-  @include nc-spacing($inside: (
+  @include nc-padding((
     'top': 'slim',
     'right': 'cozy',
     'bottom': 'slim',
@@ -156,7 +156,7 @@ $stacking-order: (
 }
 
 .sg-header {
-  @include nc-spacing($inside: $page-margins);
+  @include nc-padding($page-margins);
 
   height: $header-height;
   background: linear-gradient(to right, #575dc6, nc-color('pacific'));
@@ -218,7 +218,7 @@ $stacking-order: (
 }
 
 .sg-nav__logo {
-  @include nc-spacing($inside: 'moderate');
+  @include nc-padding('moderate');
 
   @include nc-breakpoint($max: $nc-bp-md - 1) {
     display: none;
@@ -227,7 +227,7 @@ $stacking-order: (
 
 .sg-nav__list {
   @include nc-unstyled-list();
-  @include nc-spacing($inside: ('bottom': 'moderate'));
+  @include nc-padding(('bottom': 'moderate'));
 
   @include nc-breakpoint($nc-bp-md) {
     height: calc(100vh - #{$header-height});
@@ -236,7 +236,7 @@ $stacking-order: (
 }
 
 .sg-nav__link {
-  @include nc-spacing($inside: (
+  @include nc-padding((
     'top': 'slim',
     'bottom': 'slim',
     'left': 'moderate',
@@ -294,7 +294,7 @@ $stacking-order: (
 
 .sg-hdg {
   @include nc-type-scale('giga');
-  @include nc-spacing($outside: ('bottom': 'compact'));
+  @include nc-margin(('bottom': 'compact'));
 
   font-weight: normal;
   color: $main-hdg-color;
@@ -302,7 +302,7 @@ $stacking-order: (
 
 .sg-subhdg {
   @include nc-type-scale('kilo');
-  @include nc-spacing($outside: ('top': 'normal', 'bottom': 'compact'));
+  @include nc-margin(('top': 'normal', 'bottom': 'compact'));
 
   font-weight: normal;
   color: $main-hdg-color;
@@ -310,7 +310,7 @@ $stacking-order: (
 
 .sg-subhdg2 {
   @include nc-type-scale('hecto');
-  @include nc-spacing($outside: ('top': 'normal', 'bottom': 'slim'));
+  @include nc-margin(('top': 'normal', 'bottom': 'slim'));
 
   font-weight: bold;
 }
@@ -325,7 +325,7 @@ $stacking-order: (
 }
 
 .sg-code-hdg {
-  @include nc-spacing($outside: ('bottom': 'compact'));
+  @include nc-margin(('bottom': 'compact'));
 
   display: flex;
   align-items: center;
@@ -339,7 +339,7 @@ $stacking-order: (
 }
 
 .sg-code-hdg__badge {
-  @include nc-spacing($outside: ('left': 'compact'));
+  @include nc-margin(('left': 'compact'));
 
   flex: 0 0 auto;
 }
@@ -353,7 +353,7 @@ $stacking-order: (
 }
 
 .sg-code-block + .sg-code-hdg {
-  @include nc-spacing($outside: ('top': 'expanded'));
+  @include nc-margin(('top': 'expanded'));
 }
 
 .sg-code {
@@ -377,7 +377,7 @@ $stacking-order: (
 }
 
 .sg-callout {
-  @include nc-spacing($inside: 'moderate', $outside: $minor-block-spacing);
+  @include nc-padding('moderate', $outside: $minor-block-spacing);
 
   background-color: nc-color('malibu', 'background');
   border: 1px solid nc-color('malibu');
@@ -403,10 +403,10 @@ $stacking-order: (
 }
 
 .sg-swatch-list__item {
-  @include nc-spacing($outside: ('top': 'normal'));
+  @include nc-margin(('top': 'normal'));
 
   &:first-child {
-    @include nc-spacing($outside: 0);
+    @include nc-margin(0);
   }
 }
 
@@ -467,7 +467,7 @@ $stacking-order: (
 }
 
 .sg-swatch__name {
-  @include nc-spacing($outside: ('bottom': 'slim'));
+  @include nc-margin(('bottom': 'slim'));
 
   display: block;
   font-weight: bold;
@@ -483,10 +483,10 @@ $stacking-order: (
 }
 
 .sg-swatch-table__cell {
-  @include nc-spacing($inside: 'moderate');
+  @include nc-padding('moderate');
 
   &:first-child {
-    @include nc-spacing($inside: ('left': 0));
+    @include nc-padding(('left': 0));
   }
 }
 
@@ -559,7 +559,7 @@ $stacking-order: (
   @include table-hdg(center, 'zebra');
 
   &:last-child {
-    @include nc-spacing($inside: ('left': 'normal'));
+    @include nc-padding(('left': 'normal'));
 
     text-align: left;
   }
@@ -659,7 +659,7 @@ $stacking-order: (
 
 // split-content examples
 .sg-split-container {
-  @include nc-spacing($outside: $minor-block-spacing);
+  @include nc-margin($minor-block-spacing);
 
   border: 3px solid #004466;
 }

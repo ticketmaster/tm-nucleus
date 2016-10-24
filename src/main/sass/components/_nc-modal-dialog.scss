@@ -120,7 +120,7 @@
 }
 
 .nc-modal-dialog__footer {
-  @include nc-spacing($inside: 'compact');
+  @include nc-padding('compact');
   @include nc-type-scale('uno');
 
   background: nc-theme('page-section-bg-color');

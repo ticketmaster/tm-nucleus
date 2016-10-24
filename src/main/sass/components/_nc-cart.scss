@@ -9,7 +9,7 @@ $nc-cart-padding: (
 
 .nc-cart {
   @include nc-clearfix();
-  @include nc-spacing($inside: $nc-cart-padding, $responsive: false);
+  @include nc-padding($nc-cart-padding, $responsive: false);
 
   position: fixed;
   bottom: 0;

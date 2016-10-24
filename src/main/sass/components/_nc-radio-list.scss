@@ -5,5 +5,5 @@
 }
 
 .nc-radio-list__item {
-  @include nc-spacing($outside: (top: compact));
+  @include nc-margin((top: compact));
 }

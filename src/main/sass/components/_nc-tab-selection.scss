@@ -17,7 +17,7 @@ $nc-tab-item-spacing: (
 
 .nc-tab-selection__item {
   @include nc-type-scale($set: centi, $responsive: false);
-  @include nc-spacing($inside: compact);
+  @include nc-padding(compact);
 
   display: inline-block;
   color: nc-theme('tab-item-color');
@@ -26,7 +26,7 @@ $nc-tab-item-spacing: (
 
   @include nc-breakpoint($nc-bp-sm) {
     @include nc-type-scale($set: uno, $responsive: false);
-    @include nc-spacing($inside: $nc-tab-item-spacing);
+    @include nc-padding($nc-tab-item-spacing);
   }
 
   @include nc-breakpoint($nc-bp-md) {
