@@ -4,11 +4,11 @@
 }
 
 // calculate different shades
-@function nc-get-darker($color, $percent: 25%) {
+@function nc-darker($color, $percent: 25%) {
   @return mix(#000, $color, $percent);
 }
 
-@function nc-get-lighter($color, $percent: 75%) {
+@function nc-lighter($color, $percent: 75%) {
   @return mix(#fff, $color, $percent);
 }
 
@@ -24,10 +24,10 @@
     $percentage: map-get($shades, $key);
 
     @if ($key == 'dark') {
-      $val: nc-get-darker($base, $percentage);
+      $val: nc-darker($base, $percentage);
     }
     @else {
-      $val: nc-get-lighter($base, $percentage);
+      $val: nc-lighter($base, $percentage);
     }
 
     $map: map-merge($map, ($key: $val));

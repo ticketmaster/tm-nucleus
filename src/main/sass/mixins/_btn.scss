@@ -51,14 +51,14 @@
     }
 
     &:active {
-      background-color: nc-get-darker($bgcolor);
+      background-color: nc-darker($bgcolor);
     }
 
     @include nc-breakpoint($nc-bp-lg) {
       &:focus,
       &:hover {
         color: $txtcolor;
-        background: nc-get-darker($bgcolor);
+        background: nc-darker($bgcolor);
       }
     }
   }
@@ -76,15 +76,15 @@
 
   @if $hoverstate {
     &:active {
-      color: nc-get-darker($color);
-      border-color: nc-get-darker($color);
+      color: nc-darker($color);
+      border-color: nc-darker($color);
     }
 
     @include nc-breakpoint($nc-bp-lg) {
       &:focus,
       &:hover {
-        color: nc-get-darker($color);
-        border-color: nc-get-darker($color);
+        color: nc-darker($color);
+        border-color: nc-darker($color);
       }
     }
   }
@@ -97,11 +97,11 @@
 // set disabled color
 @mixin nc-btn-disabled($color, $outlined: false) {
   @if not $outlined {
-    background-color: nc-get-lighter($color);
+    background-color: nc-lighter($color);
   }
   @else {
-    color: nc-get-lighter($color);
-    border-color: nc-get-lighter($color);
+    color: nc-lighter($color);
+    border-color: nc-lighter($color);
   }
 }
 
@@ -156,7 +156,7 @@
 @mixin nc-toggle-switch-color($color: nc-theme('toggle-switch-off-bg-color')) {
   color: nc-theme('toggle-switch-indicator-bg-color');
   background-color: $color;
-  box-shadow: inset 0 1px 10px nc-get-darker($color);
+  box-shadow: inset 0 1px 10px nc-darker($color);
 }
 
 // styles inner elements of the toggle switch

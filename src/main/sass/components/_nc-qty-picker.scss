@@ -11,33 +11,33 @@
   width: $nc-qty-picker-button-size;
   height: $nc-qty-picker-button-size;
   line-height: 0;
-  background: nc-theme('qty-increment-button-color');
+  background: nc-theme('link-color');
   border-radius: 100%;
 
   @include nc-breakpoint($nc-bp-lg) {
     &:focus,
     &:hover {
-      background: nc-theme('qty-increment-button-hover-color');
+      background: nc-theme('link-hover-color');
     }
   }
 
   &:active {
-    background: nc-theme('qty-increment-button-hover-color');
+    background: nc-theme('link-hover-color');
   }
 }
 
 .nc-qty-picker__button--decrement {
-  background: nc-theme('qty-decrement-button-color');
+  background: nc-theme('secondary-button-color');
 
   @include nc-breakpoint($nc-bp-lg) {
     &:focus,
     &:hover {
-      background: nc-theme('qty-decrement-button-hover-color');
+      background: nc-theme('secondary-button-hover-color');
     }
   }
 
   &:active {
-    background: nc-theme('qty-decrement-button-hover-color');
+    background: nc-theme('secondary-button-hover-color');
   }
 }
 

@@ -197,11 +197,8 @@ $stacking-order: (
 .sg-nav {
   @include nc-type-scale('centi');
 
-  @include nc-spacing(
-    $outside: ('bottom': 'moderate'),
-    $inside: $minor-block-spacing,
-    $responsive: false
-  );
+  @include nc-margin(('bottom': 'moderate'), $responsive: false);
+  @include nc-padding($minor-block-spacing, $responsive: false);
 
   border-bottom: $nc-base-border-style;
   z-index: nc-z('nav', $stacking-order);
@@ -266,10 +263,8 @@ $stacking-order: (
 }
 
 .sg-main {
-  @include nc-spacing(
-    $outside: ('top': 'normal'),
-    $inside: $page-margins
-  );
+  @include nc-margin(('top': 'normal'));
+  @include nc-padding($page-margins);
 
   @include nc-breakpoint($nc-bp-md) {
     top: $header-height;
@@ -280,10 +275,8 @@ $stacking-order: (
 
 .sg-section {
   @include nc-type-scale('uno');
-  @include nc-spacing(
-    $outside: ('top': 'normal', 'bottom': 'normal'),
-    $inside: ('bottom': 'normal')
-  );
+  @include nc-margin(('top': 'normal', 'bottom': 'normal'));
+  @include nc-padding(('bottom': 'normal'));
 
   border-bottom: $nc-base-border-style;
 
@@ -377,7 +370,8 @@ $stacking-order: (
 }
 
 .sg-callout {
-  @include nc-padding('moderate', $outside: $minor-block-spacing);
+  @include nc-margin($minor-block-spacing);
+  @include nc-padding('moderate');
 
   background-color: nc-color('malibu', 'background');
   border: 1px solid nc-color('malibu');
