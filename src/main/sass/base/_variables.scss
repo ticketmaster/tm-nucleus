@@ -39,6 +39,7 @@ $nc-tile-selected-style: 2px solid nc-theme('link-color');
 
 // Radius and shadows
 $nc-base-border-radius: 3px;
+$nc-tiny-border-radius: 1px;
 $nc-circle-border-radius: 50%;
 $nc-shadow-x: 0;
 $nc-shadow-y: 1px;
@@ -60,7 +61,8 @@ $nc-button-height: 36px;
 $nc-button-height-lg: 38px;
 $nc-button-minor-height: 30px;
 $nc-button-minor-height-lg: 40px;
-$nc-button-border-radius: $nc-base-border-radius;
+$nc-button-width: 116px;
+$nc-button-border-radius: $nc-tiny-border-radius;
 $nc-button-padding: 20px;
 $nc-button-padding-lg: 40px;
 $nc-button-minor-padding: 15px;

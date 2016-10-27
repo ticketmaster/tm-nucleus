@@ -10,6 +10,41 @@
   }
 }
 
+//mixin for create buttons with fixes width
+@mixin nc-btn-fixed($color: $primary-button-color, $txtcolor: $nc-white, $height: $nc-button-height, $hoverstate: false, $outlined: false, $width: $nc-button-width) {
+
+  @include nc-type-scale('uno', $height, $responsive: false);
+  @include nc-all-caps($ls: 0.5px);
+
+  display: inline-block;
+  width: $width
+  min-height: $height;
+  font-weight: normal;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  border-radius: $nc-button-border-radius;
+  box-shadow: none;
+
+  @include nc-breakpoint($nc-bp-md) {
+    min-height: $nc-button-height-lg;
+    line-height: $nc-button-height-lg;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  @if not $outlined {
+    @include nc-btn-color($color, $txtcolor, $hoverstate: $hoverstate);
+  }
+  @else {
+    @include nc-btn-outlined($color, $hoverstate: $hoverstate);
+  }
+  
+}
+
 // shared base for buttons
 @mixin nc-btn-base($height) {
   @include nc-type-scale('uno', $height);

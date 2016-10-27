@@ -23,6 +23,7 @@ $nc-tm-theme: map-merge(
     'secondary-button-hover-color': nc-color('cascade', 'dark', $map: $nc-tm-palette),
     'slider-range-active-bg-color': nc-color('pacific', $map: $nc-tm-palette),
     'success-color': nc-color('yosemite', $map: $nc-tm-palette),
-    'toggle-switch-on-bg-color': nc-color('pacific', $map: $nc-tm-palette)
+    'toggle-switch-on-bg-color': nc-color('pacific', $map: $nc-tm-palette),
+    'favorite-color': nc-color('catalina', $map: $nc-tm-palette)
   )
 );
