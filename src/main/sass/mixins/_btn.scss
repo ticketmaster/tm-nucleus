@@ -1,23 +1,23 @@
 // mixin to create buttons
-@mixin nc-btn($color: $primary-button-color, $txtcolor: $nc-white, $height: $nc-button-height, $hoverstate: false, $outlined: false) {
-  @include nc-btn-base($height);
+@mixin nc-btn($color: $primary-button-color, $txtcolor: $nc-white, $height: $nc-button-height, $hoverstate: false, $outlined: false, $responsive: true) {
+  @include nc-btn-base($height, $responsive);
 
   @if not $outlined {
-    @include nc-btn-color($color, $txtcolor, $hoverstate: $hoverstate);
+    @include nc-btn-color($color, $txtcolor, $hoverstate);
   }
   @else {
-    @include nc-btn-outlined($color, $hoverstate: $hoverstate);
+    @include nc-btn-outlined($color, $hoverstate);
   }
 }
 
 // shared base for buttons
-@mixin nc-btn-base($height) {
-  @include nc-type-scale('uno', $height);
+@mixin nc-btn-base($height, $responsive) {
+  @include nc-type-scale('centi', $lh: $height, $responsive: $responsive);
 
   display: inline-block;
   min-height: $height;
   padding: 0 $nc-button-padding;
-  font-weight: normal;
+  font-weight: bold;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -26,10 +26,12 @@
   border-radius: $nc-button-border-radius;
   box-shadow: none;
 
-  @include nc-breakpoint($nc-bp-md) {
-    min-height: $nc-button-height-lg;
-    padding: 0 $nc-button-padding-lg;
-    line-height: $nc-button-height-lg;
+  @if ($responsive) {
+    @include nc-breakpoint($nc-bp-md) {
+      min-height: $nc-button-height-lg;
+      padding: 0 $nc-button-padding-lg;
+      line-height: $nc-button-height-lg;
+    }
   }
 
   &:hover {
@@ -41,7 +43,7 @@
 @mixin nc-btn-color($bgcolor, $txtcolor, $hoverstate: false) {
   color: $txtcolor;
   background-color: $bgcolor;
-  border: 0;
+  border: 1px solid $bgcolor;
 
   @if $hoverstate {
     &:active,
@@ -52,6 +54,7 @@
 
     &:active {
       background-color: nc-darker($bgcolor);
+      border: 1px solid nc-darker($bgcolor);
     }
 
     @include nc-breakpoint($nc-bp-lg) {
@@ -59,6 +62,7 @@
       &:hover {
         color: $txtcolor;
         background: nc-darker($bgcolor);
+        border: 1px solid nc-darker($bgcolor);
       }
     }
   }
@@ -71,7 +75,7 @@
 // set the outlined color
 @mixin nc-btn-outlined($color, $hoverstate: false) {
   color: $color;
-  background-color: $nc-white;
+  background-color: transparent;
   border: 1px solid $color;
 
   @if $hoverstate {
@@ -98,6 +102,7 @@
 @mixin nc-btn-disabled($color, $outlined: false) {
   @if not $outlined {
     background-color: nc-lighter($color);
+    border: 1px solid nc-lighter($color);
   }
   @else {
     color: nc-lighter($color);

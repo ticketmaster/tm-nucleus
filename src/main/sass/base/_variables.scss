@@ -56,15 +56,15 @@ $nc-perforated-box-shadow-style: $nc-perforated-shadow-x $nc-perforated-shadow-y
 $nc-perforated-inner-shadow-style: inset 0 1px 1px 0 nc-theme('shadow-color');
 
 // Buttons
-$nc-button-height: 36px;
+$nc-button-height: 34px;
 $nc-button-height-lg: 38px;
 $nc-button-minor-height: 30px;
 $nc-button-minor-height-lg: 40px;
-$nc-button-border-radius: $nc-base-border-radius;
-$nc-button-padding: 20px;
-$nc-button-padding-lg: 40px;
+$nc-button-border-radius: 1px;
+$nc-button-padding: 18px;
+$nc-button-padding-lg: $nc-button-padding * $nc-spacing-ratio;
 $nc-button-minor-padding: 15px;
-$nc-button-minor-padding-lg: 20px;
+$nc-button-minor-padding-lg: $nc-button-minor-padding * $nc-spacing-ratio;
 
 // Quantity picker
 $nc-qty-picker-button-size: 40px;
