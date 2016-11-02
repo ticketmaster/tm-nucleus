@@ -1,8 +1,8 @@
 /** @define heading-lined; weak  */
 
 .nc-heading-lined {
-  @include nc-margin(('bottom': 'compact'));
-  @include nc-padding(('left': 'compact', 'right': 'compact'));
+  @include nc-margin(('bottom': 'moderate'));
+  @include nc-padding(('left': 'moderate', 'right': 'moderate'));
 
   position: relative;
   display: table;
@@ -21,18 +21,18 @@
   }
 
   &::before {
-    right: nc-get-spacing('compact', 'mini');
+    right: nc-get-spacing('moderate', 'mini');
 
     @include nc-breakpoint($nc-bp-md) {
-      right: nc-get-spacing('compact', 'maxi');
+      right: nc-get-spacing('moderate', 'maxi');
     }
   }
 
   &::after {
-    left: nc-get-spacing('compact', 'mini');
+    left: nc-get-spacing('moderate', 'mini');
 
     @include nc-breakpoint($nc-bp-md) {
-      left: nc-get-spacing('compact', 'maxi');
+      left: nc-get-spacing('moderate', 'maxi');
     }
   }
 }

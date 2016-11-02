@@ -103,7 +103,7 @@
 }
 
 .nc-modal-dialog__content {
-  @include nc-dialog-content($color: nc-theme('text-color'), $pad: 'normal');
+  @include nc-dialog-content($color: nc-theme('text-color'), $pad: 'expanded');
 
   max-height: $nc-modal-content-height;
   overflow-y: auto;
@@ -120,7 +120,7 @@
 }
 
 .nc-modal-dialog__footer {
-  @include nc-padding('compact');
+  @include nc-padding('moderate');
   @include nc-type-scale('uno');
 
   background: nc-theme('page-section-bg-color');

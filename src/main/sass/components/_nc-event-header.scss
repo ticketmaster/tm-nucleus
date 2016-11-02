@@ -78,7 +78,7 @@ $nc-event-text-cobrand: calc(100vw - (#{$nc-supportive-cobrand} * 2) - #{$nc-scr
 
   width: $nc-event-text-sm;
   margin: 0 auto;
-  font-weight: normal;
+  font-weight: expanded;
   color: nc-theme('header-text-color');
 
   @include nc-breakpoint($nc-bp-md) {

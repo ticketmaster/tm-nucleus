@@ -1,4 +1,4 @@
-@mixin nc-split-content($gutter: moderate, $responsive: true) {
+@mixin nc-split-content($gutter: normal, $responsive: true) {
   display: flex;
   align-items: center;
   width: 100%;

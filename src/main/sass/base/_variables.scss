@@ -1,5 +1,5 @@
 // Spacing
-$nc-spacing-basis: 0.8rem;  // == 8px
+$nc-spacing-basis: 0.6rem;  // == 6px
 $nc-spacing-ratio: 1.5;
 $nc-spacing-digits: 1;
 $nc-spacing-scale-start: -2;
@@ -11,7 +11,8 @@ $nc-spacing-name-list:
   'normal',
   'expanded',
   'spacious',
-  'giant';
+  'giant',
+  'colossal';
 $nc-spacing-set-list:
   'mini',
   'maxi';

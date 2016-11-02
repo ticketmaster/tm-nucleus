@@ -7,7 +7,7 @@ $nc-breadcrumbs-chevron-size: ($nc-breadcrumbs-width + $nc-breadcrumbs-border-wi
 .nc-breadcrumbs {
   @include nc-unstyled-list();
   @include nc-type-scale('milli', $nc-breadcrumbs-height);
-  @include nc-padding(('left': 'compact', 'right': 'compact'));
+  @include nc-padding(('left': 'moderate', 'right': 'moderate'));
 
   display: flex;
   border: $nc-base-border-style;

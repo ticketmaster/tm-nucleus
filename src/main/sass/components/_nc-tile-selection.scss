@@ -5,7 +5,7 @@
 }
 
 .nc-tile-selection__content {
-  @include nc-padding('compact');
+  @include nc-padding('moderate');
 
   color: nc-theme('alt-text-color');
 }

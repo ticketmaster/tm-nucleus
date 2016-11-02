@@ -29,7 +29,7 @@
 .nc-srs__label {
   @include nc-type-scale('centi', 1);
 
-  font-weight: normal;
+  font-weight: expanded;
   color: nc-theme('alt-text-color');
   text-transform: uppercase;
 }

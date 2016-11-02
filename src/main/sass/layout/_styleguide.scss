@@ -15,13 +15,13 @@ $sg-spacing: 1.5em;
 $border-radius: 5px;
 
 $page-margins: (
-  'left': 'expanded',
-  'right': 'expanded'
+  'left': 'spacious',
+  'right': 'spacious'
 );
 
 $minor-block-spacing: (
-  'top': 'moderate',
-  'bottom': 'moderate'
+  'top': 'normal',
+  'bottom': 'normal'
 );
 
 $stacking-order: (
@@ -33,12 +33,12 @@ $stacking-order: (
 
 @mixin code-style($sz: 'milli') {
   @include nc-type-scale($sz);
-  @include nc-padding('slim', $responsive: false);
+  @include nc-padding('cozy', $responsive: false);
 
   border: $nc-base-border-style;
   border-radius: $border-radius;
   font-family: $nc-monospace;
-  font-weight: normal;
+  font-weight: expanded;
   color: nc-theme('text-color');
   background-color: $code-bg-color;
 }
@@ -54,14 +54,14 @@ $stacking-order: (
   text-align: $align;
 
   $pad: (
-    'left': 'moderate',
-    'right': 'moderate'
+    'left': 'normal',
+    'right': 'normal'
   );
   $first-left: 0;
 
   @if ($type == 'zebra') {
-    $pad: ('bottom': 'cozy');
-    $first-left: 'compact';
+    $pad: ('bottom': 'compact');
+    $first-left: 'moderate';
   }
 
   @include nc-padding($pad);
@@ -75,21 +75,21 @@ $stacking-order: (
 
 @mixin table-cell($align, $type: false) {
   $pad: (
-    'top': 'slim',
-    'right': 'moderate',
-    'bottom': 'slim',
-    'left': 'moderate'
+    'top': 'cozy',
+    'right': 'normal',
+    'bottom': 'cozy',
+    'left': 'normal'
   );
   $first-col: ('left': 0);
 
   @if ($type == 'zebra') {
     $pad: (
-      'top': 'slim',
-      'right': 'normal',
-      'bottom': 'slim',
-      'left': 'normal'
+      'top': 'cozy',
+      'right': 'expanded',
+      'bottom': 'cozy',
+      'left': 'expanded'
     );
-    $first-col: 'compact';
+    $first-col: 'moderate';
   }
 
   @include nc-padding($pad);
@@ -128,17 +128,17 @@ $stacking-order: (
   }
 }
 
-@mixin swatch-description($margin: ('left': 'moderate')) {
+@mixin swatch-description($margin: ('left': 'normal')) {
   @include nc-margin($margin);
 }
 
 @mixin badge($bgcolor, $txtcolor: $nc-white, $sz: 'milli') {
   @include nc-type-scale($sz, $responsive: false);
   @include nc-padding((
-    'top': 'slim',
-    'right': 'cozy',
-    'bottom': 'slim',
-    'left': 'cozy'
+    'top': 'cozy',
+    'right': 'compact',
+    'bottom': 'cozy',
+    'left': 'compact'
   ))
 
   display: inline-block;
@@ -190,14 +190,14 @@ $stacking-order: (
 .sg-title {
   @include nc-type-scale('giga', $lh: $header-height);
 
-  font-weight: normal;
+  font-weight: expanded;
   color: $nc-white;
 }
 
 .sg-nav {
   @include nc-type-scale('centi');
 
-  @include nc-margin(('bottom': 'moderate'), $responsive: false);
+  @include nc-margin(('bottom': 'normal'), $responsive: false);
   @include nc-padding($minor-block-spacing, $responsive: false);
 
   border-bottom: $nc-base-border-style;
@@ -215,7 +215,7 @@ $stacking-order: (
 }
 
 .sg-nav__logo {
-  @include nc-padding('moderate');
+  @include nc-padding('normal');
 
   @include nc-breakpoint($max: $nc-bp-md - 1) {
     display: none;
@@ -224,7 +224,7 @@ $stacking-order: (
 
 .sg-nav__list {
   @include nc-unstyled-list();
-  @include nc-padding(('bottom': 'moderate'));
+  @include nc-padding(('bottom': 'normal'));
 
   @include nc-breakpoint($nc-bp-md) {
     height: calc(100vh - #{$header-height});
@@ -234,10 +234,10 @@ $stacking-order: (
 
 .sg-nav__link {
   @include nc-padding((
-    'top': 'slim',
-    'bottom': 'slim',
-    'left': 'moderate',
-    'right': 'moderate'
+    'top': 'cozy',
+    'bottom': 'cozy',
+    'left': 'normal',
+    'right': 'normal'
     )
   );
 
@@ -254,16 +254,16 @@ $stacking-order: (
 .sg-nav__link--active {
   $active-border-size: 5px;
 
-  padding-left: calc(#{nc-get-spacing('moderate', 'mini')} - #{$active-border-size});
+  padding-left: calc(#{nc-get-spacing('normal', 'mini')} - #{$active-border-size});
   border-left: $active-border-size solid nc-color('catalina');
 
   @include nc-breakpoint($nc-bp-md) {
-    padding-left: calc(#{nc-get-spacing('moderate', 'maxi')} - #{$active-border-size});
+    padding-left: calc(#{nc-get-spacing('normal', 'maxi')} - #{$active-border-size});
   }
 }
 
 .sg-main {
-  @include nc-margin(('top': 'normal'));
+  @include nc-margin(('top': 'expanded'));
   @include nc-padding($page-margins);
 
   @include nc-breakpoint($nc-bp-md) {
@@ -275,8 +275,8 @@ $stacking-order: (
 
 .sg-section {
   @include nc-type-scale('uno');
-  @include nc-margin(('top': 'normal', 'bottom': 'normal'));
-  @include nc-padding(('bottom': 'normal'));
+  @include nc-margin(('top': 'expanded', 'bottom': 'expanded'));
+  @include nc-padding(('bottom': 'expanded'));
 
   border-bottom: $nc-base-border-style;
 
@@ -287,23 +287,23 @@ $stacking-order: (
 
 .sg-hdg {
   @include nc-type-scale('giga');
-  @include nc-margin(('bottom': 'compact'));
+  @include nc-margin(('bottom': 'moderate'));
 
-  font-weight: normal;
+  font-weight: expanded;
   color: $main-hdg-color;
 }
 
 .sg-subhdg {
   @include nc-type-scale('kilo');
-  @include nc-margin(('top': 'normal', 'bottom': 'compact'));
+  @include nc-margin(('top': 'expanded', 'bottom': 'moderate'));
 
-  font-weight: normal;
+  font-weight: expanded;
   color: $main-hdg-color;
 }
 
 .sg-subhdg2 {
   @include nc-type-scale('hecto');
-  @include nc-margin(('top': 'normal', 'bottom': 'slim'));
+  @include nc-margin(('top': 'expanded', 'bottom': 'cozy'));
 
   font-weight: bold;
 }
@@ -318,11 +318,11 @@ $stacking-order: (
 }
 
 .sg-code-hdg {
-  @include nc-margin(('bottom': 'compact'));
+  @include nc-margin(('bottom': 'moderate'));
 
   display: flex;
   align-items: center;
-  font-weight: normal;
+  font-weight: expanded;
 }
 
 .sg-code-hdg__name {
@@ -332,7 +332,7 @@ $stacking-order: (
 }
 
 .sg-code-hdg__badge {
-  @include nc-margin(('left': 'compact'));
+  @include nc-margin(('left': 'moderate'));
 
   flex: 0 0 auto;
 }
@@ -346,7 +346,7 @@ $stacking-order: (
 }
 
 .sg-code-block + .sg-code-hdg {
-  @include nc-margin(('top': 'expanded'));
+  @include nc-margin(('top': 'spacious'));
 }
 
 .sg-code {
@@ -371,7 +371,7 @@ $stacking-order: (
 
 .sg-callout {
   @include nc-margin($minor-block-spacing);
-  @include nc-padding('moderate');
+  @include nc-padding('normal');
 
   background-color: nc-color('malibu', 'background');
   border: 1px solid nc-color('malibu');
@@ -386,7 +386,7 @@ $stacking-order: (
 
 
 .sg-usage-list {
-  margin: 0 0 0 nc-get-spacing('normal', 'mini');
+  margin: 0 0 0 nc-get-spacing('expanded', 'mini');
   padding: 0;
   line-height: 1.6;
   color: nc-color('cascade');
@@ -397,7 +397,7 @@ $stacking-order: (
 }
 
 .sg-swatch-list__item {
-  @include nc-margin(('top': 'normal'));
+  @include nc-margin(('top': 'expanded'));
 
   &:first-child {
     @include nc-margin(0);
@@ -461,7 +461,7 @@ $stacking-order: (
 }
 
 .sg-swatch__name {
-  @include nc-margin(('bottom': 'slim'));
+  @include nc-margin(('bottom': 'cozy'));
 
   display: block;
   font-weight: bold;
@@ -469,7 +469,7 @@ $stacking-order: (
 }
 
 .sg-swatch-table {
-  @include table(('top': 'moderate'));
+  @include table(('top': 'normal'));
 }
 
 .sg-swatch-table__hdg {
@@ -477,7 +477,7 @@ $stacking-order: (
 }
 
 .sg-swatch-table__cell {
-  @include nc-padding('moderate');
+  @include nc-padding('normal');
 
   &:first-child {
     @include nc-padding(('left': 0));
@@ -553,7 +553,7 @@ $stacking-order: (
   @include table-hdg(center, 'zebra');
 
   &:last-child {
-    @include nc-padding(('left': 'normal'));
+    @include nc-padding(('left': 'expanded'));
 
     text-align: left;
   }
@@ -561,7 +561,7 @@ $stacking-order: (
 
 .sg-size-table__hdg-range {
   display: block;
-  font-weight: normal;
+  font-weight: expanded;
   color: nc-color('cascade');
 }
 
@@ -626,7 +626,7 @@ $stacking-order: (
 
 
 
-// name = compact
+// name = moderate
 // set = mini
 // size = 1.8rem
 @each $name, $sets in $nc-spacing-map {

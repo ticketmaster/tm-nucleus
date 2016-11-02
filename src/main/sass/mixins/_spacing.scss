@@ -1,4 +1,4 @@
-// pass in spacing set name (e.g, 'cozy') or map (e.g., ('top': 'cozy')) to $outside/inside
+// pass in spacing set name (e.g, 'compact') or map (e.g., ('top': 'compact')) to $outside/inside
 @mixin nc-margin($vals, $responsive: true) {
   @if (not $vals) {
     @error 'must specify values for margin';

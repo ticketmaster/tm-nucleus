@@ -2,9 +2,9 @@
   $name: nc-remap-type-size($size);
 
   @include nc-type-scale($name);
-  @include nc-padding('compact');
+  @include nc-padding('moderate');
 
-  font-weight: normal;
+  font-weight: expanded;
   color: $nc-white;
   content: $name;
 }
@@ -24,7 +24,7 @@
   vertical-align: middle;
 }
 
-@mixin nc-dialog-content($color: nc-theme('alt-text-color'), $pad: 'compact') {
+@mixin nc-dialog-content($color: nc-theme('alt-text-color'), $pad: 'moderate') {
   @include nc-type-scale('centi');
   @include nc-padding($pad);
 

@@ -21,7 +21,7 @@
     @include nc-type-scale($name, $lh: $lh, $responsive: $responsive);
   }
 
-  font-weight: normal;
+  font-weight: expanded;
   color: nc-theme('alt-text-color');
 }
 

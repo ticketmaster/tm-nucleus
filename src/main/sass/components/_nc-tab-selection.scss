@@ -1,10 +1,10 @@
 /** @define tab-selection; weak */
 
 $nc-tab-item-spacing: (
-  top: compact,
-  bottom: compact,
-  left: normal,
-  right: normal
+  top: moderate,
+  bottom: moderate,
+  left: expanded,
+  right: expanded
 );
 
 .nc-tab-selection {
@@ -17,7 +17,7 @@ $nc-tab-item-spacing: (
 
 .nc-tab-selection__item {
   @include nc-type-scale($set: centi, $responsive: false);
-  @include nc-padding(compact);
+  @include nc-padding(moderate);
 
   display: inline-block;
   color: nc-theme('tab-item-color');

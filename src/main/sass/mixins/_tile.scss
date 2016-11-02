@@ -2,5 +2,5 @@
   border: $nc-input-border-style;
   border-radius: $nc-base-border-radius;
 
-  @include nc-margin(('bottom': 'normal'));
+  @include nc-margin(('bottom': 'expanded'));
 }
