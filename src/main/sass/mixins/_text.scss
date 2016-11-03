@@ -26,12 +26,6 @@
 }
 
 
-@mixin nc-all-caps($ls: $nc-caps-letter-spacing) {
-  letter-spacing: $ls;
-  text-transform: uppercase;
-}
-
-
 @mixin nc-truncate-text($width: false) {
   overflow: hidden;
   text-overflow: ellipsis;

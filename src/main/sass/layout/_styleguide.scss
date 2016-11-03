@@ -616,10 +616,6 @@ $stacking-order: (
   }
 }
 
-.sg-type-style__spacing--caps {
-  @include nc-all-caps();
-}
-
 .sg-type-style__description {
   @include swatch-description();
 }

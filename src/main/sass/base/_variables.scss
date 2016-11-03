@@ -62,7 +62,7 @@ $nc-button-height-lg: 38px;
 $nc-button-minor-height: 30px;
 $nc-button-minor-height-lg: 40px;
 $nc-button-border-radius: 1px;
-$nc-button-padding: 18px;
+$nc-button-padding: nc-spacing-val('normal', 'mini');
 $nc-button-padding-lg: $nc-button-padding * $nc-spacing-ratio;
 $nc-button-minor-padding: 15px;
 $nc-button-minor-padding-lg: $nc-button-minor-padding * $nc-spacing-ratio;

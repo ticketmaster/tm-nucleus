@@ -19,8 +19,8 @@ $nc-tm-theme: map-merge(
     'primary-button-hover-color': nc-color('pacific', 'dark', $map: $nc-tm-palette),
     'qty-increment-disabled-button-color': nc-color('pacific', 'muted', $map: $nc-tm-palette),
     'radio-icon-selected-color': nc-color('pacific', $map: $nc-tm-palette),
-    'secondary-button-color': nc-color('cascade', $map: $nc-tm-palette),
-    'secondary-button-hover-color': nc-color('cascade', 'dark', $map: $nc-tm-palette),
+    'secondary-button-color': nc-color('sierra', $map: $nc-tm-palette),
+    'secondary-button-hover-color': nc-color('sierra', 'dark', $map: $nc-tm-palette),
     'slider-range-active-bg-color': nc-color('pacific', $map: $nc-tm-palette),
     'success-color': nc-color('yosemite', $map: $nc-tm-palette),
     'toggle-switch-on-bg-color': nc-color('pacific', $map: $nc-tm-palette)

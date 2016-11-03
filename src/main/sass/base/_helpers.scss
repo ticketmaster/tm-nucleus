@@ -200,6 +200,28 @@
   @return $new-name;
 }
 
+
+@function nc-spacing-val($val, $set) {
+  $output: false;
+  $is-num: type-of($val) == number;
+  $is-mapped: map-has-key($nc-spacing-map, $val);
+
+  @if ($is-num or not $is-mapped) {
+    @if ($set == 'maxi' and $is-num) {
+      $output: $val * $nc-spacing-ratio;
+    }
+    @else {
+      $output: $val;
+    }
+  }
+  @else {
+    $output: nc-get-nested-map($nc-spacing-map, $val, $set);
+  }
+
+  @return $output;
+}
+
+
 /* stylelint-disable number-no-trailing-zeros */
 // allow '2.0' in string
 @function nc-deprecate($thing, $type) {

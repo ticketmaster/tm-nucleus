@@ -7,86 +7,109 @@
 
     <section id="buttons" class="sg-section">
       <h2 class="sg-hdg">Buttons</h2>
-      <table class="sg__table">
+      <table class="sg-default-table">
         <tr>
-          <th class="sg__table-hdg">
+          <th class="sg-default-table__hdg">
             Example
           </th>
-          <th class="sg__table-hdg">
-            Classes and dimensions (mobile/desktop)
+          <th class="sg-default-table__hdg">
+            Description
           </th>
         </tr>
         <tr>
-          <td class="sg__table-cell"><button class="nc-button">Primary Button</button></td>
-          <td class="sg__table-cell"><code class="sg-code">.nc-button</code>, 44px/46px height, 20px/40px L/R padding</td>
+          <td class="sg-default-table__cell">
+            <button class="nc-button">Button</button>
+            <button disabled class="nc-button">Button</button>
+          </td>
+          <td class="sg-default-table__cell">Primary button</td>
         </tr>
         <tr>
-          <td class="sg__table-cell"><button disabled class="nc-button">Primary Button</button></td>
-          <td class="sg__table-cell"><code class="sg-code">.nc-button</code>, disabled state</td>
+          <td class="sg-default-table__cell">
+            <button class="nc-button nc-button--cta">Button</button>
+            <button disabled class="nc-button nc-button--cta">Button</button>
+          </td>
+          <td class="sg-default-table__cell">Checkout button</td>
+        </tr>
+        <!-- <tr>
+          <td class="sg-default-table__cell"><button class="nc-button nc-button--full">Full width button</button></td>
+          <td class="sg-default-table__cell"><code class="sg-code">.nc-button .nc-button--full</code>, 100% width on mobile only</td>
         </tr>
         <tr>
-          <td class="sg__table-cell"><button class="nc-button nc-button--cta">Checkout</button></td>
-          <td class="sg__table-cell"><code class="sg-code">.nc-button .nc-button--cta</code>, 44px/46px height, 20/40px L/R padding, bold</td>
+          <td class="sg-default-table__cell"><button class="nc-button-aux">Auxiliary Button</button></td>
+          <td class="sg-default-table__cell"><code class="sg-code">.nc-button-aux</code>, 44px/46px height, 20px/40px L/R padding</td>
         </tr>
         <tr>
-          <td class="sg__table-cell"><button disabled class="nc-button nc-button--cta">Checkout</button></td>
-          <td class="sg__table-cell"><code class="sg-code">.nc-button .nc-button--cta</code>, disabled state</td>
+          <td class="sg-default-table__cell"><button disabled class="nc-button-aux">Auxiliary Button</button></td>
+          <td class="sg-default-table__cell"><code class="sg-code">.nc-button-aux</code>, disabled state</td>
         </tr>
         <tr>
-          <td class="sg__table-cell"><button class="nc-button nc-button--static">Button</button></td>
-          <td class="sg__table-cell"><code class="sg-code">.nc-button .nc-button--static</code>, 20px L/R padding at all times</td>
+          <td class="sg-default-table__cell"><button class="nc-button-aux nc-button-aux--secondary">Secondary Auxiliary Button</button></td>
+          <td class="sg-default-table__cell"><code class="sg-code">.nc-button-aux .nc-button-aux--secondary</code></td>
         </tr>
         <tr>
-          <td class="sg__table-cell"><button class="nc-button nc-button--full">Full width button</button></td>
-          <td class="sg__table-cell"><code class="sg-code">.nc-button .nc-button--full</code>, 100% width on mobile only</td>
+          <td class="sg-default-table__cell"><button disabled class="nc-button-aux nc-button-aux--secondary">Secondary Auxiliary Button</button></td>
+          <td class="sg-default-table__cell"><code class="sg-code">.nc-button-aux .nc-button-aux--secondary</code>, disabled state</td>
         </tr>
         <tr>
-          <td class="sg__table-cell"><button class="nc-button-aux">Auxiliary Button</button></td>
-          <td class="sg__table-cell"><code class="sg-code">.nc-button-aux</code>, 44px/46px height, 20px/40px L/R padding</td>
+          <td class="sg-default-table__cell"><button class="nc-button-aux nc-button-aux--full">Full width Auxiliary Button</button></td>
+          <td class="sg-default-table__cell"><code class="sg-code">.nc-button-aux .nc-button-aux--full</code>, 100% width on mobile only</td>
         </tr>
         <tr>
-          <td class="sg__table-cell"><button disabled class="nc-button-aux">Auxiliary Button</button></td>
-          <td class="sg__table-cell"><code class="sg-code">.nc-button-aux</code>, disabled state</td>
+          <td class="sg-default-table__cell"><button class="nc-button-aux nc-button-aux--minor">Minor Aux Button</button></td>
+          <td class="sg-default-table__cell"><code class="sg-code">.nc-button-aux .nc-button-aux--minor</code>, 30px/40px height, 15/20px L/R padding</td>
+        </tr> -->
+        <tr>
+          <td class="sg-default-table__cell">
+            <button class="nc-button-secondary nc-button-secondary">Button</button>
+            <button disabled class="nc-button-secondary nc-button-secondary">Button</button>
+          </td>
+          <td class="sg-default-table__cell">Secondary button, used for minor or secondary actions</td>
         </tr>
         <tr>
-          <td class="sg__table-cell"><button class="nc-button-aux nc-button-aux--secondary">Secondary Auxiliary Button</button></td>
-          <td class="sg__table-cell"><code class="sg-code">.nc-button-aux .nc-button-aux--secondary</code></td>
+          <td class="sg-default-table__cell">
+            <button class="nc-button-secondary nc-button-secondary--alert">Button</button>
+            <button disabled class="nc-button-secondary nc-button-secondary--alert">Button</button>
+          </td>
+          <td class="sg-default-table__cell">Alert button, used for buttons with negative actions</td>
         </tr>
         <tr>
-          <td class="sg__table-cell"><button disabled class="nc-button-aux nc-button-aux--secondary">Secondary Auxiliary Button</button></td>
-          <td class="sg__table-cell"><code class="sg-code">.nc-button-aux .nc-button-aux--secondary</code>, disabled state</td>
+          <td class="sg-default-table__cell">
+            <button class="nc-button-secondary nc-button-secondary--utility">Button</button>
+            <button disabled class="nc-button-secondary nc-button-secondary--utility">Button</button>
+          </td>
+          <td class="sg-default-table__cell">Utility button, used for functional actions (note slightly larger font)</td>
+        </tr>
+        <!-- <tr>
+          <td class="sg-default-table__cell"><button class="nc-button-outlined nc-button-outlined--full">Full width Outlined Button</button></td>
+          <td class="sg-default-table__cell"><code class="sg-code">.nc-button-outlined .nc-button-outlined--full</code>, 100% width on mobile only</td>
+        </tr> -->
+        <tr>
+          <td class="sg-default-table__cell">
+            <button class="nc-button nc-button--static">Button</button>
+          </td>
+          <td class="sg-default-table__cell">Static, non-responsive button padding</td>
         </tr>
         <tr>
-          <td class="sg__table-cell"><button class="nc-button-aux nc-button-aux--full">Full width Auxiliary Button</button></td>
-          <td class="sg__table-cell"><code class="sg-code">.nc-button-aux .nc-button-aux--full</code>, 100% width on mobile only</td>
+          <td class="sg-default-table__cell">
+            <a class="nc-button">Button</a>
+          </td>
+          <td class="sg-default-table__cell">Example of a link styled as a button.</td>
         </tr>
         <tr>
-          <td class="sg__table-cell"><button class="nc-button-aux nc-button-aux--minor">Minor Aux Button</button></td>
-          <td class="sg__table-cell"><code class="sg-code">.nc-button-aux .nc-button-aux--minor</code>, 30px/40px height, 15/20px L/R padding</td>
+          <td class="sg-default-table__cell">
+            <button class="nc-unbutton">Unstyled button</button>
+          </td>
+          <td class="sg-default-table__cell">Looks like normal link text (needed for accessibility purposes)</td>
         </tr>
         <tr>
-          <td class="sg__table-cell"><button class="nc-button-outlined">Outlined Button</button></td>
-          <td class="sg__table-cell"><code class="sg-code">.nc-button-outlined</code>, 44px/46px height, 20px/40px L/R padding</td>
-        </tr>
-        <tr>
-          <td class="sg__table-cell"><button class="nc-button-outlined bnc-utton-outlined--static">Outlined Button</button></td>
-          <td class="sg__table-cell"><code class="sg-code">.nc-button-outlined .bnc-utton-outlined--static</code>, 20px L/R padding at all times</td>
-        </tr>
-        <tr>
-          <td class="sg__table-cell"><button disabled class="nc-button-outlined">Outlined Button</button></td>
-          <td class="sg__table-cell"><code class="sg-code">.nc-button-outlined</code>, disabled state</td>
-        </tr>
-        <tr>
-          <td class="sg__table-cell"><button class="nc-button-outlined nc-button-outlined--full">Full width Outlined Button</button></td>
-          <td class="sg__table-cell"><code class="sg-code">.nc-button-outlined .nc-button-outlined--full</code>, 100% width on mobile only</td>
-        </tr>
-        <tr>
-          <td class="sg__table-cell"><button class="nc-unbutton">Unstyled button</button></td>
-          <td class="sg__table-cell"><code class="sg-code">.nc-unbutton</code>, looks like normal link text (needed for accessibility purposes)</td>
-        </tr>
-        <tr>
-          <td class="sg__table-cell"><a class="nc-button">Primary Button</a></td>
-          <td class="sg__table-cell">Example of an <code class="sg-code">&lt;a&gt;</code> tag when styled as a button.</td>
+          <td class="sg-default-table__cell">
+            <button class="nc-icon-button">
+              <svg class="nc-icon-check">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite.svg#icon-check"></use>
+              </svg>
+            </button>
+          </td>
+          <td class="sg-default-table__cell">Icon button</td>
         </tr>
       </table>
     </section>

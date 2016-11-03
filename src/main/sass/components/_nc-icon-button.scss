@@ -1,0 +1,5 @@
+/** @define icon-button; weak */
+
+.nc-icon-button {
+  @include nc-icon-button();
+}

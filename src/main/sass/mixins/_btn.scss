@@ -12,7 +12,7 @@
 
 // shared base for buttons
 @mixin nc-btn-base($height, $responsive) {
-  @include nc-type-scale('centi', $lh: $height, $responsive: $responsive);
+  @include nc-type-scale('milli', $lh: $height);
 
   display: inline-block;
   min-height: $height;
@@ -113,7 +113,7 @@
 // unstyled button
 @mixin nc-unbutton($txtcolor: nc-theme('link-color'), $padding: $nc-button-padding, $nowrap: 'nowrap') {
   padding: 0 $padding;
-  font-weight: expanded;
+  font-weight: normal;
   color: $txtcolor;
   text-align: center;
   background-color: nc-theme('transparent-color');

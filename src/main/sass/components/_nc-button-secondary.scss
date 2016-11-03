@@ -1,0 +1,22 @@
+/** @define button-secondary; weak */
+
+.nc-button-secondary {
+  @include nc-btn(nc-theme('secondary-button-color'), $hoverstate: true, $outlined: true);
+}
+
+.nc-button-secondary--static {
+  padding: 0 $nc-button-padding;
+}
+
+.nc-button-secondary--full {
+  width: 100%;
+}
+
+.nc-button-secondary--alert {
+  @include nc-btn-outlined(nc-theme('alert-color'), $hoverstate: true);
+}
+
+.nc-button-secondary--utility {
+  @include nc-btn-outlined(nc-theme('primary-button-color'), $hoverstate: true);
+  @include nc-type-scale('centi');
+}

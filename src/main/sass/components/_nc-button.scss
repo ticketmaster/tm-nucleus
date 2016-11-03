@@ -9,12 +9,12 @@
 // reserved for buttons that lead to / are part of checkout
 .nc-button--cta {
   @include nc-btn-color(nc-theme('cta-button-color'), $nc-white, $hoverstate: true);
-
-  font-weight: bold;
 }
 
 .nc-button--static {
-  padding: 0 20px;
+  min-height: $nc-button-height;
+  padding: 0 $nc-button-padding;
+  line-height: $nc-button-height;
 }
 
 .nc-button--full {
