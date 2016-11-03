@@ -21,7 +21,7 @@
 }
 
 .nc-delimited-list__item--selected {
-  background-color: nc-theme('list-item-hover-color');
+  background-color: nc-lighter(nc-theme('link-color'));
 }
 
 .nc-delimited-list__item--embedded {

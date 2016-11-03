@@ -10,7 +10,7 @@
 
   &:focus,
   &:active {
-    border-color: nc-theme('input-active-border-color');
+    border-color: nc-theme('link-color');
     outline: none;
   }
 }

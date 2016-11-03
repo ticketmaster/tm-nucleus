@@ -58,9 +58,9 @@ $nc-breadcrumbs-chevron-size: ($nc-breadcrumbs-width + $nc-breadcrumbs-border-wi
 .nc-breadcrumbs__brand-logo {
   width: $nc-breadcrumbs-logo-width;
   height: $nc-breadcrumbs-logo-height;
-  fill: nc-theme('breadcrumbs-logo-color');
+  fill: nc-theme('alt-text-color');
 }
 
 .nc-breadcrumbs__link {
-  color: nc-theme('breadcrumbs-link-color');
+  color: nc-theme('alt-text-color');
 }

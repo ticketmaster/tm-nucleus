@@ -12,6 +12,14 @@
   @return mix(#fff, $color, $percent);
 }
 
+@function nc-hover($color) {
+  @return mix(#000, $color, 25%);
+}
+
+@function nc-disabled($color) {
+  @return mix(#fff, $color, 75%);
+}
+
 @function nc-generate-shades($colors, $color, $shades: $nc-shades) {
   $map: ();
   $val: '';

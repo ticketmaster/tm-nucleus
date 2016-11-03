@@ -39,7 +39,7 @@
   height: $nc-base-icon-size / 2;
   margin-top: -($nc-base-icon-size / 4);
   margin-left: -($nc-base-icon-size / 4);
-  background-color: nc-theme('radio-icon-selected-color');
+  background-color: nc-theme('link-color');
   border-radius: $nc-circle-border-radius;
   content: '';
 }

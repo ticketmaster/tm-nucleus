@@ -1,5 +1,11 @@
 @function nc-theme($name) {
-  @return map-get($nc-current-theme, $name);
+  @if (map-has-key($nc-current-theme, $name)) {
+    @return map-get($nc-current-theme, $name);
+  }
+
+  @else {
+    @error '`#{$name}` is not a valid theme key';
+  }
 }
 
 @function nc-theme-add($map) {
@@ -10,11 +16,8 @@ $nc-base-theme: (
   'ada-icon-color': nc-color('pacific', $map: $nc-base-palette),
   'alt-text-color': nc-color('cascade', $map: $nc-base-palette),
   'base-border-color': nc-color('rocky', $map: $nc-base-palette),
-  'breadcrumbs-link-color': nc-color('cascade', $map: $nc-base-palette),
-  'breadcrumbs-logo-color': nc-color('cascade', $map: $nc-base-palette),
   'caret-legacy-color': nc-color('cascade', 'light', $map: $nc-base-palette),
   'caution-color': nc-color('malibu', $map: $nc-base-palette),
-  'cobrand-border-color': nc-color('rocky', $map: $nc-base-palette),
   'header-text-color': $nc-white,
   'icon-color': nc-color('cascade', $map: $nc-base-palette),
   'info-border-color': nc-color('sierra', $map: $nc-base-palette),

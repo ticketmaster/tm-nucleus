@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: space-between;
   background-color: nc-theme('header-bg-color');
-  border-bottom: 1px solid rgba(nc-theme('cobrand-border-color'), 0.25);
+  border-bottom: 1px solid rgba(nc-theme('base-border-color'), 0.25);
 
   @include nc-breakpoint($nc-bp-lg) {
     position: relative;

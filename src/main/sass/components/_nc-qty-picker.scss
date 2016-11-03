@@ -17,12 +17,12 @@
   @include nc-breakpoint($nc-bp-lg) {
     &:focus,
     &:hover {
-      background: nc-theme('link-hover-color');
+      background: nc-hover(nc-theme('link-color'));
     }
   }
 
   &:active {
-    background: nc-theme('link-hover-color');
+    background: nc-hover(nc-theme('link-color'));
   }
 }
 
@@ -32,12 +32,12 @@
   @include nc-breakpoint($nc-bp-lg) {
     &:focus,
     &:hover {
-      background: nc-theme('secondary-button-hover-color');
+      background: nc-hover(nc-theme('secondary-button-color'));
     }
   }
 
   &:active {
-    background: nc-theme('secondary-button-hover-color');
+    background: nc-hover(nc-theme('secondary-button-color'));
   }
 }
 
@@ -50,7 +50,7 @@
 }
 
 .nc-qty-picker__button.nc-is-disabled {
-  background: nc-theme('qty-increment-disabled-button-color');
+  background: nc-disabled(nc-theme('link-color'));
 }
 
 .nc-qty-picker__icon-minus,

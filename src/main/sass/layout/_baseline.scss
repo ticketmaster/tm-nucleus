@@ -72,7 +72,7 @@ a {
   &:active,
   &:hover,
   &:focus {
-    color: nc-theme('link-hover-color');
+    color: nc-hover(nc-theme('link-color'));
     text-decoration: underline;
   }
 

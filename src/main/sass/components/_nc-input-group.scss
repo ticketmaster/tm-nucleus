@@ -28,7 +28,7 @@
 .nc-input-group__required {
   @include nc-margin(('left': 'cozy'));
 
-  color: nc-theme('input-active-border-color');
+  color: nc-theme('link-color');
 }
 
 .nc-input-group__text-field {
