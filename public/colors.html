@@ -551,57 +551,330 @@
     </section>
 
     <section class="sg-section">
-      <h2 class="sg-hdg">Palette Customization</h3>
-      <p>Nucleus has built-in support for Ticketmaster and Live Nation palettes.
+      <h2 class="sg-hdg"><a name="themes" class="sg-anchor">Themes</a></h3>
+      <p>Nucleus has built-in support for Ticketmaster and Live Nation themes.
         These are located in the /themes directory, and are named
         <code class="sg-code">tm.scss</code> and
         <code class="sg-code">ln.scss</code>, respectively. </p>
-      <p>Switching between TM and LN is just a matter of changing which theme
-        to import.</p>
+      <p>Nucleus is configured with the Ticketmaster theme by default. If you wish to use the Live Nation theme instead, specify it in the <code class="sg-code">$nc-config</code> map before you import Nucleus files.</p>
 
-<pre class="sg-code-block"><code class="scss">/* TM theme */
-@import '<span class="sg__highlight-code">[path/to/nucleus]/tm</span>';
-@import '[path/to/nucleus]/base/all';
-@import '[path/to/nucleus]/mixins/all';
-@import '[path/to/nucleus]/components/all';
-@import '[path/to/nucleus]/states/all';
+<pre class="sg-code-block"><code class="scss">/* LN theme */
+$nc-config: (
+  'theme': 'ln'
+);
 
-/* LN theme */
-@import '<span class="sg__highlight-code">[path/to/nucleus]/ln</span>';
-@import '[path/to/nucleus]/base/all';
-@import '[path/to/nucleus]/mixins/all';
-@import '[path/to/nucleus]/components/all';
-@import '[path/to/nucleus]/states/all';
+@import '[path/to/nucleus]/nucleus-core';
+</code></pre>
+      <p>To apply theme colors in your styles, use the <code class="sg-code">nc-theme</code> function. You'll need to specify the keyname for the color you want to access.</p>
+
+<pre class="sg-code-block"><code class="scss">/* Applying a theme color */
+.thingamajig {
+  color: nc-theme('alt-text-color');
+  background-color: nc-theme('page-section-bg-color');
+}
 </code></pre>
 
-      <p>To apply custom colors, refer to <code class="sg-code">ln.scss</code>
-        as your model. You will need to merge any custom colors into Nucleus's
-        palette, then apply them via the <code class="sg-code">nc-color()</code>
-        function.</p>
-      <div class="sg-callout">
-        <h3 class="sg-callout__hdg">Important Note</h4>
-        <p>All of your color definitions should be abstracted in your theme file.
-          This is to support branding at the app level. (Themes are not always 1:1;
-          the fact that everything that's blue in the TM theme does not necessarily
-          mean that it is red in the LN theme.)</p>
-      </div>
-      <p>To use your custom theme, import it before anything else from Nucleus.</p>
+      <h3 class="sg-subhdg">Common Keys</h3>
+      <p>For reference, here is a list of theme keys within Nucleus that are shared by both TM and LN themes:</p>
+      <table class="sg-alternating-table">
+        <tr>
+          <td class="sg-alternating-table__hdg">Key</td>
+          <td class="sg-alternating-table__hdg">Usage</td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">ada-icon-color</td>
+          <td class="sg-alternating-table__cell"></td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">alt-text-color</td>
+          <td class="sg-alternating-table__cell">secondary text color</td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">base-border-color</td>
+          <td class="sg-alternating-table__cell">default border color</td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">caret-legacy-color</td>
+          <td class="sg-alternating-table__cell">tooltip caret, used by legacy browsers</td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">caution-color</td>
+          <td class="sg-alternating-table__cell"></td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">header-text-color</td>
+          <td class="sg-alternating-table__cell">event header</td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">icon-color</td>
+          <td class="sg-alternating-table__cell">default icon color</td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">info-border-color</td>
+          <td class="sg-alternating-table__cell">info dialog</td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">info-color</td>
+          <td class="sg-alternating-table__cell">info dialog text</td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">input-bg-color</td>
+          <td class="sg-alternating-table__cell">form field inputs</td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">input-border-color</td>
+          <td class="sg-alternating-table__cell">form field inputs</td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">label-color</td>
+          <td class="sg-alternating-table__cell">form field label</td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">label-dark-color</td>
+          <td class="sg-alternating-table__cell">form field label when on a light background</td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">label-light-color</td>
+          <td class="sg-alternating-table__cell">form field label when on a dark background</td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">overlay-color</td>
+          <td class="sg-alternating-table__cell">page overlay for modals</td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">page-section-bg-color</td>
+          <td class="sg-alternating-table__cell">used for any content that you want to call out and separate from the default white background of the page</td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">placeholder-text-color</td>
+          <td class="sg-alternating-table__cell">form input placeholder text</td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">polling-circle-unfilled-color</td>
+          <td class="sg-alternating-table__cell">checkmark polling icon</td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">polling-refresh-bg-color</td>
+          <td class="sg-alternating-table__cell">ticket refreshing icon</td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">resale-color</td>
+          <td class="sg-alternating-table__cell"></td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">shadow-color</td>
+          <td class="sg-alternating-table__cell">default shadow color</td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">slider-knob-bg-color</td>
+          <td class="sg-alternating-table__cell"></td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">slider-range-bg-color</td>
+          <td class="sg-alternating-table__cell"></td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">slider-range-border-color</td>
+          <td class="sg-alternating-table__cell"></td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">tab-item-color</td>
+          <td class="sg-alternating-table__cell"></td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">tab-item-selected-color</td>
+          <td class="sg-alternating-table__cell"></td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">text-color</td>
+          <td class="sg-alternating-table__cell">default text color</td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">toggle-switch-indicator-bg-color</td>
+          <td class="sg-alternating-table__cell"></td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">toggle-switch-off-bg-color</td>
+          <td class="sg-alternating-table__cell"></td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">tooltip-bg-color</td>
+          <td class="sg-alternating-table__cell"></td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">transparent-color</td>
+          <td class="sg-alternating-table__cell">default transparent color</td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">verified-icon-circle-color</td>
+          <td class="sg-alternating-table__cell">use</td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">verified-icon-ticket-color</td>
+          <td class="sg-alternating-table__cell">use</td>
+        </tr>
+      </table>
 
-<pre class="sg-code-block"><code class="scss">/* Custom theme */
-@import '<span class="sg__highlight-code">[path/to/custom]/your-theme</span>';
-@import '[path/to/nucleus]/base/all';
-@import '[path/to/nucleus]/mixins/all';
-@import '[path/to/nucleus]/components/all';
-@import '[path/to/nucleus]/states/all';
-</code></pre>
+      <h3 class="sg-subhdg">Unique Keys</h3>
+      <p>In addition, there are additional theme keys that are different between TM and LN:</p>
+
+      <table class="sg-alternating-table">
+        <tr>
+          <td class="sg-alternating-table__hdg">Key</td>
+          <td class="sg-alternating-table__hdg">Usage</td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">alert-color</td>
+          <td class="sg-alternating-table__cell"></td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">cta-button-color</td>
+          <td class="sg-alternating-table__cell">used for checkout flow buttons</td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">header-bg-color</td>
+          <td class="sg-alternating-table__cell">event header background color</td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">header-secondary-text-color</td>
+          <td class="sg-alternating-table__cell"></td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">link-color</td>
+          <td class="sg-alternating-table__cell"></td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">modal-header-bg-color</td>
+          <td class="sg-alternating-table__cell"></td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">primary-button-color</td>
+          <td class="sg-alternating-table__cell"></td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">secondary-button-color</td>
+          <td class="sg-alternating-table__cell"></td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">slider-range-active-bg-color</td>
+          <td class="sg-alternating-table__cell"></td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">success-color</td>
+          <td class="sg-alternating-table__cell"></td>
+        </tr>
+        <tr>
+          <td class="sg-alternating-table__cell">toggle-switch-on-bg-color</td>
+          <td class="sg-alternating-table__cell"></td>
+        </tr>
+      </table>
     </section>
 
     <section class="sg-section">
-      <h2 class="sg-hdg">Code Reference</h3>
+      <h2 class="sg-hdg">Customizations</h2>
+      <p>If you need to customize the theme further (or if the existing key names are not applicable to your use case), you can create additional keys as a SASS map and merge them into the theme.</p>
+      <p>Nucleus maintains the active theme in a SASS map referenced by <code class="sg-code">$nc-current-theme</code>. After defining your additional keys, use the <code class="sg-code">nc-theme-add</code> function to add it to the theme.</p>
+      <p>Here is an example:</p>
+
+<pre class="sg-code-block"><code class="scss">/* First bring in Nucleus's core  */
+@import '[path/to/nucleus]/nucleus-core';
+
+/* Define your custom theme keys to be added */
+$your-theme: (
+  'widget-title-color': nc-color('helen');
+  'widget-link-color': nc-color('yosemite');
+);
+
+/* Add them to the theme */
+$nc-current-theme: nc-theme-add($your-theme);
+
+/* You can now access this key as you would with the existing keys in Nucleus */
+.widget-title {
+  color: nc-theme('widget-title-color');
+}
+</code></pre>
+
+      <div class="sg-callout">
+        <h3 class="sg-callout__hdg">Important Note</h4>
+        <p>All of your color definitions should be abstracted in your theme definition.
+          This is to support branding at the app level. (Themes are not always 1:1;
+          the fact that everything that's blue in the TM theme does not necessarily
+          mean that it is red in the LN theme.)</p>
+        <p>To be more clear, you <strong>shouldn't be using <code class="sg-code">nc-color</code> within any style definitions</strong>. You use the function to specify colors in your theme map, then apply those colors with <code class="sg-code">nc-theme</code> via an abstract key name.</p>
+      </div>
+    </section>
+
+    <section class="sg-section">
+      <h2 class="sg-hdg">Code Reference</h2>
+
+      <h3 class="sg-code-hdg">
+        <code class="sg-code-hdg__name">nc-theme()</code>
+        <span class="sg-code-hdg__badge sg-function-badge">Function</span>
+        <span class="sg-code-hdg__source-file">themes/_themes.scss</span>
+      </h3>
+      <p>Returns hex value from theme for a given key.</p>
+      <table class="sg-params-table">
+        <tr>
+          <th class="sg-params-table__hdg">Parameters</th>
+          <th class="sg-params-table__hdg">Default</th>
+          <th class="sg-params-table__hdg">Description</th>
+          <th class="sg-params-table__hdg">Required</th>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$name</code></td>
+          <td class="sg-params-table__cell">&nbsp;</td>
+          <td class="sg-params-table__cell">Name of theme key (e.g., <code class="sg-code">link-color</code>.)</td>
+          <td class="sg-params-table__cell sg-params-table__cell--check">
+            <svg class="nc-icon-check sg-icon-check">
+              <use xlink:href="img/sprite.svg#icon-check"></use>
+            </svg>
+          </td>
+        </tr>
+      </table>
+
+<pre class="sg-code-block"><code class="scss">.widget {
+  color: nc-theme('alt-text-color');
+}</code></pre>
+
+      <h3 class="sg-code-hdg">
+        <code class="sg-code-hdg__name">nc-theme-add()</code>
+        <span class="sg-code-hdg__badge sg-function-badge">Function</span>
+        <span class="sg-code-hdg__source-file">themes/_themes.scss</span>
+      </h3>
+      <p>Adds a given SASS map of custom theme values to the working theme.</p>
+      <table class="sg-params-table">
+        <tr>
+          <th class="sg-params-table__hdg">Parameters</th>
+          <th class="sg-params-table__hdg">Default</th>
+          <th class="sg-params-table__hdg">Description</th>
+          <th class="sg-params-table__hdg">Required</th>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$map</code></td>
+          <td class="sg-params-table__cell">&nbsp;</td>
+          <td class="sg-params-table__cell">A SASS map</td>
+          <td class="sg-params-table__cell sg-params-table__cell--check">
+            <svg class="nc-icon-check sg-icon-check">
+              <use xlink:href="img/sprite.svg#icon-check"></use>
+            </svg>
+          </td>
+        </tr>
+      </table>
+
+<pre class="sg-code-block"><code class="scss">/* Define your custom theme keys to be added */
+$your-theme: (
+  'widget-title-color': nc-color('helen');
+  'widget-link-color': nc-color('yosemite');
+);
+
+/* Add them to the theme */
+$nc-current-theme: nc-theme-add($your-theme);
+</code></pre>
+
       <h3 class="sg-code-hdg">
         <code class="sg-code-hdg__name">nc-color()</code>
         <span class="sg-code-hdg__badge sg-function-badge">Function</span>
-        <span class="sg-code-hdg__source-file">themes/_shared.scss</span>
+        <span class="sg-code-hdg__source-file">themes/_colors.scss</span>
       </h3>
       <p>Returns hex value from palette.</p>
       <table class="sg-params-table">
@@ -635,13 +908,68 @@
         </tr>
       </table>
 
-<pre class="sg-code-block"><code class="scss">$var1: nc-color(sierra);           /* #475058 */
-$var2: nc-color(pacific, muted);   /* #bfe6f7 */</code></pre>
+<pre class="sg-code-block"><code class="scss">$theme: (
+  'abstract-key-name': nc-color('malibu', 'muted');
+);</code></pre>
 
       <h3 class="sg-code-hdg">
-        <code class="sg-code-hdg__name">nc-get-darker()</code>
+        <code class="sg-code-hdg__name">nc-hover()</code>
         <span class="sg-code-hdg__badge sg-function-badge">Function</span>
-        <span class="sg-code-hdg__source-file">themes/_shared.scss</span>
+        <span class="sg-code-hdg__source-file">themes/_colors.scss</span>
+      </h3>
+      <p>Given a color, returns the hover state of that color.</p>
+      <table class="sg-params-table">
+        <tr>
+          <th class="sg-params-table__hdg">Parameters</th>
+          <th class="sg-params-table__hdg">Default</th>
+          <th class="sg-params-table__hdg">Description</th>
+          <th class="sg-params-table__hdg">Required</th>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$color</code></td>
+          <td class="sg-params-table__cell">&nbsp;</td>
+          <td class="sg-params-table__cell">Hex value.</td>
+          <td class="sg-params-table__cell sg-params-table__cell--check">
+            <svg class="nc-icon-check sg-icon-check">
+              <use xlink:href="img/sprite.svg#icon-check"></use>
+            </svg>
+          </td>
+        </tr>
+      </table>
+
+<pre class="sg-code-block"><code class="scss">$darker: nc-hover(#19ab20);  /* #138018 */</code></pre>
+
+      <h3 class="sg-code-hdg">
+        <code class="sg-code-hdg__name">nc-disabled()</code>
+        <span class="sg-code-hdg__badge sg-function-badge">Function</span>
+        <span class="sg-code-hdg__source-file">themes/_colors.scss</span>
+      </h3>
+      <p>Given a color, returns the disabled state of that color.</p>
+      <table class="sg-params-table">
+        <tr>
+          <th class="sg-params-table__hdg">Parameters</th>
+          <th class="sg-params-table__hdg">Default</th>
+          <th class="sg-params-table__hdg">Description</th>
+          <th class="sg-params-table__hdg">Required</th>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$color</code></td>
+          <td class="sg-params-table__cell">&nbsp;</td>
+          <td class="sg-params-table__cell">Hex value.</td>
+          <td class="sg-params-table__cell sg-params-table__cell--check">
+            <svg class="nc-icon-check sg-icon-check">
+              <use xlink:href="img/sprite.svg#icon-check"></use>
+            </svg>
+          </td>
+        </tr>
+      </table>
+
+<pre class="sg-code-block"><code class="scss">$darker: nc-disabled(#d0006f);  /* #f3bfdb */</code></pre>
+
+      <h3 class="sg-code-hdg">
+        <code class="sg-code-hdg__name">nc-darker()</code>
+        <span class="sg-code-hdg__badge sg-function-badge">Function</span>
+        <span class="sg-code-hdg__source-file">themes/_colors.scss</span>
       </h3>
       <p>Given a color, returns a new color mixed with a percentage of white (<code class="sg-code">#000</code>).</p>
       <table class="sg-params-table">
@@ -669,12 +997,12 @@ $var2: nc-color(pacific, muted);   /* #bfe6f7 */</code></pre>
         </tr>
       </table>
 
-<pre class="sg-code-block"><code class="scss">$darker: nc-get-darker(#19ab20);  /* #138018 */</code></pre>
+<pre class="sg-code-block"><code class="scss">$darker: nc-darker(#19ab20);  /* #138018 */</code></pre>
 
       <h3 class="sg-code-hdg">
-        <code class="sg-code-hdg__name">nc-get-lighter()</code>
+        <code class="sg-code-hdg__name">nc-lighter()</code>
         <span class="sg-code-hdg__badge sg-function-badge">Function</span>
-        <span class="sg-code-hdg__source-file">themes/_shared.scss</span>
+        <span class="sg-code-hdg__source-file">themes/_colors.scss</span>
       </h3>
       <p>Given a color, returns a new color mixed with a percentage of white (<code class="sg-code">#fff</code>).</p>
       <table class="sg-params-table">
@@ -702,7 +1030,7 @@ $var2: nc-color(pacific, muted);   /* #bfe6f7 */</code></pre>
         </tr>
       </table>
 
-<pre class="sg-code-block"><code class="scss">$lighter: nc-get-lighter(#f00, 50%);  /* #ff8080 */</code></pre>
+<pre class="sg-code-block"><code class="scss">$lighter: nc-lighter(#f00, 50%);  /* #ff8080 */</code></pre>
 
     </section>
 

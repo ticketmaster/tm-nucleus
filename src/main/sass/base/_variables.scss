@@ -35,7 +35,6 @@ $nc-success-border-style: 1px solid nc-theme('success-color');
 $nc-caution-border-style: 1px solid nc-theme('caution-color');
 $nc-alert-border-style: 1px solid nc-theme('alert-color');
 $nc-info-border-style: 1px solid nc-theme('info-border-color');
-$nc-outline-style: 3px solid nc-theme('outline-color');
 $nc-tile-selected-style: 2px solid nc-theme('link-color');
 
 // Radius and shadows
@@ -53,14 +52,14 @@ $nc-perforated-shadow-x: 0;
 $nc-perforated-shadow-y: 1px;
 $nc-perforated-shadow-blur: 10px;
 $nc-perforated-shadow-spread: 2px;
-$nc-perforated-box-shadow-style: $nc-perforated-shadow-x $nc-perforated-shadow-y $nc-perforated-shadow-blur $nc-perforated-shadow-spread nc-theme('perforated-shadow-color');
+$nc-perforated-box-shadow-style: $nc-perforated-shadow-x $nc-perforated-shadow-y $nc-perforated-shadow-blur $nc-perforated-shadow-spread nc-theme('shadow-color');
 $nc-perforated-inner-shadow-style: inset 0 1px 1px 0 nc-theme('shadow-color');
 
 // Buttons
 $nc-button-height: 34px;
-$nc-button-height-lg: 38px;
-$nc-button-minor-height: 30px;
-$nc-button-minor-height-lg: 40px;
+$nc-button-height-lg: 36px;
+$nc-button-minor-height: 28px;
+$nc-button-minor-height-lg: 38px;
 $nc-button-border-radius: 1px;
 $nc-button-padding: nc-spacing-val('normal', 'mini');
 $nc-button-padding-lg: $nc-button-padding * $nc-spacing-ratio;

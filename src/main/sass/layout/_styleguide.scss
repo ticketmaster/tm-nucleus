@@ -5,7 +5,15 @@ $nav-bg-hover-color: nc-color('sierra', 'background');
 $code-bg-color: nc-color('ridge');
 $main-hdg-color: nc-color('pacific');
 $secondary-hdg-color: nc-color('catalina');
+
 $table-alt-bg-color: nc-color('ridge');
+$table-cell-padding: (
+  'top': 'cozy',
+  'right': 'normal',
+  'bottom': 'cozy',
+  'left': 'normal'
+);
+
 
 $header-height: 10rem;
 $nav-width: 20rem;
@@ -38,13 +46,19 @@ $stacking-order: (
   border: $nc-base-border-style;
   border-radius: $border-radius;
   font-family: $nc-monospace;
-  font-weight: expanded;
+  font-weight: normal;
   color: nc-theme('text-color');
   background-color: $code-bg-color;
 }
 
-@mixin table($margins: $minor-block-spacing) {
+@mixin table($margins: $minor-block-spacing, $alt-row-color: false) {
   @include nc-margin($margins);
+
+  @if $alt-row-color {
+    tr:nth-child(even) {
+      background-color: $table-alt-bg-color;
+    }
+  }
 }
 
 @mixin table-hdg($align, $type: false) {
@@ -60,7 +74,7 @@ $stacking-order: (
   $first-left: 0;
 
   @if ($type == 'zebra') {
-    $pad: ('bottom': 'compact');
+    $pad: map-merge($pad, ('bottom': 'compact'));
     $first-left: 'moderate';
   }
 
@@ -73,22 +87,10 @@ $stacking-order: (
   }
 }
 
-@mixin table-cell($align, $type: false) {
-  $pad: (
-    'top': 'cozy',
-    'right': 'normal',
-    'bottom': 'cozy',
-    'left': 'normal'
-  );
+@mixin table-cell($align, $type: false, $pad: $table-cell-padding) {
   $first-col: ('left': 0);
 
   @if ($type == 'zebra') {
-    $pad: (
-      'top': 'cozy',
-      'right': 'expanded',
-      'bottom': 'cozy',
-      'left': 'expanded'
-    );
     $first-col: 'moderate';
   }
 
@@ -98,6 +100,12 @@ $stacking-order: (
 
   &:first-child {
     @include nc-padding($first-col);
+  }
+
+  @if ($type == 'zebra') {
+    &:last-child {
+      @include nc-padding(('right': 'expanded'));
+    }
   }
 }
 
@@ -308,6 +316,13 @@ $stacking-order: (
   font-weight: bold;
 }
 
+.sg-anchor {
+  &:hover {
+    color: nc-theme('link-color');
+    text-decoration: none;
+  }
+}
+
 
 .sg-function-badge {
   @include badge(nc-theme('resale-color'));
@@ -415,6 +430,19 @@ $stacking-order: (
 
 .sg-default-table__cell {
   @include table-cell(left);
+}
+
+
+.sg-alternating-table {
+  @include table($alt-row-color: true);
+}
+
+.sg-alternating-table__hdg {
+  @include table-hdg(left, 'zebra');
+}
+
+.sg-alternating-table__cell {
+  @include table-cell(left, 'zebra');
 }
 
 
@@ -546,7 +574,7 @@ $stacking-order: (
 }
 
 .sg-size-table {
-  @include table();
+  @include table($alt-row-color: true);
 }
 
 .sg-size-table__hdg {
@@ -565,12 +593,15 @@ $stacking-order: (
   color: nc-color('cascade');
 }
 
-.sg-size-table tr:nth-child(even) {
-  background-color: nc-color('ridge');
-}
-
 .sg-size-table__cell {
-  @include table-cell(left, 'zebra');
+  $pad: (
+    'top': 'cozy',
+    'right': 'expanded',
+    'bottom': 'cozy',
+    'left': 'expanded'
+  );
+
+  @include table-cell(left, 'zebra', $pad);
 }
 
 

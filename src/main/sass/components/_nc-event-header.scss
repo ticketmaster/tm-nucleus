@@ -48,7 +48,7 @@ $nc-event-text-cobrand: calc(100vw - (#{$nc-supportive-cobrand} * 2) - #{$nc-scr
   padding: 1.8rem 0;
   color: nc-theme('header-text-color');
   text-align: center;
-  background-color: nc-theme('brand-color');
+  background-color: nc-theme('header-bg-color');
   box-shadow: 0 1px 0 rgba($nc-black, 0.25);
 
   @include nc-breakpoint($nc-bp-md) {

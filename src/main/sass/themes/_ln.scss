@@ -2,13 +2,11 @@
 $nc-ln-theme: map-merge(
   $nc-base-theme, (
     'alert-color': nc-color('rainier', $map: $nc-ln-palette),
-    'brand-color': nc-color('rainier', $map: $nc-ln-palette),
     'cta-button-color': nc-color('tahoe', $map: $nc-ln-palette),
     'header-bg-color': nc-color('rainier', $map: $nc-ln-palette),
     'header-secondary-text-color': $nc-white,
     'link-color': nc-color('tahoe', $map: $nc-ln-palette),
-    'modal-color': nc-color('smoky', $map: $nc-ln-palette),
-    'outline-color': nc-color('tahoe', 'muted', $map: $nc-ln-palette),
+    'modal-header-bg-color': nc-color('smoky', $map: $nc-ln-palette),
     'primary-button-color': nc-color('smoky', $map: $nc-ln-palette),
     'secondary-button-color': nc-color('smoky', $map: $nc-ln-palette),
     'slider-range-active-bg-color': nc-color('rainier', $map: $nc-ln-palette),

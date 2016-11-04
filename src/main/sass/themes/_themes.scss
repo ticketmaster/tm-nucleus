@@ -4,7 +4,7 @@
   }
 
   @else {
-    @error '`#{$name}` is not a valid theme key';
+    @error '`#{$name}` does not exist in the theme';
   }
 }
 
@@ -29,18 +29,14 @@ $nc-base-theme: (
   'label-light-color': $nc-white,
   'overlay-color': rgba($nc-black, 0.75),
   'page-section-bg-color': nc-color('ridge', $map: $nc-base-palette),
-  'perforated-shadow-color': rgba($nc-black, 0.25),
   'placeholder-text-color': nc-color('cascade', 'light', $map: $nc-base-palette),
   'polling-circle-unfilled-color': nc-color('ridge', $map: $nc-base-palette),
   'polling-refresh-bg-color': nc-color('sierra', $map: $nc-base-palette),
-  'radio-icon-bg-color': $nc-white,
   'resale-color': nc-color('catalina', $map: $nc-base-palette),
   'shadow-color': rgba($nc-black, 0.5),
   'slider-knob-bg-color': $nc-white,
-  'slider-knob-shadow-color': rgba($nc-black, 0.5),
   'slider-range-bg-color': nc-color('rocky', $map: $nc-base-palette),
   'slider-range-border-color': nc-color('sierra', $map: $nc-base-palette),
-  'slider-range-shadow-color': rgba($nc-black, 0.25),
   'tab-item-color': nc-color('cascade', $map: $nc-base-palette),
   'tab-item-selected-color': nc-color('sierra', $map: $nc-base-palette),
   'text-color': nc-color('sierra', $map: $nc-base-palette),
