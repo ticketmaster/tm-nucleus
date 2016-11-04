@@ -23,7 +23,7 @@
   text-transform: uppercase;
   white-space: nowrap;
   cursor: pointer;
-  border-radius: $nc-button-border-radius;
+  border-radius: $nc-base-border-radius;
   box-shadow: none;
 
   @if ($responsive) {

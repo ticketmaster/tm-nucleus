@@ -38,7 +38,7 @@ $nc-info-border-style: 1px solid nc-theme('info-border-color');
 $nc-tile-selected-style: 2px solid nc-theme('link-color');
 
 // Radius and shadows
-$nc-base-border-radius: 3px;
+$nc-base-border-radius: 1px;
 $nc-circle-border-radius: 50%;
 $nc-shadow-x: 0;
 $nc-shadow-y: 1px;
@@ -60,8 +60,7 @@ $nc-button-height: 34px;
 $nc-button-height-lg: 36px;
 $nc-button-minor-height: 28px;
 $nc-button-minor-height-lg: 38px;
-$nc-button-border-radius: 1px;
-$nc-button-padding: nc-spacing-val('normal', 'mini');
+$nc-button-padding: nc-spacing-val('normal');
 $nc-button-padding-lg: $nc-button-padding * $nc-spacing-ratio;
 $nc-button-minor-padding: 15px;
 $nc-button-minor-padding-lg: $nc-button-minor-padding * $nc-spacing-ratio;

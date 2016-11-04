@@ -9,7 +9,7 @@
       <h2 class="sg-hdg">Scale</h2>
       <p>Whitespace is an important part of creating rhythm and harmony between
         elements on a page. To maintain consistency, we've developed a spacing
-        scale that has an <strong>6px</strong> base size and a <strong>1.5</strong>
+        scale that has a <strong>6px</strong> base size and a <strong>1.5</strong>
         ratio. All of our spacing values are derived as a multiple of these two
         numbers.</p>
 
@@ -109,11 +109,11 @@
       <h2 class="sg-hdg">Code Reference</h2>
 
       <h3 class="sg-code-hdg">
-        <code class="sg-code-hdg__name">nc-spacing()</code>
+        <code class="sg-code-hdg__name">nc-margin()</code>
         <span class="sg-code-hdg__badge sg-mixin-badge">Mixin</span>
         <span class="sg-code-hdg__source-file">mixins/_spacing.scss</span>
       </h3>
-      <p>Generates size value from our spacing scale.</p>
+      <p>Generates margin values.</p>
       <table class="sg-params-table">
         <tr>
           <th class="sg-params-table__hdg">Parameters</th>
@@ -122,16 +122,14 @@
           <th class="sg-params-table__hdg">Required</th>
         </tr>
         <tr>
-          <td class="sg-params-table__cell"><code class="sg-code">$outside</code></td>
-          <td class="sg-params-table__cell"><code class="sg-code">false</code></td>
+          <td class="sg-params-table__cell"><code class="sg-code">$vals</code></td>
+          <td class="sg-params-table__cell"></td>
           <td class="sg-params-table__cell">Set margins; can be either name from <a href="#size-chart">size chart</a> or a SASS map</td>
-          <td class="sg-params-table__cell sg-params-table__cell--check">&nbsp;</td>
-        </tr>
-        <tr>
-          <td class="sg-params-table__cell"><code class="sg-code">$inside</code></td>
-          <td class="sg-params-table__cell"><code class="sg-code">false</code></td>
-          <td class="sg-params-table__cell">Set padding; can be either name from <a href="#size-chart">size chart</a> or a SASS map</td>
-          <td class="sg-params-table__cell sg-params-table__cell--check">&nbsp;</td>
+          <td class="sg-params-table__cell sg-params-table__cell--check">
+            <svg class="nc-icon-check sg-icon-check">
+              <use xlink:href="img/sprite.svg#icon-check"></use>
+            </svg>
+          </td>
         </tr>
         <tr>
           <td class="sg-params-table__cell"><code class="sg-code">$responsive</code></td>
@@ -143,25 +141,110 @@
 
 <pre class="sg-code-block"><code class="scss">/* basic usage */
 .widget {
-  @include nc-spacing($inside: compact);
+  @include nc-margin('compact');
 }
 
 /* using a SASS map; can either define separately or inline within @include call */
 $map: (
-  top: 10px,
-  right: slim,
-  left: 0
+  'top': 10px,
+  'right': 'slim',
+  'left': 0
 );
 
 .widget-custom {
-  @include nc-spacing($outside: $map);
+  @include nc-margin($map);
 }
 
 /* fixed spacing aka not responsive */
 .text-fixed {
-  @include nc-spacing($inside: moderate, $responsive: false);
+  @include nc-margin('moderate', $responsive: false);
 }
 </code></pre>
+
+      <h3 class="sg-code-hdg">
+        <code class="sg-code-hdg__name">nc-padding()</code>
+        <span class="sg-code-hdg__badge sg-mixin-badge">Mixin</span>
+        <span class="sg-code-hdg__source-file">mixins/_spacing.scss</span>
+      </h3>
+      <p>Generates padding values.</p>
+      <table class="sg-params-table">
+        <tr>
+          <th class="sg-params-table__hdg">Parameters</th>
+          <th class="sg-params-table__hdg">Default</th>
+          <th class="sg-params-table__hdg">Description</th>
+          <th class="sg-params-table__hdg">Required</th>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$vals</code></td>
+          <td class="sg-params-table__cell"></td>
+          <td class="sg-params-table__cell">Set padding; can be either name from <a href="#size-chart">size chart</a> or a SASS map</td>
+          <td class="sg-params-table__cell sg-params-table__cell--check">
+            <svg class="nc-icon-check sg-icon-check">
+              <use xlink:href="img/sprite.svg#icon-check"></use>
+            </svg>
+          </td>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$responsive</code></td>
+          <td class="sg-params-table__cell"><code class="sg-code">true</code></td>
+          <td class="sg-params-table__cell">Should the size be responsive</td>
+          <td class="sg-params-table__cell sg-params-table__cell--check">&nbsp;</td>
+        </tr>
+      </table>
+
+<pre class="sg-code-block"><code class="scss">/* basic usage */
+.widget {
+  @include nc-padding('compact');
+}
+
+/* using a SASS map; can either define separately or inline within @include call */
+$map: (
+  'top': 10px,
+  'right': 'slim',
+  'left': 0
+);
+
+.widget-custom {
+  @include nc-padding($map);
+}
+
+/* fixed spacing aka not responsive */
+.text-fixed {
+  @include nc-padding('moderate', $responsive: false);
+}
+</code></pre>
+
+      <h3 class="sg-code-hdg">
+        <code class="sg-code-hdg__name">nc-spacing-val()</code>
+        <span class="sg-code-hdg__badge sg-function-badge">Function</span>
+        <span class="sg-code-hdg__source-file">base/_helpers.scss</span>
+      </h3>
+      <p>Returns spacing value for given name. This is useful for calculations or other situations where you only need the raw number and do not need the actual style definitions for setting the margin or padding.</p>
+      <table class="sg-params-table">
+        <tr>
+          <th class="sg-params-table__hdg">Parameters</th>
+          <th class="sg-params-table__hdg">Default</th>
+          <th class="sg-params-table__hdg">Description</th>
+          <th class="sg-params-table__hdg">Required</th>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$val</code></td>
+          <td class="sg-params-table__cell"></td>
+          <td class="sg-params-table__cell">Name of spacing value (see <a href="#size-chart">size chart</a>)</td>
+          <td class="sg-params-table__cell sg-params-table__cell--check">
+            <svg class="nc-icon-check sg-icon-check">
+              <use xlink:href="img/sprite.svg#icon-check"></use>
+            </svg>
+          </td>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$set</code></td>
+          <td class="sg-params-table__cell"><code class="sg-code">mini</code></td>
+          <td class="sg-params-table__cell">Which set to pull from; should <em>rarely</em> ever be anything other than the default</td>
+          <td class="sg-params-table__cell sg-params-table__cell--check">&nbsp;</td>
+        </tr>
+      </table>
+
 
     </section>
 

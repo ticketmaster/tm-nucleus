@@ -201,7 +201,7 @@
 }
 
 
-@function nc-spacing-val($val, $set) {
+@function nc-spacing-val($val, $set: 'mini') {
   $output: false;
   $is-num: type-of($val) == number;
   $is-mapped: map-has-key($nc-spacing-map, $val);

@@ -33,6 +33,49 @@
     </section>
 
     <section class="sg-section">
+      <h2 class="sg-hdg">Declaring Breakpoints</h2>
+      <p>In SASS, declare your breakpoints within the elements affected. Do not declare media queries as another code block separate from the original context.</p>
+
+<pre><code class="scss">/* BAD */
+.class1 {
+  font-size: 12px;
+}
+.class2 {
+  padding: 50px;
+}
+
+/* a bunch of other code between these lines */
+
+@include nc-breakpoint($bp-md) {
+  .class1 {
+    font-size: 18px;
+  }
+  .class2 {
+    padding: 100px;
+  }
+}</code></pre>
+
+      <p>Declaring your breakpoints in this way places the modifications too far from the original definitions. The following is much easier to parse.</p>
+
+<pre><code class="scss">/* GOOD */
+.class1 {
+  font-size: 12px;
+
+  @include nc-breakpoint($bp-md) {
+    font-size: 18px;
+  }
+}
+
+.class2 {
+  padding: 50px;
+
+  @include nc-breakpoint($bp-md) {
+    padding: 100px;
+  }
+}</code></pre>
+    </section>
+
+    <section class="sg-section">
       <h2 class="sg-hdg">Code Reference</h2>
 
       <h3 class="sg-code-hdg">
@@ -89,37 +132,6 @@
 }
 </code></pre>
 
-      <div class="sg-callout">
-        <h4 class="sg-callout__hdg">Where to use breakpoints</h4>
-        <p>In SASS, declare your breakpoints within the elements affected. Do not declare media queries as another code block separate from the original context.</p>
-      </div>
-      <pre><code class="scss">// DON'T do this
-.class1 {
-  font-size: 12px;
-}
-.class2 {
-  padding: 50px;
-}
-
-[...]
-
-@include nc-breakpoint($bp-md) {
-  .class1 {
-    font-size: 18px;
-  }
-  .class2 {
-    padding: 100px;
-  }
-}
-
-// DO do this
-.class1 {
-  font-size: 12px;
-
-  @include nc-breakpoint($bp-md) {
-    font-size: 18px;
-  }
-}</code></pre>
 
     </section>
   </div>

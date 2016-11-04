@@ -27,6 +27,10 @@
 
 
 @mixin nc-truncate-text($width: false) {
+  @if $width {
+    width: $width;
+  }
+
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
