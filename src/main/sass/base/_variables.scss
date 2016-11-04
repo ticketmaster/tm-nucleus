@@ -90,15 +90,13 @@ $nc-polling-border-size: 4px;
 // Forms
 $nc-min-input-font-size: 1.6rem; // min required to avoid iOS zooming
 $nc-textfield-gutter-left: 10px;
-$nc-input-height: 45px;
-$nc-input-label-height: 20px;
-$nc-input-label-bottom: 5px;
-$nc-input-label-bottom-active: 30px;
+$nc-input-height: 44px;
 $nc-dropdown-chevron-width: 13px;
 $nc-dropdown-chevron-height: 8px;
 $nc-chkbox-size: 8px;
 $nc-chkbox-thickness: 3px;
 $nc-radio-label-offset: 10px;
+$nc-input-padding: 'normal';
 
 // Event Header
 $nc-event-header-tm-short: 35px;

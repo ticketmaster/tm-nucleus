@@ -23,7 +23,7 @@ $nc-base-theme: (
   'info-border-color': nc-color('sierra', $map: $nc-base-palette),
   'info-color': nc-color('sierra', $map: $nc-base-palette),
   'input-bg-color': $nc-white,
-  'input-border-color': nc-color('cascade', $map: $nc-base-palette),
+  'input-border-color': nc-color('sierra', 'light', $map: $nc-base-palette),
   'label-color': nc-color('cascade', $map: $nc-base-palette),
   'label-dark-color': nc-color('cascade', 'dark', $map: $nc-base-palette),
   'label-light-color': $nc-white,

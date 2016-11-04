@@ -6,7 +6,7 @@
 }
 
 .nc-dropdown__icon-chevron {
-  @include nc-icon(nc-theme('icon-color'), $nc-dropdown-chevron-width, $nc-dropdown-chevron-height);
+  @include nc-icon(nc-theme('link-color'), $nc-dropdown-chevron-width, $nc-dropdown-chevron-height);
 
   position: absolute;
   right: 15px;
@@ -29,7 +29,7 @@
 
   &:focus ~ .nc-dropdown__icon-chevron,
   &:active ~ .nc-dropdown__icon-chevron {
-    fill: nc-theme('primary-button-color');
+    fill: nc-theme('link-color');
   }
 
   &:focus ~ .nc-dropdown__icon-chevron.nc-dropdown__icon-chevron--error,

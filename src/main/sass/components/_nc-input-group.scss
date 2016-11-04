@@ -7,11 +7,11 @@
 }
 
 .nc-input-group__label {
-  @include nc-type-scale('centi');
-  @include nc-margin(('bottom': 'compact'));
+  @include nc-type-scale('milli');
+  @include nc-margin(('bottom': 'slim'));
 
   display: block;
-  letter-spacing: 2px;
+  font-weight: bold;
   color: nc-theme('label-color');
   text-align: left;
   text-transform: uppercase;
@@ -34,7 +34,6 @@
 .nc-input-group__text-field {
   @include nc-base-field();
 
-  padding: 0 15px;
   appearance: none;
 
   &::placeholder {

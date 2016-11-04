@@ -677,7 +677,6 @@ $stacking-order: (
 }
 
 
-
 // split-content examples
 .sg-split-container {
   @include nc-margin($minor-block-spacing);
@@ -690,6 +689,28 @@ $stacking-order: (
 .sg-split-secondary {
   border: 3px solid #9d79f2;
 }
+
+
+
+// forms
+.sg-form-field-example {
+  @include nc-outer-spacing($bottom: $nc-spacing-md);
+
+  width: 33%;
+}
+
+.sg-label-example {
+  @include nc-padding('moderate');
+}
+
+.sg-label-example--light {
+  background-color: nc-color('cascade', 'background');
+}
+
+.sg-label-example--dark {
+  background-color: nc-color('sierra');
+}
+
 
 
 
@@ -807,26 +828,6 @@ $stacking-order: (
 .sg__ism-tooltip {
   @include nc-outer-spacing($bottom: $nc-spacing-md);
 }
-
-.sg__input-wrapper {
-  @include nc-outer-spacing($bottom: $nc-spacing-md);
-
-  width: 33%;
-}
-
-.sg__label-example {
-  padding-left: 15px;
-  padding-top: 3px;
-}
-
-.sg__label-example--light {
-  background-color: nc-color('cascade', 'background');
-}
-
-.sg__label-example--dark {
-  background-color: nc-color('sierra');
-}
-
 
 .sg__module {
   @include nc-outer-spacing($bottom: $nc-spacing-md);

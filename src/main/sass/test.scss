@@ -13,4 +13,6 @@ $nc-current-theme: nc-theme-add(('something': #123456));
 
 .nc-test {
   color: nc-theme('something');
+
+  // @include nc-padding((0, 10px, 10px, 0));
 }

@@ -1,0 +1,31 @@
+/** @define dropdown-custom-list; weak */
+
+.nc-dropdown-custom-list {
+  @include nc-unstyled-list();
+  @include nc-margin(('top': 'compact'));
+  @include nc-padding(('top': 'compact', 'bottom': 'compact'));
+
+  border: $nc-base-border-style;
+  box-shadow: 0 2px 2px 0 nc-theme('shadow-color');
+}
+
+.nc-dropdown-custom-list__item {
+  @include nc-padding((
+    'left': $nc-input-padding,
+    'right': $nc-input-padding,
+    'top': 'moderate',
+    'bottom': 'moderate'),
+    $responsive: false
+  );
+
+  color: nc-theme('alt-text-color');
+  cursor: pointer;
+
+  &:hover {
+    background-color: nc-hover($nc-white);
+  }
+}
+
+.nc-dropdown-custom-list__matched-text {
+  color: nc-theme('text-color');
+}

@@ -13,6 +13,10 @@
 }
 
 @function nc-hover($color) {
+  @if ($color == #fff) {
+    @return nc-color('pacific', 'background');
+  }
+
   @return mix(#000, $color, 25%);
 }
 
