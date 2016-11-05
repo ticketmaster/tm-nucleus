@@ -400,6 +400,14 @@ $stacking-order: (
 }
 
 
+.sg-class-list {
+  @include nc-unstyled-list();
+}
+
+.sg-class-list__item {
+  @include nc-margin(('top': 'compact', 'bottom': 'compact'));
+}
+
 .sg-usage-list {
   margin: 0 0 0 nc-get-spacing('expanded', 'mini');
   padding: 0;
@@ -430,6 +438,10 @@ $stacking-order: (
 
 .sg-default-table__cell {
   @include table-cell(left);
+}
+
+.sg-default-table__cell--nowrap {
+  white-space: nowrap;
 }
 
 
