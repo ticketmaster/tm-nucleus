@@ -20,13 +20,9 @@
       "title": "Spacing",
       "url":   "spacing.html"
     },
-    "split-content": {
-      "title": "Split Content",
-      "url":   "split-content.html"
-    },
-    "page-structure": {
-      "title": "Page Structure",
-      "url":   "page-structure.html"
+    "layout": {
+      "title": "Layout",
+      "url":   "layout.html"
     },
     "buttons": {
       "title": "Buttons",
@@ -36,14 +32,6 @@
       "title": "Form Elements",
       "url":   "forms.html"
     },
-    "qty-picker": {
-      "title": "Quantity Picker",
-      "url":   "qty-picker.html"
-    },
-    "toggle-switch": {
-      "title": "Toggle Switch",
-      "url":   "toggle-switch.html"
-    },
     "lists": {
       "title": "Lists",
       "url":   "lists.html"
@@ -51,6 +39,14 @@
     "tooltips": {
       "title": "Tooltips",
       "url":   "tooltips.html"
+    },
+    "qty-picker": {
+      "title": "Quantity Picker",
+      "url":   "qty-picker.html"
+    },
+    "toggle-switch": {
+      "title": "Toggle Switch",
+      "url":   "toggle-switch.html"
     },
     "srs": {
       "title": "SRS",

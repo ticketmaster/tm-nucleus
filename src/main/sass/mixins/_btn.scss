@@ -1,5 +1,5 @@
 // mixin to create buttons
-@mixin nc-btn($color: $primary-button-color, $txtcolor: $nc-white, $height: $nc-button-height, $hoverstate: false, $outlined: false, $responsive: true) {
+@mixin nc-btn($color: nc-theme('primary-button-color'), $txtcolor: $nc-white, $height: $nc-button-height, $hoverstate: false, $outlined: false, $responsive: true) {
   @include nc-btn-base($height, $responsive);
 
   @if not $outlined {

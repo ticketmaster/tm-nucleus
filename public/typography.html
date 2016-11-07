@@ -27,8 +27,8 @@
 
     <section class="sg-section">
       <h2 class="sg-hdg">Typographic Scale</h2>
-      <p>We utilize a typographic modular scale using 16px as the base size and
-        1.125 ratio. All of our font sizes are derived as a multiple of these
+      <p>We utilize a typographic modular scale using <strong>16px</strong> as the base size and
+        <strong>1.125</strong> ratio. All of our font sizes are derived as a multiple of these
         two numbers. We specify our font sizes in <code class="sg-code">rem</code>
         units. <code class="sg-code">1rem</code> is equivalent to
         <code class="sg-code">10px</code>.</p>
@@ -319,17 +319,17 @@
 
 <pre class="sg-code-block"><code class="scss">/* basic usage */
 .text-basic {
-  @include nc-type-scale(kilo);
+  @include nc-type-scale('kilo');
 }
 
 /* passing line-height */
 .text-lh {
-  @include nc-type-scale(kilo, $lh: 1);
+  @include nc-type-scale('kilo', $lh: 1);
 }
 
 /* fixed font size aka not responsive */
 .text-fixed {
-  @include nc-type-scale(kilo, $responsive: false);
+  @include nc-type-scale('kilo', $responsive: false);
 }
 
 </code></pre>
@@ -420,52 +420,6 @@
 <pre class="sg-code-block"z><code class="scss">/* basic usage */
 .truncated-text {
   @include nc-truncate-text(200px);
-}
-</code></pre>
-
-      <h3 class="sg-code-hdg">
-        <code class="sg-code-hdg__name">nc-get-font()</code>
-        <span class="sg-code-hdg__badge sg-function-badge">Function</span>
-        <span class="sg-code-hdg__source-file">mixins/_text.scss</span>
-      </h3>
-      <p>Returns font-size given the name and size from named set.</p>
-      <table class="sg-params-table">
-        <tr>
-          <th class="sg-params-table__hdg">Parameters</th>
-          <th class="sg-params-table__hdg">Default</th>
-          <th class="sg-params-table__hdg">Description</th>
-          <th class="sg-params-table__hdg">Required</th>
-        </tr>
-        <tr>
-          <td class="sg-params-table__cell"><code class="sg-code">$name</code></td>
-          <td class="sg-params-table__cell">&nbsp;</td>
-          <td class="sg-params-table__cell">Name of size (refer to Size Chart)</td>
-          <td class="sg-params-table__cell sg-params-table__cell--check">
-            <svg class="nc-icon-check sg-icon-check">
-              <use xlink:href="img/sprite.svg#icon-check"></use>
-            </svg>
-          </td>
-        </tr>
-        <tr>
-          <td class="sg-params-table__cell"><code class="sg-code">$size</code></td>
-          <td class="sg-params-table__cell">&nbsp;</td>
-          <td class="sg-params-table__cell">Size from named set (<code class="sg-code">sm, md, lg</code>)</td>
-          <td class="sg-params-table__cell sg-params-table__cell--check">
-            <svg class="nc-icon-check sg-icon-check">
-              <use xlink:href="img/sprite.svg#icon-check"></use>
-            </svg>
-          </td>
-        </tr>
-      </table>
-
-<pre class="sg-code-block"z><code class="scss">/* basic usage */
-.some-text {
-  font-size: nc-get-font('mega', 'md');
-}
-
-/* output */
-.some-text {
-  font-size: 2rem;
 }
 </code></pre>
 

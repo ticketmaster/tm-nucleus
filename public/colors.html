@@ -145,7 +145,6 @@
 
       <h3 class="sg-subhdg">Shades</h4>
       <p>Shades are used as visual cues for interactivity, such as for hovering, when an element is disabled, etc.</p>
-      <p>Shades <em>should not</em> be used statically &mdash; that is, they should only ever be seen when the user has initiated an action. You should not be using any shades when designing static elements of your component.</p>
 
       <table class="sg-default-table">
         <tr>
@@ -174,8 +173,6 @@
         </tr>
       </table>
 
-      <p>Note that for most of these shades, their relationships and usage are well-defined and should not have any deviations.
-        For example, the <code class="sg-code">dark</code> shade should always be used for a visual cue of hovering over an element.</p>
       <p>Below is a reference for all of the different shades that are derived from our base palette.</p>
 
       <table class="sg-swatch-table">
@@ -774,7 +771,17 @@ $nc-config: (
       <h2 class="sg-hdg">Customizations</h2>
       <p>If you need to customize the theme further (or if the existing key names are not applicable to your use case), you can create additional keys as a SASS map and merge them into the theme.</p>
       <p>Nucleus maintains the active theme in a SASS map referenced by <code class="sg-code">$nc-current-theme</code>. After defining your additional keys, use the <code class="sg-code">nc-theme-add</code> function to add it to the theme.</p>
-      <p>Here is an example:</p>
+
+      <div class="sg-callout">
+        <h3 class="sg-callout__hdg">Important Note</h4>
+        <p>All of your color definitions should be abstracted in your theme definition.
+          This is to support branding at the app level. (Themes are not always 1:1;
+          the fact that everything that's blue in the TM theme does not necessarily
+          mean that it is red in the LN theme.)</p>
+        <p>To be more clear, you <strong>shouldn't be using <code class="sg-code">nc-color</code> within any style definitions</strong>. You use the function to specify colors in your theme map, then apply those colors with <code class="sg-code">nc-theme</code> via an abstract key name.</p>
+      </div>
+
+      <p>Here is an example of adding your theme keys:</p>
 
 <pre class="sg-code-block"><code class="scss">/* First bring in Nucleus's core  */
 @import '[path/to/nucleus]/nucleus-core';
@@ -794,14 +801,6 @@ $nc-current-theme: nc-theme-add($your-theme);
 }
 </code></pre>
 
-      <div class="sg-callout">
-        <h3 class="sg-callout__hdg">Important Note</h4>
-        <p>All of your color definitions should be abstracted in your theme definition.
-          This is to support branding at the app level. (Themes are not always 1:1;
-          the fact that everything that's blue in the TM theme does not necessarily
-          mean that it is red in the LN theme.)</p>
-        <p>To be more clear, you <strong>shouldn't be using <code class="sg-code">nc-color</code> within any style definitions</strong>. You use the function to specify colors in your theme map, then apply those colors with <code class="sg-code">nc-theme</code> via an abstract key name.</p>
-      </div>
     </section>
 
     <section class="sg-section">

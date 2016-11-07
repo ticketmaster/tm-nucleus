@@ -51,34 +51,6 @@
           </td>
           <td class="sg-default-table__cell">Checkout button</td>
         </tr>
-        <!-- <tr>
-          <td class="sg-default-table__cell"><button class="nc-button nc-button--full">Full width button</button></td>
-          <td class="sg-default-table__cell"><code class="sg-code">.nc-button .nc-button--full</code>, 100% width on mobile only</td>
-        </tr>
-        <tr>
-          <td class="sg-default-table__cell"><button class="nc-button-aux">Auxiliary Button</button></td>
-          <td class="sg-default-table__cell"><code class="sg-code">.nc-button-aux</code>, 44px/46px height, 20px/40px L/R padding</td>
-        </tr>
-        <tr>
-          <td class="sg-default-table__cell"><button disabled class="nc-button-aux">Auxiliary Button</button></td>
-          <td class="sg-default-table__cell"><code class="sg-code">.nc-button-aux</code>, disabled state</td>
-        </tr>
-        <tr>
-          <td class="sg-default-table__cell"><button class="nc-button-aux nc-button-aux--secondary">Secondary Auxiliary Button</button></td>
-          <td class="sg-default-table__cell"><code class="sg-code">.nc-button-aux .nc-button-aux--secondary</code></td>
-        </tr>
-        <tr>
-          <td class="sg-default-table__cell"><button disabled class="nc-button-aux nc-button-aux--secondary">Secondary Auxiliary Button</button></td>
-          <td class="sg-default-table__cell"><code class="sg-code">.nc-button-aux .nc-button-aux--secondary</code>, disabled state</td>
-        </tr>
-        <tr>
-          <td class="sg-default-table__cell"><button class="nc-button-aux nc-button-aux--full">Full width Auxiliary Button</button></td>
-          <td class="sg-default-table__cell"><code class="sg-code">.nc-button-aux .nc-button-aux--full</code>, 100% width on mobile only</td>
-        </tr>
-        <tr>
-          <td class="sg-default-table__cell"><button class="nc-button-aux nc-button-aux--minor">Minor Aux Button</button></td>
-          <td class="sg-default-table__cell"><code class="sg-code">.nc-button-aux .nc-button-aux--minor</code>, 30px/40px height, 15/20px L/R padding</td>
-        </tr> -->
         <tr>
           <td class="sg-default-table__cell sg-default-table__cell--nowrap">
             <button class="nc-button-secondary">Button</button>
@@ -127,10 +99,6 @@
           </td>
           <td class="sg-default-table__cell">Utility button, used for functional actions (note slightly larger font)</td>
         </tr>
-        <!-- <tr>
-          <td class="sg-default-table__cell"><button class="nc-button-outlined nc-button-outlined--full">Full width Outlined Button</button></td>
-          <td class="sg-default-table__cell"><code class="sg-code">.nc-button-outlined .nc-button-outlined--full</code>, 100% width on mobile only</td>
-        </tr> -->
         <tr>
           <td class="sg-default-table__cell sg-default-table__cell--nowrap">
             <button class="nc-button nc-button--static">Button</button>
@@ -191,6 +159,84 @@
           <td class="sg-default-table__cell">Icon button</td>
         </tr>
       </table>
+    </section>
+
+    <section class="sg-section">
+      <h2 class="sg-hdg">Code Reference</h2>
+
+      <h3 class="sg-code-hdg">
+        <code class="sg-code-hdg__name">nc-btn()</code>
+        <span class="sg-code-hdg__badge sg-mixin-badge">Mixin</span>
+        <span class="sg-code-hdg__source-file">mixins/_btn.scss</span>
+      </h3>
+      <p>Generates button styles based on parameters.</p>
+      <table class="sg-params-table">
+        <tr>
+          <th class="sg-params-table__hdg">Parameters</th>
+          <th class="sg-params-table__hdg">Default</th>
+          <th class="sg-params-table__hdg">Description</th>
+          <th class="sg-params-table__hdg">Required</th>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$color</code></td>
+          <td class="sg-params-table__cell"><code class="sg-code">nc-theme('primary-button-color')</code></td>
+          <td class="sg-params-table__cell">Button color</td>
+          <td class="sg-params-table__cell sg-params-table__cell--check">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$txtcolor</code></td>
+          <td class="sg-params-table__cell"><code class="sg-code">$nc-white</code></td>
+          <td class="sg-params-table__cell">Button text color</td>
+          <td class="sg-params-table__cell sg-params-table__cell--check">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$height</code></td>
+          <td class="sg-params-table__cell"><code class="sg-code">$nc-button-height</code></td>
+          <td class="sg-params-table__cell">Button height</td>
+          <td class="sg-params-table__cell sg-params-table__cell--check">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$hoverstate</code></td>
+          <td class="sg-params-table__cell"><code class="sg-code">false</code></td>
+          <td class="sg-params-table__cell">Should there be a hoverstate for the button</td>
+          <td class="sg-params-table__cell sg-params-table__cell--check">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$outlined</code></td>
+          <td class="sg-params-table__cell"><code class="sg-code">false</code></td>
+          <td class="sg-params-table__cell">Should this be the outlined button style</td>
+          <td class="sg-params-table__cell sg-params-table__cell--check">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$responsive</code></td>
+          <td class="sg-params-table__cell"><code class="sg-code">true</code></td>
+          <td class="sg-params-table__cell">Should the button's height and width be responsive</td>
+          <td class="sg-params-table__cell sg-params-table__cell--check">&nbsp;</td>
+        </tr>
+      </table>
+
+<pre class="sg-code-block"><code class="scss">/* basic usage */
+.widget {
+  @include nc-margin('compact');
+}
+
+/* using a SASS map; can either define separately or inline within @include call */
+$map: (
+  'top': 10px,
+  'right': 'slim',
+  'left': 0
+);
+
+.widget-custom {
+  @include nc-margin($map);
+}
+
+/* fixed spacing aka not responsive */
+.text-fixed {
+  @include nc-margin('moderate', $responsive: false);
+}
+</code></pre>
+
     </section>
 
   </div>
