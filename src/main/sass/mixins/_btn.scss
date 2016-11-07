@@ -118,8 +118,13 @@
 }
 
 // unstyled button
-@mixin nc-unbutton($txtcolor: nc-theme('link-color'), $padding: $nc-button-padding, $nowrap: 'nowrap') {
-  padding: 0 $padding;
+@mixin nc-unbutton($txtcolor: nc-theme('link-color'), $padding: $nc-button-padding, $nowrap: 'nowrap', $responsive: true) {
+  @include nc-padding((
+    'left': $padding,
+    'right': $padding),
+    $responsive: $responsive
+  );
+
   font-weight: normal;
   color: $txtcolor;
   text-align: center;
@@ -134,7 +139,7 @@
 
   &:hover,
   &:focus {
-    color: nc-hover(nc-theme('link-color'));
+    color: nc-hover($txtcolor);
     text-decoration: underline;
   }
 }

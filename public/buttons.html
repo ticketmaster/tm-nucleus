@@ -7,6 +7,15 @@
 
     <section id="buttons" class="sg-section">
       <h2 class="sg-hdg">Buttons</h2>
+      <p>General specifications for buttons are as follows:</p>
+      <ul class="sg-usage-list">
+        <li class="sg-usage-list__item"><code class="sg-code">normal</code> left and right padding</li>
+        <li class="sg-usage-list__item"><code class="sg-code">milli</code> font size</li>
+        <li class="sg-usage-list__item">36px tall at less than 720px screen width</li>
+        <li class="sg-usage-list__item">38px tall at screen width 720px and above</li>
+        <li class="sg-usage-list__item">Text is centered, bold, and all-caps</li>
+      </ul>
+
       <table class="sg-default-table">
         <tr>
           <th class="sg-default-table__hdg">
@@ -215,25 +224,93 @@
         </tr>
       </table>
 
-<pre class="sg-code-block"><code class="scss">/* basic usage */
-.widget {
-  @include nc-margin('compact');
+<pre class="sg-code-block"><code class="scss">/* example usage */
+.regular-button {
+  @include nc-btn($hoverstate: true);
 }
 
-/* using a SASS map; can either define separately or inline within @include call */
-$map: (
-  'top': 10px,
-  'right': 'slim',
-  'left': 0
-);
-
-.widget-custom {
-  @include nc-margin($map);
+.non-responsive-button {
+  @include nc-btn($hoverstate: true, $responsive: false);
 }
 
-/* fixed spacing aka not responsive */
-.text-fixed {
-  @include nc-margin('moderate', $responsive: false);
+.checkout-button {
+  @include nc-btn(nc-theme('cta-button-color'), $hoverstate: true);
+}
+
+.outlined-button {
+  @include nc-btn(nc-theme('primary-button-color'), $hoverstate: true, $outlined: true);
+}
+</code></pre>
+
+      <h3 class="sg-code-hdg">
+        <code class="sg-code-hdg__name">nc-unbutton()</code>
+        <span class="sg-code-hdg__badge sg-mixin-badge">Mixin</span>
+        <span class="sg-code-hdg__source-file">mixins/_btn.scss</span>
+      </h3>
+      <p>Creates a button that appears as regular text (defaults link color).</p>
+      <table class="sg-params-table">
+        <tr>
+          <th class="sg-params-table__hdg">Parameters</th>
+          <th class="sg-params-table__hdg">Default</th>
+          <th class="sg-params-table__hdg">Description</th>
+          <th class="sg-params-table__hdg">Required</th>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$txtcolor</code></td>
+          <td class="sg-params-table__cell"><code class="sg-code">nc-theme('link-color')</code></td>
+          <td class="sg-params-table__cell">Text color of button</td>
+          <td class="sg-params-table__cell sg-params-table__cell--check">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$padding</code></td>
+          <td class="sg-params-table__cell"><code class="sg-code">$nc-button-padding</code></td>
+          <td class="sg-params-table__cell">Left and right padding</td>
+          <td class="sg-params-table__cell sg-params-table__cell--check">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$nowrap</code></td>
+          <td class="sg-params-table__cell"><code class="sg-code">nowrap</code></td>
+          <td class="sg-params-table__cell">Whether to allow button text to wrap or not</td>
+          <td class="sg-params-table__cell sg-params-table__cell--check">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$responsive</code></td>
+          <td class="sg-params-table__cell"><code class="sg-code">true</code></td>
+          <td class="sg-params-table__cell">Should the button's dimensions be responsive</td>
+          <td class="sg-params-table__cell sg-params-table__cell--check">&nbsp;</td>
+        </tr>
+      </table>
+
+<pre class="sg-code-block"><code class="scss">/* create a link button whose test is colored like regular text */
+.text-button {
+  @include nc-unbutton(nc-theme('text-color'));
+}
+</code></pre>
+
+      <h3 class="sg-code-hdg">
+        <code class="sg-code-hdg__name">nc-icon-button()</code>
+        <span class="sg-code-hdg__badge sg-mixin-badge">Mixin</span>
+        <span class="sg-code-hdg__source-file">mixins/_btn.scss</span>
+      </h3>
+      <p>Creates a button that consists only of an image. This mixin calls <code class="sg-code">nc-button</code> internally. Note that this mixin does not actually generate the icon itself; you'll need to provide that in the markup.</p>
+      <table class="sg-params-table">
+        <tr>
+          <th class="sg-params-table__hdg">Parameters</th>
+          <th class="sg-params-table__hdg">Default</th>
+          <th class="sg-params-table__hdg">Description</th>
+          <th class="sg-params-table__hdg">Required</th>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell">None</td>
+          <td class="sg-params-table__cell">&nbsp;</td>
+          <td class="sg-params-table__cell">This mixin accepts no parameters</td>
+          <td class="sg-params-table__cell sg-params-table__cell--check">&nbsp;</td>
+        </tr>
+      </table>
+
+<pre class="sg-code-block"><code class="scss">/* style a button to hold an image */
+.an-icon-button {
+  @include nc-icon-button();
 }
 </code></pre>
 

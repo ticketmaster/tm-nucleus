@@ -415,6 +415,14 @@ $stacking-order: (
   color: nc-color('cascade');
 }
 
+.sg-usage-list__item {
+  @include nc-margin(('top': 'cozy'));
+
+  &:first-child {
+    @include nc-margin(0);
+  }
+}
+
 .sg-swatch-list {
   @include nc-unstyled-list();
 }
