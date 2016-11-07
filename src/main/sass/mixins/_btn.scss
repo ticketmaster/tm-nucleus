@@ -1,6 +1,8 @@
 // mixin to create buttons
 @mixin nc-btn($color: nc-theme('primary-button-color'), $txtcolor: $nc-white, $height: $nc-button-height, $hoverstate: false, $outlined: false, $responsive: true) {
-  @include nc-btn-base($height, $responsive);
+  $calculated-height: $height - ($nc-button-border-size * 2);
+
+  @include nc-btn-base($calculated-height, $responsive);
 
   @if not $outlined {
     @include nc-btn-color($color, $txtcolor, $hoverstate);
@@ -13,10 +15,16 @@
 // shared base for buttons
 @mixin nc-btn-base($height, $responsive) {
   @include nc-type-scale('milli', $lh: $height);
+  @include nc-padding((
+    'top': 0,
+    'bottom': 0,
+    'left': $nc-button-padding,
+    'right': $nc-button-padding),
+    $responsive
+  );
 
   display: inline-block;
   min-height: $height;
-  padding: 0 $nc-button-padding;
   font-weight: bold;
   text-align: center;
   text-decoration: none;
@@ -28,9 +36,8 @@
 
   @if ($responsive) {
     @include nc-breakpoint($nc-bp-md) {
-      min-height: $nc-button-height-lg;
-      padding: 0 $nc-button-padding-lg;
-      line-height: $nc-button-height-lg;
+      min-height: $height + 2px;
+      line-height: $height + 2px;
     }
   }
 

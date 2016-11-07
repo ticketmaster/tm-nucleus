@@ -1,5 +1,9 @@
 /** @define button-aux; weak */
 
+$nc-button-minor-height: 28px;
+$nc-button-minor-height-lg: 38px;
+$nc-button-minor-padding: 15px;
+
 .nc-button-aux {
   @include nc-btn(nc-theme('primary-aux-button-color'), $hoverstate: true);
 
@@ -7,7 +11,7 @@
   border-radius: $nc-button-height / 2;
 
   @include nc-breakpoint($nc-bp-md) {
-    border-radius: $nc-button-height-lg / 2;
+    border-radius: ($nc-button-height + 2px) / 2;
   }
 }
 
@@ -23,14 +27,19 @@
 
 .nc-button-aux--minor {
   @include nc-type-scale('centi');
+  @include nc-padding((
+    'top': 0,
+    'bottom': 0,
+    'left': $nc-button-minor-padding,
+    'right': $nc-button-minor-padding),
+    $responsive
+  );
 
   min-height: $nc-button-minor-height;
-  padding: 0 $nc-button-minor-padding;
   border-radius: $nc-button-minor-height / 2;
 
   @include nc-breakpoint($nc-bp-md) {
     min-height: $nc-button-minor-height-lg;
-    padding: 0 $nc-button-minor-padding-lg;
     border-radius: $nc-button-minor-height-lg / 2;
   }
 }
