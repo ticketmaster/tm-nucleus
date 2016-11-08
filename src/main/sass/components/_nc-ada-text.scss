@@ -1,5 +1,5 @@
 /** @define ada-text; weak */
 
 .nc-ada-text {
-  @include nc-hide-btn-text();
+  @include nc-visually-hidden();
 }

@@ -368,6 +368,11 @@ $stacking-order: (
   @include code-style();
 }
 
+.sg-highlight-code {
+  font-style: italic;
+  font-weight: bold;
+}
+
 .sg-params-table {
   @include table();
 }
@@ -698,16 +703,41 @@ $stacking-order: (
 
 
 // split-content examples
-.sg-split-container {
-  @include nc-margin($minor-block-spacing);
+$primary: #1d7ab7;
+$secondary: #9d79f2;
+$border: #91c591;
 
-  border: 3px solid #004466;
+@mixin sg-split-box($color, $txt) {
+  position: relative;
+  border: 3px solid rgba($color, 0.7);
+
+  &::before {
+    @include nc-type-scale('milli', $responsive: false);
+    @include nc-padding('slim');
+
+    position: absolute;
+    top: -25px;
+    left: -3px;
+    font-weight: bold;
+    color: $nc-white;
+    background-color: rgba($color, 0.7);
+    content: $txt;
+  }
+}
+
+.sg-split-container {
+  @include nc-margin((
+    'top': 'expanded',
+    'bottom': 'expanded'
+  ));
+
+  border: 5px solid $border;
 }
 .sg-split-primary {
-  background-color: #ccefff;
+  @include sg-split-box($primary, 'primary');
 }
 .sg-split-secondary {
-  border: 3px solid #9d79f2;
+  @include sg-split-box($secondary, 'secondary');
 }
 
 
@@ -826,11 +856,6 @@ $stacking-order: (
 
 .sg__code--xs {
   // @include code-style('xs');
-}
-
-.sg__highlight-code {
-  font-style: italic;
-  font-weight: bold;
 }
 
 
