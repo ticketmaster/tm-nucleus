@@ -31,5 +31,13 @@
   &__secondary + &__primary {
     @include nc-padding((left: $gutter), $responsive: $responsive);
   }
+}
 
+
+@mixin nc-visually-hidden() {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
 }

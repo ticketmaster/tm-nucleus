@@ -1,0 +1,110 @@
+{{> header title=config.pages.positioning.title}}
+
+<div class="sg__content">
+  {{> nav active='positioning' }}
+
+  <div class="sg-main">
+
+    <section id="positioning" class="sg-section">
+      <h2 class="sg-hdg">Positioning</h2>
+      <p>Nucleus provides a set of mix-ins to easily apply a common set of positioning attributes.</p>
+      <p>Some examples of these in-action:</p>
+      <div class="sg-positioning-box">
+        <div class="sg-positioning-box__vertical">This is vertically centered</div>
+      </div>
+      <div class="sg-positioning-box">
+        <div class="sg-positioning-box__horizontal">This is horizontally centered</div>
+      </div>
+      <div class="sg-positioning-box">
+        <div class="sg-positioning-box__dead-center">This is dead center (vertical and horizontal)</div>
+      </div>
+    </section>
+
+    <section class="sg-section">
+      <h2 class="sg-hdg">Code Reference</h2>
+
+      <h3 class="sg-code-hdg">
+        <code class="sg-code-hdg__name">nc-vertically-center()</code>
+        <span class="sg-code-hdg__badge sg-mixin-badge">Mixin</span>
+        <span class="sg-code-hdg__source-file">mixins/_positioning.scss</span>
+      </h3>
+      <p>Vertically centers an element.</p>
+      <table class="sg-params-table">
+        <tr>
+          <th class="sg-params-table__hdg">Parameters</th>
+          <th class="sg-params-table__hdg">Default</th>
+          <th class="sg-params-table__hdg">Description</th>
+          <th class="sg-params-table__hdg">Required</th>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$pos</code></td>
+          <td class="sg-params-table__cell"><code class="sg-code">relative</code></td>
+          <td class="sg-params-table__cell">Either relative or absolute</td>
+          <td class="sg-params-table__cell sg-params-table__cell--check">&nbsp;</td>
+        </tr>
+      </table>
+
+<pre><code class="scss">/* vertically center an element absolutely within its nearest relative positioning parent */
+.vertical-center {
+  @include nc-vertically-center(absolute)
+}
+</code></pre>
+
+      <h3 class="sg-code-hdg">
+        <code class="sg-code-hdg__name">nc-horizontally-center()</code>
+        <span class="sg-code-hdg__badge sg-mixin-badge">Mixin</span>
+        <span class="sg-code-hdg__source-file">mixins/_positioning.scss</span>
+      </h3>
+      <p>Horizontally centers an element.</p>
+      <table class="sg-params-table">
+        <tr>
+          <th class="sg-params-table__hdg">Parameters</th>
+          <th class="sg-params-table__hdg">Default</th>
+          <th class="sg-params-table__hdg">Description</th>
+          <th class="sg-params-table__hdg">Required</th>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$pos</code></td>
+          <td class="sg-params-table__cell"><code class="sg-code">relative</code></td>
+          <td class="sg-params-table__cell">Either relative or absolute</td>
+          <td class="sg-params-table__cell sg-params-table__cell--check">&nbsp;</td>
+        </tr>
+      </table>
+
+<pre><code class="scss">/* horizontally center an element absolutely within its nearest relative positioning parent */
+.horizontal-center {
+  @include nc-horiztonally-center(absolute)
+}
+</code></pre>
+
+      <h3 class="sg-code-hdg">
+        <code class="sg-code-hdg__name">nc-dead-center()</code>
+        <span class="sg-code-hdg__badge sg-mixin-badge">Mixin</span>
+        <span class="sg-code-hdg__source-file">mixins/_positioning.scss</span>
+      </h3>
+      <p>Centers an element both vertically and horizontally.</p>
+      <table class="sg-params-table">
+        <tr>
+          <th class="sg-params-table__hdg">Parameters</th>
+          <th class="sg-params-table__hdg">Default</th>
+          <th class="sg-params-table__hdg">Description</th>
+          <th class="sg-params-table__hdg">Required</th>
+        </tr>
+        <tr>
+          <td class="sg-params-table__cell"><code class="sg-code">$pos</code></td>
+          <td class="sg-params-table__cell"><code class="sg-code">relative</code></td>
+          <td class="sg-params-table__cell">Either relative or absolute</td>
+          <td class="sg-params-table__cell sg-params-table__cell--check">&nbsp;</td>
+        </tr>
+      </table>
+
+<pre><code class="scss">/* dead center an element absolutely within its nearest relative positioning parent */
+.dead-center {
+  @include nc-dead-center(absolute)
+}
+</code></pre>
+
+    </section>
+
+  </div>
+</div>

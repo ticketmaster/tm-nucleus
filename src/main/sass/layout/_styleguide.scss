@@ -167,7 +167,7 @@ $stacking-order: (
   @include nc-padding($page-margins);
 
   height: $header-height;
-  background: linear-gradient(to right, #575dc6, nc-color('pacific'));
+  background: linear-gradient(to right, #575dc6, nc-theme('header-bg-color'));
   z-index: nc-z('header', $stacking-order);
 
   @include nc-breakpoint($nc-bp-md) {
@@ -263,7 +263,7 @@ $stacking-order: (
   $active-border-size: 5px;
 
   padding-left: calc(#{nc-get-spacing('normal', 'mini')} - #{$active-border-size});
-  border-left: $active-border-size solid nc-color('catalina');
+  border-left: $active-border-size solid nc-theme('resale-color');
 
   @include nc-breakpoint($nc-bp-md) {
     padding-left: calc(#{nc-get-spacing('normal', 'maxi')} - #{$active-border-size});
@@ -708,6 +708,41 @@ $stacking-order: (
 }
 .sg-split-secondary {
   border: 3px solid #9d79f2;
+}
+
+
+
+// positioning examples
+@mixin sg-pos-example {
+  display: inline-block;
+  padding: 10px;
+  border: 2px solid nc-theme('caution-color');
+}
+
+.sg-positioning-box {
+  position: relative;
+  width: 70%;
+  height: 200px;
+  border: 3px solid nc-theme('base-border-color');
+
+  & + & {
+    @include nc-margin(('top': 'expanded'));
+  }
+}
+
+.sg-positioning-box__horizontal {
+  @include sg-pos-example();
+  @include nc-horizontally-center();
+}
+
+.sg-positioning-box__vertical {
+  @include sg-pos-example();
+  @include nc-vertically-center(absolute);
+}
+
+.sg-positioning-box__dead-center {
+  @include sg-pos-example();
+  @include nc-dead-center(absolute);
 }
 
 
