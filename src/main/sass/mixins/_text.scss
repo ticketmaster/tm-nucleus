@@ -38,18 +38,14 @@
 
 
 // possibly deprecate
-@mixin nc-hdg-text($set, $color: nc-theme('text-color'), $mb: $nc-header-margin) {
+@mixin nc-hdg-text($set, $color: nc-theme('text-color'), $mb: 'moderate') {
   $name: nc-remap-type-size($set);
 
   @include nc-type-scale($name);
+  @include nc-margin(('bottom': $mb));
 
-  margin-bottom: $mb;
   font-weight: bold;
   color: $color;
-
-  @include nc-breakpoint($nc-bp-md) {
-    margin-bottom: $mb * 2;
-  }
 }
 
 

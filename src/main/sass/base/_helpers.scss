@@ -170,31 +170,16 @@
 // adapter
 // re-map v0.x font sizes to v1.x scale
 @function nc-remap-type-size($name) {
-  $new-name: $name;
+  $new-name: false;
 
-  @if ($name == 'xs') {
-    $new-name: 'milli';
+  @if index($nc-font-name-list, $name) {
+    $new-name: $name;
   }
-  @else if ($name == 'sm') {
-    $new-name: 'centi';
+  @else if map-has-key($nc-type-remap, $name) {
+    $new-name: map-get($nc-type-remap, $name);
   }
-  @else if ($name == 'md') {
-    $new-name: 'uno';
-  }
-  @else if ($name == 'lg') {
-    $new-name: 'kilo';
-  }
-  @else if ($name == 'xl') {
-    $new-name: 'giga';
-  }
-  @else if ($name == 'xxl') {
-    $new-name: 'peta';
-  }
-  @else if ($name == 'xxxl') {
-    $new-name: 'zetta';
-  }
-  @else if not index($nc-font-name-list, $name) {
-    @error 'invalid size specified';
+  @else {
+    @error '#{$name} is an invalid key for type size';
   }
 
   @return $new-name;
@@ -224,23 +209,7 @@
 
 /* stylelint-disable number-no-trailing-zeros */
 // allow '2.0' in string
-@function nc-deprecate($thing, $type) {
-  @return 'The `#{$thing}` #{$type} is deprecated and will be removed in Nucleus 2.0';
+@function nc-deprecate($thing, $type, $msg: false) {
+  @return 'The `#{$thing}` #{$type} is deprecated and will be removed in Nucleus 2.0. #{$msg}';
 }
 /* stylelint-enable number-no-trailing-zeros */
-
-
-
-// ************************************************************************** //
-// Below functions are deprecated and will be removed in Nucleus 2.0
-// ************************************************************************** //
-
-// responsive spacing based on established ratio
-@function nc-increase-spacing($val) {
-  @warn nc-deprecate('nc-increase-spacing', 'function');
-
-  @if ($val != 'auto') {
-    @return $val * $nc-spacing-ratio;
-  }
-  @return $val;
-}

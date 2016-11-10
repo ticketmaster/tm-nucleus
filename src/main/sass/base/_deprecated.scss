@@ -1,0 +1,150 @@
+// ************************************************************************** //
+// All things in this file are deprecated and will be removed in Nucleus 2.0
+// ************************************************************************** //
+
+// typography -- remap v0.x type sizes for v1.x
+$nc-type-remap: (
+  'xs': 'milli',
+  'sm': 'centi',
+  'md': 'uno',
+  'lg': 'kilo',
+  'xl': 'giga',
+  'xxl': 'peta',
+  'xxxl': 'zetta'
+);
+
+// ~~~~~ previously in config.scss
+$spacing-sm: nc-spacing-val('moderate');
+$spacing-md: nc-spacing-val('expanded');
+$spacing-lg: nc-spacing-val('spacious');
+
+
+// ~~~~~ previously in functions.scss
+// calculate different shades
+@function get-darker($color, $percent: 25%) {
+  @warn nc-deprecate('increase-spacing', 'function', 'Use `nc-darker` instead.');
+
+  @return mix($black, $color, $percent);
+}
+
+@function get-lighter($color, $percent: 75%) {
+  @warn nc-deprecate('increase-spacing', 'function', 'Use `nc-lighter` instead.');
+
+  @return mix($white, $color, $percent);
+}
+
+// return hex value associated with name
+@function color($name, $shade) {
+  @warn nc-deprecate('color', 'function', 'Please see the documentation on how to use colors in v2.0.');
+
+  @return map-get(map-get($palette, $name), $shade);
+}
+
+// responsive spacing based on established ratio
+@function increase-spacing($val) {
+  @warn nc-deprecate('increase-spacing', 'function', 'Please see the documentation on how to use spacing in v2.0.');
+
+  @if ($val != 'auto') {
+    @return $val * $spacing-ratio;
+  }
+  @return $val;
+}
+
+// there should an overlay z-index and an overlay-content z-index
+@function z($level, $map: $z-indexes) {
+  @warn nc-deprecate('z', 'function', 'Use `nc-z` instead.');
+
+  @return map-get($map, $level);
+}
+
+// turn unit values into unitless
+@function strip-units($num) {
+  @warn nc-deprecate('strip-units', 'function', 'Use `nc-strip-units` instead.');
+
+  @return $num / ($num * 0 + 1);
+}
+
+// convert px to em
+@function em($px, $context: $default-font-size) {
+  @warn nc-deprecate('em', 'function', 'Use `nc-em` instead.');
+
+  @if ($px == 0) {
+    @return 0;
+  }
+  @return $px / $context * 1em;
+}
+
+// determine tooltip offset direction
+@function get-tooltip-offset-direction($pos) {
+  @warn nc-deprecate('get-tooltip-offset-direction', 'function', 'Use `nc-get-tooltip-offset-direction` instead.');
+
+  $offset: 'top';
+  @if ($pos == 'top' or $pos == 'bottom') {
+    $offset: 'left';
+  }
+  @return $offset;
+}
+
+// calculate tooltip offset
+@function get-tooltip-offset($pos, $size) {
+  @warn nc-deprecate('get-tooltip-offset', 'function', 'Use `nc-get-tooltip-offset` instead.');
+
+  $val: -($size / 2);
+  @if ($pos == 'left') {
+    $val: 0;
+  }
+  @return $val;
+}
+
+
+
+// ~~~~~ previously in typography.scss
+// retrieve font-size
+@function fetch-font($set, $size: 'pint') {
+  @warn nc-deprecate('fetch-font', 'function', 'Please see the documentation on how to use typography in v2.0.');
+
+  @return map-get(map-get($font-sizes, $set), $size);
+}
+
+// return responsive font size
+@function get-quart-size($num) {
+  @warn nc-deprecate('get-quart-size', 'function', 'Please see the documentation on how to use typography in v2.0.');
+
+  @return $num + $font-size-factor;
+}
+
+@function get-gallon-size($num) {
+  @warn nc-deprecate('get-gallon-size', 'function', 'Please see the documentation on how to use typography in v2.0.');
+
+  @return $num + ($font-size-factor * 2);
+}
+
+// set default line height or custom
+@function get-lh($font, $lh) {
+  @warn nc-deprecate('get-lh', 'function', 'Please see the documentation on how to use typography in v2.0.');
+
+  $val: $lh;
+  @if not $lh {
+    $val: calc-lh($font);
+  }
+  @return $val;
+}
+
+// calculate line height based on font size
+@function calc-lh($font-size) {
+  @warn nc-deprecate('calc-lh', 'function', 'Please see the documentation on how to use typography in v2.0.');
+
+  $lh: $header-line-height;
+  @if ($font-size < 1.8) {
+    $lh: $base-line-height;
+  }
+  @return $lh;
+}
+
+
+
+// ~~~~~ previously in susy.scss
+// grid
+$total-columns: 12;
+$gutter-width: 30px;
+$gutter-width-half: $gutter-width / 2;
