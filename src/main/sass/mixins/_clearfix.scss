@@ -1,7 +1,0 @@
-@mixin nc-clearfix {
-  &::after {
-    display: table;
-    clear: both;
-    content: '';
-  }
-}

@@ -1,3 +1,11 @@
+@mixin nc-clearfix {
+  &::after {
+    display: table;
+    clear: both;
+    content: '';
+  }
+}
+
 @mixin nc-split-content($gutter: normal, $responsive: true) {
   display: flex;
   align-items: center;
