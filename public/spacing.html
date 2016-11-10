@@ -124,7 +124,7 @@
         <tr>
           <td class="sg-params-table__cell"><code class="sg-code">$vals</code></td>
           <td class="sg-params-table__cell"></td>
-          <td class="sg-params-table__cell">Set margins; can be either name from <a href="#size-chart">size chart</a> or a SASS map</td>
+          <td class="sg-params-table__cell">Set margins; can be either name from <a href="#size-chart">size chart</a>, a list, or a SASS map</td>
           <td class="sg-params-table__cell sg-params-table__cell--check">
             <svg class="nc-icon-check sg-icon-check">
               <use xlink:href="img/sprite.svg#icon-check"></use>
@@ -144,20 +144,34 @@
   @include nc-margin('compact');
 }
 
-/* using a SASS map; can either define separately or inline within @include call */
-$map: (
-  'top': 10px,
-  'right': 'slim',
-  'left': 0
-);
-
-.widget-custom {
-  @include nc-margin($map);
-}
-
-/* fixed spacing aka not responsive */
+/* fixed margins aka not responsive */
 .text-fixed {
   @include nc-margin('moderate', $responsive: false);
+}
+</code></pre>
+
+      <p>If you need to specify non-uniform values, you can pass in a list of values. Note that the list must contain either 2 or 4 values and be defined in a clockwise direction. This is similar to how you would shorthand these values in native CSS.</p>
+
+<pre class="sg-code-block"><code class="scss">/* these can be defined as a variable or passed inline within @include call */
+$list2: ('normal', 'moderate');
+$list4: ('cozy', 'cozy', 0, 'cozy');
+
+.margin-shorthanded {
+  @include nc-margin($list2);
+}
+</code></pre>
+
+      <p>A third option is to pass in a SASS map, which will allow you to specify any sides you wish and the order does not matter.</p>
+
+<pre class="sg-code-block"><code class="scss">/* using a SASS map */
+$map: (
+  'top': 10px,
+  'bottom': 0,
+  'left': 'slim'
+);
+
+.margin-mapped {
+  @include nc-margin($map);
 }
 </code></pre>
 
@@ -177,7 +191,7 @@ $map: (
         <tr>
           <td class="sg-params-table__cell"><code class="sg-code">$vals</code></td>
           <td class="sg-params-table__cell"></td>
-          <td class="sg-params-table__cell">Set padding; can be either name from <a href="#size-chart">size chart</a> or a SASS map</td>
+          <td class="sg-params-table__cell">Set padding; can be either name from <a href="#size-chart">size chart</a>, a list, or a SASS map</td>
           <td class="sg-params-table__cell sg-params-table__cell--check">
             <svg class="nc-icon-check sg-icon-check">
               <use xlink:href="img/sprite.svg#icon-check"></use>
@@ -197,7 +211,26 @@ $map: (
   @include nc-padding('compact');
 }
 
-/* using a SASS map; can either define separately or inline within @include call */
+/* fixed padding aka not responsive */
+.text-fixed {
+  @include nc-padding('moderate', $responsive: false);
+}
+</code></pre>
+
+      <p>If you need to specify non-uniform values, you can pass in a list of values. Note that the list must contain either 2 or 4 values and be defined in a clockwise direction. This is similar to how you would shorthand these values in native CSS.</p>
+
+<pre class="sg-code-block"><code class="scss">/* using a list */
+$list2: ('normal', 'moderate');
+$list4: ('cozy', 'cozy', 0, 'cozy');
+
+.padding-shorthanded {
+  @include nc-padding($list2);
+}
+</code></pre>
+
+      <p>A third option is to pass in a SASS map, which will allow you to specify any sides you wish and the order does not matter.</p>
+
+<pre class="sg-code-block"><code class="scss">/* using a SASS map -- can specify any sides you want and order does not matter */
 $map: (
   'top': 10px,
   'right': 'slim',
@@ -206,11 +239,6 @@ $map: (
 
 .widget-custom {
   @include nc-padding($map);
-}
-
-/* fixed spacing aka not responsive */
-.text-fixed {
-  @include nc-padding('moderate', $responsive: false);
 }
 </code></pre>
 

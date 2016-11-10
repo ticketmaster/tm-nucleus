@@ -16,7 +16,6 @@
 }
 
 @mixin nc-spacing-generator($spacing-type, $spacing-values, $responsive) {
-
   // map of custom values
   @if (type-of($spacing-values) == map) {
     $shorthand: length($spacing-values) == 4;
@@ -26,6 +25,31 @@
     @if ($responsive) {
       @include nc-breakpoint($nc-bp-md) {
         @include nc-spacing-print-map($spacing-type, $spacing-values, 'maxi', $shorthand: $shorthand);
+      }
+    }
+  }
+
+  // list of values
+  @else if (type-of($spacing-values) == list) {
+    $num: length($spacing-values);
+    $valid: $num == 2 or $num == 4;
+
+    @if not $valid {
+      @error 'You must specify either 2 or 4 values; #{$spacing-values} only contains #{$num} values';
+    }
+
+    $map: (
+      'top': nth($spacing-values, 1),
+      'right': nth($spacing-values, 2),
+      'bottom': nth($spacing-values, if($num == 2, 1, 3)),
+      'left': nth($spacing-values, if($num == 2, 2, 4))
+    );
+
+    @include nc-spacing-print-map($spacing-type, $map, 'mini', $shorthand: true);
+
+    @if ($responsive) {
+      @include nc-breakpoint($nc-bp-md) {
+        @include nc-spacing-print-map($spacing-type, $map, 'maxi', $shorthand: true);
       }
     }
   }
