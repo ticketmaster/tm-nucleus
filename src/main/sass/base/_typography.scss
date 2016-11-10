@@ -51,26 +51,36 @@ $nc-font-map: ();
 }
 
 
-/* ~~~~~~~~~~~ BURN WITH FIRE ~~~~~~~~~~~~~ */
+// ************************************************************************** //
+// Below functions are deprecated and will be removed in Nucleus 2.0
+// ************************************************************************** //
 // deprecated
 $nc-font-size-factor: 0.2;
 
 // retrieve font-size
 @function nc-fetch-font($set, $size: 'pint') {
+  @warn nc-deprecate('nc-fetch-font', 'function');
+
   @return map-get(map-get($nc-font-sizes, $set), $size);
 }
 
 // return responsive font size
 @function nc-get-quart-size($num) {
+  @warn nc-deprecate('nc-get-quart-size', 'function');
+
   @return $num + $nc-font-size-factor;
 }
 
 @function nc-get-gallon-size($num) {
+  @warn nc-deprecate('nc-get-gallon-size', 'function');
+
   @return $num + ($nc-font-size-factor * 2);
 }
 
 // set default line height or custom
 @function nc-get-lh($font, $lh) {
+  @warn nc-deprecate('nc-get-lh', 'function');
+
   $val: $lh;
   @if not $lh {
     $val: nc-calc-lh($font);
@@ -80,6 +90,8 @@ $nc-font-size-factor: 0.2;
 
 // calculate line height based on font size
 @function nc-calc-lh($font-size) {
+  @warn nc-deprecate('nc-calc-lh', 'function');
+
   $lh: $nc-header-line-height;
   @if ($font-size < 1.8) {
     $lh: $nc-base-line-height;
@@ -89,17 +101,15 @@ $nc-font-size-factor: 0.2;
 
 // retrieve font-size
 @function nc-fetch-font($set, $size: 'pint') {
+  @warn nc-deprecate('nc-fetch-font', 'function');
+
   @return map-get(map-get($nc-font-sizes, $set), $size);
 }
 
-// deprecate
+// variables below are deprecate and will be removed in Nucleus 2.0
 $nc-header-line-height: 1.2;
 $nc-header-margin: 10px;
 
-// deprecate
-// Base font sizes
-// DO NOT use these variables elsewhere
-// See styleguide for documentation on defining font-sizes
 $nc-base-xs-font: 1rem;
 $nc-base-sm-font: 1.2rem;
 $nc-base-md-font: 1.4rem;
@@ -108,45 +118,4 @@ $nc-base-xl-font: 2.2rem;
 $nc-base-xxl-font: 2.6rem;
 $nc-base-xxxl-font: 4rem;
 
-// deprecate
-// Other font sizes
 $nc-body-font-size: $nc-base-md-font;
-
-// deprecate
-$nc-font-sizes: (
-  'xs': (
-    'pint':   $nc-base-xs-font,
-    'quart':  $nc-base-xs-font,
-    'gallon': nc-get-quart-size($nc-base-xs-font)
-  ),
-  'sm': (
-    'pint':   $nc-base-sm-font,
-    'quart':  nc-get-quart-size($nc-base-sm-font),
-    'gallon': nc-get-gallon-size($nc-base-sm-font)
-  ),
-  'md': (
-    'pint':   $nc-base-md-font,
-    'quart':  nc-get-quart-size($nc-base-md-font),
-    'gallon': nc-get-gallon-size($nc-base-md-font)
-  ),
-  'lg': (
-    'pint':   $nc-base-lg-font,
-    'quart':  nc-get-quart-size($nc-base-lg-font),
-    'gallon': nc-get-gallon-size($nc-base-lg-font)
-  ),
-  'xl': (
-    'pint':   $nc-base-xl-font,
-    'quart':  nc-get-quart-size($nc-base-xl-font),
-    'gallon': nc-get-gallon-size($nc-base-xl-font)
-  ),
-  'xxl': (
-    'pint':   $nc-base-xxl-font,
-    'quart':  nc-get-quart-size($nc-base-xxl-font),
-    'gallon': nc-get-gallon-size($nc-base-xxl-font)
-  ),
-  'xxxl': (
-    'pint':   $nc-base-xxxl-font,
-    'quart':  nc-get-quart-size($nc-base-xxxl-font),
-    'gallon': nc-get-gallon-size($nc-base-xxxl-font)
-  )
-);

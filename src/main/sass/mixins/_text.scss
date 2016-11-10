@@ -55,14 +55,18 @@
 
 // deprecated
 @mixin nc-responsive-font($set: 'md', $lh: false) {
-  @include nc-type-adapter($set, $lh, true);
+  @warn nc-deprecate('nc-responsive-font', 'mixin');
+
+  @include _nc-type-adapter($set, $lh, true);
 }
 
 @mixin nc-fixed-font($set: 'md', $lh: false) {
-  @include nc-type-adapter($set, $lh, false);
+  @warn nc-deprecate('nc-fixed-font', 'mixin');
+
+  @include _nc-type-adapter($set, $lh, false);
 }
 
-@mixin nc-type-adapter($set, $lh, $responsive) {
+@mixin _nc-type-adapter($set, $lh, $responsive) {
   $name: nc-remap-type-size($set);
 
   @if not $lh {
