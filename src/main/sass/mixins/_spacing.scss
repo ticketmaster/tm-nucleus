@@ -131,26 +131,41 @@
 
 // deprecate
 @mixin nc-outer-spacing($val: false, $top: 0, $right: 0, $bottom: 0, $left: 0) {
-  @include nc-set-spacing('margin', $val, $top, $right, $bottom, $left);
+  @warn nc-deprecate('nc-outer-spacing', 'mixin');
+
+  $values: false;
+
+  @if ($val and $val != 'custom') {
+    $values: $val;
+  }
+  @else {
+    $values: (
+      'top': $top,
+      'right': $right,
+      'bottom': $bottom,
+      'left': $left
+    );
+  }
+
+  @include nc-margin($values);
 }
 
 @mixin nc-inner-spacing($val: false, $top: 0, $right: 0, $bottom: 0, $left: 0) {
-  @include nc-set-spacing('padding', $val, $top, $right, $bottom, $left);
-}
+  @warn nc-deprecate('nc-inner-spacing', 'mixin');
 
-@mixin nc-set-spacing($type, $val, $top, $right, $bottom, $left) {
+  $values: false;
+
   @if ($val and $val != 'custom') {
-    #{$type}: $val;
-
-    @include nc-breakpoint($nc-bp-md) {
-      #{$type}: nc-increase-spacing($val);
-    }
+    $values: $val;
   }
   @else {
-    #{$type}: $top $right $bottom $left;
-
-    @include nc-breakpoint($nc-bp-md) {
-      #{$type}: nc-increase-spacing($top) nc-increase-spacing($right) nc-increase-spacing($bottom) nc-increase-spacing($left);
-    }
+    $values: (
+      'top': $top,
+      'right': $right,
+      'bottom': $bottom,
+      'left': $left
+    );
   }
+
+  @include nc-padding($values);
 }

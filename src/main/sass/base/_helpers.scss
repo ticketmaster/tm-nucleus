@@ -92,21 +92,21 @@
 }
 
 
-// convert rem to px
-@function nc-px($rem) {
-  @if ($rem == 0) {
-    @return 0;
-  }
-  @return nc-strip-units($rem) * 10px;
-}
-
-
 // convert px to rem
 @function nc-rem($px) {
   @if ($px == 0) {
     @return 0;
   }
   @return nc-strip-units($px/10) * 1rem;
+}
+
+
+// convert rem to px
+@function nc-px($rem) {
+  @if ($rem == 0) {
+    @return 0;
+  }
+  @return nc-strip-units($rem) * 10px;
 }
 
 
@@ -237,7 +237,7 @@
 
 // responsive spacing based on established ratio
 @function nc-increase-spacing($val) {
-  // @warn nc-deprecate('nc-increase-spacing', 'function');
+  @warn nc-deprecate('nc-increase-spacing', 'function');
 
   @if ($val != 'auto') {
     @return $val * $nc-spacing-ratio;

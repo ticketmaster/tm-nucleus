@@ -779,7 +779,7 @@ $border: #91c591;
 
 // forms
 .sg-form-field-example {
-  @include nc-outer-spacing($bottom: $nc-spacing-md);
+  @include nc-margin(('bottom': 'expanded'));
 
   width: 33%;
 }
@@ -832,7 +832,7 @@ $border: #91c591;
 }
 
 .sg__table-cell {
-  @include nc-inner-spacing(false, 0, $nc-spacing-sm, $nc-spacing-sm, 0);
+  @include nc-padding((0, 'moderate', 'moderate', 0));
 
   vertical-align: top;
 }
@@ -900,17 +900,17 @@ $border: #91c591;
 
 // sec-row-seat
 .sg__srs {
-  @include nc-outer-spacing($bottom: $nc-spacing-md);
+  @include nc-margin(('bottom': 'expanded'));
 
   width: $nc-srs-min-width;
 }
 
 .sg__ism-tooltip {
-  @include nc-outer-spacing($bottom: $nc-spacing-md);
+  @include nc-margin(('bottom': 'expanded'));
 }
 
 .sg__module {
-  @include nc-outer-spacing($bottom: $nc-spacing-md);
+  @include nc-margin(('bottom': 'expanded'));
 
   width: 100%;
 
@@ -942,10 +942,10 @@ $border: #91c591;
 }
 
 .sg__breadcrumbs {
-  @include nc-outer-spacing($bottom: $nc-spacing-md);
+  @include nc-margin(('bottom': 'expanded'));
 
   &:last-child {
-    @include nc-outer-spacing($bottom: 0);
+    @include nc-margin(('bottom': 0));
   }
 }
 
@@ -955,5 +955,5 @@ $border: #91c591;
 }
 
 .sg__price-slider--preview {
-  @include nc-outer-spacing($bottom: $nc-spacing-md);
+  @include nc-margin(('bottom': 'expanded'));
 }

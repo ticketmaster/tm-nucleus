@@ -44,65 +44,13 @@
       "title": "Tooltips",
       "url":   "tooltips.html"
     },
-    "qty-picker": {
-      "title": "Quantity Picker",
-      "url":   "qty-picker.html"
-    },
-    "toggle-switch": {
-      "title": "Toggle Switch",
-      "url":   "toggle-switch.html"
-    },
-    "srs": {
-      "title": "SRS",
-      "url":   "srs.html"
-    },
-    "product-info": {
-      "title": "Product Info",
-      "url":   "product-info.html"
-    },
-    "dialogs": {
-      "title": "Dialogs",
-      "url":   "dialogs.html"
-    },
-    "modules": {
-      "title": "Modules",
-      "url":   "modules.html"
-    },
-    "datetime": {
-      "title": "Date/Time",
-      "url":   "datetime.html"
-    },
-    "timer": {
-      "title": "Timer",
-      "url":   "timer.html"
-    },
-    "slider": {
-      "title": "Slider",
-      "url":   "slider.html"
-    },
-    "event-header": {
-      "title": "Event Header",
-      "url":   "event-header.html"
-    },
-    "cobrand-header": {
-      "title": "Cobrand Header",
-      "url":   "cobread-header.html"
-    },
-    "cart": {
-      "title": "Cart",
-      "url":   "cart.html"
-    },
     "breadcrumbs": {
       "title": "Breadcrumbs",
       "url":   "breadcrumbs.html"
     },
-    "tabs": {
-      "title": "Tabs",
-      "url":   "tabs.html"
-    },
-    "expando": {
-      "title": "Expando",
-      "url":   "expando.html"
+    "datetime": {
+      "title": "Date/Time",
+      "url":   "datetime.html"
     },
     "icons": {
       "title": "Icons",
