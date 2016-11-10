@@ -5,7 +5,7 @@ $nc-button-minor-height-lg: 38px;
 $nc-button-minor-padding: 15px;
 
 .nc-button-aux {
-  @include nc-btn(nc-theme('primary-aux-button-color'), $hoverstate: true);
+  @include nc-btn(nc-theme('primary-aux-button-color'));
 
   text-transform: none;
   border-radius: $nc-button-height / 2;
@@ -16,7 +16,7 @@ $nc-button-minor-padding: 15px;
 }
 
 .nc-button-aux--secondary {
-  @include nc-btn-color(nc-theme('secondary-button-color'), $nc-white, $hoverstate: true);
+  @include nc-btn-color(nc-theme('secondary-button-color'), $nc-white);
 }
 
 .nc-button-aux--full {

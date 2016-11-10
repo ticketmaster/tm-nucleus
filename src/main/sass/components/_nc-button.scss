@@ -2,13 +2,13 @@
 
 // standard buttons are 44px height
 .nc-button {
-  @include nc-btn(nc-theme('primary-button-color'), $hoverstate: true);
+  @include nc-btn(nc-theme('primary-button-color'));
 }
 
 // call to action buttons
 // reserved for buttons that lead to / are part of checkout
 .nc-button--cta {
-  @include nc-btn-color(nc-theme('cta-button-color'), $nc-white, $hoverstate: true);
+  @include nc-btn-color(nc-theme('cta-button-color'), $nc-white);
 }
 
 .nc-button--static {

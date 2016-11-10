@@ -1,5 +1,5 @@
 // mixin to create buttons
-@mixin nc-btn($color: nc-theme('primary-button-color'), $txtcolor: $nc-white, $height: $nc-button-height, $hoverstate: false, $outlined: false, $responsive: true) {
+@mixin nc-btn($color: nc-theme('primary-button-color'), $txtcolor: $nc-white, $height: $nc-button-height, $hoverstate: true, $outlined: false, $responsive: true) {
   $calculated-height: $height - ($nc-button-border-size * 2);
 
   @include nc-btn-base($calculated-height, $responsive);
@@ -196,4 +196,12 @@
     width: $width;
     height: $nc-toggle-switch-button-size;
   }
+}
+
+
+
+@mixin btn($color: nc-theme('primary-button-color'), $txtcolor: $nc-white, $height: $nc-button-height, $hoverstate: false, $outlined: false) {
+  @warn nc-deprecate('btn', 'mixin', 'Use nc-btn() instead.');
+
+  @include nc-btn($color, $txtcolor, $height, $hoverstate, $outlined);
 }

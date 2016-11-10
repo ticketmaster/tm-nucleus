@@ -1,7 +1,7 @@
 /** @define button-secondary; weak */
 
 .nc-button-secondary {
-  @include nc-btn(nc-theme('secondary-button-color'), $hoverstate: true, $outlined: true);
+  @include nc-btn(nc-theme('secondary-button-color'), $outlined: true);
 }
 
 .nc-button-secondary--static {
@@ -13,10 +13,10 @@
 }
 
 .nc-button-secondary--alert {
-  @include nc-btn-outlined(nc-theme('alert-color'), $hoverstate: true);
+  @include nc-btn-outlined(nc-theme('alert-color'));
 }
 
 .nc-button-secondary--utility {
-  @include nc-btn-outlined(nc-theme('primary-button-color'), $hoverstate: true);
+  @include nc-btn-outlined(nc-theme('primary-button-color'));
   @include nc-type-scale('centi');
 }
