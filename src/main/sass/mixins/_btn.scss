@@ -203,7 +203,37 @@
 // The following are deprecated and will be removed in Nucleus 2.0
 // ************************************************************************** //
 @mixin btn($color: nc-theme('primary-button-color'), $txtcolor: $nc-white, $height: $nc-button-height, $hoverstate: false, $outlined: false) {
-  @warn nc-deprecate('btn', 'mixin', 'Use nc-btn() instead.');
+  @warn nc-deprecate('btn', 'mixin', 'Use `nc-btn()` instead.');
 
   @include nc-btn($color, $txtcolor, $height, $hoverstate, $outlined);
+}
+
+@mixin unbutton($txtcolor: nc-theme('link-color'), $padding: $nc-button-padding, $nowrap: 'nowrap', $responsive: true) {
+  @warn nc-deprecate('unbutton', 'mixin', 'Use `nc-unbutton()` instead.');
+
+  @include nc-unbutton($txtcolor, $padding, $nowrap, $responsive);
+}
+
+@mixin icon-button() {
+  @warn nc-deprecate('icon-button', 'mixin', 'Use `nc-icon-button()` instead.');
+
+  @include nc-icon-button();
+}
+
+@mixin toggle-switch-button() {
+  @warn nc-deprecate('toggle-switch-button', 'mixin', 'Use `nc-toggle-switch-button()` instead.');
+
+  @include nc-toggle-switch-button();
+}
+
+@mixin toggle-switch-color($color: nc-theme('toggle-switch-off-bg-color')) {
+  @warn nc-deprecate('toggle-switch-color', 'mixin', 'Use `nc-toggle-switch-color()` instead.');
+
+  @include nc-toggle-switch-color($color);
+}
+
+@mixin toggle-switch-element($padding, $width: auto, $is-indicator: false) {
+  @warn nc-deprecate('toggle-switch-element', 'mixin', 'Use `nc-toggle-switch-element()` instead.');
+
+  @include nc-toggle-switch-element($padding, $width, $is-indicator);
 }

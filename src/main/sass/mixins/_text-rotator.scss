@@ -16,3 +16,26 @@
 @mixin nc-text-rotator-line {
   display: block;
 }
+
+
+
+// ************************************************************************** //
+// The following are deprecated and will be removed in Nucleus 2.0
+// ************************************************************************** //
+@mixin text-rotator($height) {
+  @warn nc-deprecate('text-rotator', 'mixin', 'Use `nc-text-rotator()` instead.');
+
+  @include nc-text-rotator();
+}
+
+@mixin text-rotator-current {
+  @warn nc-deprecate('text-rotator-current', 'mixin', 'Use `nc-text-rotator-current()` instead.');
+
+  @include nc-text-rotator-current();
+}
+
+@mixin text-rotator-line {
+  @warn nc-deprecate('text-rotator-line', 'mixin', 'Use `nc-text-rotator-line()` instead.');
+
+  @include nc-text-rotator-line();
+}

@@ -4,3 +4,14 @@
 
   @include nc-margin(('bottom': 'expanded'));
 }
+
+
+
+// ************************************************************************** //
+// The following are deprecated and will be removed in Nucleus 2.0
+// ************************************************************************** //
+@mixin tile() {
+  @warn nc-deprecate('tile', 'mixin', 'Use `nc-tile()` instead.');
+
+  @include nc-tile();
+}

@@ -39,3 +39,26 @@ $slide-animation: 1s;
   border-radius: 4px;
   box-shadow: inset 0 1px 0 nc-theme('shadow-color');
 }
+
+
+
+// ************************************************************************** //
+// The following are deprecated and will be removed in Nucleus 2.0
+// ************************************************************************** //
+@mixin slider($min-ht: 0, $max-ht: 8888px) {
+  @warn nc-deprecate('slider', 'mixin', 'Use `nc-slider()` instead.');
+
+  @include nc-slider($min-ht, $max-ht);
+}
+
+@mixin slider-ease($min-ht: 0, $max-ht: 1000px) {
+  @warn nc-deprecate('slider-ease', 'mixin', 'Use `nc-slider-ease()` instead.');
+
+  @include nc-slider-ease($min-ht, $max-ht);
+}
+
+@mixin slider-bar($slider-range-top: 0, $slider-range-height: 5px) {
+  @warn nc-deprecate('slider-bar', 'mixin', 'Use `nc-slider-bar()` instead.');
+
+  @include nc-slider-bar($slider-range-top, $slider-range-height);
+}

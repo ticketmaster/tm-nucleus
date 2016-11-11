@@ -15,3 +15,50 @@
     outline: none;
   }
 }
+
+
+
+// ************************************************************************** //
+// The following are deprecated and will be removed in Nucleus 2.0
+// ************************************************************************** //
+@mixin base-textfield() {
+  @warn nc-deprecate('base-textfield', 'mixin', 'Please see the documentation on form fields in v2.0.');
+
+  width: 100%;
+  border: 0;
+  border-bottom: $nc-input-border-style;
+
+  /* stylelint-disable selector-class-pattern */
+  // holdover from v0.x; deprecated and will be removed in v2.0
+  &.is-error-field {
+    color: nc-theme('alert-color');
+    border-bottom: $nc-alert-border-style;
+  }
+
+  &.is-error-field + .input-group__label,
+  &.is-error-field + .input-group__label > .input-group__required {
+    color: nc-theme('alert-color');
+  }
+  /* stylelint-enable selector-class-pattern */
+}
+
+@mixin textfield-underline() {
+  @warn nc-deprecate('textfield-underline', 'mixin', 'Please see the documentation on form fields in v2.0.');
+
+  @include base-textfield();
+
+  position: relative;
+  padding-top: $input-label-height;
+  padding-bottom: 5px;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+@mixin textfield-active() {
+  @warn nc-deprecate('textfield-active', 'mixin', 'Please see the documentation on form fields in v2.0.');
+
+  background: none;
+  border-bottom-color: nc-theme('link-color');
+  outline: none;
+}

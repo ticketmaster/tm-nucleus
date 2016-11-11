@@ -30,7 +30,7 @@
 // The following are deprecated and will be removed in Nucleus 2.0
 // ************************************************************************** //
 @mixin breakpoint($min: 0, $max: 0) {
-  @warn nc-deprecate('breakpoint', 'mixin', 'Use nc-breakpoint() instead.');
+  @warn nc-deprecate('breakpoint', 'mixin', 'Use `nc-breakpoint()` instead.');
 
   @include nc-breakpoint($min, $max);
 }

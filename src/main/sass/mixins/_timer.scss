@@ -6,3 +6,14 @@
   border: $nc-timer-border-thickness solid $color;
   transform-origin: 100% 50%;
 }
+
+
+
+// ************************************************************************** //
+// The following are deprecated and will be removed in Nucleus 2.0
+// ************************************************************************** //
+@mixin timer-base($color) {
+  @warn nc-deprecate('timer-base', 'mixin', 'Use `nc-timer-base()` instead.');
+
+  @include nc-timer-base($color);
+}

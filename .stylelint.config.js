@@ -1,6 +1,5 @@
 module.exports = {
   plugins: [
-    'stylelint-declaration-use-variable',
     'stylelint-selector-bem-pattern'
   ],
   rules: {

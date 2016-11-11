@@ -78,3 +78,36 @@
     border-left: 1px solid nc-theme('caret-legacy-color');
   }
 }
+
+
+
+// ************************************************************************** //
+// The following are deprecated and will be removed in Nucleus 2.0
+// ************************************************************************** //
+// determine tooltip offset direction
+@function get-tooltip-offset-direction($pos) {
+  @warn nc-deprecate('get-tooltip-offset-direction', 'function', 'Use `nc-get-tooltip-offset-direction` instead.');
+
+  $offset: 'top';
+  @if ($pos == 'top' or $pos == 'bottom') {
+    $offset: 'left';
+  }
+  @return $offset;
+}
+
+// calculate tooltip offset
+@function get-tooltip-offset($pos, $size) {
+  @warn nc-deprecate('get-tooltip-offset', 'function', 'Use `nc-get-tooltip-offset` instead.');
+
+  $val: -($size / 2);
+  @if ($pos == 'left') {
+    $val: 0;
+  }
+  @return $val;
+}
+
+@mixin tooltip-caret-legacy($pos) {
+  @warn nc-deprecate('tooltip-caret-legacy', 'mixin', 'Use `nc-tooltip-caret-legacy()` instead.');
+
+  @include nc-tooltip-caret-legacy($pos);
+}

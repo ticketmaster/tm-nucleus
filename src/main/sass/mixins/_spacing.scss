@@ -129,9 +129,24 @@
 }
 
 
-// deprecate
-@mixin nc-outer-spacing($val: false, $top: 0, $right: 0, $bottom: 0, $left: 0) {
-  @warn nc-deprecate('nc-outer-spacing', 'mixin');
+
+// ************************************************************************** //
+// The following are deprecated and will be removed in Nucleus 2.0
+// ************************************************************************** //
+// helper to adapt v0 spacing mixin to v1
+@function _nc-spacing-adapter($top, $right, $bottom, $left) {
+  $map: (
+    'top': $top,
+    'right': $right,
+    'bottom': $bottom,
+    'left': $left
+  );
+
+  @return $map;
+}
+
+@mixin outer-spacing($val: false, $top: 0, $right: 0, $bottom: 0, $left: 0) {
+  @warn nc-deprecate('outer-spacing', 'mixin', 'Please see the documentation on how to use spacing in v2.0.');
 
   $values: false;
 
@@ -139,19 +154,14 @@
     $values: $val;
   }
   @else {
-    $values: (
-      'top': $top,
-      'right': $right,
-      'bottom': $bottom,
-      'left': $left
-    );
+    $values: _nc-spacing-adapter($top, $right, $bottom, $left);
   }
 
   @include nc-margin($values);
 }
 
-@mixin nc-inner-spacing($val: false, $top: 0, $right: 0, $bottom: 0, $left: 0) {
-  @warn nc-deprecate('nc-inner-spacing', 'mixin');
+@mixin inner-spacing($val: false, $top: 0, $right: 0, $bottom: 0, $left: 0) {
+  @warn nc-deprecate('inner-spacing', 'mixin', 'Please see the documentation on how to use spacing in v2.0.');
 
   $values: false;
 
@@ -159,12 +169,7 @@
     $values: $val;
   }
   @else {
-    $values: (
-      'top': $top,
-      'right': $right,
-      'bottom': $bottom,
-      'left': $left
-    );
+    $values: _nc-spacing-adapter($top, $right, $bottom, $left);
   }
 
   @include nc-padding($values);

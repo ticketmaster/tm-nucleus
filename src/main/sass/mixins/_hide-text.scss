@@ -1,11 +1,18 @@
-// deprecate
-@mixin nc-hide-text {
+// ************************************************************************** //
+// The following are deprecated and will be removed in Nucleus 2.0
+// ************************************************************************** //
+
+@mixin hide-text {
+  @warn nc-deprecate('hide-text', 'mixin', 'Use `nc-visually-hidden()` instead.');
+
   overflow: hidden;
   text-indent: -9999px;
   white-space: nowrap;
 }
 
-@mixin nc-hide-btn-text {
+@mixin hide-btn-text {
+  @warn nc-deprecate('hide-btn-text', 'mixin', 'Use `nc-visually-hidden()` instead.');
+
   position: absolute;
   width: 1px;
   height: 1px;

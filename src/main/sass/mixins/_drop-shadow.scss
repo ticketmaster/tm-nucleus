@@ -24,3 +24,14 @@
     box-shadow: $x $y $blur $spread $color;
   }
 }
+
+
+
+// ************************************************************************** //
+// The following are deprecated and will be removed in Nucleus 2.0
+// ************************************************************************** //
+@mixin drop-shadow($x: $nc-shadow-x, $y: $nc-shadow-y, $blur: $nc-shadow-blur, $spread: $nc-shadow-spread, $color: nc-theme('shadow-color')) {
+  @warn nc-deprecate('drop-shadow', 'mixin', 'Use `nc-drop-shadow()` instead.');
+
+  @include nc-drop-shadow($x, $y, $blur, $spread, $color);
+}

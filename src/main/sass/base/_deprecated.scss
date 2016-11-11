@@ -17,20 +17,21 @@ $nc-type-remap: (
 $spacing-sm: nc-spacing-val('moderate');
 $spacing-md: nc-spacing-val('expanded');
 $spacing-lg: nc-spacing-val('spacious');
+$input-label-height: 20px;
 
 
 // ~~~~~ previously in functions.scss
 // calculate different shades
 @function get-darker($color, $percent: 25%) {
-  @warn nc-deprecate('increase-spacing', 'function', 'Use `nc-darker` instead.');
+  @warn nc-deprecate('get-darker', 'function', 'Use `nc-darker` instead.');
 
-  @return mix($black, $color, $percent);
+  @return mix(#000, $color, $percent);
 }
 
 @function get-lighter($color, $percent: 75%) {
-  @warn nc-deprecate('increase-spacing', 'function', 'Use `nc-lighter` instead.');
+  @warn nc-deprecate('get-lighter', 'function', 'Use `nc-lighter` instead.');
 
-  @return mix($white, $color, $percent);
+  @return mix(#fff, $color, $percent);
 }
 
 // return hex value associated with name
@@ -73,29 +74,6 @@ $spacing-lg: nc-spacing-val('spacious');
   }
   @return $px / $context * 1em;
 }
-
-// determine tooltip offset direction
-@function get-tooltip-offset-direction($pos) {
-  @warn nc-deprecate('get-tooltip-offset-direction', 'function', 'Use `nc-get-tooltip-offset-direction` instead.');
-
-  $offset: 'top';
-  @if ($pos == 'top' or $pos == 'bottom') {
-    $offset: 'left';
-  }
-  @return $offset;
-}
-
-// calculate tooltip offset
-@function get-tooltip-offset($pos, $size) {
-  @warn nc-deprecate('get-tooltip-offset', 'function', 'Use `nc-get-tooltip-offset` instead.');
-
-  $val: -($size / 2);
-  @if ($pos == 'left') {
-    $val: 0;
-  }
-  @return $val;
-}
-
 
 
 // ~~~~~ previously in typography.scss

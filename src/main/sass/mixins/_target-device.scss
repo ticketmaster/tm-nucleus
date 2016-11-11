@@ -11,3 +11,14 @@
     }
   }
 }
+
+
+
+// ************************************************************************** //
+// The following are deprecated and will be removed in Nucleus 2.0
+// ************************************************************************** //
+@mixin target-ipad($orientation: false) {
+  @warn nc-deprecate('target-ipad', 'mixin', 'Use `nc-target-ipad()` instead.');
+
+  @include nc-target-ipad($orientation);
+}

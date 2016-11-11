@@ -1,7 +1,17 @@
-// mixin to icons
 @mixin nc-icon($fill, $width: $nc-base-icon-size, $height: $nc-base-icon-size) {
   display: inline-block;
   width: $width;
   height: $height;
   fill: $fill;
+}
+
+
+
+// ************************************************************************** //
+// The following are deprecated and will be removed in Nucleus 2.0
+// ************************************************************************** //
+@mixin icon($fill, $width: $nc-base-icon-size, $height: $nc-base-icon-size) {
+  @warn nc-deprecate('icon', 'mixin', 'Use `nc-icon()` instead.');
+
+  @include nc-icon($fill, $width, $height);
 }

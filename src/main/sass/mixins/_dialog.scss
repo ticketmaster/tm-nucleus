@@ -38,13 +38,13 @@
 // The following are deprecated and will be removed in Nucleus 2.0
 // ************************************************************************** //
 @mixin dialog-title($size) {
-  @warn nc-deprecate('dialog-title', 'mixin', 'Use nc-dialog-title() instead.');
+  @warn nc-deprecate('dialog-title', 'mixin', 'Use `nc-dialog-title()` instead.');
 
   @include nc-dialog-title($size);
 }
 
 @mixin dialog-title-icon($width: $nc-base-icon-size, $height: $nc-base-icon-size) {
-  @warn nc-deprecate('dialog-title-icon', 'mixin', 'Use nc-dialog-title-icon() instead.');
+  @warn nc-deprecate('dialog-title-icon', 'mixin', 'Use `nc-dialog-title-icon()` instead.');
 
   @include nc-dialog-title-icon($width, $height);
 }

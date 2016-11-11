@@ -44,3 +44,26 @@ $nc-polling-refresh-animation: wipe 2s infinite;
     animation: $nc-polling-refresh-animation;
   }
 }
+
+
+
+// ************************************************************************** //
+// The following are deprecated and will be removed in Nucleus 2.0
+// ************************************************************************** //
+@mixin polling-checkmark-ring() {
+  @warn nc-deprecate('polling-checkmark', 'mixin', 'Use `nc-polling-checkmark-ring()` instead.');
+
+  @include nc-polling-checkmark-ring();
+}
+
+@mixin polling-checkmark-animate() {
+  @warn nc-deprecate('polling-checkmark-animate', 'mixin', 'Use `nc-polling-checkmark-animate()` instead.');
+
+  @include nc-polling-checkmark-animate();
+}
+
+@mixin polling-refresh($size: $nc-base-icon-size, $bg: nc-theme('polling-refresh-bg-color')) {
+  @warn nc-deprecate('polling-refresh', 'mixin', 'Use `nc-polling-refresh()` instead.');
+
+  @include nc-polling-refresh($size, $bg);
+}

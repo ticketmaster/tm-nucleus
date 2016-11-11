@@ -1,0 +1,30 @@
+// targets IE10+
+@mixin nc-target-ie() {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}
+
+// targets IE Edge
+@mixin nc-target-ie-edge() {
+  @supports (-ms-accelerator:true) {
+    @content;
+  }
+}
+
+
+
+// ************************************************************************** //
+// The following are deprecated and will be removed in Nucleus 2.0
+// ************************************************************************** //
+@mixin target-ie() {
+  @warn nc-deprecate('target-ie', 'mixin', 'Use `nc-target-ie()` instead.');
+
+  @include nc-target-ie();
+}
+
+@mixin target-ie-edge() {
+  @warn nc-deprecate('target-ie-edge', 'mixin', 'Use `nc-target-ie-edge()` instead.');
+
+  @include nc-target-ie-edge();
+}

@@ -3,3 +3,14 @@
   margin: 0;
   list-style-type: none;
 }
+
+
+
+// ************************************************************************** //
+// The following are deprecated and will be removed in Nucleus 2.0
+// ************************************************************************** //
+@mixin unstyled-list() {
+  @warn nc-deprecate('unstyled-list', 'function', 'Use `nc-unstyled-list()` instead.');
+
+  @include nc-unstyled-list();
+}

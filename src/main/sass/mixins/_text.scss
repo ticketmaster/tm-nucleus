@@ -49,15 +49,18 @@
 }
 
 
-// deprecated
-@mixin nc-responsive-font($set: 'md', $lh: false) {
-  @warn nc-deprecate('nc-responsive-font', 'mixin');
+
+// ************************************************************************** //
+// The following are deprecated and will be removed in Nucleus 2.0
+// ************************************************************************** //
+@mixin responsive-font($set: 'md', $lh: false) {
+  @warn nc-deprecate('nc-responsive-font', 'mixin', 'Please see the documentation for typography in v2.0.');
 
   @include _nc-type-adapter($set, $lh, true);
 }
 
-@mixin nc-fixed-font($set: 'md', $lh: false) {
-  @warn nc-deprecate('nc-fixed-font', 'mixin');
+@mixin fixed-font($set: 'md', $lh: false) {
+  @warn nc-deprecate('nc-fixed-font', 'mixin', 'Please see the documentation for typography in v2.0.');
 
   @include _nc-type-adapter($set, $lh, false);
 }

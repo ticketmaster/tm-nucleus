@@ -16,3 +16,26 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+
+
+// ************************************************************************** //
+// The following are deprecated and will be removed in Nucleus 2.0
+// ************************************************************************** //
+@mixin vertically-center($pos: relative) {
+  @warn nc-deprecate('vertically-center', 'mixin', 'Use `nc-vertically-center()` instead.');
+
+  @include nc-vertically-center($pos);
+}
+
+@mixin horizontally-center($pos: relative) {
+  @warn nc-deprecate('horizontally-center', 'mixin', 'Use `nc-horizontally-center()` instead.');
+
+  @include nc-horizontally-center($pos);
+}
+
+@mixin dead-center($pos: relative) {
+  @warn nc-deprecate('dead-center', 'mixin', 'Use `nc-dead-center()` instead.');
+
+  @include nc-dead-center($pos);
+}
