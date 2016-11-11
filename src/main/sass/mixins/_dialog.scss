@@ -31,3 +31,33 @@
   color: $color;
   background-color: $nc-white;
 }
+
+
+
+// ************************************************************************** //
+// The following are deprecated and will be removed in Nucleus 2.0
+// ************************************************************************** //
+@mixin dialog-title($size) {
+  @warn nc-deprecate('dialog-title', 'mixin', 'Use nc-dialog-title() instead.');
+
+  @include nc-dialog-title($size);
+}
+
+@mixin dialog-title-icon($width: $nc-base-icon-size, $height: $nc-base-icon-size) {
+  @warn nc-deprecate('dialog-title-icon', 'mixin', 'Use nc-dialog-title-icon() instead.');
+
+  @include nc-dialog-title-icon($width, $height);
+}
+
+@mixin dialog-title-text($width: $nc-base-icon-size, $height: $nc-base-icon-size) {
+  padding-left: 10px;
+  vertical-align: middle;
+}
+
+@mixin dialog-content($color: nc-theme('alt-text-color'), $pad: 'moderate') {
+  @include nc-type-scale('centi');
+  @include nc-padding($pad);
+
+  color: $color;
+  background-color: $nc-white;
+}

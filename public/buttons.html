@@ -206,7 +206,7 @@
         </tr>
         <tr>
           <td class="sg-params-table__cell"><code class="sg-code">$hoverstate</code></td>
-          <td class="sg-params-table__cell"><code class="sg-code">false</code></td>
+          <td class="sg-params-table__cell"><code class="sg-code">true</code></td>
           <td class="sg-params-table__cell">Should there be a hoverstate for the button</td>
           <td class="sg-params-table__cell sg-params-table__cell--check">&nbsp;</td>
         </tr>
@@ -223,6 +223,11 @@
           <td class="sg-params-table__cell sg-params-table__cell--check">&nbsp;</td>
         </tr>
       </table>
+
+      <div class="sg-callout">
+        <h3 class="sg-callout__hdg">Important Note</h3>
+        <p>Prior to v1.0, the default value for <code class="sg-code">$hoverstate</code> was <code class="sg-code">false</code>. As of v1.0, this is now set to <code class="sg-code">true</code> by default.</p>
+      </div>
 
 <pre class="sg-code-block"><code class="scss">/* example usage */
 .regular-button {

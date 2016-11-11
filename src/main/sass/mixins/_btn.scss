@@ -199,7 +199,9 @@
 }
 
 
-
+// ************************************************************************** //
+// The following are deprecated and will be removed in Nucleus 2.0
+// ************************************************************************** //
 @mixin btn($color: nc-theme('primary-button-color'), $txtcolor: $nc-white, $height: $nc-button-height, $hoverstate: false, $outlined: false) {
   @warn nc-deprecate('btn', 'mixin', 'Use nc-btn() instead.');
 
