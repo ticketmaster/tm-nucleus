@@ -50,6 +50,10 @@
   @include icon($icon-color);
 }
 
+.icon-info {
+  @include icon($icon-color);
+}
+
 .icon-plus {
   @include icon($icon-color);
 }
