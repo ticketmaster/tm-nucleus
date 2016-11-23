@@ -23,7 +23,6 @@ $event-text-cobrand: calc(100vw - (#{$supportive-cobrand} * 2) - #{$scrollbar-wi
   min-height: $event-header-height;
   padding: 1.8rem 0;
   color: $header-text-color;
-  text-align: center;
   background-color: $header-color;
   box-shadow: 0 1px 0 rgba($black, 0.25);
 
@@ -50,10 +49,9 @@ $event-text-cobrand: calc(100vw - (#{$supportive-cobrand} * 2) - #{$scrollbar-wi
 }
 
 .event-header__title {
-  @include responsive-font('lg');
+  @include responsive-font('md');
 
   width: $event-text-sm;
-  margin: 0 auto;
   font-weight: normal;
   color: $header-text-color;
 
@@ -182,7 +180,6 @@ $event-text-cobrand: calc(100vw - (#{$supportive-cobrand} * 2) - #{$scrollbar-wi
 }
 
 .event-header__date-venue {
-  color: $header-secondary-text-color;
   white-space: nowrap;
 
   @include breakpoint($max: $bp-md - 1) {
@@ -269,11 +266,11 @@ $event-text-cobrand: calc(100vw - (#{$supportive-cobrand} * 2) - #{$scrollbar-wi
   @include breakpoint($bp-lg) {
     position: absolute;
     bottom: 13px;
-    left: 50%;
+    left: $supportive-size-lg;
     width: auto;
     height: auto;
+    padding: 0;
     padding-right: 0;
-    transform: translateX(-50%);
   }
 }
 

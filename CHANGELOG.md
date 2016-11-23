@@ -1,6 +1,14 @@
 Changelog
 =========
 
+**0.32.0**
+---------
+**New Features**
+- Add new icon-info.svg.
+
+**Changes**
+- `event-header` information is now left-aligned.
+
 **0.31.0**
 ---------
 **New Features**
