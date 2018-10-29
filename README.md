@@ -2,6 +2,9 @@
 
 ![alt tag](nucleus.jpg)
 
+## Please Note
+The public version of this repository is no longer maintained.
+
 ## Changelog
 Release notes can be found in our [changelog](CHANGELOG.md).
 
